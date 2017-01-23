@@ -1,0 +1,8 @@
+<!---This JavaScript function is used to setup grant URL  and “blue dot” menu URL. This is required for connect to QuickBooks button and "blue dot" menu.-->
+<script>
+    intuit.ipp.anywhere.setup({
+        menuProxy:'<%=  Request.Url.GetLeftPart(UriPartial.Authority) + "/" + ConfigurationManager.AppSettings["menuProxy"].ToString()  %>',
+        grantUrl: '<%=  Request.Url.GetLeftPart(UriPartial.Authority) + "/" + ConfigurationManager.AppSettings["grantUrl"].ToString()  %>'
+    });
+
+</script>

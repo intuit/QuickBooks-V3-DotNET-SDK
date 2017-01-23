@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intuit.Ipp.LinqExtender</RootNamespace>
+    <AssemblyName>Intuit.Ipp.LinqExtender</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\Net35\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\Net35\Intuit.Ipp.LinqExtender.xml</DocumentationFile>
+    <NoWarn>1591 1573 1572 1574</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Intuit.Ipp.LinqExtender.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
+      <HintPath>..\..\Code\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\Code\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Code\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Abstraction\Documentation\NamespaceDoc.cs" />
+    <Compile Include="Abstraction\IQueryContextImpl.cs" />
+    <Compile Include="Ast\BlockExpression.cs" />
+    <Compile Include="Ast\Documentation\NamespaceDoc.cs" />
+    <Compile Include="Ast\LambdaExpression.cs" />
+    <Compile Include="Ast\LiteralExpression.cs" />
+    <Compile Include="Ast\LogicalExpression.cs" />
+    <Compile Include="Ast\MemberExpression.cs" />
+    <Compile Include="Ast\MethodCallExpression.cs" />
+    <Compile Include="Ast\NotExpression.cs" />
+    <Compile Include="Ast\OrderbyExpression.cs" />
+    <Compile Include="Ast\SelectExpression.cs" />
+    <Compile Include="Ast\TypeExpression.cs" />
+    <Compile Include="Ast\BinaryExpression.cs" />
+    <Compile Include="Attributes\Documentation\NamespaceDoc.cs" />
+    <Compile Include="CodeType.cs" />
+    <Compile Include="Ast\Expression.cs" />
+    <Compile Include="Attributes\NameAttribute.cs" />
+    <Compile Include="Attributes\UniqueIdentifierAttribute.cs" />
+    <Compile Include="Attributes\IgnoreAttribute.cs" />
+    <Compile Include="Bucket.cs" />
+    <Compile Include="BucketImpl.cs" />
+    <Compile Include="Buckets.cs" />
+    <Compile Include="BucketItem.cs" />
+    <Compile Include="ClassGenerator.cs" />
+    <Compile Include="Collection\Documentation\NamespaceDoc.cs" />
+    <Compile Include="Collection\ReadOnlyQueryCollection.cs" />
+    <Compile Include="Documentation\NamespaceDoc.cs" />
+    <Compile Include="Fluent\Documentation\NamespaceDoc.cs" />
+    <Compile Include="Fluent\FluentMethod.cs" />
+    <Compile Include="LogicalOperator.cs" />
+    <Compile Include="ExpressionVisitor.cs" />
+    <Compile Include="Fluent\FluentBucket.cs" />
+    <Compile Include="Fluent\FluentEntity.cs" />
+    <Compile Include="Fluent\FluentExpressionTree.cs" />
+    <Compile Include="Fluent\FluentIterator.cs" />
+    <Compile Include="Abstraction\IBucket.cs" />
+    <Compile Include="Abstraction\IClassGenerator.cs" />
+    <Compile Include="Abstraction\IContainer.cs" />
+    <Compile Include="Abstraction\IQueryObject.cs" />
+    <Compile Include="Abstraction\IQueryObjectImpl.cs" />
+    <Compile Include="Abstraction\IVersionItem.cs" />
+    <Compile Include="IQueryContext.cs" />
+    <Compile Include="MemberReference.cs" />
+    <Compile Include="MethodCall.cs" />
+    <Compile Include="MethodNames.cs" />
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderException.cs" />
+    <Compile Include="Abstraction\IModifiableCollection.cs" />
+    <Compile Include="Abstraction\IMethodCall.cs" />
+    <Compile Include="Queryable.cs" />
+    <Compile Include="QueryContextImpl.cs" />
+    <Compile Include="QueryProvider.cs" />
+    <Compile Include="BinaryOperator.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="QueryItemComparer.cs" />
+    <Compile Include="ProjectedQuery.cs" />
+    <Compile Include="QueryObject.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="Collection\QueryCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeReference.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">
+      <Link>DotNetSdkForQuickBooksApiV3.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(SolutionDir)..\SDK Assemblies\"
+xcopy /Y "$(TargetDir)$(TargetName).XML" "$(SolutionDir)..\SDK Assemblies\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

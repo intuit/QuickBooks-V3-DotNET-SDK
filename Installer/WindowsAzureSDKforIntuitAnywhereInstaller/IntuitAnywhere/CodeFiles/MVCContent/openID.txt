@@ -1,0 +1,8 @@
+
+
+   routes.MapRoute(
+                "OpenId", // Route name
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "OpenId", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+

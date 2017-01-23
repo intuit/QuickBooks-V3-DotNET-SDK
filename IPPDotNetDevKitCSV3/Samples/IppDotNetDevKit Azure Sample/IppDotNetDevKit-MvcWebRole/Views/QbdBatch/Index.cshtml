@@ -1,0 +1,363 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.Qbd.BatchModel
+@{
+    ViewBag.Title = "Index";
+    bool load = ViewBag.Load;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="../Home/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Batch Processing</h2>
+<br />
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+    <div>
+        <table class="mainReqTable">
+            <tr>
+                <td>
+                    <h4>
+                        Add</h4>
+                    <table class="reqTable">
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.CustomerAdd)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.CustomerAdd)
+                            </td>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.DisplayName_Customer)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.DisplayName_Customer)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Find By Identifier using Query</h4>
+                    <table class="reqTable">
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.CustomerFindById)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.CustomerFindById)
+                            </td>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.Id_Customer)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.Id_Customer)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.InvoiceFindById)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.InvoiceFindById)
+                            </td>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.Id_Invoice)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.Id_Invoice)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="reqTable">
+                        <h4>
+                            Find All using Query</h4>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.CustomerFindAll)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.CustomerFindAll)
+                            </td>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.InvoiceFindAll)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.InvoiceFindAll)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="reqTable">
+                        <h4>
+                            Response Options</h4>
+                        <tr>
+                            <td class="addressTableTd1">
+                                Use Json Serialization
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.Response.UseJson)
+                            </td>
+                            <td class="addressTableTd1">
+                                Use Gzip Compression
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.CheckBoxFor(model => model.Response.UseCompression)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <input type="submit" value="Execute Batch" class="defaultBtn" />
+}
+@if (load)
+{
+    <hr style="margin-top: 50px;" />
+    if (Model.Exception != null)
+    {
+    @Html.DisplayFor(model => model.Exception.Message)
+    <br />
+        if (Model.Exception.InnerException != null)
+        {
+            Intuit.Ipp.Exception.IdsException idsE = Model.Exception.InnerException as Intuit.Ipp.Exception.IdsException;    
+    @Html.DisplayFor(model => idsE.Message)
+    <br />
+            if (idsE != null && idsE.InnerExceptions != null)
+            {
+                foreach (Intuit.Ipp.Exception.IdsError item in idsE.InnerExceptions)
+                {
+    @Html.DisplayFor(model => item.Detail)
+    @Html.DisplayFor(model => item.Message)
+    @Html.DisplayFor(model => item.Element)
+                }
+            }
+        }
+
+        if (Model.Exception.InnerExceptions != null)
+        {
+            foreach (Intuit.Ipp.Exception.IdsError item in Model.Exception.InnerExceptions)
+            {
+    @Html.DisplayFor(model => item.Detail)
+    @Html.DisplayFor(model => item.Message)
+    @Html.DisplayFor(model => item.Element)
+            }
+        }
+    }
+    else
+    {
+        if (Model.IntuitBatchResponse != null && Model.IntuitBatchResponse.Count > 0)
+        {
+            foreach (Intuit.Ipp.DataService.IntuitBatchResponse item in Model.IntuitBatchResponse)
+            {
+    <h3>
+        Batch Id: @Html.DisplayFor(model => item.Id)
+    </h3>
+                switch (item.ResponseType)
+                {
+                    case Intuit.Ipp.DataService.ResponseType.Entity:
+                        Intuit.Ipp.Data.Customer customer = item.Entity as Intuit.Ipp.Data.Customer;
+                        
+    <div class="wrapper" style="height: 90px;">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Customer Display Name
+                    </td>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => customer.DisplayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => customer.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => customer.status)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+                   break;
+                    case Intuit.Ipp.DataService.ResponseType.Exception:
+    @Html.DisplayFor(model => item.Exception.ErrorCode)
+    <br />
+    @Html.DisplayFor(model => item.Exception.Message)
+    <br />
+if (item.Exception.InnerExceptions != null)
+{
+    foreach (Intuit.Ipp.Exception.IdsError idsError in item.Exception.InnerExceptions)
+    {
+    @Html.DisplayFor(model => idsError.Detail)
+    @Html.DisplayFor(model => idsError.Message)
+    @Html.DisplayFor(model => idsError.Element)
+    }
+}
+break;
+                    case Intuit.Ipp.DataService.ResponseType.Query:
+if (item.Entities.Count == 1)
+{
+    if (item.Id.Equals("customerFindById"))
+    {
+        Intuit.Ipp.Data.Customer foundCustomer = item.Entities.FirstOrDefault() as Intuit.Ipp.Data.Customer;
+    <div class="wrapper" style="height: 90px;">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Customer Display Name
+                    </td>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => foundCustomer.DisplayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => foundCustomer.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => foundCustomer.status)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    }
+
+    if (item.Id.Equals("invoiceFindById"))
+    {
+        Intuit.Ipp.Data.Invoice foundInvoice = item.Entities.FirstOrDefault() as Intuit.Ipp.Data.Invoice;
+    <div class="wrapper" style="height: 90px;">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => foundInvoice.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => foundInvoice.status)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    }
+}
+else
+{
+    if (item.Id.Equals("customerFindAll"))
+    {
+    <div class="wrapper">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Customer Display Name
+                    </td>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var entity in item.Entities)
+                {
+                    Intuit.Ipp.Data.Customer foundCustomer = entity as Intuit.Ipp.Data.Customer;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => foundCustomer.DisplayName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => foundCustomer.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => foundCustomer.status)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+
+    if (item.Id.Equals("invoiceFindAll"))
+    {
+    <div class="wrapper">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var entity in item.Entities)
+                {
+                    Intuit.Ipp.Data.Invoice foundInvoice = entity as Intuit.Ipp.Data.Invoice;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => foundInvoice.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => foundInvoice.status)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+}
+break;
+                }
+            }
+        }
+    }
+}

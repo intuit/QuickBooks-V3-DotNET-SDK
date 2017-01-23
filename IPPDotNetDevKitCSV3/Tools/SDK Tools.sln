@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.XsdExtension", "XsdExtension\Intuit.Ipp.XsdExtension\Intuit.Ipp.XsdExtension.csproj", "{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB} = {34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Diagnostics", "..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj", "{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

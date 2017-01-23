@@ -1,0 +1,118 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.SettingsModel
+@{
+    ViewBag.Title = "Settings";
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdFilter/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+@if (Model != null && !Model.Success)
+{
+    <textarea style="color: red; margin-left: 25%; width: 50%; height: 100px; margin-top: 20px;">
+        @Html.Raw(Model.Error)
+        </textarea>
+}
+@using (Html.BeginForm())
+{
+    <p style="font-weight: bold; margin-left: 30%; font-size: 1.5em;">
+        @Html.EditorFor(model => model.Qbd) Quickbooks Desktop Service Settings:
+    </p>
+    <table class="reqTable" style="width: 400px; margin-left: 30%;">
+        <tr>
+            <td>
+               AccessToken
+            </td>
+            <td>
+                @Html.EditorFor(model => model.QbdAccessToken)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                AccessTokenSecret
+            </td>
+            <td>
+                @Html.EditorFor(model => model.QbdAccessTokenSecret)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ConsumerKey
+            </td>
+            <td>
+                @Html.EditorFor(model => model.QbdConsumerKey)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ConsumerSecret
+            </td>
+            <td>
+                @Html.EditorFor(model => model.QbdConsumerSecret)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                RealmId
+            </td>
+            <td>
+                @Html.EditorFor(model => model.QbdRealmId)
+            </td>
+        </tr>
+    </table>
+    <p style="font-weight: bold; margin-left: 30%; font-size: 1.5em;">
+        @Html.EditorFor(model => model.Ipp) Intuit Platform Service Settings:
+    </p>
+    <table class="reqTable" style="width: 400px; margin-left: 30%;">
+        <tr>
+            <td>
+                AccessToken
+            </td>
+            <td>
+                @Html.EditorFor(model => model.IppAccessToken)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                AccessTokenSecret
+            </td>
+            <td>
+                @Html.EditorFor(model => model.IppAccessTokenSecret)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ConsumerKey
+            </td>
+            <td>
+                @Html.EditorFor(model => model.IppConsumerKey)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ConsumerSecret
+            </td>
+            <td>
+                @Html.EditorFor(model => model.IppConsumerSecret)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.AppToken)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.AppToken)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.AppDbid)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.AppDbid)
+            </td>
+        </tr>
+    </table>
+    
+    <input type="submit" value="Save" class="defaultBtn" />
+}

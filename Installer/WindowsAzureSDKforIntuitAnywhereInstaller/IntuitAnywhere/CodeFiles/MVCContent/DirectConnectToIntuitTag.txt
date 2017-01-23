@@ -1,0 +1,4 @@
+<!---This function is called as part of the Open ID flow, and initiates the 3 legged Oauth process.-->  
+<script type="text/javascript" > 
+intuit.ipp.anywhere.directConnectToIntuit();
+</script>

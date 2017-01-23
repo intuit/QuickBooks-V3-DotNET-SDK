@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+    string MenuProxy = Request.Url.GetLeftPart(UriPartial.Authority) + "/" + System.Configuration.ConfigurationManager.AppSettings["menuProxy"];
+    string OauthGrant = Request.Url.GetLeftPart(UriPartial.Authority) + "/" + System.Configuration.ConfigurationManager.AppSettings["grantUrl"];
+}
+<!DOCTYPE html>
+<html xmlns:ipp="">
+<head>
+<title>Loading....</title>
+    <!--
+The intuit.ipp.anywhere.directConnectToIntuit() function initiates the three-legged OAuth flow, 
+which occurs when the user authorizes the app to connect to a QuickBooks company.  
+Calling this function is analogous to clicking the Connect to QuickBooks button. 
+Before calling this function, call the intuit.ipp.anywhere.setup() function, 
+specifying the grantUrl parameter.  
+-->
+<script type="text/javascript" src="https://appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+   
+ 
+    
+    <script type="text/javascript">        intuit.ipp.anywhere.setup({
+            menuProxy: '@MenuProxy',
+            grantUrl: '@OauthGrant'
+        });
+        intuit.ipp.anywhere.directConnectToIntuit();
+    </script>
+</head>
+<body>
+    Loading....
+</body>
+</html>

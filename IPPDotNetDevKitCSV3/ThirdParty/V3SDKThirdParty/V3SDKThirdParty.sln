@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json", "..\Newtonsoft.Json\Newtonsoft.Json.csproj", "{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevDefined.OAuth.Tiny", "..\DevDefined.OAuth.Tiny\DevDefined.OAuth.Tiny\DevDefined.OAuth.Tiny.csproj", "{61B700B6-3911-4CEF-8751-7F426A765088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExtender", "..\Linq Extender\LinqExtender.csproj", "{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B700B6-3911-4CEF-8751-7F426A765088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B700B6-3911-4CEF-8751-7F426A765088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B700B6-3911-4CEF-8751-7F426A765088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B700B6-3911-4CEF-8751-7F426A765088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

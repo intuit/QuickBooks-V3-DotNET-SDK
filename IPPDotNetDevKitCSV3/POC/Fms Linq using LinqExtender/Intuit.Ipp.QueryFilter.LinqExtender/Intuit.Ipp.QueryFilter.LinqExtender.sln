@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{953B6603-7E67-4C1A-8970-2BA3945D5D6F}"
+	ProjectSection(SolutionItems) = preProject
+		Intuit.Ipp.QueryFilter.LinqExtender.vsmdi = Intuit.Ipp.QueryFilter.LinqExtender.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Query.Test", "Intuit.Ipp.Query.Test\Intuit.Ipp.Query.Test.csproj", "{537DC5F4-3541-4A0C-96A9-713A947990FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Query", "Intuit.Ipp.Query\Intuit.Ipp.Query.csproj", "{F53B30CA-1F80-4067-9615-DBE6BA229621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExtender", "..\..\..\ThirdParty\Linq Extender\LinqExtender.csproj", "{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Intuit.Ipp.QueryFilter.LinqExtender.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{537DC5F4-3541-4A0C-96A9-713A947990FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537DC5F4-3541-4A0C-96A9-713A947990FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537DC5F4-3541-4A0C-96A9-713A947990FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537DC5F4-3541-4A0C-96A9-713A947990FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53B30CA-1F80-4067-9615-DBE6BA229621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53B30CA-1F80-4067-9615-DBE6BA229621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53B30CA-1F80-4067-9615-DBE6BA229621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53B30CA-1F80-4067-9615-DBE6BA229621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

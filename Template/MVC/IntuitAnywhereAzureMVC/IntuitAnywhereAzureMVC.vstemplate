@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="2.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>IA Azure ASP.NET MVC 3 Web Role</Name>
+    <Description>A template for creating an Intuit Anywhere Azure ASP.NET MVC 3 Web Role.</Description>
+    <Icon>IALogo.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Eisk</ProjectSubType>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <ProjectTemplateLink ProjectName="IntuitSampleMVC">Ch\WebProj\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="IntuitSampleWindowsAzureMVCProject">Ch\AzureProj\MyTemplate.vstemplate</ProjectTemplateLink>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

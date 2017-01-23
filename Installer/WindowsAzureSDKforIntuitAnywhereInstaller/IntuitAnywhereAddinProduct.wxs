@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix   xmlns="http://schemas.microsoft.com/wix/2006/wi"    xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"  xmlns:installext="http://schemas.microsoft.com/wix/VSExtension" >
+
+  <?define PRODUCT_ID  = "E59F80F5-04A7-42AF-AEB4-66EBC2032817" ?>
+  <?define UPGRADE_CODE = "208EA7FE-B64F-4CFF-BFD4-4D96181735CC" ?>
+  <?define LICENSE_AGREEMENT_FILE_COMPONENT_GUID = "52945BC6-5CA5-4F15-9C2F-551EAF361D4E" ?>
+  <?define HELP_FILE_COMPONENT_GUID = "7D085331-EBD0-4670-8677-95E79A178552" ?>
+  <?define HELP_FILE_SHORTCUT_COMPONENT_GUID = "C9DB0A82-DE92-4B2B-B844-566FFCA634B2" ?>
+  <?define VS2005_DLL_FILE_COMPONENT_GUID = "D4172502-FCA2-4FE9-B1BE-583425594682" ?>
+  <?define VS2008_DLL_FILE_COMPONENT_GUID = "642037CF-5DCB-4105-8669-01B50E142395" ?>
+  <?define VS2010_DLL_FILE_COMPONENT_GUID = "3515FC75-3B33-4751-BA2D-3ED276170A9C" ?>
+  <?define VS2005_ADDIN_FILE_COMPONENT_GUID = "4B8F52F0-8246-40E9-924E-C6AEC40C3669" ?>
+  <?define VS2008_ADDIN_FILE_COMPONENT_GUID = "62B50C0F-EB32-42D3-9E84-F98E3AAA4ADF" ?>
+  <?define VS2010_ADDIN_FILE_COMPONENT_GUID = "70D1492D-B56F-4385-881E-8E4A3DCB20AE" ?>
+
+  <?define APP_NAME = "Windows Azure SDK 3.0 for Intuit Anywhere" ?>
+  <?define APP_VERSION = "1.0.0.0" ?>
+  <?define DEFAULT_GROUP_NAME = "Intuit Anywhere Addin" ?>
+  <?define HELP_SHORTCUT = "Intuit Anywhere Addin" ?>
+
+  <?define DEST_SUB_DIR = "IntuitAnywhere" ?>
+  <?define VERSION_DIR = "v3" ?>
+  <?define CODE_FILES_DIR = "CodeFiles" ?>
+  <?define VERSION_DIR_V2 = "v2" ?>
+  <?define HELP_FILE_NAME = "IntuitAnywhere.chm" ?>
+  <?define LICENSE_AGREEMENT_FILE_NAME = "LicenseAgreement.rtf" ?>
+  <?define DLL_FILE_NAME_VS2010 = "IntuitAnyWhereAddin.dll" ?>
+  <?define ADDIN_XML_FILE_NAME = "IntuitAnyWhere.AddIn" ?>
+  <?define MY_COMPANY_NAME = "Intuit" ?>
+  <?define MY_COMPANY_WEB_SITE = "http://www.intuit.com" ?>
+  <?define CONNECT_CLASS_FULL_NAME_VS_2010 = "IntuitAnyWhereAddin.Connect" ?>
+
+
+  <Product Id="$(var.PRODUCT_ID)"
+           Name="$(var.APP_NAME)"
+           Language="1033"
+           Codepage="1252"
+           Version="$(var.APP_VERSION)"
+           Manufacturer="$(var.MY_COMPANY_NAME)"
+           UpgradeCode="$(var.UPGRADE_CODE)">
+
+    <!-- define package for all users-->
+    <Package InstallScope="perMachine" InstallerVersion="200" Compressed="yes" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+
+    <Upgrade Id="36E1E841-A549-4580-A58B-672C7F52AAEA">
+      <UpgradeVersion
+         Minimum="0.0.0.0" Maximum="$(var.APP_VERSION)"
+         Property="PREVIOUSVERSIONSINSTALLED"
+         IncludeMinimum="yes" IncludeMaximum="no" />
+    </Upgrade>
+
+    <!-- Property to get installation folder of Visual Studio 2010.If property value is not retrieved it will remain unset with value as false. Property is set as secure so Repair, change and Remove buttons of this maintenance mode work correctly.-->
+    <Property Id="VS2010INSTALLATIONFOLDER" Secure="yes">
+      <RegistrySearch Id="VS2010InstallationFolderRegistrySearchId" Type="raw"
+                      Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\10.0" Name="InstallDir"></RegistrySearch>
+    </Property>
+
+    <!-- Launch condition: check that some Visual Studio version is present when the installing. The OR Installed variable ensures that the condition is always true when uninstalling, because we don't need to check that Visual Studio is present when uninstalling.-->
+    <Condition Message="This add-in requires Visual Studio 2010.">
+      Installed OR VS2010INSTALLATIONFOLDER
+    </Condition>
+
+
+    <PropertyRef Id="VS2010_ROOT_FOLDER" />
+    <PropertyRef Id="VS2010DEVENV" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <!-- Install the files in a subfolder of the Program Files folder -->
+      <Directory Id="ProgramFilesFolder">
+
+        <Directory Id="INSTALLLOCATION" Name="$(var.DEST_SUB_DIR)">
+          <Directory Id="VERSIONDIRECTORY" Name="$(var.VERSION_DIR)">
+            <Directory Id="CODEFILESDIRECTORY" Name="$(var.CODE_FILES_DIR)">
+
+              <!-- Install the dll file of the add-in for Visual Studio 2010 -->
+              <Component Id="VS2010DllFileComponentId" Guid="$(var.VS2010_DLL_FILE_COMPONENT_GUID)">
+                <File Id="VS2010DllFileId" Name="$(var.DLL_FILE_NAME_VS2010)" Vital="yes" DiskId="1" Source="$(var.DLL_FILE_NAME_VS2010)" />
+                <util:RestartResource Path="[VS2010DEVENV]" />
+              </Component>
+              <!--addin Intuit Anywhere Folder content starts here -->
+              <Component Id="BLUEDOTTAG.TXT" DiskId="1" Guid="30E2205B-8F3B-498E-832B-65CA561720BD">
+                <File Id="BLUEDOTTAG.TXT" Name="BlueDotTag.txt" Source="IntuitAnywhere\CodeFiles\BlueDotTag.txt" />
+              </Component>
+
+              <Component Id="LOGOUTTAG.TXT" DiskId="1" Guid="FA111254-12EF-458B-9973-35D1752A930B">
+                <File Id="LOGOUTTAG.TXT" Name="LogoutTag.txt" Source="IntuitAnywhere\CodeFiles\LogoutTag.txt" />
+              </Component>
+
+
+              <Component Id="CONNECTTOQUICKBOOKSTAG.TXT" DiskId="1" Guid="377ED368-82DA-48BB-8A09-6CCC146BCE88">
+                <File Id="CONNECTTOQUICKBOOKSTAG.TXT" Name="ConnecttoQuickBooksTag.txt" Source="IntuitAnywhere\CodeFiles\ConnecttoQuickBooksTag.txt" />
+              </Component>
+              <Component Id="DOTNETOPENAUTH.DLL" DiskId="1" Guid="38781290-1F3B-4C91-B0A4-A8AA59581F23">
+                <File Id="DOTNETOPENAUTH.DLL" Name="DotNetOpenAuth.dll" Source="IntuitAnywhere\CodeFiles\DotNetOpenAuth.dll" />
+              </Component>
+              <Component Id="NUGET.CORE.DLL" DiskId="1" Guid="281445B3-79AA-4357-9AA2-BC7F4D9FE473">
+                <File Id="NUGET.CORE.DLL" Name="NuGet.Core.dll" Source="IntuitAnywhere\CodeFiles\NuGet.Core.dll" />
+              </Component>
+              <Component Id="NUGET.VISUALSTUDIO.DLL" DiskId="1" Guid="7999149F-FE15-4BE3-8AB5-70278B11B4EA">
+                <File Id="NUGET.VISUALSTUDIO.DLL" Name="NuGet.VisualStudio.dll" Source="IntuitAnywhere\CodeFiles\NuGet.VisualStudio.dll" />
+              </Component>
+              <Component Id="JAVASCRIPTTAG.TXT" DiskId="1" Guid="DB293F7E-F269-4210-926A-50539DF78C83">
+                <File Id="JAVASCRIPTTAG.TXT" Name="JavaScriptTag.txt" Source="IntuitAnywhere\CodeFiles\JavaScriptTag.txt" />
+              </Component>
+              <Component Id="OPENIDTAG.TXT" DiskId="1" Guid="1FBF09BD-8315-4419-9C82-9B9FC802A48D">
+                <File Id="OPENIDTAG.TXT" Name="OpenIDTag.txt" Source="IntuitAnywhere\CodeFiles\OpenIDTag.txt" />
+              </Component>
+              <Component Id="SETUPTAG.TXT" DiskId="1" Guid="3FD3762F-40E7-4488-A6D4-3A843607C706">
+                <File Id="SETUPTAG.TXT" Name="SetupTag.txt" Source="IntuitAnywhere\CodeFiles\SetupTag.txt" />
+              </Component>
+
+              <Component Id="INTUITANYWHEREADDINHELP.CHM" DiskId="1" Guid="24B139B2-01DD-426F-98E1-83027FDA3761">
+                <File Id="INTUITANYWHEREADDINHELP.CHM" Name="IntuitAnywhereAddinHelp.chm" Source="IntuitAnywhere\CodeFiles\IntuitAnywhereAddinHelp.chm" />
+              </Component>
+
+              <Component Id="IPPDOCUMENTATION.TXT" DiskId="1" Guid="FA53FD33-BA35-4848-85E8-190E746FD29B">
+                <File Id="IPPDOCUMENTATION.TXT" Name="IppDocumentation.txt" Source="IntuitAnywhere\CodeFiles\IppDocumentation.txt" />
+              </Component>
+              <Component Id="IPPFRONTRUNNERURL.TXT" DiskId="1" Guid="37739EDC-FF32-43B1-B089-45A000D4F72D">
+                <File Id="IPPFRONTRUNNERURL.TXT" Name="IppFrontRunnerURL.txt" Source="IntuitAnywhere\CodeFiles\IppFrontRunnerURL.txt" />
+              </Component>
+              <Component Id="IPPSUPPORTURL.TXT" DiskId="1" Guid="D2F70C53-ECFE-44D5-A58A-71EBE98960DF">
+                <File Id="IPPSUPPORTURL.TXT" Name="IppSupportURL.txt" Source="IntuitAnywhere\CodeFiles\IppSupportURL.txt" />
+              </Component>
+
+              <!-- VSIX file: starts here-->
+              <Component Id="NUGET.TOOLS.VSIX" DiskId="1" Guid="57C9BC4F-B7D0-4294-91BC-4E8CB7808522">
+                <File Id="NUGET.TOOLS.VSIX" Name="NuGet.Tools.vsix" Source="IntuitAnywhere\CodeFiles\NuGet.Tools.vsix" >
+                </File>
+              </Component>
+
+              <!-- Comment out Lines below to build addin only installer:Starts Here-->
+              <Component Id="IAAZUREASPDOTNETTEMPLATE.VSIX" DiskId="1" Guid="6070E508-BB15-46BA-B07E-B328B3981BFA">
+                <File Id="IAAZUREASPDOTNETTEMPLATE.VSIX" Name="IAAzureASPDotNetTemplate.vsix" Source="IntuitAnywhere\CodeFiles\IAAzureASPDotNetTemplate.vsix" >
+                </File>
+              </Component>
+
+              <Component Id="IAAZUREMVCTEMPLATE.VSIX" DiskId="1" Guid="7CBF94CD-F461-4D9A-9487-14A8062A4C70">
+                <File Id="IAAZUREMVCTEMPLATE.VSIX" Name="IAAzureMVCTemplate.vsix" Source="IntuitAnywhere\CodeFiles\IAAzureMVCTemplate.vsix" >
+                </File>
+              </Component>
+              <!-- Comment out Lines above to build addin only installer:ends Here-->
+
+              <!--VSIX file: ends here here-->
+
+              <Directory Id="ASPNETCONTENT" Name="ASPNETContent">
+                <Directory Id="VERSIONDIRECTORYV2" Name="$(var.VERSION_DIR_V2)">
+                  <Component Id="QUICKBOOKSCUSTOMERS.ASPX_V2" DiskId="1" Guid="{BADB0F91-36C1-44AA-9E9D-E6BFEABACF86}">
+                    <File Id="QUICKBOOKSCUSTOMERS.ASPX_V2" Name="QuickBooksCustomers.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx" />
+                  </Component>
+                  <Component Id="QUICKBOOKSCUSTOMERS.ASPX.CS_V2" DiskId="1" Guid="{FC5C1A2F-BC7E-4F65-B5B4-4B5BC68DFE77}">
+                    <File Id="QUICKBOOKSCUSTOMERS.ASPX.CS_V2" Name="QuickBooksCustomers.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx.cs" />
+                  </Component>
+                  <Component Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS_V2" DiskId="1" Guid="{A7DAA895-25C3-49D3-B536-08FCA6D52993}">
+                    <File Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS_V2" Name="QuickBooksCustomers.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx.designer.cs" />
+                  </Component>
+                  <Component Id="INITIALIZER.CS_V2" DiskId="1" Guid="{03C87001-DC84-419F-A843-7D7796CE1847}">
+                    <File Id="INITIALIZER.CS_V2" Name="Initializer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\v2\Initializer.cs" />
+                  </Component>
+                </Directory>
+                <Component Id="CONSTANTS.CS" DiskId="1" Guid="52E7BAEE-86E5-4933-A428-61CD4D292804">
+                  <File Id="CONSTANTS.CS" Name="ApplicationConstants.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\ApplicationConstants.cs" />
+                </Component>
+                <Component Id="DEVDEFINED.OAUTH.DLL_1" DiskId="1" Guid="AA4BCAFE-93D1-4C35-973E-79F336ECEF78">
+                  <File Id="DEVDEFINED.OAUTH.DLL_1" Name="DevDefined.OAuth.dll" Source="IntuitAnywhere\CodeFiles\ASPNETContent\DevDefined.OAuth.dll" />
+                </Component>
+                <Component Id="DIRECTCONNECTTOINTUITTAG.TXT" DiskId="1" Guid="2152B198-DD88-4628-88CB-F981F0F1BE3B">
+                  <File Id="DIRECTCONNECTTOINTUITTAG.TXT" Name="DirectConnectToIntuitTag.txt" Source="IntuitAnywhere\CodeFiles\ASPNETContent\DirectConnectToIntuitTag.txt" />
+                </Component>
+                <Component Id="DISCONNECT.ASPX" DiskId="1" Guid="8558F063-7567-4591-8EB8-C41549CA4D9B">
+                  <File Id="DISCONNECT.ASPX" Name="Disconnect.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx" />
+                </Component>
+                <Component Id="DISCONNECT.ASPX.CS" DiskId="1" Guid="30B4C8AB-5814-4417-AEDF-A014DF003FD7">
+                  <File Id="DISCONNECT.ASPX.CS" Name="Disconnect.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx.cs" />
+                </Component>
+                <Component Id="DISCONNECT.ASPX.DESIGNER.CS" DiskId="1" Guid="5E1F1010-1A6E-4127-8760-B62A5A1B7BF4">
+                  <File Id="DISCONNECT.ASPX.DESIGNER.CS" Name="Disconnect.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx.designer.cs" />
+                </Component>
+                <Component Id="DISCONNECTTAG.TXT" DiskId="1" Guid="C79D1CBE-FDC8-47EE-B88F-3F2A2E85A682">
+                  <File Id="DISCONNECTTAG.TXT" Name="DisconnectTag.txt" Source="IntuitAnywhere\CodeFiles\ASPNETContent\DisconnectTag.txt" />
+                </Component>
+                <Component Id="DOTNETOPENAUTH.DLL_1" DiskId="1" Guid="14579324-408B-44C7-B7C1-060210B2C987">
+                  <File Id="DOTNETOPENAUTH.DLL_1" Name="DotNetOpenAuth.dll" Source="IntuitAnywhere\CodeFiles\ASPNETContent\DotNetOpenAuth.dll" />
+                </Component>
+                <Component Id="DOTNETOPENAUTH.XSD" DiskId="1" Guid="2F6CEEA3-280E-4E90-AEC2-CE877C3FF05A">
+                  <File Id="DOTNETOPENAUTH.XSD" Name="DotNetOpenAuth.xsd" Source="IntuitAnywhere\CodeFiles\ASPNETContent\DotNetOpenAuth.xsd" />
+                </Component>
+                <Component Id="INITIALIZER.CS" DiskId="1" Guid="394F8E4F-2E9F-4A16-880F-DCAF96FC4EAE">
+                  <File Id="INITIALIZER.CS" Name="Initializer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Initializer.cs" />
+                </Component>
+                <Component Id="IPPTAG.CS" DiskId="1" Guid="E5CC704E-0492-477B-8BD8-ABA627601AEF">
+                  <File Id="IPPTAG.CS" Name="IppTag.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\IppTag.cs" />
+                </Component>
+                <Component Id="MENUPROXY.ASPX" DiskId="1" Guid="60D9B349-F21D-450C-9157-FCADBAF2C9D9">
+                  <File Id="MENUPROXY.ASPX" Name="MenuProxy.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx" />
+                </Component>
+                <Component Id="MENUPROXY.ASPX.CS" DiskId="1" Guid="9BADADD1-E21F-4F52-8112-8BD403D6C5BE">
+                  <File Id="MENUPROXY.ASPX.CS" Name="MenuProxy.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx.cs" />
+                </Component>
+                <Component Id="MENUPROXY.ASPX.DESIGNER.CS" DiskId="1" Guid="AEF48257-56E1-4901-A49C-C001CF100568">
+                  <File Id="MENUPROXY.ASPX.DESIGNER.CS" Name="MenuProxy.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx.designer.cs" />
+                </Component>
+                <Component Id="OAUTHGRANT.ASPX" DiskId="1" Guid="5C29AF19-F5C8-4108-8362-64A298F6FBB7">
+                  <File Id="OAUTHGRANT.ASPX" Name="OauthGrant.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx" />
+                </Component>
+                <Component Id="OAUTHGRANT.ASPX.CS" DiskId="1" Guid="{9F6D1A46-C3FB-4F78-BFD4-E32845C6C71D}">
+                  <File Id="OAUTHGRANT.ASPX.CS" Name="OauthGrant.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx.cs" />
+                </Component>
+                <Component Id="OAUTHGRANT.ASPX.DESIGNER.CS" DiskId="1" Guid="{4AE3988C-FDC8-4A6C-BC79-4362C677390D}">
+                  <File Id="OAUTHGRANT.ASPX.DESIGNER.CS" Name="OauthGrant.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx.designer.cs" />
+                </Component>
+                <Component Id="OAUTHHANDLER.ASPX" DiskId="1" Guid="{80B3E0B8-6B06-4937-ABBA-C9FD3BCB12BC}">
+                  <File Id="OAUTHHANDLER.ASPX" Name="OauthHandler.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx" />
+                </Component>
+                <Component Id="OAUTHHANDLER.ASPX.CS" DiskId="1" Guid="{6C46E693-B002-474C-B633-BC681AE3B318}">
+                  <File Id="OAUTHHANDLER.ASPX.CS" Name="OauthHandler.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx.cs" />
+                </Component>
+                <Component Id="OAUTHHANDLER.ASPX.DESIGNER.CS" DiskId="1" Guid="{1F815749-3BA6-495A-B832-0D4E62C36147}">
+                  <File Id="OAUTHHANDLER.ASPX.DESIGNER.CS" Name="OauthHandler.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx.designer.cs" />
+                </Component>
+                <Component Id="OPENID.CS" DiskId="1" Guid="{3E369202-E3DD-4EB5-9E1A-68820D620263}">
+                  <File Id="OPENID.CS" Name="openid.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\openid.cs" />
+                </Component>
+                <Component Id="OPENIDHANDLER.ASPX" DiskId="1" Guid="{91F5EFAC-AAC7-468F-947E-22779378AB56}">
+                  <File Id="OPENIDHANDLER.ASPX" Name="OpenIdHandler.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx" />
+                </Component>
+                <Component Id="OPENIDHANDLER.ASPX.CS" DiskId="1" Guid="{E0B2C5A5-EF76-4AA7-B4BB-D72765C3FE37}">
+                  <File Id="OPENIDHANDLER.ASPX.CS" Name="OpenIdHandler.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx.cs" />
+                </Component>
+                <Component Id="OPENIDHANDLER.ASPX.DESIGNER.CS" DiskId="1" Guid="{750F57A6-9F29-4F5F-9BC7-768F0FF2D6EA}">
+                  <File Id="OPENIDHANDLER.ASPX.DESIGNER.CS" Name="OpenIdHandler.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx.designer.cs" />
+                </Component>
+                <Component Id="QUICKBOOKSCUSTOMERS.ASPX" DiskId="1" Guid="{2A4EE50F-D7D6-4F6A-B25C-0CE8E83F39AF}">
+                  <File Id="QUICKBOOKSCUSTOMERS.ASPX" Name="QuickBooksCustomers.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx" />
+                </Component>
+                <Component Id="QUICKBOOKSCUSTOMERS.ASPX.CS" DiskId="1" Guid="{2C29FD18-5C66-4DCB-AD7A-69E9021C0D10}">
+                  <File Id="QUICKBOOKSCUSTOMERS.ASPX.CS" Name="QuickBooksCustomers.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx.cs" />
+                </Component>
+                <Component Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS" DiskId="1" Guid="{4DF82504-514D-4FF1-8D60-86C65AD32ABC}">
+                  <File Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS" Name="QuickBooksCustomers.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx.designer.cs" />
+                </Component>
+
+
+                <Component Id="LOGOUT.ASPX" DiskId="1" Guid="{3703E1E1-765B-4D1B-83F9-66E74B46D66E}">
+                  <File Id="LOGOUT.ASPX" Name="Logout.aspx" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx" />
+                </Component>
+                <Component Id="LOGOUT.ASPX.CS" DiskId="1" Guid="{C335A12A-3A9D-41CE-89CA-8BCF43D6068B}">
+                  <File Id="LOGOUT.ASPX.CS" Name="Logout.aspx.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx.cs" />
+                </Component>
+                <Component Id="LOGOUT.ASPX.DESIGNER.CS" DiskId="1" Guid="{6CBA6832-FE63-41D1-A1FF-AECD4C885EEE}">
+                  <File Id="LOGOUT.ASPX.DESIGNER.CS" Name="Logout.aspx.designer.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx.designer.cs" />
+                </Component>
+
+                <Component Id="CryptographyHelper.cs" DiskId="1" Guid="{1080142B-679E-436B-8729-3507FEFFD8CE}">
+                  <File Id="CryptographyHelper.cs" Name="CryptographyHelper.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\CryptographyHelper.cs" />
+                </Component>
+                <Component Id="OauthAccessTokenStorageHelper.cs" DiskId="1" Guid="{F70BA497-AAE9-496A-94C6-966A074E9A3A}">
+                  <File Id="OauthAccessTokenStorageHelper.cs" Name="OauthAccessTokenStorageHelper.cs" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthAccessTokenStorageHelper.cs" />
+                </Component>
+                <Component Id="OauthAccessTokenStorage.xml" DiskId="1" Guid="{66894CA2-8061-497B-A95C-95387DE72EC9}">
+                  <File Id="OauthAccessTokenStorage.xml" Name="OauthAccessTokenStorage.xml" Source="IntuitAnywhere\CodeFiles\ASPNETContent\OauthAccessTokenStorage.xml" />
+                </Component>
+
+                <Component Id="SETUPTAG.TXT_1" DiskId="1" Guid="{43236D2B-8611-4856-8EC4-87A976BA88F5}">
+                  <File Id="SETUPTAG.TXT_1" Name="SetupTag.txt" Source="IntuitAnywhere\CodeFiles\ASPNETContent\SetupTag.txt" />
+                </Component>
+              </Directory>
+              <Directory Id="MVCCONTENT" Name="MVCContent">
+                <Directory Id="VERSIONDIRECTORYV2_1" Name="$(var.VERSION_DIR_V2)">
+                  <Component Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS_V2" DiskId="1" Guid="{CFF73955-CD53-467B-B366-C2F06A9BCCCE}">
+                    <File Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS_V2" Name="QuickBooksCustomersController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\v2\QuickBooksCustomersController.cs" />
+                  </Component>
+                  <Component Id="INITIALIZER.CS_1_V2" DiskId="1" Guid="{D3D3D75A-E534-4E27-A97F-67D6F569F072}">
+                    <File Id="INITIALIZER.CS_1_V2" Name="Initializer.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\v2\Initializer.cs" />
+                  </Component>
+                </Directory>
+
+                <Component Id="LOGOUT.TXT" DiskId="1" Guid="{EAF98521-E29B-453B-A187-A66DE6A1E00D}">
+                  <File Id="LOGOUT.TXT" Name="logout.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\logout.txt" />
+                </Component>
+
+                <Component Id="LOGOUTTAGTAG.TXT_1" DiskId="1" Guid="{DAABFFEC-B81C-444C-AE5D-D315E817AF74}">
+                  <File Id="LOGOUTTAGTAG.TXT_1" Name="LogoutTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\LogoutTag.txt" />
+                </Component>
+
+
+                <Component Id="LOGOUTCONTROLLER.CS" DiskId="1" Guid="{F52736E5-8071-4D31-84BE-5E6B5E4332FA}">
+                  <File Id="LOGOUTCONTROLLER.CS" Name="LogoutController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\LogoutController.cs" />
+                </Component>
+
+
+                <Component Id="BLUEDOT.TXT" DiskId="1" Guid="{B4798F96-B705-4602-908F-7039F46EA352}">
+                  <File Id="BLUEDOT.TXT" Name="blueDot.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\blueDot.txt" />
+                </Component>
+
+                <Component Id="BLUEDOTTAG.TXT_1" DiskId="1" Guid="{3BA27592-F032-43C3-A902-489513CF2EE1}">
+                  <File Id="BLUEDOTTAG.TXT_1" Name="BlueDotTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\BlueDotTag.txt" />
+                </Component>
+                <Component Id="CONNECTTOQUICKBOOKSTAG.TXT_1" DiskId="1" Guid="{36597DC2-2F4F-4445-9496-386E4B2BB35A}">
+                  <File Id="CONNECTTOQUICKBOOKSTAG.TXT_1" Name="ConnecttoQuickBooksTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\ConnecttoQuickBooksTag.txt" />
+                </Component>
+                <Component Id="CONSTANTS.CS_1" DiskId="1" Guid="{AAF021CC-CAE9-420F-984E-6A9B82CCB433}">
+                  <File Id="CONSTANTS.CS_1" Name="ApplicationConstants.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\ApplicationConstants.cs" />
+                </Component>
+                <Component Id="CUSTOMERDATA.CS" DiskId="1" Guid="{754B0BB9-1A48-4717-AAE3-FD062B54FC36}">
+                  <File Id="CUSTOMERDATA.CS" Name="CustomerData.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\CustomerData.cs" />
+                </Component>
+                <Component Id="DEVDEFINED.OAUTH.DLL_2" DiskId="1" Guid="{33F4336E-6526-4CB0-B2F8-4C9C30634AC3}">
+                  <File Id="DEVDEFINED.OAUTH.DLL_2" Name="DevDefined.OAuth.dll" Source="IntuitAnywhere\CodeFiles\MVCContent\DevDefined.OAuth.dll" />
+                </Component>
+                <Component Id="DIRECTCONNECTTOINTUIT.TXT" DiskId="1" Guid="{29F416EE-2EE2-4698-BE6E-0BEF91ABF853}">
+                  <File Id="DIRECTCONNECTTOINTUIT.TXT" Name="directConnectToIntuit.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\directConnectToIntuit.txt" />
+                </Component>
+                <Component Id="DIRECTCONNECTTOINTUITTAG.TXT_1" DiskId="1" Guid="{63973142-1D99-4427-8496-ECD079BA7269}">
+                  <File Id="DIRECTCONNECTTOINTUITTAG.TXT_1" Name="DirectConnectToIntuitTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\DirectConnectToIntuitTag.txt" />
+                </Component>
+                <Component Id="DISCONNECT.TXT" DiskId="1" Guid="{C036B58B-61B5-4730-A033-4D52842E2EAA}">
+                  <File Id="DISCONNECT.TXT" Name="disconnect.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\disconnect.txt" />
+                </Component>
+                <Component Id="DISCONNECTCONTROLLER.CS" DiskId="1" Guid="{DFF28FB6-840F-423B-9157-874BC6DC5F42}">
+                  <File Id="DISCONNECTCONTROLLER.CS" Name="DisconnectController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\DisconnectController.cs" />
+                </Component>
+                <Component Id="DISCONNECTTAG.TXT_1" DiskId="1" Guid="{4ED49926-546A-4AF5-BEB6-E22C3C9EE600}">
+                  <File Id="DISCONNECTTAG.TXT_1" Name="DisconnectTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\DisconnectTag.txt" />
+                </Component>
+                <Component Id="DOTNETOPENAUTH.DLL_2" DiskId="1" Guid="{9CDFD28C-F0C1-41DC-BC09-7555DB1783F3}">
+                  <File Id="DOTNETOPENAUTH.DLL_2" Name="DotNetOpenAuth.dll" Source="IntuitAnywhere\CodeFiles\MVCContent\DotNetOpenAuth.dll" />
+                </Component>
+                <Component Id="INITIALIZER.CS_1" DiskId="1" Guid="{E2C6CB37-1785-47C2-86BA-618B6B903D29}">
+                  <File Id="INITIALIZER.CS_1" Name="Initializer.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\Initializer.cs" />
+                </Component>
+                <Component Id="INTUITREGISTERROUTES.CS" DiskId="1" Guid="{2BD4AB6A-9F30-4DEC-8CD5-7B04D028A820}">
+                  <File Id="INTUITREGISTERROUTES.CS" Name="IntuitRegisterRoutes.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\IntuitRegisterRoutes.cs" />
+                </Component>
+                <Component Id="IPPTAG.CS_1" DiskId="1" Guid="{FD9FD3F8-2514-4F9C-AAE4-70B357C667AD}">
+                  <File Id="IPPTAG.CS_1" Name="IppTag.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\IppTag.cs" />
+                </Component>
+                <Component Id="MENUPROXYCONTROLLER.CS" DiskId="1" Guid="{CF8C0CCE-8F9D-483D-A9D1-ABD3F364861B}">
+                  <File Id="MENUPROXYCONTROLLER.CS" Name="MenuProxyController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\MenuProxyController.cs" />
+                </Component>
+                <Component Id="OAUTH.CS" DiskId="1" Guid="{13DB99DC-2BEB-4D9C-8FFB-532F615AEC75}">
+                  <File Id="OAUTH.CS" Name="oAuth.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\oAuth.cs" />
+                </Component>
+                <Component Id="OAUTH.TXT" DiskId="1" Guid="{51CB5F29-7BDB-48E7-8A70-B75EB2A04A51}">
+                  <File Id="OAUTH.TXT" Name="oAuth.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\oAuth.txt" />
+                </Component>
+                <Component Id="OAUTHGRANTCONTROLLER.CS" DiskId="1" Guid="{8FF08267-4F48-46BF-863C-EE817AFCCD2D}">
+                  <File Id="OAUTHGRANTCONTROLLER.CS" Name="OauthGrantController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\OauthGrantController.cs" />
+                </Component>
+                <Component Id="OAUTHRESPONSECONTROLLER.CS" DiskId="1" Guid="{56ECEF1B-8BAA-4F39-98E5-9941B069CE13}">
+                  <File Id="OAUTHRESPONSECONTROLLER.CS" Name="OauthResponseController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\OauthResponseController.cs" />
+                </Component>
+                <Component Id="OPENID.CS_1" DiskId="1" Guid="{2AE5C75D-6D88-4283-88F0-78D07E62C52F}">
+                  <File Id="OPENID.CS_1" Name="openid.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\openid.cs" />
+                </Component>
+                <Component Id="OPENID.TXT" DiskId="1" Guid="{D208D872-D238-48CE-89C6-97D52C6690F2}">
+                  <File Id="OPENID.TXT" Name="openID.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\openID.txt" />
+                </Component>
+                <Component Id="OPENIDCONTROLLER.CS" DiskId="1" Guid="{1F44C7B0-A91C-4A93-B2A1-0686D6B7F544}">
+                  <File Id="OPENIDCONTROLLER.CS" Name="OpenIdController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\OpenIdController.cs" />
+                </Component>
+                <Component Id="OPENIDTAG.TXT_1" DiskId="1" Guid="{EB1D83CB-2C24-4A4A-9366-16D0393148F5}">
+                  <File Id="OPENIDTAG.TXT_1" Name="OpenIDTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\OpenIDTag.txt" />
+                </Component>
+                <Component Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS" DiskId="1" Guid="{A27EDD62-2D76-4D5D-BD35-E995735E5C5F}">
+                  <File Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS" Name="QuickBooksCustomersController.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\QuickBooksCustomersController.cs" />
+                </Component>
+                <Component Id="SETUPTAG.TXT_2" DiskId="1" Guid="{AA6DDB3B-ABB5-49E0-8F94-8A095DBCDCC7}">
+                  <File Id="SETUPTAG.TXT_2" Name="SetupTag.txt" Source="IntuitAnywhere\CodeFiles\MVCContent\SetupTag.txt" />
+                </Component>
+
+                <Component Id="CryptographyHelper.cs_1" DiskId="1" Guid="{DF3C4089-BAA1-4B09-B70D-D9557BB1EEE7}">
+                  <File Id="CryptographyHelper.cs_1" Name="CryptographyHelper.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\CryptographyHelper.cs" />
+                </Component>
+                <Component Id="OauthAccessTokenStorageHelper.cs_1" DiskId="1" Guid="{50DFB285-38E2-4D28-984C-D24BAFD5F9D5}">
+                  <File Id="OauthAccessTokenStorageHelper.cs_1" Name="OauthAccessTokenStorageHelper.cs" Source="IntuitAnywhere\CodeFiles\MVCContent\OauthAccessTokenStorageHelper.cs" />
+                </Component>
+                <Component Id="OauthAccessTokenStorage.xml_1" DiskId="1" Guid="{6B56F807-CE09-4759-A4D0-15419A0AE04A}">
+                  <File Id="OauthAccessTokenStorage.xml_1" Name="OauthAccessTokenStorage.xml" Source="IntuitAnywhere\CodeFiles\MVCContent\OauthAccessTokenStorage.xml" />
+                </Component>
+
+                <Directory Id="DISCONNECT" Name="Disconnect">
+                  <Component Id="INDEX.CSHTML" DiskId="1" Guid="{9009CC50-26F2-4039-911C-AD359479A244}">
+                    <File Id="INDEX.CSHTML" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\Disconnect\Index.cshtml" />
+                  </Component>
+                </Directory>
+                <Directory Id="MENUPROXY" Name="MenuProxy">
+                  <Component Id="INDEX.CSHTML_1" DiskId="1" Guid="{0565B120-B195-4589-92BC-95D22C48BE53}">
+                    <File Id="INDEX.CSHTML_1" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\MenuProxy\Index.cshtml" />
+                  </Component>
+                </Directory>
+
+                <Directory Id="LOGOUT" Name="Logout">
+                  <Component Id="INDEX.CSHTML_5" DiskId="1" Guid="{49A0FFFB-81DB-409A-9966-578989092F3E}">
+                    <File Id="INDEX.CSHTML_5" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\Logout\Index.cshtml" />
+                  </Component>
+                </Directory>
+
+
+                <Directory Id="OAUTHRESPONSE" Name="OauthResponse">
+                  <Component Id="INDEX.CSHTML_2" DiskId="1" Guid="{2307023F-1FBC-46B1-9744-5F899C4CC2CC}">
+                    <File Id="INDEX.CSHTML_2" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\OauthResponse\Index.cshtml" />
+                  </Component>
+                </Directory>
+                <Directory Id="OPENID" Name="OpenId">
+                  <Component Id="INDEX.CSHTML_3" DiskId="1" Guid="{858298AD-BEBF-4E7B-B065-5A938A5EF630}">
+                    <File Id="INDEX.CSHTML_3" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\OpenId\Index.cshtml" />
+                  </Component>
+                </Directory>
+                <Directory Id="QUICKBOOKSCUSTOMERS" Name="QuickBooksCustomers">
+                  <Component Id="INDEX.CSHTML_4" DiskId="1" Guid="{0450B7CF-6649-4CA6-9AD6-E78B60804E50}">
+                    <File Id="INDEX.CSHTML_4" Name="Index.cshtml" Source="IntuitAnywhere\CodeFiles\MVCContent\QuickBooksCustomers\Index.cshtml" />
+                  </Component>
+                </Directory>
+              </Directory>
+              <!--addin Intuit Anywhere Folder content ends here -->
+            </Directory>
+          </Directory>
+          <!-- Shortcuts -->
+          <!--<Directory Id="ProgramMenuFolder" Name="ProgMenu">
+            <Directory Id="ApplicationProgramsFolder" Name="Intuit Anywhere">
+              <Directory Id="HelpShortCutFolder" Name="Help"/>
+            </Directory>
+          </Directory>-->
+
+        </Directory>
+      </Directory>
+
+      <Directory Id="CommonAppDataFolder">
+        <Directory Id="MicrosoftDirId" Name="Microsoft">
+          <Directory Id="VisualStudioDirId" Name="VisualStudio">
+            <Directory Id="Dir100Id" Name="10.0">
+              <Directory Id="Dir100AddInsId" Name="AddIns">
+                <Component Id="VS2010AddInFileComponentId" Guid="$(var.VS2010_ADDIN_FILE_COMPONENT_GUID)">
+                  <!-- Copy the .AddIn file to the folder -->
+                  <File Id="VS2010AddInFileId" Name="$(var.ADDIN_XML_FILE_NAME)" Vital="yes" DiskId="1"
+                        Source="$(var.ADDIN_XML_FILE_NAME)" />
+                  <!-- Modify the Version XML element inside the .AddIn file whose Id is VS2010AddInFileId
+                                to set the value "10.0" (which is the version of VS 2010) -->
+                  <util:XmlFile Id="VS2010SetVersionElement" Action="setValue" File="[#VS2010AddInFileId]"
+                                ElementPath="/Extensibility/HostApplication/Version" Value="10.0" Sequence="1" />
+                  <!-- Modify the Assembly XML element inside the .AddIn file whose Id is VS2010AddInFileId
+                                to set value of the file whose Id is VS2010DllFileId -->
+                  <util:XmlFile Id="VS2010SetAssemblyElement" Action="setValue" File="[#VS2010AddInFileId]"
+                                ElementPath="/Extensibility/Addin/Assembly" Value="[#VS2010DllFileId]" Sequence="1" />
+                  <!-- Modify the FullClassName XML element inside the .AddIn file whose Id is VS2010AddInFileId
+                                to set value of the variable CONNECT_CLASS_FULL_NAME_VS_2010 -->
+                  <util:XmlFile Id="VS2010SetFullClassNameElement" Action="setValue" File="[#VS2010AddInFileId]"
+                                ElementPath="/Extensibility/Addin/FullClassName"
+                                Value="$(var.CONNECT_CLASS_FULL_NAME_VS_2010)" Sequence="1" />
+                </Component>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <!-- Shortcuts -->
+    <!--<DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="FDED0020-39AB-43dd-8AE0-8ABAEAB6B8C0">
+        <util:InternetShortcut Id="IppDotNetDevKitSiteShortcut"
+                            Name="IppDotNetDevKit Manual"
+                            Target="https://developer.intuit.com"
+                            Type="url" Directory="HelpShortCutFolder"/>
+        <util:InternetShortcut Id="HelpSiteShortcut"
+                            Name="IppDotNetDevKit Online Help"
+                            Target="https://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0200_DevKits_for_Intuit_Partner_Platform"
+                            Type="url" Directory="HelpShortCutFolder"/>
+        <util:InternetShortcut Id="IppDocumentationSiteShortcut"
+                            Name="Ipp Documentation"
+                            Target="https://developer.intuit.com"
+                            Type="url" Directory="HelpShortCutFolder"/>
+        <util:InternetShortcut Id="IppSupportSiteShortcut"
+                            Name="Ipp Support"
+                            Target="http://appcenter.intuit.com/go/support"
+                            Type="url" Directory="HelpShortCutFolder"/>
+        <util:InternetShortcut Id="SamplesSiteShortcut"
+                            Name="Samples"
+                            Target="https://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0200_DevKits_for_Intuit_Partner_Platform/0400_Downloads"
+                            Type="url" Directory="ApplicationProgramsFolder"/>
+        <util:InternetShortcut Id="CheckForUpdatesSiteShortcut"
+                            Name="Check For Updates"
+                            Target="https://code.intuit.com"
+                            Type="url" Directory="ApplicationProgramsFolder"/>
+        <RemoveFolder Id="RemoveHelpShortCutFolder" Directory="HelpShortCutFolder" On="uninstall" />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\[MY_COMPANY_NAME]" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>-->
+
+    <!-- This child feature is the add-in for Visual Studio 2010 -->
+    <Feature Id="VS2010InstallationFeatureId" Title="Intuit Anywhere Azure Features"
+             Description="Installs the Windows Azure SDK 3.0 for Intuit Anywhere for Visual Studio 2010." Level="1" AllowAdvertise="no">
+
+      <!-- The feature is hidden (Level is set to 0) when Visual Studio 2010 is not installed and
+                 it is the first installation (not in maintenance mode)
+            -->
+      <Condition Level="0">NOT Installed AND NOT VS2010INSTALLATIONFOLDER</Condition>
+
+      <!--<Feature Id="AddinInstallationFeatureId" Title="Add-in"
+               Description="Installs the Intuit Anywhere Add-in for Visual Studio." Level="1" AllowAdvertise="no">-->
+      <!-- Its components are the add-in dll and the .AddIn XML file for Visual Studio 2010 -->
+      <ComponentRef Id="VS2010DllFileComponentId" />
+      <ComponentRef Id="VS2010AddInFileComponentId" />
+      <ComponentRef Id="BLUEDOTTAG.TXT" />
+      <ComponentRef Id="CONNECTTOQUICKBOOKSTAG.TXT" />
+      <ComponentRef Id="DOTNETOPENAUTH.DLL" />
+      <ComponentRef Id="NUGET.CORE.DLL" />
+      <ComponentRef Id="NUGET.VISUALSTUDIO.DLL" />
+      <ComponentRef Id="JAVASCRIPTTAG.TXT" />
+      <ComponentRef Id="OPENIDTAG.TXT" />
+      <ComponentRef Id="SETUPTAG.TXT" />
+      <ComponentRef Id="INTUITANYWHEREADDINHELP.CHM" />
+      <ComponentRef Id="CONSTANTS.CS" />
+      <ComponentRef Id="DEVDEFINED.OAUTH.DLL_1" />
+      <ComponentRef Id="DIRECTCONNECTTOINTUITTAG.TXT" />
+      <ComponentRef Id="DISCONNECT.ASPX" />
+      <ComponentRef Id="DISCONNECT.ASPX.CS" />
+      <ComponentRef Id="DISCONNECT.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="DISCONNECTTAG.TXT" />
+      <ComponentRef Id="DOTNETOPENAUTH.DLL_1" />
+      <ComponentRef Id="DOTNETOPENAUTH.XSD" />
+      <ComponentRef Id="INITIALIZER.CS" />
+      <ComponentRef Id="IPPTAG.CS" />
+      <ComponentRef Id="MENUPROXY.ASPX" />
+      <ComponentRef Id="MENUPROXY.ASPX.CS" />
+      <ComponentRef Id="MENUPROXY.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="OAUTHGRANT.ASPX" />
+      <ComponentRef Id="OAUTHGRANT.ASPX.CS" />
+      <ComponentRef Id="OAUTHGRANT.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="OAUTHHANDLER.ASPX" />
+      <ComponentRef Id="OAUTHHANDLER.ASPX.CS" />
+      <ComponentRef Id="OAUTHHANDLER.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="OPENID.CS" />
+      <ComponentRef Id="OPENIDHANDLER.ASPX" />
+      <ComponentRef Id="OPENIDHANDLER.ASPX.CS" />
+      <ComponentRef Id="OPENIDHANDLER.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX.CS" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="SETUPTAG.TXT_1" />
+      <ComponentRef Id="BLUEDOT.TXT" />
+      <ComponentRef Id="BLUEDOTTAG.TXT_1" />
+      <ComponentRef Id="CONNECTTOQUICKBOOKSTAG.TXT_1" />
+      <ComponentRef Id="CONSTANTS.CS_1" />
+      <ComponentRef Id="CUSTOMERDATA.CS" />
+      <ComponentRef Id="DEVDEFINED.OAUTH.DLL_2" />
+      <ComponentRef Id="DIRECTCONNECTTOINTUIT.TXT" />
+      <ComponentRef Id="DIRECTCONNECTTOINTUITTAG.TXT_1" />
+      <ComponentRef Id="DISCONNECT.TXT" />
+      <ComponentRef Id="DISCONNECTCONTROLLER.CS" />
+      <ComponentRef Id="DISCONNECTTAG.TXT_1" />
+      <ComponentRef Id="DOTNETOPENAUTH.DLL_2" />
+      <ComponentRef Id="INITIALIZER.CS_1" />
+      <ComponentRef Id="INTUITREGISTERROUTES.CS" />
+      <ComponentRef Id="IPPTAG.CS_1" />
+      <ComponentRef Id="MENUPROXYCONTROLLER.CS" />
+      <ComponentRef Id="OAUTH.CS" />
+      <ComponentRef Id="OAUTH.TXT" />
+      <ComponentRef Id="OAUTHGRANTCONTROLLER.CS" />
+      <ComponentRef Id="OAUTHRESPONSECONTROLLER.CS" />
+      <ComponentRef Id="OPENID.CS_1" />
+      <ComponentRef Id="OPENID.TXT" />
+      <ComponentRef Id="OPENIDCONTROLLER.CS" />
+      <ComponentRef Id="OPENIDTAG.TXT_1" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS" />
+      <ComponentRef Id="SETUPTAG.TXT_2" />
+      <ComponentRef Id="INDEX.CSHTML" />
+      <ComponentRef Id="INDEX.CSHTML_1" />
+      <ComponentRef Id="INDEX.CSHTML_2" />
+      <ComponentRef Id="INDEX.CSHTML_3" />
+      <ComponentRef Id="INDEX.CSHTML_4" />
+      <ComponentRef Id="IPPDOCUMENTATION.TXT" />
+      <ComponentRef Id="IPPFRONTRUNNERURL.TXT" />
+      <ComponentRef Id="IPPSUPPORTURL.TXT" />
+
+      <ComponentRef Id="LOGOUTTAG.TXT" />
+      <ComponentRef Id="LOGOUT.ASPX" />
+      <ComponentRef Id="LOGOUT.ASPX.CS" />
+      <ComponentRef Id="LOGOUT.ASPX.DESIGNER.CS" />
+      <ComponentRef Id="LOGOUT.TXT" />
+      <ComponentRef Id="LOGOUTTAGTAG.TXT_1" />
+      <ComponentRef Id="LOGOUTCONTROLLER.CS" />
+      <ComponentRef Id="INDEX.CSHTML_5" />
+
+      <ComponentRef Id="CryptographyHelper.cs"/>
+      <ComponentRef Id="OauthAccessTokenStorageHelper.cs"/>
+      <ComponentRef Id="OauthAccessTokenStorage.xml"/>
+      <ComponentRef Id="CryptographyHelper.cs_1"/>
+      <ComponentRef Id="OauthAccessTokenStorageHelper.cs_1"/>
+      <ComponentRef Id="OauthAccessTokenStorage.xml_1"/>
+
+      <ComponentRef Id="INITIALIZER.CS_V2" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX_V2" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX.CS_V2" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERS.ASPX.DESIGNER.CS_V2" />
+      <ComponentRef Id="QUICKBOOKSCUSTOMERSCONTROLLER.CS_V2" />
+      <ComponentRef Id="INITIALIZER.CS_1_V2" />
+
+      <!-- Comment out Lines below to build addin only installer:Starts Here-->
+      <ComponentRef Id="IAAZUREASPDOTNETTEMPLATE.VSIX" />
+      <ComponentRef Id="IAAZUREMVCTEMPLATE.VSIX" />
+      <!-- Comment out Lines above to build addin only installer:Ends Here-->
+      <ComponentRef Id="NUGET.TOOLS.VSIX" />
+      <!--</Feature>-->
+      <!--<Feature Id="TemplatesInstallationFeatureId" Title="Templates"
+            Description="Installs the Intuit Anywhere Windows Azure Templates for Visual Studio 2010." Level="1" AllowAdvertise="no">
+        -->
+      <!--addin Intuit Anywhere Folder content starts here -->
+      <!--
+        <ComponentRef Id="IAAZURETEMPLATES.VSIX" />
+        -->
+      <!--addin Intuit Anywhere Folder content ends here -->
+      <!--
+      </Feature>-->
+
+      <!-- Shortcuts -->
+      <!--<ComponentRef Id="ApplicationShortcut"/>-->
+    </Feature>
+    <CustomAction Id="RemoveVS2010AddInCommands" Script="vbscript" Execute="deferred" Return="ignore" Impersonate="yes">
+      <![CDATA[
+            Set dte = CreateObject("VisualStudio.DTE.10.0")
+            For Each cmd In dte.Commands
+               If InStr(cmd, "$(var.CONNECT_CLASS_FULL_NAME_VS_2010)") <> 0 Then
+                  cmd.Delete()
+               End If
+            Next
+            dte.Quit()
+         ]]>
+    </CustomAction>
+
+    <CustomAction Id="InstallNuget"
+  Directory="INSTALLLOCATION"
+ Execute="commit"
+ Impersonate="no"
+ ExeCommand='"[VS2010_ROOT_FOLDER]\Common7\IDE\vsixinstaller.exe" "[CODEFILESDIRECTORY]\NuGet.Tools.vsix" /q'   Return='ignore'/>
+
+    <!-- Comment out Lines below to build addin only installer:Starts Here-->
+    <CustomAction Id="InstallAzureASPNETTemplate"
+       Directory="INSTALLLOCATION"
+      Execute="commit"
+      Impersonate="no"
+      ExeCommand='"[VS2010_ROOT_FOLDER]\Common7\IDE\vsixinstaller.exe" "[CODEFILESDIRECTORY]\IAAzureASPDotNetTemplate.vsix" /q'  Return='ignore' />
+
+    <CustomAction Id="UnistallAzureASPNETTemplate"
+   Directory="INSTALLLOCATION"
+  Execute="commit"
+  Impersonate="no"
+  ExeCommand='"[VS2010_ROOT_FOLDER]\Common7\IDE\vsixinstaller.exe" /u:IAAzureASPDotNetTemplate..99238546-569C-4831-A247-FEBDD762CC5E /q'  Return='ignore' />
+
+
+    <CustomAction Id="InstallAzureMVCTemplate"
+       Directory="INSTALLLOCATION"
+      Execute="commit"
+      Impersonate="no"
+      ExeCommand='"[VS2010_ROOT_FOLDER]\Common7\IDE\vsixinstaller.exe" "[CODEFILESDIRECTORY]\IAAzureMVCTemplate.vsix" /q'  Return='ignore' />
+
+    <CustomAction Id="UnistallAzureMVCTemplate"
+   Directory="INSTALLLOCATION"
+  Execute="commit"
+  Impersonate="no"
+  ExeCommand='"[VS2010_ROOT_FOLDER]\Common7\IDE\vsixinstaller.exe" /u:IAAzureMVCTemplate..7AC8D958-A20B-424B-9CB1-667D089EBE4C /q'  Return='ignore' />
+    <!-- Comment out Lines above to build addin only installer:Ends Here-->
+
+
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Before="InstallInitialize" />
+      <Custom Action="RemoveVS2010AddInCommands"
+              After="RemoveFiles">
+        Installed AND NOT UPGRADINGPRODUCTCODE AND VS2010INSTALLATIONFOLDER
+        AND !VS2010InstallationFeatureId=3
+      </Custom>
+
+      <Custom Action="InstallNuget"
+            Before="InstallFinalize">
+        <![CDATA[NOT Installed]]>
+      </Custom>
+
+      <!-- Comment out Lines below to build addin only installer:Starts Here-->
+      <Custom Action="InstallAzureASPNETTemplate"
+                         Before="InstallFinalize">
+        <![CDATA[NOT Installed]]>
+      </Custom>
+
+      <Custom Action="UnistallAzureASPNETTemplate"
+                         Before="InstallFinalize">
+        <![CDATA[Installed AND NOT UPGRADINGPRODUCTCODE ]]>
+      </Custom>
+
+      <Custom Action="InstallAzureMVCTemplate"
+                   Before="InstallFinalize">
+        <![CDATA[NOT Installed]]>
+      </Custom>
+
+      <Custom Action="UnistallAzureMVCTemplate"
+                         Before="InstallFinalize">
+        <![CDATA[Installed AND NOT UPGRADINGPRODUCTCODE ]]>
+      </Custom>
+      <!-- Comment out Lines above to build addin only installer:Ends Here-->
+
+    </InstallExecuteSequence>
+    <UIRef Id="WixUI_Minimal" />
+    <!--<WixVariable Id="WixUILicenseRtf" Value="bobpl.rtf" />-->
+    <Icon Id="icon.ico" SourceFile="IPP.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    <WixVariable Id="WixUIBannerBmp" Value="WixUIBannerBmp.bmp"  />
+    <WixVariable Id="WixUIDialogBmp" Value="WixUIDialogBmp.bmp" />
+  </Product>
+
+</Wix>

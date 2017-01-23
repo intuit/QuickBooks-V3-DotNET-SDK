@@ -1,0 +1,117 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.UpdateModel
+@{
+    ViewBag.Title = "Edit Qbd Customer";
+    string noId = ViewBag.NoId;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdCustomer/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Edit Qbd Customer</h2>
+@if (Model != null && !string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div style="border: solid 1px Red; color: Red; padding: 5px;">
+        <p>
+            There was an error while updating the customer. Review the error and try again.
+            <br />
+            @Html.Raw(Model.Error)
+        </p>
+    </div>
+    <hr />
+    <br />
+}
+@if (!string.IsNullOrWhiteSpace(noId))
+{
+    <br />
+    @Html.Raw(noId)
+}
+else
+{
+    using (Html.BeginForm())
+    {
+    @Html.ValidationSummary(true)
+    <div>
+        <table class="mainReqTable">
+            <tr>
+                <td>
+                    <table class="reqTable">
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.Id)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.DisplayFor(model => model.Id)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.DisplayName)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.DisplayFor(model => model.DisplayName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.SyncToken)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.DisplayFor(model => model.SyncToken)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.Title)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.Title)
+                                @Html.ValidationMessageFor(model => model.Title)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.FamilyName)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.FamilyName)
+                                @Html.ValidationMessageFor(model => model.FamilyName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.GivenName)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.GivenName)
+                                @Html.ValidationMessageFor(model => model.GivenName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.MiddleName)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.MiddleName)
+                                @Html.ValidationMessageFor(model => model.MiddleName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.Sparse)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.Sparse)
+                                @Html.ValidationMessageFor(model => model.Sparse)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <input type="submit" value="Edit" class="defaultBtn" />
+    }
+}

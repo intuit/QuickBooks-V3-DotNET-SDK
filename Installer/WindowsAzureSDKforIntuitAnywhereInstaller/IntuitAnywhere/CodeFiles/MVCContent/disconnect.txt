@@ -1,0 +1,6 @@
+
+            routes.MapRoute(
+                "Disconnect", // Route name
+                "{controller}", // URL with parameters
+                new { controller = "Disconnect", action = "Index" } // Parameter defaults
+            );

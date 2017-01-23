@@ -1,0 +1,138 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.QueryModel.ComplexQueryModel
+@{
+    ViewBag.Title = "Complex Qbd Invoice Query";
+    string results = ViewBag.Results;
+    bool load = ViewBag.Load;
+    string error = ViewBag.Error;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdFilter/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Complex Qbd Invoice Query</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Enter the details of the Invoice to be found:
+    </p>
+    <div class="centerDiv">
+        <div id="reqFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.TotalAmt)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.TextBoxFor(model => model.TotalAmt)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.OperationEnum)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.EditorFor(model => model.OperationEnum)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div style="font-size: 0.8em; color: red;">
+                            Supported Values: EQUAL, NOT_EQUAL, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUAL,
+                            LESS_THAN_EQUAL</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData_CreateTime)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.EditorFor(model => model.MetaData_CreateTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData_CreateTime_Descending)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.EditorFor(model => model.MetaData_CreateTime_Descending)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        Start Position:
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.TextBoxFor(model => model.PageNumber, new { data_val = false })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        Max Results:
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.TextBoxFor(model => model.PageSize, new { data_val = false })
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+    <input type="submit" value="Complex Query" class="defaultBtn" />
+}
+<div>
+    @if (results == "empty")
+    {
+        if (!string.IsNullOrWhiteSpace(error))
+        {
+        <p style="color: Red;">
+            @Html.Raw(error)
+        </p>
+        }
+        else
+        {
+        <p>
+            <b>The search returned no results. Please try again.</b></p>
+        }
+    }
+    else
+    {
+        if (!load)
+        {
+            // show the details of customer
+        <hr style="margin-top: 50px;" />
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Total Amount
+                    </td>
+                    <td>
+                        Metadata - Create Time
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Entities)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalAmt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MetaData.CreateTime)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+    }
+</div>

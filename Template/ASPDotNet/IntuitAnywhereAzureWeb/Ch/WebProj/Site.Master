@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="$safeprojectname$.SiteMaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:ipp="">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <!--
+    menuProxy - The URL of  the code on your site that fetches and displays the HTML for the Intuit 
+     "blue dot" menu.  This URL points to the Menu Proxy Code.
+
+     grantUrl - The URL of the code on your site that begins the user authorization 
+     flow by getting an OAuth request token.  The flow is initiated when the user 
+     clicks the Connect to QuickBooks button.  This URL points to the Request Token Code.  
+     The host name in this URL must match the Host Name Domain field on the Manage Apps tab in 
+     My Developer Center.
+
+    The intuit.ipp.anywhere.setup() function specifies the URLs needed by the Intuit "blue dot" 
+    menu and the Connect to QuickBooks button.  
+    If a page displays either of these widgets, it must include a call to the 
+    intuit.ipp.anywhere.setup() function.
+    -->
+    <script type="text/javascript" src="https://js.appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
+    <script type="text/javascript">
+        intuit.ipp.anywhere.setup({
+            menuProxy: '<%=  Request.Url.GetLeftPart(UriPartial.Authority) + "/" + ConfigurationManager.AppSettings["menuProxy"].ToString()  %>',
+            grantUrl: '<%=  Request.Url.GetLeftPart(UriPartial.Authority) + "/" + ConfigurationManager.AppSettings["grantUrl"].ToString()  %>'
+        });
+
+    </script>
+    <script type="text/javascript">
+<!--
+        function confirmPost(url) {
+            var agree = confirm("You will no longer be able to access QuickBooks data. Continue?");
+            if (agree)
+                window.location = url;
+            else
+                return false;
+        }
+
+// -->
+    </script>
+    <style type="text/css">
+        #errorDiv
+        {
+            border: 3px solid Red;
+            color: Red;
+            padding: 25px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    My ASP.NET Application</h1>
+                <!-- Blue Dot Menu -->             
+            </div>
+            <div class="loginDisplay" runat="server" id="logoutview">
+                <div style="color: white; font-size: 11pt;" >
+                    <span>Welcome <b>
+                        <asp:Label runat="server" ID="friendlyName"></asp:Label>!</b></span> [ <a href="javascript:void(0);"
+                            onclick="return intuit.ipp.anywhere.logout(function () { window.location='Logout.aspx'; });">
+                            Log Off</a> ]
+                </div>
+                <div runat="server" id="blueDotDiv">
+                    <ipp:bluedot></ipp:bluedot>
+                </div>
+                
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <div runat="server" id="errorDiv">
+                <div>The configuration values for
+                    <ul>
+                        <li>applicationToken,</li>
+                        <li>consumerKey and</li>
+                        <li>consumerSecret</li>
+                    </ul>
+                    in the appSettings section is null or empty. Please ensure that the configuration
+                    values are specified and try again. </div>
+            </div>
+            <div runat="server" id="mainContetntDiv">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.QueryModel.SelectQuery
+@{
+    ViewBag.Title = "Select Qbd Invoice Query";
+    string results = ViewBag.Results;
+    bool load = ViewBag.Load;
+    string error = ViewBag.Error;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdFilter/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Select Qbd Invoice Query</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Enter the details of the Invoice to be found:
+    </p>
+    <div class="centerDiv">
+        <div id="reqFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Id)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.DisplayFor(model => model.Id)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.TotalAmt)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.EditorFor(model => model.TotalAmt)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Status)
+                    </td>
+                    <td class="addressTableTd2">
+                        @Html.EditorFor(model => model.Status)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+    <input type="submit" value="Query with Select" class="defaultBtn" />
+}
+<div>
+    @if (results == "empty")
+    {
+        if (!string.IsNullOrWhiteSpace(error))
+        {
+        <p style="color: Red;">
+            @Html.Raw(error)
+        </p>
+        }
+        else
+        {
+        <p>
+            <b>The search returned no results. Please try again.</b></p>
+        }
+    }
+    else
+    {
+        if (!load)
+        {
+            // show the details of customer
+        <hr style="margin-top: 50px;" />
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Total Amount
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ClientCustomers)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalAmt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+    }
+</div>

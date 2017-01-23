@@ -1,0 +1,1020 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IntuitAnywhereAddin</name>
+    </assembly>
+    <members>
+        <member name="T:IntuitAnyWhereAddin.VSProjectType">
+            <summary>
+            This enumeration lists various project types
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSProjectType.Mvc">
+            <summary>
+            MVC project
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSProjectType.AspNet">
+            <summary>
+            ASP>net project
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSProjectType.Other">
+            <summary>
+            other project types
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.Common">
+            <summary>
+            This class handles common logic for both ASP.net and MVC web projects.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddProjectReferecne(VSLangProj.VSProject,System.String)">
+            <summary>
+            Adds the project referecne.
+            </summary>
+            <param name="activeProject">The active project.</param>
+            <param name="path">The path of code files folder</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddDataServicesSdkReferecne(VSLangProj.VSProject,System.String)">
+            <summary>
+            Adds the data services SDK referecnes.
+            </summary>
+            <param name="activeProject">The active project.</param>
+            <param name="path">The path of code files folder</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetConfigurationFileList">
+            <summary>
+            Gets the configuration file list.
+            </summary>
+            <returns> list of configuration files. </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddWebConfigurationEntries(EnvDTE.Project,System.Collections.Generic.Dictionary{System.String,System.String},IntuitAnyWhereAddin.VSProjectType)">
+            <summary>
+            Adds the web configuration entries.
+            </summary>
+            <param name="proj">The project object.</param>
+            <param name="appSettingEntries">The app setting entries.</param>
+            <param name="projType">Type of the proj.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetKeysFromtheUser(EnvDTE.Project)">
+            <summary>
+            Gets the key values from the user.
+            </summary>
+            <param name="proj"> The project object.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.CheckSpecialCharacters(System.String)">
+            <summary>
+            Checks whether the string contains special characters.
+            </summary>
+            <param name="str">String value.</param>
+            <returns>True if no special characters.</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.InstallNuGetPackageForProject(System.String,EnvDTE.Project,System.String)">
+            <summary>
+            Adds the Nuget Package reference
+            </summary>
+            <param name="packageID">Package Id as hosted in NuGet.</param>
+            <param name="project">Project to which the operation has to be performed.</param>
+            <param name="repositoryPath">Repository path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetProjectType(EnvDTE.Project)">
+            <summary>
+            Gets the type of the project.
+            </summary>
+            <param name="proj">The project object.</param>
+            <returns> Project type</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetProjectTypeGuids(EnvDTE.Project)">
+            <summary>
+            Gets the guids from the ProjectGuid tag within the project file.These can be used to identify type of project.
+            </summary>
+            <param name="proj">The project object.</param>
+            <returns>string of project Guilds separated by semicolon</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetService(System.Object,System.Type)">
+            <summary>
+            Gets the visual studio service.
+            </summary>
+            <param name="serviceProvider">The service provider.</param>
+            <param name="type">The type of IVsSolution. </param>
+            <returns> Service Object. </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetService(System.Object,System.Guid)">
+            <summary>
+            Gets the visual studio service.
+            </summary>
+            <param name="serviceProviderObject">The service provider object.</param>
+            <param name="guid">The GUID of the type </param>
+            <returns> Service Object.</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.IsProjectItemExist(EnvDTE.ProjectItems,System.String,EnvDTE.ProjectItem@)">
+            <summary>
+            Determines whether project item exists
+            </summary>
+            <param name="items">The items.</param>
+            <param name="itemName">Name of the item.</param>
+            <param name="itemFound">The item found.</param>
+            <returns>
+              <c>true</c> if project item exists ; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.IsProjectItemExist(EnvDTE.ProjectItems,System.String)">
+            <summary>
+            Determines whether project item exists
+            </summary>
+            <param name="items">The items.</param>
+            <param name="itemName">Name of the item.</param>
+            <returns>
+              <c>true</c> if project item exists ; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetCodeFilePath">
+            <summary>
+            Gets the path string of CodeFiles Folder. This folder is copied by the installer during installtion of addin.
+            </summary>
+            <returns> Gets the path string of CodeFiles Folder. </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddTag(System.String,System.String,EnvDTE.Document,System.String)">
+            <summary>
+            Adds the tag.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="path">The path of tag files. </param>
+            <param name="activeDocument">The active document.</param>
+            <param name="javaScriptPath">The java script path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddDisconnectTag(System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the disconnect tag.
+            </summary>
+            <param name="commandtype">The commandtype.</param>
+            <param name="path">The path of disconnect tag file.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetImage(System.Drawing.Bitmap)">
+            <summary>
+            Gets the Icon Image
+            </summary>
+            <param name="menuIcon"> Icon object to be displayed as image. </param>
+            <returns> stdole.IPictureDisp type object. </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.GetImage(System.Drawing.Icon)">
+            <summary>
+            Gets the Icon Image
+            </summary>
+            <param name="menuIcon"> Icon object to be displayed as image.</param>
+            <returns>
+            stdole.IPictureDisp type object.
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Common.AddConstantsToConfig(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Adds constant values to config.
+            </summary>
+            <param name="appSettingsEntries">Application Settings.</param>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.AddinConstants">
+            <summary>
+            This class defineds constants for folder names having content for ASP.net and MVC.  
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.AddinConstants.ASPNETContentFolder">
+            <summary>
+             Constant for folder having Asp.net content.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.AddinConstants.MVCContentFolder">
+            <summary>
+            Constant for folder having MVC content.
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog">
+            <summary>
+            This dialog receives the user input for the application token, consumer key and consumer secret key values.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.IntuitAnywhereConfigurationDialog_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the IntuitAnywhereConfigurationDialog control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.BtnSaveClick(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnSave control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.KeysDataGridViewCellEnter(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Handles the CellEnter event of the keysDataGridView control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.BtnCancelClick(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnCancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.Keys">
+            <summary>
+            Gets or sets values for the keys
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereConfigurationDialog.KeysModified">
+            <summary>
+            Gets or sets a value indicating whether key values are modified.
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.ContextLevels">
+            <summary>
+            This enumeration lists the various contexts where menu can appear.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.None">
+            <summary>
+            This is for None
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.Solution">
+            <summary>
+            In context of Solution
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.Project">
+            <summary>
+            In context of Project
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.SolutionFolder">
+            <summary>
+            In context of solution folder
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.Folder">
+            <summary>
+            In context of Folder
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.References">
+            <summary>
+            In context of referecnes
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.WebReferences">
+            <summary>
+            In context of Web Referecnes 
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.AssemblyInfo">
+            <summary>
+            In context of Assembly Info File
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.Item">
+            <summary>
+            In context of project item
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.MenuBar">
+            <summary>
+            In Main Menu bar
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.CodeWindow">
+            <summary>
+            In context of Code Window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.HtmlContext">
+            <summary>
+            In context of Html Editor window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.AspxContext">
+            <summary>
+            In context of Aspx page Editor window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.HtmlSourceEditing">
+            <summary>
+            In Context of HTML source Editor window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.TextEditor">
+            <summary>
+            In context of Text editor window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.ScriptContext">
+            <summary>
+            In context of Script editor window.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.ContextLevels.OtherItem">
+            <summary>
+            In context of any other item not list listed here.
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.MenuUtil">
+            <summary>
+            This class contains logic for menu item creation and their handlers.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.MenuUtil.visualStudio">
+            <summary>
+            variable to stroe referecne of visual studio DTE object
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.MenuUtil.menuItemHandlerList">
+            <summary>
+            List to add Command Bar Events Objects
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.MenuUtil.codeFilesContentPath">
+            <summary>
+            stores the path string of CodeFiles Folder. This folder is copied by the installer during installtion of addin.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.#ctor(EnvDTE80.DTE2)">
+            <summary>
+            Initializes a new instance of the MenuUtil class.
+            </summary>
+            <param name="visualStudio">The vs studio.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.ConstructIntuitAnywhereMenus">
+            <summary>
+            Constructs the intuit anywhere menus.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddVSMenuItem(Microsoft.VisualStudio.CommandBars.CommandBarPopup,System.String,System.Int32,System.Boolean,System.Drawing.Bitmap)">
+            <summary>
+            Adds the Visual studio menu item.
+            </summary>
+            <param name="vsmainMenu">visual studio menu item</param>
+            <param name="menuToAdd">name of the menu item</param>
+            <param name="position">position.of menu item.</param>
+            <param name="seperator">if set to <c>true</c> [seperator].</param>
+            <param name="menuIcon">The menu icon.</param>
+            <returns>
+            CommandBarControl Object
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddVSMenuItem(Microsoft.VisualStudio.CommandBars.CommandBarPopup,System.String,System.Int32,System.Boolean,System.Drawing.Icon)">
+            <summary>
+            Adds the Visual studio menu item.
+            </summary>
+            <param name="vsmainMenu">visual studio menu item</param>
+            <param name="menuToAdd">name of the menu item</param>
+            <param name="position">position.of menu item.</param>
+            <param name="seperator">if set to <c>true</c> [seperator].</param>
+            <param name="menuIcon">The menu icon.</param>
+            <returns>
+            CommandBarControl Object
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddVSMenuItem(Microsoft.VisualStudio.CommandBars.CommandBarPopup,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Adds the Visual studio menu item.
+            </summary>
+            <param name="vsmainMenu">visual studio menu item</param>
+            <param name="menuToAdd">name of the menu item</param>
+            <param name="position">position.of menu item.</param>
+            <param name="seperator">if set to <c>true</c> [seperator].</param>
+            <returns>
+            CommandBarControl Object
+            </returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.GetCommandbarIndex(Microsoft.VisualStudio.CommandBars.CommandBarControls,IntuitAnyWhereAddin.ContextLevels)">
+            <summary>
+            Gets the Commandbar Index, Typically 1, but tries to place it right after the Tools menu, if the
+            menu is to be placed in the Top menu (MenuBar).
+            </summary>
+            <param name="controls">The command bar controls.</param>
+            <param name="level">The level.</param>
+            <returns>Command bar index.</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.BuildMenu(IntuitAnyWhereAddin.ContextLevels)">
+            <summary>
+            Builds the menu.
+            </summary>
+            <param name="level">Context level where menu needs to be dispalyed.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddVSMainMenuItem(System.String,System.String,IntuitAnyWhereAddin.ContextLevels)">
+            <summary>
+            Adds the visual studio  main menu item.
+            </summary>
+            <param name="commandBarName">Name of the command bar.</param>
+            <param name="menuName">name of the menu.</param>
+            <param name="level">Context level where menu needs to appear.</param>
+            <returns>CommandBarPopup Object</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.GetVSMainMenu(System.String,System.Int32)">
+            <summary>
+            Gets the CommandBar object for main menu.
+            </summary>
+            <param name="commandBarName">Name of the command bar.</param>
+            <param name="menuIndex">Index of the menu.</param>
+            <returns>CommandBar object for main menu.</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.JavaScriptLibraryMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Java Script Library" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.ConnecttoQuickBooksMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Connect to QuickBooks" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddBlueDotMenuMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Blue Dot Menu" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.AddLogoutMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Logout" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.OpenIDMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Open ID" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.DataServicesSDKMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Data Services SDK" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.DataServicesSDKV3MenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Data Services SDK V3" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.DirectConnectToIntuitMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks "Add Direct Connect to Intuit" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.DisconnetMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Add Disconnect" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.HelpMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Help" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.SdkDocHelpMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Help" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.IppDocumentationMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Help" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.IppSupportMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Help" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MenuUtil.IppFrontRunnerMenuItemHandler_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            This handler is called when user clicks on "Help" menu item.
+            </summary>
+            <param name="commandBarControl">The command bar control.</param>
+            <param name="handled">if set to <c>true</c> [handled].</param>
+            <param name="cancelDefault">if set to <c>true</c> [cancel default].</param>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.Connect">
+            <summary>
+            Class genarated by extensiblity tempalte for Addin.This provides object for implementing addin.
+            </summary>
+            <seealso class="IDTExtensibility2"/>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.Connect.visualStudio">
+            <summary>
+            variable to stroe referecne of visual studio DTE object
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.Connect.intuitAnywhereMenuUtil">
+            <summary>
+            member varible to stroe referecne of MenuUtil object
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.#ctor">
+            <summary>
+            Initializes a new instance of the Connect class.
+            Implements the constructor for the Add-in object.
+            Place your initialization code within this method.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.OnConnection(System.Object,Extensibility.ext_ConnectMode,System.Object,System.Array@)">
+            <summary>
+            Implements the OnConnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being loaded.
+            </summary>
+            <param name="Application">Root object of the host application.</param>
+            <param name="ConnectMode">Describes how the Add-in is being loaded.</param>
+            <param name="AddInInst">Object representing this Add-in.</param>
+            <param name="custom"> Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.OnDisconnection(Extensibility.ext_DisconnectMode,System.Array@)">
+            <summary>
+            Implements the OnDisconnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being unloaded.
+            </summary>
+            <param name="RemoveMode">Describes how the Add-in is being unloaded.</param>
+            <param name="custom">Array of parameters that are host application specific.</param>
+            <seealso class="IDTExtensibility2"/>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.OnAddInsUpdate(System.Array@)">
+            <summary>
+            Implements the OnAddInsUpdate method of the IDTExtensibility2 interface. Receives notification when the collection of Add-ins has changed.
+            </summary>
+            <param name="custom">Array of parameters that are host application specific.</param>
+            <seealso class="IDTExtensibility2"/>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.OnStartupComplete(System.Array@)">
+            <summary>
+            Implements the OnStartupComplete method of the IDTExtensibility2 interface. Receives notification that the host application has completed loading.
+            </summary>
+            <param name="custom">Array of parameters that are host application specific.</param>
+            <seealso class="IDTExtensibility2"/>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.Connect.OnBeginShutdown(System.Array@)">
+            <summary>
+            Implements the OnBeginShutdown method of the IDTExtensibility2 interface. Receives notification that the host application is being unloaded.
+            </summary>
+            <param name="custom">Array of parameters that are host application specific.</param>
+            <seealso class="IDTExtensibility2"/>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.VSContextConstants">
+            <summary>
+            This class contains constants used for various visual studio elements.
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.Solution">
+            <summary> The VS Constant Name for a VS Solution </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.Project">
+            <summary> The VS Constant Name for a VS Project </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.SolutionFolder">
+            <summary> The VS Constant Name for a VS Solution folder </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.Folder">
+            <summary> The VS Constant Name for a VS Project Folder</summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.References">
+            <summary> The VS Constant Name for a Reference root folder </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.WebReferences">
+            <summary> The VS Constant Name for a Web Reference folder </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.AssemblyInfo">
+            <summary> The VS Constant Name for an AssemblyInfo.cs file</summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.Item">
+            <summary> The VS Constant Name for a VS ProjectItem </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.OtherItem">
+            <summary> The VS Constant Name for all other items </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.CodeWindow">
+            <summary>command bar constant for code window </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.MenuBar">
+            <summary>command bar constant for main menu bar</summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.HtmlContext">
+            <summary>
+            command bar constant for HTML Editor
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.AspxContext">
+            <summary>
+            command bar constant for Aspx Editor
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.HtmlSourceEditing">
+            <summary>
+            command bar constant for Html source editor
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.TextEditor">
+            <summary>
+            command bar constant for text editor
+            </summary>
+        </member>
+        <member name="F:IntuitAnyWhereAddin.VSContextConstants.ScriptContext">
+            <summary>
+            command bar constant for script editor
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.IntuitAnywhereResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.Comment001">
+            <summary>
+              Looks up a localized string similar to Add your consumer key from your Manage App page here..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.Comment002">
+            <summary>
+              Looks up a localized string similar to Add your consumer secret from your Manage App page here..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.Comment003">
+            <summary>
+              Looks up a localized string similar to Add your application token from your Manage App page here..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.comment004">
+            <summary>
+              Looks up a localized string similar to Key below is added by Intuit Anywhere Addin. .
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.comment005">
+            <summary>
+              Looks up a localized string similar to IPP entry below is added by Intuit Anywhere Addin.  This entry causes duplicate HTML tag with  xmlns:ipp=&apos;&apos; added in pages rendered. You may remove this entry and place  xmlns:ipp=&apos;&apos; in original HTML tag..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.mainmenu">
+            <summary>
+              Looks up a localized string similar to Intuit Anywhere.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu01">
+            <summary>
+              Looks up a localized string similar to Add Javascript Library.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu010">
+            <summary>
+              Looks up a localized string similar to IPP Support.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu011">
+            <summary>
+              Looks up a localized string similar to Front Runner for IPP.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu012">
+            <summary>
+              Looks up a localized string similar to Add Logout.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu02">
+            <summary>
+              Looks up a localized string similar to Add OpenID.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu03">
+            <summary>
+              Looks up a localized string similar to Add Connect to QuickBooks.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu04">
+            <summary>
+              Looks up a localized string similar to Add Blue Dot Menu.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu05">
+            <summary>
+              Looks up a localized string similar to Add Intuit Data Services SDK.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu06">
+            <summary>
+              Looks up a localized string similar to Help.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu07">
+            <summary>
+              Looks up a localized string similar to Add Direct Connect to Intuit.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu08">
+            <summary>
+              Looks up a localized string similar to Add Disconnect.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu09">
+            <summary>
+              Looks up a localized string similar to IPP Documentation.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu10">
+            <summary>
+              Looks up a localized string similar to Intuit Data Services SDK Documentation.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.menu11">
+            <summary>
+              Looks up a localized string similar to Add Intuit Data Services SDK V3.
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg001">
+            <summary>
+              Looks up a localized string similar to This command is not supported when debugging is going on..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg002">
+            <summary>
+              Looks up a localized string similar to There is no document open for this operation..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg003">
+            <summary>
+              Looks up a localized string similar to There is no project to perform this operation..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg004">
+            <summary>
+              Looks up a localized string similar to This project type is not supported..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg005">
+            <summary>
+              Looks up a localized string similar to To add the Intuit Data Services SDK to your solution, you must have NuGet version 1.6 or later installed. Please visit http://NuGet.org/ to download and install the latest version..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msg006">
+            <summary>
+              Looks up a localized string similar to Please select a project to perform the selected operation..
+            </summary>
+        </member>
+        <member name="P:IntuitAnyWhereAddin.IntuitAnywhereResources.msgdialogtitle">
+            <summary>
+              Looks up a localized string similar to Intuit Anywhere Addin.
+            </summary>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.VSContextUtility">
+            <summary>
+            This class converts The ContextLevels enum to a string constants recognized by Visual Studio.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.VSContextUtility.ContextToVSContext(IntuitAnyWhereAddin.ContextLevels)">
+            <summary>
+            Converts The ContextLevels enum to a string constants recognized by Visual Studio.
+            </summary>
+            <param name="level">The level.</param>
+            <returns>string recognized by visula studio </returns>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.ConvertImage">
+            <summary>
+            This class converts the Image object into OLE IPictureDisp object.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.ConvertImage.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:IntuitAnyWhereAddin.ConvertImage"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.ConvertImage.Convert(System.Drawing.Image)">
+            <summary>
+            Converts the specified image into OLE IPictureDisp object.
+            </summary>
+            <param name="image">The image.</param>
+            <returns> OLE picture object implementing stdole.IPictureDisp.</returns>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.AspHandler">
+            <summary>
+            This file contains logic adding IPP widgets for ASP.net project.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddUtilsToAspnetProject(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the utils to aspnet project.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="aspnetCodeFilePath">The aspnet code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddCommandRelatedAspxFiles(EnvDTE.Project,System.String,System.String)">
+            <summary>
+            Adds the command related aspx files.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="aspnetCodeFilePath">The aspnet code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddQuickBookCustomerFilesForAsp(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the quick book customer files for ASP.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="codeFilePath">The code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddQuickBookCustomerV2FilesForAsp(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the quick book customer v2 files for ASP.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="codeFilePath">The code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddSourceToAspnetProject(EnvDTE.Project,System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the source to aspnet project.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="codeFilePath">The code file path.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddDirectConnectToIntuitFunctionality(System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the direct connect to intuit functionality.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="codeFilePath">The code file path.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.AspHandler.AddDisconnetFunctionality(EnvDTE.Project,System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the disconnet functionality.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="codeFilePath">The code file path.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+        <member name="T:IntuitAnyWhereAddin.MvcHandler">
+            <summary>
+            This class contains logic for adding IPP widgets for MVC project.
+            </summary>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.GetControllerFolder(EnvDTE.Project)">
+            <summary>
+            Gets the controller folder.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <returns> Folder project item.</returns>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.GetExistingMvcItems(EnvDTE.ProjectItem,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Gets the existing MVC items.
+            </summary>
+            <param name="controllersFolder">The controllers folder.</param>
+            <param name="isConnectToQuickBookAlreadyThere">if set to <c>true</c> [is connect to quick book already there].</param>
+            <param name="isLoginAlreadyThere">if set to <c>true</c> [is login already there].</param>
+            <param name="isBlueDotMenyAlreadyThere">if set to <c>true</c> [is blue dot meny already there].</param>
+            <param name="isDisconnetThere">if set to <c>true</c> [is disconnet there].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddControllerItems(System.String,EnvDTE.ProjectItem,System.String)">
+            <summary>
+            Adds the controller items.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="controllersFolder">The controllers folder.</param>
+            <param name="mvcCodeFilePath">The MVC code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddQuickBookCustomerFilesForMvc(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the quick book customer files for MVC.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="codeFilePath">The code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddQuickBookCustomerV2FilesForMvc(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the quick book customer v2 files for MVC.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="codeFilePath">The code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddMvcUtils(EnvDTE.Project,System.String)">
+            <summary>
+            Adds the MVC utils.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="mvcCodeFilePath">The MVC code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddViews(EnvDTE.Project,System.String,System.String)">
+            <summary>
+            Adds the views.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="folderName">Name of the folder.</param>
+            <param name="mvcCodeFilePath">The MVC code file path.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.InsertRoutes(EnvDTE.ProjectItem,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Inserts the routes.
+            </summary>
+            <param name="utilFolder">The util folder.</param>
+            <param name="mvcCodeFilePath">The MVC code file path.</param>
+            <param name="isConnectToQuickBookAlreadyThere">if set to <c>true</c> [is connect to quick book already there].</param>
+            <param name="isLoginAlreadyThere">if set to <c>true</c> [is login already there].</param>
+            <param name="isBlueDotMenyAlreadyThere">if set to <c>true</c> [is blue dot meny already there].</param>
+            <param name="isDisconnetThere">if set to <c>true</c> [is disconnet there].</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.InsertMethodCallInGlobalASAXFile(EnvDTE.Project)">
+            <summary>
+            Inserts the method call in global ASAX file.
+            </summary>
+            <param name="selProject">The sel project.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddIntuitAnywhereSourceToMVCProject(EnvDTE.Project,System.String,System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the intuit anywhere source to MVC project.
+            </summary>
+            <param name="selProject">The sel project.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="viewsSubFolderName">Name of the views sub folder.</param>
+            <param name="codeFilePath">The code file path.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+        <member name="M:IntuitAnyWhereAddin.MvcHandler.AddDirectConnectToIntuitFunctionality(System.String,System.String,EnvDTE.Document)">
+            <summary>
+            Adds the direct connect to intuit functionality.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="codeFilePath">The code file path.</param>
+            <param name="activeDocument">The active document.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intuit.Ipp.XsdExtension</RootNamespace>
+    <AssemblyName>Intuit.Ipp.XsdExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Intuit.Ipp.XsdExtension.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Code\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Code\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AppInfoIgnoreHandler.cs" />
+    <Compile Include="ClassGenerator.cs" />
+    <Compile Include="CodedomContext.cs" />
+    <Compile Include="CodeDomHelper.cs" />
+    <Compile Include="CodeDomTreeBuilder.cs" />
+    <Compile Include="SchemaTagHandler.cs" />
+    <Compile Include="DataObjectConstants.cs" />
+    <Compile Include="HierarchyManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IAppInfoHandler.cs" />
+    <Compile Include="Interface\IXsdExtensionTask.cs" />
+    <Compile Include="IOHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemaLoader.cs" />
+    <Compile Include="XsdContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">
+      <Link>DotNetSdkForQuickBooksApiV3.snk</Link>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+    <None Include="Schema\Finance.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\IntuitBaseTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\IntuitNamesTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\IntuitRestServiceDef.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\Report.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj">
+      <Project>{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}</Project>
+      <Name>Intuit.Ipp.Diagnostics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

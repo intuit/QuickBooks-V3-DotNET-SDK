@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="intuit" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="intuit" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ipp">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="logger" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="requestLog" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="enableRequestResponseLogging" type="xs:boolean" />
+                        <xs:attribute name="requestResponseLoggingDirectory" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="customLogger" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" />
+                        <xs:attribute name="type" type="xs:string" />
+                        <xs:attribute name="enable" type="xs:boolean" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="security" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="oauth" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="accessToken" type="xs:string" />
+                        <xs:attribute name="accessTokenSecret" type="xs:string" />
+                        <xs:attribute name="consumerKey" type="xs:string" />
+                        <xs:attribute name="consumerSecret" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ticket" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="appToken" type="xs:string" />
+                        <xs:attribute name="ticket" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="customSecurity" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" />
+                        <xs:attribute name="type" type="xs:string" />
+                        <xs:attribute name="enable" type="xs:boolean" />
+                        <xs:attribute name="params" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="mode" type="SecurityModes" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="message" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="request" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="serializationFormat" type="SerializationFormats" />
+                        <xs:attribute name="compressionFormat" type="CompressionFormats" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="response" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="serializationFormat" type="SerializationFormats" />
+                        <xs:attribute name="compressionFormat" type="CompressionFormats" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="customSerializer" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" />
+                        <xs:attribute name="type" type="xs:string" />
+                        <xs:attribute name="enable" type="xs:boolean" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="retry" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="linearRetry" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="retryCount" type="xs:integer" />
+                        <xs:attribute name="retryInterval" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="incrementalRetry" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="retryCount" type="xs:integer" />
+                        <xs:attribute name="initialInterval" type="xs:string" />
+                        <xs:attribute name="increment" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="exponentialRetry" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="retryCount" type="xs:integer" />
+                        <xs:attribute name="minBackoff" type="xs:string" />
+                        <xs:attribute name="maxBackoff" type="xs:string" />
+                        <xs:attribute name="deltaBackoff" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="mode" type="RetryModes" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="service" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="baseUrl" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="qbd" type="xs:string" />
+                        <xs:attribute name="qbo" type="xs:string" />
+                        <xs:attribute name="ips" type="xs:string" />
+                        <xs:attribute name="platformService" type="xs:string" />
+                        <xs:attribute name="userNameAuthentication" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+	
+	<xs:simpleType name="SerializationFormats">
+		<xs:restriction base="xs:string">
+		  <xs:enumeration value="Xml" />
+		  <xs:enumeration value="Json" />
+		  <xs:enumeration value="Custom" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SecurityModes">
+		<xs:restriction base="xs:string">
+		  <xs:enumeration value="OAuth" />
+		  <xs:enumeration value="Ticket" />
+		  <xs:enumeration value="Custom" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CompressionFormats">
+		<xs:restriction base="xs:string">
+		  <xs:enumeration value="None" />
+		  <xs:enumeration value="GZip" />
+		  <xs:enumeration value="Deflate" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RetryModes">
+		<xs:restriction base="xs:string">
+		  <xs:enumeration value="Linear" />
+		  <xs:enumeration value="Incremental" />
+		  <xs:enumeration value="Exponential" />
+		</xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

@@ -1,0 +1,15 @@
+<!---Use this JavaScript function to alert user before disconnecting.-->
+<script type="text/javascript">
+<!--
+        function confirmPost(url) {
+            var agree = confirm("You will no longer be able to access Quickbooks data. Continue?");
+            if (agree)
+                window.location = url;
+            else
+                return false;
+        }
+// -->
+</script>
+
+<!---Click this link to disconnect from QuickBooks.-->
+<a href="#" id="Disconnect" onclick="confirmPost('/Disconnect/Index');"> Disconnect from QuickBooks</a>

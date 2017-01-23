@@ -1,0 +1,23 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>IntuitSampleAzureMVCProject</Name>
+    <Description>Sample Template for Intuit Azure MVC Website</Description>
+    <ProjectType>CloudServiceProject</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>IntuitSampleAzureMVCProject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="IntuitSampleAzureMVCProject.ccproj" File="IntuitSampleAzureMVCProject.ccproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="ServiceConfiguration.Cloud.cscfg">ServiceConfiguration.Cloud.cscfg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ServiceConfiguration.Local.cscfg">ServiceConfiguration.Local.cscfg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ServiceDefinition.csdef">ServiceDefinition.csdef</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

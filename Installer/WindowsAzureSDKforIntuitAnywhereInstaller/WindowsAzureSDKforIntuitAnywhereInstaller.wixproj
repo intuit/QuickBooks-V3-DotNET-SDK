@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{f5b00dc3-c67e-469f-af71-9cadf7c5b6ec}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>WindowsAzureSDK3.0forIntuitAnywhereInstaller</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <Name>WindowsAzureSDKforIntuitAnywhereInstaller</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="IntuitAnywhereAddinProduct.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixVSExtension">
+      <HintPath>$(WixExtDir)\WixVSExtension.dll</HintPath>
+      <Name>WixVSExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IntuitAnywhere\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\ASPNETContent\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\ASPNETContent\v2" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\CleanupOnDisconnect\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\Disconnect\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\Logout\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\MenuProxy\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\v2" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\OauthResponse\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\OpenId\" />
+    <Folder Include="IntuitAnywhere\CodeFiles\MVCContent\QuickBooksCustomers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IntuitAnyWhere.AddIn" />
+    <Content Include="IntuitAnyWhereAddin.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\ApplicationConstants.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\CleanupOnDisconnect.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\CleanupOnDisconnect.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\CleanupOnDisconnect.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\CryptographyHelper.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\DevDefined.OAuth.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\DirectConnectToIntuitTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Disconnect.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\DisconnectTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\DotNetOpenAuth.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\DotNetOpenAuth.xsd" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Initializer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\IppTag.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\Logout.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\MenuProxy.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthAccessTokenStorage.xml" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthAccessTokenStorageHelper.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthGrant.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OauthHandler.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\openid.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\OpenIdHandler.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\QuickBooksCustomers.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\SetupTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\v2\Initializer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\ASPNETContent\v2\QuickBooksCustomers.aspx.designer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\BlueDotTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\ConnecttoQuickBooksTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\DotNetOpenAuth.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\IAAzureASPDotNetTemplate.vsix" />
+    <Content Include="IntuitAnywhere\CodeFiles\IAAzureMVCTemplate.vsix" />
+    <Content Include="IntuitAnywhere\CodeFiles\IntuitAnywhereAddinHelp.chm" />
+    <Content Include="IntuitAnywhere\CodeFiles\IppDocumentation.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\IppFrontRunnerURL.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\IppSupportURL.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\JavaScriptTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\LogoutTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\ApplicationConstants.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\blueDot.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\BlueDotTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\CleanupOnDisconnectController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\CleanupOnDisconnect\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\ConnecttoQuickBooksTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\CryptographyHelper.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\CustomerData.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\DevDefined.OAuth.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\directConnectToIntuit.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\DirectConnectToIntuitTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\disconnect.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\DisconnectController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\DisconnectTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\Disconnect\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\DotNetOpenAuth.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\Initializer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\IntuitRegisterRoutes.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\IppTag.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\logout.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\LogoutController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\LogoutTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\Logout\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\MenuProxyController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\MenuProxy\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\oAuth.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\oAuth.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OauthAccessTokenStorage.xml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OauthAccessTokenStorageHelper.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OauthGrantController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OauthResponseController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OauthResponse\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\openid.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\openID.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OpenIdController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OpenIDTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\OpenId\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\QuickBooksCustomersController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\QuickBooksCustomers\Index.cshtml" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\SetupTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\v2\Initializer.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\MVCContent\v2\QuickBooksCustomersController.cs" />
+    <Content Include="IntuitAnywhere\CodeFiles\NuGet.Core.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\NuGet.Tools.vsix" />
+    <Content Include="IntuitAnywhere\CodeFiles\NuGet.VisualStudio.dll" />
+    <Content Include="IntuitAnywhere\CodeFiles\OpenIDTag.txt" />
+    <Content Include="IntuitAnywhere\CodeFiles\SetupTag.txt" />
+    <Content Include="IPP.ico" />
+    <Content Include="WixUIBannerBmp.bmp" />
+    <Content Include="WixUIDialogBmp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IntuitAnywhereUI_en-us.wxl" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

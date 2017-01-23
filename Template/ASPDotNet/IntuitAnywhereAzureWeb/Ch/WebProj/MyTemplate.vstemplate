@@ -1,0 +1,98 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>IntuitSampleWebSite</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>IntuitSampleWebSite</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="IntuitSampleWebSite.csproj" File="IntuitSampleWebSite.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx">Default.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.cs">Default.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.designer.cs">Default.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="CleanupOnDisconnect.aspx">CleanupOnDisconnect.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="CleanupOnDisconnect.aspx.cs">CleanupOnDisconnect.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="CleanupOnDisconnect.aspx.designer.cs">CleanupOnDisconnect.aspx.designer.cs</ProjectItem>
+      
+      <ProjectItem ReplaceParameters="true" TargetFileName="Logout.aspx">Logout.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Logout.aspx.cs">Logout.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Logout.aspx.designer.cs">Logout.aspx.designer.cs</ProjectItem>
+      
+      <ProjectItem ReplaceParameters="true" TargetFileName="DirectConnectToIntuit.aspx">DirectConnectToIntuit.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DirectConnectToIntuit.aspx.cs">DirectConnectToIntuit.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DirectConnectToIntuit.aspx.designer.cs">DirectConnectToIntuit.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Disconnect.aspx">Disconnect.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Disconnect.aspx.cs">Disconnect.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Disconnect.aspx.designer.cs">Disconnect.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Error.aspx">Error.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Error.aspx.cs">Error.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Error.aspx.designer.cs">Error.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <Folder Name="images" TargetFolderName="images" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="CryptographyHelper.cs">CryptographyHelper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthAccessTokenStorageHelper.cs">OauthAccessTokenStorageHelper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthAccessTokenStorage.xml">OauthAccessTokenStorage.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="IPPFMSDotNetDevKit.1.0.0.0.nupkg">IPPFMSDotNetDevKit.1.0.0.0.nupkg</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MenuProxy.aspx">MenuProxy.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MenuProxy.aspx.cs">MenuProxy.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MenuProxy.aspx.designer.cs">MenuProxy.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthGrant.aspx">OauthGrant.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthGrant.aspx.cs">OauthGrant.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthGrant.aspx.designer.cs">OauthGrant.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthHandler.aspx">OauthHandler.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthHandler.aspx.cs">OauthHandler.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthHandler.aspx.designer.cs">OauthHandler.aspx.designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OpenIdHandler.aspx">OpenIdHandler.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OpenIdHandler.aspx.cs">OpenIdHandler.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OpenIdHandler.aspx.designer.cs">OpenIdHandler.aspx.designer.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="QuickBooksCustomers.aspx">QuickBooksCustomers.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="QuickBooksCustomers.aspx.cs">QuickBooksCustomers.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="QuickBooksCustomers.aspx.designer.cs">QuickBooksCustomers.aspx.designer.cs</ProjectItem>
+      <Folder Name="SDK Assemblies" TargetFolderName="SDK Assemblies">
+        <ProjectItem ReplaceParameters="false" TargetFileName="DotNetOpenAuth.dll">DotNetOpenAuth.dll</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.4.1-vsdoc.js">jquery-1.4.1-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.4.1.js">jquery-1.4.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.4.1.min.js">jquery-1.4.1.min.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Site.Master">Site.Master</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Site.Master.cs">Site.Master.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Site.Master.designer.cs">Site.Master.designer.cs</ProjectItem>
+      <Folder Name="Styles" TargetFolderName="Styles">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+      </Folder>
+      <Folder Name="utils" TargetFolderName="utils">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationConstants.cs">ApplicationConstants.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Initializer.cs">Initializer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="openid.cs">openid.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="template">
+      <package id="IPPFMSDotNetDevKit" version="1.0.0.0" />
+    </packages>
+  </WizardData>
+</VSTemplate>

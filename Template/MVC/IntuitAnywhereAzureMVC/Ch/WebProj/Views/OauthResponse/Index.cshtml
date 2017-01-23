@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html xmlns:ipp="">
+<head>
+    
+    <script type="text/javascript">
+        try {
+            var parentlocation = window.parent.opener.location.hostname;
+            var currentlocation = window.location.hostname;
+            if (parentlocation != currentlocation) {
+
+                window.location = "/Home/Index";
+            }
+            else {
+                window.opener.location.href = "/Home/Index";
+
+                window.close();
+            }
+        }
+        catch (e) {
+            window.location = "/Home/Index";
+        }
+
+    </script>
+    </head>
+    <body>
+    Loading....
+</body>
+</html>

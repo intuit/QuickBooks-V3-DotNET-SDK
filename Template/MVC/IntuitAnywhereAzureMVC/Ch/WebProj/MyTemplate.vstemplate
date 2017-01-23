@@ -1,0 +1,151 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>IntuitSampleMVC</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>IntuitSampleMVC</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="IntuitSampleMVC.csproj" File="IntuitSampleMVC.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <Folder Name="Content" TargetFolderName="Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+        <Folder Name="themes" TargetFolderName="themes">
+          <Folder Name="base" TargetFolderName="base">
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.css">jquery.ui.accordion.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.all.css">jquery.ui.all.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.css">jquery.ui.autocomplete.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.base.css">jquery.ui.base.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.css">jquery.ui.button.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.css">jquery.ui.core.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.css">jquery.ui.datepicker.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.css">jquery.ui.dialog.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.css">jquery.ui.progressbar.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.css">jquery.ui.resizable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.css">jquery.ui.selectable.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.css">jquery.ui.slider.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.css">jquery.ui.tabs.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.css">jquery.ui.theme.css</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DirectConnectToIntuitController.cs">DirectConnectToIntuitController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CleanupOnDisconnectController.cs">CleanupOnDisconnectController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LogoutController.cs">LogoutController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DisconnectController.cs">DisconnectController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MenuProxyController.cs">MenuProxyController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OauthGrantController.cs">OauthGrantController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OauthResponseController.cs">OauthResponseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OpenIdController.cs">OpenIdController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="QuickBooksCustomersController.cs">QuickBooksCustomersController.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="IPPFMSDotNetDevKit.1.0.0.0.nupkg">IPPFMSDotNetDevKit.1.0.0.0.nupkg</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models" />
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
+      </Folder>
+      <Folder Name="SDK Assemblies" TargetFolderName="SDK Assemblies">
+        <ProjectItem ReplaceParameters="false" TargetFileName="DotNetOpenAuth.dll">DotNetOpenAuth.dll</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.5.1-vsdoc.js">jquery-1.5.1-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.5.1.js">jquery-1.5.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.5.1.min.js">jquery-1.5.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.8.11.js">jquery-ui-1.8.11.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.8.11.min.js">jquery-ui-1.8.11.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.unobtrusive-ajax.js">jquery.unobtrusive-ajax.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.unobtrusive-ajax.min.js">jquery.unobtrusive-ajax.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftAjax.debug.js">MicrosoftAjax.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftAjax.js">MicrosoftAjax.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftMvcAjax.debug.js">MicrosoftMvcAjax.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftMvcAjax.js">MicrosoftMvcAjax.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftMvcValidation.debug.js">MicrosoftMvcValidation.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftMvcValidation.js">MicrosoftMvcValidation.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-1.7.js">modernizr-1.7.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-1.7.min.js">modernizr-1.7.min.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Settings.cs">Settings.cs</ProjectItem>
+      <Folder Name="utils" TargetFolderName="utils">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationConstants.cs">ApplicationConstants.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomerData.cs">CustomerData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Initializer.cs">Initializer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="oAuth.cs">oAuth.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="openid.cs">openid.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CryptographyHelper.cs">CryptographyHelper.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OauthAccessTokenStorageHelper.cs">OauthAccessTokenStorageHelper.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="false" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="DirectConnectToIntuit" TargetFolderName="DirectConnectToIntuit">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Disconnect" TargetFolderName="Disconnect">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="false" TargetFileName="About.cshtml">About.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="MenuProxy" TargetFolderName="MenuProxy">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+
+        <Folder Name="Logout" TargetFolderName="Logout">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+
+        <Folder Name="CleanupOnDisconnect" TargetFolderName="CleanupOnDisconnect">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="OauthResponse" TargetFolderName="OauthResponse">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="OpenId" TargetFolderName="OpenId">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="QuickBooksCustomers" TargetFolderName="QuickBooksCustomers">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="false" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OauthAccessTokenStorage.xml">OauthAccessTokenStorage.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="template">
+      <package id="IPPFMSDotNetDevKit" version="1.0.0.0" />
+    </packages>
+  </WizardData>
+</VSTemplate>

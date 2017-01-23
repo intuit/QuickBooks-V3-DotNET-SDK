@@ -1,0 +1,14 @@
+
+
+   routes.MapRoute(
+                "OauthGrant", // Route name
+                "{controller}", // URL with parameters
+                new { controller = "OauthGrant" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "OauthResponse", // Route name
+                "{controller}", // URL with parameters
+                new { controller = "OauthResponse" } // Parameter defaults
+            );
+

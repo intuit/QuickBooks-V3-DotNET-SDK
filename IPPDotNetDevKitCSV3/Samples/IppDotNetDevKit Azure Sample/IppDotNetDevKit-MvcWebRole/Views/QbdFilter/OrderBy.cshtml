@@ -1,0 +1,119 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.QueryModel.OrderByModel
+@{
+    ViewBag.Title = "OrderBy Qbd Invoice Query";
+    string results = ViewBag.Results;
+    bool load = ViewBag.Load;
+    string error = ViewBag.Error;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdFilter/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    OrderBy Qbd Invoice Query</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Check the properties for thich the ordering is required:
+    </p>
+    <div>
+        <table class="mainReqTable">
+            <tr>
+                <td>
+                    <table class="reqTable">
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.MetaData_CreateTime)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.MetaData_CreateTime)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.MetaData_CreateTime_Descending)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.MetaData_CreateTime_Descending)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.MetaData_LastUpdatedTime)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.MetaData_LastUpdatedTime)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="addressTableTd1">
+                                @Html.LabelFor(model => model.MetaData_LastUpdatedTime_Descending)
+                            </td>
+                            <td class="addressTableTd2">
+                                @Html.EditorFor(model => model.MetaData_LastUpdatedTime_Descending)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <input type="submit" value="Query with OrderBy" class="defaultBtn" />
+}
+<div>
+    @if (results == "empty")
+    {
+        if (!string.IsNullOrWhiteSpace(error))
+        {
+        <p style="color: Red;">
+            @Html.Raw(error)
+        </p>
+        }
+        else
+        {
+        <p>
+            <b>The search returned no results. Please try again.</b></p>
+        }
+    }
+    else
+    {
+        if (!load)
+        {
+            // show the details of customer
+        <hr style="margin-top: 50px;" />
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Create Time
+                    </td>
+                    <td>
+                        Last Updated Time
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Entities)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MetaData.CreateTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MetaData.LastUpdatedTime)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+    }
+</div>

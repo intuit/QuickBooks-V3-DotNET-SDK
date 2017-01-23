@@ -1,0 +1,7 @@
+                        
+
+routes.MapRoute(
+                "Logout", // Route name
+                "{controller}", // URL with parameters
+                new { controller = "Logout", action = "Index" } // Parameter defaults
+);

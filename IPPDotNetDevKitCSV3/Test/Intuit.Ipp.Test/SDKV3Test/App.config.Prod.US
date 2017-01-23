@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- US Prod -->
+<configuration>
+  <configSections>
+    <sectionGroup name="intuit">
+      <section name="ipp" type="Intuit.Ipp.Utility.IppConfigurationSection, Intuit.Ipp.Utility" allowDefinition="Everywhere" allowLocation="true"/>
+    </sectionGroup>
+  </configSections>
+
+  <intuit>
+    <ipp>
+      <!--<logger>
+         -->
+      <!--To enable/diable Request and Response log-->
+      <!--
+        <requestLog enableRequestResponseLogging="true" requestResponseLoggingDirectory="C:\IdsLogs" />
+         -->
+      <!--Custom Logger to configure 
+        <customLogger name="traceLogger" type="Intuit.Ipp.Diagnostics.TraceLogger, Intuit.Ipp.Diagnostics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null" enable="true" />-->
+      <!--
+      </logger>-->
+      <message>
+        <!--Serialization and compression formats to be used for Request and Response-->
+        <request serializationFormat="Json" />
+        <response serializationFormat="Json" />
+        <!--Custom component to serialize or compress
+        <customSerializer name="jsonObjectSerializer" type="Intuit.Ipp.Utility.JsonObjectSerializer, Intuit.Ipp.Utility, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null" enable="true" />-->
+      </message>
+      <service>
+        <!--Baseurl will be configured to point to any environment other than Production (default)-->
+        <baseUrl qbo="https://quickbooks.api.intuit.com/" />
+      </service>
+    </ipp>
+  </intuit>
+  <appSettings>
+
+    <!-- Prod Environment -->
+    <!-- ********************************************************************************************* -->
+
+    
+
+    <!--US Company - MyCo Production LLC -->
+    <!--Specify AccessToken Value for QBO-->
+    <add key="accessTokenQBO" value="lvprdh5yQS6HVPdhQbphNjkumRA0s5qq8jZPHAfHy8wvgyDU"/>
+
+    <!--Specify accessTokenSecret Value for QBO-->
+    <add key="accessTokenSecretQBO" value="T6PkfOMsy1Y44PH7YY6quWpCBt71I9v6xwBVuRDD"/>
+
+    <!--Specify consumerKey Value for QBO-->
+    <add key="consumerKeyQBO" value="qyprdc4hZzJUxDcoIbtMl6aKt3SiVF"/>
+
+    <!--Specify consumerSecret Value for QBO-->
+    <add key="consumerSecretQBO" value="8r0Y8gW2ICu2h2peaTRv46POktPCguf0pAP9bXMY"/>
+
+    <!--Specify realmIdIA Value for QBO-->
+    <add key="realmIdIAQBO" value="1208374680"/>
+
+  </appSettings>
+</configuration>

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Welcome to Intuit Anywhere";
+    string FriendlyName = (string)HttpContext.Current.Session["FriendlyName"] + "";
+    string FriendlyEmail = (string)HttpContext.Current.Session["FriendlyEmail"];
+    string FriendlyIdentifier = (string)HttpContext.Current.Session["FriendlyIdentifier"];
+
+    string realm = (string)Session["realm"];
+    string dataSource = (string)Session["dataSource"];
+    string accessToken = (string)Session["accessToken"] + "";
+    string accessTokenSecret = (string)Session["accessTokenSecret"];
+    string invalidAccessToken = (string)Session["InvalidAccessToken"];
+}
+<p>
+    <h2>@ViewBag.Message</h2>
+    <p>
+        To learn more about Intuit Anywhere, visit the <a href="http://developer.intuit.com/"
+            title="Intuit Developer Network" target="_blank">Intuit Developer Network</a>.
+    </p>
+    <p>
+        You can also find our <a href=" https://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0025_Intuit_Anywhere/1000_Getting_Started_With_IA"
+            title="Intuit Anywhere Getting Started guide" target="_blank">Intuit Anywhere Getting
+            Started guide</a> in our documentation.
+    </p>
+    <!-- MARKUP Written for Demonstration Purpose Only -->
+    <!-- OpenId Related HTML -->
+    @if (FriendlyName.Length == 0)
+    { 
+        <div id="signininfo">
+            <ipp:login href="/OpenId/index"></ipp:login>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div id="IntuitInfo">
+            <strong>Open Id Information:</strong><br />
+            Welcome: @FriendlyName<br />
+            E-mail Address: @FriendlyEmail<br />
+            Friendly Identifier: @FriendlyIdentifier<br />
+            <br />
+            @if (accessToken.Length > 0 && invalidAccessToken == null)
+            { 
+                <div id="oAuthinfo">
+                    <a href="/QuickBooksCustomers" id="QBCustomers">Get QuickBooks Customer List</a><br />
+                    <br />
+                    <br />
+                    <a href="#" id="Disconnect" onclick="confirmPost('/Disconnect/Index');">Disconnect from
+                        QuickBooks</a><br />
+                </div>
+            }
+            else
+            {
+                <br />
+                <ipp:connecttointuit></ipp:connecttointuit>
+            }
+        </div>
+    }
+    <!-- OpenId Related HTML ends here -->
+</p>

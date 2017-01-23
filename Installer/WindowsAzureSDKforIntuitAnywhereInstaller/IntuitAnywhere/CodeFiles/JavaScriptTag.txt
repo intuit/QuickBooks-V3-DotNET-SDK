@@ -1,0 +1,2 @@
+<!--- This is Intuit Anywhere JavaScript Library. Widgets ipp:connectToIntuit, ipp:login, ipp:blueDot require this JavaScript Library. -->  
+<script type="text/javascript" src="https://js.appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>

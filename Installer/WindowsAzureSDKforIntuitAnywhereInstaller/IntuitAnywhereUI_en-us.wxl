@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="ExitDialogDescription" >Please click the finish button to exit the setup Wizard and restart all open Visual Studio instances for changes to take effect.</String>
+</WixLocalization>

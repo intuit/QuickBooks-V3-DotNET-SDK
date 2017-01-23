@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDSLinq", "IDSLinq.csproj", "{FCE047F2-D3A5-47E3-836C-EABE6CF1CC27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCE047F2-D3A5-47E3-836C-EABE6CF1CC27}.Debug|x86.ActiveCfg = Debug|x86
+		{FCE047F2-D3A5-47E3-836C-EABE6CF1CC27}.Debug|x86.Build.0 = Debug|x86
+		{FCE047F2-D3A5-47E3-836C-EABE6CF1CC27}.Release|x86.ActiveCfg = Release|x86
+		{FCE047F2-D3A5-47E3-836C-EABE6CF1CC27}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

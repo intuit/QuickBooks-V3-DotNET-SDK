@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int CustomerCount = 0;
+    object obj = ViewBag.CustomerCount;
+    if (obj != null)
+    {
+        CustomerCount = (int)obj;   
+    }
+    
+    var grid = new WebGrid(ViewBag.MyCollection);
+    string NoRecordsMessage = "No Customer Data Found!";
+    
+}
+
+<h2>QuickBooks Customer Data</h2>
+
+
+@if (CustomerCount > 0)
+    { 
+<div class="test" style="overflow: scroll; width: 100%">
+    <div style="width: 1000px">
+    
+        @grid.GetHtml()
+   
+    </div>
+</div>
+ }
+    else
+    { 
+      @NoRecordsMessage
+    }
+<br /><br />
+<a href="/Home/Index">Back to Home Page</a>

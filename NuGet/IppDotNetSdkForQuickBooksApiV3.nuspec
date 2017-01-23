@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>IppDotNetSdkForQuickBooksApiV3</id>
+        <version>2.4.0</version>
+        <title>IPP .NET SDK for QuickBooks V3</title>
+        <authors>Intuit,Inc.</authors>
+        <owners>Intuit,Inc.</owners>
+        <licenseUrl>https://developer.intuit.com/docs/9_other_resources/0070_ipp_legal_agreements/001_intuit_partner_platform_terms_of_service</licenseUrl>
+        <projectUrl>https://developer.intuit.com/docs/0100_accounting/0500_developer_kits/0150_ipp_.net_devkit_3.0</projectUrl>
+        <iconUrl>http://www.gravatar.com/avatar/c829bc76777c3b1df4ce13a229d0ec3d.pngV</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs.  Some of the features included in this SDK are as follows:
+
+-Ability to perform single and batch processing of CRUD operations on all QuickBooks entities.
+
+-Request and Response Handler has common interface with two implemented classes to handle both synchronous and asynchronous requests.
+
+-Support for both XML and JSON Request and Response format.
+
+-Ability to configure app settings in the configuration file requiring no additional code change.
+
+-Support for Gzip and Deflate compression formats to improve performance of QuickBooks API calls.
+
+-Retry policy constructors to help apps handle transient errors.
+
+-Logging mechanisms for trace, request/response, and Azure logging.
+
+-Sync APIs that assist with data synchronization between QuickBooks Desktop and Intuit's cloud.
+
+-Query Filters that enable you to write LINQ queries to retrieve QuickBooks entities whose properties meet specified criteria.
+
+-LINQ queries for accessing QuickBooks Reports.
+
+-Sparse Update to update writable properties specified in a request and leave the others unchanged.
+
+-Change data that enables you to retrieve a list of entities modified during specified time points.</description>
+        <summary>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs.</summary>
+        <releaseNotes>Available at https://developer.intuit.com/docs/0100_Accounting/0500_Developer_Kits/0150_IPP_.NET_DevKit_3.0/Intuit_.NET_SDK_Release_Notes</releaseNotes>
+        <copyright>Copyright © 2014 Intuit, Inc.</copyright>
+        <tags>Intuit Partner Platform IPP QuickBooks API V3 .NET</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.0">
+                <dependency id="DevDefined.OAuth" version="0.2" />
+                <dependency id="Newtonsoft.Json" version="5.0.8" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="IppDotNetSdkForQuickBooksApiV3.2.4.0.nupkg" target="IppDotNetSdkForQuickBooksApiV3.2.4.0.nupkg" />
+    </files>
+</package>

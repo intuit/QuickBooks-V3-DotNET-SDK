@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2012-06-23T21:03:54.720Z">
+  <QueryResponse maxResults="19" startPosition="1">
+    <Invoice status="Pending">
+      <Id>NG:1611288</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-06-07T09:33:58Z</CreateTime>
+        <LastUpdatedTime>2012-06-07T09:33:58Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>Inv#333</DocNumber>
+      <TxnDate>2012-01-23T18:31:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <ExchangeRate>1</ExchangeRate>
+      <TxnStatus>Paid</TxnStatus>
+      <TxnTaxDetail>
+        <CustomerTaxCodeRef name="Tax">QB:1</CustomerTaxCodeRef>
+        <TotalTax>7</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef name="sdad">NG:2262135</CustomerRef>
+      <BillAddr>
+        <Line1>Adam's Candy Shop</Line1>
+        <Line2>Adam Bradley</Line2>
+        <Line3>1528 Kitty Bang Bang St.</Line3>
+        <City>Fudge</City>
+        <CountrySubDivisionCode>CA</CountrySubDivisionCode>
+        <PostalCode>94555</PostalCode>
+      </BillAddr>
+      <ShipAddr>
+        <Line1>Adam's Candy Shop</Line1>
+        <Line2>Adam Bradley</Line2>
+        <Line3>1528 Kitty Bang Bang St.</Line3>
+        <City>Fudge</City>
+        <CountrySubDivisionCode>CA</CountrySubDivisionCode>
+        <PostalCode>94555</PostalCode>
+      </ShipAddr>
+      <RemitToRef name="McCale, Ron">QB:92</RemitToRef>
+      <ClassRef name="New Construction">QB:1</ClassRef>
+      <SalesTermRef name="Net 15">QB:2</SalesTermRef>
+      <DueDate>2016-12-15T00:00:00Z</DueDate>
+      <ShipMethodRef name="US Mail">QB:5</ShipMethodRef>
+      <ShipDate>2016-12-15T00:00:00Z</ShipDate>
+      <SubTotalAmt>1543</SubTotalAmt>
+      <TotalAmt>1550</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <ARAccountRef name="Accounts Receivable">QB:4</ARAccountRef>
+      <Balance>40</Balance>
+      <FinanceCharge>true</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1609420</Id>
+      <SyncToken>3</SyncToken>
+      <MetaData>
+        <CreateTime>2012-06-07T09:50:10Z</CreateTime>
+        <LastUpdatedTime>2012-06-07T10:46:43Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>5366</DocNumber>
+      <TxnDate>2012-06-07T09:50:10Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <ExchangeRate>1</ExchangeRate>
+      <TxnTaxDetail>
+        <CustomerTaxCodeRef>NG:2262137</CustomerTaxCodeRef>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef name="Customer1">NG:2246066</CustomerRef>
+      <SubTotalAmt>0</SubTotalAmt>
+      <TotalAmt>0</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <ARAccountRef name="Account Receivable">QB:4</ARAccountRef>
+      <Balance>0</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1609419</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-06-07T09:49:40Z</CreateTime>
+        <LastUpdatedTime>2012-06-07T09:49:40Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>1023</DocNumber>
+      <TxnDate>2012-06-07T09:49:40Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <ExchangeRate>1</ExchangeRate>
+      <TxnTaxDetail>
+        <CustomerTaxCodeRef>NG:2262137</CustomerTaxCodeRef>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef name="Customer1">NG:2246066</CustomerRef>
+      <SubTotalAmt>0</SubTotalAmt>
+      <TotalAmt>0</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <ARAccountRef name="Account Receivable">QB:4</ARAccountRef>
+      <Balance>0</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1609418</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-06-07T09:49:03Z</CreateTime>
+        <LastUpdatedTime>2012-06-07T09:49:03Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>1023</DocNumber>
+      <TxnDate>2012-06-07T09:49:03Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <ExchangeRate>1</ExchangeRate>
+      <TxnTaxDetail>
+        <CustomerTaxCodeRef>NG:2262137</CustomerTaxCodeRef>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef name="Customer1">NG:2246066</CustomerRef>
+      <SubTotalAmt>0</SubTotalAmt>
+      <TotalAmt>0</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <ARAccountRef name="Account Receivable">QB:4</ARAccountRef>
+      <Balance>0</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1609417</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-06-07T09:48:04Z</CreateTime>
+        <LastUpdatedTime>2012-06-07T09:48:04Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>1023</DocNumber>
+      <TxnDate>2012-06-07T09:48:04Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <ExchangeRate>1</ExchangeRate>
+      <TxnTaxDetail>
+        <CustomerTaxCodeRef>NG:2262137</CustomerTaxCodeRef>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef name="Customer1">NG:2246066</CustomerRef>
+      <SubTotalAmt>0</SubTotalAmt>
+      <TotalAmt>0</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <ARAccountRef name="Account Receivable">QB:4</ARAccountRef>
+      <Balance>0</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591566</Id>
+      <SyncToken>2</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:59:43Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:59:55Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>298</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246066</CustomerRef>
+      <DueDate>2012-10-24T16:59:42Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591547</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:46:30Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:46:30Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246063</CustomerRef>
+      <DueDate>2012-10-24T16:46:29Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591508</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:05:11Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:05:11Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>530</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246049</CustomerRef>
+      <DueDate>2012-10-24T16:04:56Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591506</Id>
+      <SyncToken>2</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:05:02Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:05:10Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>993</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246054</CustomerRef>
+      <DueDate>2012-10-24T16:05:00Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591497</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:51:24Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:51:24Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246035</CustomerRef>
+      <DueDate>2012-10-24T15:51:23Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591496</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:51:11Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:51:11Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246035</CustomerRef>
+      <DueDate>2012-10-24T15:51:10Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591495</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:50:56Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:50:56Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246035</CustomerRef>
+      <DueDate>2012-10-24T15:50:43Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591494</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:50:45Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:50:45Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246035</CustomerRef>
+      <DueDate>2012-10-24T15:50:43Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1591468</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:31:06Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:31:06Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246032</CustomerRef>
+      <DueDate>2012-10-24T15:31:05Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1587610</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:59:51Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:59:51Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>536</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246063</CustomerRef>
+      <DueDate>2012-10-24T16:59:38Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1587598</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T16:46:28Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T16:46:28Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246063</CustomerRef>
+      <DueDate>2012-10-24T16:46:27Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1587525</Id>
+      <SyncToken>2</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T15:19:47Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T15:19:49Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>UN619</DocNumber>
+      <TxnDate>2012-04-23T00:00:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246026</CustomerRef>
+      <DueDate>2012-10-24T00:00:00Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1587506</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T14:43:59Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T14:43:59Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246018</CustomerRef>
+      <DueDate>2012-10-24T14:43:58Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+    <Invoice status="Pending">
+      <Id>NG:1587505</Id>
+      <SyncToken>1</SyncToken>
+      <MetaData>
+        <CreateTime>2012-04-24T14:43:45Z</CreateTime>
+        <LastUpdatedTime>2012-04-24T14:43:45Z</LastUpdatedTime>
+      </MetaData>
+      <DocNumber>99009926</DocNumber>
+      <TxnDate>2012-04-23T18:30:00Z</TxnDate>
+      <CurrencyRef name="USD"/>
+      <TxnTaxDetail>
+        <TotalTax>0</TotalTax>
+      </TxnTaxDetail>
+      <CustomerRef>NG:2246018</CustomerRef>
+      <DueDate>2012-10-24T14:43:44Z</DueDate>
+      <SubTotalAmt>2500</SubTotalAmt>
+      <TotalAmt>2500</TotalAmt>
+      <PrintStatus>PrintComplete</PrintStatus>
+      <EmailStatus>EmailSent</EmailStatus>
+      <Balance>2500</Balance>
+      <FinanceCharge>false</FinanceCharge>
+    </Invoice>
+  </QueryResponse>
+</IntuitResponse>

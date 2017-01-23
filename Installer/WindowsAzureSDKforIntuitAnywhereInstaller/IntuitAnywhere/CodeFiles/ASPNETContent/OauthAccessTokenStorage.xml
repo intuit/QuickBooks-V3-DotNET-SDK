@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This xml file persists the oauth access tokens so that user doen't need to go through the approval process all over again.-->
+<oauthtokenstorage>
+  <record usermailid="" encryptedaccesskey="" encryptedaccesskeysecret="" realmid="" dataSource="">
+  </record>
+</oauthtokenstorage>

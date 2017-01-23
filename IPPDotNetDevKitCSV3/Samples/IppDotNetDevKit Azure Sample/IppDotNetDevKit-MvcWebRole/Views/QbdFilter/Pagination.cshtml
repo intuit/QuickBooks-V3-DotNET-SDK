@@ -1,0 +1,78 @@
+﻿@model IppDotNetDevKit_MvcWebRole.Models.FindAllModel
+@*IEnumerable<Intuit.Ipp.Data.Qbd.Customer>*@
+@{
+    ViewBag.Title = "Pagination Qbd Invoice Query";
+    string results = ViewBag.Results;
+    bool load = ViewBag.Load;
+}
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdFilter/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Pagination Qbd Invoice Query</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Enter the below details:
+    </p>
+    <table class="reqTable" style="width: 400px; margin-left:30%;">
+        <tr>
+            <td style="width: 80px;">
+                Start Position:
+            </td>
+            <td>
+                @Html.EditorFor(model => model.PageNumber)
+            </td>
+            <td style="width: 80px;">
+                Max Results:
+            </td>
+            <td>
+                @Html.EditorFor(model => model.PageSize)
+            </td>
+            <td style="vertical-align: middle;">
+                <input type="submit" value="Execute" class="defaultBtn" />
+            </td>
+        </tr>
+    </table>
+}
+<hr style="float: left; width: 100%;" />
+@if (results == "empty")
+{
+    <p>
+        There were on results for the specified filter.</p>
+}
+else
+{
+    if (!load)
+    {
+    <div class="wrapper">
+        <table class="reportsTable" width="95%" cellspacing="5px" cellpadding="5px">
+            <thead>
+                <tr>
+                    <td>
+                        Identifier
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Invoices)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+}

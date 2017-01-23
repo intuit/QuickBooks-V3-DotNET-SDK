@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="IAAzureMVCTemplate..7AC8D958-A20B-424B-9CB1-667D089EBE4C">
+    <Name>IA Azure MVC 3 Template (V3 Beta)</Name>
+    <Author>Intuit</Author>
+    <Version>1.0</Version>
+    <Description xml:space="preserve">Install Intuit Anywhere Azure ASP.NET MVC 3 Web Role Template</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>https://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0025_Intuit_Anywhere</MoreInfoUrl>
+    <GettingStartedGuide>https://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0025_Intuit_Anywhere/1000_Getting_Started_With_IA</GettingStartedGuide>
+    <Icon>intuit_blue.gif</Icon>
+    <PreviewImage>MVCTemplate.jpg</PreviewImage>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+    <AllUsers>true</AllUsers>
+  </Identifier>
+  <References />
+  <Content>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
+  </Content>
+</Vsix>

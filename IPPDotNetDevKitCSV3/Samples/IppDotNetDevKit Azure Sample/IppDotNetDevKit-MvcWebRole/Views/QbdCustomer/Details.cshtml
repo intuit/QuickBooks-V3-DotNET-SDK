@@ -1,0 +1,473 @@
+﻿@model Intuit.Ipp.Data.Customer
+@{
+    ViewBag.Title = "Details Qbd Customer";
+}<script type="text/javascript">
+     $(document).ready(function () {
+         $("#reqFieldsView").css("display", "block");
+         $("#addFieldsView").css("display", "none");
+         $("#addressFieldsView").css("display", "none");
+         $("#phoneFieldsView").css("display", "none");
+         $("#emailFieldsView").css("display", "none");
+         $("#websiteFieldsView").css("display", "none");
+
+         $("#reqFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "block");
+             $("#addFieldsView").css("display", "none");
+             $("#addressFieldsView").css("display", "none");
+             $("#phoneFieldsView").css("display", "none");
+             $("#emailFieldsView").css("display", "none");
+             $("#websiteFieldsView").css("display", "none");
+         });
+         $("#addFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "none");
+             $("#addFieldsView").css("display", "block");
+             $("#addressFieldsView").css("display", "none");
+             $("#phoneFieldsView").css("display", "none");
+             $("#emailFieldsView").css("display", "none");
+             $("#websiteFieldsView").css("display", "none");
+         });
+         $("#addressFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "none");
+             $("#addFieldsView").css("display", "none");
+             $("#addressFieldsView").css("display", "block");
+             $("#phoneFieldsView").css("display", "none");
+             $("#emailFieldsView").css("display", "none");
+             $("#websiteFieldsView").css("display", "none");
+         });
+
+         $("#phoneFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "none");
+             $("#addFieldsView").css("display", "none");
+             $("#addressFieldsView").css("display", "none");
+             $("#phoneFieldsView").css("display", "block");
+             $("#emailFieldsView").css("display", "none");
+             $("#websiteFieldsView").css("display", "none");
+         });
+
+         $("#emailFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "none");
+             $("#addFieldsView").css("display", "none");
+             $("#addressFieldsView").css("display", "none");
+             $("#phoneFieldsView").css("display", "none");
+             $("#emailFieldsView").css("display", "block");
+             $("#websiteFieldsView").css("display", "none");
+         });
+
+         $("#websiteFieldsDiv").click(function () {
+             $("#reqFieldsView").css("display", "none");
+             $("#addFieldsView").css("display", "none");
+             $("#addressFieldsView").css("display", "none");
+             $("#phoneFieldsView").css("display", "none");
+             $("#emailFieldsView").css("display", "none");
+             $("#websiteFieldsView").css("display", "block");
+         });
+
+     });
+</script>
+<div style="float: right; margin-right: 5px; margin-top: 5px;">
+    <a href="/QbdCustomer/Index">
+        <img src="../../Images/back.png" alt="Back" style="max-height: 30px;" />
+    </a>
+</div>
+<h2>
+    Details Qbd Customer</h2>
+<div class="mainDiv">
+    <div class="leftDiv">
+        <ul>
+            <li>
+                <div id="reqFieldsDiv">
+                    <div style="border-top-right-radius: 20px;" class="contentDiv">
+                        <div>
+                            Read Only Fields</div>
+                        <img src="../../Images/req-icon.png" alt="Req" /></div>
+                </div>
+            </li>
+            <li>
+                <div id="addFieldsDiv">
+                    <div class="contentDiv">
+                        <div>
+                            Additional Fields</div>
+                        <img src="../../Images/plus-icon.png" alt="Req" /></div>
+                </div>
+            </li>
+            <li>
+                <div id="addressFieldsDiv">
+                    <div class="contentDiv">
+                        <div>
+                            Address</div>
+                        <img src="../../Images/address_icon.png" alt="Req" /></div>
+                </div>
+            </li>
+            <li>
+                <div id="phoneFieldsDiv">
+                    <div class="contentDiv">
+                        <div>
+                            Phone</div>
+                        <img src="../../Images/phone-icon.png" alt="Req" /></div>
+                </div>
+            </li>
+            <li>
+                <div id="emailFieldsDiv">
+                    <div class="contentDiv">
+                        <div>
+                            Email</div>
+                        <img src="../../Images/email-icon.png" alt="Req" /></div>
+                </div>
+            </li>
+            <li>
+                <div id="websiteFieldsDiv">
+                    <div style="border-bottom-right-radius: 20px;" class="contentDiv">
+                        <div>
+                            Website</div>
+                        <img src="../../Images/website-icon.png" alt="Req" /></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="rightDiv">
+        <div id="reqFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Title)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.domain)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.domain)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Id)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Id)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData.CreatedByRef)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.MetaData.CreatedByRef)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData.CreateTime)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.MetaData.CreateTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData.LastModifiedByRef)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.MetaData.LastModifiedByRef)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MetaData.LastUpdatedTime)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.MetaData.LastUpdatedTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.SyncToken)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.SyncToken)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.status)
+                    </td>
+                    <td class="addressTableTd tdLabel2">
+                        @Html.DisplayFor(model => model.status)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="addFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Active)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.Active)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.ActiveSpecified)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.ActiveSpecified)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.AcctNum)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.AcctNum)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Title)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.GivenName)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.GivenName)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.MiddleName)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.MiddleName)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.FamilyName)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.FamilyName)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="addressFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Line1)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Line1)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Line2)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Line2)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Line3)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Line3)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Line4)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Line4)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Line5)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Line5)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.City)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.City)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Country)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Country)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.CountrySubDivisionCode)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.CountrySubDivisionCode)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.PostalCode)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.PostalCode)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.PostalCodeSuffix)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.PostalCodeSuffix)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.BillingAddr.Tag)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.BillingAddr.Tag)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="phoneFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Mobile.FreeFormNumber)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Mobile.FreeFormNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Mobile.DeviceType)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Mobile.DeviceType)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Mobile.Tag)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.Mobile.Tag)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Mobile.Default)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.Mobile.Default)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.Mobile.DefaultSpecified)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.Mobile.DefaultSpecified)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="emailFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.PrimaryEmailAddr.Address)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.PrimaryEmailAddr.Address)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.PrimaryEmailAddr.Tag)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.PrimaryEmailAddr.Tag)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.PrimaryEmailAddr.Default)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.PrimaryEmailAddr.Default)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.PrimaryEmailAddr.DefaultSpecified)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.PrimaryEmailAddr.DefaultSpecified)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="websiteFieldsView" style="height: auto; width: auto;">
+            <table class="addressTable" cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.WebAddr.URI)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.WebAddr.URI)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.WebAddr.Tag)
+                    </td>
+                    <td class="addressTableTd2 tdLabel">
+                        @Html.DisplayFor(model => model.WebAddr.Tag)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.WebAddr.Default)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.WebAddr.Default)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="addressTableTd1">
+                        @Html.LabelFor(model => model.WebAddr.DefaultSpecified)
+                    </td>
+                    <td style="text-align: left; margin-left: 4%; display: block;">
+                        @Html.DisplayFor(model => model.WebAddr.DefaultSpecified)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

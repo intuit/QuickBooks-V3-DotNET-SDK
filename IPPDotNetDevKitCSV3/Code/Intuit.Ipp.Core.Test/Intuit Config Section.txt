@@ -1,0 +1,22 @@
+Steps for using Intuit Config section Intellisence:
+
+	1. Go to your version of visual studio installation(in admin mode): Eg. VS2010 - %programfiles%\Microsoft Visual Studio 10.0\Xml\Schemas, VS2008 - %programfiles%\Microsoft Visual Studio 10.0\Xml\Schemas
+	2. Open catalog.xml file in admin mode and add below:
+		<Association extension="config" schema="%InstallRoot%/xml/schemas/ippconfig.xsd" condition="starts-with($TargetFrameworkMoniker, '.NETFramework,Version=v4.')" />
+	3. Save the file and close.
+	4. Copy the file ippconfig.xsd into this directory.
+	5. Start new instance of vs and open the config file(app.cofig, web.config) of the project.
+	6. Add this config section:
+		 <configSections>
+			<sectionGroup name="intuit">
+			  <section name="ipp" type="Intuit.Ipp.Utility.IppConfigurationSection, Intuit.Ipp.Utility" allowDefinition="Everywhere" allowLocation="true"/>
+			</sectionGroup>
+		  </configSections>
+	7. Add the intuit section through intellisence:
+		  <intuit>
+			<ipp>
+				......
+			</ipp>
+		  </intuit>
+
+Note: Steps 1-4 will be handled by installer.
