@@ -73,7 +73,7 @@ Extension projects such as browser plugins, client integration libraries, and ap
 Steps to contribute:
 
 1. Fork this repository into your account on Github
-2. Clone *your forked repository* (not our original one) to your hard drive with `git clone  https://github.com/intuit/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git'
+2. Clone *your forked repository* (not our original one) to your hard drive with 'git clone  https://github.com/intuit/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git'
 3. Design and develop your changes
 4. Add/update unit tests
 5. Add/update integration tests
