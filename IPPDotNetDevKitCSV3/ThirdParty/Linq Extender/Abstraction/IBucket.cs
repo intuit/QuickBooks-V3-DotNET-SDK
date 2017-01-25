@@ -5,7 +5,7 @@ namespace Intuit.Ipp.LinqExtender.Abstraction
 {
     
     /// <summary>
-    /// Interfae defining Bucket object and its accesible proeprties.
+    /// Interface defining Bucket object and its accesible proeprties.
     /// </summary>
     [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
     internal interface IBucket
