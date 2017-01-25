@@ -49,6 +49,7 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
 
 ## Project Overview
 * [Refer SDK docs](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_accounting)
+* [Refer SDK class lib docs](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Class%20Lib%20Docs)
 
 ## Sample Apps
 
