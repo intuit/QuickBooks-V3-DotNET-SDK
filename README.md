@@ -59,3 +59,26 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
 * [OpenId-OAuth Sample](https://github.com/IntuitDeveloper/SampleApp-OpenID-Oauth-Java)
 * [MVC3](https://github.com/IntuitDeveloper/QuickbooksV3API-DotNet-Mvc3-Sample)
 * [MVC5](https://github.com/IntuitDeveloper/SampleApp-TimeTracking_Invoicing-DotNet)
+
+## Contribute
+
+We greatly encourage contributions! You can add new features, report and fix existing bugs, write docs and
+tutorials, or any of the above. Feel free to open issues and/or send pull requests.
+
+The `master` branch of this repository contains the latest stable release of .Net SDK, while snapshots are published to the `develop` branch. In general, pull requests should be submitted against `develop` by forking this repo into your account, developing and testing your changes, and creating pull requests to request merges. See the [Contributing to a Project](https://guides.github.com/activities/contributing-to-open-source/)
+article for more details about how to contribute.
+
+Extension projects such as browser plugins, client integration libraries, and apps can be contributed under the `contrib` directory.
+
+Steps to contribute:
+
+1. Fork this repository into your account on Github
+2. Clone *your forked repository* (not our original one) to your hard drive with `git clone  https://github.com/intuit/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git'
+3. Design and develop your changes
+4. Add/update unit tests
+5. Add/update integration tests
+6. Add/update documentation on `gh-pages` branch
+7. Create a pull request for review to request merge
+8. Obtain 2 approval _squirrels_ before your changes can be merged
+
+Thank you for your contribution!
