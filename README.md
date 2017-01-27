@@ -30,23 +30,23 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
   * [Refer docs to generate all the keys using Oauth sample app or OAuth Playground](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools/0001_quick_start)
   
   * Add all app keys in the App.config and run tests
-      <!--Specify AccessToken Value for QBO-->
-        <add key="AccessTokenQBO" value="" />
+    <!--Specify AccessToken Value for QBO-->
+    <add key="AccessTokenQBO" value="" />
 
-        <!--Specify accessTokenSecret Value for QBO-->
-        <add key="accessTokenSecretQBO" value="" />
+    <!--Specify accessTokenSecret Value for QBO-->
+    <add key="accessTokenSecretQBO" value="" />
 
-        <!--Specify consumerKey Value for QBO-->
-        <add key="consumerKeyQBO" value="" />
+    <!--Specify consumerKey Value for QBO-->
+    <add key="consumerKeyQBO" value="" />
 
-        <!--Specify consumerSecret Value for QBO-->
-        <add key="consumerSecretQBO" value="" />
+    <!--Specify consumerSecret Value for QBO-->
+    <add key="consumerSecretQBO" value="" />
 
-        <!--Specify realmIdIA Value for QBO-->
-        <add key="realmIdIAQBO" value="" />   
+    <!--Specify realmIdIA Value for QBO-->
+    <add key="realmIdIAQBO" value="" />   
 
-        <!--Specify AppToken Value for QBO-->
-        <add key="AppTokenQBO" value="" />
+    <!--Specify AppToken Value for QBO-->
+    <add key="AppTokenQBO" value="" />
     
 * [Integration Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test)
   * [Refer docs to generate all the keys using Oauth sample app or OAuth Playground](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools/0001_quick_start)
@@ -56,7 +56,7 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
     <add key="ConsumerSecretQBO" value="" />
     <add key="AccessTokenQBO" value="" />
     <add key="AccessTokenSecretQBO" value="" />
-    <add key="realmIdIAQBO" value="" />
+    <add key="realmIAQBO" value="" />
 
 
 
