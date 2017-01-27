@@ -7,7 +7,7 @@ IDG .NET SDK for QuickBooks V3
 **Support:** [Help](https://help.developer.intuit.com/s/) <br/>
 **Documentation:** [User Guide](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks),[Refer SDK class lib docs](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Class%20Lib%20Docs)<br/>
 **License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
-**Nuget:** [![Binaries of this SDK are available at]("http://img.shields.io/badge/nuget-{0}%20downloads-{1}.svg")]
+**Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-2.9.0-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
 
 
 The QuickBooks Online .Net SDK provides a set of .Net class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. Some of the features included in this SDK are:
@@ -46,16 +46,16 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
         <add key="AppTokenQBO" value="" />
     
 * [Integration Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test)
-  * All app keys in the App.config and run tests
+  * [Refer docs to generate all the keys using Oauth sample app or OAuth Playground](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools/0001_quick_start)
+  
+  * Add All app keys in the App.config and run tests
     <add key="ConsumerKeyQBO" value="" />
     <add key="ConsumerSecretQBO" value="" />
     <add key="AccessTokenQBO" value="" />
     <add key="AccessTokenSecretQBO" value="" />
     <add key="realmIdIAQBO" value="" />
 
-## Project Overview
-* [Refer SDK docs](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_accounting)
-* [Refer SDK class lib docs](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Class%20Lib%20Docs)
+
 
 
 
