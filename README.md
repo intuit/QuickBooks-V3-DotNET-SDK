@@ -4,6 +4,11 @@ V3-DotNet-SDK
 IDG .NET SDK for QuickBooks V3
 (Class lib Project written in .Net Framework 4)
 
+**Support:** [Help](https://help.developer.intuit.com/s/) <br/>
+**Documentation:** [User Guide](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks)<br/>
+**License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
+
+
 The QuickBooks Online .Net SDK provides a set of .Net class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. Some of the features included in this SDK are:
 
 * Ability to perform single and batch processing of CRUD operations on all QuickBooks Online entities.
