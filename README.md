@@ -35,15 +35,15 @@ Refer steps to generate all the keys required to run tests using OAuth Playgroun
 * To get Prod app keys to get Oauth tokens for Live companies->Go to your app->Prod tab-> enter all urls and save. Then get the prod keys from Keys tab under Prod tab of the app. 
 * Click Test Connect to Oauth->Intuit Anywhere tab->Set time duration in seconds for 15552000sec and get the access token and secret for your app and company by right clicking on the page and doing a view source. 
 * You will then set of access token and access token secret and realmid/companyid to make api calls for their QBO company which is valid for 180 days. 
-* To 'renew tokens', you can call [Reconnect api]((https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
+* To 'renew tokens', you can call [Reconnect api](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
 
 
  * NOTE: For sandbox testing, you need to use dev app keys and sandbox base url. 
 For live/prod qbo company testing, use prod app keys and prod base url after doing a private publish as mentioned below. 
 Go to your app->Prod tab-> enter all urls and save. Then get the prod keys from Keys tab under Prod tab of the app. 
 Please refer- 
-https://developer.intuit.com/v2/blog/2014/10/20/changes-to-ipp-app-tokens 
-https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes 
+[Blog 1](https://developer.intuit.com/v2/blog/2014/10/20/changes-to-ipp-app-tokens) 
+[Blog 2](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes) 
 
 
 * [Unit Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Code) 
