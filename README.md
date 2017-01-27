@@ -42,8 +42,8 @@ Refer steps to generate all the keys required to run tests using OAuth Playgroun
 For live/prod qbo company testing, use prod app keys and prod base url after doing a private publish as mentioned below. 
 Go to your app->Prod tab-> enter all urls and save. Then get the prod keys from Keys tab under Prod tab of the app. 
 Please refer- 
-[Blog 1](https://developer.intuit.com/v2/blog/2014/10/20/changes-to-ipp-app-tokens) 
-[Blog 2](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes) 
+  * [Blog 1](https://developer.intuit.com/v2/blog/2014/10/20/changes-to-ipp-app-tokens) 
+  * [Blog 2](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes) 
 
 
 * [Unit Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Code) 
