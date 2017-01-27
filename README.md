@@ -5,8 +5,9 @@ IDG .NET SDK for QuickBooks V3
 (Class lib Project written in .Net Framework 4)
 
 **Support:** [Help](https://help.developer.intuit.com/s/) <br/>
-**Documentation:** [User Guide](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks)<br/>
+**Documentation:** [User Guide](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks),[Refer SDK class lib docs](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Class%20Lib%20Docs)<br/>
 **License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
+**Nuget:** [![Binaries of this SDK are available at]("http://img.shields.io/badge/nuget-{0}%20downloads-{1}.svg")]
 
 
 The QuickBooks Online .Net SDK provides a set of .Net class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. Some of the features included in this SDK are:
@@ -56,34 +57,6 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
 * [Refer SDK docs](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_accounting)
 * [Refer SDK class lib docs](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Class%20Lib%20Docs)
 
-## Sample Apps
 
-* [CRUD Sample](https://github.com/IntuitDeveloper/SampleApp-CRUD-.Net)
-* [Webhooks Sample](https://github.com/IntuitDeveloper/SampleApp-Webhooks-DotNet)
-* [OAuth Sample](https://github.com/IntuitDeveloper/oauth-dotnet)
-* [OpenId-OAuth Sample](https://github.com/IntuitDeveloper/SampleApp-OpenID-Oauth-Java)
-* [MVC3](https://github.com/IntuitDeveloper/QuickbooksV3API-DotNet-Mvc3-Sample)
-* [MVC5](https://github.com/IntuitDeveloper/SampleApp-TimeTracking_Invoicing-DotNet)
 
-## Contribute
 
-We greatly encourage contributions! You can add new features, report and fix existing bugs, write docs and
-tutorials, or any of the above. Feel free to open issues and/or send pull requests.
-
-The `master` branch of this repository contains the latest stable release of .Net SDK, while snapshots are published to the `develop` branch. In general, pull requests should be submitted against `develop` by forking this repo into your account, developing and testing your changes, and creating pull requests to request merges. See the [Contributing to a Project](https://guides.github.com/activities/contributing-to-open-source/)
-article for more details about how to contribute.
-
-Extension projects such as browser plugins, client integration libraries, and apps can be contributed under the `contrib` directory.
-
-Steps to contribute:
-
-1. Fork this repository into your account on Github
-2. Clone *your forked repository* (not our original one) to your hard drive with 'git clone  https://github.com/intuit/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git'
-3. Design and develop your changes
-4. Add/update unit tests
-5. Add/update integration tests
-6. Add/update documentation on `gh-pages` branch
-7. Create a pull request for review to request merge
-8. Obtain 2 approval _squirrels_ before your changes can be merged
-
-Thank you for your contribution!
