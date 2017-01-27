@@ -26,37 +26,35 @@ The QuickBooks Online .Net SDK provides a set of .Net class libraries that make 
 * .Net CORE is not supported by this SDK.
 
 ## Running Tests
-* [Unit Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Code)
-  * [Refer docs to generate all the keys using Oauth sample app or OAuth Playground](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools/0001_quick_start)
+
+Refer steps to generate all the keys required to run tests using OAuth Playground-
   
-  * Add all app keys in the App.config and run tests
-    <!--Specify AccessToken Value for QBO-->
-    <add key="AccessTokenQBO" value="" />
+* Go to [Developer Docs](https://developer.intuit.com/). 
+* Create an app on our IDG platform for the QBO v3 apis. 
+* You will get a set of Development consumer key, consumer secret and app token.This can be used to get Oauth tokens for sandbox companies. 
+* To get Prod app keys to get Oauth tokens for Live companies->Go to your app->Prod tab-> enter all urls and save. Then get the prod keys from Keys tab under Prod tab of the app. 
+* Click Test Connect to Oauth->Intuit Anywhere tab->Set time duration in seconds for 15552000sec and get the access token and secret for your app and company by right clicking on the page and doing a view source. 
+* You will then set of access token and access token secret and realmid/companyid to make api calls for their QBO company which is valid for 180 days. 
+* To 'renew tokens', you can call [Reconnect api]((https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
 
-    <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="" />
 
-    <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="" />
+ * NOTE: For sandbox testing, you need to use dev app keys and sandbox base url. 
+For live/prod qbo company testing, use prod app keys and prod base url after doing a private publish as mentioned below. 
+Go to your app->Prod tab-> enter all urls and save. Then get the prod keys from Keys tab under Prod tab of the app. 
+Please refer- 
+https://developer.intuit.com/v2/blog/2014/10/20/changes-to-ipp-app-tokens 
+https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes 
 
-    <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="" />
 
-    <!--Specify realmIdIA Value for QBO-->
-    <add key="realmIdIAQBO" value="" />   
-
-    <!--Specify AppToken Value for QBO-->
-    <add key="AppTokenQBO" value="" />
+* [Unit Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Code) 
+  
+  * Add all app keys in the [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Code/App.config) and run tests
     
 * [Integration Tests](https://github.com/IntuitDeveloper/V3-DotNet-SDK/tree/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test)
-  * [Refer docs to generate all the keys using Oauth sample app or OAuth Playground](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools/0001_quick_start)
+  * [Refer steps to generate all the keys using OAuth Playground]
   
-  * Add All app keys in the App.config and run tests
-    <add key="ConsumerKeyQBO" value="" />
-    <add key="ConsumerSecretQBO" value="" />
-    <add key="AccessTokenQBO" value="" />
-    <add key="AccessTokenSecretQBO" value="" />
-    <add key="realmIAQBO" value="" />
+  * Add All app keys in the [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test/SDKV3Test/App.config) and run tests
+
 
 
 
