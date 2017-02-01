@@ -56,6 +56,25 @@ Please refer-
   * Add All app keys in the [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test/SDKV3Test/App.config) and run tests
 
 
+## Contribute:
+We greatly encourage contributions! You can add new features, report and fix existing bugs, write docs and
+tutorials, or any of the above. Feel free to open issues and/or send pull requests.
+
+The `master` branch of this repository contains the latest stable release of the SDK, while snapshots are published to the `develop` branch. In general, pull requests should be submitted against `develop` by forking this repo into your account, developing and testing your changes, and creating pull requests to request merges. See the [Contributing to a Project](https://guides.github.com/activities/contributing-to-open-source/)
+article for more details about how to contribute.
+
+Steps to contribute:
+
+1. Fork this repository into your account on Github
+2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git`
+3. Design and develop your changes
+4. Add/update unit tests
+5. Create a pull request for review to request merge
+6. Obtain approval before your changes can be merged
+
+Note: Before you submit the pull request, make sure to remove the keys and tokens from [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Code/App.config) and [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test/SDKV3Test/App.config)  that you might have added for testing purpose.
+
+Thank you for your contribution!
 
 
 
