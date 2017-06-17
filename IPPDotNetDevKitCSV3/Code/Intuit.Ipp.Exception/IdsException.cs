@@ -126,11 +126,24 @@ namespace Intuit.Ipp.Exception
             var tempinnerExceptions = innerExceptions;
             if (tempinnerExceptions != null)
             {
-                IdsError idsError = innerExceptions[0];
-                if (idsError.Detail != null)
+
+
+                string errorDetail = "";
+                int i = 0;
+                var count = innerExceptions.Count;//Nimisha
+                for (i = count - 1; i >= 0; i--)
                 {
-                    this.errorMessage = errorMessage + "Details:" + idsError.Detail;
-              
+                    errorDetail += innerExceptions[i].Detail + ".";
+                }
+
+                if (errorDetail != null)
+                {
+                    this.errorMessage = errorMessage + "Details:" + errorDetail;
+
+                }
+                else if (errorDetail != "")
+                {
+                    this.errorMessage = errorMessage;
                 }
                 else
                 {

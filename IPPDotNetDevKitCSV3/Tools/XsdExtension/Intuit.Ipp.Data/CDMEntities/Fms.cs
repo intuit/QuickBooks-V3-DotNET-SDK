@@ -913,6 +913,18 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         Vehicles,
+        
+        /// <remarks/>
+        WithholdingTaxSales,
+        
+        /// <remarks/>
+        WithholdingTaxPurchases,
+        
+        /// <remarks/>
+        WithholdingAssetAmount,
+        
+        /// <remarks/>
+        WithholdingLiabilityAmount,
     }
     
     /// <remarks/>
@@ -7893,6 +7905,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType priceLevelRefField;
         
+        private ReferenceType markUpIncomeAccountRefField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -7994,6 +8008,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.priceLevelRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: An account associated with markup info.
+        /// Cannot be updated or modified.
+        /// 
+        /// </summary>
+        public ReferenceType MarkUpIncomeAccountRef {
+            get {
+                return this.markUpIncomeAccountRefField;
+            }
+            set {
+                this.markUpIncomeAccountRefField = value;
             }
         }
     }
@@ -25549,6 +25580,10 @@ namespace Intuit.Ipp.Data {
         
         private EmailAddress salesEmailBccField;
         
+        private bool emailCopyToCompanyField;
+        
+        private bool emailCopyToCompanyFieldSpecified;
+        
         private bool allowDepositField;
         
         private bool allowDepositFieldSpecified;
@@ -25762,6 +25797,33 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.salesEmailBccField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product:QBO
+        /// Email a Copy to the company for sales form
+        /// </summary>
+        public bool EmailCopyToCompany {
+            get {
+                return this.emailCopyToCompanyField;
+            }
+            set {
+                this.emailCopyToCompanyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool EmailCopyToCompanySpecified {
+            get {
+                return this.emailCopyToCompanyFieldSpecified;
+            }
+            set {
+                this.emailCopyToCompanyFieldSpecified = value;
             }
         }
         
@@ -31025,6 +31087,8 @@ namespace Intuit.Ipp.Data {
         
         private string primaryTaxIdentifierField;
         
+        private string taxExemptionReasonIdField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -31759,6 +31823,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.primaryTaxIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Specifies tax exemption reason to be associated with Customer
+        /// 
+        /// </summary>
+        public string TaxExemptionReasonId {
+            get {
+                return this.taxExemptionReasonIdField;
+            }
+            set {
+                this.taxExemptionReasonIdField = value;
             }
         }
     }
@@ -34133,7 +34213,6 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("SyncErrorResponse", typeof(SyncErrorResponse))]
         [System.Xml.Serialization.XmlElementAttribute("OLBTransaction", typeof(OLBTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("OLBStatus", typeof(OLBStatus))]
-        //[System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]//QBO Service is missing this in schema
         public object AnyIntuitObject {
             get {
                 return this.itemField;

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{D65F7456-F8DB-4EC0-8C03-C22961C80649}"
 EndProject
@@ -95,8 +95,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.WebhooksService.Test", "Intuit.Ipp.WebhooksService.Test\Intuit.Ipp.WebhooksService.Test.csproj", "{C7AFAB6A-5A19-4845-85A5-220C848F8F73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.QueryFilter.Test", "Intuit.Ipp.QueryFilter.Test\Intuit.Ipp.QueryFilter.Test.csproj", "{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDGOauthSample", "..\..\oauth-dotnet-master\IDG Oauth Sample\IDGOauthSample\IDGOauthSample.csproj", "{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -372,18 +370,6 @@ Global
 		{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}.Release|x86.ActiveCfg = Release|Any CPU
 		{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}.Release|x86.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|x86.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|x86.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

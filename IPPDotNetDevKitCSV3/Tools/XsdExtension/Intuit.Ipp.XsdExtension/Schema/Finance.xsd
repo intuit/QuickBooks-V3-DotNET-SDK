@@ -1551,6 +1551,38 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="WithholdingTaxSales">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO 
+						Description: Use Withholding Tax Sales to track the income you have received with a withholding product/service.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WithholdingTaxPurchases">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO 
+						Description: Use Withholding Tax Purchases to track the expenses you have incurred with a withholding account/item.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WithholdingAssetAmount">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO 
+						Description: Use Withholding Asset account to track the withholding balance as an asset for the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WithholdingLiabilityAmount">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO 
+						Description: Use Withholding Liability account track the withholding balance as a liability for the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="APCreditCardOperationEnum">
@@ -6405,6 +6437,15 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="MarkUpIncomeAccountRef" type="ReferenceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Product: ALL
+						Description: An account associated with markup info. 
+						Cannot be updated or modified.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Account">
@@ -10573,6 +10614,13 @@
 						Product:QBO
 						Bcc Email Address for Sales forms
 					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EmailCopyToCompany" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Product:QBO
+						Email a Copy to the company for sales form</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AllowDeposit" type="xs:boolean"

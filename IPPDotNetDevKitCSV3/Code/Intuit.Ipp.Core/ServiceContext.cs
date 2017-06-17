@@ -387,6 +387,14 @@ namespace Intuit.Ipp.Core
             if (this.serviceType == IntuitServicesType.QBO)
             {
                 baseurl = this.IppConfiguration.BaseUrl.Qbo;
+                if (baseurl != "")
+                {
+                    if (!baseurl.EndsWith("/")) //Nimisha add check for /
+                    {
+                        baseurl = baseurl + "/";
+                    }
+                }
+
                 if (string.IsNullOrEmpty(baseurl))
                 {
                     baseurl = CoreConstants.QBO_BASEURL;

@@ -25,6 +25,8 @@ namespace Intuit.Ipp.Retry
     using System.Net;
     using System.Threading;
     using Intuit.Ipp.Exception;
+    using Intuit.Ipp.Core;
+    using System.IO;
 
     /// <summary>
     /// Defines a delegate that will be invoked whenever a retry condition is encountered.
@@ -40,6 +42,14 @@ namespace Intuit.Ipp.Retry
     /// </summary>
     public class IntuitRetryPolicy
     {
+
+        //Nimisha
+        /// <summary>
+        /// The Service Context.
+        /// </summary>
+        private ServiceContext context;
+
+
         /// <summary>
         /// Delegate that will be invoked whenever a retry condition is encountered.
         /// </summary>
@@ -81,6 +91,33 @@ namespace Intuit.Ipp.Retry
         private TimeSpan deltaBackOff;
 
         /// <summary>
+        /// Prevents a default instance of the <see cref="IntuitRetryPolicy"/> class from being created.
+        /// </summary>
+        private IntuitRetryPolicy()
+        {
+        }
+        //Nimisha
+
+        //Nimisha
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
+        /// </summary>
+        /// <param name="context">The service context.</param>
+        /// <param name="retryCount">The number of retry attempts.</param>
+        /// <param name="retryInterval">The time interval between retries.</param>
+        public IntuitRetryPolicy(ServiceContext context, int retryCount, TimeSpan retryInterval) : this()
+        {
+            IntuitRetryHelper.ArgumentNotNegativeValue(retryCount, "retryCount");
+            IntuitRetryHelper.ArgumentNotNegativeValue(retryInterval.Ticks, "retryInterval");
+
+            this.retryCount = retryCount;
+            this.retryInterval = retryInterval;
+            this.shouldRetry = this.GetShouldFixedRetry();
+            this.context = context;
+        }
+        //Nimisha
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
         /// </summary>
         /// <param name="retryCount">The number of retry attempts.</param>
@@ -94,6 +131,29 @@ namespace Intuit.Ipp.Retry
             this.retryInterval = retryInterval;
             this.shouldRetry = this.GetShouldFixedRetry();
         }
+
+        //NImisha
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
+        /// </summary>
+        /// <param name="context">The service context.</param>
+        /// <param name="retryCount">The number of retry attempts.</param>
+        /// <param name="initialInterval">The initial interval that will apply for the first retry.</param>
+        /// <param name="increment">The incremental time value that will be used for calculating the progressive delay between retries.</param>
+        public IntuitRetryPolicy(ServiceContext context, int retryCount, TimeSpan initialInterval, TimeSpan increment) : this()
+        {
+            IntuitRetryHelper.ArgumentNotNegativeValue(retryCount, "retryCount");
+            IntuitRetryHelper.ArgumentNotNegativeValue(initialInterval.Ticks, "initialInterval");
+            IntuitRetryHelper.ArgumentNotNegativeValue(increment.Ticks, "increment");
+
+            this.retryCount = retryCount;
+            this.initialInterval = initialInterval;
+            this.increment = increment;
+            this.shouldRetry = this.GetShouldIncrementalRetry();
+            this.context = context;
+        }
+
+        //Nimisha
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
@@ -112,6 +172,34 @@ namespace Intuit.Ipp.Retry
             this.increment = increment;
             this.shouldRetry = this.GetShouldIncrementalRetry();
         }
+
+        //Nimisha
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
+        /// </summary>
+        /// <param name="context">The service context.</param>
+        /// <param name="retryCount">The maximum number of retry attempts.</param>
+        /// <param name="minBackoff">The minimum back-off time</param>
+        /// <param name="maxBackoff">The maximum back-off time.</param>
+        /// <param name="deltaBackoff">The value which will be used to calculate a random delta in the exponential delay between retries.</param>
+        public IntuitRetryPolicy(ServiceContext context, int retryCount, TimeSpan minBackoff, TimeSpan maxBackoff, TimeSpan deltaBackoff) : this()
+        {
+            IntuitRetryHelper.ArgumentNotNegativeValue(retryCount, "retryCount");
+            IntuitRetryHelper.ArgumentNotNegativeValue(minBackoff.Ticks, "minBackoff");
+            IntuitRetryHelper.ArgumentNotNegativeValue(maxBackoff.Ticks, "maxBackoff");
+            IntuitRetryHelper.ArgumentNotNegativeValue(deltaBackoff.Ticks, "deltaBackoff");
+            IntuitRetryHelper.ArgumentNotGreaterThan(minBackoff.TotalMilliseconds, maxBackoff.TotalMilliseconds, "minBackoff");
+
+            this.retryCount = retryCount;
+            this.minBackOff = minBackoff;
+            this.maxBackOff = maxBackoff;
+            this.deltaBackOff = deltaBackoff;
+            this.shouldRetry = this.GetShouldExponentialBackOffRetry();
+            this.context = context;
+        }
+
+        //Nimisha
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
@@ -264,7 +352,74 @@ namespace Intuit.Ipp.Retry
                                 if (!this.shouldRetry(retryCount, lastError, out delay))
                                 {
                                     WebException webException = ex as WebException;
+
+
+                                    //Nimisha
+                                    string errorString = string.Empty;
                                     if (webException != null)
+                                    {
+
+                                        // If not null then check the response property of the webException object.
+                                        if (webException.Response != null)
+                                    {
+                                        // There is a response from the Ids server. Cast it to HttpWebResponse.
+                                        HttpWebResponse errorResponse = (HttpWebResponse)webException.Response;
+
+                                        // Get the status code description of the error response.
+                                        string statusCodeDescription = errorResponse.StatusCode.ToString();
+
+                                        // Get the status code of the error response.
+                                        int statusCode = (int)errorResponse.StatusCode;
+
+
+                                        ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
+                                        if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
+                                        {
+                                            using (var responseStream = errorResponse.GetResponseStream()) //Nimisha Check for decompressing
+                                            {
+                                                using (var decompressedStream = responseCompressor.Decompress(responseStream))
+                                                {
+                                                    // Get the response stream.
+                                                    StreamReader reader = new StreamReader(decompressedStream);
+                                                    //StreamReader reader = new StreamReader(responseStream);
+
+                                                    // Read the Stream
+                                                    errorString = reader.ReadToEnd();
+                                                    // Close reader
+                                                    reader.Close();
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            using (Stream responseStream = errorResponse.GetResponseStream())
+                                            {
+                                                // Get the response stream.
+                                                StreamReader reader = new StreamReader(responseStream);
+
+                                                // Read the Stream
+                                                errorString = reader.ReadToEnd();
+                                                // Close reader
+                                                reader.Close();
+                                            }
+                                        }
+
+                                        // Log the error string to disk.
+                                        CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(errorString, false);
+                                    }
+                                }
+
+                                    Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
+                                    IdsException idsException = fault.ParseErrorResponseAndPrepareException(errorString);
+
+
+
+                                    if (idsException != null)
+                                    {
+                                        faultHandler(new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, idsException));
+                                        return false;
+                                    }//Nimisha
+                                    else if(webException != null)
                                     {
                                         faultHandler(new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, webException));
                                         return false;
@@ -401,7 +556,72 @@ namespace Intuit.Ipp.Retry
                     if (!this.shouldRetry(retryCount++, lastError, out delay))
                     {
                         WebException webException = ex as WebException;
-                        if (webException != null)
+
+                        //Nimisha
+                        string errorString = string.Empty;
+
+                    if (webException != null)
+                    {
+                        // If not null then check the response property of the webException object.
+                        if (webException.Response != null)
+                        {
+                            // There is a response from the Ids server. Cast it to HttpWebResponse.
+                            HttpWebResponse errorResponse = (HttpWebResponse)webException.Response;
+
+                            // Get the status code description of the error response.
+                            string statusCodeDescription = errorResponse.StatusCode.ToString();
+
+                            // Get the status code of the error response.
+                            int statusCode = (int)errorResponse.StatusCode;
+
+
+                            ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
+                            if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
+                            {
+                                using (var responseStream = errorResponse.GetResponseStream()) //Nimisha Check for decompressing
+                                {
+                                    using (var decompressedStream = responseCompressor.Decompress(responseStream))
+                                    {
+                                        // Get the response stream.
+                                        StreamReader reader = new StreamReader(decompressedStream);
+                                        //StreamReader reader = new StreamReader(responseStream);
+
+                                        // Read the Stream
+                                        errorString = reader.ReadToEnd();
+                                        // Close reader
+                                        reader.Close();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                using (Stream responseStream = errorResponse.GetResponseStream())
+                                {
+                                    // Get the response stream.
+                                    StreamReader reader = new StreamReader(responseStream);
+
+                                    // Read the Stream
+                                    errorString = reader.ReadToEnd();
+                                    // Close reader
+                                    reader.Close();
+                                }
+                            }
+
+                            // Log the error string to disk.
+                            CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(errorString, false);
+                        }
+                    }
+
+                        Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
+                        IdsException idsException = fault.ParseErrorResponseAndPrepareException(errorString);
+
+
+
+                        if (idsException != null)
+                        {
+                            throw new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, idsException);
+                        }//Nimisha
+                        else if(webException != null)
                         {
                             throw new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, webException);
                         }

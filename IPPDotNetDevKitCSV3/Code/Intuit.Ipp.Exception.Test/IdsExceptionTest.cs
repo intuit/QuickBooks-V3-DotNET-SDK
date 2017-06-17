@@ -179,7 +179,7 @@ namespace Intuit.Ipp.Exception.Test
             IdsException target = new IdsException(errorMessage, innerExceptions);
 
             IdsError idsError = innerExceptions[0];
-            Assert.AreEqual(target.Message, errorMessage);
+            Assert.AreEqual(target.Message, errorMessage+"Details:.");
             Assert.ReferenceEquals(target.InnerExceptions, innerExceptions);
         }
 

@@ -47,6 +47,10 @@
       <HintPath>..\..\..\Code\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Intuit.Ipp.Diagnostics, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -106,12 +110,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj">
-      <Project>{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}</Project>
-      <Name>Intuit.Ipp.Diagnostics</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

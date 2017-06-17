@@ -1028,7 +1028,7 @@ namespace Intuit.Ipp.Test
             invoice.Balance = new Decimal(0.00);
             invoice.BalanceSpecified = true;
 
-            
+
 
             //invoice.FinanceCharge = true;
             //invoice.FinanceChargeSpecified = true;
@@ -2082,7 +2082,7 @@ namespace Intuit.Ipp.Test
 
             String guid = Helper.GetGuid();
             account.Name = "Nam_" + Helper.GetGuid().Substring(0, 3);
-           
+
             //newly added field
             account.AccountAlias = "al_" + Helper.GetGuid().Substring(0, 3);
             account.TxnLocationType = "WithinFrance";
@@ -2098,11 +2098,11 @@ namespace Intuit.Ipp.Test
             account.ClassificationSpecified = true;
             account.AccountType = accountType;
             account.AccountTypeSpecified = true;
-           
+
             return account;
         }
 
-       
+
 
         internal static Account UpdateAccount(ServiceContext context, Account entity)
         {
@@ -2791,10 +2791,10 @@ namespace Intuit.Ipp.Test
 
             Vendor vendors = Helper.FindOrAdd<Vendor>(context, new Vendor());
             entity.VendorRef = new ReferenceType()
-                {
-                    name = vendors.DisplayName,
-                    Value = vendors.Id
-                };
+            {
+                name = vendors.DisplayName,
+                Value = vendors.Id
+            };
             return entity;
         }
 
@@ -3429,18 +3429,18 @@ namespace Intuit.Ipp.Test
 
         internal static Item CreateItem(ServiceContext context)
         {
-            
+
             Item item = new Item();
 
-       
+
             item.Name = "Name" + Helper.GetGuid().Substring(0, 5); ;
             item.Description = "Description";
             item.Type = ItemTypeEnum.NonInventory;
             item.TypeSpecified = true;
-          
+
             item.Active = true;
             item.ActiveSpecified = true;
-           
+
 
             //item.SubItem = true;
             //item.SubItemSpecified = true;
@@ -3599,7 +3599,7 @@ namespace Intuit.Ipp.Test
             //itemAssemblyDetailList.Add(itemAssemblyDetail);
             //item.ItemAssemblyDetail = itemAssemblyDetailList.ToArray();
             //item.ItemEx = 
-          
+
             return item;
 
         }
@@ -3616,7 +3616,7 @@ namespace Intuit.Ipp.Test
             item.Type = ItemTypeEnum.Service;
             item.TypeSpecified = true;
             item.ItemCategoryType = "Service";
-           
+
             //item.SubItem = true;
             //item.SubItemSpecified = true;
             //item.ParentRef = new ReferenceType() 
@@ -3777,7 +3777,7 @@ namespace Intuit.Ipp.Test
             //item.ItemEx = 
             return item;
         }
-        
+
 
         internal static Item UpdateItem(ServiceContext context, Item entity)
         {
@@ -3802,7 +3802,7 @@ namespace Intuit.Ipp.Test
             };
             return entity;
         }
-        
+
 
         internal static Item SparseUpdateItem(ServiceContext context, string Id, string syncToken)
         {
@@ -4109,10 +4109,10 @@ namespace Intuit.Ipp.Test
                 name = bankAccount.Name,
                 Value = bankAccount.Id
             };
-           
+
             deposit.TotalAmt = new Decimal(100.00);
             deposit.TotalAmtSpecified = true;
-            
+
             deposit.TxnDate = DateTime.UtcNow.Date;
             deposit.TxnDateSpecified = true;
             //deposit.DepartmentRef = new ReferenceType() 
@@ -4149,7 +4149,7 @@ namespace Intuit.Ipp.Test
 
             line.DetailType = LineDetailTypeEnum.DepositLineDetail;
             line.DetailTypeSpecified = true;
-      
+
             DepositLineDetail lineDepositLineDetail = new DepositLineDetail();
 
             Customer customer = Helper.FindOrAdd<Customer>(context, new Customer());
@@ -4191,7 +4191,7 @@ namespace Intuit.Ipp.Test
             //line.DetailType = LineDetailTypeEnum.;
             //line.AnyIntuitObject = 
 
-           
+
             return deposit;
         }
 
@@ -4220,7 +4220,7 @@ namespace Intuit.Ipp.Test
                 name = bankAccount.Name,
                 Value = bankAccount.Id
             };
-           
+
 
             return entity;
         }
@@ -5366,7 +5366,7 @@ namespace Intuit.Ipp.Test
 
             List<Line> lineList = new List<Line>();
             Line line = new Line();
-       
+
             line.Description = "Description12";
             line.Amount = new Decimal(100.00);
             line.AmountSpecified = true;
@@ -5403,11 +5403,11 @@ namespace Intuit.Ipp.Test
             };
 
             TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
-            txnTaxDetail.TxnTaxCodeRef = new ReferenceType() 
-            { 
-            name = taxCode.Name,
-            Value =  taxCode.Id
-            
+            txnTaxDetail.TxnTaxCodeRef = new ReferenceType()
+            {
+                name = taxCode.Name,
+                Value = taxCode.Id
+
             };
             txnTaxDetail.TotalTax = new Decimal(100.00);
             txnTaxDetail.TotalTaxSpecified = true;
@@ -5424,7 +5424,7 @@ namespace Intuit.Ipp.Test
             //line.LineEx = 
             lineList.Add(line);
             refundReceipt.Line = lineList.ToArray();
-            
+
 
             Account account = Helper.FindOrAddAccount(context, AccountTypeEnum.Bank, AccountClassificationEnum.Liability);
             refundReceipt.DepositToAccountRef = new ReferenceType()
@@ -5438,7 +5438,7 @@ namespace Intuit.Ipp.Test
             //type = 
             //Value = 
             //};
-           
+
 
             //List<Line> taxLineList = new List<Line>();
             //Line taxLine = new Line();
@@ -5500,37 +5500,46 @@ namespace Intuit.Ipp.Test
         }
 
 
-        internal static Currency CreateCurrency(ServiceContext context)
+        internal static CompanyCurrency CreateCompanyCurrency(ServiceContext context)
         {
-            Currency currency = new Currency();
-            currency.Name = "Name" + Helper.GetGuid().Substring(0, 5);
-            currency.Active = true;
-            currency.ActiveSpecified = true;
+            CompanyCurrency companyCurrency = new CompanyCurrency();
 
-            currencyCode currencyCode = new currencyCode();
-            currency.Code = currencyCode.AMD;
+            companyCurrency.Active = true;
+            companyCurrency.ActiveSpecified = true;
 
-            currency.CodeSpecified = true;
-            currency.Separator = "Separator" + Helper.GetGuid().Substring(0, 5);
-            currency.Format = "####";
-            currency.DecimalPlaces = "DecimalPlaces";
-            currency.DecimalSeparator = ",";
-            currency.Symbol = "Symbol";
-            currency.SymbolPosition = SymbolPositionEnum.Leading;
-            currency.SymbolPositionSpecified = true;
-            currency.UserDefined = true;
-            currency.UserDefinedSpecified = true;
-            currency.ExchangeRate = new Decimal(100.00);
-            currency.ExchangeRateSpecified = true;
-            currency.AsOfDate = DateTime.UtcNow.Date;
-            currency.AsOfDateSpecified = true;
+
+            companyCurrency.Code = "MEM";
+            // companyCurrency.Name = "Euro";
+
+
+            //currency.Name = "Name" + Helper.GetGuid().Substring(0, 5);
+            //currency.Active = true;
+            //currency.ActiveSpecified = true;
+
+            //currencyCode currencyCode = new currencyCode();
+            //currency.Code = currencyCode.AMD;
+
+            //currency.CodeSpecified = true;
+            //currency.Separator = "Separator" + Helper.GetGuid().Substring(0, 5);
+            //currency.Format = "####";
+            //currency.DecimalPlaces = "DecimalPlaces";
+            //currency.DecimalSeparator = ",";
+            //currency.Symbol = "Symbol";
+            //currency.SymbolPosition = SymbolPositionEnum.Leading;
+            //currency.SymbolPositionSpecified = true;
+            //currency.UserDefined = true;
+            //currency.UserDefinedSpecified = true;
+            //currency.ExchangeRate = new Decimal(100.00);
+            //currency.ExchangeRateSpecified = true;
+            //currency.AsOfDate = DateTime.UtcNow.Date;
+            //currency.AsOfDateSpecified = true;
             //currency.CurrencyEx = 
-            return currency;
+            return companyCurrency;
         }
 
 
 
-        internal static Currency UpdateCurrency(ServiceContext context, Currency entity)
+        internal static CompanyCurrency UpdateCompanyCurrency(ServiceContext context, CompanyCurrency entity)
         {
             //update the properties of entity
             entity.Name = "Name_updated" + Helper.GetGuid().Substring(0, 5);
@@ -5539,14 +5548,43 @@ namespace Intuit.Ipp.Test
 
 
 
-        internal static Currency UpdateCurrencySparse(ServiceContext context, string id, string syncToken)
+        internal static CompanyCurrency UpdateCompanyCurrencySparse(ServiceContext context, string id, string syncToken)
         {
-            Currency entity = new Currency();
+            CompanyCurrency entity = new CompanyCurrency();
             entity.Id = id;
             entity.SyncToken = syncToken;
             entity.sparse = true;
             entity.sparseSpecified = true;
             entity.Name = "Name_sparseupdated" + Helper.GetGuid().Substring(0, 5);
+            return entity;
+        }
+
+
+
+
+        internal static ExchangeRate UpdateExchangeRate(ServiceContext context, ExchangeRate entity)
+        {
+            //update the properties of entity
+            entity.RateSpecified = true;
+            entity.Rate = 34.00m;
+            entity.AsOfDateSpecified = true;
+            entity.AsOfDate = DateTime.Now;
+            return entity;
+        }
+
+
+
+        internal static ExchangeRate UpdateExchangeRateSparse(ServiceContext context, string id, string syncToken)
+        {
+            ExchangeRate entity = new ExchangeRate();
+            entity.Id = id;
+            entity.SyncToken = syncToken;
+            entity.sparse = true;
+            entity.sparseSpecified = true;
+            entity.RateSpecified = true;
+            entity.Rate = 34.00m;
+            entity.AsOfDateSpecified = true;
+            entity.AsOfDate = DateTime.Now;
             return entity;
         }
 
@@ -5703,18 +5741,18 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-        
+
         internal static JournalCode CreateJournalCode(ServiceContext context, JournalCodeTypeEnum journalCodeType)
         {
-                JournalCode journalCode = new JournalCode();
-                journalCode.Name = "JC" + Helper.GetGuid().Substring(0, 5);
-              //journalCode.Description = "Desc " + journalCodeType.ToString();
-                journalCode.Type = journalCodeType.ToString();
+            JournalCode journalCode = new JournalCode();
+            journalCode.Name = "JC" + Helper.GetGuid().Substring(0, 5);
+            //journalCode.Description = "Desc " + journalCodeType.ToString();
+            journalCode.Type = journalCodeType.ToString();
 
             return journalCode;
         }
 
-       
+
 
         internal static JournalEntry CreateJournalEntry(ServiceContext context)
         {
@@ -5851,7 +5889,7 @@ namespace Intuit.Ipp.Test
             return journalEntry;
         }
 
-        
+
         internal static JournalCode UpdateJournalCode(ServiceContext context, JournalCode journalCode)
         {
             //update the properties of JournalCode
@@ -5873,7 +5911,7 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-        
+
 
         internal static JournalEntry UpdateJournalEntry(ServiceContext context, JournalEntry entity)
         {
@@ -5896,7 +5934,7 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-        
+
 
 
         internal static TimeActivity CreateTimeActivity(ServiceContext context)
@@ -6852,7 +6890,7 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-       
+
         internal static Customer CreateCustomerFrance(ServiceContext context)
         {
 
@@ -7152,18 +7190,18 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-        
+
         internal static Customer UpdateCustomerFrance(ServiceContext context, Customer entity)
         {
             //update the properties of entity
             entity.GivenName = "ChangedName";
             entity.ARAccountRef = new ReferenceType()
-            { 
+            {
                 Value = "13"
             };
             return entity;
         }
-        
+
         internal static Customer SparseUpdateCustomer(ServiceContext context, string Id, string syncToken)
         {
             Customer entity = new Customer();
@@ -7669,7 +7707,7 @@ namespace Intuit.Ipp.Test
             return vendor;
         }
 
-        
+
         internal static Vendor UpdateVendor(ServiceContext context, Vendor entity)
         {
             entity.Title = "Title updated";
@@ -7680,7 +7718,7 @@ namespace Intuit.Ipp.Test
             return entity;
         }
 
-        
+
         internal static Vendor UpdateVendorFrance(ServiceContext context, Vendor entity)
         {
             entity.Title = "Title updated";
@@ -7696,7 +7734,7 @@ namespace Intuit.Ipp.Test
 
             return entity;
         }
-      
+
 
 
         internal static Vendor SparseUpdateVendor(ServiceContext context, string id, string syncToken)
@@ -8410,7 +8448,7 @@ namespace Intuit.Ipp.Test
             entity.Id = id;
             entity.SyncToken = syncToken;
             entity.sparse = true;
-            entity.sparseSpecified = true;            
+            entity.sparseSpecified = true;
             return entity;
         }
 
@@ -9028,8 +9066,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.GlobalTaxCalculationSpecified, actual.GlobalTaxCalculationSpecified);
             Assert.AreEqual(expected.TotalAmt, actual.TotalAmt);
             Assert.AreEqual(expected.TotalAmtSpecified, actual.TotalAmtSpecified);
-            Assert.AreEqual(expected.HomeTotalAmt, actual.HomeTotalAmt);
-            Assert.AreEqual(expected.HomeTotalAmtSpecified, actual.HomeTotalAmtSpecified);
+            //Assert.AreEqual(expected.HomeTotalAmt, actual.HomeTotalAmt);
+            //Assert.AreEqual(expected.HomeTotalAmtSpecified, actual.HomeTotalAmtSpecified);
             Assert.AreEqual(expected.ApplyTaxAfterDiscount, actual.ApplyTaxAfterDiscount);
             //Assert.AreEqual(expected.ApplyTaxAfterDiscountSpecified, actual.ApplyTaxAfterDiscountSpecified); //Fails for global realms
             //Assert.AreEqual(expected.TemplateRef.name, actual.TemplateRef.name);
@@ -9066,8 +9104,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.CurrencyRef.name, actual.CurrencyRef.name);
             //Assert.AreEqual(expected.CurrencyRef.type, actual.CurrencyRef.type);
             //Assert.AreEqual(expected.CurrencyRef.Value, actual.CurrencyRef.Value);
-            Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
-            Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
+            //Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
+            //Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
             Assert.AreEqual(expected.PrivateNote, actual.PrivateNote);
             Assert.AreEqual(expected.TxnStatus, actual.TxnStatus);
             Assert.IsTrue(Helper.CheckEqual(expected.LinkedTxn, actual.LinkedTxn));
@@ -9291,8 +9329,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.GlobalTaxCalculationSpecified, actual.GlobalTaxCalculationSpecified);
             Assert.AreEqual(expected.TotalAmt, actual.TotalAmt);
             Assert.AreEqual(expected.TotalAmtSpecified, actual.TotalAmtSpecified);
-            Assert.AreEqual(expected.HomeTotalAmt, actual.HomeTotalAmt);
-            Assert.AreEqual(expected.HomeTotalAmtSpecified, actual.HomeTotalAmtSpecified);
+            //Assert.AreEqual(expected.HomeTotalAmt, actual.HomeTotalAmt);
+            //Assert.AreEqual(expected.HomeTotalAmtSpecified, actual.HomeTotalAmtSpecified);
             Assert.AreEqual(expected.ApplyTaxAfterDiscount, actual.ApplyTaxAfterDiscount);
             //Assert.AreEqual(expected.ApplyTaxAfterDiscountSpecified, actual.ApplyTaxAfterDiscountSpecified);
             //Assert.AreEqual(expected.TemplateRef.name, actual.TemplateRef.name);
@@ -9351,6 +9389,29 @@ namespace Intuit.Ipp.Test
         {
             Assert.AreEqual(expected.ExpirationDate, actual.ExpirationDate);
             Assert.AreEqual(expected.TxnDate, actual.TxnDate);
+        }
+
+
+
+        internal static void VerifyExchangeRate(ExchangeRate expected, ExchangeRate actual)
+        {
+            Assert.AreEqual(expected.SourceCurrencyCode, actual.SourceCurrencyCode);
+            Assert.AreEqual(expected.TargetCurrencyCode, actual.TargetCurrencyCode);
+            Assert.AreEqual(expected.Rate, actual.Rate);
+            Assert.AreEqual(expected.RateSpecified, actual.RateSpecified);
+            Assert.AreEqual(expected.AsOfDate, actual.AsOfDate);
+            Assert.AreEqual(expected.AsOfDateSpecified, actual.AsOfDateSpecified);
+        }
+
+
+        internal static void VerifyExchangeRateSparse(ExchangeRate expected, ExchangeRate actual)
+        {
+            Assert.AreEqual(expected.SourceCurrencyCode, actual.SourceCurrencyCode);
+            Assert.AreEqual(expected.TargetCurrencyCode, actual.TargetCurrencyCode);
+            Assert.AreEqual(expected.Rate, actual.Rate);
+            Assert.AreEqual(expected.RateSpecified, actual.RateSpecified);
+            Assert.AreEqual(expected.AsOfDate, actual.AsOfDate);
+            Assert.AreEqual(expected.AsOfDateSpecified, actual.AsOfDateSpecified);
         }
 
 
@@ -9512,9 +9573,9 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.ClassificationSpecified, actual.ClassificationSpecified);
             Assert.AreEqual(expected.AccountTypeSpecified, actual.AccountTypeSpecified);
             Assert.AreEqual(expected.AcctNum, actual.AcctNum);
-          
+
         }
-        
+
 
         internal static void VerifyPurchase(Purchase expected, Purchase actual)
         {
@@ -9564,8 +9625,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.CurrencyRef.name, actual.CurrencyRef.name);
             //Assert.AreEqual(expected.CurrencyRef.type, actual.CurrencyRef.type);
             //Assert.AreEqual(expected.CurrencyRef.Value, actual.CurrencyRef.Value);
-            Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
-            Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
+            //Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
+            //Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
             Assert.AreEqual(expected.PrivateNote, actual.PrivateNote);
             Assert.AreEqual(expected.TxnStatus, actual.TxnStatus);
             Assert.IsTrue(Helper.CheckEqual(expected.LinkedTxn, actual.LinkedTxn));
@@ -9713,8 +9774,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.CurrencyRef.name, actual.CurrencyRef.name);
             //Assert.AreEqual(expected.CurrencyRef.type, actual.CurrencyRef.type);
             //Assert.AreEqual(expected.CurrencyRef.Value, actual.CurrencyRef.Value);
-            Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
-            Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
+            //Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
+            //Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
             Assert.AreEqual(expected.PrivateNote, actual.PrivateNote);
             Assert.AreEqual(expected.TxnStatus, actual.TxnStatus);
             Assert.IsTrue(Helper.CheckEqual(expected.LinkedTxn, actual.LinkedTxn));
@@ -10059,26 +10120,26 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.ActiveSpecified, actual.ActiveSpecified);
             Assert.AreEqual(expected.SubItem, actual.SubItem);
             Assert.AreEqual(expected.SubItemSpecified, actual.SubItemSpecified);
-          
+
             Assert.AreEqual(expected.Level, actual.Level);
             Assert.AreEqual(expected.LevelSpecified, actual.LevelSpecified);
             Assert.AreEqual(expected.Taxable, actual.Taxable);
             Assert.AreEqual(expected.TaxableSpecified, actual.TaxableSpecified);
-          
+
             Assert.AreEqual(expected.PercentBased, actual.PercentBased);
             Assert.AreEqual(expected.PercentBasedSpecified, actual.PercentBasedSpecified);
             Assert.AreEqual(expected.UnitPrice, actual.UnitPrice);
             Assert.AreEqual(expected.UnitPriceSpecified, actual.UnitPriceSpecified);
             Assert.AreEqual(expected.RatePercent, actual.RatePercent);
             Assert.AreEqual(expected.RatePercentSpecified, actual.RatePercentSpecified);
-           
+
             Assert.AreEqual(expected.IncomeAccountRef.Value, actual.IncomeAccountRef.Value);
-           
+
             Assert.AreEqual(expected.PurchaseCost, actual.PurchaseCost);
             Assert.AreEqual(expected.PurchaseCostSpecified, actual.PurchaseCostSpecified);
-           
+
             Assert.AreEqual(expected.ExpenseAccountRef.Value, actual.ExpenseAccountRef.Value);
-        
+
             Assert.AreEqual(expected.TrackQtyOnHand, actual.TrackQtyOnHand);
             Assert.AreEqual(expected.TrackQtyOnHandSpecified, actual.TrackQtyOnHandSpecified);
             Assert.AreEqual(expected.QtyOnHand, actual.QtyOnHand);
@@ -10093,7 +10154,7 @@ namespace Intuit.Ipp.Test
 
             Assert.AreEqual(expected.Type, actual.Type);
             //Assert.AreEqual(expected.ItemCategoryType, actual.ItemCategoryType);
-            
+
         }
 
         internal static void VerifyItemSparseUpdate(Item expected, Item actual)
@@ -10328,7 +10389,7 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.EmailStatusSpecified, actual.EmailStatusSpecified);
             Assert.AreEqual(expected.ManuallyClosed, actual.ManuallyClosed);
             Assert.AreEqual(expected.ManuallyClosedSpecified, actual.ManuallyClosedSpecified);
-            Assert.AreEqual(expected.POStatusSpecified, actual.POStatusSpecified);
+            //Assert.AreEqual(expected.POStatusSpecified, actual.POStatusSpecified);
             //Assert.AreEqual(expected.PurchaseOrderEx.Any, actual.PurchaseOrderEx.Any);
             Assert.AreEqual(expected.VendorRef.name, actual.VendorRef.name);
             Assert.AreEqual(expected.VendorRef.type, actual.VendorRef.type);
@@ -10357,8 +10418,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.CurrencyRef.name, actual.CurrencyRef.name);
             //Assert.AreEqual(expected.CurrencyRef.type, actual.CurrencyRef.type);
             //Assert.AreEqual(expected.CurrencyRef.Value, actual.CurrencyRef.Value);
-            Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
-            Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
+            //Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
+            //Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
             Assert.AreEqual(expected.PrivateNote, actual.PrivateNote);
             Assert.AreEqual(expected.TxnStatus, actual.TxnStatus);
             Assert.IsTrue(Helper.CheckEqual(expected.LinkedTxn, actual.LinkedTxn));
@@ -10766,29 +10827,30 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.EmailStatus, actual.EmailStatus);
         }
 
-        internal static void VerifyCurrency(Currency expected, Currency actual)
+        internal static void VerifyCompanyCurrency(CompanyCurrency expected, CompanyCurrency actual)
         {
             Assert.AreEqual(expected.Name, actual.Name);
+            Assert.AreEqual(expected.Code, actual.Code);
             Assert.AreEqual(expected.Active, actual.Active);
             Assert.AreEqual(expected.ActiveSpecified, actual.ActiveSpecified);
-            Assert.AreEqual(expected.CodeSpecified, actual.CodeSpecified);
-            Assert.AreEqual(expected.Separator, actual.Separator);
-            Assert.AreEqual(expected.Format, actual.Format);
-            Assert.AreEqual(expected.DecimalPlaces, actual.DecimalPlaces);
-            Assert.AreEqual(expected.DecimalSeparator, actual.DecimalSeparator);
-            Assert.AreEqual(expected.Symbol, actual.Symbol);
-            Assert.AreEqual(expected.SymbolPositionSpecified, actual.SymbolPositionSpecified);
-            Assert.AreEqual(expected.UserDefined, actual.UserDefined);
-            Assert.AreEqual(expected.UserDefinedSpecified, actual.UserDefinedSpecified);
-            Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
-            Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
-            Assert.AreEqual(expected.AsOfDate, actual.AsOfDate);
-            Assert.AreEqual(expected.AsOfDateSpecified, actual.AsOfDateSpecified);
+            //Assert.AreEqual(expected.CodeSpecified, actual.CodeSpecified);
+            //Assert.AreEqual(expected.Separator, actual.Separator);
+            //Assert.AreEqual(expected.Format, actual.Format);
+            //Assert.AreEqual(expected.DecimalPlaces, actual.DecimalPlaces);
+            //Assert.AreEqual(expected.DecimalSeparator, actual.DecimalSeparator);
+            //Assert.AreEqual(expected.Symbol, actual.Symbol);
+            //Assert.AreEqual(expected.SymbolPositionSpecified, actual.SymbolPositionSpecified);
+            //Assert.AreEqual(expected.UserDefined, actual.UserDefined);
+            //Assert.AreEqual(expected.UserDefinedSpecified, actual.UserDefinedSpecified);
+            //Assert.AreEqual(expected.ExchangeRate, actual.ExchangeRate);
+            //Assert.AreEqual(expected.ExchangeRateSpecified, actual.ExchangeRateSpecified);
+            //Assert.AreEqual(expected.AsOfDate, actual.AsOfDate);
+            //Assert.AreEqual(expected.AsOfDateSpecified, actual.AsOfDateSpecified);
             //Assert.AreEqual(expected.CurrencyEx.Any, actual.CurrencyEx.Any);
         }
 
 
-        internal static void VerifyCurrencySparse(Currency expected, Currency actual)
+        internal static void VerifyCompanyCurrencySparse(CompanyCurrency expected, CompanyCurrency actual)
         {
             Assert.AreEqual(expected.Name, actual.Name);
         }
@@ -10850,19 +10912,19 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.Name, actual.Name);
         }
 
-       
+
         internal static void VerifyJournalCode(JournalCode expected, JournalCode actual)
         {
             Assert.AreEqual(expected.Name, actual.Name);
             Assert.AreEqual(expected.Type, actual.Type);
-           
+
         }
 
         internal static void VerifyJournalCodeSparse(JournalCode expected, JournalCode actual)
         {
             Assert.AreEqual(expected.Description, actual.Description);
         }
-        
+
 
         internal static void VerifyJournalEntry(JournalEntry expected, JournalEntry actual)
         {
@@ -11568,7 +11630,7 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.DefaultTaxCodeRef.Value, actual.DefaultTaxCodeRef.Value);
         }
 
-        
+
         internal static void VerifyCustomerFrance(Customer expected, Customer actual)
         {
 
@@ -11580,14 +11642,14 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.DisplayName, actual.DisplayName);
 
         }
-        
+
 
         internal static void VerifyCustomerSparseUpdate(Customer expected, Customer actual)
         {
             Assert.AreEqual(expected.MiddleName, actual.MiddleName);
         }
 
-   
+
         internal static void VerifyUser(User expected, User actual)
         {
             Assert.AreEqual(expected.DisplayName, actual.DisplayName);
@@ -11753,7 +11815,7 @@ namespace Intuit.Ipp.Test
 
         internal static void VerifyVendorFrance(Vendor expected, Vendor actual)
         {
-            
+
             Assert.AreEqual(expected.BillAddr.Line1, actual.BillAddr.Line1);
             Assert.AreEqual(expected.BillAddr.Line2, actual.BillAddr.Line2);
             Assert.AreEqual(expected.BillAddr.Line3, actual.BillAddr.Line3);
@@ -11765,7 +11827,7 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.BillAddr.CountrySubDivisionCode, actual.BillAddr.CountrySubDivisionCode);
             Assert.AreEqual(expected.BillAddr.PostalCode, actual.BillAddr.PostalCode);
             Assert.AreEqual(expected.BillAddr.PostalCodeSuffix, actual.BillAddr.PostalCodeSuffix);
-          
+
             Assert.AreEqual(expected.Title, actual.Title);
             Assert.AreEqual(expected.GivenName, actual.GivenName);
             Assert.AreEqual(expected.MiddleName, actual.MiddleName);
@@ -11776,7 +11838,7 @@ namespace Intuit.Ipp.Test
             Assert.AreEqual(expected.DisplayName, actual.DisplayName);
             Assert.AreEqual(expected.PrintOnCheckName, actual.PrintOnCheckName);
             Assert.AreEqual(expected.UserId, actual.UserId);
-           
+
         }
 
 
@@ -11810,7 +11872,7 @@ namespace Intuit.Ipp.Test
         {
             //Assert.AreEqual(expected.EmployeeType, actual.EmployeeType);
             //Assert.AreEqual(expected.EmployeeNumber, actual.EmployeeNumber);
-           // Assert.AreEqual(expected.SSN, actual.SSN);
+            // Assert.AreEqual(expected.SSN, actual.SSN);
             //    Assert.AreEqual(expected.PrimaryAddr.Line1, actual.PrimaryAddr.Line1);
             //    Assert.AreEqual(expected.PrimaryAddr.Line2, actual.PrimaryAddr.Line2);
             //    Assert.AreEqual(expected.PrimaryAddr.Line3, actual.PrimaryAddr.Line3);

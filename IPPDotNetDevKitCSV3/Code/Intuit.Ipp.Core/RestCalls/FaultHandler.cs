@@ -36,7 +36,7 @@ namespace Intuit.Ipp.Core.Rest
     /// <summary>
     /// Handles the fault tags in the response and handles them.
     /// </summary>
-    internal class FaultHandler
+    public class FaultHandler//Nimisha
     {
         /// <summary>
         /// The Service Context.
@@ -182,7 +182,7 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
         /// <param name="errorString">The error string.</param>
         /// <returns>Ids Exception.</returns>
-        internal IdsException ParseErrorResponseAndPrepareException(string errorString)
+        public IdsException ParseErrorResponseAndPrepareException(string errorString)//Nimisha
         {
             IdsException idsException = null;
 

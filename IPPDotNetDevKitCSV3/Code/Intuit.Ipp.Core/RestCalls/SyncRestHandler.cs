@@ -140,6 +140,21 @@ namespace Intuit.Ipp.Core.Rest
                     }
                 }
             }
+            catch (RetryExceededException retryExceededException)//Nimisha
+            {
+                // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
+                // period for the request expired.-or- An error occurred while processing the request.
+                bool isIps = false;
+                if (this.context.ServiceType == IntuitServicesType.IPS)
+                {
+                    isIps = true;
+                }
+
+
+                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
+                throw retryExceededException;
+
+            }//Nimisha
             catch (WebException webException)
             {
                 // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out

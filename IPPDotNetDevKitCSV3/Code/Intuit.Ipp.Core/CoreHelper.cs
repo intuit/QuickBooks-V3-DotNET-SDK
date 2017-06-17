@@ -114,7 +114,7 @@ namespace Intuit.Ipp.Core
         /// <param name="serviceContext">The service context object.</param>
         /// <param name="isRequest">Specifies whether to return compression mechanism for reqeust or response.</param>
         /// <returns>The Compression mechanism.</returns>
-        internal static ICompressor GetCompressor(ServiceContext serviceContext, bool isRequest)
+        public static ICompressor GetCompressor(ServiceContext serviceContext, bool isRequest)//Nimisha
         {
             ICompressor compressor = null;
             if (isRequest)
@@ -150,7 +150,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        internal static Rest.LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)
+        public static Rest.LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)//Nimisha
         {
             Rest.LogRequestsToDisk requestLogger;
             if (serviceContext.IppConfiguration != null &&
