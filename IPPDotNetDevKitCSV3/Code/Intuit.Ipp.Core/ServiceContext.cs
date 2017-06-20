@@ -387,18 +387,19 @@ namespace Intuit.Ipp.Core
             if (this.serviceType == IntuitServicesType.QBO)
             {
                 baseurl = this.IppConfiguration.BaseUrl.Qbo;
-                if (baseurl != "")
+              
+                if (string.IsNullOrEmpty(baseurl))
                 {
-                    if (!baseurl.EndsWith("/")) //Nimisha add check for /
+                    baseurl = CoreConstants.QBO_BASEURL;
+                }
+                else
+                {
+                    if (!baseurl.EndsWith("/"))
                     {
                         baseurl = baseurl + "/";
                     }
                 }
 
-                if (string.IsNullOrEmpty(baseurl))
-                {
-                    baseurl = CoreConstants.QBO_BASEURL;
-                }
 
                 this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for QBO Service Type: {0}.", baseurl));
             }

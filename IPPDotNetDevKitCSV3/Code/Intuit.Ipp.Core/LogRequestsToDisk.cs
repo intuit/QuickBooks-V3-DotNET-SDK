@@ -31,7 +31,7 @@ namespace Intuit.Ipp.Core.Rest
     /// <summary>
     /// Logs API Requests/Responses To Disk
     /// </summary>
-    public class LogRequestsToDisk //Nimisha
+    public class LogRequestsToDisk 
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LogRequestsToDisk"/> class.
@@ -67,7 +67,7 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
         /// <param name="xml">The xml to log.</param>
         /// <param name="isRequest">Specifies whether the xml is request or response.</param>
-        public void LogPlatformRequests(string xml, bool isRequest)//Nimisha
+        public void LogPlatformRequests(string xml, bool isRequest)
         {
             if (this.EnableServiceRequestsLogging)
             {

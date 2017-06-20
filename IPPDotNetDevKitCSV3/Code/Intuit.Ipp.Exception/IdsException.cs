@@ -130,7 +130,7 @@ namespace Intuit.Ipp.Exception
 
                 string errorDetail = "";
                 int i = 0;
-                var count = innerExceptions.Count;//Nimisha
+                var count = innerExceptions.Count;
                 for (i = count - 1; i >= 0; i--)
                 {
                     errorDetail += innerExceptions[i].Detail + ".";

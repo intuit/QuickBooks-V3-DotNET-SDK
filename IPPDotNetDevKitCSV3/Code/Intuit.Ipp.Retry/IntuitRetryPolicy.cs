@@ -43,7 +43,6 @@ namespace Intuit.Ipp.Retry
     public class IntuitRetryPolicy
     {
 
-        //Nimisha
         /// <summary>
         /// The Service Context.
         /// </summary>
@@ -96,9 +95,7 @@ namespace Intuit.Ipp.Retry
         private IntuitRetryPolicy()
         {
         }
-        //Nimisha
-
-        //Nimisha
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
         /// </summary>
@@ -115,7 +112,7 @@ namespace Intuit.Ipp.Retry
             this.shouldRetry = this.GetShouldFixedRetry();
             this.context = context;
         }
-        //Nimisha
+  
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
@@ -132,7 +129,7 @@ namespace Intuit.Ipp.Retry
             this.shouldRetry = this.GetShouldFixedRetry();
         }
 
-        //NImisha
+       
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
         /// </summary>
@@ -153,7 +150,7 @@ namespace Intuit.Ipp.Retry
             this.context = context;
         }
 
-        //Nimisha
+   
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
@@ -173,7 +170,7 @@ namespace Intuit.Ipp.Retry
             this.shouldRetry = this.GetShouldIncrementalRetry();
         }
 
-        //Nimisha
+
         /// <summary>
         /// Initializes a new instance of the <see cref="IntuitRetryPolicy"/> class.
         /// </summary>
@@ -198,7 +195,7 @@ namespace Intuit.Ipp.Retry
             this.context = context;
         }
 
-        //Nimisha
+       
 
 
         /// <summary>
@@ -354,7 +351,7 @@ namespace Intuit.Ipp.Retry
                                     WebException webException = ex as WebException;
 
 
-                                    //Nimisha
+                                    
                                     string errorString = string.Empty;
                                     if (webException != null)
                                     {
@@ -375,7 +372,7 @@ namespace Intuit.Ipp.Retry
                                         ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
                                         if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
                                         {
-                                            using (var responseStream = errorResponse.GetResponseStream()) //Nimisha Check for decompressing
+                                            using (var responseStream = errorResponse.GetResponseStream()) //Check for decompressing
                                             {
                                                 using (var decompressedStream = responseCompressor.Decompress(responseStream))
                                                 {
@@ -418,7 +415,7 @@ namespace Intuit.Ipp.Retry
                                     {
                                         faultHandler(new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, idsException));
                                         return false;
-                                    }//Nimisha
+                                    }
                                     else if(webException != null)
                                     {
                                         faultHandler(new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, webException));
@@ -557,7 +554,7 @@ namespace Intuit.Ipp.Retry
                     {
                         WebException webException = ex as WebException;
 
-                        //Nimisha
+                      
                         string errorString = string.Empty;
 
                     if (webException != null)
@@ -578,7 +575,7 @@ namespace Intuit.Ipp.Retry
                             ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
                             if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
                             {
-                                using (var responseStream = errorResponse.GetResponseStream()) //Nimisha Check for decompressing
+                                using (var responseStream = errorResponse.GetResponseStream()) //Check for decompressing
                                 {
                                     using (var decompressedStream = responseCompressor.Decompress(responseStream))
                                     {
@@ -620,7 +617,7 @@ namespace Intuit.Ipp.Retry
                         if (idsException != null)
                         {
                             throw new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, idsException);
-                        }//Nimisha
+                        }
                         else if(webException != null)
                         {
                             throw new RetryExceededException(webException.Message, webException.Status.ToString(), webException.Source, webException);

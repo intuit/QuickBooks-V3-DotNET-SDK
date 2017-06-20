@@ -39,11 +39,11 @@ namespace IDGOauthSample
 
             ServiceContext serviceContext = new ServiceContext(realmId, IntuitServicesType.QBO, oauthValidator);
             //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
-            //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";
-            serviceContext.IppConfiguration.BaseUrl.Qbo = "https://qbonline-e2e.api.intuit.com/";
+            serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";
+            //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://qbonline-e2e.api.intuit.com/";
             serviceContext.IppConfiguration.Message.Request.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Xml;
             serviceContext.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Xml;
-            serviceContext.IppConfiguration.MinorVersion.Qbo = "12";
+            serviceContext.IppConfiguration.MinorVersion.Qbo = "11";
 
 
            // serviceContext.IppConfiguration.RetryPolicy = new Intuit.Ipp.Retry.IntuitRetryPolicy(serviceContext,3, new TimeSpan(0, 0, 10));
