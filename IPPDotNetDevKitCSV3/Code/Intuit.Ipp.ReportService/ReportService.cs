@@ -226,6 +226,12 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(sort_by)) { uriParametersList.Add(new string[] { "sort_by", sort_by }); }
             if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "sort_order", sort_order }); }
 
+
+            if (!string.IsNullOrEmpty(end_createdate)) { uriParametersList.Add(new string[] { "end_createdate", end_createdate }); }
+            if (!string.IsNullOrEmpty(start_createdate)) { uriParametersList.Add(new string[] { "start_createdate", start_createdate }); }
+            if (!string.IsNullOrEmpty(journal_code)) { uriParametersList.Add(new string[] { "journal_code", journal_code }); }
+            if (!string.IsNullOrEmpty(agency_id)) { uriParametersList.Add(new string[] { "agency_id", agency_id }); }
+
             if (!string.IsNullOrEmpty(account)) { uriParametersList.Add(new string[] { "account", account }); }
             if (!string.IsNullOrEmpty(source_account)) { uriParametersList.Add(new string[] { "source_account", source_account }); }
             if (!string.IsNullOrEmpty(account_type)) { uriParametersList.Add(new string[] { "account_type", account_type }); }
@@ -377,6 +383,28 @@ namespace Intuit.Ipp.ReportService
 
 
         #region new query params reports
+
+
+        /// <summary>
+        /// Gets or sets the report_date
+        /// </summary>
+        public string end_createdate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the report_date
+        /// </summary>
+        public string start_createdate { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the report_date
+        /// </summary>
+        public string journal_code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the report_date
+        /// </summary>
+        public string agency_id { get; set; }
 
         /// <summary>
         /// Gets or sets the report_date

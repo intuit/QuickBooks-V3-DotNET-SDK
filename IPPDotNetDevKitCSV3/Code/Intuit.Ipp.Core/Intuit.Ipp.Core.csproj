@@ -44,62 +44,61 @@
   <ItemGroup>
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Intuit.Ipp.Data, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Data, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.DataService, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.DataService, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Diagnostics, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Exception, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.GlobalTaxService, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.GlobalTaxService, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.LinqExtender, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.LinqExtender, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.LinqExtender.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.PlatformService, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.PlatformService, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.PlatformService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.QueryFilter, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.QueryFilter, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.ReportService, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.ReportService, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.ReportService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Retry, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Retry, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Security, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Security, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Utility, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Utility, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.WebHooksService, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.WebHooksService, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.WebHooksService.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
