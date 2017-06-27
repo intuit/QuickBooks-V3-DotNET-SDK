@@ -15,6 +15,9 @@ using System.Web;
 using System.Web.Profile;
 using System.Threading;
 
+//This sample app is just for some random testing of SDK. This hsould not be used as is in Prod. 
+//You should use the sample apps we have for all SDKs on https://github.com/IntuitDeveloper 
+
 namespace IDGOauthSample
 {
     public partial class QBO : System.Web.UI.Page
@@ -28,11 +31,7 @@ namespace IDGOauthSample
             string consumerSecret = HttpContext.Current.Session["consumerSecret"].ToString();
 
 
-            //string realmId = "123145693359857";
-            //string accessToken = "qyprdkFQEJ8luPuwyBumFhQAdmVEEi55Zgt52Em8Wyd4i7Bu";
-            //string accessTokenSecret = "6jBqLq5rEjNMB8Freu9L4Fk7TSOl3ifo62P8xJYb";
-            //string consumerKey = "qyprd68jMGebyWgiNFT411r4KnhmB9";
-            //string consumerSecret = "j2QGgFRv5yYMXB5lVXUI0NBPlHAmz0drjANG1KeX";
+       
 
 
             OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerSecret);
@@ -40,7 +39,7 @@ namespace IDGOauthSample
             ServiceContext serviceContext = new ServiceContext(realmId, IntuitServicesType.QBO, oauthValidator);
             //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";
-            //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://qbonline-e2e.api.intuit.com/";
+
             serviceContext.IppConfiguration.Message.Request.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Xml;
             serviceContext.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Xml;
             serviceContext.IppConfiguration.MinorVersion.Qbo = "11";
@@ -51,7 +50,7 @@ namespace IDGOauthSample
            // serviceContext.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"F:\Logs";
 
             //serviceContext.RequestId = "897kjhjjhkh9";
-            //serviceContext.IppConfiguration.MinorVersion.Qbo = "6";
+           
             DataService commonServiceQBO = new DataService(serviceContext);
 
             #region 'Nimisha testing for Retry'
@@ -102,7 +101,7 @@ namespace IDGOauthSample
 
 
 
-            var bill = new Intuit.Ipp.Data.Bill() { Id = "‼" };
+            //var bill = new Intuit.Ipp.Data.Bill() { Id = "‼" };
             //var result = commonServiceQBO.FindById(bill);
             //QueryService<Item> inService1 = new QueryService<Item>(serviceContext);
             //Item In1 = inService1.ExecuteIdsQuery("SELECT * FROM Item").FirstOrDefault();
