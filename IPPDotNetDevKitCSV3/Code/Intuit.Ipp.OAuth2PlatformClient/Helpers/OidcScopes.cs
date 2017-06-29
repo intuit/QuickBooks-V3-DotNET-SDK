@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
 
     /// <summary>

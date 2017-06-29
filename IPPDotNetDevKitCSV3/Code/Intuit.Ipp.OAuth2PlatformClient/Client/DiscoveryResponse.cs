@@ -1,14 +1,14 @@
 ﻿// Copyright (c) Intuit All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-using Intuit.OAuth2PlatformClient;
+using Intuit.Ipp.OAuth2PlatformClient;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net;
 
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// DiscoveryResponse class to handle response from Discovery  call

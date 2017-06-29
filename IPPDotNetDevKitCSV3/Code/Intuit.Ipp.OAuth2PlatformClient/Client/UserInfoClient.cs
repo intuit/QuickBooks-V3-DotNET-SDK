@@ -9,7 +9,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     public class UserInfoClient
     {

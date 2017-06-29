@@ -5,7 +5,7 @@
 using Newtonsoft.Json;
 using System.Text;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// Extension class for Json Wek Key

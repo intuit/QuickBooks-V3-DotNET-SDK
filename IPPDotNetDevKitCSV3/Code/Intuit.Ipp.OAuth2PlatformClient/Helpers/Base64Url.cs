@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// Helper class for Base64 Url conversions

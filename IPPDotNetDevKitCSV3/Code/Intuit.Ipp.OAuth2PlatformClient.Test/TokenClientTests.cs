@@ -9,10 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Intuit.OAuth2PlatformClient;
+using Intuit.Ipp.OAuth2PlatformClient;
 
 
-namespace Intuit.OAuth2PlatformClient.UnitTests
+namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 {
     [TestClass]
     public class TokenClientTests

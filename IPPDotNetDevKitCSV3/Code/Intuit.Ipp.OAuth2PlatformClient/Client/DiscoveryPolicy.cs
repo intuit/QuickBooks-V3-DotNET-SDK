@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     public class DiscoveryPolicy
     {

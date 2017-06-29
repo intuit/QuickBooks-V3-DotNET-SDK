@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>Sample documentation for Intuit.Ipp.Oauth2PlatformClient namespace.</summary>
+// <summary>Sample documentation for Intuit.Ipp.OAuth2PlatformClient namespace.</summary>
 ////********************************************************************
 
-namespace Intuit.Ipp.Oauth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
-    /// Intuit.IPP.Oauth2PlatformClient has OAuth2 specific client lib with helper classes for different calls related to getting tokens and managing them.   
+    /// Intuit.Ipp.OAuth2PlatformClient has OAuth2 specific client lib with helper classes for different calls related to getting tokens and managing them.   
     /// </summary>
     [System.Runtime.CompilerServices.CompilerGenerated]
     internal class NamespaceDoc

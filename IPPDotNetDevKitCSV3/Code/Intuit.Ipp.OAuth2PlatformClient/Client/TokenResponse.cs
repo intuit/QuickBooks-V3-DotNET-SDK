@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// TokenResponse class to map response from Token call

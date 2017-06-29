@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace Intuit.OAuth2PlatformClient.UnitTests
+namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 {
   
     public class NetworkHandler : HttpMessageHandler

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// AuthorizeResponse Class to map response from Authroize call

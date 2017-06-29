@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// Class for deserializing the UserInfoResponse

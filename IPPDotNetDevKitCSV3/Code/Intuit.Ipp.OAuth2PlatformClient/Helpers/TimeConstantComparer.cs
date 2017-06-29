@@ -3,7 +3,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// Helper class to do equality checks without leaking timing information

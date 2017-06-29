@@ -3,10 +3,10 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.OAuth2PlatformClient;
+using Intuit.Ipp.OAuth2PlatformClient;
 
 
-namespace Intuit.OAuth2PlatformClient.UnitTests
+namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 {
     [TestClass]
     public class AuthorizeResponseTests

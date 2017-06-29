@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Linq;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// JsonToken Class

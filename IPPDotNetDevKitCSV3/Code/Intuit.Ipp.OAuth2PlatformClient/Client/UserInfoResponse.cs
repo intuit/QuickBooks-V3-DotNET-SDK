@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Security.Claims;
 
-namespace Intuit.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
     /// UserInfoResponse Class to map response from UserInfo call

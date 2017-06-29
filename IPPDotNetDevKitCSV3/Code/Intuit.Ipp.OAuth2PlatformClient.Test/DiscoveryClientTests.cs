@@ -7,11 +7,11 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Intuit.OAuth2PlatformClient;
+using Intuit.Ipp.OAuth2PlatformClient;
 using System.Configuration;
 
 
-namespace Intuit.OAuth2PlatformClient.UnitTests
+namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 {
     [TestClass]
     public class DiscoveryClientTests
