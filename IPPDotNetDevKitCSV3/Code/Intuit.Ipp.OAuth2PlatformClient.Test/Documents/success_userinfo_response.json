@@ -1,0 +1,16 @@
+﻿{
+  "sub": "1182d6ec-2a1f-4aa3-af3f-bb3b95db45af",
+  "email": "john@doe.com",
+  "emailVerified": true,
+  "givenName": "John",
+  "familyName": "Doe",
+  "phoneNumber": "+1 6305555555",
+  "phoneNumberVerified": false,
+  "address": {
+    "streetAddress": "2007 saint julien ct",
+    "locality": "mountain view",
+    "region": "CA",
+    "postalCode": "94043",
+    "country": "US"
+  }
+}
