@@ -74,7 +74,6 @@
     <Compile Include="Client\DiscoveryResponse.cs" />
     <Compile Include="Client\HttpClientExtensions.cs" />
     <Compile Include="Client\JObjectExtensions.cs" />
-    <Compile Include="Client\RefreshTokenHandler.cs" />
     <Compile Include="Client\ResponseErrorType.cs" />
     <Compile Include="Client\TokenClient.cs" />
     <Compile Include="Client\TokenClientExtensions.cs" />
