@@ -678,35 +678,46 @@ namespace Intuit.Ipp.DataService
         private void BatchAsyncompleted(object sender, AsyncCallCompletedEventArgs eventArgs)
         {
             BatchExecutionCompletedEventArgs batchCompletedEventArgs = new BatchExecutionCompletedEventArgs();
-            if (eventArgs.Error == null)
+
+            try
             {
-                try
+                if (eventArgs.Error == null)
                 {
-                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
-                    IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
-                    foreach (object obj in restResponse.AnyIntuitObjects)
+                    try
                     {
-                        BatchItemResponse batchItemResponse = obj as BatchItemResponse;
-                        this.batchResponses.Add(batchItemResponse);
+                        IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+                        IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
+                        foreach (object obj in restResponse.AnyIntuitObjects)
+                        {
+                            BatchItemResponse batchItemResponse = obj as BatchItemResponse;
+                            this.batchResponses.Add(batchItemResponse);
 
-                        // process batch item
-                        this.intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
+                            // process batch item
+                            this.intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
+                        }
+
+                        batchCompletedEventArgs.Batch = this;
+                        this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
                     }
-
-                    batchCompletedEventArgs.Batch = this;
-                    this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                    catch (SystemException systemException)
+                    {
+                        IdsException idsException = new IdsException(systemException.Message);
+                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                        batchCompletedEventArgs.Error = idsException;
+                        this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                    }
                 }
-                catch (SystemException systemException)
+                else
                 {
-                    IdsException idsException = new IdsException(systemException.Message);
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    batchCompletedEventArgs.Error = idsException;
+                    batchCompletedEventArgs.Error = eventArgs.Error;
                     this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
                 }
             }
-            else
+            catch (Exception e)
             {
-                batchCompletedEventArgs.Error = eventArgs.Error;
+                IdsException idsException = new IdsException(e.Message);
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                batchCompletedEventArgs.Error = idsException;
                 this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
             }
         }
