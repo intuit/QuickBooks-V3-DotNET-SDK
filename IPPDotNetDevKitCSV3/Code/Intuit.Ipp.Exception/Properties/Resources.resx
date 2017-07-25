@@ -180,7 +180,10 @@
   <data name="ServiceReturnedNoInformationExceptionDefaultMessage" xml:space="preserve">
     <value>There was no response from the service.</value>
   </data>
+  <data name="ThrottleExceededExceptionDefaultMessage" xml:space="preserve">
+    <value>Throttle Exception was thrown</value>
+  </data>
   <data name="ValidationExceptionDefaultMessage" xml:space="preserve">
-    <value>ValidationException was thrown.</value>
+    <value>Validation Exception was thrown.</value>
   </data>
 </root>
