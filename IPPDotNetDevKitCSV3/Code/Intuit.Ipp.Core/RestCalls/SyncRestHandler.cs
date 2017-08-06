@@ -256,7 +256,7 @@ namespace Intuit.Ipp.Core.Rest
         private string CallRestService(HttpWebRequest request)
         {
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service.");
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // Call the service and get response.
             using (HttpWebResponse httpWebResponse = request.GetResponse() as HttpWebResponse)
             {
