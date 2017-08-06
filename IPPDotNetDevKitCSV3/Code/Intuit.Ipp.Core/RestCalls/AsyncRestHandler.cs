@@ -498,6 +498,7 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="asyncRequest">Asynchronous web request.</param>
         private void ExecAsyncRequest(HttpWebRequest asyncRequest)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // Check whether the method is Post
             if (asyncRequest.Method == "POST")
             {
