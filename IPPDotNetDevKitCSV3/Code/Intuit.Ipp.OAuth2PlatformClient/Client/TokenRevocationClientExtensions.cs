@@ -14,10 +14,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// RevokeAccessTokenAsync
         /// </summary>
-        /// <param name="client"></param>
-        /// <param name="token"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>Task<TokenRevocationResponse></returns>
+        /// <param name="client">client</param>
+        /// <param name="token">token</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeAccessTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
             return client.RevokeAsync(new TokenRevocationRequest
@@ -29,10 +29,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// RevokeRefreshTokenAsync
         /// </summary>
-        /// <param name="client"></param>
-        /// <param name="token"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>Task<TokenRevocationResponse></returns>
+        /// <param name="client">client</param>
+        /// <param name="token">token</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeRefreshTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
             return client.RevokeAsync(new TokenRevocationRequest

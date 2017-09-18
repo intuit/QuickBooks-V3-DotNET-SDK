@@ -23,7 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
+        /// <param name="endpoint">endpoint</param>
         public TokenClient(string  endpoint)
             : this(endpoint, new HttpClientHandler())
         { }
@@ -31,8 +31,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="innerHttpMessageHandler"></param>
+        /// <param name="endpoint">endpoint</param>
+        /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         public TokenClient(string endpoint, HttpMessageHandler innerHttpMessageHandler)
         {
             if (endpoint == null) throw new ArgumentNullException(nameof(endpoint));
@@ -52,22 +52,22 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="style"></param>
+        /// <param name="endpoint">endpoint</param>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret">clientSecret</param>
+        /// <param name="style">style</param>
         public TokenClient(string endpoint, string clientId, string clientSecret, AuthenticationStyle style = AuthenticationStyle.OAuth2)
             : this(endpoint, clientId, clientSecret, new HttpClientHandler(), style)
         { }
 
-    
+
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="innerHttpMessageHandler"></param>
+        /// <param name="endpoint">endpoint</param>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret">clientSecret</param>
+        /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         /// <param name="style"></param>
         public TokenClient(string endpoint, string clientId, string clientSecret, HttpMessageHandler innerHttpMessageHandler, AuthenticationStyle style = AuthenticationStyle.OAuth2)
             : this(endpoint, innerHttpMessageHandler)
@@ -95,6 +95,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public string Address { get; set; }
 
+        /// <summary>
+        /// AuthenticationStyle
+        /// </summary>
         public AuthenticationStyle AuthenticationStyle { get; set; }
 
         /// <summary>
@@ -111,9 +114,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// RequestAsync call
         /// </summary>
-        /// <param name="form"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <param name="form">form</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>task of TokenResponse</returns>
         public virtual async Task<TokenResponse> RequestAsync(IDictionary<string, string> form, CancellationToken cancellationToken = default(CancellationToken))
         {
             HttpResponseMessage response;
@@ -168,12 +171,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
+        /// <summary>
+        /// Dispose call
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Virtual Dispose call
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (disposing && !_disposed)

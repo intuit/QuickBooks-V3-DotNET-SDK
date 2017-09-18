@@ -9,10 +9,22 @@ using System.Threading.Tasks;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
+    /// <summary>
+    /// TokenClientExtensions class
+    /// </summary>
     public static class TokenClientExtensions
     {
-       
 
+        /// <summary>
+        /// RequestTokenFromCodeAsync call
+        /// </summary>
+        /// <param name="client">client</param>
+        /// <param name="code">code</param>
+        /// <param name="redirectUri">redirectUri</param>
+        /// <param name="codeVerifier">codeVerifier</param>
+        /// <param name="extra">extra</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestTokenFromCodeAsync(this TokenClient client, string code, string redirectUri, string codeVerifier = null, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             var fields = new Dictionary<string, string>
@@ -28,7 +40,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
 
-
+        /// <summary>
+        /// RequestRefreshTokenAsync call
+        /// </summary>
+        /// <param name="client">client</param>
+        /// <param name="refreshToken">refreshToken</param>
+        /// <param name="extra">extra</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestRefreshTokenAsync(this TokenClient client, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             var fields = new Dictionary<string, string>
@@ -41,7 +60,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
 
-
+        /// <summary>
+        /// Merge call
+        /// </summary>
+        /// <param name="client">client</param>
+        /// <param name="explicitValues">explicitValues</param>
+        /// <param name="extra">extra</param>
+        /// <returns>Dictionary</returns>
         private static Dictionary<string, string> Merge(TokenClient client, Dictionary<string, string> explicitValues, object extra = null)
         {
             var merged = explicitValues;
@@ -60,6 +85,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return merged;
         }
 
+
+        /// <summary>
+        /// ObjectToDictionary call
+        /// </summary>
+        /// <param name="values">values</param>
+        /// <returns>Dictionary</returns>
         private static Dictionary<string, string> ObjectToDictionary(object values)
         {
             if (values == null)

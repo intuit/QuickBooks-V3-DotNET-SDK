@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
+    /// <summary>
+    /// UserInfoClient class
+    /// </summary>
     public class UserInfoClient
     {
         private readonly HttpClient _client;
@@ -18,7 +21,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
+        /// <param name="endpoint">endpoint</param>
         public UserInfoClient(string endpoint)
             : this(endpoint, new HttpClientHandler())
         { }
@@ -27,8 +30,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="innerHttpMessageHandler"></param>
+        /// <param name="endpoint">endpoint</param>
+        /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         public UserInfoClient(string endpoint, HttpMessageHandler innerHttpMessageHandler)
         {
             if (endpoint == null) throw new ArgumentNullException(nameof(endpoint));
@@ -44,7 +47,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        //Timeout
+        /// <summary>
+        /// Timeout
+        /// </summary>
         public TimeSpan Timeout
         {
             set
@@ -57,9 +62,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// GetAsync
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>Task<UserInfoResponse></returns>
+        /// <param name="token">token</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of UserInfoResponse</returns>
         public async Task<UserInfoResponse> GetAsync(string token, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));

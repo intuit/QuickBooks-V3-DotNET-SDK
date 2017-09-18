@@ -20,7 +20,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// GetAsync call for Discovery Url
         /// </summary>
-        /// <param name="authority"></param>
+        /// <param name="authority">authority</param>
         public static async Task<DiscoveryResponse> GetAsync(string authority)
         {
             var client = new DiscoveryClient(authority);
@@ -60,7 +60,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
-
+        /// <summary>
+        /// DiscoveryClient Method to call discoery url
+        /// </summary>
+        /// <param name="authority">authority</param>
+        /// <param name="innerHandler">innerHandler</param>
         public DiscoveryClient(string authority, HttpMessageHandler innerHandler = null)
         {
             var handler = innerHandler ?? new HttpClientHandler();
@@ -97,6 +101,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             _client = new HttpClient(handler);
         }
 
+        /// <summary>
+        /// GetAsync call for Discovery
+        /// </summary>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task for Discoverresponse</returns>
         public async Task<DiscoveryResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             //Policy.Authority = Authority;

@@ -28,7 +28,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles successful raw response from UserInfo api call
         /// </summary>
-        /// <param name="raw"></param>
+        /// <param name="raw">raw</param>
         public UserInfoResponse(string raw)
         {
             Raw = raw;
@@ -52,8 +52,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from UserInfo api call
         /// </summary>
-        /// <param name="statusCode"></param>
-        /// <param name="reason"></param>
+        /// <param name="statusCode">statusCode</param>
+        /// <param name="reason">reason</param>
         public UserInfoResponse(HttpStatusCode statusCode, string httpErrorReason)
         {
             IsError = true;
@@ -64,9 +64,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
         /// <summary>
-        /// 
+        /// UserInfoResponse
         /// </summary>
-        /// <param name="exception"></param>
+        /// <param name="exception">exception</param>
         public UserInfoResponse(Exception exception)
         {
             IsError = true;

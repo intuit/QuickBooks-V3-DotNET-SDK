@@ -18,8 +18,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Converts Json object to Claims
         /// </summary>
-        /// <param name="json"></param>
-        /// <returns>IEnumerable<Claim></returns>
+        /// <param name="json">json</param>
+        /// <returns>IEnumerable Claim</returns>
         public static IEnumerable<Claim> ToClaims(this JObject json)
         {
             var claims = new List<Claim>();
@@ -48,8 +48,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Helper for Json object
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="name"></param>
+        /// <param name="json">json</param>
+        /// <param name="name">name</param>
         /// <returns>JToken</returns>
         public static JToken TryGetValue(this JObject json, string name)
         {
@@ -65,8 +65,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Helper for Json object
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="name"></param>
+        /// <param name="json">json</param>
+        /// <param name="name">name</param>
         /// <returns>string</returns>
         public static string TryGetString(this JObject json, string name)
         {
@@ -77,8 +77,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Helper for Json object
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="name"></param>
+        /// <param name="json">json</param>
+        /// <param name="name">name</param>
         /// <returns>bool</returns>
         public static bool? TryGetBoolean(this JObject json, string name)
         {
@@ -96,9 +96,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Helper for Json object
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="name"></param>
-        /// <returns>IEnumerable<string></returns>
+        /// <param name="json">json</param>
+        /// <param name="name">name</param>
+        /// <returns>IEnumerable string</returns>
         public static IEnumerable<string> TryGetStringArray(this JObject json, string name)
         {
             var values = new List<string>();

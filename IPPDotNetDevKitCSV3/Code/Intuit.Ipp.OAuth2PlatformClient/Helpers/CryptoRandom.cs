@@ -15,7 +15,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         private static readonly RandomNumberGenerator _rng = RandomNumberGenerator.Create();
         private readonly byte[] _uint32Buffer = new byte[4];
 
-        //Create Random keys bytes
+        
+        /// <summary>
+        /// Create Random keys bytes
+        /// </summary>
+        /// <param name="length">lenth</param>
+        /// <returns>byte array</returns>
         public static byte[] CreateRandomKey(int length)
         {
             var bytes = new byte[length];
@@ -24,7 +29,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return bytes;
         }
 
-        //Create Random key string
+
+        /// <summary>
+        /// Create Random key string
+        /// </summary>
+        /// <param name="length">length</param>
+        /// <returns>string</returns>
         public static string CreateRandomKeyString(int length)
         {
             var bytes = new byte[length];
@@ -33,7 +43,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return Convert.ToBase64String(bytes);
         }
 
-        //Create Unique Id
+
+        /// <summary>
+        /// Create Unique Id
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns>string</returns>
         public static string CreateUniqueId(int length = 32)
         {
             var bytes = new byte[length];
@@ -42,7 +57,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return ByteArrayToString(bytes);
         }
 
-        //Convert Byte array to string
+
+        /// <summary>
+        /// Convert Byte array to string
+        /// </summary>
+        /// <param name="ba">byte array</param>
+        /// <returns>string</returns>
         private static string ByteArrayToString(byte[] ba)
         {
             StringBuilder hex = new StringBuilder(ba.Length * 2);

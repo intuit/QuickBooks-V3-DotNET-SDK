@@ -15,7 +15,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles success raw response from Token api call
         /// </summary>
-        /// <param name="raw"></param>
+        /// <param name="raw">raw</param>
         public TokenResponse(string raw)
         {
             Raw = raw;
@@ -49,7 +49,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from Token api call
         /// </summary>
-        /// <param name="exception"></param>
+        /// <param name="exception">exception</param>
         public TokenResponse(Exception exception)
         {
             IsError = true;
@@ -62,8 +62,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from Token api call
         /// </summary>
-        /// <param name="statusCode"></param>
-        /// <param name="reason"></param> 
+        /// <param name="statusCode">statusCode</param>
+        /// <param name="reason">reason</param> 
         public TokenResponse(HttpStatusCode statusCode, string reason)
         {
             IsError = true;

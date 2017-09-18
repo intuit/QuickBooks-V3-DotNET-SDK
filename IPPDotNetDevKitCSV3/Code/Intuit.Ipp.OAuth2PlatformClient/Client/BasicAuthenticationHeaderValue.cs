@@ -11,6 +11,11 @@ namespace System.Net.Http
     /// </summary>
     public class BasicAuthenticationHeaderValue : AuthenticationHeaderValue
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret">clientSecret</param>
         public BasicAuthenticationHeaderValue(string clientId, string clientSecret)
             : base("Basic", EncodeCredential(clientId, clientSecret))
         { }

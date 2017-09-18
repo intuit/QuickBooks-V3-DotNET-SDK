@@ -15,8 +15,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Create Authorize request
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="values"></param>
+        /// <param name="request">request</param>
+        /// <param name="values">values</param>
         /// <returns>string</returns>
         public static string Create(this AuthorizeRequest request, object values)
         {
@@ -26,14 +26,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Create Authorize Url
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="clientId"></param>
-        /// <param name="responseType"></param>
-        /// <param name="scope"></param>
-        /// <param name="redirectUri"></param>
-        /// <param name="state"></param>
-        /// <param name="extra"></param>
-        /// <returns></returns>
+        /// <param name="request">request</param>
+        /// <param name="clientId">clientId</param>
+        /// <param name="responseType">responseType</param>
+        /// <param name="scope">scope</param>
+        /// <param name="redirectUri">redirectUri</param>
+        /// <param name="state">state</param>
+        /// <param name="extra">extra</param>
+        /// <returns>string</returns>
         public static string CreateAuthorizeUrl(this AuthorizeRequest request,
             string clientId,
             string responseType,
@@ -74,7 +74,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Helper class to map values to Dictionary
         /// </summary>
         /// <param name="values"></param>
-        /// <returns>Dictionary<string, string></returns>
+        /// <returns>dictionary</returns>
         private static Dictionary<string, string> ObjectToDictionary(object values)
         {
             if (values == null)
@@ -105,7 +105,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="explicitValues"></param>
         /// <param name="additionalValues"></param>
-        /// <returns>Dictionary<string, string></returns>
+        /// <returns>dictionary</returns>
         private static Dictionary<string, string> Merge(Dictionary<string, string> explicitValues, Dictionary<string, string> additionalValues = null)
         {
             var merged = explicitValues;

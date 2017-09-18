@@ -42,6 +42,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
     }
 
+    /// <summary>
+    /// OidcScopes enum
+    /// </summary>
     public enum OidcScopes:int
     {
 

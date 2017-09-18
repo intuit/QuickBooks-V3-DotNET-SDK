@@ -13,7 +13,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Encodes byte array to Base 64 string
         /// </summary>
-        /// <param name="arg"></param>       
+        /// <param name="arg">arg</param>       
         public static string Encode(byte[] arg)
         {
             string s = Convert.ToBase64String(arg); // Standard base64 encoder
@@ -28,7 +28,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Converts from Base 64 string to byte array
         /// </summary>
-        /// <param name="arg"></param>
+        /// <param name="arg">arg</param>
         public static byte[] Decode(string arg)
         {
             string s = arg;

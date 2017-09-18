@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{D65F7456-F8DB-4EC0-8C03-C22961C80649}"
 EndProject
@@ -455,6 +455,9 @@ Global
 		{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126} = {1438B09F-C188-4F16-A00B-B037D8DD271C}
 		{F69BCC7C-6728-409B-93C1-9208B58288DF} = {A0ED5BF7-1149-4C3D-B48C-E3D10CD638A0}
 		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE} = {F69BCC7C-6728-409B-93C1-9208B58288DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D58CF63B-6932-4503-893A-42C15952609D}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = IppDotNetDevKitCSV3.vsmdi

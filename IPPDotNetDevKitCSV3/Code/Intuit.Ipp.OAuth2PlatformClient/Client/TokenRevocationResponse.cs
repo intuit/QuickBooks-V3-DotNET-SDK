@@ -33,7 +33,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles successful raw response from Token Revoke api call
         /// </summary>
-        /// <param name="raw"></param>
+        /// <param name="raw">raw</param>
         public TokenRevocationResponse(string raw)
         {
             Raw = raw;
@@ -60,13 +60,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
 
-   
+
 
         /// <summary>
         /// Handles exception response from Token Revoke api call
         /// </summary>
-        /// <param name="statusCode"></param>
-        /// <param name="reason"></param>
+        /// <param name="statusCode">statusCode</param>
+        /// <param name="reason">reason</param>
 
         public TokenRevocationResponse(HttpStatusCode statusCode, string reason)
         {
@@ -81,7 +81,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from UserInfo api call
         /// </summary>
-        /// <param name="exception"></param>
+        /// <param name="exception">exception</param>
         public TokenRevocationResponse(Exception exception)
         {
             IsError = true;

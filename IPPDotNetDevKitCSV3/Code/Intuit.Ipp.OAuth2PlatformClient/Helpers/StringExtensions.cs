@@ -7,12 +7,15 @@ using System.Reflection;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
+    /// <summary>
+    /// String extensions class
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
         /// Ensures trailing slash at the end of the url
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">url</param>
         /// <returns>string</returns>
         [DebuggerStepThrough]
         public static string EnsureTrailingSlash(this string url)
@@ -28,7 +31,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Removes trailing slash at the end of the url
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">url</param>
         /// <returns>string</returns>
         [DebuggerStepThrough]
         public static string RemoveTrailingSlash(this string url)
@@ -48,7 +51,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// only work if you assign the StringValue attribute to
         /// the items in your enum.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">value</param>
         /// <returns>string</returns>
         [DebuggerStepThrough]
         public static string GetStringValue(this Enum value)

@@ -55,10 +55,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// TokenRevocationClient
         /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="innerHttpMessageHandler"></param>
+        /// <param name="endpoint">endpoint</param>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret"clientSecret></param>
+        /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         public TokenRevocationClient(string endpoint, string clientId = "", string clientSecret = "", HttpMessageHandler innerHttpMessageHandler = null)
         {
             if (endpoint == null) throw new ArgumentNullException(nameof(endpoint));
@@ -98,9 +98,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// RevokeAsync
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>Task<TokenRevocationResponse></returns>
+        /// <param name="request">request</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of TokenRevocationResponse</returns>
         public virtual async Task<TokenRevocationResponse> RevokeAsync(
             TokenRevocationRequest request,
             CancellationToken cancellationToken = default(CancellationToken))

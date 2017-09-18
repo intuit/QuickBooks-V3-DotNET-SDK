@@ -12,6 +12,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class AuthorizeResponse
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="raw"></param>
         public AuthorizeResponse(string raw)
         {
             Raw = raw;

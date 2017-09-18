@@ -30,8 +30,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles success raw response from Token api call
         /// </summary>
-        /// <param name="raw"></param>
-        /// <param name="policy"></param>
+        /// <param name="raw">raw</param>
+        /// <param name="policy">policy</param>
         public DiscoveryResponse(string raw, DiscoveryPolicy policy = null)
         {
             if (policy == null) policy = new DiscoveryPolicy();
@@ -67,8 +67,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from Token api call
         /// </summary>
-        /// <param name="statusCode"></param>
-        /// <param name="reason"></param>
+        /// <param name="statusCode">statusCode</param>
+        /// <param name="reason">reason</param>
         public DiscoveryResponse(HttpStatusCode statusCode, string reason)
         {
             IsError = true;
@@ -81,8 +81,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Handles exception response from Token api call
         /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="errorMessage"></param>
+        /// <param name="exception">exception</param>
+        /// <param name="errorMessage">errorMessage</param>
         public DiscoveryResponse(Exception exception, string errorMessage)
         {
             IsError = true;
@@ -122,7 +122,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Validates Discovery policy
         /// </summary>
-        /// <param name="policy"></param>
+        /// <param name="policy">policy</param>
         /// <returns>string</returns>
         private string Validate(DiscoveryPolicy policy)
         {
@@ -145,8 +145,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Validates Issuer Name
         /// </summary>
-        /// <param name="issuer"></param>
-        /// <param name="authority"></param>
+        /// <param name="issuer">issuer</param>
+        /// <param name="authority">authority</param>
         /// <returns>bool</returns>
         public bool ValidateIssuerName(string issuer, string authority)
         {
@@ -156,8 +156,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Validates Endpoints
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="policy"></param>
+        /// <param name="json">json</param>
+        /// <param name="policy">policy</param>
         /// <returns>bool</returns>
         public string ValidateEndpoints(JObject json, DiscoveryPolicy policy)
         {

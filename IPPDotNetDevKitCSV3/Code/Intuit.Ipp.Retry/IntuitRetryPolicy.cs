@@ -474,7 +474,7 @@ namespace Intuit.Ipp.Retry
             {
                 HttpWebResponse errorResponse = (HttpWebResponse)webException.Response;
                 int statusCode = (int)errorResponse.StatusCode;
-                if (statusCode == 404)
+                if (statusCode == 404 || statusCode == 400)
                 {
                     return false;
                 }

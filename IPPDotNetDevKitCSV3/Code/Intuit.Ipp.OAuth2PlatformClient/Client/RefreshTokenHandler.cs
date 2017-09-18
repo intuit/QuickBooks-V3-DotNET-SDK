@@ -73,12 +73,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="tokenEndpoint"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="refreshToken"></param>
-        /// <param name="accessToken"></param>
-        /// <param name="innerHandler"></param>
+        /// <param name="tokenEndpoint">tokenEndpoint</param>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret">clientSecret</param>
+        /// <param name="refreshToken">refreshToken</param>
+        /// <param name="accessToken">accessToken</param>
+        /// <param name="innerHandler">innerHandler</param>
         public RefreshTokenHandler(string tokenEndpoint, string clientId, string clientSecret, string refreshToken, string accessToken = null, HttpMessageHandler innerHandler = null)
             : this(new TokenClient(tokenEndpoint, clientId, clientSecret), refreshToken, accessToken, innerHandler)
         {
@@ -92,10 +92,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="client"></param>
-        /// <param name="refreshToken"></param>
-        /// <param name="accessToken"></param>
-        /// <param name="innerHandler"></param>
+        /// <param name="client">client</param>
+        /// <param name="refreshToken">refreshToken</param>
+        /// <param name="accessToken">accessToken</param>
+        /// <param name="innerHandler">innerHandler</param>
         public RefreshTokenHandler(TokenClient client, string refreshToken, string accessToken = null, HttpMessageHandler innerHandler = null)
         {
             _tokenClient = client;
@@ -128,21 +128,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Override methos for SendAsync
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>Task<HttpResponseMessage></returns>
+        /// <param name="request">request</param>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of HttpResponseMessage</returns>
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             var accessToken = await GetAccessTokenAsync(cancellationToken);
-            //if (string.IsNullOrEmpty(accessToken))
-            //{
-                if (await RefreshTokensAsync(cancellationToken) == false)
-                {
-                    return new HttpResponseMessage(HttpStatusCode.Unauthorized);
-                }
-            //}
+         
+            if (await RefreshTokensAsync(cancellationToken) == false)
+            {
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized);
+            }
 
-            //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
+
+           
            
             request.Headers.Authorization = new BasicAuthenticationHeaderValue(ClientId, ClientSecret);
             request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
@@ -155,7 +154,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return response;
         }
 
-
+        /// <summary>
+        /// Dispose method
+        /// </summary>
+        /// <param name="disposing">disposing</param>
         protected override void Dispose(bool disposing)
         {
           if (disposing && !_disposed) {
@@ -166,6 +168,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
           base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// RefreshTokeAsync call
+        /// </summary>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of bool</returns>
         private async Task<bool> RefreshTokensAsync(CancellationToken cancellationToken)
         {
             var refreshToken = RefreshToken;
@@ -197,6 +204,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return false;
         }
 
+
+        /// <summary>
+        /// GetAccessTokeAsync call
+        /// </summary>
+        /// <param name="cancellationToken">cancellationToken</param>
+        /// <returns>Task of string</returns>
         private async Task<string> GetAccessTokenAsync(CancellationToken cancellationToken)
         {
             if (await _lock.WaitAsync(_lockTimeout, cancellationToken).ConfigureAwait(false))

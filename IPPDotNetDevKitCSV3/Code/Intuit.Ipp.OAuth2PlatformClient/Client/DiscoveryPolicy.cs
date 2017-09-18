@@ -6,6 +6,9 @@ using System.Configuration;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
+    /// <summary>
+    /// Validates Discovery doc values
+    /// </summary>
     public class DiscoveryPolicy
     {
 

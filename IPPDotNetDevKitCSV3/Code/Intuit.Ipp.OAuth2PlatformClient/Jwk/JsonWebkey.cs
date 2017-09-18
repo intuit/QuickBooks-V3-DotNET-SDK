@@ -100,7 +100,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Returns KeySize
         /// </summary>
-
         public int KeySize
         {
             get
