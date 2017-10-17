@@ -13,7 +13,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     {
 
         internal string Authority = ConfigurationManager.AppSettings["DiscoveryAuthority"];       
-
+        
+        /// <summary>
+        /// Sets the discovery authority if not present in application configuration
+        /// </summary>        
+        public void SetAuthority(string authority)
+        {
+            Authority = authority;
+        }
 
         /// <summary>
         /// Specifies if HTTPS is enforced on all endpoints. Defaults to true.
