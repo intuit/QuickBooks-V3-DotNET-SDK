@@ -701,7 +701,7 @@ namespace Intuit.Ipp.DataService
                     }
                     catch (SystemException systemException)
                     {
-                        IdsException idsException = new IdsException(systemException.Message);
+                        IdsException idsException = new IdsException("Batch execution failed", systemException);
                         this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                         batchCompletedEventArgs.Error = idsException;
                         this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
@@ -715,7 +715,7 @@ namespace Intuit.Ipp.DataService
             }
             catch (Exception e)
             {
-                IdsException idsException = new IdsException(e.Message);
+                IdsException idsException = new IdsException("Batch execution failed", e);
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                 batchCompletedEventArgs.Error = idsException;
                 this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
