@@ -29,7 +29,7 @@
       <service>
         <!--  Stage -->
         <baseUrl qbo="https://qb.sbfinance.stage.intuit.com/" />
-        <minorVersion qbo="8" />
+        <minorVersion qbo="12" />
       </service>
     </ipp>
   </intuit>

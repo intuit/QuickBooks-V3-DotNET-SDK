@@ -151,7 +151,36 @@ namespace Intuit.Ipp.Security
             string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
             webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
         }
-       
+
+        ///// <summary>
+        ///// Authorizes the specified request.
+        ///// </summary>
+        ///// <param name="webRequest">The request.</param>
+        ///// <param name="requestBody">The requestBody if form encoded parameters.</param>
+        //public HttpWebRequest AuthorizeOAuth1toOauth2MigrationRequest(WebRequest webRequest, string requestBody)
+        //{
+        //    IOAuthConsumerContext consumerContext = this.CreateConsumerContext(true);
+        //    IOAuthSession oauthSession = CreateOAuthSessionWithConsumerContext(consumerContext);
+        //    oauthSession.AccessToken = this.CreateAccessToken();
+        //    string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
+        //    webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
+        //    webRequest.ContentType = "application/x-www-form-urlencoded; charset=utf-8";   
+        //    return webRequest as HttpWebRequest;
+        //}
+
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="requestBody"></param>
+        ///// <param name="httpWebRequest"></param>
+        ///// <returns></returns>
+        //public string GetDevDefinedOAuth1Header(string requestBody, string httpWebRequest)
+        //{
+
+
+        //}
+
         /// <summary>
         /// Creates the OAuth session with consumer context.
         /// </summary>

@@ -169,6 +169,8 @@ namespace Intuit.Ipp.Test.QBO
 
             newCustomer.MiddleName = "M" + guid.Substring(0, 4);
             newCustomer.FamilyName = "FN" + guid.Substring(0, 20);
+            newCustomer.Taxable = true;
+            newCustomer.TaxableSpecified = true;
 
             return newCustomer;
         }

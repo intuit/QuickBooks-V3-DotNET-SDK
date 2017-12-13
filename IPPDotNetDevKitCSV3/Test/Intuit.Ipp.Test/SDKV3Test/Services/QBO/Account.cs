@@ -308,7 +308,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         public void AccountRetrieveAsyncTestsUsingoAuth()
         {
             //Making sure that at least one entity is already present
-            AddBankAccountTestUsingoAuth();
+            //AddBankAccountTestUsingoAuth();
 
             //Retrieving the Account using FindAll
             Helper.FindAllAsync<Account>(qboContextoAuth, new Account());

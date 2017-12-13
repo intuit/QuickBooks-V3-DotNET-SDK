@@ -939,7 +939,7 @@ namespace Intuit.Ipp.DataService
                                 }
                             }
 
-                            break;
+                            //break;
                         }
                     }
 
@@ -1251,7 +1251,7 @@ namespace Intuit.Ipp.DataService
                                                 count++;
                                             }
                                         }
-                                        break;
+                                        //break;
                                     }
                                 }
                             }

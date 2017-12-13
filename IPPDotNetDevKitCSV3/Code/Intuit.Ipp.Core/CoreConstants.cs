@@ -81,6 +81,16 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public const string CONTENTTYPE_URLFORMENCODED = "application/x-www-form-urlencoded";
 
+        /// <summary>
+        /// The Base Url for Oauth1 to Oauth2 tokens migration.
+        /// </summary>
+        public const string TOKEN_MIGRATION_URL = "https://developer.api.intuit.com/v2/oauth2/tokens/migrate";
+
+
+        /// <summary>
+        /// The Redirect url required by token migration endpoint.
+        /// </summary>
+        public const string TOKEN_MIGRATION_REDIRECT_URL = "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";
 
 
         /// <summary>
@@ -226,7 +236,7 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// The Request source header value.
         /// </summary>
-        public const string REQUESTSOURCEHEADER = "V3DotNetSDK4.0.0.0";
+        public const string REQUESTSOURCEHEADER = "V3DotNetSDK5.0.0.0";
 
         /// <summary>
         /// multipart/form-data format

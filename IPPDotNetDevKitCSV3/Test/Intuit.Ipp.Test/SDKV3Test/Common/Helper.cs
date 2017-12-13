@@ -368,7 +368,7 @@ namespace Intuit.Ipp.Test
             // Check if we completed the async call, or fail the test if we timed out.    
             if (!isFindAll)
             {
-                Assert.Fail("Find All Bill Failed");
+                Assert.Fail("Find All Failed");
             }
 
             if (exp != null)

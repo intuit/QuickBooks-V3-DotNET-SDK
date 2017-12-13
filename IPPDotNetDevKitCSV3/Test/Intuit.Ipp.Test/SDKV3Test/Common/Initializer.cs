@@ -16,30 +16,47 @@ namespace Intuit.Ipp.Test
     public class Initializer
     {
         private static string accessTokenQBO = string.Empty;
+        private static string refreshTokenQBO = string.Empty;
+        private static string clientIdQBO = string.Empty;
+        private static string clientSecretQBO = string.Empty;
+        private static string realmIdIAQBO = string.Empty;
+
         private static string accessTokenSecretQBO = string.Empty;
         private static string consumerKeyQBO = string.Empty;
         private static string consumerKeySecretQBO = string.Empty;
-        private static string realmIdIAQBO = string.Empty;
-        
+
         private static void Initialize()
         {
-            
 
+            //Oauth1 tokens
             accessTokenQBO = ConfigurationManager.AppSettings["accessTokenQBO"];
             accessTokenSecretQBO = ConfigurationManager.AppSettings["accessTokenSecretQBO"];
             consumerKeyQBO = ConfigurationManager.AppSettings["consumerKeyQBO"];
             consumerKeySecretQBO = ConfigurationManager.AppSettings["consumerSecretQBO"];
             realmIdIAQBO = ConfigurationManager.AppSettings["realmIdIAQBO"];
 
+            //////Ouath2 tokens
+            //accessTokenQBO = ConfigurationManager.AppSettings["accessTokenQBO"];
+            //refreshTokenQBO = ConfigurationManager.AppSettings["refreshTokenQBO"];
+            //realmIdIAQBO = ConfigurationManager.AppSettings["realmIdIAQBO"];
+            //clientIdQBO = ConfigurationManager.AppSettings["clientIdKeyQBO"];
+            //clientSecretQBO = ConfigurationManager.AppSettings["clientSecretQBO"];
+
+
+
         }
 
-        
+
         internal static ServiceContext InitializeQBOServiceContextUsingoAuth()
         {
             Initialize();
+            ////Oauth1 validator
             OAuthRequestValidator reqValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, consumerKeySecretQBO);
+
+            ////Oauth2 validator
+            //OAuth2RequestValidator reqValidator = new OAuth2RequestValidator(accessTokenQBO);
             ServiceContext context = new ServiceContext(realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
-            context.IppConfiguration.MinorVersion.Qbo = "8";
+            context.IppConfiguration.MinorVersion.Qbo = "12";
             return context;
         }
 
@@ -51,7 +68,12 @@ namespace Intuit.Ipp.Test
             ServiceContext context = null;
             if (isQBO)
             {
+                ////Oauth1 validator
                 OAuthRequestValidator reqValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, consumerKeySecretQBO);
+
+
+                ////Oauth2 validator
+                //OAuth2RequestValidator reqValidator = new OAuth2RequestValidator(accessTokenQBO);
                 context = new ServiceContext(realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
             }
             

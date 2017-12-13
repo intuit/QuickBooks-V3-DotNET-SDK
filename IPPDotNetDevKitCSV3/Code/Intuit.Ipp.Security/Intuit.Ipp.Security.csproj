@@ -47,6 +47,9 @@
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Intuit.Ipp.Core">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Intuit.Ipp.Exception, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
@@ -71,6 +74,8 @@
     <Compile Include="Documentation\NamespaceDoc.cs" />
     <Compile Include="GlobalSuppression.cs" />
     <Compile Include="Interface\IRequestValidator.cs" />
+    <Compile Include="MigratedTokenResponse.cs" />
+    <Compile Include="OAuth1ToOAuth2TokenMigrationHelper.cs" />
     <Compile Include="OAuth2RequestValidator.cs" />
     <Compile Include="OAuthRequestValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
