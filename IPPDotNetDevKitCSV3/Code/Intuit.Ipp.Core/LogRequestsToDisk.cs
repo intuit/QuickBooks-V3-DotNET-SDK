@@ -31,7 +31,7 @@ namespace Intuit.Ipp.Core.Rest
     /// <summary>
     /// Logs API Requests/Responses To Disk
     /// </summary>
-    public class LogRequestsToDisk 
+    public class LogRequestsToDisk
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LogRequestsToDisk"/> class.
@@ -90,7 +90,7 @@ namespace Intuit.Ipp.Core.Rest
                 {
                     Encoding encoder = Encoding.GetEncoding("utf-8", new EncoderExceptionFallback(), new DecoderExceptionFallback());
                     byte[] data = encoder.GetBytes(xml);
-                    using (FileStream fs = new FileStream(filePath, FileMode.CreateNew, FileAccess.Write))
+                    using (FileStream fs = new FileStream(filePath, FileMode.Append, FileAccess.Write))
                     {
                         fs.Write(data, 0, data.Length);
                     }
