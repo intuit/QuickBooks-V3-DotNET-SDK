@@ -39,13 +39,15 @@ namespace Intuit.Ipp.Security
     {
 
         /// <summary>
-        ///  Authorizes the specified request.
+        /// Authorizes the specified request.
         /// </summary>
         /// <param name="scopes"></param>
         /// <param name="redirectUrl"></param>
+        /// <param name="clientId"></param>
+        /// <param name="clientSecret"></param>
         /// <param name="oauthRequestValidator"></param>
-        /// <returns></returns>
-        public MigratedTokenResponse GetOAuth2Tokens(string scopes, string redirectUrl, OAuthRequestValidator oauthRequestValidator)
+        /// <returns>Json response</returns>
+        public MigratedTokenResponse GetOAuth2Tokens(string scopes, string redirectUrl,string clientId, string clientSecret, OAuthRequestValidator oauthRequestValidator)
         {
             HttpWebResponse httpWebResponse;
             if (redirectUrl == null || redirectUrl == "")
@@ -60,11 +62,13 @@ namespace Intuit.Ipp.Security
             {
 
                 { "scope", scopes },
-                { "redirect_uri", redirectUrl }
+                { "redirect_uri", redirectUrl },
+                { "client_id", clientId },
+                { "client_secret", clientSecret }
             };
 
                 string requestBody = JsonConvert.SerializeObject(formFields);
-                string migrateUrl = CoreConstants.TOKEN_MIGRATION_URL;
+                string migrateUrl = CoreConstants.TOKEN_MIGRATION_URL;                 
                 HttpWebRequest httpWebRequest = WebRequest.Create(migrateUrl) as HttpWebRequest;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentType = "application/json";
