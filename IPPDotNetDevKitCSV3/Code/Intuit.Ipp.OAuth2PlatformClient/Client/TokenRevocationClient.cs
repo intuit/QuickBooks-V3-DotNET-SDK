@@ -25,8 +25,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// <summary>
     /// TokenRevocationClient Class
     /// </summary>
-    public class TokenRevocationClient
+    public class TokenRevocationClient : IDisposable
     {
+        private bool _disposed;
+
         /// <summary>
         /// Client
         /// </summary>
@@ -67,22 +69,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Client = new HttpClient(innerHttpMessageHandler)
             {
                 BaseAddress = new Uri(endpoint)
-
             };
 
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));        
+                new MediaTypeWithQualityHeaderValue("application/json"));
             if (!string.IsNullOrWhiteSpace(clientId) && !string.IsNullOrWhiteSpace(clientSecret))
             {
                 Client.SetBasicAuthentication(clientId, clientSecret);
-
-            
-
             }
-            
+
             Address = endpoint;
-    }
+        }
 
         /// <summary>
         /// Timeout
@@ -109,22 +107,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (string.IsNullOrWhiteSpace(request.Token)) throw new ArgumentNullException(nameof(request.Token));
 
             HttpRequestMessage msgRequest = new HttpRequestMessage(HttpMethod.Post, Address);
-       
+
             JsonToken jobject = new JsonToken();
             jobject.token = request.Token;//Refresh token or bearer access token
             var json = JsonConvert.SerializeObject(jobject);
             var stringContent = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
 
             msgRequest.Content = stringContent;
-            
-
-
 
             try
             {
-               
                 var response = await Client.PostAsync("", msgRequest.Content).ConfigureAwait(false);
-             
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -145,23 +138,35 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         errorDetail = headers.WwwAuthenticate.ToString();
                     }
 
-              
-
                     if (errorDetail != null && errorDetail != "")
                     {
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
-
                     }
                     else
                     {
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase);
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 return new TokenRevocationResponse(ex);
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing && !_disposed)
+            {
+                Client.Dispose();
+
+                _disposed = true;
             }
         }
     }

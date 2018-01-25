@@ -24,7 +24,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Constructor
         /// </summary>
         /// <param name="endpoint">endpoint</param>
-        public TokenClient(string  endpoint)
+        public TokenClient(string endpoint)
             : this(endpoint, new HttpClientHandler())
         { }
 
@@ -48,7 +48,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Address = endpoint;
         }
 
- 
         /// <summary>
         /// Constructor
         /// </summary>
@@ -59,7 +58,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public TokenClient(string endpoint, string clientId, string clientSecret, AuthenticationStyle style = AuthenticationStyle.OAuth2)
             : this(endpoint, clientId, clientSecret, new HttpClientHandler(), style)
         { }
-
 
         /// <summary>
         /// Constructor
@@ -88,7 +86,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// ClientSecret
         /// </summary>
         public string ClientSecret { get; set; }
-
 
         /// <summary>
         /// Address
@@ -127,9 +124,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (AuthenticationStyle == AuthenticationStyle.OAuth2)
             {
                 request.Headers.Authorization = new BasicAuthenticationHeaderValue(ClientId, ClientSecret);
-                request.Content.Headers.ContentType=new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
+                request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
             }
 
             try
@@ -148,7 +144,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             else
             {
-                
                 string errorDetail = "";
 
                 HttpResponseHeaders headers = response.Headers;
@@ -157,17 +152,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     errorDetail = headers.WwwAuthenticate.ToString();
                 }
 
-
                 if (errorDetail != null && errorDetail != "")
                 {
                     return new TokenResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
-
                 }
                 else
                 {
                     return new TokenResponse(response.StatusCode, response.ReasonPhrase);
                 }
-
             }
         }
 
@@ -188,8 +180,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (disposing && !_disposed)
             {
-                _disposed = true;
                 Client.Dispose();
+
+                _disposed = true;
             }
         }
     }
