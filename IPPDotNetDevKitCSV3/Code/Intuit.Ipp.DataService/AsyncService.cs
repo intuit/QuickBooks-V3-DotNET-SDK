@@ -1244,12 +1244,14 @@ namespace Intuit.Ipp.DataService
 
                                         if (tempEntityArray.Length > 0)
                                         {
+                                            string entityName = string.Empty;
                                             foreach (object item in tempEntityArray)
                                             {
                                                 entities.Add((IEntity)item);
-                                                returnValue.Add(item.GetType().Name, entities);
+                                                entityName = item.GetType().Name;
                                                 count++;
                                             }
+                                            returnValue.Add(entityName, entities);
                                         }
                                         //break;
                                     }
