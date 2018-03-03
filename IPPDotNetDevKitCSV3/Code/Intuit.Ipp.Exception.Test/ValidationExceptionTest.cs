@@ -126,7 +126,7 @@ namespace Intuit.Ipp.Exception.Test
         [TestMethod()]
         public void ValidationExceptionConstructorTest3()
         {
-            string message = "ValidationException was thrown.";
+            string message = "Validation Exception was thrown.";
             ValidationException target = new ValidationException();
             Assert.AreEqual(target.Message, message);
         }

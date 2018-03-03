@@ -83,6 +83,7 @@ namespace Intuit.Ipp.Test.QBO
                 docNumbers.Add(invoice.DocNumber);
                 invoice.sparse = true;
                 invoice.sparseSpecified = true;
+                invoice.TxnTaxDetail = null;
                 batch.Add(invoice, "UpdateInvoice" + count, OperationEnum.update);
                 count++;
             }

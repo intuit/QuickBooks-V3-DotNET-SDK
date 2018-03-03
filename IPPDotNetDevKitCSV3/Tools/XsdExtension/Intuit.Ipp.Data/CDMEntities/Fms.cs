@@ -9345,6 +9345,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType taxCodeRefField;
         
+        private ReferenceType taxClassificationRefField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -9518,6 +9520,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxCodeRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the
+        /// SalesTaxCode for this item.
+        /// 
+        /// </summary>
+        public ReferenceType TaxClassificationRef {
+            get {
+                return this.taxClassificationRefField;
+            }
+            set {
+                this.taxClassificationRefField = value;
             }
         }
     }
@@ -11073,6 +11092,10 @@ namespace Intuit.Ipp.Data {
         
         private PhysicalAddress shipAddrField;
         
+        private bool freeFormAddressField;
+        
+        private bool freeFormAddressFieldSpecified;
+        
         private ReferenceType remitToRefField;
         
         private ReferenceType classRefField;
@@ -11166,6 +11189,8 @@ namespace Intuit.Ipp.Data {
         private bool discountAmtFieldSpecified;
         
         private string govtTxnRefIdentifierField;
+        
+        private ReferenceType taxExemptionRefField;
         
         /// <remarks/>
         /// <summary>
@@ -11287,6 +11312,35 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.shipAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Specifies whether
+        /// shipping address is in free-form or structured-form (city/state etc.)
+        /// 
+        /// </summary>
+        public bool FreeFormAddress {
+            get {
+                return this.freeFormAddressField;
+            }
+            set {
+                this.freeFormAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool FreeFormAddressSpecified {
+            get {
+                return this.freeFormAddressFieldSpecified;
+            }
+            set {
+                this.freeFormAddressFieldSpecified = value;
             }
         }
         
@@ -12120,6 +12174,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.govtTxnRefIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the
+        /// TaxExemptionId and TaxExemptionReason for this customer.
+        /// 
+        /// </summary>
+        public ReferenceType TaxExemptionRef {
+            get {
+                return this.taxExemptionRefField;
+            }
+            set {
+                this.taxExemptionRefField = value;
             }
         }
     }

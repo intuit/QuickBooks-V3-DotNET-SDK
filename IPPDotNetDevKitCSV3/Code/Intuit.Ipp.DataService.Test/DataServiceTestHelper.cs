@@ -82,14 +82,14 @@ namespace Intuit.Ipp.DataService.Test
             BillPayment billPayment = new BillPayment();
             
             Vendor vendor = new Vendor();
-            vendor.DisplayName = "00124a1f-ff2a-41ad-b3f9-8";
-            vendor.Id = "912";
+            //vendor.DisplayName = "00124a1f-ff2a-41ad-b3f9-8";
+            vendor.Id = "35";
 
             BillPaymentCheck billPaymentCheck = new BillPaymentCheck();
             billPaymentCheck.BankAccountRef = new ReferenceType()
             {
-                name = "Bank (1091836770)",
-                Value = "2520"
+                //name = "Bank (1091836770)",
+                Value = "136"
             };
 
             
@@ -123,7 +123,7 @@ namespace Intuit.Ipp.DataService.Test
             line1.AmountSpecified = true;
             List<LinkedTxn> LinkedTxnList1 = new List<LinkedTxn>();
             LinkedTxn linkedTxn1 = new LinkedTxn();
-            linkedTxn1.TxnId = "7402";
+            linkedTxn1.TxnId = "547";
             linkedTxn1.TxnType = TxnTypeEnum.Bill.ToString();
             LinkedTxnList1.Add(linkedTxn1);
             line1.LinkedTxn = LinkedTxnList1.ToArray();
@@ -140,7 +140,7 @@ namespace Intuit.Ipp.DataService.Test
 
             billPayment.VendorRef = new ReferenceType()
             {
-                name = vendor.DisplayName,
+                //name = vendor.DisplayName,
                 Value = vendor.Id
             };
 

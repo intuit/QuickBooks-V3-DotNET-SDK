@@ -4,7 +4,7 @@
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyCompany("Intuit")]
-[assembly: AssemblyCopyright("Copyright © 2017 Intuit, Inc.")]
+[assembly: AssemblyCopyright("Copyright © 2018 Intuit, Inc.")]
 
 // Version information for an assembly consists of the following four values:
 //

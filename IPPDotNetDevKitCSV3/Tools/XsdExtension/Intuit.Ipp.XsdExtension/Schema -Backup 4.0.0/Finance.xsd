@@ -1583,6 +1583,1007 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="WithholdingTaxSuspense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO 
+						Description: Use Withholding Tax Suspense to track the withheld amount owed to HMRC by the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DevelopmentCosts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Development costs to track amounts you deposit or set aside to arrange for financing, such as an SBA loan, or for deposits in anticipation of the purchase of property or other assets. When the deposit is refunded, or the purchase takes place, remove the amount from this account.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionsCurrentAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provisions current assets to track current assets that have not yet been realized.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherConsumables">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other consumables for goods that become incorporated into other goods and lose their identity.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExpenditureAuthorisationsAndLettersOfCredit">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Expenditure authorisations and letters of credit to track allowances to make purchases, without an explicit loan.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="InternalTransfers">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Internal transfers to track transfers of amounts from one department to another within the same company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionsFixedAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provisions fixed assets to track fixed assets that have not yet been realized.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AssetsInCourseOfConstruction">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Assets in course of construction to track fixed assets that are used in construction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ParticipatingInterests">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Participating interests and related amounts owed to track the interest held by an undertaking in shares of another undertaking. This account should be used for interest held on a long-term basis, in order to ensure a certain level of control or influence on the other undertaking.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CumulativeDepreciationOnIntangibleAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Cumulative depreciation on intangible assets to track how much you depreciate an intangible asset, such as a franchise, customer list, copyright, or patent.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionsNonCurrentAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provisions non-current assets to track non-current assets that have not yet been realized.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OutstandingDuesMicroSmallEnterprise">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Account to hold principal amount and the interest due remaining unpaid to any business vendors that are MSME (Micro, Small and Medium Enterprise)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OutstandingDuesOtherThanMicroSmallEnterprise">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: This account to hold principal amount and the interest due remaining unpaid to any business vendors that are not an MSME (Micro, Small and Medium Enterprise)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GlobalTaxRefund">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Service Tax Refund
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GlobalTaxDeferred">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Deferred Service Tax Input Credit
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionsCurrentLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provisions current liabilities to track current liabilities that have not yet been relized.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StaffAndRelatedLiabilityAccounts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Staff and related accounts to track amounts owed to employees (or on their behalf) that are due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SocialSecurityAgencies">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Social security and other social agencies to track amounts owed to government and social agencies that are due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="SundryDebtorsAndCreditors">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Sundry debtors and creditors to track miscellaneous amounts owed by customers and to suppliers that are not assigned their own account, and that are due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionsNonCurrentLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provisions non-current liabilities to track non-current liabilities that have not yet been realized.
+
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DebtsRelatedToParticipatingInterests">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Debts related to participating interests to track amounts owed to employees (or on their behalf) that are not due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StaffAndRelatedLongTermLiabilityAccounts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Staff and related accounts to track track miscellaneous amounts owed by customers and to suppliers that are not assigned their own account, and that are not due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="GovernmentAndOtherPublicAuthorities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Government and other public authorities to track amounts owed to government and social agencies that are not due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GroupAndAssociates">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Group and associates to track amounts owed to subsidiaries of the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="InvestmentGrants">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Investment grants to track capital transfers in cash or in kind made by governments or by the rest of the world for investment purposes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CashReceiptIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Unapplied Cash Payment $$Income$$ reports the Cash Basis $$income$$ from $$customers$$ payments you've received but not applied to invoices or charges. In general, you'd never use this directly on a purchase or sale transaction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="OwnWorkCapitalized">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Own work capitalized to track the value of work performed for one's own purposes and capitalized as part of fixed assets.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OperatingGrants">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Operating grants to track capital transfers in cash or in kind made by governments or by the rest of the world for regular operating purposes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherCurrentOperatingIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other current operating $$income$$ to track $$income$$ arising from operations of the company that do not fit under any other category and that are not tracked in individual accounts.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CostOfSales">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Cost of goods sold to track costs related to sales you provide
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CashExpenditureExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Unapplied Cash Bill Payment $$Expense$$ reports the Cash Basis $$expense$$ from vendor payment cheques you've sent but not yet applied to vendor bills. In general, you would never use this directly on a purchase or sale transaction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExternalServices">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use External services to track $$expenses$$ paid for services provided by other companies that you are tracking in Supplier-specific accounts. If you need to track $$expenses$$ paid to other companies that do not have their own accounts, use Other external services instead.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherExternalServices">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other external services to track $$expenses$$ paid for services provided by other companies that you are not tracking in Supplier-specific accounts. If you need to track $$expenses$$ paid to other companies that do have their own accounts, use External services instead.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PurchasesRebates">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Purchases rebates on external services to track purchase rebates on $$expenses$$ paid for services provided by other companies.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherRentalCosts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Use Other rental costs to track rental $$expenses$$ that do not fall under any other rental account.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProjectStudiesSurveysAssessments">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Project studies, surveys, assessments to track $$expenses$$ relating to studies, surveys, and assessments.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sundry">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Sundry debtors and creditors to track miscellaneous amounts owed by customers and to suppliers that are not assigned their own account, and that are due within a year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StaffCosts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Staff costs to track costs that can be associated with employees, such as benefits or parties.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherCurrentOperatingCharges">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other current operating charges to track operating $$expenses$$ that do not fall under any other category.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExtraordinaryCharges">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Extraordinary charges to track $$expenses$$ that are unusual, unexpected, and a one-time event.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AppropriationsToDepreciation">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Appropriations to depreciation and provisions to track reservations on amounts on depreciation and provisions.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AccrualsAndDeferredIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accruals and deferred $$income$$ at the accounting year end to track $$expenses$$ for invoices which have not been received by the end of the accounting period.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CurrentTaxLiability">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Current tax liability to track the total amount of taxes collected but not yet paid to the government.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DeferredTax">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Deferred tax for tax liabilities or assets that are to be used in future accounting periods.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DistributionCosts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Distribution costs to track the cost of shipping goods to $$customers$$ or distributors.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Investments">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Investments to track the amounts received from individuals or other organizations
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LongTermBorrowings">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use term borrowings to track the amount due on long term borrowing
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherIntangibleAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other intangible assets to track non-monetary assets that cannot be seen, touched or physically measured that don't fall into the other intangible asset types.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PrepaymentsAndAccruedIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Prepayments and accrued $$income$$ to track payments and $$income$$ paid in advance to cover costs that will be charged in future years.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShortTermBorrowings">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Short term borrowings to track loans that need to be paid back within 12 months.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionForLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provision for liabilities to track the funds set aside in anticipation of future expenditures.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CalledUpShareCapital">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Called up share capital to track share capital which has been issued.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CalledUpShareCapitalNotPaid">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Called up share capital not paid to track share capital which has been issued but not yet paid.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LandAsset">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Land for land or property you don't depreciate.If land and building were acquired together, split the cost between the two in a logical way. One common method is to use the land-to-building ratio on the property tax statement.For land you use as a natural resource, use a Depletable assets account, instead.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AvailableForSaleFinancialAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Available-for-sale financial assets to track financial assets held for sale.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProvisionForWarrantyObligations">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Provision for warranty obligations to track expected $$expense$$ of statutory and contractual warranty claims.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CurrentPortionEmployeeBenefitsObligations">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Current portion of employee benefits obligations to track the current amount due of employee benefits
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LongTermEmployeeBenefitObligations">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Long term employee benefit obligations to track the amount due on employee benefits longer than one year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ObligationsUnderFinanceLeases">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Obligations under finance leases to track additional obligations from the terms of the lease. An example would be a balloon payment made at the end of the lease agreement.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BankLoans">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Bank loans to track the amount due on bank loans.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="InterestPayables">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Interest payables to track interest due on loans.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GainLossOnSaleOfInvestments">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Gain/loss on sale of investments to track the increase/decrease in value on the sale of investments.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GainLossOnSaleOfFixedAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Gain/loss on sale of fixed assets (property,plant, or equipment) to track the increase/decrease in value on the sale of a fixed asset
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShareCapital">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Share capital to track the funds raised by issuing shares.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CurrentPortionOfObligationsUnderFinanceLeases">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Current portion of obligations under finance leases to track the value of lease payments due within the next 12 months.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AssetsHeldForSale">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Assets held for sale to track assets of a company that are available for sale that are not expected to be held for a long period of time.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AccruedLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accrued Liabilities to track $$expenses$$ that a business has incurred but has not yet paid. For example, pensions for companies that contribute to a pension fund for their employees for their retirement.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AccruedLongLermLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accrued Non-current liabilities to track $$expenses$$ that a business has incurred but has not yet paid. For example, pensions for companies that contribute to a pension fund for their employees for their retirement.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AccruedVacationPayable">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accrued vacation payable to track vacation earned but that has not been paid out to employees.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CashAndCashEquivalents">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Cash and Cash Equivalents to track cash or assets that can be converted into cash immediately. For example, marketable securities and Treasury bills.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CommissionsAndFees">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Commissions and fees to track amounts paid to agents (such as brokers) in order for them to execute a trade.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AmortizationExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Amortization $$expense$$ to track writing off of assets (such as intangible assets or investments) over the projected life of the assets.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LossOnDiscontinuedOperationsNetOfTax">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Loss on discontinued operations, net of tax to track the loss realized when a part of the business ceases to operate or when a product line is discontinued.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ManagementCompensation">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Management compensation to track remuneration paid to Management, Executives and non-Executives.  For example, salary, fees, and benefits.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherSellingExpenses">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other selling $$expenses$$ to track selling $$expenses$$ incurred that do not fall under any other category.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LiabilitiesRelatedToAssetsHeldForSale">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Liabilities related to assets held for sale to track any liabilities that are directly related to assets being sold or written off.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LongTermDebit">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Long-term debt to track loans and obligations with a maturity of longer than one year.  For example, mortgages.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EquityInEarningsOfSubsiduaries">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Equity in earnings of subsidiaries to track the original investment in shares of subsidiaries plus the share of earnings or losses from the operations of the subsidiary.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherOperatingIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other operating $$income$$ to track $$income$$ from activities other than normal business operations.  For example, Investment interest, foreign exchange gains, and rent $$income$$.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RevenueGeneral">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Revenue - General to track $$income$$ from normal business operations that do not fit under any other category.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DividendDisbursed">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Dividend disbursed to track a payment given to its shareholders out of the company's retained earnings.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FreightAndDeliveryCos">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Freight and delivery - COS to track the cost of shipping/delivery of obtaining raw materials and producing finished goods for resale.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShippingAndDeliveryExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Shipping and delivery $$expense$$ to track the cost of shipping and delivery of goods to customers.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TravelExpensesGeneralAndAdminExpenses">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Travel $$expenses$$ - general and admin $$expenses$$ to track travelling costs incurred that are not directly related to the revenue-generating operation of the company.  For example, flight tickets and hotel costs when performing job interviews.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TravelExpensesSellingExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Travel $$expenses$$ - selling $$expense$$ to track travelling costs incurred that are directly related to the revenue-generating operation of the company.  For example, flight tickets and hotel costs when selling products and services.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UnrealisedLossOnSecuritiesNetOfTax">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Unrealised loss on securities, net of tax to track losses on securities that have occurred but are yet been realized through a transaction. For example, shares whose value has fallen but that are still being held.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SalesRetail">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Sales - retail to track sales of goods/services that have a mark-up cost to consumers.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SalesWholesale">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Sales - wholesale to track the sale of goods in quantity for resale purposes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AccumulatedOtherComprehensiveIncome">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other comprehensive $$income$$ to track the increases or decreases in $$income$$ from various businesses that is not yet absorbed by the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AssetsAvailableForSale">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Assets available for sale to track assets that are available for sale that are not expected to be held for a long period of time.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LossOnDisposalOfAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Loss on disposal of assets to track losses realized on the disposal of assets.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NonCurrentAssets">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Land to track assets that are not easily convertible to cash or not expected to become cash within the next year. For example, leasehold improvements.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IncomeTaxExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use $$Income$$ tax $$expense$$ to track $$income$$ taxes that the company has paid to meet their tax obligations.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LongTermInvestments">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Long-term investments to track investments that have a maturity date of longer than one year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DividendsPayable">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Dividends payable to track dividends that are owed to shareholders but have not yet been paid.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TradeAndOtherReceivables">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accounts Receivable (A/R) to track monies to the company by their customers. This is also known as Debtors or Trade and other receivables.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TradeAndOtherPayables">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Accounts Payable (A/P) to track monies owed by the company to their suppliers. This is also known as Creditors or Trade and other payables.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CurrentLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other current liabilities to track monies owed by the company and due within one year.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SavingsByTaxScheme">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: The Savings by FRS Income account is used to track the savings incurred by using the FRS scheme at the time of filing.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BorrowingCost">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Borrowing Costs to track the cost to procure funds. This includes supplementary costs that relate to borrowings.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Depletion">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Depletion to track the reduction in value of an asset used in the extraction of natural resources like quarries, mines, and so on, where the quantity of the material of asset reduces with extraction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExceptionalItems">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Exceptional Items to record income/expenditure items that are connected to the business activities, but are of exceptional nature and are observed to have a substantial impact on the performance and net results of the company.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PriorPeriodItems">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Prior Period Items to record income/expenditure items from prior accounting periods that were omitted or erroneously recorded in the prior period.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExtraordinaryItems">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Extraordinary Items to record income/expenditure items from non-recurring transactions that are not connected to the routine course of business activities.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MatCredit">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use MAT Credit to record the amount of Minimum Alternate Tax (MAT) credit used to pay the taxes on the current year's income.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherFreeReserves">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other Free Reserves to track reserves not covered by other free reserve types. Free Reserves are reserves created from profits. You can use them to declare dividends, but not to repay any future liability.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CapitalReserves">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Capital Reserves to track the reserves created when the company accumulated capital profits, not including any profits from revenue.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Funds">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Funds to track any portion of a reserve that is earmarked for a specific investment outside the business, such as a Sinking Fund.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MoneyReceivedAgainstShareWarrants">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Money Received Against Share Warrants to track money received when share warrants were issued. A share warrant is a document that entitles its holder to buy shares at a certain price in the future.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShareApplicationMoneyPendingAllotment">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use <b>Share Application Money Pending Allotment</b> to track the application amounts the company receives for shares that still need to be allotted to the investors.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DeferredTaxLiabilities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Deferred Tax Liabilities to record future tax liability from timing differences between book profits from the Companies Act and taxable profits from the Income Tax Act.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherLongTermProvisions">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other Long Term Provisions to track the provisions for more than twelve months that do not classify under other account types.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CapitalWip">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Capital Work-in-Progress to track the amount spent to create an asset that is not yet complete as of the date of the balance sheet (Work under process). For example, Asset Under Construction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IntangibleAssetsUnderDevelopment">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Intangible Assets Under Development to track the amount spent to generate an intangible asset that is not yet complete as of the date of the balance sheet (Work Under Process). For example, Asset Under Construction.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherLongTermInvestments">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other Long Term Investments to track investments that you expect to hold for more than twelve months and that are not classified in other account types.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="LongTermLoansAndAdvancesToRelatedParties">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Long Term Loans and Advances to Related Parties to track loans and advances given to related parties for more than twelve months from the balance sheet date.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherLongTermLoansAndAdvances">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other Long Term Loans and Advances to track loans and advances given to related parties for more than twelve months from the balance sheet date, that are not classified in other account types.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShortTermInvestmentsInRelatedParties">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Short Term Investments in Related Parties to track investments held in subsidiaries, associates, joint ventures and other related entities maturing within 12 months.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherEarmarkedBankAccounts">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Other Earmarked Bank Accounts to keep track of funds set aside for a specific purpose. For example, funds set aside to be able to pay a specific liability in the future.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShortTermLoansAndAdvancesToRelatedParties">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Short Term Loans and Advances to Related Parties to track loans and advance given to related parties for a period not more than twelve months from the balance sheet date.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DeferredTaxExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Deferred Tax Expense to track the difference between the tax liability from book profits and the tax liability from taxable profits. The variation is from timing differences between book profits and taxable profits, which may become reversed in a later period.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+				<xs:enumeration value="IncomeTaxOtherExpense">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Income Tax to track the amount of tax liability payable on the profits earned for the period (based on The Income Tax Act).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DutiesAndTaxes">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Duties and Taxes to keep track of various duties and taxes payable by the company. However, it does not include Income Tax (for example, VAT Payable, Service Tax Payable).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BalWithGovtAuthorities">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Balance with Government Authorities to track the amount of taxes paid on input services/purchases, which offset taxes collected on sales (for example, CENVAT Credit Receivable).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TaxRoundoffGainOrLoss">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Use Tax Roundoff Gain or Loss to track gains or losses that occur as a result of Tax filing roundoff.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="APCreditCardOperationEnum">
@@ -2460,6 +3461,18 @@
 			<xs:enumeration value="PREFERENCES" />
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="TaxReturnStatusEnum">
+ 		<xs:annotation>
+ 			<xs:documentation>Enumeration of the filing status that a TaxReturn can have</xs:documentation>
+ 		</xs:annotation>
+ 		<xs:restriction base="xs:string">
+ 			<xs:enumeration value="FILED" />
+ 			<xs:enumeration value="FILING_FAILED" />
+ 			<xs:enumeration value="FILING_FAILED_WRONG_AGENCY_CREDENTIALS" />
+ 			<xs:enumeration value="AGENCY_PAYMENT_INITIATED" />
+ 			<xs:enumeration value="AGENCY_PAYMENT_COMPLETED" />
+ 		</xs:restriction>
+ 	</xs:simpleType>
 
 	<!-- ============================================================================== -->
 	<!--Group definitions in the Finance Domain -->
@@ -5491,6 +6504,15 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="Hidden" type="xs:boolean" minOccurs="0">
+ 						<xs:annotation>
+ 							<xs:documentation>
+ 								Product: QBW
+ 								Description: True if Taxcode needs to be hidden. Active tax codes can be hidden from the display using this.
+ 								Filterable: ALL
+ 							</xs:documentation>
+ 						</xs:annotation>
+ 					</xs:element>
 					<xs:element name="Taxable" type="xs:boolean" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>
@@ -10173,6 +11195,8 @@
 				minOccurs="0" />
 			<xs:element name="PartnerTaxEnabled" type="xs:boolean"
 				minOccurs="0" />
+			<xs:element name="HideTaxManagement" type="xs:boolean" 
+				minOccurs="0" />
 			<xs:choice>
 				<xs:element name="TaxGroupCodeRef" type="ReferenceType"
 					minOccurs="0">
@@ -12103,6 +13127,22 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="TaxReturnStatus" type="TaxReturnStatusEnum" minOccurs="0">
+ 						<xs:annotation>
+ 							<xs:documentation>
+ 								Product: QBO
+ 								Description: Represents the status of the filing of the tax return
+ 							</xs:documentation>
+ 						</xs:annotation>
+ 					</xs:element>
+ 					<xs:element name="TaxReturnCode" type="xs:string" minOccurs="0">
+ 						<xs:annotation>
+ 							<xs:documentation>
+ 								Product: QBO
+ 								Description: Represents the tax return code with the partner
+ 							</xs:documentation>
+ 						</xs:annotation>
+ 					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

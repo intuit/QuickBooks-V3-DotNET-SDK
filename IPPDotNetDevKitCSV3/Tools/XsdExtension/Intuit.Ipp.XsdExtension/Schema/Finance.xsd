@@ -4605,6 +4605,16 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+                                        <xs:element name="FreeFormAddress" type="xs:boolean"
+                                                minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation>
+                                                                Product: QBO
+                                                                Description: Specifies whether
+                                                                shipping address is in free-form or structured-form (city/state etc.)
+                                                        </xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
 					<xs:element name="RemitToRef" type="ReferenceType"
 						minOccurs="0">
 						<xs:annotation>
@@ -5055,6 +5065,16 @@
 								to the NotaFiscal created for the salesTransaction.
 								ValidRange:
 								QBO: max=30
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TaxExemptionRef" type="ReferenceType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: ALL
+								Description: Reference to the
+								TaxExemptionId and TaxExemptionReason for this customer.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -6214,6 +6234,16 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TaxCodeRef" type="ReferenceType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Product: ALL
+						Description: Reference to the
+						SalesTaxCode for this item.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TaxClassificationRef" type="ReferenceType"
 				minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
