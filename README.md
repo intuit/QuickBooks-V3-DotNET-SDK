@@ -75,6 +75,19 @@ Steps to contribute:
 
 Note: Before you submit the pull request, make sure to remove the keys and tokens from [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Code/App.config) and [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test/SDKV3Test/App.config)  that you might have added for testing.
 
+Steps to build the project for devs-
+For others information...
+There is a trick to compiling their source code.
+They projects have many circular references.
+They side-stepped that issue by having post-build steps in the projects that copy the output to a 'SDK Assemblies' folder that is a peer of the solution 'Code' folder.
+Then their circular references actually point to those assemblies instead of the peer projects in the solution.
+
+However, their git source does not contain the 'SDK Assemblies' folder.
+This means their solution will not compile unless you create that folder and populate it with pre-compiled assemblies.
+So, create that folder and drop their pre-compiled libraries in there.
+Their git source comes with something like a 'IppDotNetSdkForQuickBooksApiV3.4.0.0.0.nupkg' file.
+Give that file a .zip extension and you can grab a copy of the libraries from there.
+
 Thank you for your contribution!
 
 
