@@ -12,6 +12,7 @@ namespace Intuit.Ipp.Security
     using System.Configuration;
     using System.Net;
     using System.Security.Cryptography;
+    using System.Text.RegularExpressions;
     using DevDefined.OAuth.Consumer;
     using DevDefined.OAuth.Framework;
     using Intuit.Ipp.Exception;
@@ -26,32 +27,29 @@ namespace Intuit.Ipp.Security
         /// </summary>
         private const string AuthorizationHeader = "Authorization";
 
-
-
         /// <summary>
         /// The O auth signature method.
         /// </summary>
         private string oauthSignatureMethod;
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="OAuth2RequestValidator"/> class.
         /// </summary>
-        /// <param name="accessToken">The bearer access token.</param>        
+        /// <param name="accessToken">The bearer access token.</param>
         public OAuth2RequestValidator(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken))
             {
                 throw new InvalidTokenException("Access token cannot be null or empty.");
             }
-
+            // only letters, digits, underscore and dash allowed
+            if (!Regex.IsMatch(accessToken, @"^[\w-]+$"))
+            {
+                throw new InvalidTokenException("Access token contains forbidden char.");
+            }
 
             this.AccessToken = accessToken;
-
         }
-
-
-
 
         /// <summary>
         /// Gets or sets the access token.
@@ -91,10 +89,5 @@ namespace Intuit.Ipp.Security
             string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
             webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
         }
-
-
-
-
     }
 }
-
