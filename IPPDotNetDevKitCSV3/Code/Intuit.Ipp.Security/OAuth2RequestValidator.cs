@@ -42,8 +42,8 @@ namespace Intuit.Ipp.Security
             {
                 throw new InvalidTokenException("Access token cannot be null or empty.");
             }
-            // only letters, digits, underscore and dash allowed
-            if (!Regex.IsMatch(accessToken, @"^[\w-]+$"))
+            
+            if (!Regex.IsMatch(accessToken, @"^[\x20-\x7E]+$"))
             {
                 throw new InvalidTokenException("Access token contains forbidden char.");
             }
