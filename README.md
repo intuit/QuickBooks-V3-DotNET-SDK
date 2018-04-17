@@ -1,3 +1,5 @@
+[![SDK Banner](views/SDK.png)][ss1]
+
 V3-DotNet-SDK
 =============
 
@@ -93,6 +95,7 @@ Give that file a .zip extension and you can grab a copy of the libraries from th
 
 Thank you for your contribution!
 
+[ss1]: https://help.developer.intuit.com/s/SDKFeedback?cid=1155
 
 
 
