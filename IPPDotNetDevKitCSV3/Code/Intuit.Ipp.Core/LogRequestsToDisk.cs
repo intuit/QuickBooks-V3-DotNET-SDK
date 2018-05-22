@@ -90,7 +90,7 @@ namespace Intuit.Ipp.Core.Rest
                 {
                     Encoding encoder = Encoding.GetEncoding("utf-8", new EncoderExceptionFallback(), new DecoderExceptionFallback());
                     byte[] data = encoder.GetBytes(xml);
-                    using (FileStream fs = new FileStream(filePath, FileMode.Append, FileAccess.Write))
+                    using (FileStream fs = new FileStream(filePath, FileMode.Append, FileAccess.ReadWrite))
                     {
                         fs.Write(data, 0, data.Length);
                     }
