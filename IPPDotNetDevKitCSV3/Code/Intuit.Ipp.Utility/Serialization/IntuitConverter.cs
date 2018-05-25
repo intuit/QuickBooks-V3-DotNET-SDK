@@ -333,9 +333,10 @@ namespace Intuit.Ipp.Utility
                                     else if (attr.ElementName == "CreditCardPayment" && objectType.Name == "BillPayment" && objectTypeProp.Name == "AnyIntuitObject")
                                     {
                                         Type type = Assembly.Load("Intuit.Ipp.Data").GetTypes().Where(a => a.Name == "BillPaymentCreditCard").FirstOrDefault();
-                                        AssignValueToProperty(target, prop, type, objectTypeProp.Name, serializer);   
+                                        AssignValueToProperty(target, prop, type, objectTypeProp.Name, serializer);
                                     }
-                                    else 
+
+                                    else
                                     {
                                         //actual type in object which is annotated with name in XmlElementAttribute
                                         Type type = Assembly.Load("Intuit.Ipp.Data").GetTypes().Where(a => a.Name == prop.Name).FirstOrDefault();
@@ -352,6 +353,19 @@ namespace Intuit.Ipp.Utility
                 }
                 else
                 {
+                    // code to handle Unix timestamp returned as Integer in case of 401 error
+                    if (prop.Name == "time")
+                    {
+                        if (prop.Value.Type == JTokenType.Integer)
+                        {
+                            long timeValue;
+                            if (prop.Value.GetType() != typeof(long))
+                                timeValue = long.Parse(prop.Value.ToString());
+                            else
+                                timeValue = (long)prop.Value;
+                            prop.Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(timeValue);
+                        }
+                    }
                     //property with node name exist. Assign the value to property.
                     Type type = target.GetType().GetProperty(prop.Name).PropertyType;
                     Type typ1 = target.GetType().GetProperty(prop.Name).PropertyType.GetElementType();
