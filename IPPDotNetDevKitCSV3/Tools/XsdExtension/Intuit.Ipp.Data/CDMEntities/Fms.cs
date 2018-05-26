@@ -4,6 +4,1961 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
+    /// 
+    /// Product: QBO
+    /// Description: TaxRate details
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class TaxRateDetails {
+        
+        private string taxRateNameField;
+        
+        private string taxRateIdField;
+        
+        private decimal rateValueField;
+        
+        private bool rateValueFieldSpecified;
+        
+        private string taxAgencyIdField;
+        
+        private TaxRateApplicableOnEnum taxApplicableOnField;
+        
+        private bool taxApplicableOnFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: TaxRate details
+        /// 
+        /// </summary>
+        public string TaxRateName {
+            get {
+                return this.taxRateNameField;
+            }
+            set {
+                this.taxRateNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: TaxRate details
+        /// 
+        /// </summary>
+        public string TaxRateId {
+            get {
+                return this.taxRateIdField;
+            }
+            set {
+                this.taxRateIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: TaxRate value
+        /// 
+        /// </summary>
+        public decimal RateValue {
+            get {
+                return this.rateValueField;
+            }
+            set {
+                this.rateValueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool RateValueSpecified {
+            get {
+                return this.rateValueFieldSpecified;
+            }
+            set {
+                this.rateValueFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: TaxAgency details
+        /// 
+        /// </summary>
+        public string TaxAgencyId {
+            get {
+                return this.taxAgencyIdField;
+            }
+            set {
+                this.taxAgencyIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Default is SalesTax
+        /// 
+        /// </summary>
+        public TaxRateApplicableOnEnum TaxApplicableOn {
+            get {
+                return this.taxApplicableOnField;
+            }
+            set {
+                this.taxApplicableOnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxApplicableOnSpecified {
+            get {
+                return this.taxApplicableOnFieldSpecified;
+            }
+            set {
+                this.taxApplicableOnFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBO
+    /// Description: Enumeration of  transaction type a given tax rate can be applied to
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum TaxRateApplicableOnEnum {
+        
+        /// <remarks/>
+        Sales,
+        
+        /// <remarks/>
+        Purchase,
+        
+        /// <remarks/>
+        Adjustment,
+        
+        /// <remarks/>
+        Other,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Product: QBO Description: Holder for a collection of Cascade objects. Used by messaging. Not intended for external clients.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class CascadeResponse {
+        
+        private Cascade[] cascadeField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Cascading events for an entity
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("Cascade")]
+        public Cascade[] Cascade {
+            get {
+                return this.cascadeField;
+            }
+            set {
+                this.cascadeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Product: QBO Description: Object representing cascading events on entities resulting from a transaction event. Used by messaging. Not intended for external clients.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Cascade {
+        
+        private string entityNameField;
+        
+        private string idField;
+        
+        private NameValue[] keyValueField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Any IntuitEntity derived object name like Customer, Item, Invoice, ...
+        /// </summary>
+        public string EntityName {
+            get {
+                return this.entityNameField;
+            }
+            set {
+                this.entityNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Description: Unique identifier for an Intuit entity.
+        /// </summary>
+        public string Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Cascading events resulting from a transaction event in the form of key value pairs. Key names are user defined.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("KeyValue")]
+        public NameValue[] KeyValue {
+            get {
+                return this.keyValueField;
+            }
+            set {
+                this.keyValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: A name/value pair that allows the client to include data that is meaningful in the domain of origin, outside of the Intuit domain.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class NameValue : IEntity {
+        
+        private string nameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Name of the element.
+        /// 
+        /// </summary>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Value of the element.
+        /// 
+        /// </summary>
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Group Summary
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Summary {
+        
+        private ColData[] colDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ColData")]
+        public ColData[] ColData {
+            get {
+                return this.colDataField;
+            }
+            set {
+                this.colDataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// One ColData can contain one column
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ColData : IEntity {
+        
+        private Attribute[] attributesField;
+        
+        private string valueField;
+        
+        private string idField;
+        
+        private string hrefField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the column attributes
+        /// </summary>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Attribute[] Attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Reference url
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string href {
+            get {
+                return this.hrefField;
+            }
+            set {
+                this.hrefField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Attribute {
+        
+        private string typeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the Name
+        /// </summary>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the Value
+        /// </summary>
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// List of rows
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Rows : IEntity {
+        
+        private Row[] rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Row")]
+        public Row[] Row {
+            get {
+                return this.rowField;
+            }
+            set {
+                this.rowField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// One Row can contain any number of columns
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Row : IEntity {
+        
+        private string idField;
+        
+        private string parentIdField;
+        
+        private object[] itemsField;
+        
+        private ItemsChoiceType1[] itemsElementNameField;
+        
+        private RowTypeEnum typeField;
+        
+        private bool typeFieldSpecified;
+        
+        private string groupField;
+        
+        /// <remarks/>
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string parentId {
+            get {
+                return this.parentIdField;
+            }
+            set {
+                this.parentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ColData", typeof(ColData))]
+        [System.Xml.Serialization.XmlElementAttribute("Header", typeof(Header))]
+        [System.Xml.Serialization.XmlElementAttribute("Rows", typeof(Rows))]
+        [System.Xml.Serialization.XmlElementAttribute("Summary", typeof(Summary))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] AnyIntuitObjects {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public ItemsChoiceType1[] ItemsElementName {
+            get {
+                return this.itemsElementNameField;
+            }
+            set {
+                this.itemsElementNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Row type section, summary, data row etc..
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public RowTypeEnum type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool typeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Report Group Income, Expense, COGS etc..
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string group {
+            get {
+                return this.groupField;
+            }
+            set {
+                this.groupField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Group Header
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Header : IEntity {
+        
+        private ColData[] colDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ColData")]
+        public ColData[] ColData {
+            get {
+                return this.colDataField;
+            }
+            set {
+                this.colDataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
+    public enum ItemsChoiceType1 {
+        
+        /// <remarks/>
+        ColData,
+        
+        /// <remarks/>
+        Header,
+        
+        /// <remarks/>
+        Rows,
+        
+        /// <remarks/>
+        Summary,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// List of all row types
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum RowTypeEnum {
+        
+        /// <remarks/>
+        Section,
+        
+        /// <remarks/>
+        Data,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes list of OLBAccounts that needs to be
+    /// enabled or disabled
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class OLBStatus {
+        
+        private OLBAccount[] oLBAccountField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Account details
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("OLBAccount")]
+        public OLBAccount[] OLBAccount {
+            get {
+                return this.oLBAccountField;
+            }
+            set {
+                this.oLBAccountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes OLBAccount details
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class OLBAccount {
+        
+        private ReferenceType accountIdField;
+        
+        private string accountDetailsField;
+        
+        private bool subscribedToAppField;
+        
+        private bool subscribedToAppFieldSpecified;
+        
+        private string appVersionField;
+        
+        private decimal lastBankBalanceField;
+        
+        private bool lastBankBalanceFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: AccountId to be enabled or disabled
+        /// 
+        /// </summary>
+        public ReferenceType AccountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Account details that contains possibly credit
+        /// card number, last 5 digits
+        /// </summary>
+        public string AccountDetails {
+            get {
+                return this.accountDetailsField;
+            }
+            set {
+                this.accountDetailsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// True when the AccountId is linked to an IPP app
+        /// and false when the AccountId is delinked from the IPP app
+        /// 
+        /// </summary>
+        public bool SubscribedToApp {
+            get {
+                return this.subscribedToAppField;
+            }
+            set {
+                this.subscribedToAppField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SubscribedToAppSpecified {
+            get {
+                return this.subscribedToAppFieldSpecified;
+            }
+            set {
+                this.subscribedToAppFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies which version is being used (such as v1
+        /// or v2). This field is optional.
+        /// </summary>
+        public string AppVersion {
+            get {
+                return this.appVersionField;
+            }
+            set {
+                this.appVersionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// The last bank balance. This field is optional.
+        /// 
+        /// </summary>
+        public decimal LastBankBalance {
+            get {
+                return this.lastBankBalanceField;
+            }
+            set {
+                this.lastBankBalanceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LastBankBalanceSpecified {
+            get {
+                return this.lastBankBalanceFieldSpecified;
+            }
+            set {
+                this.lastBankBalanceFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Reference type of all IDs that are taken as input or output.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ReferenceType {
+        
+        private string nameField;
+        
+        private string typeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes a column
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Column {
+        
+        private string colTitleField;
+        
+        private string colTypeField;
+        
+        private NameValue[] metaDataField;
+        
+        private Column[] columnsField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the column title name
+        /// </summary>
+        public string ColTitle {
+            get {
+                return this.colTitleField;
+            }
+            set {
+                this.colTitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the column type enumeration
+        /// </summary>
+        public string ColType {
+            get {
+                return this.colTypeField;
+            }
+            set {
+                this.colTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Column Metadata
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("MetaData")]
+        public NameValue[] MetaData {
+            get {
+                return this.metaDataField;
+            }
+            set {
+                this.metaDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Subcolumns of the column
+        /// </summary>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Column[] Columns {
+            get {
+                return this.columnsField;
+            }
+            set {
+                this.columnsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Detailed data about a warning condition that occurred when a request was processed
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Warning {
+        
+        private string messageField;
+        
+        private string detailField;
+        
+        private string codeField;
+        
+        private string elementField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Localized standard message associated with the warning
+        /// </summary>
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Detailed message regarding the warning condition with specifics
+        /// </summary>
+        public string Detail {
+            get {
+                return this.detailField;
+            }
+            set {
+                this.detailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Warning code, this is a required field
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// The element (if any) directly involved in the warning (i.e. an ignored element)
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string element {
+            get {
+                return this.elementField;
+            }
+            set {
+                this.elementField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes SalesTax details
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class TaxService : IntuitEntity, IEntity {
+        
+        private string taxCodeField;
+        
+        private string taxCodeIdField;
+        
+        private TaxRateDetails[] taxRateDetailsField;
+        
+        private Fault faultField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Describes the taxcode
+        /// 
+        /// </summary>
+        public string TaxCode {
+            get {
+                return this.taxCodeField;
+            }
+            set {
+                this.taxCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Describes the taxcode Id, this is output only
+        /// 
+        /// </summary>
+        public string TaxCodeId {
+            get {
+                return this.taxCodeIdField;
+            }
+            set {
+                this.taxCodeIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: TaxRate details
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("TaxRateDetails")]
+        public TaxRateDetails[] TaxRateDetails {
+            get {
+                return this.taxRateDetailsField;
+            }
+            set {
+                this.taxRateDetailsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Fault or Object should be returned
+        /// </summary>
+        public Fault Fault {
+            get {
+                return this.faultField;
+            }
+            set {
+                this.faultField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Fault entity describing the fault
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Fault {
+        
+        private Error[] errorField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Error entity that describes the details of the error, if there are multiple errors, multiple occurrence of error object will be represented as multiple errors
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("Error")]
+        public Error[] Error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Element that caused the error
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Error Type detailing error
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Error {
+        
+        private string messageField;
+        
+        private string detailField;
+        
+        private string codeField;
+        
+        private string elementField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Localized standard message associated with the error code
+        /// </summary>
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Detailed error localized or unlocalized error that is thrown by the business logic backend that caused the error
+        /// </summary>
+        public string Detail {
+            get {
+                return this.detailField;
+            }
+            set {
+                this.detailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Error code number, this is a required field
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Element that caused the error
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string element {
+            get {
+                return this.elementField;
+            }
+            set {
+                this.elementField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Base type of any top level Intuit Entity of small business type.
+    /// 
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UOM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShipMethod))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerMsg))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevelPerItem))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TDSMetadata))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Budget))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Status))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Attachable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Preferences))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserAlert))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Task))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventorySite))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxReturn))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxService))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanTypeCustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTypeCustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumberTypeCustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringTypeCustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevel))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesRep))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExchangeRate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCurrency))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Currency))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Term))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Item))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Department))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentMethod))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalCode))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Class))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Account))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MasterAccount))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxRate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxCode))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FixedAsset))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EmailDeliveryInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transaction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChargeCredit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReimburseCharge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalEntry))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Payment))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementCharge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseByVendor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseOrder))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorCredit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bill))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Purchase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesTransaction))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RefundReceipt))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreditMemo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesOrder))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Estimate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesReceipt))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Invoice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Company))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QbdtEntityIdMapping))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public abstract partial class IntuitEntity {
+        
+        private string idField;
+        
+        private string syncTokenField;
+        
+        private ModificationMetaData metaDataField;
+        
+        private CustomField[] customFieldField;
+        
+        private AttachableRef[] attachableRefField;
+        
+        private string domainField;
+        
+        private EntityStatusEnum statusField;
+        
+        private bool statusFieldSpecified;
+        
+        private bool sparseField;
+        
+        private bool sparseFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Unique Identifier for an Intuit entity (object). [br /]Required for the update operation.
+        /// Required: ALL
+        /// Filterable: ALL
+        /// 
+        /// </summary>
+        public string Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Version number of the entity.  The SyncToken is used to lock the entity for use by one application at a time. As soon as an application modifies an entity, its SyncToken is incremented; another application's request to modify the entity with the same SyncToken will fail. Only the latest version of the entity is maintained by Data Services.  An attempt to modify an entity specifying an older SyncToken will fail. [br /]Required for the update operation.
+        /// Required: ALL
+        /// 
+        /// </summary>
+        public string SyncToken {
+            get {
+                return this.syncTokenField;
+            }
+            set {
+                this.syncTokenField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Descriptive information about the entity.  The MetaData values are set by Data Services and are read only for all applications.
+        /// 
+        /// </summary>
+        public ModificationMetaData MetaData {
+            get {
+                return this.metaDataField;
+            }
+            set {
+                this.metaDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Custom field (or data extension).
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("CustomField")]
+        public CustomField[] CustomField {
+            get {
+                return this.customFieldField;
+            }
+            set {
+                this.customFieldField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies entity name of the attachment from where the attachment was requested
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("AttachableRef")]
+        public AttachableRef[] AttachableRef {
+            get {
+                return this.attachableRefField;
+            }
+            set {
+                this.attachableRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Domain in which the entity belongs.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string domain {
+            get {
+                return this.domainField;
+            }
+            set {
+                this.domainField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: System status of the entity. Output only field.[br /]
+        /// Filterable: ALL
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public EntityStatusEnum status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool statusSpecified {
+            get {
+                return this.statusFieldSpecified;
+            }
+            set {
+                this.statusFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: True if the entity representation has a partial set of elements. Output only field.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool sparse {
+            get {
+                return this.sparseField;
+            }
+            set {
+                this.sparseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool sparseSpecified {
+            get {
+                return this.sparseFieldSpecified;
+            }
+            set {
+                this.sparseFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Metadata for the instance of the entity. All properties are read only.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ModificationMetaData {
+        
+        private ReferenceType createdByRefField;
+        
+        private System.DateTime createTimeField;
+        
+        private bool createTimeFieldSpecified;
+        
+        private ReferenceType lastModifiedByRefField;
+        
+        private System.DateTime lastUpdatedTimeField;
+        
+        private bool lastUpdatedTimeFieldSpecified;
+        
+        private System.DateTime lastChangedInQBField;
+        
+        private bool lastChangedInQBFieldSpecified;
+        
+        private bool synchronizedField;
+        
+        private bool synchronizedFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Reference to the user who created the data. Read only property.
+        /// 
+        /// </summary>
+        public ReferenceType CreatedByRef {
+            get {
+                return this.createdByRefField;
+            }
+            set {
+                this.createdByRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Time the entity was created in the source domain (QBD or QBO). Read only property.
+        /// Filterable: ALL
+        /// Sortable: ALL
+        /// 
+        /// </summary>
+        public System.DateTime CreateTime {
+            get {
+                return this.createTimeField;
+            }
+            set {
+                this.createTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CreateTimeSpecified {
+            get {
+                return this.createTimeFieldSpecified;
+            }
+            set {
+                this.createTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Reference to the user who last modified the entity. Read only property.
+        /// 
+        /// </summary>
+        public ReferenceType LastModifiedByRef {
+            get {
+                return this.lastModifiedByRefField;
+            }
+            set {
+                this.lastModifiedByRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Time the entity was last updated in the source domain (QBD or QBO). Read only property.
+        /// Filterable: ALL
+        /// Sortable: ALL
+        /// 
+        /// </summary>
+        public System.DateTime LastUpdatedTime {
+            get {
+                return this.lastUpdatedTimeField;
+            }
+            set {
+                this.lastUpdatedTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LastUpdatedTimeSpecified {
+            get {
+                return this.lastUpdatedTimeFieldSpecified;
+            }
+            set {
+                this.lastUpdatedTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Time the entity was last updated in QB. Read only property.
+        /// 
+        /// </summary>
+        public System.DateTime LastChangedInQB {
+            get {
+                return this.lastChangedInQBField;
+            }
+            set {
+                this.lastChangedInQBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LastChangedInQBSpecified {
+            get {
+                return this.lastChangedInQBFieldSpecified;
+            }
+            set {
+                this.lastChangedInQBFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: If true, the data on the cloud has been synchronized with QuickBooks for Windows. If false, the data has been created or updated on the cloud but has not been synchronized with QuickBooks for Windows. Read-only field.
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public bool Synchronized {
+            get {
+                return this.synchronizedField;
+            }
+            set {
+                this.synchronizedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SynchronizedSpecified {
+            get {
+                return this.synchronizedFieldSpecified;
+            }
+            set {
+                this.synchronizedFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Custom field that can be added to an entity. This type is not extended from IntuitEntity as CustomField can not be manipulated as independent entity and will always be considered in association with another top level Intuit entity.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class CustomField {
+        
+        private string definitionIdField;
+        
+        private string nameField;
+        
+        private CustomFieldTypeEnum typeField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Unique identifier of the CustomFieldDefinition that corresponds to this CustomField.  DefinitionId is required for every CustomField.
+        /// 
+        /// </summary>
+        public string DefinitionId {
+            get {
+                return this.definitionIdField;
+            }
+            set {
+                this.definitionIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Name of the custom field.
+        /// 
+        /// </summary>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Data type of custom field.[br /]
+        /// 
+        /// </summary>
+        public CustomFieldTypeEnum Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BooleanValue", typeof(bool))]
+        [System.Xml.Serialization.XmlElementAttribute("DateValue", typeof(System.DateTime), DataType="dateTime")]
+        [System.Xml.Serialization.XmlElementAttribute("NumberValue", typeof(decimal))]
+        [System.Xml.Serialization.XmlElementAttribute("StringValue", typeof(string))]
+        public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Possible supported CustomFieldTypes.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum CustomFieldTypeEnum {
+        
+        /// <remarks/>
+        StringType,
+        
+        /// <remarks/>
+        BooleanType,
+        
+        /// <remarks/>
+        NumberType,
+        
+        /// <remarks/>
+        DateType,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Describes the details of the attachable and provides information such as where they are referenced and custom fields.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class AttachableRef {
+        
+        private ReferenceType entityRefField;
+        
+        private string lineInfoField;
+        
+        private bool includeOnSendField;
+        
+        private bool includeOnSendFieldSpecified;
+        
+        private CustomField[] customFieldField;
+        
+        private IntuitAnyType attachableRefExField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the entity.
+        /// 
+        /// </summary>
+        public ReferenceType EntityRef {
+            get {
+                return this.entityRefField;
+            }
+            set {
+                this.entityRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description:
+        /// 
+        /// </summary>
+        public string LineInfo {
+            get {
+                return this.lineInfoField;
+            }
+            set {
+                this.lineInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description:
+        /// 
+        /// </summary>
+        public bool IncludeOnSend {
+            get {
+                return this.includeOnSendField;
+            }
+            set {
+                this.includeOnSendField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool IncludeOnSendSpecified {
+            get {
+                return this.includeOnSendFieldSpecified;
+            }
+            set {
+                this.includeOnSendFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Custom field (or data extension).
+        /// Filterable: ALL
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("CustomField")]
+        public CustomField[] CustomField {
+            get {
+                return this.customFieldField;
+            }
+            set {
+                this.customFieldField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies extension entity to allow extension
+        /// 
+        /// </summary>
+        public IntuitAnyType AttachableRefEx {
+            get {
+                return this.attachableRefExField;
+            }
+            set {
+                this.attachableRefExField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Definition of IntuitAnyType to add and extend new elements to the existing entities.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class IntuitAnyType {
+        
+        private System.Xml.XmlElement[] anyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        public System.Xml.XmlElement[] Any {
+            get {
+                return this.anyField;
+            }
+            set {
+                this.anyField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Possible Status of an Entity.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum EntityStatusEnum {
+        
+        /// <remarks/>
+        Deleted,
+        
+        /// <remarks/>
+        Voided,
+        
+        /// <remarks/>
+        Draft,
+        
+        /// <remarks/>
+        Pending,
+        
+        /// <remarks/>
+        InTransit,
+        
+        /// <remarks/>
+        Synchronized,
+        
+        /// <remarks/>
+        SyncError,
+    }
+    
+    /// <remarks/>
+    /// <summary>
     /// enumeration of how the Fixed Asset has been
     /// acquired
     /// </summary>
@@ -651,6 +2606,9 @@ namespace Intuit.Ipp.Data {
         EquipmentRentalCos,
         
         /// <remarks/>
+        EstimatedTaxes,
+        
+        /// <remarks/>
         ExchangeGainOrLoss,
         
         /// <remarks/>
@@ -658,6 +2616,27 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         FinanceCosts,
+        
+        /// <remarks/>
+        FixedAssetComputers,
+        
+        /// <remarks/>
+        FixedAssetCopiers,
+        
+        /// <remarks/>
+        FixedAssetFurniture,
+        
+        /// <remarks/>
+        FixedAssetPhone,
+        
+        /// <remarks/>
+        FixedAssetPhotoVideo,
+        
+        /// <remarks/>
+        FixedAssetSoftware,
+        
+        /// <remarks/>
+        FixedAssetOtherToolsEquipment,
         
         /// <remarks/>
         FurnitureAndFixtures,
@@ -672,7 +2651,22 @@ namespace Intuit.Ipp.Data {
         GlobalTaxSuspense,
         
         /// <remarks/>
+        GasAndFuel,
+        
+        /// <remarks/>
         Goodwill,
+        
+        /// <remarks/>
+        Gratuity,
+        
+        /// <remarks/>
+        Healthcare,
+        
+        /// <remarks/>
+        HomeOffice,
+        
+        /// <remarks/>
+        HomeownerRentalInsurance,
         
         /// <remarks/>
         Insurance,
@@ -741,6 +2735,9 @@ namespace Intuit.Ipp.Data {
         MoneyMarket,
         
         /// <remarks/>
+        MortgageInterestHomeOffice,
+        
+        /// <remarks/>
         NonProfitIncome,
         
         /// <remarks/>
@@ -756,6 +2753,9 @@ namespace Intuit.Ipp.Data {
         OrganizationalCosts,
         
         /// <remarks/>
+        OtherBusinessExpenses,
+        
+        /// <remarks/>
         OtherCostsOfServiceCos,
         
         /// <remarks/>
@@ -766,6 +2766,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         OtherFixedAssets,
+        
+        /// <remarks/>
+        OtherHomeOfficeExpenses,
         
         /// <remarks/>
         OtherInvestmentIncome,
@@ -789,10 +2792,16 @@ namespace Intuit.Ipp.Data {
         OtherPrimaryIncome,
         
         /// <remarks/>
+        OtherVehicleExpenses,
+        
+        /// <remarks/>
         OwnersEquity,
         
         /// <remarks/>
         PaidInCapitalOrSurplus,
+        
+        /// <remarks/>
+        ParkingAndTolls,
         
         /// <remarks/>
         PartnerContributions,
@@ -816,6 +2825,12 @@ namespace Intuit.Ipp.Data {
         PenaltiesSettlements,
         
         /// <remarks/>
+        PersonalExpense,
+        
+        /// <remarks/>
+        PersonalIncome,
+        
+        /// <remarks/>
         PreferredStock,
         
         /// <remarks/>
@@ -828,6 +2843,9 @@ namespace Intuit.Ipp.Data {
         PromotionalMeals,
         
         /// <remarks/>
+        RentAndLeaseHomeOffice,
+        
+        /// <remarks/>
         RentOrLeaseOfBuildings,
         
         /// <remarks/>
@@ -835,6 +2853,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         RentsInTrustLiability,
+        
+        /// <remarks/>
+        RepairsAndMaintainceHomeOffice,
         
         /// <remarks/>
         RepairMaintenance,
@@ -912,7 +2933,34 @@ namespace Intuit.Ipp.Data {
         Utilities,
         
         /// <remarks/>
+        UtilitiesHomeOffice,
+        
+        /// <remarks/>
+        Vehicle,
+        
+        /// <remarks/>
+        VehicleInsurance,
+        
+        /// <remarks/>
+        VehicleLease,
+        
+        /// <remarks/>
+        VehicleLoan,
+        
+        /// <remarks/>
+        VehicleLoanInterest,
+        
+        /// <remarks/>
+        VehicleRegistration,
+        
+        /// <remarks/>
+        VehicleRepairs,
+        
+        /// <remarks/>
         Vehicles,
+        
+        /// <remarks/>
+        WashAndRoadServices,
         
         /// <remarks/>
         WithholdingTaxSales,
@@ -3274,6 +5322,32 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
+    /// Enumeration of payment methods that can be used to pay tax agency
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum AgencyPaymentMethodEnum {
+        
+        /// <remarks/>
+        ACH_CREDIT,
+        
+        /// <remarks/>
+        ACH_DEBIT,
+        
+        /// <remarks/>
+        CHECK,
+        
+        /// <remarks/>
+        WIRE,
+        
+        /// <remarks/>
+        OTHER,
+    }
+    
+    /// <remarks/>
+    /// <summary>
     /// That minimal subset of transaction information
     /// which is included on another transaction, so that a client viewing
     /// the second transaction entity need not make an additional request to
@@ -3348,847 +5422,6 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.txnLineIdField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Product: QBO Description: Holder for a collection of Cascade objects. Used by messaging. Not intended for external clients.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class CascadeResponse {
-        
-        private Cascade[] cascadeField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Cascading events for an entity
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Cascade")]
-        public Cascade[] Cascade {
-            get {
-                return this.cascadeField;
-            }
-            set {
-                this.cascadeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Product: QBO Description: Object representing cascading events on entities resulting from a transaction event. Used by messaging. Not intended for external clients.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Cascade {
-        
-        private string entityNameField;
-        
-        private string idField;
-        
-        private NameValue[] keyValueField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Any IntuitEntity derived object name like Customer, Item, Invoice, ...
-        /// </summary>
-        public string EntityName {
-            get {
-                return this.entityNameField;
-            }
-            set {
-                this.entityNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Description: Unique identifier for an Intuit entity.
-        /// </summary>
-        public string Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Cascading events resulting from a transaction event in the form of key value pairs. Key names are user defined.
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("KeyValue")]
-        public NameValue[] KeyValue {
-            get {
-                return this.keyValueField;
-            }
-            set {
-                this.keyValueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: A name/value pair that allows the client to include data that is meaningful in the domain of origin, outside of the Intuit domain.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class NameValue : IEntity {
-        
-        private string nameField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Name of the element.
-        /// 
-        /// </summary>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Value of the element.
-        /// 
-        /// </summary>
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Group Summary
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Summary {
-        
-        private ColData[] colDataField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ColData")]
-        public ColData[] ColData {
-            get {
-                return this.colDataField;
-            }
-            set {
-                this.colDataField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// One ColData can contain one column
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class ColData : IEntity {
-        
-        private Attribute[] attributesField;
-        
-        private string valueField;
-        
-        private string idField;
-        
-        private string hrefField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the column attributes
-        /// </summary>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Attribute[] Attributes {
-            get {
-                return this.attributesField;
-            }
-            set {
-                this.attributesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Reference url
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string href {
-            get {
-                return this.hrefField;
-            }
-            set {
-                this.hrefField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Attribute {
-        
-        private string typeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the Name
-        /// </summary>
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the Value
-        /// </summary>
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// List of rows
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    public partial class Rows : IEntity {
-        
-        private Row[] rowField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Row")]
-        public Row[] Row {
-            get {
-                return this.rowField;
-            }
-            set {
-                this.rowField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// One Row can contain any number of columns
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Row : IEntity {
-        
-        private string idField;
-        
-        private string parentIdField;
-        
-        private object[] itemsField;
-        
-        private ItemsChoiceType1[] itemsElementNameField;
-        
-        private RowTypeEnum typeField;
-        
-        private bool typeFieldSpecified;
-        
-        private string groupField;
-        
-        /// <remarks/>
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string parentId {
-            get {
-                return this.parentIdField;
-            }
-            set {
-                this.parentIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ColData", typeof(ColData))]
-        [System.Xml.Serialization.XmlElementAttribute("Header", typeof(Header))]
-        [System.Xml.Serialization.XmlElementAttribute("Rows", typeof(Rows))]
-        [System.Xml.Serialization.XmlElementAttribute("Summary", typeof(Summary))]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public object[] AnyIntuitObjects {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public ItemsChoiceType1[] ItemsElementName {
-            get {
-                return this.itemsElementNameField;
-            }
-            set {
-                this.itemsElementNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Row type section, summary, data row etc..
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public RowTypeEnum type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool typeSpecified {
-            get {
-                return this.typeFieldSpecified;
-            }
-            set {
-                this.typeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Report Group Income, Expense, COGS etc..
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Group Header
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Header : IEntity {
-        
-        private ColData[] colDataField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ColData")]
-        public ColData[] ColData {
-            get {
-                return this.colDataField;
-            }
-            set {
-                this.colDataField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemsChoiceType1 {
-        
-        /// <remarks/>
-        ColData,
-        
-        /// <remarks/>
-        Header,
-        
-        /// <remarks/>
-        Rows,
-        
-        /// <remarks/>
-        Summary,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// List of all row types
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum RowTypeEnum {
-        
-        /// <remarks/>
-        Section,
-        
-        /// <remarks/>
-        Data,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes list of OLBAccounts that needs to be
-    /// enabled or disabled
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class OLBStatus {
-        
-        private OLBAccount[] oLBAccountField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Account details
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("OLBAccount")]
-        public OLBAccount[] OLBAccount {
-            get {
-                return this.oLBAccountField;
-            }
-            set {
-                this.oLBAccountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes OLBAccount details
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class OLBAccount {
-        
-        private ReferenceType accountIdField;
-        
-        private string accountDetailsField;
-        
-        private bool subscribedToAppField;
-        
-        private bool subscribedToAppFieldSpecified;
-        
-        private string appVersionField;
-        
-        private decimal lastBankBalanceField;
-        
-        private bool lastBankBalanceFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: AccountId to be enabled or disabled
-        /// 
-        /// </summary>
-        public ReferenceType AccountId {
-            get {
-                return this.accountIdField;
-            }
-            set {
-                this.accountIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Account details that contains possibly credit
-        /// card number, last 5 digits
-        /// </summary>
-        public string AccountDetails {
-            get {
-                return this.accountDetailsField;
-            }
-            set {
-                this.accountDetailsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// True when the AccountId is linked to an IPP app
-        /// and false when the AccountId is delinked from the IPP app
-        /// 
-        /// </summary>
-        public bool SubscribedToApp {
-            get {
-                return this.subscribedToAppField;
-            }
-            set {
-                this.subscribedToAppField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool SubscribedToAppSpecified {
-            get {
-                return this.subscribedToAppFieldSpecified;
-            }
-            set {
-                this.subscribedToAppFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies which version is being used (such as v1
-        /// or v2). This field is optional.
-        /// </summary>
-        public string AppVersion {
-            get {
-                return this.appVersionField;
-            }
-            set {
-                this.appVersionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// The last bank balance. This field is optional.
-        /// 
-        /// </summary>
-        public decimal LastBankBalance {
-            get {
-                return this.lastBankBalanceField;
-            }
-            set {
-                this.lastBankBalanceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LastBankBalanceSpecified {
-            get {
-                return this.lastBankBalanceFieldSpecified;
-            }
-            set {
-                this.lastBankBalanceFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Reference type of all IDs that are taken as input or output.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class ReferenceType {
-        
-        private string nameField;
-        
-        private string typeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Detailed data about a warning condition that occurred when a request was processed
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Warning {
-        
-        private string messageField;
-        
-        private string detailField;
-        
-        private string codeField;
-        
-        private string elementField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Localized standard message associated with the warning
-        /// </summary>
-        public string Message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Detailed message regarding the warning condition with specifics
-        /// </summary>
-        public string Detail {
-            get {
-                return this.detailField;
-            }
-            set {
-                this.detailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Warning code, this is a required field
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// The element (if any) directly involved in the warning (i.e. an ignored element)
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string element {
-            get {
-                return this.elementField;
-            }
-            set {
-                this.elementField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes a column
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Column {
-        
-        private string colTitleField;
-        
-        private string colTypeField;
-        
-        private NameValue[] metaDataField;
-        
-        private Column[] columnsField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the column title name
-        /// </summary>
-        public string ColTitle {
-            get {
-                return this.colTitleField;
-            }
-            set {
-                this.colTitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the column type enumeration
-        /// </summary>
-        public string ColType {
-            get {
-                return this.colTypeField;
-            }
-            set {
-                this.colTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Column Metadata
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("MetaData")]
-        public NameValue[] MetaData {
-            get {
-                return this.metaDataField;
-            }
-            set {
-                this.metaDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Subcolumns of the column
-        /// </summary>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Column[] Columns {
-            get {
-                return this.columnsField;
-            }
-            set {
-                this.columnsField = value;
             }
         }
     }
@@ -4283,756 +5516,6 @@ namespace Intuit.Ipp.Data {
                 this.qbdtEntityTypeField = value;
             }
         }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Base type of any top level Intuit Entity of small business type.
-    /// 
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UOM))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShipMethod))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerMsg))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevelPerItem))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxService))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QbdtEntityIdMapping))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TDSMetadata))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Budget))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncActivity))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Status))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Attachable))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Preferences))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserAlert))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Task))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventorySite))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxReturn))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeActivity))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameBase))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldDefinition))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanTypeCustomFieldDefinition))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTypeCustomFieldDefinition))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumberTypeCustomFieldDefinition))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringTypeCustomFieldDefinition))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevel))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesRep))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExchangeRate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCurrency))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Currency))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Term))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Item))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Department))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentMethod))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalCode))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Class))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Account))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MasterAccount))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxRate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxCode))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FixedAsset))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EmailDeliveryInfo))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transaction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChargeCredit))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReimburseCharge))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalEntry))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Payment))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementCharge))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseByVendor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseOrder))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorCredit))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bill))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Purchase))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesTransaction))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RefundReceipt))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreditMemo))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesOrder))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Estimate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesReceipt))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Invoice))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyInfo))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Company))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public abstract partial class IntuitEntity {
-        
-        private string idField;
-        
-        private string syncTokenField;
-        
-        private ModificationMetaData metaDataField;
-        
-        private CustomField[] customFieldField;
-        
-        private AttachableRef[] attachableRefField;
-        
-        private string domainField;
-        
-        private EntityStatusEnum statusField;
-        
-        private bool statusFieldSpecified;
-        
-        private bool sparseField;
-        
-        private bool sparseFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Unique Identifier for an Intuit entity (object). [br /]Required for the update operation.
-        /// Required: ALL
-        /// Filterable: ALL
-        /// 
-        /// </summary>
-        public string Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Version number of the entity.  The SyncToken is used to lock the entity for use by one application at a time. As soon as an application modifies an entity, its SyncToken is incremented; another application's request to modify the entity with the same SyncToken will fail. Only the latest version of the entity is maintained by Data Services.  An attempt to modify an entity specifying an older SyncToken will fail. [br /]Required for the update operation.
-        /// Required: ALL
-        /// 
-        /// </summary>
-        public string SyncToken {
-            get {
-                return this.syncTokenField;
-            }
-            set {
-                this.syncTokenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Descriptive information about the entity.  The MetaData values are set by Data Services and are read only for all applications.
-        /// 
-        /// </summary>
-        public ModificationMetaData MetaData {
-            get {
-                return this.metaDataField;
-            }
-            set {
-                this.metaDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Custom field (or data extension).
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("CustomField")]
-        public CustomField[] CustomField {
-            get {
-                return this.customFieldField;
-            }
-            set {
-                this.customFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies entity name of the attachment from where the attachment was requested
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("AttachableRef")]
-        public AttachableRef[] AttachableRef {
-            get {
-                return this.attachableRefField;
-            }
-            set {
-                this.attachableRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Domain in which the entity belongs.
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string domain {
-            get {
-                return this.domainField;
-            }
-            set {
-                this.domainField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: System status of the entity. Output only field.[br /]
-        /// Filterable: ALL
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public EntityStatusEnum status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool statusSpecified {
-            get {
-                return this.statusFieldSpecified;
-            }
-            set {
-                this.statusFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: True if the entity representation has a partial set of elements. Output only field.
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool sparse {
-            get {
-                return this.sparseField;
-            }
-            set {
-                this.sparseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool sparseSpecified {
-            get {
-                return this.sparseFieldSpecified;
-            }
-            set {
-                this.sparseFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Metadata for the instance of the entity. All properties are read only.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class ModificationMetaData {
-        
-        private ReferenceType createdByRefField;
-        
-        private System.DateTime createTimeField;
-        
-        private bool createTimeFieldSpecified;
-        
-        private ReferenceType lastModifiedByRefField;
-        
-        private System.DateTime lastUpdatedTimeField;
-        
-        private bool lastUpdatedTimeFieldSpecified;
-        
-        private System.DateTime lastChangedInQBField;
-        
-        private bool lastChangedInQBFieldSpecified;
-        
-        private bool synchronizedField;
-        
-        private bool synchronizedFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Reference to the user who created the data. Read only property.
-        /// 
-        /// </summary>
-        public ReferenceType CreatedByRef {
-            get {
-                return this.createdByRefField;
-            }
-            set {
-                this.createdByRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Time the entity was created in the source domain (QBD or QBO). Read only property.
-        /// Filterable: ALL
-        /// Sortable: ALL
-        /// 
-        /// </summary>
-        public System.DateTime CreateTime {
-            get {
-                return this.createTimeField;
-            }
-            set {
-                this.createTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool CreateTimeSpecified {
-            get {
-                return this.createTimeFieldSpecified;
-            }
-            set {
-                this.createTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Reference to the user who last modified the entity. Read only property.
-        /// 
-        /// </summary>
-        public ReferenceType LastModifiedByRef {
-            get {
-                return this.lastModifiedByRefField;
-            }
-            set {
-                this.lastModifiedByRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Time the entity was last updated in the source domain (QBD or QBO). Read only property.
-        /// Filterable: ALL
-        /// Sortable: ALL
-        /// 
-        /// </summary>
-        public System.DateTime LastUpdatedTime {
-            get {
-                return this.lastUpdatedTimeField;
-            }
-            set {
-                this.lastUpdatedTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LastUpdatedTimeSpecified {
-            get {
-                return this.lastUpdatedTimeFieldSpecified;
-            }
-            set {
-                this.lastUpdatedTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Time the entity was last updated in QB. Read only property.
-        /// 
-        /// </summary>
-        public System.DateTime LastChangedInQB {
-            get {
-                return this.lastChangedInQBField;
-            }
-            set {
-                this.lastChangedInQBField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LastChangedInQBSpecified {
-            get {
-                return this.lastChangedInQBFieldSpecified;
-            }
-            set {
-                this.lastChangedInQBFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: If true, the data on the cloud has been synchronized with QuickBooks for Windows. If false, the data has been created or updated on the cloud but has not been synchronized with QuickBooks for Windows. Read-only field.
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public bool Synchronized {
-            get {
-                return this.synchronizedField;
-            }
-            set {
-                this.synchronizedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool SynchronizedSpecified {
-            get {
-                return this.synchronizedFieldSpecified;
-            }
-            set {
-                this.synchronizedFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Custom field that can be added to an entity. This type is not extended from IntuitEntity as CustomField can not be manipulated as independent entity and will always be considered in association with another top level Intuit entity.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class CustomField {
-        
-        private string definitionIdField;
-        
-        private string nameField;
-        
-        private CustomFieldTypeEnum typeField;
-        
-        private object itemField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Unique identifier of the CustomFieldDefinition that corresponds to this CustomField.  DefinitionId is required for every CustomField.
-        /// 
-        /// </summary>
-        public string DefinitionId {
-            get {
-                return this.definitionIdField;
-            }
-            set {
-                this.definitionIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Name of the custom field.
-        /// 
-        /// </summary>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Data type of custom field.[br /]
-        /// 
-        /// </summary>
-        public CustomFieldTypeEnum Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BooleanValue", typeof(bool))]
-        [System.Xml.Serialization.XmlElementAttribute("DateValue", typeof(System.DateTime), DataType="dateTime")]
-        [System.Xml.Serialization.XmlElementAttribute("NumberValue", typeof(decimal))]
-        [System.Xml.Serialization.XmlElementAttribute("StringValue", typeof(string))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Possible supported CustomFieldTypes.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum CustomFieldTypeEnum {
-        
-        /// <remarks/>
-        StringType,
-        
-        /// <remarks/>
-        BooleanType,
-        
-        /// <remarks/>
-        NumberType,
-        
-        /// <remarks/>
-        DateType,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Describes the details of the attachable and provides information such as where they are referenced and custom fields.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class AttachableRef {
-        
-        private ReferenceType entityRefField;
-        
-        private string lineInfoField;
-        
-        private bool includeOnSendField;
-        
-        private bool includeOnSendFieldSpecified;
-        
-        private CustomField[] customFieldField;
-        
-        private IntuitAnyType attachableRefExField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Reference to the entity.
-        /// 
-        /// </summary>
-        public ReferenceType EntityRef {
-            get {
-                return this.entityRefField;
-            }
-            set {
-                this.entityRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description:
-        /// 
-        /// </summary>
-        public string LineInfo {
-            get {
-                return this.lineInfoField;
-            }
-            set {
-                this.lineInfoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description:
-        /// 
-        /// </summary>
-        public bool IncludeOnSend {
-            get {
-                return this.includeOnSendField;
-            }
-            set {
-                this.includeOnSendField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool IncludeOnSendSpecified {
-            get {
-                return this.includeOnSendFieldSpecified;
-            }
-            set {
-                this.includeOnSendFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Custom field (or data extension).
-        /// Filterable: ALL
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("CustomField")]
-        public CustomField[] CustomField {
-            get {
-                return this.customFieldField;
-            }
-            set {
-                this.customFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies extension entity to allow extension
-        /// 
-        /// </summary>
-        public IntuitAnyType AttachableRefEx {
-            get {
-                return this.attachableRefExField;
-            }
-            set {
-                this.attachableRefExField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Definition of IntuitAnyType to add and extend new elements to the existing entities.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class IntuitAnyType {
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Possible Status of an Entity.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum EntityStatusEnum {
-        
-        /// <remarks/>
-        Deleted,
-        
-        /// <remarks/>
-        Voided,
-        
-        /// <remarks/>
-        Draft,
-        
-        /// <remarks/>
-        Pending,
-        
-        /// <remarks/>
-        InTransit,
-        
-        /// <remarks/>
-        Synchronized,
-        
-        /// <remarks/>
-        SyncError,
     }
     
     /// <remarks/>
@@ -6760,6 +7243,10 @@ namespace Intuit.Ipp.Data {
         
         private NameValue[] nameValueField;
         
+        private FifoCalculationStatus fifoCalculationStatusField;
+        
+        private bool fifoCalculationStatusFieldSpecified;
+        
         private IntuitAnyType companyInfoExField;
         
         /// <remarks/>
@@ -7371,6 +7858,34 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         /// <summary>
         /// 
+        /// Product: QBO
+        /// Description: Status of the Inventory Lots and Accounts Calculation for STQ imported company.
+        /// 
+        /// </summary>
+        public FifoCalculationStatus FifoCalculationStatus {
+            get {
+                return this.fifoCalculationStatusField;
+            }
+            set {
+                this.fifoCalculationStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool FifoCalculationStatusSpecified {
+            get {
+                return this.fifoCalculationStatusFieldSpecified;
+            }
+            set {
+                this.fifoCalculationStatusFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
         /// Product: ALL
         /// Description: Internal use only: extension place holder for Company.
         /// 
@@ -7383,6 +7898,32 @@ namespace Intuit.Ipp.Data {
                 this.companyInfoExField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBO
+    /// Description: Enumeration of Inventory Lots and Accounts calculation
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum FifoCalculationStatus {
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        InProgress,
+        
+        /// <remarks/>
+        Completed,
+        
+        /// <remarks/>
+        Error,
     }
     
     /// <remarks/>
@@ -29967,6 +30508,14 @@ namespace Intuit.Ipp.Data {
         
         private bool fileDateFieldSpecified;
         
+        private System.DateTime agencyPaymentDateField;
+        
+        private bool agencyPaymentDateFieldSpecified;
+        
+        private decimal agencyPaymentAmountField;
+        
+        private bool agencyPaymentAmountFieldSpecified;
+        
         private decimal netTaxAmountDueField;
         
         private bool netTaxAmountDueFieldSpecified;
@@ -29984,6 +30533,16 @@ namespace Intuit.Ipp.Data {
         private TaxReturnStatusEnum taxReturnStatusField;
         
         private bool taxReturnStatusFieldSpecified;
+        
+        private string taxReturnEFilingFailureReasonField;
+        
+        private System.DateTime eFileErrorFixByDateField;
+        
+        private bool eFileErrorFixByDateFieldSpecified;
+        
+        private AgencyPaymentMethodEnum agencyPaymentMethodField;
+        
+        private bool agencyPaymentMethodFieldSpecified;
         
         private string taxReturnCodeField;
         
@@ -30103,6 +30662,61 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.fileDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Date when actual payment to agency occurs
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime AgencyPaymentDate {
+            get {
+                return this.agencyPaymentDateField;
+            }
+            set {
+                this.agencyPaymentDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AgencyPaymentDateSpecified {
+            get {
+                return this.agencyPaymentDateFieldSpecified;
+            }
+            set {
+                this.agencyPaymentDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the payment amount paid to tax agency
+        /// 
+        /// </summary>
+        public decimal AgencyPaymentAmount {
+            get {
+                return this.agencyPaymentAmountField;
+            }
+            set {
+                this.agencyPaymentAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AgencyPaymentAmountSpecified {
+            get {
+                return this.agencyPaymentAmountFieldSpecified;
+            }
+            set {
+                this.agencyPaymentAmountFieldSpecified = value;
             }
         }
         
@@ -30234,6 +30848,79 @@ namespace Intuit.Ipp.Data {
         /// <summary>
         /// 
         /// Product: QBO
+        /// Description: Represents the failure reason of tax return e-filing with agency
+        /// 
+        /// </summary>
+        public string TaxReturnEFilingFailureReason {
+            get {
+                return this.taxReturnEFilingFailureReasonField;
+            }
+            set {
+                this.taxReturnEFilingFailureReasonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Last Date to rectify e-filing errors so that it can be filed in same period.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime EFileErrorFixByDate {
+            get {
+                return this.eFileErrorFixByDateField;
+            }
+            set {
+                this.eFileErrorFixByDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool EFileErrorFixByDateSpecified {
+            get {
+                return this.eFileErrorFixByDateFieldSpecified;
+            }
+            set {
+                this.eFileErrorFixByDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Represents the payment method used while e-filing tax return with agency
+        /// 
+        /// </summary>
+        public AgencyPaymentMethodEnum AgencyPaymentMethod {
+            get {
+                return this.agencyPaymentMethodField;
+            }
+            set {
+                this.agencyPaymentMethodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AgencyPaymentMethodSpecified {
+            get {
+                return this.agencyPaymentMethodFieldSpecified;
+            }
+            set {
+                this.agencyPaymentMethodFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
         /// Description: Represents the tax return code with the partner
         /// 
         /// </summary>
@@ -30243,6 +30930,611 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxReturnCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Date macros enumeration
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum DateMacro {
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        Today,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Week")]
+        ThisWeek,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Week-to-date")]
+        ThisWeektodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Month")]
+        ThisMonth,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Month-to-date")]
+        ThisMonthtodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Quarter")]
+        ThisFiscalQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Quarter-to-date")]
+        ThisFiscalQuartertodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Year")]
+        ThisFiscalYear,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Year-to-date")]
+        ThisFiscalYeartodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Quarter")]
+        ThisCalendarQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Quarter-to-date")]
+        ThisCalendarQuartertodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Year")]
+        ThisCalendarYear,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Year-to-date")]
+        ThisCalendarYeartodate,
+        
+        /// <remarks/>
+        Yesterday,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Week")]
+        LastWeek,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Week-to-date")]
+        LastWeektodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Month")]
+        LastMonth,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Month-to-date")]
+        LastMonthtodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Quarter")]
+        LastFiscalQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Quarter-to-date")]
+        LastFiscalQuartertodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Year")]
+        LastFiscalYear,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Year-to-date")]
+        LastFiscalYeartodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Quarter")]
+        LastCalendarQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Quarter-to-date")]
+        LastCalendarQuartertodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Year")]
+        LastCalendarYear,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Year-to-date")]
+        LastCalendarYeartodate,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Week")]
+        NextWeek,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next 4 Weeks")]
+        Next4Weeks,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Month")]
+        NextMonth,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Fiscal Quarter")]
+        NextFiscalQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Fiscal Year")]
+        NextFiscalYear,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Calendar Quarter")]
+        NextCalendarQuarter,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Next Calendar Year")]
+        NextCalendarYear,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum SummarizeColumnsByEnum {
+        
+        /// <remarks/>
+        Total,
+        
+        /// <remarks/>
+        Year,
+        
+        /// <remarks/>
+        Quarter,
+        
+        /// <remarks/>
+        FiscalYear,
+        
+        /// <remarks/>
+        FiscalQuarter,
+        
+        /// <remarks/>
+        Month,
+        
+        /// <remarks/>
+        Week,
+        
+        /// <remarks/>
+        Days,
+        
+        /// <remarks/>
+        Customers,
+        
+        /// <remarks/>
+        Vendors,
+        
+        /// <remarks/>
+        Employees,
+        
+        /// <remarks/>
+        Departments,
+        
+        /// <remarks/>
+        Classes,
+        
+        /// <remarks/>
+        ProductsAndServices,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Specifies the column type definition
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum ColumnTypeEnum {
+        
+        /// <remarks/>
+        Account,
+        
+        /// <remarks/>
+        Money,
+        
+        /// <remarks/>
+        Rate,
+        
+        /// <remarks/>
+        Customer,
+        
+        /// <remarks/>
+        Vendor,
+        
+        /// <remarks/>
+        Employee,
+        
+        /// <remarks/>
+        ProductsAndService,
+        
+        /// <remarks/>
+        Department,
+        
+        /// <remarks/>
+        Class,
+        
+        /// <remarks/>
+        String,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Attributes {
+        
+        private Attribute[] attributeField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the type
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("Attribute")]
+        public Attribute[] Attribute {
+            get {
+                return this.attributeField;
+            }
+            set {
+                this.attributeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="Columns", Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute("Columns", Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Columns1 {
+        
+        private Column[] columnField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Column")]
+        public Column[] Column {
+            get {
+                return this.columnField;
+            }
+            set {
+                this.columnField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Specifies the Header of a Report, Time report was generated, parameters corresponding to the request
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ReportHeader {
+        
+        private System.DateTime timeField;
+        
+        private bool timeFieldSpecified;
+        
+        private string reportNameField;
+        
+        private string dateMacroField;
+        
+        private ReportBasisEnum reportBasisField;
+        
+        private bool reportBasisFieldSpecified;
+        
+        private string startPeriodField;
+        
+        private string endPeriodField;
+        
+        private string summarizeColumnsByField;
+        
+        private string currencyField;
+        
+        private string customerField;
+        
+        private string vendorField;
+        
+        private string employeeField;
+        
+        private string itemField;
+        
+        private string classField;
+        
+        private string departmentField;
+        
+        private NameValue[] optionField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the time at which report was generated
+        /// </summary>
+        public System.DateTime Time {
+            get {
+                return this.timeField;
+            }
+            set {
+                this.timeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TimeSpecified {
+            get {
+                return this.timeFieldSpecified;
+            }
+            set {
+                this.timeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the report name
+        /// </summary>
+        public string ReportName {
+            get {
+                return this.reportNameField;
+            }
+            set {
+                this.reportNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the report name
+        /// </summary>
+        public string DateMacro {
+            get {
+                return this.dateMacroField;
+            }
+            set {
+                this.dateMacroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the report is cash basis or accrual basis
+        /// </summary>
+        public ReportBasisEnum ReportBasis {
+            get {
+                return this.reportBasisField;
+            }
+            set {
+                this.reportBasisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ReportBasisSpecified {
+            get {
+                return this.reportBasisFieldSpecified;
+            }
+            set {
+                this.reportBasisFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Start Period for which the report was generated
+        /// </summary>
+        public string StartPeriod {
+            get {
+                return this.startPeriodField;
+            }
+            set {
+                this.startPeriodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// End Period for which the report was generated
+        /// </summary>
+        public string EndPeriod {
+            get {
+                return this.endPeriodField;
+            }
+            set {
+                this.endPeriodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Summarize columns by enumeration
+        /// </summary>
+        public string SummarizeColumnsBy {
+            get {
+                return this.summarizeColumnsByField;
+            }
+            set {
+                this.summarizeColumnsByField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the currency code associated with the report, note that this is one place where this is just the currency code, not a reference to a currency object
+        /// </summary>
+        public string Currency {
+            get {
+                return this.currencyField;
+            }
+            set {
+                this.currencyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the customer id (comma separeted) for which the report is run this is just the id, not a reference to a customer object
+        /// </summary>
+        public string Customer {
+            get {
+                return this.customerField;
+            }
+            set {
+                this.customerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the vendor id (comma separeted) for which the report is run this is just the id, not a reference to a vendor object
+        /// </summary>
+        public string Vendor {
+            get {
+                return this.vendorField;
+            }
+            set {
+                this.vendorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the employee id (comma separeted) for which the report is run this is just the id, not a reference to a employee object
+        /// </summary>
+        public string Employee {
+            get {
+                return this.employeeField;
+            }
+            set {
+                this.employeeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the product/service id (comma separeted) for which the report is run this is just the id, not a reference to a product/service object
+        /// </summary>
+        public string AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the class id (comma separeted) for which the report is run this is just the  id, not a reference to a class object
+        /// </summary>
+        public string Class {
+            get {
+                return this.classField;
+            }
+            set {
+                this.classField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the Department id (comma separeted) for which the report is run this is just the  id, not a reference to a Department object
+        /// </summary>
+        public string Department {
+            get {
+                return this.departmentField;
+            }
+            set {
+                this.departmentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Describes the options used for the report
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("Option")]
+        public NameValue[] Option {
+            get {
+                return this.optionField;
+            }
+            set {
+                this.optionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Report Response Type
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Report {
+        
+        private ReportHeader headerField;
+        
+        private Column[] columnsField;
+        
+        private Row[] rowsField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Report Header, contains the report options that were used to generate the report
+        /// </summary>
+        public ReportHeader Header {
+            get {
+                return this.headerField;
+            }
+            set {
+                this.headerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Column[] Columns {
+            get {
+                return this.columnsField;
+            }
+            set {
+                this.columnsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Row[] Rows {
+            get {
+                return this.rowsField;
+            }
+            set {
+                this.rowsField = value;
             }
         }
     }
@@ -31041,552 +32333,661 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Employee type enumeration.
-    /// 
+    /// FaultTypeEnumeration list
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum EmployeeTypeEnum {
+    public enum FaultTypeEnum {
         
         /// <remarks/>
-        Officer,
+        AuthenticationFault,
         
         /// <remarks/>
-        Owner,
+        AuthorizatonFault,
         
         /// <remarks/>
-        Regular,
+        ValidationFault,
         
         /// <remarks/>
-        Statutory,
+        SystemFault,
     }
     
     /// <remarks/>
     /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Job status enumeration.
-    /// 
+    /// Detailed data about warnings that occurred when a request was processed
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum JobStatusEnum {
-        
-        /// <remarks/>
-        Awarded,
-        
-        /// <remarks/>
-        Closed,
-        
-        /// <remarks/>
-        InProgress,
-        
-        /// <remarks/>
-        None,
-        
-        /// <remarks/>
-        NotAwarded,
-        
-        /// <remarks/>
-        Pending,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Enumeration of types for time entries with paychecks.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum TimeEntryUsedForPaychecksEnum {
-        
-        /// <remarks/>
-        NotSet,
-        
-        /// <remarks/>
-        DoNotUseTimeEntry,
-        
-        /// <remarks/>
-        UseTimeEntry,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBO
-    /// Description: Enumeration of Tax Report Basis for France
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum TaxReportBasisTypeEnum {
-        
-        /// <remarks/>
-        Cash,
-        
-        /// <remarks/>
-        Accrual,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Describes the base class of name entities (Customer, Employee, Vendor, OtherName)
-    /// 
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class NameBase : IntuitEntity, IEntity {
+    public partial class Warnings {
         
-        private string intuitIdField;
-        
-        private bool organizationField;
-        
-        private bool organizationFieldSpecified;
-        
-        private string titleField;
-        
-        private string givenNameField;
-        
-        private string middleNameField;
-        
-        private string familyNameField;
-        
-        private string suffixField;
-        
-        private string fullyQualifiedNameField;
-        
-        private string companyNameField;
-        
-        private string displayNameField;
-        
-        private string printOnCheckNameField;
-        
-        private string userIdField;
-        
-        private bool activeField;
-        
-        private bool activeFieldSpecified;
-        
-        private TelephoneNumber primaryPhoneField;
-        
-        private TelephoneNumber alternatePhoneField;
-        
-        private TelephoneNumber mobileField;
-        
-        private TelephoneNumber faxField;
-        
-        private EmailAddress primaryEmailAddrField;
-        
-        private WebSiteAddress webAddrField;
-        
-        private ContactInfo[] otherContactInfoField;
-        
-        private ReferenceType defaultTaxCodeRefField;
+        private Warning[] warningField;
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: IntuitId represents the realm id, authid or an entity id. An entity is a new type of IAM identity that represents a person or a business which has no Intuit authentication context
-        /// 
+        /// Warning details specifies each warning
         /// </summary>
-        public string IntuitId {
+        [System.Xml.Serialization.XmlElementAttribute("Warning")]
+        public Warning[] Warning {
             get {
-                return this.intuitIdField;
+                return this.warningField;
             }
             set {
-                this.intuitIdField = value;
+                this.warningField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// IntuitResponse is a holder of all types of entities that come as part of response
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class IntuitResponse {
+        
+        private Warning[] warningsField;
+        
+        private object[] itemsField;
+        
+        private string requestIdField;
+        
+        private System.DateTime timeField;
+        
+        private bool timeFieldSpecified;
+        
+        private string statusField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
+        /// </summary>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Warning[] Warnings {
+            get {
+                return this.warningsField;
+            }
+            set {
+                this.warningsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AttachableResponse", typeof(AttachableResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("BatchItemResponse", typeof(BatchItemResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("CDCResponse", typeof(CDCResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        public object[] AnyIntuitObjects {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: True if the entity represents an organization; otherwise the entity represents a person. Default is NULL or False, representing a person.
-        /// 
+        /// Specifies the RequestId associated with the request
         /// </summary>
-        public bool Organization {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string requestId {
             get {
-                return this.organizationField;
+                return this.requestIdField;
             }
             set {
-                this.organizationField = value;
+                this.requestIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the time at which request started processing in the server
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime time {
+            get {
+                return this.timeField;
+            }
+            set {
+                this.timeField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public bool OrganizationSpecified {
+        public bool timeSpecified {
             get {
-                return this.organizationFieldSpecified;
+                return this.timeFieldSpecified;
             }
             set {
-                this.organizationFieldSpecified = value;
+                this.timeFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: QBW: Title of the person. The person can have zero or more titles.
-        /// Description: QBO: Title of the person. The person can have zero or more titles.
-        /// InputType: ReadWrite
-        /// ValidRange: QBW: Min=0, Max=15
-        /// ValidationRules: QBW: At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
-        /// ValidationRules: QBO: At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
-        /// I18n: ALL
-        /// 
+        /// Specifies the HTTP codes result of the operation
         /// </summary>
-        public string Title {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string status {
             get {
-                return this.titleField;
+                return this.statusField;
             }
             set {
-                this.titleField = value;
+                this.statusField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
+        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
+        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
+        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
+        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
+        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
+        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
+        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
+        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
+        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
+        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
+        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
+        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
+        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
+        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
+        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
+        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
+        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
+        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
+        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
+        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
+        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
+        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
+        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
+        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
+        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
+        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
+        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
+        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
+        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
+        [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
+        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("SyncErrorResponse", typeof(SyncErrorResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("OLBTransaction", typeof(OLBTransaction))]
+        [System.Xml.Serialization.XmlElementAttribute("OLBStatus", typeof(OLBStatus))]
+        public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// AttachableResponse entity describing the response of upload results
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class AttachableResponse {
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
+        public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// QueryResponse entity describing the response of query
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class BatchItemResponse {
+        
+        private Warning[] warningsField;
+        
+        private object itemField;
+        
+        private string bIdField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
+        /// </summary>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Warning[] Warnings {
+            get {
+                return this.warningsField;
+            }
+            set {
+                this.warningsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
+        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
+        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
+        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
+        [System.Xml.Serialization.XmlElementAttribute("CDCResponse", typeof(CDCResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("CascadeResponse", typeof(CascadeResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
+        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
+        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
+        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
+        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
+        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
+        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
+        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
+        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
+        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
+        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
+        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
+        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
+        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
+        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
+        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
+        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
+        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
+        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
+        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
+        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
+        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
+        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
+        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
+        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
+        public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Given name or first name of a person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
-        /// Product: QBO
-        /// Description: Given name or first name of a person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
-        /// Filterable: ALL
-        /// Sortable: ALL
-        /// 
+        /// Specifies the batch id for which the response corresponds to
         /// </summary>
-        public string GivenName {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string bId {
             get {
-                return this.givenNameField;
+                return this.bIdField;
             }
             set {
-                this.givenNameField = value;
+                this.bIdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// QueryResponse entity describing the response of query
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class CDCResponse {
+        
+        private object[] itemsField;
+        
+        private int sizeField;
+        
+        private bool sizeFieldSpecified;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
+        public object[] AnyIntuitObjects {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Middle name of the person. The person can have zero or more middle names.[br /]Max. length: 5 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
-        /// Product: QBO
-        /// Description: Middle name of the person. The person can have zero or more middle names.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
-        /// Filterable: ALL
-        /// Sortable: ALL
-        /// 
+        /// Specifies the number of rows in this result
         /// </summary>
-        public string MiddleName {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int size {
             get {
-                return this.middleNameField;
+                return this.sizeField;
             }
             set {
-                this.middleNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Family name or the last name of the person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
-        /// Product: QBO
-        /// Description: Family name or the last name of the person.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
-        /// Filterable: ALL
-        /// Sortable: ALL
-        /// 
-        /// </summary>
-        public string FamilyName {
-            get {
-                return this.familyNameField;
-            }
-            set {
-                this.familyNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: Suffix appended to the name of a person. For example, Senior, Junior, etc. QBO only field.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
-        /// 
-        /// </summary>
-        public string Suffix {
-            get {
-                return this.suffixField;
-            }
-            set {
-                this.suffixField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
-        /// 
-        /// </summary>
-        public string FullyQualifiedName {
-            get {
-                return this.fullyQualifiedNameField;
-            }
-            set {
-                this.fullyQualifiedNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: The name of the company associated with the person or organization.
-        /// 
-        /// </summary>
-        public string CompanyName {
-            get {
-                return this.companyNameField;
-            }
-            set {
-                this.companyNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: The name of the person or organization as displayed. If not provided, this is populated from FullName.
-        /// Product: QBW
-        /// Description: The name of the person or organization as displayed.
-        /// Required: ALL
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public string DisplayName {
-            get {
-                return this.displayNameField;
-            }
-            set {
-                this.displayNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Name of the person or organization as printed on a check. If not provided, this is populated from FullName.
-        /// 
-        /// </summary>
-        public string PrintOnCheckName {
-            get {
-                return this.printOnCheckNameField;
-            }
-            set {
-                this.printOnCheckNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: The ID of the Intuit user associated with this name.  Note: this is NOT the Intuit AuthID of the user.
-        /// 
-        /// </summary>
-        public string UserId {
-            get {
-                return this.userIdField;
-            }
-            set {
-                this.userIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: If true, this entity is currently enabled for use by QuickBooks. The default value is true.
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public bool Active {
-            get {
-                return this.activeField;
-            }
-            set {
-                this.activeField = value;
+                this.sizeField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public bool ActiveSpecified {
+        public bool sizeSpecified {
             get {
-                return this.activeFieldSpecified;
+                return this.sizeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                this.sizeFieldSpecified = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
+        public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// QueryResponse entity describing the response of query
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class QueryResponse {
+        
+        private Warning[] warningsField;
+        
+        private object[] itemsField;
+        
+        private int startPositionField;
+        
+        private bool startPositionFieldSpecified;
+        
+        private int maxResultsField;
+        
+        private bool maxResultsFieldSpecified;
+        
+        private int totalCountField;
+        
+        private bool totalCountFieldSpecified;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
+        /// </summary>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Warning[] Warnings {
+            get {
+                return this.warningsField;
+            }
+            set {
+                this.warningsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
+        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
+        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
+        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
+        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
+        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
+        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
+        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
+        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
+        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
+        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
+        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
+        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
+        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
+        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
+        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
+        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
+        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
+        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
+        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
+        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
+        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
+        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
+        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
+        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
+        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
+        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
+        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
+        public object[] AnyIntuitObjects {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Primary phone number.
-        /// 
+        /// Specifies the starting row number in this result
         /// </summary>
-        public TelephoneNumber PrimaryPhone {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int startPosition {
             get {
-                return this.primaryPhoneField;
+                return this.startPositionField;
             }
             set {
-                this.primaryPhoneField = value;
+                this.startPositionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool startPositionSpecified {
+            get {
+                return this.startPositionFieldSpecified;
+            }
+            set {
+                this.startPositionFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Alternate phone number.
-        /// 
+        /// Specifies the number of records in this result
         /// </summary>
-        public TelephoneNumber AlternatePhone {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int maxResults {
             get {
-                return this.alternatePhoneField;
+                return this.maxResultsField;
             }
             set {
-                this.alternatePhoneField = value;
+                this.maxResultsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool maxResultsSpecified {
+            get {
+                return this.maxResultsFieldSpecified;
+            }
+            set {
+                this.maxResultsFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Mobile phone number.
-        /// 
+        /// Specifies the total count of records that satisfy the filter condition
         /// </summary>
-        public TelephoneNumber Mobile {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int totalCount {
             get {
-                return this.mobileField;
+                return this.totalCountField;
             }
             set {
-                this.mobileField = value;
+                this.totalCountField = value;
             }
         }
         
         /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Fax number.
-        /// 
-        /// </summary>
-        public TelephoneNumber Fax {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool totalCountSpecified {
             get {
-                return this.faxField;
+                return this.totalCountFieldSpecified;
             }
             set {
-                this.faxField = value;
+                this.totalCountFieldSpecified = value;
             }
         }
         
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Primary email address.
-        /// 
-        /// </summary>
-        public EmailAddress PrimaryEmailAddr {
+        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
+        public object AnyIntuitObject {
             get {
-                return this.primaryEmailAddrField;
+                return this.itemField;
             }
             set {
-                this.primaryEmailAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Website address (URI).
-        /// 
-        /// </summary>
-        public WebSiteAddress WebAddr {
-            get {
-                return this.webAddrField;
-            }
-            set {
-                this.webAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: List of ContactInfo entities of any contact info type. The ContactInfo Type values are defined in the ContactTypeEnum.
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
-        public ContactInfo[] OtherContactInfo {
-            get {
-                return this.otherContactInfoField;
-            }
-            set {
-                this.otherContactInfoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Reference to the tax code associated with the Customer or Vendor by default for sales or purchase taxes.
-        /// 
-        /// </summary>
-        public ReferenceType DefaultTaxCodeRef {
-            get {
-                return this.defaultTaxCodeRefField;
-            }
-            set {
-                this.defaultTaxCodeRefField = value;
+                this.itemField = value;
             }
         }
     }
@@ -31605,7 +33006,7 @@ namespace Intuit.Ipp.Data {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
     public partial class Customer : NameBase {
         
         private bool taxableField;
@@ -32693,19 +34094,60 @@ namespace Intuit.Ipp.Data {
     /// <remarks/>
     /// <summary>
     /// 
-    /// Represents a User with an Intuit account.  Note that based on privacy restrictions, information returned may be
-    /// limited depending on calling origin and/or calling user permissions (ex: a user may be able to look up all of
-    /// their information, but not the information regarding other users).
+    /// Product: ALL
+    /// Description: Job status enumeration.
+    /// 
     /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum JobStatusEnum {
+        
+        /// <remarks/>
+        Awarded,
+        
+        /// <remarks/>
+        Closed,
+        
+        /// <remarks/>
+        InProgress,
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        NotAwarded,
+        
+        /// <remarks/>
+        Pending,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Describes the base class of name entities (Customer, Employee, Vendor, OtherName)
+    /// 
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class User : IntuitEntity, IEntity {
+    public partial class NameBase : IntuitEntity, IEntity {
         
-        private string displayNameField;
+        private string intuitIdField;
+        
+        private bool organizationField;
+        
+        private bool organizationFieldSpecified;
         
         private string titleField;
         
@@ -32717,33 +34159,93 @@ namespace Intuit.Ipp.Data {
         
         private string suffixField;
         
-        private EmailAddress[] emailAddrField;
+        private string fullyQualifiedNameField;
         
-        private PhysicalAddress[] addrField;
+        private string companyNameField;
         
-        private TelephoneNumber[] phoneNumberField;
+        private string displayNameField;
         
-        private string localeCountryField;
+        private string printOnCheckNameField;
         
-        private string localeLanguageField;
+        private string userIdField;
         
-        private string localePostalCodeField;
+        private bool activeField;
         
-        private string localeTimeZoneField;
+        private bool activeFieldSpecified;
         
-        private NameValue[] nameValueAttrField;
+        private TelephoneNumber primaryPhoneField;
+        
+        private TelephoneNumber alternatePhoneField;
+        
+        private TelephoneNumber mobileField;
+        
+        private TelephoneNumber faxField;
+        
+        private EmailAddress primaryEmailAddrField;
+        
+        private WebSiteAddress webAddrField;
+        
+        private ContactInfo[] otherContactInfoField;
+        
+        private ReferenceType defaultTaxCodeRefField;
         
         /// <remarks/>
-        public string DisplayName {
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: IntuitId represents the realm id, authid or an entity id. An entity is a new type of IAM identity that represents a person or a business which has no Intuit authentication context
+        /// 
+        /// </summary>
+        public string IntuitId {
             get {
-                return this.displayNameField;
+                return this.intuitIdField;
             }
             set {
-                this.displayNameField = value;
+                this.intuitIdField = value;
             }
         }
         
         /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: True if the entity represents an organization; otherwise the entity represents a person. Default is NULL or False, representing a person.
+        /// 
+        /// </summary>
+        public bool Organization {
+            get {
+                return this.organizationField;
+            }
+            set {
+                this.organizationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool OrganizationSpecified {
+            get {
+                return this.organizationFieldSpecified;
+            }
+            set {
+                this.organizationFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: QBW: Title of the person. The person can have zero or more titles.
+        /// Description: QBO: Title of the person. The person can have zero or more titles.
+        /// InputType: ReadWrite
+        /// ValidRange: QBW: Min=0, Max=15
+        /// ValidationRules: QBW: At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
+        /// ValidationRules: QBO: At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
+        /// I18n: ALL
+        /// 
+        /// </summary>
         public string Title {
             get {
                 return this.titleField;
@@ -32754,6 +34256,16 @@ namespace Intuit.Ipp.Data {
         }
         
         /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Given name or first name of a person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
+        /// Product: QBO
+        /// Description: Given name or first name of a person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
+        /// Filterable: ALL
+        /// Sortable: ALL
+        /// 
+        /// </summary>
         public string GivenName {
             get {
                 return this.givenNameField;
@@ -32764,6 +34276,16 @@ namespace Intuit.Ipp.Data {
         }
         
         /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Middle name of the person. The person can have zero or more middle names.[br /]Max. length: 5 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
+        /// Product: QBO
+        /// Description: Middle name of the person. The person can have zero or more middle names.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
+        /// Filterable: ALL
+        /// Sortable: ALL
+        /// 
+        /// </summary>
         public string MiddleName {
             get {
                 return this.middleNameField;
@@ -32774,6 +34296,16 @@ namespace Intuit.Ipp.Data {
         }
         
         /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Family name or the last name of the person.[br /]Max. length: 25 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, or FamilyName.
+        /// Product: QBO
+        /// Description: Family name or the last name of the person.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
+        /// Filterable: ALL
+        /// Sortable: ALL
+        /// 
+        /// </summary>
         public string FamilyName {
             get {
                 return this.familyNameField;
@@ -32784,6 +34316,12 @@ namespace Intuit.Ipp.Data {
         }
         
         /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Suffix appended to the name of a person. For example, Senior, Junior, etc. QBO only field.[br /]Max. length: 15 characters.[br /]At least one of the name elements is required: Title, GivenName, MiddleName, FamilyName, or Suffix.
+        /// 
+        /// </summary>
         public string Suffix {
             get {
                 return this.suffixField;
@@ -32795,91 +34333,1393 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         /// <summary>
-        /// Returned only if caller passes necessary security checks to prevent e-mail address harvesting
+        /// 
+        /// Product: ALL
+        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
+        /// 
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("EmailAddr")]
-        public EmailAddress[] EmailAddr {
+        public string FullyQualifiedName {
             get {
-                return this.emailAddrField;
+                return this.fullyQualifiedNameField;
             }
             set {
-                this.emailAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Addr")]
-        public PhysicalAddress[] Addr {
-            get {
-                return this.addrField;
-            }
-            set {
-                this.addrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PhoneNumber")]
-        public TelephoneNumber[] PhoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                this.phoneNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LocaleCountry {
-            get {
-                return this.localeCountryField;
-            }
-            set {
-                this.localeCountryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LocaleLanguage {
-            get {
-                return this.localeLanguageField;
-            }
-            set {
-                this.localeLanguageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LocalePostalCode {
-            get {
-                return this.localePostalCodeField;
-            }
-            set {
-                this.localePostalCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string LocaleTimeZone {
-            get {
-                return this.localeTimeZoneField;
-            }
-            set {
-                this.localeTimeZoneField = value;
+                this.fullyQualifiedNameField = value;
             }
         }
         
         /// <remarks/>
         /// <summary>
-        /// Represents a list of UserAttribute name/value pairs if the user query provided names of extended attributes to include
+        /// 
+        /// Product: ALL
+        /// Description: The name of the company associated with the person or organization.
+        /// 
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("NameValueAttr")]
-        public NameValue[] NameValueAttr {
+        public string CompanyName {
             get {
-                return this.nameValueAttrField;
+                return this.companyNameField;
             }
             set {
-                this.nameValueAttrField = value;
+                this.companyNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The name of the person or organization as displayed. If not provided, this is populated from FullName.
+        /// Product: QBW
+        /// Description: The name of the person or organization as displayed.
+        /// Required: ALL
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public string DisplayName {
+            get {
+                return this.displayNameField;
+            }
+            set {
+                this.displayNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Name of the person or organization as printed on a check. If not provided, this is populated from FullName.
+        /// 
+        /// </summary>
+        public string PrintOnCheckName {
+            get {
+                return this.printOnCheckNameField;
+            }
+            set {
+                this.printOnCheckNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: The ID of the Intuit user associated with this name.  Note: this is NOT the Intuit AuthID of the user.
+        /// 
+        /// </summary>
+        public string UserId {
+            get {
+                return this.userIdField;
+            }
+            set {
+                this.userIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: If true, this entity is currently enabled for use by QuickBooks. The default value is true.
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ActiveSpecified {
+            get {
+                return this.activeFieldSpecified;
+            }
+            set {
+                this.activeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Primary phone number.
+        /// 
+        /// </summary>
+        public TelephoneNumber PrimaryPhone {
+            get {
+                return this.primaryPhoneField;
+            }
+            set {
+                this.primaryPhoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Alternate phone number.
+        /// 
+        /// </summary>
+        public TelephoneNumber AlternatePhone {
+            get {
+                return this.alternatePhoneField;
+            }
+            set {
+                this.alternatePhoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Mobile phone number.
+        /// 
+        /// </summary>
+        public TelephoneNumber Mobile {
+            get {
+                return this.mobileField;
+            }
+            set {
+                this.mobileField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Fax number.
+        /// 
+        /// </summary>
+        public TelephoneNumber Fax {
+            get {
+                return this.faxField;
+            }
+            set {
+                this.faxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Primary email address.
+        /// 
+        /// </summary>
+        public EmailAddress PrimaryEmailAddr {
+            get {
+                return this.primaryEmailAddrField;
+            }
+            set {
+                this.primaryEmailAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Website address (URI).
+        /// 
+        /// </summary>
+        public WebSiteAddress WebAddr {
+            get {
+                return this.webAddrField;
+            }
+            set {
+                this.webAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: List of ContactInfo entities of any contact info type. The ContactInfo Type values are defined in the ContactTypeEnum.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
+        public ContactInfo[] OtherContactInfo {
+            get {
+                return this.otherContactInfoField;
+            }
+            set {
+                this.otherContactInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the tax code associated with the Customer or Vendor by default for sales or purchase taxes.
+        /// 
+        /// </summary>
+        public ReferenceType DefaultTaxCodeRef {
+            get {
+                return this.defaultTaxCodeRefField;
+            }
+            set {
+                this.defaultTaxCodeRefField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Customer types allow categorizing customers in ways that are meaningful to the business. For example, one could set up customer types so that they indicate which industry a customer represents, a customer's geographic location, or how a customer first heard about the business. The categorization then can be used for reporting or mailings.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public partial class CustomerType : IntuitEntity, IEntity {
+        
+        private string nameField;
+        
+        private ReferenceType parentRefField;
+        
+        private string fullyQualifiedNameField;
+        
+        private bool activeField;
+        
+        private bool activeFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: User recognizable name for the CustomerType.[br /]Max. length: 31 characters.
+        /// Product: QBO
+        /// Description: User recognizable name for the CustomerType.[br /]Max. length: 15 characters.
+        /// 
+        /// </summary>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the CustomerTypeParent.
+        /// 
+        /// </summary>
+        public ReferenceType ParentRef {
+            get {
+                return this.parentRefField;
+            }
+            set {
+                this.parentRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
+        /// 
+        /// </summary>
+        public string FullyQualifiedName {
+            get {
+                return this.fullyQualifiedNameField;
+            }
+            set {
+                this.fullyQualifiedNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: True if the Customer is active. Inactive customer types may be hidden from display and may not be used on financial transactions.
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ActiveSpecified {
+            get {
+                return this.activeFieldSpecified;
+            }
+            set {
+                this.activeFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes the Party as a Employee Role view
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public partial class Employee : NameBase {
+        
+        private string employeeTypeField;
+        
+        private string employeeNumberField;
+        
+        private string sSNField;
+        
+        private PhysicalAddress primaryAddrField;
+        
+        private PhysicalAddress[] otherAddrField;
+        
+        private bool billableTimeField;
+        
+        private bool billableTimeFieldSpecified;
+        
+        private decimal billRateField;
+        
+        private bool billRateFieldSpecified;
+        
+        private System.DateTime birthDateField;
+        
+        private bool birthDateFieldSpecified;
+        
+        private gender genderField;
+        
+        private bool genderFieldSpecified;
+        
+        private System.DateTime hiredDateField;
+        
+        private bool hiredDateFieldSpecified;
+        
+        private System.DateTime releasedDateField;
+        
+        private bool releasedDateFieldSpecified;
+        
+        private TimeEntryUsedForPaychecksEnum useTimeEntryField;
+        
+        private bool useTimeEntryFieldSpecified;
+        
+        private IntuitAnyType employeeExField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the Employee type. For QuickBooks Desktop the valid values are defined in the EmployeeTypeEnum.
+        /// </summary>
+        public string EmployeeType {
+            get {
+                return this.employeeTypeField;
+            }
+            set {
+                this.employeeTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the number of the employee (or account) in the employer's directory.
+        /// Length Restriction:
+        /// QBO: 15
+        /// QBD: 99
+        /// 
+        /// </summary>
+        public string EmployeeNumber {
+            get {
+                return this.employeeNumberField;
+            }
+            set {
+                this.employeeNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the SSN of the employee.
+        /// Length Restriction:
+        /// QBO: 15
+        /// QBD: 1024
+        /// 
+        /// </summary>
+        public string SSN {
+            get {
+                return this.sSNField;
+            }
+            set {
+                this.sSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Represents primary PhysicalAddress list
+        /// 
+        /// </summary>
+        public PhysicalAddress PrimaryAddr {
+            get {
+                return this.primaryAddrField;
+            }
+            set {
+                this.primaryAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Represents other PhysicalAddress list
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
+        public PhysicalAddress[] OtherAddr {
+            get {
+                return this.otherAddrField;
+            }
+            set {
+                this.otherAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// BillableTime should be true if this employee’s hours are typically billed to customers. QBO only.
+        /// QBD Unsupported field.
+        /// 
+        /// </summary>
+        public bool BillableTime {
+            get {
+                return this.billableTimeField;
+            }
+            set {
+                this.billableTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool BillableTimeSpecified {
+            get {
+                return this.billableTimeFieldSpecified;
+            }
+            set {
+                this.billableTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// If BillableTime is true, BillRate can be set to specify this employee’s hourly billing rate. QBO only.
+        /// QBD Unsupported field.
+        /// 
+        /// </summary>
+        public decimal BillRate {
+            get {
+                return this.billRateField;
+            }
+            set {
+                this.billRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool BillRateSpecified {
+            get {
+                return this.billRateFieldSpecified;
+            }
+            set {
+                this.billRateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Employee birth date
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime BirthDate {
+            get {
+                return this.birthDateField;
+            }
+            set {
+                this.birthDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool BirthDateSpecified {
+            get {
+                return this.birthDateFieldSpecified;
+            }
+            set {
+                this.birthDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Gender details
+        /// </summary>
+        public gender Gender {
+            get {
+                return this.genderField;
+            }
+            set {
+                this.genderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool GenderSpecified {
+            get {
+                return this.genderFieldSpecified;
+            }
+            set {
+                this.genderFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Employee hired date
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime HiredDate {
+            get {
+                return this.hiredDateField;
+            }
+            set {
+                this.hiredDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HiredDateSpecified {
+            get {
+                return this.hiredDateFieldSpecified;
+            }
+            set {
+                this.hiredDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Date at which employee was releaved from the company
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime ReleasedDate {
+            get {
+                return this.releasedDateField;
+            }
+            set {
+                this.releasedDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ReleasedDateSpecified {
+            get {
+                return this.releasedDateFieldSpecified;
+            }
+            set {
+                this.releasedDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies whether the Time Entry (time sheets) should be used to create paychecks for the employee.
+        /// </summary>
+        public TimeEntryUsedForPaychecksEnum UseTimeEntry {
+            get {
+                return this.useTimeEntryField;
+            }
+            set {
+                this.useTimeEntryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool UseTimeEntrySpecified {
+            get {
+                return this.useTimeEntryFieldSpecified;
+            }
+            set {
+                this.useTimeEntryFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Internal use only: extension place holder for Employee.
+        /// </summary>
+        public IntuitAnyType EmployeeEx {
+            get {
+                return this.employeeExField;
+            }
+            set {
+                this.employeeExField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Enumeration of types for time entries with paychecks.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum TimeEntryUsedForPaychecksEnum {
+        
+        /// <remarks/>
+        NotSet,
+        
+        /// <remarks/>
+        DoNotUseTimeEntry,
+        
+        /// <remarks/>
+        UseTimeEntry,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Describes the Other Name (aka Payee). QBD only
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public partial class OtherName : NameBase {
+        
+        private string acctNumField;
+        
+        private PhysicalAddress primaryAddrField;
+        
+        private PhysicalAddress[] otherAddrField;
+        
+        private IntuitAnyType otherNameExField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Name or number of the account associated with this other name (payee).
+        /// Length Restriction:
+        /// QBO: 15
+        /// QBD: 1024
+        /// 
+        /// </summary>
+        public string AcctNum {
+            get {
+                return this.acctNumField;
+            }
+            set {
+                this.acctNumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Represents primary PhysicalAddress list
+        /// 
+        /// </summary>
+        public PhysicalAddress PrimaryAddr {
+            get {
+                return this.primaryAddrField;
+            }
+            set {
+                this.primaryAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Represents other PhysicalAddress list
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
+        public PhysicalAddress[] OtherAddr {
+            get {
+                return this.otherAddrField;
+            }
+            set {
+                this.otherAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Internal use only: extension place holder for OtherName.
+        /// </summary>
+        public IntuitAnyType OtherNameEx {
+            get {
+                return this.otherNameExField;
+            }
+            set {
+                this.otherNameExField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBW
+    /// Description: generic meta data response for any add mod
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Status : IntuitEntity, IEntity {
+        
+        private string requestIdField;
+        
+        private string batchIdField;
+        
+        private string objectTypeField;
+        
+        private string stateCodeField;
+        
+        private string stateDescField;
+        
+        private string messageCodeField;
+        
+        private string messageDescField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Request Id to create/update object
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public string RequestId {
+            get {
+                return this.requestIdField;
+            }
+            set {
+                this.requestIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Batch Id to create/update object
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public string BatchId {
+            get {
+                return this.batchIdField;
+            }
+            set {
+                this.batchIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Code for Current State of object
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public string StateCode {
+            get {
+                return this.stateCodeField;
+            }
+            set {
+                this.stateCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Description for Current State of object
+        /// 
+        /// </summary>
+        public string StateDesc {
+            get {
+                return this.stateDescField;
+            }
+            set {
+                this.stateDescField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Status Message Code
+        /// 
+        /// </summary>
+        public string MessageCode {
+            get {
+                return this.messageCodeField;
+            }
+            set {
+                this.messageCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: Status Message if error occurred else null
+        /// 
+        /// </summary>
+        public string MessageDesc {
+            get {
+                return this.messageDescField;
+            }
+            set {
+                this.messageDescField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBW
+    /// Description: Provides upload/writeback activity for a given period of time. Query activity using
+    /// StartSyncTMS OR EndSyncTMS
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class SyncActivity : IntuitEntity, IEntity {
+        
+        private System.DateTime latestUploadDateTimeField;
+        
+        private bool latestUploadDateTimeFieldSpecified;
+        
+        private System.DateTime latestWriteBackDateTimeField;
+        
+        private bool latestWriteBackDateTimeFieldSpecified;
+        
+        private SyncType syncTypeField;
+        
+        private bool syncTypeFieldSpecified;
+        
+        private System.DateTime startSyncTMSField;
+        
+        private bool startSyncTMSFieldSpecified;
+        
+        private System.DateTime endSyncTMSField;
+        
+        private bool endSyncTMSFieldSpecified;
+        
+        private string entityNameField;
+        
+        private int entityRowCountField;
+        
+        private bool entityRowCountFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product:QBW
+        /// Description: indicates when the data sync upload or write back started
+        /// 
+        /// </summary>
+        public System.DateTime LatestUploadDateTime {
+            get {
+                return this.latestUploadDateTimeField;
+            }
+            set {
+                this.latestUploadDateTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LatestUploadDateTimeSpecified {
+            get {
+                return this.latestUploadDateTimeFieldSpecified;
+            }
+            set {
+                this.latestUploadDateTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: indicates when the data sync upload or write back completed
+        /// 
+        /// </summary>
+        public System.DateTime LatestWriteBackDateTime {
+            get {
+                return this.latestWriteBackDateTimeField;
+            }
+            set {
+                this.latestWriteBackDateTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LatestWriteBackDateTimeSpecified {
+            get {
+                return this.latestWriteBackDateTimeFieldSpecified;
+            }
+            set {
+                this.latestWriteBackDateTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: can be either Upload or Write back sync type
+        /// 
+        /// </summary>
+        public SyncType SyncType {
+            get {
+                return this.syncTypeField;
+            }
+            set {
+                this.syncTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SyncTypeSpecified {
+            get {
+                return this.syncTypeFieldSpecified;
+            }
+            set {
+                this.syncTypeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: indicates when the data sync upload or write back started
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public System.DateTime StartSyncTMS {
+            get {
+                return this.startSyncTMSField;
+            }
+            set {
+                this.startSyncTMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool StartSyncTMSSpecified {
+            get {
+                return this.startSyncTMSFieldSpecified;
+            }
+            set {
+                this.startSyncTMSFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: indicates when the data sync upload or write back completed
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public System.DateTime EndSyncTMS {
+            get {
+                return this.endSyncTMSField;
+            }
+            set {
+                this.endSyncTMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool EndSyncTMSSpecified {
+            get {
+                return this.endSyncTMSFieldSpecified;
+            }
+            set {
+                this.endSyncTMSFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: name of the entity that is part of the data sync
+        /// 
+        /// </summary>
+        public string EntityName {
+            get {
+                return this.entityNameField;
+            }
+            set {
+                this.entityNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: number of rows of this entity that have been uploaded or written back to QB
+        /// 
+        /// </summary>
+        public int EntityRowCount {
+            get {
+                return this.entityRowCountField;
+            }
+            set {
+                this.entityRowCountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool EntityRowCountSpecified {
+            get {
+                return this.entityRowCountFieldSpecified;
+            }
+            set {
+                this.entityRowCountFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBW
+    /// Description: must be either upload or writeback
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum SyncType {
+        
+        /// <remarks/>
+        Upload,
+        
+        /// <remarks/>
+        Writeback,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Represents a tax agency to whom sales/purchase/VAT taxes collected are paid
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public partial class TaxAgency : Vendor {
+        
+        private ReferenceType salesTaxCodeRefField;
+        
+        private string salesTaxCountryField;
+        
+        private ReferenceType salesTaxReturnRefField;
+        
+        private string taxRegistrationNumberField;
+        
+        private string reportingPeriodField;
+        
+        private bool taxTrackedOnPurchasesField;
+        
+        private bool taxTrackedOnPurchasesFieldSpecified;
+        
+        private ReferenceType taxOnPurchasesAccountRefField;
+        
+        private bool taxTrackedOnSalesField;
+        
+        private bool taxTrackedOnSalesFieldSpecified;
+        
+        private ReferenceType taxTrackedOnSalesAccountRefField;
+        
+        private bool taxOnTaxField;
+        
+        private bool taxOnTaxFieldSpecified;
+        
+        private System.DateTime lastFileDateField;
+        
+        private bool lastFileDateFieldSpecified;
+        
+        private IntuitAnyType taxAgencyExtField;
+        
+        /// <remarks/>
+        public ReferenceType SalesTaxCodeRef {
+            get {
+                return this.salesTaxCodeRefField;
+            }
+            set {
+                this.salesTaxCodeRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// We'll need an Enum for the usual countries
+        /// </summary>
+        public string SalesTaxCountry {
+            get {
+                return this.salesTaxCountryField;
+            }
+            set {
+                this.salesTaxCountryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ReferenceType SalesTaxReturnRef {
+            get {
+                return this.salesTaxReturnRefField;
+            }
+            set {
+                this.salesTaxReturnRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TaxRegistrationNumber {
+            get {
+                return this.taxRegistrationNumberField;
+            }
+            set {
+                this.taxRegistrationNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// We'll need an Enum for the reporting periods
+        /// </summary>
+        public string ReportingPeriod {
+            get {
+                return this.reportingPeriodField;
+            }
+            set {
+                this.reportingPeriodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool TaxTrackedOnPurchases {
+            get {
+                return this.taxTrackedOnPurchasesField;
+            }
+            set {
+                this.taxTrackedOnPurchasesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxTrackedOnPurchasesSpecified {
+            get {
+                return this.taxTrackedOnPurchasesFieldSpecified;
+            }
+            set {
+                this.taxTrackedOnPurchasesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ReferenceType TaxOnPurchasesAccountRef {
+            get {
+                return this.taxOnPurchasesAccountRefField;
+            }
+            set {
+                this.taxOnPurchasesAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool TaxTrackedOnSales {
+            get {
+                return this.taxTrackedOnSalesField;
+            }
+            set {
+                this.taxTrackedOnSalesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxTrackedOnSalesSpecified {
+            get {
+                return this.taxTrackedOnSalesFieldSpecified;
+            }
+            set {
+                this.taxTrackedOnSalesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ReferenceType TaxTrackedOnSalesAccountRef {
+            get {
+                return this.taxTrackedOnSalesAccountRefField;
+            }
+            set {
+                this.taxTrackedOnSalesAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool TaxOnTax {
+            get {
+                return this.taxOnTaxField;
+            }
+            set {
+                this.taxOnTaxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxOnTaxSpecified {
+            get {
+                return this.taxOnTaxFieldSpecified;
+            }
+            set {
+                this.taxOnTaxFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: This specifies the last filing date for this tax agency.
+        /// InputType: QBO: ReadOnly
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime LastFileDate {
+            get {
+                return this.lastFileDateField;
+            }
+            set {
+                this.lastFileDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LastFileDateSpecified {
+            get {
+                return this.lastFileDateFieldSpecified;
+            }
+            set {
+                this.lastFileDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public IntuitAnyType TaxAgencyExt {
+            get {
+                return this.taxAgencyExtField;
+            }
+            set {
+                this.taxAgencyExtField = value;
             }
         }
     }
@@ -32894,7 +35734,7 @@ namespace Intuit.Ipp.Data {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
     public partial class Vendor : NameBase {
         
         private string contactNameField;
@@ -33583,619 +36423,6 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Customer types allow categorizing customers in ways that are meaningful to the business. For example, one could set up customer types so that they indicate which industry a customer represents, a customer's geographic location, or how a customer first heard about the business. The categorization then can be used for reporting or mailings.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class CustomerType : IntuitEntity, IEntity {
-        
-        private string nameField;
-        
-        private ReferenceType parentRefField;
-        
-        private string fullyQualifiedNameField;
-        
-        private bool activeField;
-        
-        private bool activeFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: User recognizable name for the CustomerType.[br /]Max. length: 31 characters.
-        /// Product: QBO
-        /// Description: User recognizable name for the CustomerType.[br /]Max. length: 15 characters.
-        /// 
-        /// </summary>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Reference to the CustomerTypeParent.
-        /// 
-        /// </summary>
-        public ReferenceType ParentRef {
-            get {
-                return this.parentRefField;
-            }
-            set {
-                this.parentRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
-        /// 
-        /// </summary>
-        public string FullyQualifiedName {
-            get {
-                return this.fullyQualifiedNameField;
-            }
-            set {
-                this.fullyQualifiedNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: True if the Customer is active. Inactive customer types may be hidden from display and may not be used on financial transactions.
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public bool Active {
-            get {
-                return this.activeField;
-            }
-            set {
-                this.activeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool ActiveSpecified {
-            get {
-                return this.activeFieldSpecified;
-            }
-            set {
-                this.activeFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes the Party as a Employee Role view
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Employee : NameBase {
-        
-        private string employeeTypeField;
-        
-        private string employeeNumberField;
-        
-        private string sSNField;
-        
-        private PhysicalAddress primaryAddrField;
-        
-        private PhysicalAddress[] otherAddrField;
-        
-        private bool billableTimeField;
-        
-        private bool billableTimeFieldSpecified;
-        
-        private decimal billRateField;
-        
-        private bool billRateFieldSpecified;
-        
-        private System.DateTime birthDateField;
-        
-        private bool birthDateFieldSpecified;
-        
-        private gender genderField;
-        
-        private bool genderFieldSpecified;
-        
-        private System.DateTime hiredDateField;
-        
-        private bool hiredDateFieldSpecified;
-        
-        private System.DateTime releasedDateField;
-        
-        private bool releasedDateFieldSpecified;
-        
-        private TimeEntryUsedForPaychecksEnum useTimeEntryField;
-        
-        private bool useTimeEntryFieldSpecified;
-        
-        private IntuitAnyType employeeExField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the Employee type. For QuickBooks Desktop the valid values are defined in the EmployeeTypeEnum.
-        /// </summary>
-        public string EmployeeType {
-            get {
-                return this.employeeTypeField;
-            }
-            set {
-                this.employeeTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the number of the employee (or account) in the employer's directory.
-        /// Length Restriction:
-        /// QBO: 15
-        /// QBD: 99
-        /// 
-        /// </summary>
-        public string EmployeeNumber {
-            get {
-                return this.employeeNumberField;
-            }
-            set {
-                this.employeeNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the SSN of the employee.
-        /// Length Restriction:
-        /// QBO: 15
-        /// QBD: 1024
-        /// 
-        /// </summary>
-        public string SSN {
-            get {
-                return this.sSNField;
-            }
-            set {
-                this.sSNField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Represents primary PhysicalAddress list
-        /// 
-        /// </summary>
-        public PhysicalAddress PrimaryAddr {
-            get {
-                return this.primaryAddrField;
-            }
-            set {
-                this.primaryAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Represents other PhysicalAddress list
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
-        public PhysicalAddress[] OtherAddr {
-            get {
-                return this.otherAddrField;
-            }
-            set {
-                this.otherAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// BillableTime should be true if this employee’s hours are typically billed to customers. QBO only.
-        /// QBD Unsupported field.
-        /// 
-        /// </summary>
-        public bool BillableTime {
-            get {
-                return this.billableTimeField;
-            }
-            set {
-                this.billableTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool BillableTimeSpecified {
-            get {
-                return this.billableTimeFieldSpecified;
-            }
-            set {
-                this.billableTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// If BillableTime is true, BillRate can be set to specify this employee’s hourly billing rate. QBO only.
-        /// QBD Unsupported field.
-        /// 
-        /// </summary>
-        public decimal BillRate {
-            get {
-                return this.billRateField;
-            }
-            set {
-                this.billRateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool BillRateSpecified {
-            get {
-                return this.billRateFieldSpecified;
-            }
-            set {
-                this.billRateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Employee birth date
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
-        public System.DateTime BirthDate {
-            get {
-                return this.birthDateField;
-            }
-            set {
-                this.birthDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool BirthDateSpecified {
-            get {
-                return this.birthDateFieldSpecified;
-            }
-            set {
-                this.birthDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Gender details
-        /// </summary>
-        public gender Gender {
-            get {
-                return this.genderField;
-            }
-            set {
-                this.genderField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool GenderSpecified {
-            get {
-                return this.genderFieldSpecified;
-            }
-            set {
-                this.genderFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Employee hired date
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
-        public System.DateTime HiredDate {
-            get {
-                return this.hiredDateField;
-            }
-            set {
-                this.hiredDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool HiredDateSpecified {
-            get {
-                return this.hiredDateFieldSpecified;
-            }
-            set {
-                this.hiredDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Date at which employee was releaved from the company
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
-        public System.DateTime ReleasedDate {
-            get {
-                return this.releasedDateField;
-            }
-            set {
-                this.releasedDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool ReleasedDateSpecified {
-            get {
-                return this.releasedDateFieldSpecified;
-            }
-            set {
-                this.releasedDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies whether the Time Entry (time sheets) should be used to create paychecks for the employee.
-        /// </summary>
-        public TimeEntryUsedForPaychecksEnum UseTimeEntry {
-            get {
-                return this.useTimeEntryField;
-            }
-            set {
-                this.useTimeEntryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool UseTimeEntrySpecified {
-            get {
-                return this.useTimeEntryFieldSpecified;
-            }
-            set {
-                this.useTimeEntryFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Internal use only: extension place holder for Employee.
-        /// </summary>
-        public IntuitAnyType EmployeeEx {
-            get {
-                return this.employeeExField;
-            }
-            set {
-                this.employeeExField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Job types allow for categorizing jobs so that similar jobs can be grouped and subtotaled on reports. Ultimately, they will help in determining which jobs are most profitable for the business.
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class JobType : IntuitEntity, IEntity {
-        
-        private string nameField;
-        
-        private ReferenceType parentRefField;
-        
-        private string fullyQualifiedNameField;
-        
-        private bool activeField;
-        
-        private bool activeFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: User recognizable name for the Job Type.[br /]Max. length: 31 characters.
-        /// Product: QBO
-        /// Description: User recognizable name for the Job Type.[br /]Max. length: 15 characters.
-        /// 
-        /// </summary>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Reference to the JobTypeParent entity.
-        /// </summary>
-        public ReferenceType ParentRef {
-            get {
-                return this.parentRefField;
-            }
-            set {
-                this.parentRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
-        /// 
-        /// </summary>
-        public string FullyQualifiedName {
-            get {
-                return this.fullyQualifiedNameField;
-            }
-            set {
-                this.fullyQualifiedNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: ALL
-        /// Description: True if the Job is active. Inactive job types may be hidden from display and may not be used on financial transactions.
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public bool Active {
-            get {
-                return this.activeField;
-            }
-            set {
-                this.activeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool ActiveSpecified {
-            get {
-                return this.activeFieldSpecified;
-            }
-            set {
-                this.activeFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes the Other Name (aka Payee). QBD only
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class OtherName : NameBase {
-        
-        private string acctNumField;
-        
-        private PhysicalAddress primaryAddrField;
-        
-        private PhysicalAddress[] otherAddrField;
-        
-        private IntuitAnyType otherNameExField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Name or number of the account associated with this other name (payee).
-        /// Length Restriction:
-        /// QBO: 15
-        /// QBD: 1024
-        /// 
-        /// </summary>
-        public string AcctNum {
-            get {
-                return this.acctNumField;
-            }
-            set {
-                this.acctNumField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Represents primary PhysicalAddress list
-        /// 
-        /// </summary>
-        public PhysicalAddress PrimaryAddr {
-            get {
-                return this.primaryAddrField;
-            }
-            set {
-                this.primaryAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Represents other PhysicalAddress list
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
-        public PhysicalAddress[] OtherAddr {
-            get {
-                return this.otherAddrField;
-            }
-            set {
-                this.otherAddrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Internal use only: extension place holder for OtherName.
-        /// </summary>
-        public IntuitAnyType OtherNameEx {
-            get {
-                return this.otherNameExField;
-            }
-            set {
-                this.otherNameExField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
     /// Vendor types allow categorizing vendors in ways that are meaningful to the business. For example, one could set up vendor types so that they indicate a vendor's industry or geographic location. The categorization then can be used for reporting.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
@@ -34203,7 +36430,7 @@ namespace Intuit.Ipp.Data {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
     public partial class VendorType : IntuitEntity, IEntity {
         
         private string nameField;
@@ -34283,1969 +36510,6 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.activeFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: ALL
-    /// Description: Represents a tax agency to whom sales/purchase/VAT taxes collected are paid
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class TaxAgency : Vendor {
-        
-        private ReferenceType salesTaxCodeRefField;
-        
-        private string salesTaxCountryField;
-        
-        private ReferenceType salesTaxReturnRefField;
-        
-        private string taxRegistrationNumberField;
-        
-        private string reportingPeriodField;
-        
-        private bool taxTrackedOnPurchasesField;
-        
-        private bool taxTrackedOnPurchasesFieldSpecified;
-        
-        private ReferenceType taxOnPurchasesAccountRefField;
-        
-        private bool taxTrackedOnSalesField;
-        
-        private bool taxTrackedOnSalesFieldSpecified;
-        
-        private ReferenceType taxTrackedOnSalesAccountRefField;
-        
-        private bool taxOnTaxField;
-        
-        private bool taxOnTaxFieldSpecified;
-        
-        private System.DateTime lastFileDateField;
-        
-        private bool lastFileDateFieldSpecified;
-        
-        private IntuitAnyType taxAgencyExtField;
-        
-        /// <remarks/>
-        public ReferenceType SalesTaxCodeRef {
-            get {
-                return this.salesTaxCodeRefField;
-            }
-            set {
-                this.salesTaxCodeRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// We'll need an Enum for the usual countries
-        /// </summary>
-        public string SalesTaxCountry {
-            get {
-                return this.salesTaxCountryField;
-            }
-            set {
-                this.salesTaxCountryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ReferenceType SalesTaxReturnRef {
-            get {
-                return this.salesTaxReturnRefField;
-            }
-            set {
-                this.salesTaxReturnRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TaxRegistrationNumber {
-            get {
-                return this.taxRegistrationNumberField;
-            }
-            set {
-                this.taxRegistrationNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// We'll need an Enum for the reporting periods
-        /// </summary>
-        public string ReportingPeriod {
-            get {
-                return this.reportingPeriodField;
-            }
-            set {
-                this.reportingPeriodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool TaxTrackedOnPurchases {
-            get {
-                return this.taxTrackedOnPurchasesField;
-            }
-            set {
-                this.taxTrackedOnPurchasesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool TaxTrackedOnPurchasesSpecified {
-            get {
-                return this.taxTrackedOnPurchasesFieldSpecified;
-            }
-            set {
-                this.taxTrackedOnPurchasesFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ReferenceType TaxOnPurchasesAccountRef {
-            get {
-                return this.taxOnPurchasesAccountRefField;
-            }
-            set {
-                this.taxOnPurchasesAccountRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool TaxTrackedOnSales {
-            get {
-                return this.taxTrackedOnSalesField;
-            }
-            set {
-                this.taxTrackedOnSalesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool TaxTrackedOnSalesSpecified {
-            get {
-                return this.taxTrackedOnSalesFieldSpecified;
-            }
-            set {
-                this.taxTrackedOnSalesFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ReferenceType TaxTrackedOnSalesAccountRef {
-            get {
-                return this.taxTrackedOnSalesAccountRefField;
-            }
-            set {
-                this.taxTrackedOnSalesAccountRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool TaxOnTax {
-            get {
-                return this.taxOnTaxField;
-            }
-            set {
-                this.taxOnTaxField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool TaxOnTaxSpecified {
-            get {
-                return this.taxOnTaxFieldSpecified;
-            }
-            set {
-                this.taxOnTaxFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: This specifies the last filing date for this tax agency.
-        /// InputType: QBO: ReadOnly
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
-        public System.DateTime LastFileDate {
-            get {
-                return this.lastFileDateField;
-            }
-            set {
-                this.lastFileDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LastFileDateSpecified {
-            get {
-                return this.lastFileDateFieldSpecified;
-            }
-            set {
-                this.lastFileDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public IntuitAnyType TaxAgencyExt {
-            get {
-                return this.taxAgencyExtField;
-            }
-            set {
-                this.taxAgencyExtField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// FaultTypeEnumeration list
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum FaultTypeEnum {
-        
-        /// <remarks/>
-        AuthenticationFault,
-        
-        /// <remarks/>
-        AuthorizatonFault,
-        
-        /// <remarks/>
-        ValidationFault,
-        
-        /// <remarks/>
-        SystemFault,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Detailed data about warnings that occurred when a request was processed
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Warnings {
-        
-        private Warning[] warningField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Warning details specifies each warning
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Warning")]
-        public Warning[] Warning {
-            get {
-                return this.warningField;
-            }
-            set {
-                this.warningField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Error Type detailing error
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Error {
-        
-        private string messageField;
-        
-        private string detailField;
-        
-        private string codeField;
-        
-        private string elementField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Localized standard message associated with the error code
-        /// </summary>
-        public string Message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Detailed error localized or unlocalized error that is thrown by the business logic backend that caused the error
-        /// </summary>
-        public string Detail {
-            get {
-                return this.detailField;
-            }
-            set {
-                this.detailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Error code number, this is a required field
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Element that caused the error
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string element {
-            get {
-                return this.elementField;
-            }
-            set {
-                this.elementField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Fault entity describing the fault
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Fault {
-        
-        private Error[] errorField;
-        
-        private string typeField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Error entity that describes the details of the error, if there are multiple errors, multiple occurrence of error object will be represented as multiple errors
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Error")]
-        public Error[] Error {
-            get {
-                return this.errorField;
-            }
-            set {
-                this.errorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Element that caused the error
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// IntuitResponse is a holder of all types of entities that come as part of response
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class IntuitResponse {
-        
-        private Warning[] warningsField;
-        
-        private object[] itemsField;
-        
-        private string requestIdField;
-        
-        private System.DateTime timeField;
-        
-        private bool timeFieldSpecified;
-        
-        private string statusField;
-        
-        private object itemField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
-        /// </summary>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Warning[] Warnings {
-            get {
-                return this.warningsField;
-            }
-            set {
-                this.warningsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AttachableResponse", typeof(AttachableResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("BatchItemResponse", typeof(BatchItemResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("CDCResponse", typeof(CDCResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
-        public object[] AnyIntuitObjects {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the RequestId associated with the request
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string requestId {
-            get {
-                return this.requestIdField;
-            }
-            set {
-                this.requestIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the time at which request started processing in the server
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public System.DateTime time {
-            get {
-                return this.timeField;
-            }
-            set {
-                this.timeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool timeSpecified {
-            get {
-                return this.timeFieldSpecified;
-            }
-            set {
-                this.timeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the HTTP codes result of the operation
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
-        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
-        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
-        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
-        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
-        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
-        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
-        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
-        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
-        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
-        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
-        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
-        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
-        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
-        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
-        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
-        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
-        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
-        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
-        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
-        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
-        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
-        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
-        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
-        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
-        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
-        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
-        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
-        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
-        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
-        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
-        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
-        [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
-        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("SyncErrorResponse", typeof(SyncErrorResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("OLBTransaction", typeof(OLBTransaction))]
-        [System.Xml.Serialization.XmlElementAttribute("OLBStatus", typeof(OLBStatus))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// AttachableResponse entity describing the response of upload results
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class AttachableResponse {
-        
-        private object itemField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
-        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// QueryResponse entity describing the response of query
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class BatchItemResponse {
-        
-        private Warning[] warningsField;
-        
-        private object itemField;
-        
-        private string bIdField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
-        /// </summary>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Warning[] Warnings {
-            get {
-                return this.warningsField;
-            }
-            set {
-                this.warningsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
-        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
-        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
-        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
-        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
-        [System.Xml.Serialization.XmlElementAttribute("CDCResponse", typeof(CDCResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("CascadeResponse", typeof(CascadeResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
-        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
-        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
-        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
-        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
-        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
-        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
-        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
-        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
-        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
-        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
-        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
-        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
-        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
-        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
-        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
-        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
-        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
-        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
-        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
-        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
-        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
-        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
-        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
-        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
-        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
-        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
-        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
-        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the batch id for which the response corresponds to
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string bId {
-            get {
-                return this.bIdField;
-            }
-            set {
-                this.bIdField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// QueryResponse entity describing the response of query
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class CDCResponse {
-        
-        private object[] itemsField;
-        
-        private int sizeField;
-        
-        private bool sizeFieldSpecified;
-        
-        private object itemField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
-        public object[] AnyIntuitObjects {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the number of rows in this result
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                this.sizeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool sizeSpecified {
-            get {
-                return this.sizeFieldSpecified;
-            }
-            set {
-                this.sizeFieldSpecified = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// QueryResponse entity describing the response of query
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class QueryResponse {
-        
-        private Warning[] warningsField;
-        
-        private object[] itemsField;
-        
-        private int startPositionField;
-        
-        private bool startPositionFieldSpecified;
-        
-        private int maxResultsField;
-        
-        private bool maxResultsFieldSpecified;
-        
-        private int totalCountField;
-        
-        private bool totalCountFieldSpecified;
-        
-        private object itemField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Indication that a request was processed, but with possible exceptional circumstances (i.e. ignored unsupported fields) that the client may want to be aware of
-        /// </summary>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Warning[] Warnings {
-            get {
-                return this.warningsField;
-            }
-            set {
-                this.warningsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
-        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
-        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
-        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
-        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
-        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
-        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
-        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
-        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
-        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
-        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
-        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
-        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
-        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
-        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
-        [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
-        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
-        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
-        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
-        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
-        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
-        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
-        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
-        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
-        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
-        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
-        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
-        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
-        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
-        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
-        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
-        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
-        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
-        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
-        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
-        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
-        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
-        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
-        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
-        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
-        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
-        public object[] AnyIntuitObjects {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the starting row number in this result
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int startPosition {
-            get {
-                return this.startPositionField;
-            }
-            set {
-                this.startPositionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool startPositionSpecified {
-            get {
-                return this.startPositionFieldSpecified;
-            }
-            set {
-                this.startPositionFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the number of records in this result
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int maxResults {
-            get {
-                return this.maxResultsField;
-            }
-            set {
-                this.maxResultsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool maxResultsSpecified {
-            get {
-                return this.maxResultsFieldSpecified;
-            }
-            set {
-                this.maxResultsFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the total count of records that satisfy the filter condition
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int totalCount {
-            get {
-                return this.totalCountField;
-            }
-            set {
-                this.totalCountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool totalCountSpecified {
-            get {
-                return this.totalCountFieldSpecified;
-            }
-            set {
-                this.totalCountFieldSpecified = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
-        public object AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBW
-    /// Description: generic meta data response for any add mod
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Status : IntuitEntity, IEntity {
-        
-        private string requestIdField;
-        
-        private string batchIdField;
-        
-        private string objectTypeField;
-        
-        private string stateCodeField;
-        
-        private string stateDescField;
-        
-        private string messageCodeField;
-        
-        private string messageDescField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Request Id to create/update object
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public string RequestId {
-            get {
-                return this.requestIdField;
-            }
-            set {
-                this.requestIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Batch Id to create/update object
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public string BatchId {
-            get {
-                return this.batchIdField;
-            }
-            set {
-                this.batchIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Code for Current State of object
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public string StateCode {
-            get {
-                return this.stateCodeField;
-            }
-            set {
-                this.stateCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Description for Current State of object
-        /// 
-        /// </summary>
-        public string StateDesc {
-            get {
-                return this.stateDescField;
-            }
-            set {
-                this.stateDescField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Status Message Code
-        /// 
-        /// </summary>
-        public string MessageCode {
-            get {
-                return this.messageCodeField;
-            }
-            set {
-                this.messageCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: Status Message if error occurred else null
-        /// 
-        /// </summary>
-        public string MessageDesc {
-            get {
-                return this.messageDescField;
-            }
-            set {
-                this.messageDescField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBW
-    /// Description: Provides upload/writeback activity for a given period of time. Query activity using
-    /// StartSyncTMS OR EndSyncTMS
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class SyncActivity : IntuitEntity, IEntity {
-        
-        private System.DateTime latestUploadDateTimeField;
-        
-        private bool latestUploadDateTimeFieldSpecified;
-        
-        private System.DateTime latestWriteBackDateTimeField;
-        
-        private bool latestWriteBackDateTimeFieldSpecified;
-        
-        private SyncType syncTypeField;
-        
-        private bool syncTypeFieldSpecified;
-        
-        private System.DateTime startSyncTMSField;
-        
-        private bool startSyncTMSFieldSpecified;
-        
-        private System.DateTime endSyncTMSField;
-        
-        private bool endSyncTMSFieldSpecified;
-        
-        private string entityNameField;
-        
-        private int entityRowCountField;
-        
-        private bool entityRowCountFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product:QBW
-        /// Description: indicates when the data sync upload or write back started
-        /// 
-        /// </summary>
-        public System.DateTime LatestUploadDateTime {
-            get {
-                return this.latestUploadDateTimeField;
-            }
-            set {
-                this.latestUploadDateTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LatestUploadDateTimeSpecified {
-            get {
-                return this.latestUploadDateTimeFieldSpecified;
-            }
-            set {
-                this.latestUploadDateTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: indicates when the data sync upload or write back completed
-        /// 
-        /// </summary>
-        public System.DateTime LatestWriteBackDateTime {
-            get {
-                return this.latestWriteBackDateTimeField;
-            }
-            set {
-                this.latestWriteBackDateTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool LatestWriteBackDateTimeSpecified {
-            get {
-                return this.latestWriteBackDateTimeFieldSpecified;
-            }
-            set {
-                this.latestWriteBackDateTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: can be either Upload or Write back sync type
-        /// 
-        /// </summary>
-        public SyncType SyncType {
-            get {
-                return this.syncTypeField;
-            }
-            set {
-                this.syncTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool SyncTypeSpecified {
-            get {
-                return this.syncTypeFieldSpecified;
-            }
-            set {
-                this.syncTypeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: indicates when the data sync upload or write back started
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public System.DateTime StartSyncTMS {
-            get {
-                return this.startSyncTMSField;
-            }
-            set {
-                this.startSyncTMSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool StartSyncTMSSpecified {
-            get {
-                return this.startSyncTMSFieldSpecified;
-            }
-            set {
-                this.startSyncTMSFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: indicates when the data sync upload or write back completed
-        /// Filterable: QBW
-        /// 
-        /// </summary>
-        public System.DateTime EndSyncTMS {
-            get {
-                return this.endSyncTMSField;
-            }
-            set {
-                this.endSyncTMSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool EndSyncTMSSpecified {
-            get {
-                return this.endSyncTMSFieldSpecified;
-            }
-            set {
-                this.endSyncTMSFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: name of the entity that is part of the data sync
-        /// 
-        /// </summary>
-        public string EntityName {
-            get {
-                return this.entityNameField;
-            }
-            set {
-                this.entityNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBW
-        /// Description: number of rows of this entity that have been uploaded or written back to QB
-        /// 
-        /// </summary>
-        public int EntityRowCount {
-            get {
-                return this.entityRowCountField;
-            }
-            set {
-                this.entityRowCountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool EntityRowCountSpecified {
-            get {
-                return this.entityRowCountFieldSpecified;
-            }
-            set {
-                this.entityRowCountFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBW
-    /// Description: must be either upload or writeback
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum SyncType {
-        
-        /// <remarks/>
-        Upload,
-        
-        /// <remarks/>
-        Writeback,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Describes SalesTax details
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class TaxService : IntuitEntity, IEntity {
-        
-        private string taxCodeField;
-        
-        private string taxCodeIdField;
-        
-        private TaxRateDetails[] taxRateDetailsField;
-        
-        private Fault faultField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: Describes the taxcode
-        /// 
-        /// </summary>
-        public string TaxCode {
-            get {
-                return this.taxCodeField;
-            }
-            set {
-                this.taxCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: Describes the taxcode Id, this is output only
-        /// 
-        /// </summary>
-        public string TaxCodeId {
-            get {
-                return this.taxCodeIdField;
-            }
-            set {
-                this.taxCodeIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: TaxRate details
-        /// 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("TaxRateDetails")]
-        public TaxRateDetails[] TaxRateDetails {
-            get {
-                return this.taxRateDetailsField;
-            }
-            set {
-                this.taxRateDetailsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Fault or Object should be returned
-        /// </summary>
-        public Fault Fault {
-            get {
-                return this.faultField;
-            }
-            set {
-                this.faultField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBO
-    /// Description: TaxRate details
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class TaxRateDetails {
-        
-        private string taxRateNameField;
-        
-        private string taxRateIdField;
-        
-        private decimal rateValueField;
-        
-        private bool rateValueFieldSpecified;
-        
-        private string taxAgencyIdField;
-        
-        private TaxRateApplicableOnEnum taxApplicableOnField;
-        
-        private bool taxApplicableOnFieldSpecified;
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: TaxRate details
-        /// 
-        /// </summary>
-        public string TaxRateName {
-            get {
-                return this.taxRateNameField;
-            }
-            set {
-                this.taxRateNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: TaxRate details
-        /// 
-        /// </summary>
-        public string TaxRateId {
-            get {
-                return this.taxRateIdField;
-            }
-            set {
-                this.taxRateIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: TaxRate value
-        /// 
-        /// </summary>
-        public decimal RateValue {
-            get {
-                return this.rateValueField;
-            }
-            set {
-                this.rateValueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool RateValueSpecified {
-            get {
-                return this.rateValueFieldSpecified;
-            }
-            set {
-                this.rateValueFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: TaxAgency details
-        /// 
-        /// </summary>
-        public string TaxAgencyId {
-            get {
-                return this.taxAgencyIdField;
-            }
-            set {
-                this.taxAgencyIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// 
-        /// Product: QBO
-        /// Description: Default is SalesTax
-        /// 
-        /// </summary>
-        public TaxRateApplicableOnEnum TaxApplicableOn {
-            get {
-                return this.taxApplicableOnField;
-            }
-            set {
-                this.taxApplicableOnField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool TaxApplicableOnSpecified {
-            get {
-                return this.taxApplicableOnFieldSpecified;
-            }
-            set {
-                this.taxApplicableOnFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// 
-    /// Product: QBO
-    /// Description: Enumeration of  transaction type a given tax rate can be applied to
-    /// 
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum TaxRateApplicableOnEnum {
-        
-        /// <remarks/>
-        Sales,
-        
-        /// <remarks/>
-        Purchase,
-        
-        /// <remarks/>
-        Adjustment,
-        
-        /// <remarks/>
-        Other,
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Report Response Type
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public partial class Report {
-        
-        private ReportHeader headerField;
-        
-        private Column[] columnsField;
-        
-        private Row[] rowsField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Report Header, contains the report options that were used to generate the report
-        /// </summary>
-        public ReportHeader Header {
-            get {
-                return this.headerField;
-            }
-            set {
-                this.headerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Column[] Columns {
-            get {
-                return this.columnsField;
-            }
-            set {
-                this.columnsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public Row[] Rows {
-            get {
-                return this.rowsField;
-            }
-            set {
-                this.rowsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    /// <summary>
-    /// Specifies the Header of a Report, Time report was generated, parameters corresponding to the request
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class ReportHeader {
-        
-        private System.DateTime timeField;
-        
-        private bool timeFieldSpecified;
-        
-        private string reportNameField;
-        
-        private string dateMacroField;
-        
-        private ReportBasisEnum reportBasisField;
-        
-        private bool reportBasisFieldSpecified;
-        
-        private string startPeriodField;
-        
-        private string endPeriodField;
-        
-        private string summarizeColumnsByField;
-        
-        private string currencyField;
-        
-        private string customerField;
-        
-        private string vendorField;
-        
-        private string employeeField;
-        
-        private string itemField;
-        
-        private string classField;
-        
-        private string departmentField;
-        
-        private NameValue[] optionField;
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the time at which report was generated
-        /// </summary>
-        public System.DateTime Time {
-            get {
-                return this.timeField;
-            }
-            set {
-                this.timeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool TimeSpecified {
-            get {
-                return this.timeFieldSpecified;
-            }
-            set {
-                this.timeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the report name
-        /// </summary>
-        public string ReportName {
-            get {
-                return this.reportNameField;
-            }
-            set {
-                this.reportNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the report name
-        /// </summary>
-        public string DateMacro {
-            get {
-                return this.dateMacroField;
-            }
-            set {
-                this.dateMacroField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the report is cash basis or accrual basis
-        /// </summary>
-        public ReportBasisEnum ReportBasis {
-            get {
-                return this.reportBasisField;
-            }
-            set {
-                this.reportBasisField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [JsonIgnore()]
-        public bool ReportBasisSpecified {
-            get {
-                return this.reportBasisFieldSpecified;
-            }
-            set {
-                this.reportBasisFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Start Period for which the report was generated
-        /// </summary>
-        public string StartPeriod {
-            get {
-                return this.startPeriodField;
-            }
-            set {
-                this.startPeriodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// End Period for which the report was generated
-        /// </summary>
-        public string EndPeriod {
-            get {
-                return this.endPeriodField;
-            }
-            set {
-                this.endPeriodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Summarize columns by enumeration
-        /// </summary>
-        public string SummarizeColumnsBy {
-            get {
-                return this.summarizeColumnsByField;
-            }
-            set {
-                this.summarizeColumnsByField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the currency code associated with the report, note that this is one place where this is just the currency code, not a reference to a currency object
-        /// </summary>
-        public string Currency {
-            get {
-                return this.currencyField;
-            }
-            set {
-                this.currencyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the customer id (comma separeted) for which the report is run this is just the id, not a reference to a customer object
-        /// </summary>
-        public string Customer {
-            get {
-                return this.customerField;
-            }
-            set {
-                this.customerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the vendor id (comma separeted) for which the report is run this is just the id, not a reference to a vendor object
-        /// </summary>
-        public string Vendor {
-            get {
-                return this.vendorField;
-            }
-            set {
-                this.vendorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the employee id (comma separeted) for which the report is run this is just the id, not a reference to a employee object
-        /// </summary>
-        public string Employee {
-            get {
-                return this.employeeField;
-            }
-            set {
-                this.employeeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the product/service id (comma separeted) for which the report is run this is just the id, not a reference to a product/service object
-        /// </summary>
-        public string AnyIntuitObject {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the class id (comma separeted) for which the report is run this is just the  id, not a reference to a class object
-        /// </summary>
-        public string Class {
-            get {
-                return this.classField;
-            }
-            set {
-                this.classField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Specifies the Department id (comma separeted) for which the report is run this is just the  id, not a reference to a Department object
-        /// </summary>
-        public string Department {
-            get {
-                return this.departmentField;
-            }
-            set {
-                this.departmentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Describes the options used for the report
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Option")]
-        public NameValue[] Option {
-            get {
-                return this.optionField;
-            }
-            set {
-                this.optionField = value;
             }
         }
     }
@@ -37124,307 +37388,344 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
-    /// Date macros enumeration
+    /// 
+    /// Product: ALL
+    /// Description: Employee type enumeration.
+    /// 
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum DateMacro {
+    public enum EmployeeTypeEnum {
         
         /// <remarks/>
-        All,
+        Officer,
         
         /// <remarks/>
-        Today,
+        Owner,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Week")]
-        ThisWeek,
+        Regular,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Week-to-date")]
-        ThisWeektodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Month")]
-        ThisMonth,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Month-to-date")]
-        ThisMonthtodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Quarter")]
-        ThisFiscalQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Quarter-to-date")]
-        ThisFiscalQuartertodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Year")]
-        ThisFiscalYear,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Fiscal Year-to-date")]
-        ThisFiscalYeartodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Quarter")]
-        ThisCalendarQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Quarter-to-date")]
-        ThisCalendarQuartertodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Year")]
-        ThisCalendarYear,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("This Calendar Year-to-date")]
-        ThisCalendarYeartodate,
-        
-        /// <remarks/>
-        Yesterday,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Week")]
-        LastWeek,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Week-to-date")]
-        LastWeektodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Month")]
-        LastMonth,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Month-to-date")]
-        LastMonthtodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Quarter")]
-        LastFiscalQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Quarter-to-date")]
-        LastFiscalQuartertodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Year")]
-        LastFiscalYear,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Fiscal Year-to-date")]
-        LastFiscalYeartodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Quarter")]
-        LastCalendarQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Quarter-to-date")]
-        LastCalendarQuartertodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Year")]
-        LastCalendarYear,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Last Calendar Year-to-date")]
-        LastCalendarYeartodate,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Week")]
-        NextWeek,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next 4 Weeks")]
-        Next4Weeks,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Month")]
-        NextMonth,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Fiscal Quarter")]
-        NextFiscalQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Fiscal Year")]
-        NextFiscalYear,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Calendar Quarter")]
-        NextCalendarQuarter,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Next Calendar Year")]
-        NextCalendarYear,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum SummarizeColumnsByEnum {
-        
-        /// <remarks/>
-        Total,
-        
-        /// <remarks/>
-        Year,
-        
-        /// <remarks/>
-        Quarter,
-        
-        /// <remarks/>
-        FiscalYear,
-        
-        /// <remarks/>
-        FiscalQuarter,
-        
-        /// <remarks/>
-        Month,
-        
-        /// <remarks/>
-        Week,
-        
-        /// <remarks/>
-        Days,
-        
-        /// <remarks/>
-        Customers,
-        
-        /// <remarks/>
-        Vendors,
-        
-        /// <remarks/>
-        Employees,
-        
-        /// <remarks/>
-        Departments,
-        
-        /// <remarks/>
-        Classes,
-        
-        /// <remarks/>
-        ProductsAndServices,
+        Statutory,
     }
     
     /// <remarks/>
     /// <summary>
-    /// Specifies the column type definition
+    /// 
+    /// Product: QBO
+    /// Description: Enumeration of Tax Report Basis for France
+    /// 
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
-    public enum ColumnTypeEnum {
+    public enum TaxReportBasisTypeEnum {
         
         /// <remarks/>
-        Account,
+        Cash,
         
         /// <remarks/>
-        Money,
-        
-        /// <remarks/>
-        Rate,
-        
-        /// <remarks/>
-        Customer,
-        
-        /// <remarks/>
-        Vendor,
-        
-        /// <remarks/>
-        Employee,
-        
-        /// <remarks/>
-        ProductsAndService,
-        
-        /// <remarks/>
-        Department,
-        
-        /// <remarks/>
-        Class,
-        
-        /// <remarks/>
-        String,
+        Accrual,
     }
     
     /// <remarks/>
+    /// <summary>
+    /// 
+    /// Represents a User with an Intuit account.  Note that based on privacy restrictions, information returned may be
+    /// limited depending on calling origin and/or calling user permissions (ex: a user may be able to look up all of
+    /// their information, but not the information regarding other users).
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Attributes {
+    public partial class User : IntuitEntity, IEntity {
         
-        private Attribute[] attributeField;
+        private string displayNameField;
+        
+        private string titleField;
+        
+        private string givenNameField;
+        
+        private string middleNameField;
+        
+        private string familyNameField;
+        
+        private string suffixField;
+        
+        private EmailAddress[] emailAddrField;
+        
+        private PhysicalAddress[] addrField;
+        
+        private TelephoneNumber[] phoneNumberField;
+        
+        private string localeCountryField;
+        
+        private string localeLanguageField;
+        
+        private string localePostalCodeField;
+        
+        private string localeTimeZoneField;
+        
+        private NameValue[] nameValueAttrField;
+        
+        /// <remarks/>
+        public string DisplayName {
+            get {
+                return this.displayNameField;
+            }
+            set {
+                this.displayNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GivenName {
+            get {
+                return this.givenNameField;
+            }
+            set {
+                this.givenNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MiddleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FamilyName {
+            get {
+                return this.familyNameField;
+            }
+            set {
+                this.familyNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Suffix {
+            get {
+                return this.suffixField;
+            }
+            set {
+                this.suffixField = value;
+            }
+        }
         
         /// <remarks/>
         /// <summary>
-        /// Describes the type
+        /// Returned only if caller passes necessary security checks to prevent e-mail address harvesting
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Attribute")]
-        public Attribute[] Attribute {
+        [System.Xml.Serialization.XmlElementAttribute("EmailAddr")]
+        public EmailAddress[] EmailAddr {
             get {
-                return this.attributeField;
+                return this.emailAddrField;
             }
             set {
-                this.attributeField = value;
+                this.emailAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Addr")]
+        public PhysicalAddress[] Addr {
+            get {
+                return this.addrField;
+            }
+            set {
+                this.addrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PhoneNumber")]
+        public TelephoneNumber[] PhoneNumber {
+            get {
+                return this.phoneNumberField;
+            }
+            set {
+                this.phoneNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LocaleCountry {
+            get {
+                return this.localeCountryField;
+            }
+            set {
+                this.localeCountryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LocaleLanguage {
+            get {
+                return this.localeLanguageField;
+            }
+            set {
+                this.localeLanguageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LocalePostalCode {
+            get {
+                return this.localePostalCodeField;
+            }
+            set {
+                this.localePostalCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LocaleTimeZone {
+            get {
+                return this.localeTimeZoneField;
+            }
+            set {
+                this.localeTimeZoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Represents a list of UserAttribute name/value pairs if the user query provided names of extended attributes to include
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("NameValueAttr")]
+        public NameValue[] NameValueAttr {
+            get {
+                return this.nameValueAttrField;
+            }
+            set {
+                this.nameValueAttrField = value;
             }
         }
     }
     
     /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Job types allow for categorizing jobs so that similar jobs can be grouped and subtotaled on reports. Ultimately, they will help in determining which jobs are most profitable for the business.
+    /// 
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="Columns", Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute("Columns", Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Columns1 {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class JobType : IntuitEntity, IEntity {
         
-        private Column[] columnField;
+        private string nameField;
+        
+        private ReferenceType parentRefField;
+        
+        private string fullyQualifiedNameField;
+        
+        private bool activeField;
+        
+        private bool activeFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Column")]
-        public Column[] Column {
+        /// <summary>
+        /// 
+        /// Product: QBW
+        /// Description: User recognizable name for the Job Type.[br /]Max. length: 31 characters.
+        /// Product: QBO
+        /// Description: User recognizable name for the Job Type.[br /]Max. length: 15 characters.
+        /// 
+        /// </summary>
+        public string Name {
             get {
-                return this.columnField;
+                return this.nameField;
             }
             set {
-                this.columnField = value;
+                this.nameField = value;
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "5.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="Rows", Namespace="http://schema.intuit.com/finance/v3")]
-    [System.Xml.Serialization.XmlRootAttribute("Rows", Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
-    public partial class Rows1 {
-        
-        private Row[] rowField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Row")]
-        public Row[] Row {
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Reference to the JobTypeParent entity.
+        /// </summary>
+        public ReferenceType ParentRef {
             get {
-                return this.rowField;
+                return this.parentRefField;
             }
             set {
-                this.rowField = value;
+                this.parentRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Fully qualified name of the entity. The fully qualified name prepends the topmost parent, followed by each sub element separated by colons. Takes the form of Parent:Customer:Job:Sub-job. Limited to 5 levels.[br /]Max. length: 41 characters (single name) or 209 characters (fully qualified name).
+        /// 
+        /// </summary>
+        public string FullyQualifiedName {
+            get {
+                return this.fullyQualifiedNameField;
+            }
+            set {
+                this.fullyQualifiedNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: True if the Job is active. Inactive job types may be hidden from display and may not be used on financial transactions.
+        /// Filterable: QBW
+        /// 
+        /// </summary>
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ActiveSpecified {
+            get {
+                return this.activeFieldSpecified;
+            }
+            set {
+                this.activeFieldSpecified = value;
             }
         }
     }
