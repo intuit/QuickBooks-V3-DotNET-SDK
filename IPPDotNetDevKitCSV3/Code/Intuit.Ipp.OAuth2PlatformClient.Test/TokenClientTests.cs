@@ -158,7 +158,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 
         }
 
-       
+        
      
        
 
@@ -166,6 +166,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         public async Task Setting_authentication_style_to_basic_explicitly_should_send_header()
         {
             var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "success_token_response.json"));
+            //DirectoryInfo baseDirInfo = new DirectoryInfo(document);
+            //var documentsPath = baseDirInfo.Parent.Parent.FullName;
+
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new TokenClient(
