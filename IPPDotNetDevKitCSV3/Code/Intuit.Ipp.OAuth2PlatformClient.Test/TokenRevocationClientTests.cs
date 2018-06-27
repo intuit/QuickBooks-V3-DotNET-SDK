@@ -33,14 +33,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(false,response.IsError);
             Assert.AreEqual(ResponseErrorType.None, response.ErrorType);
             Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
-
-
         }
 
         [TestMethod]
         public async Task Valid_protocol_error_should_be_handled_correctly()
         {
-            var document = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Documents", "failure_token_revocation_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "failure_token_revocation_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.BadRequest);
 
             var client = new TokenRevocationClient(
@@ -54,9 +56,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(true, response.IsError);
             Assert.AreEqual(ResponseErrorType.Protocol, response.ErrorType);
             Assert.AreEqual(HttpStatusCode.BadRequest, response.HttpStatusCode);
-            Assert.AreEqual("error", response.Error);
-
-           
+            Assert.AreEqual("error", response.Error); 
         }
 
         [TestMethod]
@@ -77,7 +77,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);
             Assert.AreEqual("invalid", response.Raw);
             Assert.IsNotNull(response.Exception);
-
         }
 
         [TestMethod]
@@ -97,7 +96,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);
             Assert.IsNotNull(response.Exception);
             Assert.AreEqual("exception", response.Error);
-
         }
 
         [TestMethod]
@@ -117,8 +115,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(ResponseErrorType.Http, response.ErrorType);
             Assert.AreEqual(HttpStatusCode.NotFound, response.HttpStatusCode);
             Assert.AreEqual("not found", response.Error);
-
-  
         }
     }
 }

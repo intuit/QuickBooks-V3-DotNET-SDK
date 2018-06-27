@@ -124,7 +124,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="policy">policy</param>
         /// <returns>string</returns>
-        private string Validate(DiscoveryPolicy policy)
+        private string Validate(DiscoveryPolicy policy = null)
         {
             if (policy.ValidateIssuerName)
             {

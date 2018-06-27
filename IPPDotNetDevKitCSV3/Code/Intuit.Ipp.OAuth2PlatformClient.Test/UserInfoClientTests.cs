@@ -9,7 +9,6 @@ using System.Net;
 using System.Threading.Tasks;
 using Intuit.Ipp.OAuth2PlatformClient;
 
-
 namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 {
     [TestClass]
@@ -20,7 +19,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Valid_protocol_response_should_be_handled_correctly()
         {
-            var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "documents", "success_userinfo_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_userinfo_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new UserInfoClient(

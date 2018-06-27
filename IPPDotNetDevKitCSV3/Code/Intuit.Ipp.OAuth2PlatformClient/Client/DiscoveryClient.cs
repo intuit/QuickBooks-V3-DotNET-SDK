@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Intuit All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +7,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Configuration;
+using Intuit.Ipp.OAuth2PlatformClient.Helpers;
+using System.Reflection;
+using System.IO;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
@@ -23,7 +25,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="authority">authority</param>
         public static async Task<DiscoveryResponse> GetAsync(string authority)
         {
-            var client = new DiscoveryClient(authority);
+            var client = new DiscoveryClient();
             return await client.GetAsync().ConfigureAwait(false);
         }
 
@@ -37,7 +39,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Authority
         /// </summary>
         public string Authority { get; }
-
 
         /// <summary>
         /// Url
@@ -65,7 +66,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="authority">authority</param>
         /// <param name="innerHandler">innerHandler</param>
-        public DiscoveryClient(string authority, HttpMessageHandler innerHandler = null)
+        public DiscoveryClient(string authority = OidcConstants.Discovery.IssuerUrl, HttpMessageHandler innerHandler = null)
         {
             var handler = innerHandler ?? new HttpClientHandler();
 
@@ -98,6 +99,26 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 Url = url.EnsureTrailingSlash() + OidcConstants.Discovery.ProdDiscoveryEndpoint;
             }
 
+            _client = new HttpClient(handler);
+        }
+
+        /// <summary>
+        /// DiscoveryClient constructor which takes in app environment
+        /// </summary>
+        /// <param name="appEnvironment">authority</param>
+        public DiscoveryClient(AppEnvironment appEnvironment)
+        {
+            var handler = new HttpClientHandler();
+            string url = "";
+            if (appEnvironment == AppEnvironment.Production)
+            {
+                url = OidcConstants.Discovery.DiscoveryUrlProduction;
+            }
+            else
+            {
+                url = OidcConstants.Discovery.DiscoveryUrlSandbox;
+            }
+            Url = url;
             _client = new HttpClient(handler);
         }
 
@@ -162,6 +183,81 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         }
 
                         var jwk = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        disco.KeySet = new JsonWebKeySet(jwk);
+                    }
+
+                    return disco;
+                }
+                catch (Exception ex)
+                {
+                    return new DiscoveryResponse(ex, $"Error connecting to {jwkUrl}");
+                }
+            }
+            catch (Exception ex)
+            {
+                return new DiscoveryResponse(ex, $"Error connecting to {Url}");
+            }
+        }
+
+        /// <summary>
+        /// Get call for Discovery Document synchronous
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public DiscoveryResponse Get(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            //Policy.Authority = Authority;
+            string jwkUrl = "";
+
+            if (!DiscoveryUrlHelper.IsSecureScheme(new Uri(Url), Policy))
+            {
+                return new DiscoveryResponse(new InvalidOperationException("HTTPS required"), $"Error connecting to {Url}");
+            }
+
+            try
+            {
+                var response =  _client.GetAsync(Url, cancellationToken).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    string errorDetail = "";
+
+                    HttpResponseHeaders headers = response.Headers;
+                    if (headers.WwwAuthenticate != null)
+                    {
+                        errorDetail = headers.WwwAuthenticate.ToString();
+                    }
+
+                    if (errorDetail != null && errorDetail != "")
+                    {
+                        return new DiscoveryResponse(response.StatusCode, $"Error connecting to {Url}: {response.ReasonPhrase}: { errorDetail}");
+
+                    }
+                    else
+                    {
+                        return new DiscoveryResponse(response.StatusCode, $"Error connecting to {Url}: {response.ReasonPhrase}");
+                    }
+                }
+
+                var disco = new DiscoveryResponse(response.Content.ReadAsStringAsync().Result, Policy);
+                if (disco.IsError)
+                {
+                    return disco;
+                }
+
+                try
+                {
+                    jwkUrl = disco.JwksUri;
+                    if (jwkUrl != null)
+                    {
+                        response = _client.GetAsync(jwkUrl, cancellationToken).Result;
+
+                        if (!response.IsSuccessStatusCode)
+                        {
+                            return new DiscoveryResponse(response.StatusCode, $"Error connecting to {jwkUrl}: {response.ReasonPhrase}");
+                        }
+
+                        var jwk = response.Content.ReadAsStringAsync().Result;
                         disco.KeySet = new JsonWebKeySet(jwk);
                     }
 
