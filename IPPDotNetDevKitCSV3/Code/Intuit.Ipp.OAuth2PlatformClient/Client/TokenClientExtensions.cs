@@ -70,9 +70,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         private static Dictionary<string, string> Merge(TokenClient client, Dictionary<string, string> explicitValues, object extra = null)
         {
             var merged = explicitValues;
-
-           
-
             var additionalValues = ObjectToDictionary(extra);
 
             if (additionalValues != null)

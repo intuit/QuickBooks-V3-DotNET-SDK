@@ -36,11 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.OAuth2PlatformClient">
-      <HintPath>..\Intuit.Ipp.OAuth2PlatformClient\bin\Debug\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
+    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -64,6 +65,7 @@
     <Compile Include="AuthorizeResponseTests.cs" />
     <Compile Include="DiscoveryClientTests.cs" />
     <Compile Include="NetworkHandler.cs" />
+    <Compile Include="OAuth2ClientTests.cs" />
     <Compile Include="TokenClientTests.cs" />
     <Compile Include="TokenRevocationClientTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,9 +81,7 @@
     <None Include="Documents\success_revoketoken_response.json" />
     <None Include="Documents\success_token_response.json" />
     <None Include="Documents\success_userinfo_response.json" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

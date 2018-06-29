@@ -22,7 +22,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Valid_protocol_response_should_be_handled_correctly()
         {
-            var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "success_token_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_token_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new TokenClient(
@@ -40,15 +44,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(15552000, response.RefreshTokenExpiresIn);
             Assert.AreEqual("access_token", response.AccessToken);
             Assert.AreEqual("refresh_token", response.RefreshToken);
-            Assert.AreEqual("id_token", response.IdentityToken);
-            
-            
+            Assert.AreEqual("id_token", response.IdentityToken);  
         }
 
         [TestMethod]
         public async Task Valid_protocol_error_should_be_handled_correctly()
         {
-            var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "failure_token_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "failure_token_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.BadRequest);
 
             var client = new TokenClient(
@@ -63,10 +69,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(ResponseErrorType.Protocol, response.ErrorType);
             Assert.AreEqual(HttpStatusCode.BadRequest, response.HttpStatusCode);
             Assert.AreEqual("error", response.Error);
-            Assert.AreEqual("error_description", response.ErrorDescription);
-   
-
-          
+            Assert.AreEqual("error_description", response.ErrorDescription); 
         }
 
         [TestMethod]
@@ -89,9 +92,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual("invalid", response.Raw);
             //Assert.AreEqual("error", response.Error);
             Assert.IsNotNull(response.Exception);
-
-
-   
         }
 
         [TestMethod]
@@ -110,9 +110,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(true, response.IsError);
             Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);     
             Assert.AreEqual("exception", response.Error);
-            Assert.IsNotNull(response.Exception);
-
-          
+            Assert.IsNotNull(response.Exception); 
         }
 
         [TestMethod]
@@ -131,16 +129,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.AreEqual(true, response.IsError);
             Assert.AreEqual(ResponseErrorType.Http, response.ErrorType);
             Assert.AreEqual(HttpStatusCode.NotFound, response.HttpStatusCode);
-            Assert.AreEqual("not found", response.Error);
-        
-
-          
+            Assert.AreEqual("not found", response.Error); 
         }
 
         [TestMethod]
         public async Task Setting_basic_authentication_style_should_send_basic_authentication_header()
         {
-            var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "success_token_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_token_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new TokenClient(
@@ -155,17 +154,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             Assert.IsNotNull(request.Headers.Authorization);
             Assert.AreEqual("Basic",request.Headers.Authorization.Scheme.ToString());
             Assert.AreEqual(Convert.ToBase64String(Encoding.UTF8.GetBytes("clientid:clientsecret")), request.Headers.Authorization.Parameter);
-
         }
-
-       
-     
-       
 
         [TestMethod]
         public async Task Setting_authentication_style_to_basic_explicitly_should_send_header()
         {
-            var document = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "success_token_response.json"));
+            var binDir = AppDomain.CurrentDomain.BaseDirectory;
+            FileInfo fileInfo = new FileInfo(binDir);
+            DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_token_response.json"));
+
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new TokenClient(
@@ -180,14 +179,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
 
             var request = handler.Request;
 
-
             Assert.IsNotNull(request.Headers.Authorization);
             Assert.AreEqual("Basic", request.Headers.Authorization.Scheme.ToString());
             Assert.AreEqual(Convert.ToBase64String(Encoding.UTF8.GetBytes("clientid:clientsecret")), request.Headers.Authorization.Parameter);
-
-
         }
-
-
     }
 }

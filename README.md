@@ -1,3 +1,5 @@
+[![SDK Banner](views/SDK.png)][ss1]
+
 V3-DotNet-SDK
 =============
 
@@ -7,7 +9,7 @@ IDG .NET SDK for QuickBooks V3
 **Support:** [![Help](https://img.shields.io/badge/Support-Intuit%20Developer-blue.svg)](https://help.developer.intuit.com/s/) <br/>
 **Documentation:** [![User Guide](https://img.shields.io/badge/User%20Guide-SDK%20docs-blue.svg)](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools) [![Refer SDK class lib docs](https://img.shields.io/badge/Class%20Lib%20Docs-.Net%20SDK-blue.svg)](https://developer-static.intuit.com/SDKDocs/QBV3Doc/IPPDotNetDevKitV3/html/5ca993d2-af77-d050-e246-681e5983b440.htm)<br/>
 **License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
-**Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-3.2.1-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
+**Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-5.2.0-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
 
 
 The QuickBooks Online .NET SDK provides a set of .NET class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. Some of the features included in this SDK are:
@@ -24,7 +26,7 @@ The QuickBooks Online .NET SDK provides a set of .NET class libraries that make 
 * Sparse Update to update writable properties specified in a request and leave the others unchanged.
 * Change data that enables you to retrieve a list of entities modified during specified time points.
 * .NET Core is not supported by this SDK.
-* Support for OAuth
+* Support for both OAuth1 and OAuth2
 
 ## Running Tests
 
@@ -32,11 +34,14 @@ Refer to the following steps to generate all the keys required to run tests usin
   
 * Go to [Developer Docs](https://developer.intuit.com/). 
 * Create an app on our IDG platform for the QuickBooks Online v3 APIs. 
-* You will get a set of Development keys, including consumer key, consumer secret, and app token. This can be used to get OAuth tokens for sandbox companies. 
-* To get Prod app keys to get OAuth tokens for live companies: Go to your app->Prod tab-> enter all URLs and save. Then get the prod keys from Keys tab under Prod tab of the app. 
-* Click Test Connect to Oauth->Intuit Anywhere tab->Set time duration in seconds for 15552000sec and get the access token and secret for your app and company by right-clicking on the page and doing a view source. 
-* You will then set of access token and access token secret and realmid/companyid to make API calls for their QuickBooks company which is valid for 180 days. 
-* To 'renew tokens', you can call [Reconnect api](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
+* For OAuth2 apps, you will get a set of Development keys, including client key and client secret. This can be used to get OAuth access token and refresh token for sandbox companies.  
+* OR for OAuth1 apps, you will get a set of Development keys, including consumer key, consumer secret, and app token. This can be used to get OAuth access tokens for sandbox companies. 
+* To get Prod app keys to get OAuth tokens for live companies: Go to your app->Settings tab-> enter all URLs and save. Then get the prod keys from Keys tab under Prod section. 
+* To get OAuth access tokens, go to your app's dashboard, Click `Oauth Playground`
+    * For OAuth2 apps, select the desired app and make sure the OAuth playground redirect_uri is present under Keys tab and go through the OAuth authorization flow to get access and refresh tokens along with the realmid to make API calls for QuickBooks company. 
+      * Access tokens are valid for 1 hour which can be refreshed using refesh token. When you request a fresh access token, always use the refresh token returned in the most recent refreshing access token API response. A refresh token expires 24 hours after you receive it. More info can be found at: [Refreshing the access token](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0#/Refreshing_the_access_token)
+    * For OAuth1 apps, set time duration in seconds for 15552000sec and get the access token and secret for your app and company by right-clicking on the page and doing a view source. You will see access token and access token secret and realmid/companyid to make API calls for their QuickBooks company which is valid for 180 days. 
+      * To 'renew tokens', you can call [Reconnect api](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
 
 
  * NOTE: For sandbox testing, you need to use dev app keys and sandbox base URL. 
@@ -75,8 +80,22 @@ Steps to contribute:
 
 Note: Before you submit the pull request, make sure to remove the keys and tokens from [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Code/App.config) and [App.config](https://github.com/IntuitDeveloper/V3-DotNet-SDK/blob/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test/SDKV3Test/App.config)  that you might have added for testing.
 
+Steps to build the project for devs-
+For others information...
+There is a trick to compiling their source code.
+They projects have many circular references.
+They side-stepped that issue by having post-build steps in the projects that copy the output to a 'SDK Assemblies' folder that is a peer of the solution 'Code' folder.
+Then their circular references actually point to those assemblies instead of the peer projects in the solution.
+
+However, their git source does not contain the 'SDK Assemblies' folder.
+This means their solution will not compile unless you create that folder and populate it with pre-compiled assemblies.
+So, create that folder and drop their pre-compiled libraries in there.
+Their git source comes with something like a 'IppDotNetSdkForQuickBooksApiV3.4.0.0.0.nupkg' file.
+Give that file a .zip extension and you can grab a copy of the libraries from there.
+
 Thank you for your contribution!
 
+[ss1]: https://help.developer.intuit.com/s/SDKFeedback?cid=1155
 
 
 

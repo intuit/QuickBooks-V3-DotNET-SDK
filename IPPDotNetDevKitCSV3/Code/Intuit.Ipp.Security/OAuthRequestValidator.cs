@@ -25,10 +25,11 @@ namespace Intuit.Ipp.Security
     using System.Configuration;
     using System.Net;
     using System.Security.Cryptography;
+    using System.Text.RegularExpressions;
     using DevDefined.OAuth.Consumer;
     using DevDefined.OAuth.Framework;
     using Intuit.Ipp.Exception;
-    
+
     /// <summary>
     /// OAuth implementation for Request validate contract.
     /// </summary>
@@ -43,13 +44,13 @@ namespace Intuit.Ipp.Security
         /// The O auth signature method.
         /// </summary>
         private string oauthSignatureMethod;
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="OAuthRequestValidator"/> class.
         /// </summary>
         /// <param name="accessToken">The access token.</param>
         /// <param name="accessTokenSecret">The access token secret.</param>
-        /// <param name="consumerKey">The consumer key.</param> 
+        /// <param name="consumerKey">The consumer key.</param>
         /// <param name="consumerSecret">The consumer secret.</param>
         public OAuthRequestValidator(string accessToken, string accessTokenSecret, string consumerKey, string consumerSecret)
         {
@@ -57,20 +58,27 @@ namespace Intuit.Ipp.Security
             {
                 throw new InvalidTokenException("Access token cannot be null or empty.");
             }
-
             if (string.IsNullOrWhiteSpace(accessTokenSecret))
             {
                 throw new InvalidTokenException("Access token secret cannot be null or empty.");
+            }
+            // only letters, digits, underscore and dash allowed
+            if (!Regex.IsMatch(accessToken, @"^[\w-]+$"))
+            {
+                throw new InvalidTokenException("Access token contains forbidden char.");
             }
 
             if (string.IsNullOrWhiteSpace(consumerKey))
             {
                 throw new InvalidTokenException("Consumer key cannot be null or empty.");
             }
-
             if (string.IsNullOrWhiteSpace(consumerSecret))
             {
                 throw new InvalidTokenException("Consumer key secret cannot be null or empty.");
+            }
+            if (!Regex.IsMatch(consumerSecret, @"^[\w-]+$"))
+            {
+                throw new InvalidTokenException("Consumer key contains forbidden char.");
             }
 
             this.AccessToken = accessToken;
@@ -129,7 +137,7 @@ namespace Intuit.Ipp.Security
         /// The additional parameters.
         /// </value>
         public NameValueCollection AdditionalParameters { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the key.
         /// </summary>
@@ -164,21 +172,18 @@ namespace Intuit.Ipp.Security
         //    oauthSession.AccessToken = this.CreateAccessToken();
         //    string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
         //    webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
-        //    webRequest.ContentType = "application/x-www-form-urlencoded; charset=utf-8";   
+        //    webRequest.ContentType = "application/x-www-form-urlencoded; charset=utf-8";
         //    return webRequest as HttpWebRequest;
         //}
 
-
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <param name="requestBody"></param>
         ///// <param name="httpWebRequest"></param>
         ///// <returns></returns>
         //public string GetDevDefinedOAuth1Header(string requestBody, string httpWebRequest)
         //{
-
-
         //}
 
         /// <summary>
