@@ -222,10 +222,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string IdTokenSigningAlgValuesSupported            = "id_token_signing_alg_values_supported";
             public const string TokenEndpointAuthenticationMethodsSupported = "token_endpoint_auth_methods_supported";
             public const string ClaimsSupported                             = "claims_supported";
+            public const string DiscoveryUrlSandbox                         = "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration/";
+            public const string DiscoveryUrlProduction                      = "https://developer.api.intuit.com/.well-known/openid_configuration/";
+            public const string IssuerUrl                                   = "https://oauth.platform.intuit.com/op/v1";
 
 
 
-            
+
+
         }
     }
 }

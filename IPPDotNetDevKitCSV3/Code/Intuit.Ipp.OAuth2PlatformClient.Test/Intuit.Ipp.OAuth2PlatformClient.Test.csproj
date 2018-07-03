@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
     </Reference>
@@ -65,6 +65,7 @@
     <Compile Include="AuthorizeResponseTests.cs" />
     <Compile Include="DiscoveryClientTests.cs" />
     <Compile Include="NetworkHandler.cs" />
+    <Compile Include="OAuth2ClientTests.cs" />
     <Compile Include="TokenClientTests.cs" />
     <Compile Include="TokenRevocationClientTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,9 +81,7 @@
     <None Include="Documents\success_revoketoken_response.json" />
     <None Include="Documents\success_token_response.json" />
     <None Include="Documents\success_userinfo_response.json" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

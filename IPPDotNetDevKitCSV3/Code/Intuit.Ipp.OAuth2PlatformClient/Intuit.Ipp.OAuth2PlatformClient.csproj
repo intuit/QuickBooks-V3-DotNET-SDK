@@ -64,7 +64,10 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Client\OAuth2Client.cs" />
+    <Compile Include="Client\RefreshTokenHandler.cs" />
     <Compile Include="Documentation\NamespaceDoc.cs" />
+    <Compile Include="Helpers\AppEnvironment.cs" />
     <Compile Include="Helpers\Base64Url.cs" />
     <Compile Include="Client\AuthenticationStyle.cs" />
     <Compile Include="Client\AuthorizeRequest.cs" />
@@ -104,9 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
