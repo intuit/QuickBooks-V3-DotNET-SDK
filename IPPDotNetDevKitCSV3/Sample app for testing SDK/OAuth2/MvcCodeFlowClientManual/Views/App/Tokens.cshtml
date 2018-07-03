@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Tokens";
+}
+
+<br />
+
+@foreach (var claim in System.Security.Claims.ClaimsPrincipal.Current.Claims)
+{
+
+    if (@claim.Type == "access_token")
+    {
+        <p>Connection successful!</p>
+        break;
+    }
+
+}
+
+<br />
+
+@using (Html.BeginForm("ApiCallService", "App", FormMethod.Post))
+{
+
+    <div><input type="submit" name="submitButton" value="API Call service" /></div>
+    <br />
+
+    <br />
+}
+
