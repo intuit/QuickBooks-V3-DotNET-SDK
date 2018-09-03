@@ -116,6 +116,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDGOauthSample", "..\Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Manual Code Flow Client", "..\Sample app for testing SDK\OAuth2\MvcCodeFlowClientManual\MVC Manual Code Flow Client.csproj", "{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2-Dotnet_UsingSDK", "..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.csproj", "{5573F08E-0683-49D1-86C6-BF68E29A3EE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -438,6 +440,18 @@ Global
 		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|x86.Build.0 = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.Build.0 = Debug|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -477,6 +491,7 @@ Global
 		{09E90970-0C09-4958-9CA4-4B644E462E0D} = {A0ED5BF7-1149-4C3D-B48C-E3D10CD638A0}
 		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE} = {F69BCC7C-6728-409B-93C1-9208B58288DF}
 		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB} = {09E90970-0C09-4958-9CA4-4B644E462E0D}
+		{5573F08E-0683-49D1-86C6-BF68E29A3EE8} = {09E90970-0C09-4958-9CA4-4B644E462E0D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D58CF63B-6932-4503-893A-42C15952609D}

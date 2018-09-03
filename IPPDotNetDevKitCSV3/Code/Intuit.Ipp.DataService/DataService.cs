@@ -38,6 +38,9 @@ namespace Intuit.Ipp.DataService
     using Intuit.Ipp.Utility;
     using System.Text;
     using System.IO;
+    using Intuit.Ipp.QueryFilter;
+    using Intuit.Ipp.LinqExtender;
+
 
     /// <summary>
     /// This class file contains DataService performs CRUD operations on V3 QuickBooks APIs.

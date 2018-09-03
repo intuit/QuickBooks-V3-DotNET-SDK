@@ -645,13 +645,26 @@ namespace Intuit.Ipp.DataService
                     {
                         QueryResponse queryResponse = batchitemResponse.AnyIntuitObject as QueryResponse;
                         result.ResponseType = ResponseType.Query;
+                        QueryResponse returnValue = new QueryResponse();
+                        returnValue.totalCount= queryResponse.totalCount;
+                        returnValue.totalCountSpecified= queryResponse.totalCountSpecified;
+                        result.QueryResponse = returnValue;
+                        
+
+
                         if (queryResponse.AnyIntuitObjects != null && queryResponse.AnyIntuitObjects.Count() > 0)
                         {
                             foreach (object obj in queryResponse.AnyIntuitObjects)
-                            {
+                            { 
                                 result.AddEntities(obj as IEntity);
                             }
+
                         }
+                       
+                        
+                            
+                        
+
                     }
                     else
                     {

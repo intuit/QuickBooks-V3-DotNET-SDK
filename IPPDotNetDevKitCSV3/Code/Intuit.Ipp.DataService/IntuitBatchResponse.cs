@@ -56,27 +56,34 @@ namespace Intuit.Ipp.DataService
      private IdsException exception;
 
      /// <summary>
-     /// IntuitCDCResponse in case of ResponseType is exception. 
+     /// IntuitCDCResponse in case of ResponseType is of type CDC. 
      /// </summary>
      private IntuitCDCResponse cdcResponse;
 
-     #region constructor
+        /// <summary>
+        /// QueryResponse in case of ResponseType is of type query. 
+        /// </summary>
+        private QueryResponse queryResponse;
 
-     /// <summary>
-     /// Initializes a new instance of the <see cref="IntuitBatchResponse"/> class.
-     /// </summary>
-     public IntuitBatchResponse()
+        #region constructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntuitBatchResponse"/> class.
+        /// </summary>
+        public IntuitBatchResponse()
      {
         this.entities = new List<IEntity>();
      }
-     #endregion 
+        #endregion
 
-     #region properties
+        #region properties
 
-     /// <summary>
-     ///  Gets or sets entity in case ResponseType is entity.
-     /// </summary>
-     public IEntity Entity
+       
+
+        /// <summary>
+        ///  Gets or sets entity in case ResponseType is entity.
+        /// </summary>
+        public IEntity Entity
      {
        get { return this.entity; }
        set { this.entity = value; }
@@ -125,6 +132,19 @@ namespace Intuit.Ipp.DataService
          get { return this.cdcResponse; }
          set { this.cdcResponse = value; }
      }
+
+    
+     /// <summary>
+     /// Gets or sets the QueryResponse returned after batch execution
+     /// </summary>
+     public QueryResponse QueryResponse
+     {
+         get { return this.queryResponse; }
+         set { this.queryResponse = value; }
+     }
+
+
+
 
      #endregion 
 
