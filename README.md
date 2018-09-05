@@ -93,6 +93,10 @@ So, create that folder and drop their pre-compiled libraries in there.
 Their git source comes with something like a 'IppDotNetSdkForQuickBooksApiV3.5.3.0.0.nupkg' file.
 Give that file a .zip extension and you can grab a copy of the libraries from there.
 
+Or try this-
+In your code, remove all local SDK related lib from each class lib project and instead use nuget to add all those references using IPP .Net SDK package. Then do a clean build and the SDK Assemblies folder will then have correct local assemblies. 
+Then remove Nuget Package/uninstall from all class lib projects and then reference the local assemblies from SDK assemblies folder in each class lib project. This will help you build the project again using local assembly references.
+
 Thank you for your contribution!
 
 [ss1]: https://help.developer.intuit.com/s/SDKFeedback?cid=1155
