@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\Code\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\Code\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.props" Condition="Exists('..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.props')" />
-  <Import Project="..\..\..\Code\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\Code\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -49,14 +49,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Code\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Code\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\..\..\Code\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="IdentityModel, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Code\packages\IdentityModel.3.9.0\lib\net452\IdentityModel.dll</HintPath>
+    <Reference Include="IdentityModel, Version=3.10.0.0, Culture=neutral, PublicKeyToken=e7877f4675df049f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Code\packages\IdentityModel.3.10.0-arran\lib\net452\IdentityModel.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Core, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -184,8 +184,8 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\..\Code\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Code\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Code\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -352,9 +352,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\Code\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Code\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.props'))" />
     <Error Condition="!Exists('..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.targets'))" />
+    <Error Condition="!Exists('..\..\..\Code\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Code\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.targets" Condition="Exists('..\..\..\Code\packages\Antlr3.CodeGenerator.3.5.2-beta2\build\Antlr3.CodeGenerator.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
