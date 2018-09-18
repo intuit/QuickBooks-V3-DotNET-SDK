@@ -60,10 +60,25 @@ namespace Intuit.Ipp.DataService.Test
             dataServiceTestCases = new DataServiceTestCases(context);
             
         }
+        
+        [TestMethod()]
+        public void GetEntitlements()
+        {
+            try
+            {
+                EntitlementInfo entitlementInfo = dataServiceTestCases.GetEntitlements();
+                Assert.IsNotNull(entitlementInfo);
+                Assert.IsTrue(entitlementInfo.Entitlements.Count() > 0);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+        }
 
         #region Add Test
 
-      
+
         [TestMethod()]
         public void AddTest()
         {

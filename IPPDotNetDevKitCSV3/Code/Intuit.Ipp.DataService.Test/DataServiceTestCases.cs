@@ -59,6 +59,11 @@ namespace Intuit.Ipp.DataService.Test
             return this.dataService.FindAll(entity, startPosition, maxResults);
         }
 
+        internal EntitlementInfo GetEntitlements()
+        {
+            return this.dataService.GetEntitlements();
+        }
+
         internal IEntity FindByIdEntity(IEntity entity)
         {
             return this.dataService.FindById(entity);

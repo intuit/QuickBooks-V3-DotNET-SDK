@@ -35,7 +35,7 @@ namespace Intuit.Ipp.Data
         /// <param name="singleEntitlementNode">The single entitlement node.</param>
         public Entitlement(XmlNode singleEntitlementNode)
         {
-            this.Id = singleEntitlementNode.Attributes.GetNamedItem("id").InnerText;
+            this.Id = int.Parse(singleEntitlementNode.Attributes.GetNamedItem("id").InnerText);
             XmlNode n = singleEntitlementNode.SelectSingleNode("./name");
             if (n != null)
             {
@@ -46,15 +46,14 @@ namespace Intuit.Ipp.Data
 
             if (n != null)
             {
-                this.TermId = n.Attributes.GetNamedItem("id").InnerText;
-                this.Term = n.InnerText;
+                this.Term = n.InnerText.Equals("On");
             }
         }
 
         /// <summary>
         /// Gets unique identifier of entitlement.
         /// </summary>
-        public string Id { get; private set; }
+        public int Id { get; private set; }
 
         /// <summary>
         /// Gets the name.
@@ -64,13 +63,8 @@ namespace Intuit.Ipp.Data
         /// <summary>
         /// Gets the term.
         /// </summary>
-        public string Term { get; private set; }
-
-        /// <summary>
-        /// Gets the term id.
-        /// </summary>
-        public string TermId { get; private set; }
-
+        public bool Term { get; private set; }
+        
         /// <summary>
         /// Parses all the entitlement elements of the API_GetEntitlementValues response.
         /// </summary>
@@ -81,7 +75,7 @@ namespace Intuit.Ipp.Data
         public static List<Entitlement> ParseEntitlements(XmlNode node)
         {
             List<Entitlement> entitlements = new List<Entitlement>();
-            XmlNodeList entitlementNodes = node.SelectNodes("./entitlements/entitlement");
+            XmlNodeList entitlementNodes = node.SelectNodes("./Entitlement");
             if (entitlementNodes != null)
             {
                 foreach (XmlNode e in entitlementNodes)
