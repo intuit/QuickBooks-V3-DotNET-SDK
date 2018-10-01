@@ -1,37 +1,76 @@
-﻿
-
+﻿////*********************************************************
+// <copyright file="EntitlementService.cs" company="Intuit">
+/*******************************************************************************
+ * Copyright 2018 Intuit
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *******************************************************************************/
+// <summary>This file contains EntitlementService which performs Get operations on V3 Entitlements endpoints.</summary>
+////*********************************************************
 namespace Intuit.Ipp.EntitlementService
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Intuit.Ipp.Core;
     using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Core.Configuration;
     using Intuit.Ipp.Data;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
     using System.Globalization;
     using System.Net;
     using Intuit.Ipp.Utility;
+    using Intuit.Ipp.EntitlementService.Properties;
 
+    /// <summary>
+    /// This class file contains EntitlementService which performs Get operation for Entitlements
+    /// </summary>
     public class EntitlementService : IEntitlementService
     {
+        /// <summary>
+        /// The Service context object.
+        /// </summary>
         private ServiceContext serviceContext;
+
+        /// <summary>
+        /// Rest Request Handler.
+        /// </summary>
         private IRestHandler restHandler;
+
+        /// <summary>
+        /// Serialization Format 
+        /// </summary>
         private Core.Configuration.SerializationFormat orginialSerializationFormat;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntitlementService"/> class.
+        /// </summary>
+        /// <param name="serviceContext"></param>
         public EntitlementService(ServiceContext serviceContext)
         {
 
-            //CommonHelper.ServiceContextValidation(serviceContext);
+            ServiceContextValidation(serviceContext);
             this.serviceContext = serviceContext;
             restHandler = new SyncRestHandler(this.serviceContext);
+            // Set the Service type to QBO by calling a method.
+            this.serviceContext.UseDataServices();
         }
 
-        #region Sync Methods
+        #region Sync Method
+
+        /// <summary>
+        /// Gets entitlements against a specified realm. The realm must be set in the context.
+        /// </summary>
+        /// <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment.</param>
+        /// <returns>Returns EntitlementsResponse</returns>
         public EntitlementsResponse GetEntitlements(string entitlementBaseUrl = CoreConstants.ENTITLEMENT_BASEURL)
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetEntitlements.");
@@ -71,7 +110,12 @@ namespace Intuit.Ipp.EntitlementService
         }
         #endregion
 
-        #region Async Methods
+        #region Async Method
+        /// <summary>
+        /// Gets entitlements against a specified realm. The realm must be set in the context.
+        /// </summary>
+        /// <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment</param>
+        /// <returns>Returns EntitlementsResponse</returns>
         public void GetEntitlementsAsync(string entitlementBaseUrl = CoreConstants.ENTITLEMENT_BASEURL)
         {
             Console.Write("GetEntitlementsAsync started \n");
@@ -104,8 +148,20 @@ namespace Intuit.Ipp.EntitlementService
         }
         #endregion
 
+        #region Async helpers
+        /// <summary>
+        /// Gets or sets the call back event for Get Entitlements method in asynchronous call.
+        /// </summary>
+        /// <value>
+        /// The OnGetEntilementAsyncCompleted call back.
+        /// </value>
         public event EntitlementServiceCallback<Intuit.Ipp.Data.EntitlementsResponse>.EntitlementCallCompletedEventHandler OnGetEntilementAsyncCompleted;
 
+        /// <summary>
+        /// GetEntitlements Asynchronous call back method
+        /// </summary>
+        /// <param name="sender">Rest handler class</param>
+        /// <param name="eventArgs">callback event arguments</param>
         private void GetEntitlementsAsyncCompleted(object sender, AsyncCallCompletedEventArgs eventArgs)
         {
             EntitlementCallCompletedEventArgs<Intuit.Ipp.Data.EntitlementsResponse> entitlementCallCompletedEventArgs = new EntitlementCallCompletedEventArgs<EntitlementsResponse>();
@@ -137,5 +193,22 @@ namespace Intuit.Ipp.EntitlementService
                 this.OnGetEntilementAsyncCompleted(this, entitlementCallCompletedEventArgs);
             }
         }
+
+        #endregion
+
+        #region Helper 
+        /// <summary>
+        /// Validates the Service context.
+        /// </summary>
+        /// <param name="serviceContext">Service Context.</param>
+        internal static void ServiceContextValidation(ServiceContext serviceContext)
+        {
+            if (serviceContext == null)
+            {
+                IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.ServiceContextParameterName, Resources.ServiceContextNotNullMessage));
+                IdsExceptionManager.HandleException(exception);
+            }
+        }
+        #endregion
     }
 }

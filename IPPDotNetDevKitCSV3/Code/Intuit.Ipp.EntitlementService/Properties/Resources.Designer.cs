@@ -59,5 +59,38 @@ namespace Intuit.Ipp.EntitlementService.Properties {
                 resourceCulture = value;
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter cannot be null..
+        /// </summary>
+        internal static string ParameterNotNullMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("ParameterNotNullMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The Service Context cannot be null..
+        /// </summary>
+        internal static string ServiceContextNotNullMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("ServiceContextNotNullMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to serviceContext.
+        /// </summary>
+        internal static string ServiceContextParameterName
+        {
+            get
+            {
+                return ResourceManager.GetString("ServiceContextParameterName", resourceCulture);
+            }
+        }
     }
 }
