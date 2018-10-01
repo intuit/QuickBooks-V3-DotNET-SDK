@@ -158,6 +158,8 @@
     <Compile Include="RestCalls\Compression\Documentation\NamespaceDoc.cs" />
     <Compile Include="RestCalls\Compression\GZipCompressor.cs" />
     <Compile Include="RestCalls\Documentation\NamespaceDoc.cs" />
+    <Compile Include="RestCalls\EntitlementServiceCallback.cs" />
+    <Compile Include="RestCalls\EventArgs\EntitlementCallCompletedEventArgs.cs" />
     <Compile Include="RestCalls\EventArgs\GlobalTaxServiceCallCompletedEventArgs.cs" />
     <Compile Include="RestCalls\ReportServiceCallback.cs" />
     <Compile Include="RestCalls\DataServiceCallback.cs" />

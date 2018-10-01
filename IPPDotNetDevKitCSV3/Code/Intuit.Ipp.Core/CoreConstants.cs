@@ -90,8 +90,7 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// The Redirect url required by token migration endpoint.
         /// </summary>
-        public const string TOKEN_MIGRATION_REDIRECT_URL = "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";
-
+        public const string TOKEN_MIGRATION_REDIRECT_URL = "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";       
 
         /// <summary>
         /// The Base Url for IPS.
@@ -102,6 +101,11 @@ namespace Intuit.Ipp.Core
         /// The Base Url for QBO.
         /// </summary>
         public const string QBO_BASEURL = "https://quickbooks.api.intuit.com/";
+
+        /// <summary>
+        /// The Base Url for Entitlements API.
+        /// </summary>
+        public const string ENTITLEMENT_BASEURL = "https://quickbooks.api.intuit.com/manage";
 
         /// <summary>
         /// Intuit Workplace Uri. 

@@ -228,17 +228,24 @@ namespace Intuit.Ipp.Core.Rest
                 ////    errorString = errorString.Insert(0, "<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
                 ////}
 
-                // Deserialize to IntuitResponse using the Serializer of the context.
-                IntuitResponse intuitResponse = (IntuitResponse)CoreHelper.GetSerializer(this.context, false).Deserialize<IntuitResponse>(errorString);
-
-                // Check whether the object is null or note. Also check for Items property since it has the fault.
-                if (intuitResponse != null && intuitResponse.AnyIntuitObject != null)
+                
+                if (errorString.Contains("EntitlementsResponse"))
                 {
-                    // TODO: Check whether only the first item will have fault or not.
-                    // Cast the Items to Fault.
-                    fault = intuitResponse.AnyIntuitObject as Fault;
+                    EntitlementsResponse entitlements = (EntitlementsResponse)CoreHelper.GetSerializer(this.context, false).Deserialize<EntitlementsResponse>(errorString);
                 }
+                // Deserialize to IntuitResponse using the Serializer of the context.
+                else
+                {
+                    IntuitResponse intuitResponse = (IntuitResponse)CoreHelper.GetSerializer(this.context, false).Deserialize<IntuitResponse>(errorString);
 
+                    // Check whether the object is null or note. Also check for Items property since it has the fault.
+                    if (intuitResponse != null && intuitResponse.AnyIntuitObject != null)
+                    {
+                        // TODO: Check whether only the first item will have fault or not.
+                        // Cast the Items to Fault.
+                        fault = intuitResponse.AnyIntuitObject as Fault;
+                    }
+                }
                 // TODO: Uncomment this if exception has to be added for batch requests.
                 // This is executed if the response is BatchItemResponse for batch requests.
                 // else
