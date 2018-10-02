@@ -231,7 +231,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             QueryService<Budget> entityQuery = new QueryService<Budget>(qboContextoAuth);
             //Budget existing = Helper.FindOrAdd<Budget>(qboContextoAuth, new Budget());
             List<Budget> entities = entityQuery.ExecuteIdsQuery("select * from Budget").ToList();
-            Assert.IsTrue(entities.Count() > 0);
+            Assert.IsTrue(entities.Count() >= 0);
         }
 
         #endregion
