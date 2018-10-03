@@ -29,6 +29,7 @@ namespace Intuit.Ipp.DataService
     using System.Linq;
     using System.Net;
     using System.Reflection;
+    using System.Xml;
     using Intuit.Ipp.Core;
     using Intuit.Ipp.Core.Rest;
     using Intuit.Ipp.Data;
@@ -170,6 +171,37 @@ namespace Intuit.Ipp.DataService
 
 
         #endregion
+
+        /// <summary>
+        /// Gets entitlements for the current realm. Entitlements are described here: https://developer.intuit.com/docs/api/accounting/entitlements
+        /// </summary>
+        public EntitlementInfo GetEntitlements()
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetEntitlements.");
+            string uri = string.Format(CultureInfo.InvariantCulture, "/manage/entitlements/{0}/{1}", CoreConstants.VERSION, this.serviceContext.RealmId);
+            RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+
+            // Prepares request
+            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null);
+            string response = string.Empty;
+            try
+            {
+                // Gets response
+                response = this.restHandler.GetResponse(request);
+            }
+            catch (IdsException ex)
+            {
+                IdsExceptionManager.HandleException(ex);
+            }
+
+            CoreHelper.CheckNullResponseAndThrowException(response);
+            XmlDocument xmldoc = CoreHelper.ParseResponseIntoXml(response);
+            EntitlementInfo entitlementInfo = new EntitlementInfo(xmldoc.DocumentElement);
+
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method GetEntitlements.");
+
+            return entitlementInfo;
+        }
 
         #region Add
 

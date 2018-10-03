@@ -20,7 +20,6 @@
 ////*********************************************************
 namespace Intuit.Ipp.Data 
 {
-    using System;
     using System.Collections.Generic;
     using System.Xml;
 
@@ -38,65 +37,34 @@ namespace Intuit.Ipp.Data
         /// <param name="entitlementNode">The entitlement node.</param>
         public EntitlementInfo(XmlNode entitlementNode)
         {
-            XmlNode n = entitlementNode.SelectSingleNode("//appId");
+            XmlNode n = entitlementNode.SelectSingleNode("//QboCompany");
             if (n != null)
             {
-                this.AppId = n.InnerText;
+                this.QboCompany = bool.Parse(n.InnerText);
             }
 
-            n = entitlementNode.SelectSingleNode("//productId");
-            if (n != null)
-            {
-                this.ProductId = n.InnerText;
-            }
-
-            n = entitlementNode.SelectSingleNode("//planName");
+            n = entitlementNode.SelectSingleNode("//PlanName");
             if (n != null)
             {
                 this.PlanName = n.InnerText;
             }
 
-            n = entitlementNode.SelectSingleNode("//planType");
-            if (n != null)
-            {
-                this.PlanType = n.InnerText;
-            }
-
-            n = entitlementNode.SelectSingleNode("//maxUsers");
+            n = entitlementNode.SelectSingleNode("//MaxUsers");
             if (n != null)
             {
                 this.MaxUsers = int.Parse(n.InnerText);
             }
 
-            n = entitlementNode.SelectSingleNode("//currentUsers");
+            n = entitlementNode.SelectSingleNode("//CurrentUsers");
             if (n != null)
             {
                 this.CurrentUsers = int.Parse(n.InnerText);
             }
 
-            n = entitlementNode.SelectSingleNode("//daysRemainingTrial");
+            n = entitlementNode.SelectSingleNode("//DaysRemainingTrial");
             if (n != null)
             {
                 this.DaysRemaining = int.Parse(n.InnerText);
-            }
-
-            n = entitlementNode.SelectSingleNode("//fee");
-            if (n != null)
-            {
-                this.Fee = double.Parse(n.InnerText);
-            }
-
-            n = entitlementNode.SelectSingleNode("//betaExpirationDate");
-            if (n != null)
-            {
-                // comes in longMonth DD, YYYY  format (e.g. June 10,2010)
-                this.BetaExpirationDate = DateTime.Parse(n.InnerText);
-            }
-
-            n = entitlementNode.SelectSingleNode("//currentFileUsage");
-            if (n != null)
-            {
-                this.CurrentFileUsage = long.Parse(n.InnerText);
             }
 
             this.Entitlements = Entitlement.ParseEntitlements(entitlementNode);
@@ -107,30 +75,14 @@ namespace Intuit.Ipp.Data
         #region Properties
 
         /// <summary>
-        /// Gets the app id.
+        /// Check if the company is a QuickBooks Online company. false is returned if not a QuickBooks Online company, the company exists in the Intuit ecosystem, but is not a QuickBooks Online company, or the company is a QuickBooks Online company, but the current user does not belong to the company.
         /// </summary>
-        public string AppId { get; private set; }
-
-        /// <summary>
-        /// Gets the product id.
-        /// </summary>
-        public string ProductId { get; private set; }
-
+        public bool QboCompany { get; private set; }
+       
         /// <summary>
         /// Gets the name of the plan.
         /// </summary>
-        /// <value>
-        /// The name of the plan.
-        /// </value>
         public string PlanName { get; private set; }
-
-        /// <summary>
-        /// Gets the type of the plan.
-        /// </summary>
-        /// <value>
-        /// The type of the plan.
-        /// </value>
-        public string PlanType { get; private set; }
 
         /// <summary>
         /// Gets the max users.
@@ -146,21 +98,6 @@ namespace Intuit.Ipp.Data
         /// Gets the days remaining.
         /// </summary>
         public int DaysRemaining { get; private set; }
-
-        /// <summary>
-        /// Gets the fee.
-        /// </summary>
-        public double Fee { get; private set; }
-
-        /// <summary>
-        /// Gets the beta expiration date.
-        /// </summary>
-        public DateTime BetaExpirationDate { get; private set; }
-
-        /// <summary>
-        /// Gets the current file usage.
-        /// </summary>
-        public long CurrentFileUsage { get; private set; }
 
         /// <summary>
         /// Gets the entitlements.
