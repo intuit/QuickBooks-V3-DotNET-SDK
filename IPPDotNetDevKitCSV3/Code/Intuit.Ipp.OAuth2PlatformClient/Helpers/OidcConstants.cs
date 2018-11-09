@@ -217,8 +217,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration";
             public const string E2EProdDiscoveryEndpoint                    = ".well-known/openid_configuration";
             public const string E2ESandboxDiscoveryEndpoint                 = ".well-known/openid_sandbox_configuration";
-            public const string ProdAuthority                               = "https://developer.intuit.com/";
-            public const string E2EAuthority                                = "https://developer-stage.intuit.com/";
+            public const string ProdAuthority                               = "https://developer.api.intuit.com/";
+            public const string E2EAuthority                                = "https://developer-stage.api.intuit.com/";
 
             public const string JwksUri                                     = "jwks_uri";            
             public const string ResponseTypesSupported                      = "response_types_supported";
