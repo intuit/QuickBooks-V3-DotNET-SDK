@@ -1,80 +1,52 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-// Modified for Intuit's Oauth2 implementation
 
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Security.Claims;
+using IdentityModel.Client;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
-    /// UserInfoResponse Class to map response from UserInfo call
+    /// Models an OpenID Connect userinfo response
     /// </summary>
-    public class UserInfoResponse
+    /// <seealso cref="IdentityModel.Client.Response" />
+    public class UserInfoResponse : IdentityModel.Client.UserInfoResponse
     {
-        public string Raw { get; }
-        public JObject Json { get; }
-        public IEnumerable<Claim> Claims { get; }
-
-        public bool IsError { get; }
-        public string Error { get; }
-
-        public HttpStatusCode HttpStatusCode { get; }
-        public Exception Exception { get; }
-        public ResponseErrorType ErrorType { get; set; }
-        
         /// <summary>
-        /// Handles successful raw response from UserInfo api call
+        /// Gets the claims.
         /// </summary>
-        /// <param name="raw">raw</param>
-        public UserInfoResponse(string raw)
-        {
-            Raw = raw;
-            HttpStatusCode = HttpStatusCode.OK;
-            IsError = false;
+        /// <value>
+        /// The claims.
+        /// </value>
+        public new IEnumerable<Claim> Claims { get; }
 
-            try
-            {
-                Json = JObject.Parse(raw);
-                Claims = Json.ToClaims();
-            }
-            catch (Exception ex)
-            {
-                IsError = true;
-                Error = ex.Message;
-                Exception = ex;
-                ErrorType = ResponseErrorType.Exception;
-            }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserInfoResponse"/> class.
+        /// </summary>
+        /// <param name="raw">The raw response data.</param>
+        public UserInfoResponse(string raw) : base(raw)
+        {
+            if (!IsError) Claims = Json.ToClaims();
         }
 
         /// <summary>
-        /// Handles exception response from UserInfo api call
+        /// Initializes a new instance of the <see cref="UserInfoResponse"/> class.
         /// </summary>
-        /// <param name="statusCode">statusCode</param>
-        /// <param name="reason">reason</param>
-        public UserInfoResponse(HttpStatusCode statusCode, string httpErrorReason)
+        /// <param name="exception">The exception.</param>
+        public UserInfoResponse(Exception exception) : base(exception)
         {
-            IsError = true;
-
-            HttpStatusCode = statusCode;
-            ErrorType = ResponseErrorType.Http;
-            Error = httpErrorReason;
         }
 
         /// <summary>
-        /// UserInfoResponse
+        /// Initializes a new instance of the <see cref="UserInfoResponse"/> class.
         /// </summary>
-        /// <param name="exception">exception</param>
-        public UserInfoResponse(Exception exception)
+        /// <param name="statusCode">The status code.</param>
+        /// <param name="reason">The reason.</param>
+        public UserInfoResponse(HttpStatusCode statusCode, string reason) : base(statusCode, reason)
         {
-            IsError = true;
-
-            Error = exception.Message;
-            Exception = exception;
-            ErrorType = ResponseErrorType.Exception;
         }
     }
 }

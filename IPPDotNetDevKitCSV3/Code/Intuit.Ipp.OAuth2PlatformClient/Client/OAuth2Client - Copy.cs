@@ -2,7 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 // Modified for Intuit's Oauth2 implementation
 
-using Intuit.Ipp.OAuth2PlatformClient.Helpers;
+
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,10 @@ using System.Threading;
 using System.Net;
 using System.Reflection;
 using System.Linq;
+using IdentityModel.Client;
+using IdentityModel;
+
+
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -65,17 +69,58 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI)); 
             ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true) ;
-            DiscoveryDoc = GetDiscoveryDoc();
+            //DiscoveryDoc = GetDiscoveryDoc();
+            string appEnvironment = ApplicationEnvironment.ToString();
+            DiscoveryDoc = GetDiscoveryDoc(appEnvironment);
         }
 
         /// <summary>
         /// Gets Discovery Doc
         /// </summary>
-        /// <returns></returns>
-        public DiscoveryResponse GetDiscoveryDoc()
-        {   
-            DiscoveryClient discoveryClient = new DiscoveryClient(ApplicationEnvironment);
-            return discoveryClient.Get();
+        /// <returns>DiscoverResponse</returns>
+        public DiscoveryResponse GetDiscoveryDoc(string appEnvironment)
+        {
+            string discoveryUrl = "";
+            string discoveryAuthority = "";
+            if (appEnvironment == AppEnvironment.Production.ToString())
+            {
+                discoveryUrl = OidcConstants.Discovery.ProdDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.ProdAuthority;
+
+            }
+            else if (appEnvironment == AppEnvironment.E2EProduction.ToString())
+            {
+                discoveryUrl = OidcConstants.Discovery.E2EProdDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.E2EAuthority; ;
+            }
+            else if (appEnvironment == AppEnvironment.E2ESandbox.ToString())
+            {
+                discoveryUrl = OidcConstants.Discovery.E2ESandboxDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.E2EAuthority;
+            }
+            else
+            {
+                discoveryUrl = OidcConstants.Discovery.SandboxDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.ProdAuthority;
+            }
+
+            HttpClient discoveryClient = new HttpClient();
+            HttpResponseMessage response = discoveryClient.GetAsync(discoveryAuthority+discoveryUrl).Result;
+
+            //IdentityModel.Client.DiscoveryPolicy policy1 = new IdentityModel.Client.DiscoveryPolicy();
+            //policy.Authority = discoveryAuthority;
+            //policy.ValidateIssuerName = false;
+            //policy.ValidateEndpoints = false;
+
+            DiscoveryPolicy policy = new DiscoveryPolicy();
+            policy.Authority = discoveryAuthority;
+            policy.ValidateIssuerName = false;
+            policy.ValidateEndpoints = false;
+
+            //Parse raw response to DiscoveryResponse
+            //IdentityModel.Client.DiscoveryResponse discoveryResponse = new IdentityModel.Client.DiscoveryResponse(response.Content.ReadAsStringAsync().Result, policy);
+            DiscoveryResponse discoveryResponse = new DiscoveryResponse(response.Content.ReadAsStringAsync().Result, policy);
+            return discoveryResponse;
         }
 
         /// <summary>
@@ -83,11 +128,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="scopes"></param>
         /// <param name="CSRFToken"></param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
             string scopeValue = "";
-            for(var index = 0; index < scopes.Count; index++ )
+            for (var index = 0; index < scopes.Count; index++)
             {
                 scopeValue += scopes[index].GetStringValue() + " ";
             }
@@ -106,7 +151,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Get Authorization Url
         /// </summary>
         /// <param name="scopes"></param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
             string scopeValue = "";
@@ -131,11 +176,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="code"></param>
         /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns>TokenResponse</returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await  tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken );
+            var tokenClient = new IdentityModel.Client.TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+            var res = await tokenClient.RequestAuthorizationCodeAsync(code, RedirectURI, cancellationToken: cancellationToken);
+            return (TokenResponse)res;
+
         }
 
         /// <summary>
@@ -144,26 +191,30 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="refreshToken"></param>
         /// <param name="extra"></param>
         /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns>TokenResponse</returns>
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+            var tokenClient = new IdentityModel.Client.TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+            return (TokenResponse)await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+            
+
         }
 
         /// <summary>
         /// Revoke token using either access or refresh token
         /// </summary>
         /// <param name="accessOrRefreshToken"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <param name="cancellationToken"></param
+        /// <returns>TokenRevocationResponse</returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            TokenRevocationClient revokeTokenClient = new TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
-            return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
+            var revokeTokenClient = new IdentityModel.Client.TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
+            return (TokenRevocationResponse)await revokeTokenClient.RevokeAsync(new IdentityModel.Client.TokenRevocationRequest
             {
                 Token = accessOrRefreshToken,
             }, cancellationToken);
+
+           
         }
 
         /// <summary>
@@ -171,21 +222,21 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="accessToken"></param>
         /// <param name="cancellationToken"></param>
-        /// <returns></returns>
+        /// <returns>UserInfoResponse</returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
-            return await userInfoClient.GetAsync(accessToken, cancellationToken);
+            var userInfoClient = new IdentityModel.Client.UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
+            return (UserInfoResponse)await userInfoClient.GetAsync(accessToken, cancellationToken);
         }
 
         /// <summary>
         /// Validates ID token
         /// </summary>
         /// <param name="idToken"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public Task<bool> ValidateIDTokenAsync(String idToken)
         {
-            IList<JsonWebKey> keys = DiscoveryDoc.KeySet.Keys;
+            IList<IdentityModel.Jwk.JsonWebKey> keys = DiscoveryDoc.KeySet.Keys;
             string mod = "";
             string exponent = "";
             if (keys != null)
@@ -303,10 +354,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Generate random CSRF token
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string GenerateCSRFToken()
         {
             return CryptoRandom.CreateUniqueId(); 
         }
+
+      
     }
 }

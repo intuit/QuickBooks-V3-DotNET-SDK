@@ -11,7 +11,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// Models a response from an OpenID Connect/OAuth 2 token endpoint
     /// </summary>
     /// <seealso cref="IdentityModel.Client.Response" />
-    public class TokenResponse : IdentityModel.Client.TokenResponse
+    public class TokenResponse : Response
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenResponse"/> class.
@@ -46,7 +46,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <value>
         /// The access token.
         /// </value>
-        public new string AccessToken => TryGet(OidcConstants.TokenResponse.AccessToken);
+        public string AccessToken => TryGet(OidcConstants.TokenResponse.AccessToken);
 
         /// <summary>
         /// Gets the identity token.
@@ -54,7 +54,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <value>
         /// The identity token.
         /// </value>
-        public new string IdentityToken => TryGet(OidcConstants.TokenResponse.IdentityToken);
+        public string IdentityToken => TryGet(OidcConstants.TokenResponse.IdentityToken);
 
         /// <summary>
         /// Gets the type of the token.
@@ -62,7 +62,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <value>
         /// The type of the token.
         /// </value>
-        public new string TokenType => TryGet(OidcConstants.TokenResponse.TokenType);
+        public string TokenType => TryGet(OidcConstants.TokenResponse.TokenType);
 
         /// <summary>
         /// Gets the refresh token.
@@ -70,7 +70,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <value>
         /// The refresh token.
         /// </value>
-        public new string RefreshToken => TryGet(OidcConstants.TokenResponse.RefreshToken);
+        public string RefreshToken => TryGet(OidcConstants.TokenResponse.RefreshToken);
 
         /// <summary>
         /// Gets the error description.
@@ -78,7 +78,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <value>
         /// The error description.
         /// </value>
-        public new string ErrorDescription => TryGet(OidcConstants.TokenResponse.ErrorDescription);
+        public string ErrorDescription => TryGet(OidcConstants.TokenResponse.ErrorDescription);
 
         /// <summary>
         /// Returns Access Token expiry value

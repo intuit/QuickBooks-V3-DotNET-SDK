@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using IdentityModel;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
@@ -40,7 +41,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
         #endregion
 
-        
+
 
 
     }
@@ -65,11 +66,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         [StringValue("com.intuit.quickbooks.accounting")]
         Accounting = 6,
         [StringValue("com.intuit.quickbooks.payment")]
-        Payment = 7
+        Payment = 7,
+        [StringValue("com.intuit.quickbooks.payroll")]
+        Payroll = 8,
+        [StringValue("com.intuit.quickbooks.payroll.timetracking")]
+        PayrollTimetracking = 9,
+        [StringValue("com.intuit.quickbooks.payroll.benefits")]
+        PayrollBenefits = 10
 
-    
 
-}
+
+
+    }
+
+
 
 
     

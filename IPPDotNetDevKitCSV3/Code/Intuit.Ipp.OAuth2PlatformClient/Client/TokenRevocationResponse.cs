@@ -1,116 +1,49 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-// Modified for Intuit's Oauth2 implementation
 
-using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
+using IdentityModel.Client;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
-    /// TokenRevocationResponse to handle response from Token Revoke call
+    /// Models an OAuth 2.0 token revocation response
     /// </summary>
-    public class TokenRevocationResponse
+    /// <seealso cref="IdentityModel.Client.Response" />
+    public class TokenRevocationResponse : IdentityModel.Client.TokenRevocationResponse
     {
-        public string Raw { get; }
-        public JObject Json { get; }
-        public bool IsError { get; }
-        public HttpStatusCode HttpStatusCode { get; }
-        public string HttpErrorReason { get; }
-        public ResponseErrorType ErrorType { get;  }
-        public Exception Exception { get;  }
-
         /// <summary>
-        /// Handles successful raw response from Token Revoke api call
+        /// Initializes a new instance of the <see cref="TokenRevocationResponse"/> class.
         /// </summary>
-
         public TokenRevocationResponse()
+            : base(HttpStatusCode.OK, "OK")
         {
-            IsError = false;
-            HttpStatusCode = HttpStatusCode.OK;
         }
 
         /// <summary>
-        /// Handles successful raw response from Token Revoke api call
+        /// Initializes a new instance of the <see cref="TokenRevocationResponse"/> class.
         /// </summary>
-        /// <param name="raw">raw</param>
-        public TokenRevocationResponse(string raw)
+        /// <param name="raw">The raw response data.</param>
+        public TokenRevocationResponse(string raw) : base(raw)
         {
-            Raw = raw;
-            IsError = false;
-            HttpStatusCode = HttpStatusCode.OK;
-
-            try
-            {
-                Json = JObject.Parse(raw);
-
-                if (!string.IsNullOrEmpty(Json.TryGetString(OidcConstants.TokenResponse.Error)))
-                {
-                    IsError = true;
-                    ErrorType = ResponseErrorType.Protocol;
-                    HttpStatusCode = HttpStatusCode.BadRequest;
-                }
-            }
-            catch (Exception ex)
-            {
-                IsError = true;
-                ErrorType = ResponseErrorType.Exception;
-                Exception = ex;
-            }
         }
 
-
-
-
         /// <summary>
-        /// Handles exception response from Token Revoke api call
+        /// Initializes a new instance of the <see cref="TokenRevocationResponse"/> class.
         /// </summary>
-        /// <param name="statusCode">statusCode</param>
-        /// <param name="reason">reason</param>
-
-        public TokenRevocationResponse(HttpStatusCode statusCode, string reason)
+        /// <param name="exception">The exception.</param>
+        public TokenRevocationResponse(Exception exception) : base(exception)
         {
-            IsError = true;
-
-            ErrorType = ResponseErrorType.Http;
-            HttpStatusCode = statusCode;
-            HttpErrorReason = reason;
         }
 
-
         /// <summary>
-        /// Handles exception response from UserInfo api call
+        /// Initializes a new instance of the <see cref="TokenRevocationResponse"/> class.
         /// </summary>
-        /// <param name="exception">exception</param>
-        public TokenRevocationResponse(Exception exception)
+        /// <param name="statusCode">The status code.</param>
+        /// <param name="reason">The reason.</param>
+        public TokenRevocationResponse(HttpStatusCode statusCode, string reason) : base(statusCode, reason)
         {
-            IsError = true;
-
-            Exception = exception;
-            ErrorType = ResponseErrorType.Exception;
-        }
-
-
-        /// <summary>
-        /// Handles Error
-        /// </summary>
-
-        public string Error
-        {
-            get
-            {
-                if (ErrorType == ResponseErrorType.Http)
-                {
-                    return HttpErrorReason;
-                }
-                else if(ErrorType == ResponseErrorType.Exception)
-                {
-                    return Exception.Message;
-                }
-
-                return Json.TryGetString(OidcConstants.TokenResponse.Error);
-            }
         }
     }
 }

@@ -3,28 +3,28 @@
 // Modified for Intuit's Oauth2 implementation
 using System;
 
-namespace Intuit.Ipp.OAuth2PlatformClient.Helpers
+namespace Intuit.Ipp.OAuth2PlatformClient
 {
-    /// <summary>
-    /// This attribute is used to represent a string value
-    /// for a value in an enum.
-    /// </summary>
-    public class StringValueAttribute : Attribute
-    {
-        /// <summary>
-        /// Holds the stringvalue for a value in an enum.
-        /// </summary>
-        public string StringValue { get; protected set; }
+    ///// <summary>
+    ///// This attribute is used to represent a string value
+    ///// for a value in an enum.
+    ///// </summary>
+    //public class StringValueAttribute : Attribute
+    //{
+    //    /// <summary>
+    //    /// Holds the stringvalue for a value in an enum.
+    //    /// </summary>
+    //    public string StringValue { get; protected set; }
 
-        /// <summary>
-        /// Constructor used to init a StringValue Attribute
-        /// </summary>
-        /// <param name="value"></param>
-        public StringValueAttribute(string value)
-        {
-            this.StringValue = value;
-        }
-    }
+    //    ///// <summary>
+    //    ///// Constructor used to init a StringValue Attribute
+    //    ///// </summary>
+    //    ///// <param name="value"></param>
+    //    //public StringValueAttribute(string value)
+    //    //{
+    //    //    this.StringValue = value;
+    //    //}
+    //}
 
     /// <summary>
     /// AppEnvironment enum
@@ -35,7 +35,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Helpers
         Sandbox = 1,
         [StringValue("production")]
         Production = 2,
-        [StringValue("e2e")]
-        E2E = 3,
+        [StringValue("e2esandbox")]
+        E2ESandbox = 3,
+        [StringValue("e2eproduction")]
+        E2EProduction = 4
     }
 }

@@ -9143,6 +9143,11 @@
 								DepartmentEx extensible element </xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="Address" type="PhysicalAddress" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Address of the Department</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -9755,6 +9760,16 @@
 						<xs:annotation>
 							<xs:documentation>Internal use only: extension place holder for
 								Item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TaxClassificationRef" type="ReferenceType"
+								minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: ALL
+								Description: Reference to the
+								SalesTaxCode for this item.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>

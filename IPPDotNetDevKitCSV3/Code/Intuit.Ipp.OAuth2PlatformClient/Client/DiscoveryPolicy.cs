@@ -1,37 +1,65 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-// Modified for Intuit's Oauth2 implementation
 
+using System;
 using System.Collections.Generic;
-using System.Configuration;
+using IdentityModel.Client;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
     /// <summary>
-    /// Validates Discovery doc values
+    /// Security policy for retrieving a discovery document
     /// </summary>
-    public class DiscoveryPolicy
+    public class DiscoveryPolicy: IdentityModel.Client.DiscoveryPolicy
     {
-
-        internal string Authority = OidcConstants.Discovery.IssuerUrl;      
-        
         /// <summary>
-        /// Sets the discovery authority if not present in application configuration
-        /// </summary>        
-        public void SetAuthority(string authority = OidcConstants.Discovery.IssuerUrl)
-        {
-            Authority = authority;
-        }
+        /// Gets or sets the Authority on which the policy checks will be based on
+        /// </summary>
+        public new string Authority { get; set; }
+
+        /// <summary>
+        /// Method of comparison for issuer and authority names. Defaults to <see cref="StringComparison.Ordinal" />
+        /// </summary>
+        public new StringComparison AuthorityNameComparison { get; set; } = StringComparison.Ordinal;
 
         /// <summary>
         /// Specifies if HTTPS is enforced on all endpoints. Defaults to true.
         /// </summary>
-        public bool RequireHttps { get; set; } = true;
+        public new bool RequireHttps { get; set; } = true;
+
+        /// <summary>
+        /// Specifies if HTTP is allowed on loopback addresses. Defaults to true.
+        /// </summary>
+        public new bool AllowHttpOnLoopback { get; set; } = true;
+
+        /// <summary>
+        /// Specifies valid loopback addresses, defaults to localhost and 127.0.0.1
+        /// </summary>
+        public new ICollection<string> LoopbackAddresses = new HashSet<string> { "localhost", "127.0.0.1" };
 
         /// <summary>
         /// Specifies if the issuer name is checked to be identical to the authority. Defaults to true.
         /// </summary>
-        public bool ValidateIssuerName { get; set; } = true;
+        public new bool ValidateIssuerName { get; set; } = true;
 
+        /// <summary>
+        /// Specifies if all endpoints are checked to belong to the authority. Defaults to true.
+        /// </summary>
+        public new bool ValidateEndpoints { get; set; } = true;
+
+        /// <summary>
+        /// Specifies a list of endpoints that should be excluded from validation
+        /// </summary>
+        public new ICollection<string> EndpointValidationExcludeList { get; set; } = new HashSet<string>();
+
+        /// <summary>
+        /// Specifies a list of additional base addresses that should be allowed for endpoints
+        /// </summary>
+        public new ICollection<string> AdditionalEndpointBaseAddresses { get; set; } = new HashSet<string>();
+
+        /// <summary>
+        /// Specifies if a key set is required. Defaults to true.
+        /// </summary>
+        public new bool RequireKeySet { get; set; } = true;
     }
 }

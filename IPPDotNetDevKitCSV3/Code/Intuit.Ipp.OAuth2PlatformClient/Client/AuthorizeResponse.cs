@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using IdentityModel.Internal;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
@@ -14,26 +15,82 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     public class AuthorizeResponse
     {
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="AuthorizeResponse"/> class.
         /// </summary>
-        /// <param name="raw"></param>
+        /// <param name="raw">The raw response URL.</param>
         public AuthorizeResponse(string raw)
         {
             Raw = raw;
             ParseRaw();
         }
 
+        /// <summary>
+        /// Gets the raw response URL.
+        /// </summary>
+        /// <value>
+        /// The raw.
+        /// </value>
         public string Raw { get; }
-        public Dictionary<string, string> Values { get; } = new Dictionary<string, string>();
-        
-        public string Code             => TryGet(OidcConstants.AuthorizeResponse.Code);
-        public string RealmId          => TryGet(OidcConstants.AuthorizeResponse.RealmId);
-        public string Error            => TryGet(OidcConstants.AuthorizeResponse.Error);   
-        public string State            => TryGet(OidcConstants.AuthorizeResponse.State);
-        public string Url              => TryGet(OidcConstants.AuthorizeResponse.Url);
-        public string ErrorDescription => TryGet(OidcConstants.AuthorizeResponse.ErrorDescription);
-        public bool IsError            => !string.IsNullOrEmpty(Error);
 
+        /// <summary>
+        /// Gets the key/value pairs of the response.
+        /// </summary>
+        /// <value>
+        /// The values.
+        /// </value>
+        public Dictionary<string, string> Values { get; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets the authorization code.
+        /// </summary>
+        /// <value>
+        /// The authorization code.
+        /// </value>
+        public string Code => TryGet(OidcConstants.AuthorizeResponse.Code);
+
+        /// <summary>
+        /// Gets the state.
+        /// </summary>
+        /// <value>
+        /// The state.
+        /// </value>
+        public string State => TryGet(OidcConstants.AuthorizeResponse.State);
+
+        /// <summary>
+        /// Gets the error.
+        /// </summary>
+        /// <value>
+        /// The error.
+        /// </value>
+        public string Error => TryGet(OidcConstants.AuthorizeResponse.Error);
+
+        /// <summary>
+        /// Gets the error description.
+        /// </summary>
+        /// <value>
+        /// The error description.
+        /// </value>
+        public string ErrorDescription => TryGet(OidcConstants.AuthorizeResponse.ErrorDescription);
+
+        /// <summary>
+        /// Gets a value indicating whether the response is an error.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if the response is an error; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsError => !string.IsNullOrEmpty(Error);//Error.IsPresent();
+
+        /// <summary>
+        /// Gets the RealmId
+        /// </summary>
+        public string RealmId          => TryGet(OidcConstants.AuthorizeResponse.RealmId);
+        
+        /// <summary>
+        /// Gets the Url
+        /// </summary>
+        public string Url              => TryGet(OidcConstants.AuthorizeResponse.Url);
+        
+        
      
 
         private void ParseRaw()
