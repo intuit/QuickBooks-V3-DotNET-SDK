@@ -68,5 +68,7 @@ namespace Intuit.Ipp.Core.Configuration
         /// Gets or sets the minorVersion
         /// </summary>
         public MinorVersion MinorVersion { get; set; }
+
+       
     }
 }

@@ -35,7 +35,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Helpers
         Sandbox = 1,
         [StringValue("production")]
         Production = 2,
-        [StringValue("e2e")]
-        E2E = 3,
+        [StringValue("e2esandbox")]
+        E2ESandbox = 3,
+        [StringValue("e2eproduction")]
+        E2EProduction = 4
     }
 }

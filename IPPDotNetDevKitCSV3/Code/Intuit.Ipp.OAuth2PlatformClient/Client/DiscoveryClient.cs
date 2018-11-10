@@ -112,14 +112,41 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             var handler = new HttpClientHandler();
             string url = "";
+            //if (appEnvironment == AppEnvironment.Production)
+            //{
+            //    url = OidcConstants.Discovery.DiscoveryUrlProduction;
+            //}
+            //else
+            //{
+            //    url = OidcConstants.Discovery.DiscoveryUrlSandbox;
+            //}
+
+            string discoveryUrl = "";
+            string discoveryAuthority = "";
             if (appEnvironment == AppEnvironment.Production)
             {
-                url = OidcConstants.Discovery.DiscoveryUrlProduction;
+                discoveryUrl = OidcConstants.Discovery.ProdDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.ProdAuthority;
+                
+
+            }
+            else if (appEnvironment == AppEnvironment.E2EProduction)
+            {
+                discoveryUrl = OidcConstants.Discovery.E2EProdDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.E2EAuthority; ;
+            }
+            else if (appEnvironment == AppEnvironment.E2ESandbox)
+            {
+                discoveryUrl = OidcConstants.Discovery.E2ESandboxDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.E2EAuthority;
             }
             else
             {
-                url = OidcConstants.Discovery.DiscoveryUrlSandbox;
+                discoveryUrl = OidcConstants.Discovery.SandboxDiscoveryEndpoint;
+                discoveryAuthority = OidcConstants.Discovery.ProdAuthority;
             }
+
+            url = discoveryAuthority + discoveryUrl;
             Url = url;
             _client = new HttpClient(handler);
         }

@@ -63,16 +63,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public static string ErrorDescription = "error_description";
         }
 
-        //public static class EndSessionRequest
-        //{
-        //    //Session end params 
-        //    public const string IdTokenHint           = "id_token_hint";
-        //    public const string PostLogoutRedirectUri = "post_logout_redirect_uri";
-        //    public const string State                 = "state";
-        //    public const string Sid                   = "sid";
-        //    public const string Issuer                = "iss";
-        //}
-
+      
 
         /// <summary>
         /// TokenRequest class
@@ -82,23 +73,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             //Token request params
             public const string Code                = "code";
             public const string GrantType           = "grant_type";
-            public const string RedirectUri         = "redirect_uri";
-
-           // public static string ClientId            = "client_id";
-            //public static string ClientSecret        = "client_secret";            
+            public const string RedirectUri         = "redirect_uri";                    
             public const string RefreshToken        = "refresh_token";
-            //public static string Scope               = "scope";
-            //public static string CodeVerifier        = "code_verifier";//Not used but if required for future, we can keep it
-            //public static string TokenType           = "token_type";
-            //public static string Algorithm           = "alg";
-            //public static string Key                 = "key";
+            
         }
 
-        //public static class TokenRequestTypes
-        //{
-        //    //Token request types for header
-        //    public const string Bearer = "bearer";
-        //}
+        
 
         /// <summary>
         /// TokenErrors class
@@ -143,61 +123,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string RefreshToken  = "refresh_token";   
         }
 
-        //public static class AuthenticationSchemes
-        //{
-        //    //Authentication schemes
-        //    public const string AuthorizationHeaderBearer = "Bearer";
-        //    //public const string FormPostBearer            = "access_token";
-        //    //public const string QueryStringBearer         = "access_token";
-
-        //}
-
         /// <summary>
         /// GratTypes class
         /// </summary>
         public static class GrantTypes
         {
-           
+
             public const string AuthorizationCode = "authorization_code";
-            public const string RefreshToken      = "refresh_token";
+            public const string RefreshToken = "refresh_token";
             //public const string Implicit          = "implicit";
 
         }
-
-
-
-        //public static class ResponseTypes
-        //{
-        //    //Response types for header
-        //    public const string Code = "code";
-        //    public const string Token = "token";
-
-        //}
-
-        //public static class ResponseModes
-        //{
-        //    public const string FormPost = "form_post";
-        //    public const string Query    = "query";
-        //    public const string Fragment = "fragment";
-        //}
-
-
-
-        //public static class ProtectedResourceErrors
-        //{
-        //    public const string InvalidToken      = "invalid_token";
-        //    public const string ExpiredToken      = "expired_token";
-        //    public const string InvalidRequest    = "invalid_request";
-        //    public const string InsufficientScope = "insufficient_scope";
-        //}
-
-        //public static class EndpointAuthenticationMethods
-        //{
-        //    public const string PostBody            = "client_secret_post";
-        //    public const string BasicAuthentication = "client_secret_basic";
-
-        //}
-
 
 
         /// <summary>
@@ -213,8 +149,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string UserInfoEndpoint                            = "userinfo_endpoint";
             public const string IntrospectionEndpoint                       = "introspection_endpoint";
             public const string RevocationEndpoint                          = "revocation_endpoint";
-            public const string ProdDiscoveryEndpoint                       = ".well-known/openid_configuration";
-            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration";
+            public const string ProdDiscoveryEndpoint                       = ".well-known/openid_configuration/";
+            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration/";
+
+
+            
+            public const string E2EProdDiscoveryEndpoint                    = ".well-known/openid_configuration/";
+            public const string E2ESandboxDiscoveryEndpoint                 = ".well-known/openid_sandbox_configuration/";
+            public const string ProdAuthority                               = "https://developer.api.intuit.com/";
+            public const string E2EAuthority                                = "https://developer-stage.api.intuit.com/";
+
             public const string JwksUri                                     = "jwks_uri";
             
             public const string ResponseTypesSupported                      = "response_types_supported";
