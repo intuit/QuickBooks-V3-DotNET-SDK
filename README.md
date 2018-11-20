@@ -2,7 +2,9 @@
 
 V3-DotNet-SDK
 =============
-
+<p align="center">
+    <img src="./os-project-logo.svg" width="150" alt="Logo"/>
+</p>
 IDG .NET SDK for QuickBooks V3
 (Class lib Project written in .NET Framework 4)
 
