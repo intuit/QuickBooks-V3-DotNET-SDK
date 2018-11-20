@@ -97,7 +97,7 @@ namespace Intuit.Ipp.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 33.
+        ///   Looks up a localized string similar to 34.
         /// </summary>
         internal static string DefaultMinorVersionValue {
             get {
