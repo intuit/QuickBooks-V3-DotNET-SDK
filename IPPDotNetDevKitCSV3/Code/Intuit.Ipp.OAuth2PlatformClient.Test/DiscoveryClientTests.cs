@@ -68,7 +68,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             string input = "https://server:123/";
             var client = new DiscoveryClient(input);
 
-            Assert.AreEqual(client.Url,"https://server:123/.well-known/openid_configuration");
+            Assert.AreEqual(client.Url,"https://server:123/.well-known/openid_configuration/");
             Assert.AreEqual(client.Authority,"https://server:123");
         }
 
