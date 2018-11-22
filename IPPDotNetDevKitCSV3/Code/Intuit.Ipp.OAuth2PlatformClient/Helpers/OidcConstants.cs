@@ -149,13 +149,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string UserInfoEndpoint                            = "userinfo_endpoint";
             public const string IntrospectionEndpoint                       = "introspection_endpoint";
             public const string RevocationEndpoint                          = "revocation_endpoint";
-            public const string ProdDiscoveryEndpoint                       = ".well-known/openid_configuration/";
-            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration/";
+            public const string ProdDiscoveryEndpoint                       = ".well-known/openid_configuration";
+            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration";
 
 
             
-            public const string E2EProdDiscoveryEndpoint                    = ".well-known/openid_configuration/";
-            public const string E2ESandboxDiscoveryEndpoint                 = ".well-known/openid_sandbox_configuration/";
+            public const string E2EProdDiscoveryEndpoint                    = ".well-known/openid_configuration";
+            public const string E2ESandboxDiscoveryEndpoint                 = ".well-known/openid_sandbox_configuration";
             public const string ProdAuthority                               = "https://developer.api.intuit.com/";
             public const string E2EAuthority                                = "https://developer-stage.api.intuit.com/";
 
@@ -167,8 +167,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string IdTokenSigningAlgValuesSupported            = "id_token_signing_alg_values_supported";
             public const string TokenEndpointAuthenticationMethodsSupported = "token_endpoint_auth_methods_supported";
             public const string ClaimsSupported                             = "claims_supported";
-            public const string DiscoveryUrlSandbox                         = "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration/";
-            public const string DiscoveryUrlProduction                      = "https://developer.api.intuit.com/.well-known/openid_configuration/";
+            public const string DiscoveryUrlSandbox                         = "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration";
+            public const string DiscoveryUrlProduction                      = "https://developer.api.intuit.com/.well-known/openid_configuration";
             public const string IssuerUrl                                   = "https://oauth.platform.intuit.com/op/v1";
 
 

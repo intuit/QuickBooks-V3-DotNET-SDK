@@ -44,10 +44,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         public void DiscoveryClientTests2()
         {
             DiscoveryClient clientTest = new DiscoveryClient(AppEnvironment.Sandbox);
-            Assert.AreEqual("https://developer.api.intuit.com/.well-known/openid_sandbox_configuration/", clientTest.Url);
+            Assert.AreEqual("https://developer.api.intuit.com/.well-known/openid_sandbox_configuration", clientTest.Url);
 
             DiscoveryClient clientTest2 = new DiscoveryClient(AppEnvironment.Production);
-            Assert.AreEqual("https://developer.api.intuit.com/.well-known/openid_configuration/", clientTest2.Url);
+            Assert.AreEqual("https://developer.api.intuit.com/.well-known/openid_configuration", clientTest2.Url);
 
         }
 
@@ -68,7 +68,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             string input = "https://server:123/";
             var client = new DiscoveryClient(input);
 
-            Assert.AreEqual(client.Url,"https://server:123/.well-known/openid_configuration/");
+            Assert.AreEqual(client.Url,"https://server:123/.well-known/openid_configuration");
             Assert.AreEqual(client.Authority,"https://server:123");
         }
 
