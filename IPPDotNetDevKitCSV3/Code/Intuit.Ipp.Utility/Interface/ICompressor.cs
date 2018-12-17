@@ -19,10 +19,13 @@
 // <summary>This file contains interface for compressor.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core
+//namespace Intuit.Ipp.Core //nimisha
+namespace Intuit.Ipp.Utility
 {
     using System.IO;
-    using Intuit.Ipp.Core.Compression;
+    //using Intuit.Ipp.Core.Compression;//nimisha
+    
+
 
     /// <summary>
     /// Interface for compression methods.

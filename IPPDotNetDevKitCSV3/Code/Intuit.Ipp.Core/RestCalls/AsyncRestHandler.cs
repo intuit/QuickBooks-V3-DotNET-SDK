@@ -32,6 +32,7 @@ namespace Intuit.Ipp.Core.Rest
     using Intuit.Ipp.Core.Properties;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
+    using Intuit.Ipp.Utility; //nimisha
 
     /// <summary>
     /// RestRequestHandler contains the logic for preparing the REST request, calls REST services and returns the response.

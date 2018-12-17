@@ -112,74 +112,11 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.9.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.9.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppTokenParameterName" xml:space="preserve">
-    <value>appToken</value>
-  </data>
-  <data name="BaseUriNullMessage" xml:space="preserve">
-    <value>Could not retrieve BaseURI property. The given realm might not be part of QBO.</value>
-  </data>
-  <data name="CommunicationErrorMessage" xml:space="preserve">
-    <value>There was an error while communicating with the Ids Server.</value>
-  </data>
-  <data name="CurrentCompanyNullMessage" xml:space="preserve">
-    <value>The CurrentCompany property of Quickbase Online User is null.</value>
-  </data>
-  <data name="ErrorCodeMissing" xml:space="preserve">
-    <value>API response without Error code element.</value>
-  </data>
-  <data name="ErrorCodeNonNemeric" xml:space="preserve">
-    <value>Error code "{0}" not numeric!</value>
-  </data>
-  <data name="ErrorDetails0" xml:space="preserve">
-    <value>{0} (Error {1}, Detail: {2})</value>
-  </data>
-  <data name="ErrorDetails1" xml:space="preserve">
-    <value>{0} (Error {1})</value>
-  </data>
-  <data name="ErrorWithNoText" xml:space="preserve">
-    <value>Error {0}</value>
-  </data>
-  <data name="ExceptionGeneratedMessage" xml:space="preserve">
-    <value>Exception has been generated: {0}.</value>
-  </data>
-  <data name="NoServiceTypeResponseMessage" xml:space="preserve">
-    <value>The response did not contain the service type.</value>
-  </data>
-  <data name="ParameterNotNullEmptyMessage" xml:space="preserve">
-    <value>Parameter Cannot be null or empty.</value>
-  </data>
-  <data name="ParameterNotNullMessage" xml:space="preserve">
-    <value>Parameter cannot be null.</value>
-  </data>
-  <data name="RealmIdNotFoundMessage" xml:space="preserve">
-    <value>The realm id for the appToken could not be found.</value>
-  </data>
-  <data name="RealmIdParameterName" xml:space="preserve">
-    <value>realmId</value>
-  </data>
-  <data name="RequestValidatorParameterName" xml:space="preserve">
-    <value>requestValidator</value>
-  </data>
-  <data name="ResponseStreamNullOrEmptyMessage" xml:space="preserve">
-    <value>The Response Stream was null or empty.</value>
-  </data>
-  <data name="ResponseStreamReadFailedMessage" xml:space="preserve">
-    <value>Failed to read the response stream.</value>
-  </data>
-  <data name="SerializationExceptionMessage" xml:space="preserve">
-    <value>The Deserialization to Quickbooks Online User failed.</value>
-  </data>
-  <data name="ValidDirectoryPathMessage" xml:space="preserve">
-    <value>Please specify a valid directory path.</value>
-  </data>
-  <data name="DefaultMinorVersionValue" xml:space="preserve">
-    <value>34</value>
-  </data>
   <data name="ArgumentCannotBeGreaterThanBaseline" xml:space="preserve">
     <value>The specified argument {0} cannot be greater than its ceiling value of {1}.</value>
   </data>

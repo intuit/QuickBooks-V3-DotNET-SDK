@@ -8,6 +8,7 @@
 namespace Intuit.Ipp.Retry.Test
 {
     using System;
+    using Intuit.Ipp.Core;
     using Intuit.Ipp.Retry;
     using Microsoft.VisualStudio.TestTools.UnitTesting;  
 

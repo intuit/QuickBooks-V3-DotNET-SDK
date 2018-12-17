@@ -1,7 +1,7 @@
 ﻿using System;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Diagnostics;
-using Intuit.Ipp.Retry;
+//using Intuit.Ipp.Retry;
 using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;

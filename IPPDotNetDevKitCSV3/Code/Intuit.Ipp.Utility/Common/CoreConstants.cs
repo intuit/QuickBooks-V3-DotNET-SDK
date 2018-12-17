@@ -19,7 +19,8 @@
 // <summary>This file contains Constants.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core
+//namespace Intuit.Ipp.Core //nimisha
+namespace Intuit.Ipp.Utility
 {
     /// <summary>
     /// Constants whose values do not change.

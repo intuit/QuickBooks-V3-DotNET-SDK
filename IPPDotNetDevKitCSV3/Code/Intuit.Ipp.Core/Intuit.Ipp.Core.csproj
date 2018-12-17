@@ -54,10 +54,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.DataService, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
-    </Reference>
     <Reference Include="Intuit.Ipp.Diagnostics, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
@@ -66,45 +62,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.GlobalTaxService, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.LinqExtender, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.LinqExtender.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.PlatformService, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.PlatformService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.QueryFilter, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.ReportService, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.ReportService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Retry, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Security, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Security, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Utility, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Utility, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.WebHooksService, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.WebHooksService.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -139,8 +103,8 @@
     <Compile Include="CoreHelper.cs" />
     <Compile Include="Documentation\NamespaceDoc.cs" />
     <Compile Include="GlobalSuppression.cs" />
+    <Compile Include="ICompressor.cs" />
     <Compile Include="Interface\IConfigReader.cs" />
-    <Compile Include="Interface\ICompressor.cs" />
     <Compile Include="Interface\IRestHandler.cs" />
     <Compile Include="Configuration\IppConfiguration.cs" />
     <Compile Include="Configuration\LocalConfigReader.cs" />
@@ -151,13 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Resources\resources.designer.cs" />
     <Compile Include="RestCalls\AsyncRestHandler.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RestCalls\Compression\DataCompressionFormat.cs" />
-    <Compile Include="RestCalls\Compression\DeflateCompressor.cs" />
     <Compile Include="RestCalls\Compression\Documentation\NamespaceDoc.cs" />
-    <Compile Include="RestCalls\Compression\GZipCompressor.cs" />
     <Compile Include="RestCalls\Documentation\NamespaceDoc.cs" />
     <Compile Include="RestCalls\EntitlementServiceCallback.cs" />
     <Compile Include="RestCalls\EventArgs\EntitlementCallCompletedEventArgs.cs" />
@@ -177,8 +139,11 @@
     <Compile Include="RestCalls\RequestParameters.cs" />
     <Compile Include="RestCalls\RestHandler.cs" />
     <Compile Include="RestCalls\SyncRestHandler.cs" />
-    <Compile Include="CoreConstants.cs" />
     <Compile Include="RestCalls\GlobalTaxServiceCallback.cs" />
+    <Compile Include="Retry\Interface\IExtendedRetry.cs" />
+    <Compile Include="Retry\IntuitRetryHelper.cs" />
+    <Compile Include="Retry\IntuitRetryingEventArgs.cs" />
+    <Compile Include="Retry\IntuitRetryPolicy.cs" />
     <Compile Include="ServiceContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +152,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Resources\resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">

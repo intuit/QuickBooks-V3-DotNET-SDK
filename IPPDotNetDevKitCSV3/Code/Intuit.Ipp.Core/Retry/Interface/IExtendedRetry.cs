@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="DataCompressionFormat.cs" company="Intuit">
+// <copyright file="IExtendedRetry.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -15,30 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>This file contains SdkException.</summary>
-// <summary>This file contains enumeration for data compression format.</summary>
-////*********************************************************
-
-namespace Intuit.Ipp.Core.Compression
+// <summary>This file contains IExtendedRetryExceptions contracts.</summary>
+////***************************************************
+//namespace Intuit.Ipp.Retry //nimisha
+namespace Intuit.Ipp.Core
 {
+    using System;
+
     /// <summary>
-    /// Format used to compress data.
+    /// Custom exception retry strategy contracts.
     /// </summary>
-    public enum DataCompressionFormat
+    public interface IExtendedRetry
     {
         /// <summary>
-        /// No compression.
+        /// Determines whether [is retry exception] [the specified ex].
         /// </summary>
-        None,
-
-        /// <summary>
-        /// GZip compression.
-        /// </summary>
-        GZip,
-
-        /// <summary>
-        /// Deflate compression.
-        /// </summary>
-        Deflate
+        /// <param name="ex">The exception object.</param>
+        /// <returns>
+        ///   <c>true</c> if [is parameter (ex) is retry exception]; otherwise, <c>false</c>.
+        /// </returns>
+        bool IsRetryException(Exception ex);
     }
 }

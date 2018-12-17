@@ -70,6 +70,24 @@ namespace Intuit.Ipp.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The specified argument {0} cannot be greater than its ceiling value of {1}..
+        /// </summary>
+        internal static string ArgumentCannotBeGreaterThanBaseline {
+            get {
+                return ResourceManager.GetString("ArgumentCannotBeGreaterThanBaseline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified argument {0} cannot be initialized with a negative value..
+        /// </summary>
+        internal static string ArgumentCannotBeNegative {
+            get {
+                return ResourceManager.GetString("ArgumentCannotBeNegative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not retrieve BaseURI property. The given realm might not be part of QBO..
         /// </summary>
         internal static string BaseUriNullMessage {
@@ -228,6 +246,15 @@ namespace Intuit.Ipp.Core.Properties {
         internal static string ResponseStreamReadFailedMessage {
             get {
                 return ResourceManager.GetString("ResponseStreamReadFailedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The action has exceeded its defined retry limit..
+        /// </summary>
+        internal static string RetryLimitExceeded {
+            get {
+                return ResourceManager.GetString("RetryLimitExceeded", resourceCulture);
             }
         }
         

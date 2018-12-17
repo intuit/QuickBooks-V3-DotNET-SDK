@@ -71,17 +71,17 @@ namespace Intuit.Ipp.EntitlementService
         /// </summary>
         /// <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment.</param>
         /// <returns>Returns EntitlementsResponse</returns>
-        public EntitlementsResponse GetEntitlements(string entitlementBaseUrl = CoreConstants.ENTITLEMENT_BASEURL)
+        public EntitlementsResponse GetEntitlements(string entitlementBaseUrl = Utility.CoreConstants.ENTITLEMENT_BASEURL)
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetEntitlements.");
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/entitlements/{1}/{2}", entitlementBaseUrl, CoreConstants.VERSION, serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/entitlements/{1}/{2}", entitlementBaseUrl, Utility.CoreConstants.VERSION, serviceContext.RealmId);
 
             orginialSerializationFormat = this.serviceContext.IppConfiguration.Message.Response.SerializationFormat;
             
             // Only XML format is supported by Entitlements API
             serviceContext.IppConfiguration.Message.Response.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
             // Creates request parameters
-            RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+            RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
 
             // Prepares request
             HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null, uri);
@@ -116,7 +116,7 @@ namespace Intuit.Ipp.EntitlementService
         /// </summary>
         /// <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment</param>
         /// <returns>Returns EntitlementsResponse</returns>
-        public void GetEntitlementsAsync(string entitlementBaseUrl = CoreConstants.ENTITLEMENT_BASEURL)
+        public void GetEntitlementsAsync(string entitlementBaseUrl = Utility.CoreConstants.ENTITLEMENT_BASEURL)
         {
             Console.Write("GetEntitlementsAsync started \n");
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetEntitlements Asynchronously.");
@@ -126,13 +126,13 @@ namespace Intuit.Ipp.EntitlementService
             EntitlementCallCompletedEventArgs<Intuit.Ipp.Data.EntitlementsResponse> entitlementCallCompletedEventArgs = new EntitlementCallCompletedEventArgs<Intuit.Ipp.Data.EntitlementsResponse>();
             try
             {
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/entitlements/{1}/{2}", entitlementBaseUrl, CoreConstants.VERSION, serviceContext.RealmId);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/entitlements/{1}/{2}", entitlementBaseUrl, Utility.CoreConstants.VERSION, serviceContext.RealmId);
 
                 orginialSerializationFormat = this.serviceContext.IppConfiguration.Message.Response.SerializationFormat;
                 // Only XML format is supported by Entitlements API
                 serviceContext.IppConfiguration.Message.Response.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
                 // Creates request parameters
-                RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
 
                 HttpWebRequest request = asyncRestHandler.PrepareRequest(parameters, null, uri);
                 asyncRestHandler.GetResponse(request);

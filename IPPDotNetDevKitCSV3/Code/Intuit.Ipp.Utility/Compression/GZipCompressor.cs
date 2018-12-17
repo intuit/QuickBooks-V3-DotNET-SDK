@@ -19,7 +19,8 @@
 // <summary>This file contains implementation for gzip compressor.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core.Compression
+//namespace Intuit.Ipp.Core.Compression //nimisha
+namespace Intuit.Ipp.Utility
 {
     using System.IO;
     using System.IO.Compression;

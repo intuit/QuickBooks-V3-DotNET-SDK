@@ -52,11 +52,11 @@
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.9.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Exception, Version=5.9.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
@@ -78,8 +78,12 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Common\CoreConstants.cs" />
     <Compile Include="Common\DateHelper.cs" />
     <Compile Include="Common\RequestXmlCollection.cs" />
+    <Compile Include="Compression\DataCompressionFormat.cs" />
+    <Compile Include="Compression\DeflateCompressor.cs" />
+    <Compile Include="Compression\GZipCompressor.cs" />
     <Compile Include="Configuration\BaseUrlElement.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\ICompressor.cs" />
     <Compile Include="Serialization\IEntitySerializer.cs">
       <SubType>Code</SubType>
     </Compile>

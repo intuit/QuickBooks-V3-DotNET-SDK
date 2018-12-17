@@ -9,8 +9,10 @@ using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Core.Test.Common;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Retry;
+//using Intuit.Ipp.Retry;
 using Intuit.Ipp.Security;
+using Intuit.Ipp.Utility;
+using Intuit.Ipp.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.Core.Test
@@ -207,7 +209,7 @@ namespace Intuit.Ipp.Core.Test
         public void GetResponseWithRetryPolicySuccessTest()
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            serviceContext.IppConfiguration.RetryPolicy = new Retry.IntuitRetryPolicy(2, TimeSpan.FromSeconds(2));
+            serviceContext.IppConfiguration.RetryPolicy = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(2));
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
             string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);

@@ -17,14 +17,14 @@
  *******************************************************************************/
 // <summary>This file contains retry mechanism for unreliable actions and transient conditions.</summary>
 ////******************************************************************************************************************************
-
-namespace Intuit.Ipp.Retry
+//namespace Intuit.Ipp.Retry //nimisha
+namespace Intuit.Ipp.Core
 {
     using System;
     using System.Net;
     using System.Threading;
     using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Core;
+    //using Intuit.Ipp.Core;nimisha
     using System.IO;
     using Intuit.Ipp.Utility;//nimisha
 

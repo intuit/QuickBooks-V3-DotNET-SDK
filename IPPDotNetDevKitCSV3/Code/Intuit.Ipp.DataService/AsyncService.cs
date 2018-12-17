@@ -156,12 +156,12 @@ namespace Intuit.Ipp.DataService
             {
                 // Builds resource Uri
                 string query = string.Format(CultureInfo.InvariantCulture, "select * from {0} startPosition {1} maxResults {2}", resourceString, startPosition, maxResults);
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, this.serviceContext.RealmId);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", Utility.CoreConstants.VERSION, this.serviceContext.RealmId);
 
                 // Create request parameters
                 RequestParameters parameters = null;
             
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
        
 
                 //// Prepare request
@@ -199,17 +199,17 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 // Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 // Prepare request
@@ -247,17 +247,17 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -297,17 +297,17 @@ namespace Intuit.Ipp.DataService
             {
                 // Builds resource Uri
                
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=updateaccountontxns", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=updateaccountontxns", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -345,19 +345,19 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                //string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                //string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
                
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=donotupdateaccountontxns", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=donotupdateaccountontxns", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -395,17 +395,17 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -442,17 +442,17 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=void", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=void", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -517,29 +517,29 @@ namespace Intuit.Ipp.DataService
                 
                 if (resourceString.Equals("preferences"))
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/pdf", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/pdf", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
                 }
                 else
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/pdf", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/pdf", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
                 }
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
                 HttpWebRequest request = asyncRestHandler.PrepareRequest(requestParameters: parameters, requestBody: null, includeRequestId: false);
 
                 //set accept header to application/pdf
-                request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
+                request.Accept = Utility.CoreConstants.CONTENTTYPE_APPLICATIONPDF;
 
                 //// get response
                 asyncRestHandler.GetResponse(request);
@@ -614,23 +614,23 @@ namespace Intuit.Ipp.DataService
                 string uri = string.Empty;
 
                 //IF sendtoemail is specidfied that takes priority and is used to send the email to, if not specified it uses the email from BillEmail.Address from the entity saved on the server and not from the passes in entity
-                uri = String.IsNullOrWhiteSpace(sendToEmail) ? string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id)
-                    : string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send?sendTo={4}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id, sendToEmail);
+                uri = String.IsNullOrWhiteSpace(sendToEmail) ? string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id)
+                    : string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send?sendTo={4}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id, sendToEmail);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
                 HttpWebRequest request = asyncRestHandler.PrepareRequest(requestParameters: parameters, requestBody: string.Empty, includeRequestId: false);
-                request.ContentType = CoreConstants.CONTENTTYPE_APPLICATIONOCTETSTREAM;
+                request.ContentType = Utility.CoreConstants.CONTENTTYPE_APPLICATIONOCTETSTREAM;
 
                 //// get response
                 asyncRestHandler.GetResponse(request);
@@ -727,22 +727,22 @@ namespace Intuit.Ipp.DataService
                 
                 if (resourceString.Equals("preferences"))
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
                 }
                 else
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
                 }
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -852,17 +852,17 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/cdc?{2}", CoreConstants.VERSION, this.serviceContext.RealmId, query);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/cdc?{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, query);
 
                 //// Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 //// Prepare request
@@ -1111,7 +1111,7 @@ namespace Intuit.Ipp.DataService
 
                     Type type = this.requestedEntity.GetType();
                     PropertyInfo[] propertyInfoArray = type.GetProperties();
-                    PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == CoreConstants.STATUS);
+                    PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == Utility.CoreConstants.STATUS);
                     if (statusPropInfo != null)
                     {
                         statusPropInfo.SetValue(this.requestedEntity, intuitEntity.status, null);
@@ -1166,7 +1166,7 @@ namespace Intuit.Ipp.DataService
 
                         Type type = this.requestedEntity.GetType();
                         PropertyInfo[] propertyInfoArray = type.GetProperties();
-                        PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == CoreConstants.STATUS);
+                        PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == Utility.CoreConstants.STATUS);
                         if (statusPropInfo != null)
                         {
                             statusPropInfo.SetValue(this.requestedEntity, intuitEntity.status, null);
