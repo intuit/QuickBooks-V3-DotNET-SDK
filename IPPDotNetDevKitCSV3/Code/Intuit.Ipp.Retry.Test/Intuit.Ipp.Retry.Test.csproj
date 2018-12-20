@@ -125,9 +125,6 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="ExtendedRetryUnauthorizedAccessException.cs" />
-    <Compile Include="IntuitRetryPolicyTest.cs" />
-    <Compile Include="IntuitRetryPolicyValidationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

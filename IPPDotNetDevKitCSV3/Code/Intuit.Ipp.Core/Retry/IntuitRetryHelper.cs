@@ -17,12 +17,12 @@
  *******************************************************************************/
 // <summary>This file contains helper methods for Retry.</summary>
 ////*********************************************************
-//namespace Intuit.Ipp.Retry //nimisha
+//namespace Intuit.Ipp.Retry  
 namespace Intuit.Ipp.Core
 {
     using System;
     using System.Globalization;
-    //using Intuit.Ipp.Retry.Properties;//nimisha
+    //using Intuit.Ipp.Retry.Properties; 
     using Intuit.Ipp.Core.Properties;
 
     /// <summary>

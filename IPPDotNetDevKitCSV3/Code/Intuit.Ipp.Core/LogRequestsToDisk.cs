@@ -25,7 +25,7 @@ namespace Intuit.Ipp.Core.Rest
     using System.Globalization;
     using System.IO;
     using System.Text;
-    //using Intuit.Ipp.Core;//nimisha
+    //using Intuit.Ipp.Core; 
     using Intuit.Ipp.Exception;
     using Intuit.Ipp.Utility;
 

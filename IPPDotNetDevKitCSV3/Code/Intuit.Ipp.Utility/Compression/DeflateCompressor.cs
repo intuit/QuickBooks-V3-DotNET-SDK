@@ -19,7 +19,7 @@
 // <summary>This file contains implementation for deflate compressor.</summary>
 ////*********************************************************
 
-//namespace Intuit.Ipp.Core.Compression //nimisha
+//namespace Intuit.Ipp.Core.Compression  
 namespace Intuit.Ipp.Utility
 {
     using System.IO;

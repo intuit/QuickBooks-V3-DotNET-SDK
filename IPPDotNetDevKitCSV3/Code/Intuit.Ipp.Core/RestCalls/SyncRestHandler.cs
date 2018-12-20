@@ -28,7 +28,7 @@ namespace Intuit.Ipp.Core.Rest
     using System.Net;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;//nimisha
+    using Intuit.Ipp.Utility; 
 
     /// <summary>
     /// SyncRestHandler contains the logic for preparing the REST request, calls REST services and returns the response.

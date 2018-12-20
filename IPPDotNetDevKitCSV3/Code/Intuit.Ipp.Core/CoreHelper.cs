@@ -24,7 +24,7 @@ namespace Intuit.Ipp.Core
     using System;
     using System.Text;
     using System.Xml;
-    //using Intuit.Ipp.Core.Compression;//nimisha
+    //using Intuit.Ipp.Core.Compression; 
     using Intuit.Ipp.Core.Properties;
     using Intuit.Ipp.Core.Rest;
     using Intuit.Ipp.Exception;

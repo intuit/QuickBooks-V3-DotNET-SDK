@@ -25,9 +25,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));//Nimisha
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
 
-            var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));//Nimisha
+            var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
 
             _successHandler = new NetworkHandler(request =>
             {

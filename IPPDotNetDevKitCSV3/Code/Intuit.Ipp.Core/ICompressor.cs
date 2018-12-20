@@ -21,7 +21,7 @@
 
 //namespace Intuit.Ipp.Core
 //{
-//    public interface ICompressor //nimisha
+//    public interface ICompressor  
 //    {
 //    }
 //}

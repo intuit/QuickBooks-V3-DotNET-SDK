@@ -22,7 +22,7 @@
 namespace Intuit.Ipp.Core.Configuration
 {
    
-    //using Intuit.Ipp.Retry; //nimisha
+    //using Intuit.Ipp.Retry;  
     using Intuit.Ipp.Security;
     
 

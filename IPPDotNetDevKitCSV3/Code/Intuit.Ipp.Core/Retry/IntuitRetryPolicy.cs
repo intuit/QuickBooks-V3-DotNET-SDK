@@ -17,7 +17,7 @@
  *******************************************************************************/
 // <summary>This file contains retry mechanism for unreliable actions and transient conditions.</summary>
 ////******************************************************************************************************************************
-//namespace Intuit.Ipp.Retry //nimisha
+//namespace Intuit.Ipp.Retry  
 namespace Intuit.Ipp.Core
 {
     using System;
@@ -26,7 +26,7 @@ namespace Intuit.Ipp.Core
     using Intuit.Ipp.Exception;
     //using Intuit.Ipp.Core;nimisha
     using System.IO;
-    using Intuit.Ipp.Utility;//nimisha
+    using Intuit.Ipp.Utility; 
 
     /// <summary>
     /// Defines a delegate that will be invoked whenever a retry condition is encountered.

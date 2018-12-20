@@ -17,7 +17,7 @@
  *******************************************************************************/
 // <summary>This file contains IExtendedRetryExceptions contracts.</summary>
 ////***************************************************
-//namespace Intuit.Ipp.Retry //nimisha
+//namespace Intuit.Ipp.Retry  
 namespace Intuit.Ipp.Core
 {
     using System;

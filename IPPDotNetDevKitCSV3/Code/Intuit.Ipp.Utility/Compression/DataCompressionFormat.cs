@@ -19,7 +19,7 @@
 // <summary>This file contains enumeration for data compression format.</summary>
 ////*********************************************************
 
-//namespace Intuit.Ipp.Core.Compression //nimisha
+//namespace Intuit.Ipp.Core.Compression  
 namespace Intuit.Ipp.Utility
 {
     /// <summary>

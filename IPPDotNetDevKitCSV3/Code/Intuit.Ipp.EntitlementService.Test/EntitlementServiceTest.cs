@@ -29,7 +29,7 @@ namespace Intuit.Ipp.EntitlementService.Test
 
         }
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void GetEntitlementsTest()
         {
             try

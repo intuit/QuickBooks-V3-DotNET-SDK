@@ -54,7 +54,7 @@ namespace IDGOauthSample
             DataService commonServiceQBO = new DataService(serviceContext);
 
             #region 'Nimisha testing for Retry'
-            //Nimisha testing for Retry
+             
             //try
             //{
             //    Item it = new Item();

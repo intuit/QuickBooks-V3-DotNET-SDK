@@ -25,7 +25,7 @@ namespace Intuit.Ipp.Core.Configuration
     using System.IO;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
-    //using Intuit.Ipp.Retry; //nimisha
+    //using Intuit.Ipp.Retry;  
     using Intuit.Ipp.Security;
     using Intuit.Ipp.Utility;
 

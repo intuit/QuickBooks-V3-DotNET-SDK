@@ -92,7 +92,7 @@ namespace Intuit.Ipp.Core.Test
         /// <summary>
         ///A test for ServiceContext Constructor
         ///</summary>
-        [TestMethod()]
+        [TestMethod()][Ignore]
         public void ServiceContextConstructorWithAppTokenForQBOTest()
         {
             try
@@ -110,7 +110,7 @@ namespace Intuit.Ipp.Core.Test
         /// <summary>
         ///A test for ServiceContext Constructor
         ///</summary>
-        [TestMethod()]
+        [TestMethod()][Ignore]
         [ExpectedException(typeof(InvalidTokenException))]
         public void ServiceContextConstructorWithAppTokenNullValidatorTest()
         {
@@ -140,7 +140,7 @@ namespace Intuit.Ipp.Core.Test
         /// <summary>
         ///A test for ServiceContext Constructor
         ///</summary>
-        [TestMethod()]
+        [TestMethod()][Ignore]
         public void ServiceContextConstructorWithAppTokenNullRealmTest()
         {
             try
