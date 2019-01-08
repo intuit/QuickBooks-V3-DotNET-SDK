@@ -24,7 +24,6 @@ namespace Intuit.Ipp.Core
     using System.Net;
     using System.Threading;
     using Intuit.Ipp.Exception;
-    //using Intuit.Ipp.Core;nimisha
     using System.IO;
     using Intuit.Ipp.Utility; 
 
