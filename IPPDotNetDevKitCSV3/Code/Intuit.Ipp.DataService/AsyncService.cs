@@ -81,6 +81,11 @@ namespace Intuit.Ipp.DataService
         public event DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler OnFindAllAsynCompleted;
 
         /// <summary>
+        /// call back event for find all tax classifications
+        /// </summary>
+        public event DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler OnFindAllTaxClassificationsAsyncCompleted;
+
+        /// <summary>
         /// Call back event for add.
         /// </summary>
         public event DataServiceCallback<IEntity>.CallCompletedEventHandler OnAddAsyncCompleted;
@@ -96,13 +101,11 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public event DataServiceCallback<IEntity>.CallCompletedEventHandler OnUpdateAccAsynCompleted;
         
-
         /// <summary>
         /// call back event for update account.
         /// </summary>
         public event DataServiceCallback<IEntity>.CallCompletedEventHandler OnDoNotUpdateAccAsyncCompleted;
         
-
         /// <summary>
         /// Call Back event for Delete.
         /// </summary>
@@ -117,6 +120,16 @@ namespace Intuit.Ipp.DataService
         /// Call back event for FindById method.
         /// </summary>
         public event DataServiceCallback<IEntity>.CallCompletedEventHandler OnFindByIdAsynCompleted;
+
+        /// <summary>
+        /// Call back event for FindTaxClassificationByParentId method.
+        /// </summary>
+        public event DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler OnFindTaxClassificationByParentIdAsyncCompleted;
+
+        /// <summary>
+        /// Call back event for FindTaxClassificationByLevel method.
+        /// </summary>
+        public event DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler OnFindTaxClassificationByLevelAsyncCompleted;
 
         /// <summary>
         /// Call back event for GetPdf method.
@@ -176,6 +189,33 @@ namespace Intuit.Ipp.DataService
                 IdsException idsException = new IdsException(systemException.Message);
                 findAllCompletedEventArgs.Error = idsException;
                 this.OnFindAllAsynCompleted(this, findAllCompletedEventArgs);
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of all TaxClassification entities under the specified realm (asynchronously). The realm must be set in the context.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void FindAllTaxClassificationsAsync<T>() where T : IEntity
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindAllTaxClassificationsAsync");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.FindAllTaxClassificationsAsyncCompleted<IEntity>);
+            FindAllCallCompletedEventArgs findAllCompletedEventArgs = new FindAllCallCompletedEventArgs();
+
+            string resourceString = "TaxClassification";
+            try
+            {
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
+
+                PrepareFindTaxClassificationHttpAsync(uri, asyncRestHandler);
+            }
+            catch (SystemException systemException)
+            {
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                IdsException idsException = new IdsException(systemException.Message);
+                findAllCompletedEventArgs.Error = idsException;
+                this.OnFindAllTaxClassificationsAsyncCompleted(this, findAllCompletedEventArgs);
             }
         }
 
@@ -276,7 +316,6 @@ namespace Intuit.Ipp.DataService
         }
 
         #endregion
-
 
         #region updateacc
 
@@ -812,6 +851,231 @@ namespace Intuit.Ipp.DataService
 
         #endregion
 
+        #region Find TaxClassification methods
+        /// <summary>
+        /// Calls the asynchronous method to get the required entities specified by Level.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        public void FindTaxClassificationByLevelAsync<T>(T entity) where T : IEntity
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindTaxClassificationByLevelAsync.");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.FindTaxClassificationByLevelAsyncCompleted<T>);
+            FindAllCallCompletedEventArgs findAllCompletedEventArgs = new FindAllCallCompletedEventArgs();
+            IntuitEntity intuitEntity = entity as IntuitEntity;
+            
+            if (intuitEntity == null)
+            {
+                IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                findAllCompletedEventArgs.Error = exception;
+                this.OnFindTaxClassificationByLevelAsyncCompleted(this, findAllCompletedEventArgs);
+                return;
+            }
+            
+            string level = string.Empty;
+            level = ServicesHelper.PrepareTaxClassificationByLevel(entity, serviceContext);
+
+            // Check whether the level is null and throw an exception if it is null.
+            if (string.IsNullOrWhiteSpace(level))
+            {
+                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                findAllCompletedEventArgs.Error = exception;
+                this.OnFindTaxClassificationByLevelAsyncCompleted(this, findAllCompletedEventArgs);
+                return;
+            }
+
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            this.requestedEntity = entity;
+            try
+            {
+                // Builds resource Uri
+                string uri = string.Empty;
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?level={3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, level);
+
+                PrepareFindTaxClassificationHttpAsync(uri, asyncRestHandler);
+            }
+            catch (SystemException systemException)
+            {
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                IdsException idsException = new IdsException(systemException.Message);
+                findAllCompletedEventArgs.Error = idsException;
+                this.OnFindTaxClassificationByLevelAsyncCompleted(this, findAllCompletedEventArgs);
+            }
+        }
+
+        /// <summary>
+        /// FindTaxClassificationByLevelAsync complete call back
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
+        public void FindTaxClassificationByLevelAsyncCompleted<T>(object sender, AsyncCallCompletedEventArgs eventArgs) where T : IEntity
+        {
+            FindAllCallCompletedEventArgs findAllCallCompletedEventArgs = new FindAllCallCompletedEventArgs();
+            if (eventArgs.Error == null)
+            {
+                try
+                {
+                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+
+                    // Deserialize object
+                    IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
+                    QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
+                    Type type = queryResponse.GetType();
+                    List<IEntity> entities = new List<IEntity>();
+
+                    queryResponse.totalCount = queryResponse.AnyIntuitObjects.Length;
+                    queryResponse.totalCountSpecified = true;
+
+                    if (queryResponse.totalCount > 0)
+                    {
+                        object tempEntities = queryResponse.AnyIntuitObjects;
+                        object[] tempEntityArray = (object[])tempEntities;
+
+                        if (tempEntityArray.Length > 0)
+                        {
+                            foreach (object item in tempEntityArray)
+                            {
+                                entities.Add((T)item);
+                            }
+                        }
+                    }
+
+                    findAllCallCompletedEventArgs.Entities = entities;
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event AddAsyncompleted in AsyncService object.");
+                    this.OnFindTaxClassificationByLevelAsyncCompleted(this, findAllCallCompletedEventArgs);
+                }
+                catch (SystemException systemException)
+                {
+                    IdsException idsException = CreateIdsException(systemException);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    findAllCallCompletedEventArgs.Error = idsException;
+                    this.OnFindTaxClassificationByLevelAsyncCompleted(this, findAllCallCompletedEventArgs);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Calls the asynchronous method to get the required entities specified by ParentId.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        public void FindTaxClassificationByParentIdAsync<T>(T entity) where T : IEntity
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindTaxClassificationByParentIdAsync.");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.FindTaxClassificationByParentIdAsyncCompleted<T>);
+            FindAllCallCompletedEventArgs findAllCompletedEventArgs = new FindAllCallCompletedEventArgs();
+            IntuitEntity intuitEntity = entity as IntuitEntity;
+
+            if (intuitEntity == null)
+            {
+                IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                findAllCompletedEventArgs.Error = exception;
+                this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCompletedEventArgs);
+                return;
+            }
+
+            //Type entityType = entity.GetType();
+            string parentId = string.Empty;
+            ReferenceType parentRef = ServicesHelper.PrepareTaxClassificationByParentId(entity, serviceContext);
+            if (parentRef == null)
+            {
+                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                findAllCompletedEventArgs.Error = exception;
+                this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCompletedEventArgs);
+                return;
+            }
+            parentId = parentRef.Value;
+
+            // Check whether the level is null and throw an exception if it is null.
+            if (string.IsNullOrWhiteSpace(parentId))
+            {
+                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                findAllCompletedEventArgs.Error = exception;
+                this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCompletedEventArgs);
+                return;
+            }
+
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            this.requestedEntity = entity;
+            try
+            {
+                // Builds resource Uri
+                string uri = string.Empty;
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/children", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, parentId);
+
+                PrepareFindTaxClassificationHttpAsync(uri, asyncRestHandler);
+            }
+            catch (SystemException systemException)
+            {
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                IdsException idsException = new IdsException(systemException.Message);
+                findAllCompletedEventArgs.Error = idsException;
+                this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCompletedEventArgs);
+            }
+        }
+
+        /// <summary>
+        /// FindTaxClassificationByParentIdAsync completed callback
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
+        public void FindTaxClassificationByParentIdAsyncCompleted<T>(object sender, AsyncCallCompletedEventArgs eventArgs) where T : IEntity
+        {
+            FindAllCallCompletedEventArgs findAllCallCompletedEventArgs = new FindAllCallCompletedEventArgs();
+            if (eventArgs.Error == null)
+            {
+                try
+                {
+                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+
+                    // Deserialize object
+                    IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
+                    QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
+                    Type type = queryResponse.GetType();
+                    List<IEntity> entities = new List<IEntity>();
+
+                    queryResponse.totalCount = queryResponse.AnyIntuitObjects.Length;
+                    queryResponse.totalCountSpecified = true;
+
+                    if (queryResponse.totalCount > 0)
+                    {
+                        object tempEntities = queryResponse.AnyIntuitObjects;
+                        object[] tempEntityArray = (object[])tempEntities;
+
+                        if (tempEntityArray.Length > 0)
+                        {
+                            foreach (object item in tempEntityArray)
+                            {
+                                entities.Add((T)item);
+                            }
+                        }
+                    }
+
+                    findAllCallCompletedEventArgs.Entities = entities;
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event AddAsyncompleted in AsyncService object.");
+                    this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCallCompletedEventArgs);
+                }
+                catch (SystemException systemException)
+                {
+                    IdsException idsException = CreateIdsException(systemException);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    findAllCallCompletedEventArgs.Error = idsException;
+                    this.OnFindTaxClassificationByParentIdAsyncCompleted(this, findAllCallCompletedEventArgs);
+                }
+            }
+        }
+
+        #endregion
+
         #region CDC
 
         /// <summary>
@@ -963,37 +1227,89 @@ namespace Intuit.Ipp.DataService
         }
 
         /// <summary>
-        /// call back method for asynchronously Adding entity
+        /// FindAllTaxClassificationsAsync completed call back.
         /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="eventArgs">The <see cref="Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
-        private void AddAsyncompleted(object sender, AsyncCallCompletedEventArgs eventArgs)
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
+        private void FindAllTaxClassificationsAsyncCompleted<T>(object sender, AsyncCallCompletedEventArgs eventArgs) where T : IEntity
         {
-            CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
+            FindAllCallCompletedEventArgs findAllCallCompletedEventArgs = new FindAllCallCompletedEventArgs();
             if (eventArgs.Error == null)
             {
                 try
                 {
                     IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+
+                    // Deserialize object
                     IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
-                    callCompletedEventArgs.Entity = restResponse.AnyIntuitObject as IEntity;
+                    QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
+                    Type type = queryResponse.GetType();
+                    List<IEntity> entities = new List<IEntity>();
+
+                    queryResponse.totalCount = queryResponse.AnyIntuitObjects.Length;
+                    queryResponse.totalCountSpecified = true;
+
+                    if (queryResponse.totalCount > 0)
+                    {
+                        object tempEntities = queryResponse.AnyIntuitObjects;
+                        object[] tempEntityArray = (object[])tempEntities;
+
+                        if (tempEntityArray.Length > 0)
+                        {
+                            foreach (object item in tempEntityArray)
+                            {
+                                entities.Add((T)item);
+                            }
+                        }
+                    }
+
+                    findAllCallCompletedEventArgs.Entities = entities;
                     this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event AddAsyncompleted in AsyncService object.");
-                    this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+                    this.OnFindAllTaxClassificationsAsyncCompleted(this, findAllCallCompletedEventArgs);
                 }
                 catch (SystemException systemException)
                 {
                     IdsException idsException = CreateIdsException(systemException);
                     this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    callCompletedEventArgs.Error = idsException;
-                    this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+                    findAllCallCompletedEventArgs.Error = idsException;
+                    this.OnFindAllTaxClassificationsAsyncCompleted(this, findAllCallCompletedEventArgs);
                 }
             }
-            else
+        }
+
+        /// <summary>
+        /// call back method for asynchronously Adding entity
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="eventArgs">The <see cref="Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        private void AddAsyncompleted(object sender, AsyncCallCompletedEventArgs eventArgs)
+    {
+        CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
+        if (eventArgs.Error == null)
+        {
+            try
             {
-                callCompletedEventArgs.Error = eventArgs.Error;
+                IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+                IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
+                callCompletedEventArgs.Entity = restResponse.AnyIntuitObject as IEntity;
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event AddAsyncompleted in AsyncService object.");
+                this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+            }
+            catch (SystemException systemException)
+            {
+                IdsException idsException = CreateIdsException(systemException);
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                callCompletedEventArgs.Error = idsException;
                 this.OnAddAsyncCompleted(this, callCompletedEventArgs);
             }
         }
+        else
+        {
+            callCompletedEventArgs.Error = eventArgs.Error;
+            this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+        }
+    }
 
         /// <summary>
         /// Callback event
@@ -1280,5 +1596,25 @@ namespace Intuit.Ipp.DataService
         }
 
         #endregion 
+
+        private void PrepareFindTaxClassificationHttpAsync(string uri, AsyncRestHandler asyncRestHandler)
+        {
+            // Create request parameters
+            RequestParameters parameters;
+            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+            }
+            else
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+            }
+
+            // Prepare request
+            HttpWebRequest request = asyncRestHandler.PrepareRequest(parameters, null);
+
+            // get response
+            asyncRestHandler.GetResponse(request);
+        }
     }
 }

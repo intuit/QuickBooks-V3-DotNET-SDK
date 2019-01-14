@@ -621,30 +621,6 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="BusinessNumber" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								Business Number of the Customer.
-								Applicable to CA/UK/IN versions of QuickBooks. Referred to as PAN in India.
-							</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="GSTIN" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								GST Identification Number of the Customer.
-								Applicable for IN region only.
-							</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="GSTRegistrationType" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								GST registration type of the Customer.
-								Applicable for IN region only.
-							</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -906,22 +882,6 @@
                     <xs:element name="VendorEx" type="IntuitAnyType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Internal use only: extension place holder for Vendor.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="GSTIN" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								GST Identification Number of the Vendor.
-								Applicable for IN region only.
-							</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="GSTRegistrationType" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								GST registration type of the Vendor.
-								Applicable for IN region only.
-							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
                     </xs:sequence>

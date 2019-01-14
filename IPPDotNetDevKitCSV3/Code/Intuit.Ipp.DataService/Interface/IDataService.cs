@@ -69,6 +69,29 @@ namespace Intuit.Ipp.DataService
         T FindById<T>(T entity) where T : IEntity;
 
         /// <summary>
+        /// Gets a list of all TacClassification entities specified by ParentId under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns>Returns the list of entities.</returns>
+        ReadOnlyCollection<T> FindTaxClassificationByParentId<T>(T entity) where T : IEntity;
+
+        /// <summary>
+        /// Gets a list of all TacClassification entities specified by Level under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns>Returns the list of entities.</returns>
+        ReadOnlyCollection<T> FindTaxClassificationByLevel<T>(T entity) where T : IEntity;
+
+        /// <summary>
+        /// Gets a list of all TacClassification entities under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        ReadOnlyCollection<T> FindAllTaxClassifications<T>() where T : IEntity;
+
+        /// <summary>
         /// Gets a list of all entities of type T under the specified realm. The realm must be set in the context
         /// </summary>
         /// <typeparam name="T">Generic Type T.</typeparam>

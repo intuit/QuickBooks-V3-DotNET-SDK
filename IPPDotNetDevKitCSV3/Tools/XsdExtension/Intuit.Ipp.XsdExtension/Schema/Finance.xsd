@@ -4915,7 +4915,20 @@
                                                         </xs:documentation>
                                                 </xs:annotation>
                                         </xs:element>
-					<xs:element name="RemitToRef" type="ReferenceType"
+			                <xs:element name="ShipFromAddr" type="PhysicalAddress"
+                                                minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation>
+                                                                Product: ALL
+                                                                Description: QBO: Shipping from address
+                                                                of the Invoice.[br]See [a
+                                                                href="http://ipp.developer.intuit.com/0010_Intuit_Partner_Platform/0060_Financial_Management_Services_(v3)/01000_Using_Data_Service_Entities#Addresses"]Addresses[/a]
+                                                                Description: QBW: Identifies the address where the goods are shipped
+                                                                from. For transactions without shipping, it represents the address where the sale took place.
+                                                        </xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                         		<xs:element name="RemitToRef" type="ReferenceType"
 						minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>
@@ -9756,6 +9769,13 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="ItemEx" type="IntuitAnyType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Internal use only: extension place holder for
+								Item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="TaxClassificationRef" type="ReferenceType"
 								minOccurs="0">
 						<xs:annotation>
@@ -9766,11 +9786,22 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="ItemEx" type="IntuitAnyType"
-						minOccurs="0">
+					<xs:element name="UQCDisplayText" type="xs:string" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Internal use only: extension place holder for
-								Item</xs:documentation>
+							<xs:documentation>
+								Product: ALL
+								Description: Unit of measure (UQC) text to be displayed for this line item in Invoice/Sales forms.
+								Applicable for IN Region.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="UQCId" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: ALL
+								Description: Unit of measure for this line item as per the standard unit (UQC) defined under the GST rule. Example: KGS- kilograms, MTR- metres, SQF-  square feet. It will be shown in GSTR1 report.
+								Applicable for IN Region.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -13577,7 +13608,7 @@
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-            <xs:extension base="IntuitEntity">
+			<xs:extension base="IntuitEntity">
 			<xs:sequence>
 				<xs:element name="Code" type="xs:string" minOccurs="0"/>
 				<xs:element name="Name" type="xs:string" minOccurs="0"/>
@@ -13586,7 +13617,7 @@
 				<xs:element name="ParentRef" type="ReferenceType" minOccurs="0"/>
 				<xs:element name="ApplicableTo" type="ItemTypeEnum" minOccurs="0"  maxOccurs="unbounded"/>
 			</xs:sequence>
-            </xs:extension>
+		 </xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>
