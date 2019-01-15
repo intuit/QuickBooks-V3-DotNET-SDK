@@ -72,6 +72,21 @@ namespace Intuit.Ipp.DataService
         }
 
         /// <summary>
+        /// Validate Id field null or white space for IntuitEntity object
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="serviceContext"></param>
+        internal static void ValidateId(string Id, ServiceContext serviceContext)
+        {
+            if (string.IsNullOrWhiteSpace(Id))
+            {
+                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                IdsExceptionManager.HandleException(exception);
+            }
+        }
+
+        /// <summary>
         /// Validate if passed object is null
         /// </summary>
         /// <param name="obj"></param>
