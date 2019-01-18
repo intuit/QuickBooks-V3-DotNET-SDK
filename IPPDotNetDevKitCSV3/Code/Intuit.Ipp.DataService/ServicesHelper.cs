@@ -1,7 +1,7 @@
 ﻿////*********************************************************
 // <copyright file="ServicesHelper.cs" company="Intuit">
 /*******************************************************************************
- * Copyright 2016 Intuit
+ * Copyright 2019 Intuit
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,23 @@ namespace Intuit.Ipp.DataService
         }
 
         /// <summary>
+        /// Validate if type of entity is same as specified type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <param name="type"></param>
+        internal static void ValidateEntityType<T>(T entity, string type, ServiceContext serviceContext) where T : IEntity
+        {
+            string entityType = entity.GetType().Name;
+            if (entityType != type)
+            {
+                IdsException exception = new IdsException(entityType + ": " + Resources.OperationNotSupportedOnEntity);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                IdsExceptionManager.HandleException(exception);
+            }
+        }
+
+        /// <summary>
         /// Validate if passed object is null
         /// </summary>
         /// <param name="obj"></param>
@@ -95,7 +112,7 @@ namespace Intuit.Ipp.DataService
         {
             if (obj == null)
             {
-                IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
+                IdsException exception = new IdsException(Resources.FieldNullOrEmpty);
                 serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
@@ -117,29 +134,26 @@ namespace Intuit.Ipp.DataService
         }
 
         /// <summary>
-        /// Get ParentRef field of TaxClassification object
+        /// Get ParentRef field of given object
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="serviceContext"></param>
         /// <returns></returns>
-        internal static ReferenceType PrepareTaxClassificationByParentId(IEntity entity, ServiceContext serviceContext)
+        internal static ReferenceType PrepareByParentId(IEntity entity, ServiceContext serviceContext)
         {
             string parentId = string.Empty;
             PropertyInfo parentRefProp = entity.GetType().GetProperty("ParentRef");
             ReferenceType parentRef = (ReferenceType)parentRefProp.GetValue(entity);
             return parentRef;
-            //ValidateObject(parentRef, serviceContext);
-            //parentId = parentRef.Value;
-            //return parentId;
         }
 
         /// <summary>
-        /// Get Level field of TaxClassification object
+        /// Get Level field of given object
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="serviceContext"></param>
         /// <returns></returns>
-        internal static string PrepareTaxClassificationByLevel(IEntity entity, ServiceContext serviceContext)
+        internal static string PrepareByLevel(IEntity entity, ServiceContext serviceContext)
         {
             string level = string.Empty;
             PropertyInfo levelProp = entity.GetType().GetProperty("Level");

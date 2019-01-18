@@ -151,6 +151,15 @@ namespace Intuit.Ipp.DataService.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ParentRef field is null or empty..
+        /// </summary>
+        internal static string FieldNullOrEmpty {
+            get {
+                return ResourceManager.GetString("FieldNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Ids Logger cannot be null..
         /// </summary>
         internal static string IdsLoggerNotNullMessage {
@@ -165,6 +174,15 @@ namespace Intuit.Ipp.DataService.Properties {
         internal static string IdString {
             get {
                 return ResourceManager.GetString("IdString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This entity does not suppport this opperation. Only supported for TaxClassification.
+        /// </summary>
+        internal static string OperationNotSupportedOnEntity {
+            get {
+                return ResourceManager.GetString("OperationNotSupportedOnEntity", resourceCulture);
             }
         }
         

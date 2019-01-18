@@ -169,6 +169,21 @@ namespace Intuit.Ipp.DataService.Test
             
         }
 
+        [TestMethod()]
+        public void FindAllTaxClassificationTest()
+        {
+            try
+            {
+                IEnumerable<IEntity> taxClassifications = dataServiceTestCases.FindAllEntities(new TaxClassification());
+                Assert.IsNotNull(taxClassifications);
+                Assert.IsTrue(taxClassifications.Count() > 0);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+        }
+
         #endregion
 
         #region FindById Test
@@ -207,6 +222,123 @@ namespace Intuit.Ipp.DataService.Test
             Assert.Fail();
         }
 
+        #endregion
+
+        #region FindByLevel
+        [TestMethod()]
+        public void FindByLevelTest()
+        {
+            List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            try
+            {
+                TaxClassification taxClassification = new TaxClassification
+                {
+                    Level = taxClassList[0].Level
+                };
+                IEnumerable<IEntity> taxClassifications = dataServiceTestCases.FindByLevelEntities(taxClassification);
+                Assert.IsNotNull(taxClassifications);
+                Assert.IsTrue(taxClassifications.Count() > 0);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByLevelTestNullEntity()
+        {
+            IEnumerable<TaxClassification> taxClassifications = dataServiceTestCases.FindByLevelEntities(null) as IEnumerable<TaxClassification>;
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByLevelTestInvalidEntityType()
+        {
+            Customer customer = new Customer();
+            IEnumerable<Customer> customers = dataServiceTestCases.FindByLevelEntities(customer) as IEnumerable<Customer>;
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByLevelTestInvalidLevel()
+        {
+            TaxClassification taxClassification = new TaxClassification
+            {
+                Level = "level"
+            };
+            IEnumerable<TaxClassification> taxClassifications = dataServiceTestCases.FindByLevelEntities(taxClassification) as IEnumerable<TaxClassification>;
+            Assert.Fail();
+        }
+        #endregion
+
+        #region FindByParentId
+        [TestMethod()]
+        public void FindByParentIdTest()
+        {
+            List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            try
+            {
+                TaxClassification taxClassification = new TaxClassification
+                {
+                    ParentRef = taxClassList[0].ParentRef
+                };
+                IEnumerable<IEntity> taxClassifications = dataServiceTestCases.FindByParentIdEntities(taxClassification);
+                Assert.IsNotNull(taxClassifications);
+                Assert.IsTrue(taxClassifications.Count() > 0);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByParentIdTestNullEntity()
+        {
+            IEnumerable<TaxClassification> taxClassifications = dataServiceTestCases.FindByParentIdEntities(null) as IEnumerable<TaxClassification>;
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByParentIdTestInvalidEntityType()
+        {
+            Customer customer = new Customer();
+            IEnumerable<Customer> customers = dataServiceTestCases.FindByParentIdEntities(customer) as IEnumerable<Customer>;
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByParentIdTestInvalidParentId()
+        {
+            TaxClassification taxClassification = new TaxClassification
+            {
+                ParentRef = new ReferenceType
+                {
+                    Value = "parent"
+                }
+            };
+            IEnumerable<TaxClassification> taxClassifications = dataServiceTestCases.FindByParentIdEntities(taxClassification) as IEnumerable<TaxClassification>;
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(IdsException))]
+        public void FindByParentIdTestNullParentId()
+        {
+            TaxClassification taxClassification = new TaxClassification
+            {
+                ParentRef = null
+            };
+            IEnumerable<TaxClassification> taxClassifications = dataServiceTestCases.FindByParentIdEntities(taxClassification) as IEnumerable<TaxClassification>;
+            Assert.Fail();
+        }
         #endregion
 
         #region Update Tests

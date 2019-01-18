@@ -187,6 +187,7 @@
     <Compile Include="Services\QBO\TimeActivity.cs" />
     <Compile Include="Services\QBO\Transaction.cs" />
     <Compile Include="Services\QBO\Transfer.cs" />
+    <Compile Include="Services\QBO\TaxClassification.cs" />
     <Compile Include="Services\QBO\UOM.cs" />
     <Compile Include="Services\QBO\User.cs" />
     <Compile Include="Services\QBO\Vendor.cs" />
