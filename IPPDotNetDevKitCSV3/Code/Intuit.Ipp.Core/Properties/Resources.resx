@@ -178,6 +178,6 @@
     <value>Please specify a valid directory path.</value>
   </data>
   <data name="DefaultMinorVersionValue" xml:space="preserve">
-    <value>34</value>
+    <value>35</value>
   </data>
 </root>
