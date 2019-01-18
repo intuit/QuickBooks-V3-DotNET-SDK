@@ -50,6 +50,24 @@ namespace Intuit.Ipp.Test
             return entityList.ToList<T>();
         }
 
+        internal static List<T> FindByLevel<T>(ServiceContext context, T entity) where T : IEntity
+        {
+            DataService.DataService service = new DataService.DataService(context);
+
+            ReadOnlyCollection<T> entityList = service.FindByLevel(entity);
+
+            return entityList.ToList<T>();
+        }
+
+        internal static List<T> FindByParentId<T>(ServiceContext context, T entity) where T : IEntity
+        {
+            DataService.DataService service = new DataService.DataService(context);
+
+            ReadOnlyCollection<T> entityList = service.FindByParentId(entity);
+
+            return entityList.ToList<T>();
+        }
+
         internal static T FindById<T>(ServiceContext context, T entity) where T : IEntity
         {
             DataService.DataService service = new DataService.DataService(context);
@@ -369,6 +387,132 @@ namespace Intuit.Ipp.Test
             if (!isFindAll)
             {
                 Assert.Fail("Find All Failed");
+            }
+
+            if (exp != null)
+            {
+                throw exp;
+            }
+
+            if (entities != null)
+            {
+                Assert.IsTrue(entities.Count >= 0);
+            }
+
+            // Set the event to non-signaled before making next async call.    
+            manualEvent.Reset();
+            return entities;
+        }
+
+        internal static List<T> FindByLevelAsync<T>(ServiceContext context, T entity) where T : IEntity
+        {
+            //Initializing the Dataservice object with ServiceContext
+            DataService.DataService service = new DataService.DataService(context);
+
+            bool isFindByLevel = false;
+
+            IdsException exp = null;
+
+            // Used to signal the waiting test thread that a async operation have completed.    
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+
+            List<T> entities = new List<T>();
+
+            // Async callback events are anonomous and are in the same scope as the test code,    
+            // and therefore have access to the manualEvent variable.    
+            service.OnFindByLevelAsyncCompleted += (sender, e) =>
+            {
+                isFindByLevel = true;
+                manualEvent.Set();
+                if (e.Error != null)
+                {
+                    exp = e.Error;
+                }
+                if (exp == null)
+                {
+                    if (e.Entities != null)
+                    {
+                        foreach (IEntity en in e.Entities)
+                        {
+                            entities.Add((T)en);
+                        }
+                    }
+                }
+            };
+
+            // Call the service method
+            service.FindByLevelAsync<T>(entity);
+
+            manualEvent.WaitOne(60000, false); Thread.Sleep(10000);
+
+
+            // Check if we completed the async call, or fail the test if we timed out.    
+            if (!isFindByLevel)
+            {
+                Assert.Fail("Find By Level Async Failed");
+            }
+
+            if (exp != null)
+            {
+                throw exp;
+            }
+
+            if (entities != null)
+            {
+                Assert.IsTrue(entities.Count >= 0);
+            }
+
+            // Set the event to non-signaled before making next async call.    
+            manualEvent.Reset();
+            return entities;
+        }
+
+        internal static List<T> FindByParentIdAsync<T>(ServiceContext context, T entity) where T : IEntity
+        {
+            //Initializing the Dataservice object with ServiceContext
+            DataService.DataService service = new DataService.DataService(context);
+
+            bool isFindByParentId = false;
+
+            IdsException exp = null;
+
+            // Used to signal the waiting test thread that a async operation have completed.    
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+
+            List<T> entities = new List<T>();
+
+            // Async callback events are anonomous and are in the same scope as the test code,    
+            // and therefore have access to the manualEvent variable.    
+            service.OnFindByParentIdAsyncCompleted += (sender, e) =>
+            {
+                isFindByParentId = true;
+                manualEvent.Set();
+                if (e.Error != null)
+                {
+                    exp = e.Error;
+                }
+                if (exp == null)
+                {
+                    if (e.Entities != null)
+                    {
+                        foreach (IEntity en in e.Entities)
+                        {
+                            entities.Add((T)en);
+                        }
+                    }
+                }
+            };
+
+            // Call the service method
+            service.FindByParentIdAsync<T>(entity);
+
+            manualEvent.WaitOne(60000, false); Thread.Sleep(10000);
+
+
+            // Check if we completed the async call, or fail the test if we timed out.    
+            if (!isFindByParentId)
+            {
+                Assert.Fail("Find By ParentId Async Failed");
             }
 
             if (exp != null)

@@ -59,6 +59,21 @@ namespace Intuit.Ipp.DataService.Test
             return this.dataService.FindAll(entity, startPosition, maxResults);
         }
 
+        internal IEnumerable<IEntity> FindAllEntities(IEntity entity)
+        {
+            return this.dataService.FindAll(entity);
+        }
+
+        internal IEnumerable<IEntity> FindByLevelEntities(IEntity entity)
+        {
+            return this.dataService.FindByLevel(entity);
+        }
+
+        internal IEnumerable<IEntity> FindByParentIdEntities(IEntity entity)
+        {
+            return this.dataService.FindByParentId(entity);
+        }
+
         internal IEntity FindByIdEntity(IEntity entity)
         {
             return this.dataService.FindById(entity);
