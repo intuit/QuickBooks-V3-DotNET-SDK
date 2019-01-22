@@ -55,7 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.EntitlementService">
+    <Reference Include="Intuit.Ipp.EntitlementService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.EntitlementService.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Exception, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -85,6 +86,9 @@
     <Reference Include="Intuit.Ipp.ReportService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.ReportService.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Retry">
+      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Security, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -186,6 +190,7 @@
     <Compile Include="Services\QBO\TimeActivity.cs" />
     <Compile Include="Services\QBO\Transaction.cs" />
     <Compile Include="Services\QBO\Transfer.cs" />
+    <Compile Include="Services\QBO\TaxClassification.cs" />
     <Compile Include="Services\QBO\UOM.cs" />
     <Compile Include="Services\QBO\User.cs" />
     <Compile Include="Services\QBO\Vendor.cs" />
