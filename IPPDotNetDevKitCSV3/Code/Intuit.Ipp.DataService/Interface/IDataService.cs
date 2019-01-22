@@ -1,7 +1,7 @@
 ﻿////***************************************************************************************************
 // <copyright file="IDataService.cs" company="Intuit">
 /*******************************************************************************
- * Copyright 2016 Intuit
+ * Copyright 2019 Intuit
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,22 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity"> Entity type to Find.</param>    
         /// <returns> Returns an entity of specified Id.</returns> 
         T FindById<T>(T entity) where T : IEntity;
+
+        /// <summary>
+        /// Gets a list of all TacClassification entities specified by ParentId under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns>Returns the list of entities.</returns>
+        ReadOnlyCollection<T> FindByParentId<T>(T entity) where T : IEntity;
+
+        /// <summary>
+        /// Gets a list of all TaxClassification entities specified by Level under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns>Returns the list of entities.</returns>
+        ReadOnlyCollection<T> FindByLevel<T>(T entity) where T : IEntity;
 
         /// <summary>
         /// Gets a list of all entities of type T under the specified realm. The realm must be set in the context

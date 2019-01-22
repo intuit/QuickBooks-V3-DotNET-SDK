@@ -1871,6 +1871,7 @@
 			<xs:enumeration value="TaxReturn"/>
 			<xs:enumeration value="Term"/>
 			<xs:enumeration value="TimeActivity"/>
+			<xs:enumeration value="TaxClassification"/>
 			<xs:enumeration value="Transfer"/>
 			<xs:enumeration value="Transaction"/>
 			<xs:enumeration value="TxnLocation"/>

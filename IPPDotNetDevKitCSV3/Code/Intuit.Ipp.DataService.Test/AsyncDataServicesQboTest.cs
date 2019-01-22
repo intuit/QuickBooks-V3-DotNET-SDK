@@ -142,6 +142,30 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod()]
+        public void FindAllTaxClassificationsTest()
+        {
+            TaxClassification taxClassification = new TaxClassification();
+            try
+            {
+                // Used to signal the waiting test thread that a async operation have completed.    
+                ManualResetEvent manualEvent = new ManualResetEvent(false);
+                qboService.OnFindAllAsyncCompleted = (sender, e) =>
+                {
+                    Assert.IsNotNull(e);
+                    Assert.IsNotNull(e.Entities);
+                    Assert.IsTrue(e.Entities.Count <= 10);
+                    manualEvent.Set();
+                };
+                qboService.FindAllAsync(taxClassification);
+                manualEvent.WaitOne(30000);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+        }
+
+        [TestMethod()]
         public void FindAllQboTestNullEntity()
         {
             Customer customer = null;
@@ -261,6 +285,171 @@ namespace Intuit.Ipp.DataService.Test
                 manualEvent.Set();
             };
             qboService.FindByIdAsync(customer);
+            manualEvent.WaitOne(30000);
+        }
+
+        #endregion
+
+        #region Find by Level test
+
+        [TestMethod()]
+        public void FindByLevelQboTest()
+        {
+            List<TaxClassification> taxClassList = qboService.FindAll(new TaxClassification()).ToList();
+            TaxClassification taxClassification = new TaxClassification
+            {
+                Level = taxClassList[0].Level
+            };
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            qboService.OnFindByLevelAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Entities);
+                Assert.IsTrue(e.Entities.Count > 0);
+                manualEvent.Set();
+            };
+            qboService.FindByLevelAsync(taxClassification);
+            manualEvent.WaitOne(30000);
+        }
+
+        [TestMethod()]//INFO: Fails when run in group
+        public void FindByLevelQboTestNullEntity()
+        {
+            TaxClassification taxClassification = null;
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            qboService.OnFindByLevelAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByLevelAsync(taxClassification);
+            manualEvent.WaitOne(60000);
+        }
+
+        [TestMethod()]
+        public void FindByLevelQboTestInvalidLevel()
+        {
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            TaxClassification taxClassification = new TaxClassification
+            {
+                Level = "level"
+            };
+            qboService.OnFindByLevelAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByLevelAsync(taxClassification);
+            manualEvent.WaitOne(30000);
+        }
+
+        [TestMethod()]
+        public void FindByLevelQboTestInvalidType()
+        {
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            Customer customer = new Customer();
+            qboService.OnFindByLevelAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByLevelAsync(customer);
+            manualEvent.WaitOne(30000);
+        }
+
+        #endregion
+
+        #region Find by ParentId test
+
+        [TestMethod()]
+        public void FindByParentIdQboTest()
+        {
+            List<TaxClassification> taxClassList = qboService.FindAll(new TaxClassification()).ToList();
+            TaxClassification taxClassification = new TaxClassification
+            {
+                ParentRef = taxClassList[0].ParentRef
+            };
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            qboService.OnFindByParentIdAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Entities);
+                Assert.IsTrue(e.Entities.Count > 0);
+                manualEvent.Set();
+            };
+            qboService.FindByParentIdAsync(taxClassification);
+            manualEvent.WaitOne(30000);
+        }
+
+        [TestMethod()]//INFO: Fails when run in group
+        public void FindByParentIdQboTestNullEntity()
+        {
+            TaxClassification taxClassification = null;
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            qboService.OnFindByParentIdAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByParentIdAsync(taxClassification);
+            manualEvent.WaitOne(60000);
+        }
+
+        [TestMethod()]//INFO: Fails when run in group
+        public void FindByParentIdQboTestNullParentRef()
+        {
+            TaxClassification taxClassification = new TaxClassification
+            {
+                ParentRef = null
+            };
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            qboService.OnFindByParentIdAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByParentIdAsync(taxClassification);
+            manualEvent.WaitOne(60000);
+        }
+
+        [TestMethod()]
+        public void FindByarentIdQboTestInvalidParentId()
+        {
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            TaxClassification taxClassification = new TaxClassification
+            {
+                ParentRef = new ReferenceType
+                {
+                    Value = "parent"
+                }
+            };
+            qboService.OnFindByParentIdAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByParentIdAsync(taxClassification);
+            manualEvent.WaitOne(30000);
+        }
+
+        [TestMethod()]
+        public void FindByParentIdQboTestInvalidType()
+        {
+            ManualResetEvent manualEvent = new ManualResetEvent(false);
+            Customer customer = new Customer();
+            qboService.OnFindByParentIdAsyncCompleted = (sender, e) =>
+            {
+                Assert.IsNotNull(e);
+                Assert.IsNotNull(e.Error);
+                manualEvent.Set();
+            };
+            qboService.FindByParentIdAsync(customer);
             manualEvent.WaitOne(30000);
         }
 

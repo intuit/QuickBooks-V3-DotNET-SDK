@@ -99,6 +99,7 @@
 			<xs:enumeration value="Discount" />
 			<xs:enumeration value="Tax" />
 			<xs:enumeration value="Tax Group" />
+			<xs:enumeration value="Bundle"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="CustomerTypeEnum">
@@ -9755,13 +9756,6 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="ItemEx" type="IntuitAnyType"
-						minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Internal use only: extension place holder for
-								Item</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="TaxClassificationRef" type="ReferenceType"
 								minOccurs="0">
 						<xs:annotation>
@@ -9770,6 +9764,13 @@
 								Description: Reference to the
 								SalesTaxCode for this item.
 							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ItemEx" type="IntuitAnyType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Internal use only: extension place holder for
+								Item</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -13563,5 +13564,29 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaxClassification">
+		<xs:annotation>
+			<xs:documentation>
+				Product: ALL
+				Description: Tax classification segregates different items into different classifications and the tax
+				classification is one of the key parameters to determine appropriate tax on transactions involving items.
+				Tax classifications are sourced by either tax governing authorities as in India/Malaysia or externally like Exactor.
+				"Fuel", "Garments" and "Soft drinks" are a few examples of tax classification in layman terms.
+				User can choose a specific tax classification for an item while creating it.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+            <xs:extension base="IntuitEntity">
+			<xs:sequence>
+				<xs:element name="Code" type="xs:string" minOccurs="0"/>
+				<xs:element name="Name" type="xs:string" minOccurs="0"/>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+				<xs:element name="Level" type="xs:string" minOccurs="0"/>
+				<xs:element name="ParentRef" type="ReferenceType" minOccurs="0"/>
+				<xs:element name="ApplicableTo" type="ItemTypeEnum" minOccurs="0"  maxOccurs="unbounded"/>
+			</xs:sequence>
+            </xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>
