@@ -42,8 +42,7 @@
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Exception">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />

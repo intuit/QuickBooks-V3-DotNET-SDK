@@ -39,32 +39,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.Core, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Core">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Data, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Data">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Diagnostics">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.EntitlementService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.EntitlementService">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.EntitlementService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Exception">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Security, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Security">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Utility, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Utility">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />

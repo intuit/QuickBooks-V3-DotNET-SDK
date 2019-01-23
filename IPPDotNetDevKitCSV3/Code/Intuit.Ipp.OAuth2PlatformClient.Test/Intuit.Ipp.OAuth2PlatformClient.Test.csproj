@@ -39,8 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.OAuth2PlatformClient">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

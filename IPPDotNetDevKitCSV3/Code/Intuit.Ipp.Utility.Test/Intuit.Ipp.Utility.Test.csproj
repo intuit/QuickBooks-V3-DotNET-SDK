@@ -51,12 +51,10 @@
     <Reference Include="Intuit.Ipp.DataService">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Diagnostics">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Exception">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.LinqExtender">
@@ -65,8 +63,10 @@
     <Reference Include="Intuit.Ipp.QueryFilter">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Utility, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Security">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Utility">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

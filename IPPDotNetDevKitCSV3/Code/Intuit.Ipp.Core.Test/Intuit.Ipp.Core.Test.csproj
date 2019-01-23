@@ -54,14 +54,32 @@
     <Reference Include="Intuit.Ipp.Diagnostics">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
+    <Reference Include="Intuit.Ipp.EntitlementService">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.EntitlementService.dll</HintPath>
+    </Reference>
     <Reference Include="Intuit.Ipp.Exception">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.GlobalTaxService">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.LinqExtender">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.LinqExtender.dll</HintPath>
     </Reference>
+    <Reference Include="Intuit.Ipp.OAuth2PlatformClient">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.PlatformService">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.PlatformService.dll</HintPath>
+    </Reference>
     <Reference Include="Intuit.Ipp.QueryFilter">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.ReportService">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.ReportService.dll</HintPath>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Retry">
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Security">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
