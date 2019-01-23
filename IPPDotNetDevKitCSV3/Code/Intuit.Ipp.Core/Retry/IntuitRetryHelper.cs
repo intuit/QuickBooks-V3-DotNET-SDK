@@ -12,17 +12,18 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the License for the specific language governing permiC:\Users\nshrivastava\Documents\Git\QuickBooks-V3-DotNET-SDK\IPPDotNetDevKitCSV3\Code\Intuit.Ipp.Core\Retry\IntuitRetryHelper.csssions and
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains helper methods for Retry.</summary>
 ////*********************************************************
-
-namespace Intuit.Ipp.Retry
+//namespace Intuit.Ipp.Retry  
+namespace Intuit.Ipp.Core
 {
     using System;
     using System.Globalization;
-    using Intuit.Ipp.Retry.Properties;
+    //using Intuit.Ipp.Retry.Properties; 
+    using Intuit.Ipp.Core.Properties;
 
     /// <summary>
     /// Class contains Helper Methods for Services.

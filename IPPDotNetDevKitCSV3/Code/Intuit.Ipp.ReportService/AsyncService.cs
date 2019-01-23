@@ -95,22 +95,22 @@ namespace Intuit.Ipp.ReportService
                 string uri = "";
                 if (!string.IsNullOrEmpty(reportsQueryParameters))
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}?{3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, reportsQueryParameters);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}?{3}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, reportsQueryParameters);
                 }
                 else
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
                 }
 
                 // Create request parameters
                 RequestParameters parameters;
                 if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 // Prepare request

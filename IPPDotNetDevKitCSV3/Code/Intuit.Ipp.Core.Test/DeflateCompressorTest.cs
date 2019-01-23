@@ -5,6 +5,7 @@ using System.IO;
 using Intuit.Ipp.Core.Compression;
 using System.Text;
 using System.IO.Compression;
+using Intuit.Ipp.Utility;
 
 namespace Intuit.Ipp.Core.Test
 {

@@ -21,13 +21,11 @@
 
 namespace Intuit.Ipp.Core.Configuration
 {
-    using System.IO;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Retry;
+   
+    //using Intuit.Ipp.Retry;  
     using Intuit.Ipp.Security;
-    using Intuit.Ipp.Utility;
+    
+
 
     /// <summary>
     /// Ipp configuration.
@@ -52,6 +50,7 @@ namespace Intuit.Ipp.Core.Configuration
         /// <summary>
         /// Gets or sets the Retry Policy used to retry service calls when Retry-able Exceptions are generated.
         /// </summary>
+        //public IntuitRetryPolicy RetryPolicy { get; set; }//Nemo
         public IntuitRetryPolicy RetryPolicy { get; set; }
 
         /// <summary>

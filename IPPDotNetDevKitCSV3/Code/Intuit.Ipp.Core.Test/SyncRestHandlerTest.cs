@@ -8,8 +8,9 @@ using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core.Test;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Retry;
+//using Intuit.Ipp.Retry;
 using Intuit.Ipp.Core.Test.Common;
+using Intuit.Ipp.Utility;
 
 namespace Intuit.Ipp.Core.Test
 {

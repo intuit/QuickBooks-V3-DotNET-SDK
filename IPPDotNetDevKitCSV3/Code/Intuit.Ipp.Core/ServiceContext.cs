@@ -390,7 +390,7 @@ namespace Intuit.Ipp.Core
               
                 if (string.IsNullOrEmpty(baseurl))
                 {
-                    baseurl = CoreConstants.QBO_BASEURL;
+                    baseurl = Utility.CoreConstants.QBO_BASEURL;
                 }
                 else
                 {
@@ -408,7 +408,7 @@ namespace Intuit.Ipp.Core
                 baseurl = this.IppConfiguration.BaseUrl.Ips;
                 if (string.IsNullOrEmpty(baseurl))
                 {
-                    baseurl = CoreConstants.IPS_BASEURL;
+                    baseurl = Utility.CoreConstants.IPS_BASEURL;
                 }
 
                 this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for Intuit Platform Service Type: {0}.", baseurl));

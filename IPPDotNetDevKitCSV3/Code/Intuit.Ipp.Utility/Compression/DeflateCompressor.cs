@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="GZipCompressor.cs" company="Intuit">
+// <copyright file="DeflateCompressor.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -16,19 +16,20 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains implementation for gzip compressor.</summary>
+// <summary>This file contains implementation for deflate compressor.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core.Compression
+//namespace Intuit.Ipp.Core.Compression  
+namespace Intuit.Ipp.Utility
 {
     using System.IO;
     using System.IO.Compression;
     using System.Net;
 
     /// <summary>
-    /// GZip compressor.
+    /// Deflate compressor.
     /// </summary>
-    public class GZipCompressor : ICompressor
+    public class DeflateCompressor : ICompressor
     {
         /// <summary>
         /// Gets format of the data compression.
@@ -37,7 +38,7 @@ namespace Intuit.Ipp.Core.Compression
         {
             get
             {
-                return DataCompressionFormat.GZip;
+                return DataCompressionFormat.Deflate;
             }
         }
 
@@ -48,7 +49,7 @@ namespace Intuit.Ipp.Core.Compression
         /// <param name="requestStream">Request stream.</param>
         public void Compress(byte[] content, Stream requestStream)
         {
-            using (var compressedStream = new GZipStream(requestStream, CompressionMode.Compress))
+            using (var compressedStream = new DeflateStream(requestStream, CompressionMode.Compress))
             {
                 compressedStream.Write(content, 0, content.Length);
             }
@@ -61,7 +62,7 @@ namespace Intuit.Ipp.Core.Compression
         /// <returns>Decompressed stream.</returns>
         public Stream Decompress(Stream responseStream)
         {
-            var decompressedStream = new GZipStream(responseStream, CompressionMode.Decompress);
+            var decompressedStream = new DeflateStream(responseStream, CompressionMode.Decompress);
             return decompressedStream;
         }
     }
