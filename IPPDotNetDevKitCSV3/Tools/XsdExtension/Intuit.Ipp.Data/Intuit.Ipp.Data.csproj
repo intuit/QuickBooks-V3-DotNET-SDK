@@ -37,4 +37,8 @@
     <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
   </Reference>
 </ItemGroup>
+
+<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;" />
+</Target>
 </Project>

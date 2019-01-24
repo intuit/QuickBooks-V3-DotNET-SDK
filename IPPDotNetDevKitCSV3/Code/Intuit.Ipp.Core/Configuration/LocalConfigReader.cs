@@ -149,14 +149,14 @@ namespace Intuit.Ipp.Core.Configuration
 
             switch (ippConfigurationSection.Security.Mode)
             {
-                case SecurityMode.OAuth:
-                    OAuthRequestValidator validator = new OAuthRequestValidator(
-                        ippConfigurationSection.Security.OAuth.AccessToken,
-                        ippConfigurationSection.Security.OAuth.AccessTokenSecret,
-                        ippConfigurationSection.Security.OAuth.ConsumerKey,
-                        ippConfigurationSection.Security.OAuth.ConsumerSecret);
-                    ippConfig.Security = validator;
-                    break;
+                //case SecurityMode.OAuth:
+                //    OAuthRequestValidator validator = new OAuthRequestValidator(
+                //        ippConfigurationSection.Security.OAuth.AccessToken,
+                //        ippConfigurationSection.Security.OAuth.AccessTokenSecret,
+                //        ippConfigurationSection.Security.OAuth.ConsumerKey,
+                //        ippConfigurationSection.Security.OAuth.ConsumerSecret);
+                //    ippConfig.Security = validator;
+                //    break;
                 case SecurityMode.Custom:
                     if (!string.IsNullOrEmpty(ippConfigurationSection.Security.CustomSecurity.Name) && !string.IsNullOrEmpty(ippConfigurationSection.Security.CustomSecurity.Type) && ippConfigurationSection.Security.CustomSecurity.Enable)
                     {
