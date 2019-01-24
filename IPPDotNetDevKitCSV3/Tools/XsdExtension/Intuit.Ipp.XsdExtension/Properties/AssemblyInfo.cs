@@ -2,9 +2,12 @@
 // <copyright file="AssemblyInfo.cs" company="Intuit">
 //     Copyright (c) Intuit. All rights reserved.
 // </copyright>
-// <summary>Assembly information.</summary>
+// <summary>
+//  System generated Assembly info file  
+// </summary>
 ////*********************************************************
 
+using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,10 +15,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Intuit.Ipp.DataService")]
+[assembly: AssemblyTitle("Intuit.Sb.CDM")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("Intuit.Ipp.DataService")]
+[assembly: AssemblyProduct("Intuit.Sb.CDM")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -25,7 +28,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("29e45a9a-a5a6-48b0-9a4b-e6d9b8f56f72")]
+[assembly: Guid("1307de5d-8dad-42a2-92e0-114238b9c170")]
 
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
+[assembly: CLSCompliant(true)]
