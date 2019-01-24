@@ -28,6 +28,10 @@ namespace Intuit.Ipp.Core.Configuration
     //using Intuit.Ipp.Retry;  
     using Intuit.Ipp.Security;
     using Intuit.Ipp.Utility;
+#if net472
+#else
+    using Microsoft.Extensions.Configuration;
+#endif
 
     /// <summary>
     /// Specifies the Default Configuration Reader implmentation used by the SDK.
@@ -41,9 +45,31 @@ namespace Intuit.Ipp.Core.Configuration
         /// <returns>The custom config object.</returns>
         public IppConfiguration ReadConfiguration()
         {
+            bool sectionExists;
+
+
+
+            //#if net472
+            //            IppConfigurationSection ippConfigurationSection = IppConfigurationSection.Instance;
+            //            IppConfiguration ippConfig = new IppConfiguration();
+            //            if (ippConfigurationSection == null)
+            //            {
+            //               sectionExists=false;
+            //            }
+            //            else
+            //            {
+            //                sectionExists=true;
+            //            }
+            //#else
+            //            ConfigurationSection configurationSection = new ConfigurationSection(new ConfigurationRoot);
+            //            var section = ConfigurationSection.GetSection("testsection");
+            //            sectionExists = section.Exists();
+            //#endif
+
             IppConfigurationSection ippConfigurationSection = IppConfigurationSection.Instance;
             IppConfiguration ippConfig = new IppConfiguration();
-            if (ippConfigurationSection == null)
+
+
             {
                 ippConfig.Logger = new Logger
                 {

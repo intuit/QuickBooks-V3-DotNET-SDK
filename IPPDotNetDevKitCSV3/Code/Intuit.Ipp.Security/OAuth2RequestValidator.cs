@@ -13,8 +13,8 @@ namespace Intuit.Ipp.Security
     using System.Net;
     using System.Security.Cryptography;
     using System.Text.RegularExpressions;
-    using DevDefined.OAuth.Consumer;
-    using DevDefined.OAuth.Framework;
+    //using DevDefined.OAuth.Consumer;
+    //using DevDefined.OAuth.Framework;
     using Intuit.Ipp.Exception;
 
     /// <summary>
