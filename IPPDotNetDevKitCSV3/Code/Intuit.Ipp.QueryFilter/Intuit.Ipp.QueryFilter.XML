@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.QueryFilter</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.QueryFilter.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.QueryFilter has classes related to query filters. 
+            It has classes: ExpressionVisitor class: used to visit the different types 
+            of expressions, QueryService class: used to execute the IDS queries and return appropriate responses, StringExtensions class: has extension methods for string data type.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.QueryFilter.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.QueryFilter.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.QueryFilter.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.QueryFilter.Properties.Resources.CommunicationErrorMessage">
+            <summary>
+              Looks up a localized string similar to There was an error while communicating with the Ids Server..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.QueryFilter.Properties.Resources.ExceptionGeneratedMessage">
+            <summary>
+              Looks up a localized string similar to Exception has been generated: {0}..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.QueryFilter.Properties.Resources.ResponseStreamNullOrEmptyMessage">
+            <summary>
+              Looks up a localized string similar to The Response Stream was null or empty..
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.QueryFilter.QueryOperationType">
+            <summary>
+            Contains enumeration value for Query Operation Type.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryOperationType.query">
+            <summary>
+            Entity query.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryOperationType.report">
+            <summary>
+            Report query.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryOperationType.changedata">
+            <summary>
+            Change Data query.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.QueryFilter.QueryService`1">
+            <summary>
+            Contains methods used to parse the expression tree and execute the query generated and return the result.
+            </summary>
+            <typeparam name="T">The type of the entity.</typeparam>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.queryBuilder">
+            <summary>
+            Query string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.selectBuilder">
+            <summary>
+            Select string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.countBuilder">
+            <summary>
+            Count string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.orderByBuilder">
+            <summary>
+            OrderBy string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.whereBuilder">
+            <summary>
+            Where string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.fromBuilder">
+            <summary>
+            From string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.pageBuilder">
+            <summary>
+            Pagination string builder.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.serviceContext">
+            <summary>
+            Service Context.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.restHandler">
+            <summary>
+            Rest Request Handler.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.QueryFilter.QueryService`1.responseSerializer">
+            <summary>
+            Response Serializer.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.QueryService`1.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the QueryService class.
+            </summary>
+            <param name="serviceContext">The ServiceContext class.</param>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.QueryService`1.ExecuteIdsQuery(System.String,Intuit.Ipp.QueryFilter.QueryOperationType)">
+            <summary>
+            Executes the Ids Query and returns the response.
+            </summary>
+            <param name="idsQuery">The string representation of ids query.</param>
+            <param name="queryOperationType">Query Operation Type. Default value is query.</param>
+            <returns>ReadOnly Collection fo items of type T.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.QueryService`1.ExecuteMultipleEntityQueries``1(System.Collections.ObjectModel.ReadOnlyCollection{System.String})">
+            <summary>
+            Entity Service supports multiple queries within a request. Use this method to perform multiple entity query operation.
+            </summary>
+            <param name="queryOperationValues">The simple query language string collection.</param>
+            <typeparam name="TSource">Where TSource is IEntity.</typeparam>
+            <returns>Returns a collection of entities for individual simple query.</returns>
+            <exception cref="T:Intuit.Ipp.Exception.InvalidParameterException">If the parameter is null or empty or exceeds a maximum of five(5) queries.</exception>
+            <exception cref="T:Intuit.Ipp.Exception.ValidationException">If the query syntax is incorrect.</exception>
+            <exception cref="T:Intuit.Ipp.Exception.SerializationException">If there were serialization issues with the response from the service.</exception>
+            <exception cref="T:Intuit.Ipp.Exception.IdsException">When service returned with an error information.</exception>
+            <example>
+            Usage:
+            Use the query service created and invoke the ToIdsQuery method to obtain the simple query as string.
+            <code>
+            string customerQueryValue = customerContext.Where(c => c.MetaData.CreateTime > this.dateTime).ToIdsQuery();
+            string invoiceQueryValue = invoiceContext.Select(i => new { i.Id, i.status }).ToIdsQuery();
+            </code>
+            Invoke the ExecuteMultipleEntityQueries method with the read only collection of the queries. This method can throw exception so surround the method with a try catch block.
+            <code>
+            <![CDATA[List<string> values = new List<string> { customerQueryValue, invoiceQueryValue };]]>
+            try
+            {
+                <![CDATA[ReadOnlyCollection<ReadOnlyCollection<IEntity>> results = customerContext.ExecuteMultipleEntityQueries<IEntity>(values.AsReadOnly());]]>
+                Iterate through the values obtained:
+                foreach (var item in results)
+                {
+                    // Read the values
+                }
+            }
+            catch(IdsException)
+            {
+                // Perform logic here
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.QueryService`1.StringValueOf(System.Enum)">
+            <summary>
+            Returns the XmlEnumAttribute name if present else returns the enum object.
+            Add any specific types in switch case if needed in future
+            </summary>
+            <param name="value">The value of the object.</param>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.QueryService`1.GetIdsDateTimeFormat(System.Object)">
+            <summary>
+            Gets the string value of the date time if the parameter is of type datetime.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>String if conversion was successful or else the value itself.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.QueryFilter.StringExtensions">
+            <summary>
+            Contains extension methods for the string data type.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.StringExtensions.In(System.String,System.String[])">
+            <summary>
+            Determines whether a sequence contains a specified element by using the default equality comparer.
+            </summary>
+            <param name="value">A sequence in which to locate a value.</param>
+            <param name="values">The value to locate in the sequence.</param>
+            <returns>True if the source sequence contains an element that has the specified value otherwise, false.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.QueryFilter.StringExtensions.RemoveWhiteSpaces(System.String)">
+            <summary>
+            Removes unwanted whitespaces from the string.
+            </summary>
+            <param name="value">The value to remove the whitespaces from.</param>
+            <returns>String with single whitespace between elements.</returns>
+        </member>
+    </members>
+</doc>

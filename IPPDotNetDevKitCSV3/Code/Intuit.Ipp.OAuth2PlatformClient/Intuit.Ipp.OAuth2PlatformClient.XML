@@ -1,0 +1,1339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.OAuth2PlatformClient</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.AuthenticationStyle">
+            <summary>
+            Enum class for AuthenticationStyle
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest">
+            <summary>
+            Helper class fo creating Authorize url
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest.#ctor(System.Uri)">
+            <summary>
+            Maps authorize endpoint
+            </summary>
+            <param name="authorizeEndpoint"></param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest.#ctor(System.String)">
+            <summary>
+            Maps authorize endpoint
+            </summary>
+            <param name="authorizeEndpoint"></param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest.Create(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Formats values to the required url format
+            </summary>
+            <param name="values">values</param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequestExtensions">
+            <summary>
+            Extension class for AuthorizeRequest
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequestExtensions.Create(Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest,System.Object)">
+            <summary>
+            Create Authorize request
+            </summary>
+            <param name="request">request</param>
+            <param name="values">values</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequestExtensions.CreateAuthorizeUrl(Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequest,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <summary>
+            Create Authorize Url
+            </summary>
+            <param name="request">request</param>
+            <param name="clientId">clientId</param>
+            <param name="responseType">responseType</param>
+            <param name="scope">scope</param>
+            <param name="redirectUri">redirectUri</param>
+            <param name="state">state</param>
+            <param name="extra">extra</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequestExtensions.ObjectToDictionary(System.Object)">
+            <summary>
+            Helper class to map values to Dictionary
+            </summary>
+            <param name="values"></param>
+            <returns>dictionary</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeRequestExtensions.Merge(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Helper class to map values to Dictionary
+            </summary>
+            <param name="explicitValues"></param>
+            <param name="additionalValues"></param>
+            <returns>dictionary</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.AuthorizeResponse">
+            <summary>
+            AuthorizeResponse Class to map response from Authroize call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeResponse.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="raw"></param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.AuthorizeResponse.TryGet(System.String)">
+            <summary>
+            Decodes url
+            </summary>
+            <param name="type"></param>
+            <returns>string</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient">
+            <summary>
+            Discovery Client ot get details from Discovery Url
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.GetAsync(System.String)">
+            <summary>
+            GetAsync call for Discovery Url
+            </summary>
+            <param name="authority">authority</param>
+        </member>
+        <member name="F:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient._client">
+            <summary>
+            HttpClient
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.Authority">
+            <summary>
+            Authority
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.Policy">
+            <summary>
+            Policy
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.Timeout">
+            <summary>
+            Timeout
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.#ctor(System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            DiscoveryClient Method to call discoery url
+            </summary>
+            <param name="authority">authority</param>
+            <param name="innerHandler">innerHandler</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.#ctor(Intuit.Ipp.OAuth2PlatformClient.Helpers.AppEnvironment)">
+            <summary>
+            DiscoveryClient constructor which takes in app environment
+            </summary>
+            <param name="appEnvironment">authority</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            GetAsync call for Discovery
+            </summary>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task for Discoverresponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryClient.Get(System.Threading.CancellationToken)">
+            <summary>
+            Get call for Discovery Document synchronous
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy">
+            <summary>
+            Validates Discovery doc values
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy.SetAuthority(System.String)">
+            <summary>
+            Sets the discovery authority if not present in application configuration
+            </summary>        
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy.RequireHttps">
+            <summary>
+            Specifies if HTTPS is enforced on all endpoints. Defaults to true.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy.ValidateIssuerName">
+            <summary>
+            Specifies if the issuer name is checked to be identical to the authority. Defaults to true.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse">
+            <summary>
+            DiscoveryResponse class to handle response from Discovery  call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.#ctor(System.String,Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy)">
+            <summary>
+            Handles success raw response from Token api call
+            </summary>
+            <param name="raw">raw</param>
+            <param name="policy">policy</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Handles exception response from Token api call
+            </summary>
+            <param name="statusCode">statusCode</param>
+            <param name="reason">reason</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.#ctor(System.Exception,System.String)">
+            <summary>
+            Handles exception response from Token api call
+            </summary>
+            <param name="exception">exception</param>
+            <param name="errorMessage">errorMessage</param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.Issuer">
+            <summary>
+            Strongly typed getters
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.TryGetValue(System.String)">
+            <summary>
+            Generic getters
+            </summary> 
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.Validate(Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy)">
+            <summary>
+            Validates Discovery policy
+            </summary>
+            <param name="policy">policy</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.ValidateIssuerName(System.String,System.String)">
+            <summary>
+            Validates Issuer Name
+            </summary>
+            <param name="issuer">issuer</param>
+            <param name="authority">authority</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryResponse.ValidateEndpoints(Newtonsoft.Json.Linq.JObject,Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy)">
+            <summary>
+            Validates Endpoints
+            </summary>
+            <param name="json">json</param>
+            <param name="policy">policy</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions">
+            <summary>
+            Json Object extension
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions.ToClaims(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Converts Json object to Claims
+            </summary>
+            <param name="json">json</param>
+            <returns>IEnumerable Claim</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions.TryGetValue(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Helper for Json object
+            </summary>
+            <param name="json">json</param>
+            <param name="name">name</param>
+            <returns>JToken</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions.TryGetString(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Helper for Json object
+            </summary>
+            <param name="json">json</param>
+            <param name="name">name</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions.TryGetBoolean(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Helper for Json object
+            </summary>
+            <param name="json">json</param>
+            <param name="name">name</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JObjectExtensions.TryGetStringArray(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Helper for Json object
+            </summary>
+            <param name="json">json</param>
+            <param name="name">name</param>
+            <returns>IEnumerable string</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.ClientID">
+            <summary>
+            ClientId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.ClientSecret">
+            <summary>
+            ClientSecret
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.RedirectURI">
+            <summary>
+            RedirectUri
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.DiscoveryDoc">
+            <summary>
+            DiscoveryDoc
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.ApplicationEnvironment">
+            <summary>
+            AppEnvironment
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.CSRFToken">
+            <summary>
+            CSRFToken
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            OAuth2Client constructor
+            </summary>
+            <param name="clientID"></param>
+            <param name="clientSecret"></param>
+            <param name="redirectURI"></param>
+            <param name="environment"></param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GetDiscoveryDoc">
+            <summary>
+            Gets Discovery Doc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GetAuthorizationURL(System.Collections.Generic.List{Intuit.Ipp.OAuth2PlatformClient.OidcScopes},System.String)">
+            <summary>
+            Get Authorization Url
+            </summary>
+            <param name="scopes"></param>
+            <param name="CSRFToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GetAuthorizationURL(System.Collections.Generic.List{Intuit.Ipp.OAuth2PlatformClient.OidcScopes})">
+            <summary>
+            Get Authorization Url
+            </summary>
+            <param name="scopes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GetBearerTokenAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets Bearer token from Authorization code
+            </summary>
+            <param name="code"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.RefreshTokenAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Refreshes access token to get new access token
+            </summary>
+            <param name="refreshToken"></param>
+            <param name="extra"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.RevokeTokenAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Revoke token using either access or refresh token
+            </summary>
+            <param name="accessOrRefreshToken"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GetUserInfoAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get User Info
+            </summary>
+            <param name="accessToken"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.ValidateIDTokenAsync(System.String)">
+            <summary>
+            Validates ID token
+            </summary>
+            <param name="idToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.OAuth2Client.GenerateCSRFToken">
+            <summary>
+            Generate random CSRF token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler">
+            <summary>
+            RefreshTokenHandler Class
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.AccessToken">
+            <summary>
+            Gets the current access token
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.RefreshToken">
+            <summary>
+            Gets the current refresh token
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.#ctor(System.String,System.String,System.String,System.String,System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tokenEndpoint">tokenEndpoint</param>
+            <param name="clientId">clientId</param>
+            <param name="clientSecret">clientSecret</param>
+            <param name="refreshToken">refreshToken</param>
+            <param name="accessToken">accessToken</param>
+            <param name="innerHandler">innerHandler</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.#ctor(Intuit.Ipp.OAuth2PlatformClient.TokenClient,System.String,System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="client">client</param>
+            <param name="refreshToken">refreshToken</param>
+            <param name="accessToken">accessToken</param>
+            <param name="innerHandler">innerHandler</param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.ClientId">
+            <summary>
+            ClientId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.ClientSecret">
+            <summary>
+            ClientSecret
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.AuthenticationStyle">
+            <summary>
+            AuthenticationStyle
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Override methos for SendAsync
+            </summary>
+            <param name="request">request</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of HttpResponseMessage</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.Dispose(System.Boolean)">
+            <summary>
+            Dispose method
+            </summary>
+            <param name="disposing">disposing</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.RefreshTokensAsync(System.Threading.CancellationToken)">
+            <summary>
+            RefreshTokeAsync call
+            </summary>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of bool</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.RefreshTokenHandler.GetAccessTokenAsync(System.Threading.CancellationToken)">
+            <summary>
+            GetAccessTokeAsync call
+            </summary>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of string</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.ResponseErrorType">
+            <summary>
+            Enum for Response Error
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenClient">
+            <summary>
+            TokenClient Class
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.#ctor(System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+            <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.#ctor(System.String,System.String,System.String,Intuit.Ipp.OAuth2PlatformClient.AuthenticationStyle)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+            <param name="clientId">clientId</param>
+            <param name="clientSecret">clientSecret</param>
+            <param name="style">style</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.#ctor(System.String,System.String,System.String,System.Net.Http.HttpMessageHandler,Intuit.Ipp.OAuth2PlatformClient.AuthenticationStyle)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+            <param name="clientId">clientId</param>
+            <param name="clientSecret">clientSecret</param>
+            <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
+            <param name="style"></param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenClient.ClientId">
+            <summary>
+            ClientId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenClient.ClientSecret">
+            <summary>
+            ClientSecret
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenClient.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenClient.AuthenticationStyle">
+            <summary>
+            AuthenticationStyle
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenClient.Timeout">
+            <summary>
+            TimeOut
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.RequestAsync(System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <summary>
+            RequestAsync call
+            </summary>
+            <param name="form">form</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>task of TokenResponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.Dispose">
+            <summary>
+            Dispose call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClient.Dispose(System.Boolean)">
+            <summary>
+            Virtual Dispose call
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenClientExtensions">
+            <summary>
+            TokenClientExtensions class
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClientExtensions.RequestTokenFromCodeAsync(Intuit.Ipp.OAuth2PlatformClient.TokenClient,System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            RequestTokenFromCodeAsync call
+            </summary>
+            <param name="client">client</param>
+            <param name="code">code</param>
+            <param name="redirectUri">redirectUri</param>
+            <param name="codeVerifier">codeVerifier</param>
+            <param name="extra">extra</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>task of TokenResponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClientExtensions.RequestRefreshTokenAsync(Intuit.Ipp.OAuth2PlatformClient.TokenClient,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            RequestRefreshTokenAsync call
+            </summary>
+            <param name="client">client</param>
+            <param name="refreshToken">refreshToken</param>
+            <param name="extra">extra</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>task of TokenResponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClientExtensions.Merge(Intuit.Ipp.OAuth2PlatformClient.TokenClient,System.Collections.Generic.Dictionary{System.String,System.String},System.Object)">
+            <summary>
+            Merge call
+            </summary>
+            <param name="client">client</param>
+            <param name="explicitValues">explicitValues</param>
+            <param name="extra">extra</param>
+            <returns>Dictionary</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenClientExtensions.ObjectToDictionary(System.Object)">
+            <summary>
+            ObjectToDictionary call
+            </summary>
+            <param name="values">values</param>
+            <returns>Dictionary</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenResponse">
+            <summary>
+            TokenResponse class to map response from Token call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.#ctor(System.String)">
+            <summary>
+            Handles success raw response from Token api call
+            </summary>
+            <param name="raw">raw</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.#ctor(System.Exception)">
+            <summary>
+            Handles exception response from Token api call
+            </summary>
+            <param name="exception">exception</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Handles exception response from Token api call
+            </summary>
+            <param name="statusCode">statusCode</param>
+            <param name="reason">reason</param> 
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.AccessTokenExpiresIn">
+            <summary>
+            Returns Access Token expiry value
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.RefreshTokenExpiresIn">
+            <summary>
+            Returns RefreshToken Expiry Value
+            </summary>   
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.Error">
+            <summary>
+            Handles error
+            </summary>   
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenResponse.TryGet(System.String)">
+            <summary>
+            Helper to get Name
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonToken">
+            <summary>
+            JsonToken Class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient">
+            <summary>
+            TokenRevocationClient Class
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.Client">
+            <summary>
+            Client
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.AuthenticationStyle">
+            <summary>
+            AuthenticationStyle
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.ClientId">
+            <summary>
+            ClientId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.ClientSecret">
+            <summary>
+            ClientSecret
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.#ctor(System.String,System.String,System.String,System.Net.Http.HttpMessageHandler)" -->
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.Timeout">
+            <summary>
+            Timeout
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient.RevokeAsync(Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest,System.Threading.CancellationToken)">
+            <summary>
+            RevokeAsync
+            </summary>
+            <param name="request">request</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of TokenRevocationResponse</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClientExtensions">
+            <summary>
+            Extension Class for TokenRevocationClient
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClientExtensions.RevokeAccessTokenAsync(Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            RevokeAccessTokenAsync
+            </summary>
+            <param name="client">client</param>
+            <param name="token">token</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of TokenRevocationResponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClientExtensions.RevokeRefreshTokenAsync(Intuit.Ipp.OAuth2PlatformClient.TokenRevocationClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            RevokeRefreshTokenAsync
+            </summary>
+            <param name="client">client</param>
+            <param name="token">token</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of TokenRevocationResponse</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest">
+            <summary>
+            TokenRevocationRequest Class
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest.ClientId">
+            <summary>
+            ClientId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest.ClientSecret">
+            <summary>
+            ClientSecret
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationRequest.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse">
+            <summary>
+            TokenRevocationResponse to handle response from Token Revoke call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse.#ctor">
+            <summary>
+            Handles successful raw response from Token Revoke api call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse.#ctor(System.String)">
+            <summary>
+            Handles successful raw response from Token Revoke api call
+            </summary>
+            <param name="raw">raw</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Handles exception response from Token Revoke api call
+            </summary>
+            <param name="statusCode">statusCode</param>
+            <param name="reason">reason</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse.#ctor(System.Exception)">
+            <summary>
+            Handles exception response from UserInfo api call
+            </summary>
+            <param name="exception">exception</param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.TokenRevocationResponse.Error">
+            <summary>
+            Handles Error
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.UserInfoClient">
+            <summary>
+            UserInfoClient class
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoClient.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoClient.#ctor(System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="endpoint">endpoint</param>
+            <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.UserInfoClient.Timeout">
+            <summary>
+            Timeout
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoClient.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            GetAsync
+            </summary>
+            <param name="token">token</param>
+            <param name="cancellationToken">cancellationToken</param>
+            <returns>Task of UserInfoResponse</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.UserInfoResponse">
+            <summary>
+            UserInfoResponse Class to map response from UserInfo call
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoResponse.#ctor(System.String)">
+            <summary>
+            Handles successful raw response from UserInfo api call
+            </summary>
+            <param name="raw">raw</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoResponse.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Handles exception response from UserInfo api call
+            </summary>
+            <param name="statusCode">statusCode</param>
+            <param name="reason">reason</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.UserInfoResponse.#ctor(System.Exception)">
+            <summary>
+            UserInfoResponse
+            </summary>
+            <param name="exception">exception</param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.OAuth2PlatformClient has OAuth2 specific client lib with helper classes for different calls related to getting tokens and managing them.   
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.Helpers.StringValueAttribute">
+            <summary>
+            This attribute is used to represent a string value
+            for a value in an enum.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.Helpers.StringValueAttribute.StringValue">
+            <summary>
+            Holds the stringvalue for a value in an enum.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.Helpers.StringValueAttribute.#ctor(System.String)">
+            <summary>
+            Constructor used to init a StringValue Attribute
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.Helpers.AppEnvironment">
+            <summary>
+            AppEnvironment enum
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.Base64Url">
+            <summary>
+            Helper class for Base64 Url conversions
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.Base64Url.Encode(System.Byte[])">
+            <summary>
+            Encodes byte array to Base 64 string
+            </summary>
+            <param name="arg">arg</param>       
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.Base64Url.Decode(System.String)">
+            <summary>
+            Converts from Base 64 string to byte array
+            </summary>
+            <param name="arg">arg</param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom">
+            <summary>
+            A class that mimics the standard Random class in the .NET Framework - but uses a random number generator internally.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.CreateRandomKey(System.Int32)">
+            <summary>
+            Create Random keys bytes
+            </summary>
+            <param name="length">lenth</param>
+            <returns>byte array</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.CreateRandomKeyString(System.Int32)">
+            <summary>
+            Create Random key string
+            </summary>
+            <param name="length">length</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.CreateUniqueId(System.Int32)">
+            <summary>
+            Create Unique Id
+            </summary>
+            <param name="length"></param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.ByteArrayToString(System.Byte[])">
+            <summary>
+            Convert Byte array to string
+            </summary>
+            <param name="ba">byte array</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom"/> class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom"/> class.
+            </summary>
+            <param name="ignoredSeed">seed (ignored)</param>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.Next">
+            <summary>
+            Returns a nonnegative random number.
+            </summary>
+            <returns>
+            A 32-bit signed integer greater than or equal to zero and less than <see cref="F:System.Int32.MaxValue"/>.
+            </returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.Next(System.Int32)">
+            <summary>
+            Returns a nonnegative random number less than the specified maximum.
+            </summary>
+            <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue"/> must be greater than or equal to zero.</param>
+            <returns>
+            A 32-bit signed integer greater than or equal to zero, and less than <paramref name="maxValue"/>; that is, the range of return values ordinarily includes zero but not <paramref name="maxValue"/>. However, if <paramref name="maxValue"/> equals zero, <paramref name="maxValue"/> is returned.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="maxValue"/> is less than zero.
+            </exception>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.Next(System.Int32,System.Int32)">
+            <summary>
+            Returns a random number within a specified range.
+            </summary>
+            <param name="minValue">The inclusive lower bound of the random number returned.</param>
+            <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue"/> must be greater than or equal to <paramref name="minValue"/>.</param>
+            <returns>
+            A 32-bit signed integer greater than or equal to <paramref name="minValue"/> and less than <paramref name="maxValue"/>; that is, the range of return values includes <paramref name="minValue"/> but not <paramref name="maxValue"/>. If <paramref name="minValue"/> equals <paramref name="maxValue"/>, <paramref name="minValue"/> is returned.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="minValue"/> is greater than <paramref name="maxValue"/>.
+            </exception>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.NextDouble">
+            <summary>
+            Returns a random number between 0.0 and 1.0.
+            </summary>
+            <returns>
+            A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
+            </returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.CryptoRandom.NextBytes(System.Byte[])">
+            <summary>
+            Fills the elements of a specified array of bytes with random numbers.
+            </summary>
+            <param name="buffer">An array of bytes to contain random numbers.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="buffer"/> is null.
+            </exception>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.DiscoveryUrlHelper">
+            <summary>
+            DiscoveryUrlHelper class
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryUrlHelper.IsValidScheme(System.Uri)">
+            <summary>
+            Validate url scheme
+            </summary>
+            <param name="url"></param>
+            <returns>boolean value</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.DiscoveryUrlHelper.IsSecureScheme(System.Uri,Intuit.Ipp.OAuth2PlatformClient.DiscoveryPolicy)">
+            <summary>
+            Validate if url scheme is https or not
+            </summary>
+            <param name="url"></param>
+            <param name="policy"></param>
+            <returns>boolean value</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.EpochTimeExtensions">
+            <summary>
+            Helper class for Epoch time conversions
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.EpochTimeExtensions.ToEpochTime(System.DateTime)">
+            <summary>
+            Converts the given date value to epoch time.
+            </summary>
+            <param name="dateTime">dateTime</param>
+            <returns>long</returns>        
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.EpochTimeExtensions.ToEpochTime(System.DateTimeOffset)">
+            <summary>
+            Converts the given date value to epoch time.
+            </summary>
+            <param name="dateTime">dateTime Offset value</param>
+            <returns>long</returns>  
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.EpochTimeExtensions.ToDateTimeFromEpoch(System.Int64)">
+            <summary>
+            Converts the given epoch time to a <see cref="T:System.DateTime"/> with <see cref="F:System.DateTimeKind.Utc"/> kind.
+            </summary>
+            <param name="intDate"></param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.EpochTimeExtensions.ToDateTimeOffsetFromEpoch(System.Int64)">
+            <summary>
+            Converts the given epoch time to a UTC <see cref="T:System.DateTimeOffset"/>.
+            </summary>
+            <param name="intDate"></param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.IdTokenHeader">
+            <summary>
+            Helper class for Identity Token Header
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenHeader.Kid">
+            <summary>
+            kid
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenHeader.Alg">
+            <summary>
+            alg
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes">
+            <summary>
+            Helper class for Identity Token Claims
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Sub">
+            <summary>
+            sub
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Aud">
+            <summary>
+            aud
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.RealmId">
+            <summary>
+            realmId
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Auth_time">
+            <summary>
+            auth_time
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Iss">
+            <summary>
+            iss
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Exp">
+            <summary>
+            exp
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.IdTokenJWTClaimTypes.Iat">
+            <summary>
+            iat
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants">
+            <summary>
+            Open id connect constants class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.AuthorizeRequest">
+            <summary>
+            Authorize request query params
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.AuthorizeErrors">
+            <summary>
+            AuthorizeErrors class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.AuthorizeResponse">
+            <summary>
+            AuthorizeResponse class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.TokenRequest">
+            <summary>
+            TokenRequest class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.TokenErrors">
+            <summary>
+            TokenErrors class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.TokenResponse">
+            <summary>
+            TokenResponse class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.TokenTypes">
+            <summary>
+            TokenTypes class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.GrantTypes">
+            <summary>
+            GratTypes class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcConstants.Discovery">
+            <summary>
+            Discovery class
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.StringValueAttribute">
+            <summary>
+            This attribute is used to represent a string value
+            for a value in an enum.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.StringValueAttribute.StringValue">
+            <summary>
+            Holds the stringvalue for a value in an enum.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.StringValueAttribute.#ctor(System.String)">
+            <summary>
+            Constructor used to init a StringValue Attribute
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.OidcScopes">
+            <summary>
+            OidcScopes enum
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.StringExtensions">
+            <summary>
+            String extensions class
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.StringExtensions.EnsureTrailingSlash(System.String)">
+            <summary>
+            Ensures trailing slash at the end of the url
+            </summary>
+            <param name="url">url</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.StringExtensions.RemoveTrailingSlash(System.String)">
+            <summary>
+            Removes trailing slash at the end of the url
+            </summary>
+            <param name="url">url</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.StringExtensions.GetStringValue(System.Enum)">
+            <summary>
+            Will get the string value for a given enums value, this will
+            only work if you assign the StringValue attribute to
+            the items in your enum.
+            </summary>
+            <param name="value">value</param>
+            <returns>string</returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.TimeConstantComparer">
+            <summary>
+            Helper class to do equality checks without leaking timing information
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.TimeConstantComparer.IsEqual(System.String,System.String)">
+            <summary>
+            Checks two strings for equality without leaking timing information.
+            </summary>
+            <param name="s1">string 1.</param>
+            <param name="s2">string 2.</param>
+            <returns>
+            	<c>true</c> if the specified strings are equal; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.UserInfo">
+            <summary>
+            Class for deserializing the UserInfoResponse
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.Address">
+            <summary>
+            Class for deserializing the Address returned
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebAlgorithmsKeyTypes">
+            <summary>
+            Constants for JsonWebAlgorithms Key Type 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.OAuth2PlatformClient.JsonWebAlgorithmsKeyTypes.RSA">
+            <summary>
+            RSA const
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey">
+            <summary>
+            Represents a Json Web Key as defined in http://tools.ietf.org/html/rfc7517.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.#ctor">
+            <summary>
+            Initializes an new instance of <see cref="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey"/>.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.#ctor(System.String)">
+            <summary>
+            Initializes an new instance of <see cref="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey"/> from a json string.
+            </summary>
+            <param name="json">a string that contains JSON Web Key parameters in JSON format.</param>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.Kty">
+            <summary>
+            Gets or sets the 'kty' (Key Type)..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.E">
+            <summary>
+            Gets or sets the 'e' (RSA - Exponent)..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.Use">
+            <summary>
+            Gets or sets the 'use' (Public Key Use)..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.Kid">
+            <summary>
+            Gets or sets the 'kid' (Key ID)..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.Alg">
+            <summary>
+            Gets or sets the 'alg' (KeyType)..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.N">
+            <summary>
+            Gets or sets the 'n' (RSA - Modulus)..
+            </summary>
+            <remarks> value is formated as: Base64urlEncoding</remarks>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey.KeySize">
+            <summary>
+            Returns KeySize
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeyParameterNames">
+            <summary>
+            Names for Json Web Key Values
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet">
+            <summary>
+            Contains a collection of <see cref="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKey"/> that can be populated from a json string.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet.#ctor">
+            <summary>
+            Initializes an new instance of <see cref="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet"/>.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet.#ctor(System.String)">
+            <summary>
+            Initializes an new instance of <see cref="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet"/> from a json string.
+            </summary>
+            <param name="json">a json string containing values.</param>
+            <exception cref="T:System.ArgumentNullException">if 'json' is null or whitespace.</exception>
+        </member>
+        <member name="P:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeySet.Keys">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>       
+        </member>
+        <member name="T:Intuit.Ipp.OAuth2PlatformClient.JsonWebKeyExtensions">
+            <summary>
+            Extension class for Json Wek Key
+            </summary>
+        </member>
+        <member name="T:System.Net.Http.BasicAuthenticationHeaderValue">
+            <summary>
+            Formatter for Basic Authentication header
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.BasicAuthenticationHeaderValue.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="clientId">clientId</param>
+            <param name="clientSecret">clientSecret</param>
+        </member>
+        <member name="T:System.Net.Http.HttpClientExtensions">
+            <summary>
+            HttpClientExtensions for Headers
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.HttpClientExtensions.SetBasicAuthentication(System.Net.Http.HttpClient,System.String,System.String)">
+            <summary>
+            Sets Basic Authentication header value
+            </summary>
+            <param name="client">client</param>
+            <param name="clientId">clientId</param>
+            <param name="clientSecret">clientSecret</param>
+        </member>
+        <member name="M:System.Net.Http.HttpClientExtensions.SetToken(System.Net.Http.HttpClient,System.String,System.String)">
+            <summary>
+            Sets Token value
+            </summary>
+            <param name="client">client</param>
+            <param name="scheme">scheme</param>
+            <param name="token">token</param>
+        </member>
+        <member name="M:System.Net.Http.HttpClientExtensions.SetBearerToken(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            Sets BearerToken value
+            </summary>
+            <param name="client">client</param>
+            <param name="token">token</param>
+        </member>
+    </members>
+</doc>

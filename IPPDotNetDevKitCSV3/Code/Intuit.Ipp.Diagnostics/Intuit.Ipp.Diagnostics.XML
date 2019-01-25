@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Diagnostics</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Diagnostics.NamespaceDoc">
+            <summary>
+            Intuit.IPP.Diagnostics provides message logging feature. The assembly uses System.Trace as the default 
+            logger to log messages.
+            It also provides an interface to use a third party logging frameworks such as, Enterprise Library, 
+            Log4Net and so forth. When using a third party logger, you should implement ILogger interface and assign 
+            instance of custom logging class to service context object.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Diagnostics.ILogger">
+            <summary>
+            Interface used to log messages. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Diagnostics.ILogger.Log(Intuit.Ipp.Diagnostics.TraceLevel,System.String)">
+            <summary>
+            Logs messages depending on the ids trace level.
+            </summary>
+            <param name="idsTraceLevel">IDS Trace Level.</param>
+            <param name="messageToWrite">The message to write.</param>
+        </member>
+        <member name="T:Intuit.Ipp.Diagnostics.TraceLevel">
+            <summary>
+            Specifies what level of messages to output.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLevel.Off">
+            <summary>
+            Output no tracing and debugging messages.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLevel.Error">
+            <summary>
+            Output error-handling messages.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLevel.Warning">
+            <summary>
+            Output warnings and error-handling messages.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLevel.Info">
+            <summary>
+            Output informational messages, warnings, and error-handling messages.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLevel.Verbose">
+            <summary>
+            Output all debugging and tracing messages.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Diagnostics.TraceLogger">
+            <summary>
+            Logs trace messages using System.Diagnostics.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Diagnostics.TraceLogger.traceSwitch">
+            <summary>
+            Provides a multilevel switch to control tracing.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Diagnostics.TraceLogger.#ctor">
+            <summary>
+            Initializes a new instance of the TraceLogger class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Diagnostics.TraceLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel,System.String)">
+            <summary>
+            Logs messages depending on the ids trace level.
+            </summary>
+            <param name="idsTraceLevel">IDS Trace Level.</param>
+            <param name="messageToWrite">The message to write.</param>
+        </member>
+    </members>
+</doc>

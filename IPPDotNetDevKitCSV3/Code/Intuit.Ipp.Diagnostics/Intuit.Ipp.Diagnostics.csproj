@@ -5,6 +5,7 @@
         <Copyright>Intuit Inc. All rights reserved.</Copyright>
         <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	<DocumentationFile>Intuit.Ipp.Diagnostics.XML</DocumentationFile>
     </PropertyGroup>
     <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
         <Reference Include="System.Net.Http" />

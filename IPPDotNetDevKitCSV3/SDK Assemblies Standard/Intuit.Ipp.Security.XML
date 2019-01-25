@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Security</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Security.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.Security consists of classes that are required to set security credentials to connect with 
+            Intuit services. By default it provides OAuth and user name validators. It can also use other Authorize methods such as SAML, OpenID, etc., to validate Intuit service requests.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Security.IRequestValidator">
+            <summary>
+            Interface for request validate
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Security.IRequestValidator.Authorize(System.Net.WebRequest,System.String)">
+            <summary>
+            Authorizes the web request.
+            </summary>
+            <param name="webRequest">The web request.</param>
+            <param name="requestBody">The request body.</param>
+        </member>
+        <member name="T:Intuit.Ipp.Security.OAuth2RequestValidator">
+            <summary>
+            OAuth implementation for Request validate contract.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Security.OAuth2RequestValidator.AuthorizationHeader">
+            <summary>
+            The Authorization Header constant.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Security.OAuth2RequestValidator.oauthSignatureMethod">
+            <summary>
+            The O auth signature method.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Security.OAuth2RequestValidator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Security.OAuth2RequestValidator"/> class.
+            </summary>
+            <param name="accessToken">The bearer access token.</param>
+        </member>
+        <member name="P:Intuit.Ipp.Security.OAuth2RequestValidator.AccessToken">
+            <summary>
+            Gets or sets the access token.
+            </summary>
+            <value>
+            The access token.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.Security.OAuth2RequestValidator.AdditionalParameters">
+            <summary>
+            Gets or sets the additional parameters.
+            </summary>
+            <value>
+            The additional parameters.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.Security.OAuth2RequestValidator.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The asymmetric algorithm key.
+            </value>
+        </member>
+        <member name="M:Intuit.Ipp.Security.OAuth2RequestValidator.Authorize(System.Net.WebRequest,System.String)">
+            <summary>
+            Authorizes the specified request.
+            </summary>
+            <param name="webRequest">The request.</param>
+            <param name="requestBody">The requestBody if form encoded parameters.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.GlobalTaxService</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService">
+            <summary>
+            Async Global TaxService for QBO.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            GlobalTax Async Service
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="E:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.OnAddTaxCodeAsyncCompleted">
+            <summary>
+            call back event for find all
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.AddTaxCodeAsync(Intuit.Ipp.Data.TaxService)">
+            <summary>
+            Adds an entity (asynchronously) under the specified realm in an asynchronous manner. The realm must be set in the context.
+            </summary>
+            <param name="entity">Entity to Add</param>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.CreateIdsException(System.Exception)">
+            <summary>
+            Creates the ids exception.
+            </summary>
+            <param name="applicationException">The application exception.</param>
+            <returns>Returns the IdsException.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalAsyncTaxService.AddTaxCodeAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            call back method for asynchronously Executing a Report
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Intuit.Ipp.GlobalTaxService.GlobalTaxService">
+            <summary>
+            Global TaxService for QBO.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.GlobalTaxService.GlobalTaxService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.GlobalTaxService.GlobalTaxService.restHandler">
+            <summary>
+            Rest Request Handler.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            GlobalTaxService class
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxService.ServiceContextValidation(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validates the Service context.
+            </summary>
+            <param name="serviceContext">Service Context.</param>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.GlobalTaxService.OnAddTaxCodeAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for AddTaxCode method in asynchronous call.
+            </summary>
+            <value>
+            The OnAddTaxCodeAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxService.AddTaxCode(Intuit.Ipp.Data.TaxService)">
+            <summary>
+            Adds a TaxCode under the specified realm. The realm must be set in the context.
+            </summary>     
+            <param name="taxCode">TaxCode to Add.</param>
+            <returns>Returns an updated version of the entity with updated identifier.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxService.AddTaxCodeAsync(Intuit.Ipp.Data.TaxService)">
+            <summary>
+            Adds a TaxCode under the specified realm. The realm must be set in the context.
+            </summary>     
+            <param name="taxCode">TaxCode to Add.</param>        
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxService.AddTaxCodeAsyncCompleted(System.Object,Intuit.Ipp.Core.GlobalTaxServiceCallCompletedEventArgs{Intuit.Ipp.Data.TaxService})">
+            <summary>
+            Add Asynchronous call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="T:Intuit.Ipp.GlobalTaxService.GlobalTaxServiceHelper">
+            <summary>
+            Class contains Helper Methods for Services.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxServiceHelper.#ctor">
+            <summary>
+            Prevents a default instance of the ServicesHelper class from being created.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.GlobalTaxServiceHelper.IsTypeNull(Intuit.Ipp.Data.TaxService)">
+            <summary>
+            Checks whether the entity passed has a type or not.
+            </summary>
+            <param name="entity">CDM Entity.</param>
+            <returns>True if the type exists or else false.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.GlobalTaxService.Interface.IGlobalTaxService">
+            <summary>
+            This interface specifies the Sync CRUD operations for IDS. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.GlobalTaxService.Interface.IGlobalTaxService.AddTaxCode(Intuit.Ipp.Data.TaxService)">
+            <summary>
+            Adds TaxService entity under the specified realm. The realm must be set in the context.
+            </summary>        
+            <param name="entity">TaxService entity to Add.</param>
+            <returns>Returns an updated version of the entity with updated identifier.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.GlobalTaxService.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.BatchIdAlreadyUsed">
+            <summary>
+              Looks up a localized string similar to This Batch Id is already used within this batch..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.BatchItemIdNotFound">
+            <summary>
+              Looks up a localized string similar to BatchItem having Id {0} not found for removal..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.batchItemsExceededMessage">
+            <summary>
+              Looks up a localized string similar to Number of Items in Batch Request exceeded the permissible limit of 25 items..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.CommunicationErrorMessage">
+            <summary>
+              Looks up a localized string similar to There was an error while communicating with the Ids Server..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.EntityConversionFailedMessage">
+            <summary>
+              Looks up a localized string similar to The provided entity cannot be converted to IntuitEntity object..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.EntityIdNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Id of the entity cannot be null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.EntityString">
+            <summary>
+              Looks up a localized string similar to entity.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ExceptionGeneratedMessage">
+            <summary>
+              Looks up a localized string similar to Exception has been generated: {0}.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.IdsLoggerNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Ids Logger cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.IdString">
+            <summary>
+              Looks up a localized string similar to Id.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.PageNumberString">
+            <summary>
+              Looks up a localized string similar to pageNumber.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.PageSizeString">
+            <summary>
+              Looks up a localized string similar to pageSize.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ParameterNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ParameterZeroNegativeValueMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be zero or negative value..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.RequestValidatorNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Request Validator cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ResponseStreamNullOrEmptyMessage">
+            <summary>
+              Looks up a localized string similar to The Response Stream was null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ServiceContextNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Service Context cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.ServiceContextParameterName">
+            <summary>
+              Looks up a localized string similar to serviceContext.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.StatusNotDeleted">
+            <summary>
+              Looks up a localized string similar to Status not deleted. .
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.StatusNotVoided">
+            <summary>
+              Looks up a localized string similar to Status not voided..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.GlobalTaxService.Properties.Resources.StringParameterNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to string parameter can not be null or empty..
+            </summary>
+        </member>
+    </members>
+</doc>

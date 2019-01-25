@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Retry</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Retry.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.Retry is used to retry service calls defined in the user retry policy. 
+            It enables applications to handle transient errors such as dropped connections. 
+            Retries are supported for the following types of exceptions: ProtocolError, ConnectionClosed, ConnectFailure and Timeout.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Retry.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Properties.Resources.ArgumentCannotBeGreaterThanBaseline">
+            <summary>
+              Looks up a localized string similar to The specified argument {0} cannot be greater than its ceiling value of {1}..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Properties.Resources.ArgumentCannotBeNegative">
+            <summary>
+              Looks up a localized string similar to The specified argument {0} cannot be initialized with a negative value..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Properties.Resources.RetryLimitExceeded">
+            <summary>
+              Looks up a localized string similar to The action has exceeded its defined retry limit..
+            </summary>
+        </member>
+    </members>
+</doc>

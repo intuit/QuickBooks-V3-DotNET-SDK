@@ -5,6 +5,7 @@
         <Copyright>Intuit Inc. All rights reserved.</Copyright>
         <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	<DocumentationFile>Intuit.Ipp.Data.XML</DocumentationFile>
     </PropertyGroup>
 
 <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
@@ -25,16 +26,16 @@
 
 <ItemGroup>
   <Reference Include="Intuit.Ipp.Diagnostics">
-    <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
+    <HintPath>..\..\..\SDK Assemblies Standard\Intuit.Ipp.Diagnostics.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Exception">
-    <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
+    <HintPath>..\..\..\SDK Assemblies Standard\Intuit.Ipp.Exception.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Security">
-    <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
+    <HintPath>..\..\..\SDK Assemblies Standard\Intuit.Ipp.Security.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Utility">
-    <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
+    <HintPath>..\..\..\SDK Assemblies Standard\Intuit.Ipp.Utility.dll</HintPath>
   </Reference>
 </ItemGroup>
 

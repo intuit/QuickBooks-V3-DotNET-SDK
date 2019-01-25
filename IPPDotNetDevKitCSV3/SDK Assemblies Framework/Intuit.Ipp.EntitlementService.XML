@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.EntitlementService</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.EntitlementService.EntitlementService">
+            <summary>
+            This class file contains EntitlementService which performs Get operation for Entitlements
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.EntitlementService.EntitlementService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.EntitlementService.EntitlementService.restHandler">
+            <summary>
+            Rest Request Handler.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.EntitlementService.EntitlementService.orginialSerializationFormat">
+            <summary>
+            Serialization Format 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.EntitlementService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.EntitlementService.EntitlementService"/> class.
+            </summary>
+            <param name="serviceContext"></param>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.EntitlementService.GetEntitlements(System.String)">
+            <summary>
+            Gets entitlements against a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment.</param>
+            <returns>Returns EntitlementsResponse</returns>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.EntitlementService.GetEntitlementsAsync(System.String)">
+            <summary>
+            Gets entitlements against a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entitlementBaseUrl">Base Url of the Entitlements API for OAuth1 vs OAuth2. Default is set to OAuth2 prod environment</param>
+            <returns>Returns EntitlementsResponse</returns>
+        </member>
+        <member name="E:Intuit.Ipp.EntitlementService.EntitlementService.OnGetEntilementAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Get Entitlements method in asynchronous call.
+            </summary>
+            <value>
+            The OnGetEntilementAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.EntitlementService.GetEntitlementsAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            GetEntitlements Asynchronous call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.EntitlementService.ServiceContextValidation(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validates the Service context.
+            </summary>
+            <param name="serviceContext">Service Context.</param>
+        </member>
+        <member name="T:Intuit.Ipp.EntitlementService.IEntitlementService">
+            <summary>
+            This interface specifies the EntitlementService Read operation
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.IEntitlementService.GetEntitlements(System.String)">
+            <summary>
+            Gets Entitlements for a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entitlementBaseUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.EntitlementService.IEntitlementService.GetEntitlementsAsync(System.String)">
+            <summary>
+            Gets Entitlements for a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entitlementBaseUrl"></param>
+        </member>
+        <member name="T:Intuit.Ipp.EntitlementService.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.EntitlementService.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.EntitlementService.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.EntitlementService.Properties.Resources.ParameterNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.EntitlementService.Properties.Resources.ServiceContextNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Service Context cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.EntitlementService.Properties.Resources.ServiceContextParameterName">
+            <summary>
+              Looks up a localized string similar to serviceContext.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1722 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.DataService</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.DataService.AsyncService">
+            <summary>
+            Intuit Partner Platform Services for QBO.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.AsyncService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.AsyncService.requestedEntity">
+            <summary>
+            The Requested Entity.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.AsyncService"/> class.
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnFindAllAsynCompleted">
+            <summary>
+            call back event for find all
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnAddAsyncCompleted">
+            <summary>
+            Call back event for add.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnUpdateAsynCompleted">
+            <summary>
+            call back event for update.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnUpdateAccAsynCompleted">
+            <summary>
+            call back event for update account.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnDoNotUpdateAccAsyncCompleted">
+            <summary>
+            call back event for update account.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnDeleteAsynCompleted">
+            <summary>
+            Call Back event for Delete.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnVoidAsynCompleted">
+            <summary>
+            Call Back event for Void.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnFindByIdAsynCompleted">
+            <summary>
+            Call back event for FindById method.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnFindByParentIdAsyncCompleted">
+            <summary>
+            Call back event for FindByParentId method.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnFindByLevelAsyncCompleted">
+            <summary>
+            Call back event for FindByLevel method.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnGetPdfAsynCompleted">
+            <summary>
+            Call back event for GetPdf method.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnSendEmailAsynCompleted">
+            <summary>
+            Call back event for SendEmail method.
+            </summary>
+        </member>
+        <member name="E:Intuit.Ipp.DataService.AsyncService.OnCDCAsynCompleted">
+            <summary>
+            Call back event for CDC method.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindAllAsync``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Gets a list of all entities  of type T under the specified realm (asynchronously). The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="entity">The entity for which the data is required.</param>
+            <param name="startPosition">The start position.</param>
+            <param name="maxResults">The max results.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindAllAsync``1(``0)">
+            <summary>
+            Gets a list of all entities under the specified realm (asynchronously). The realm must be set in the context.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.AddAsync``1(``0)">
+            <summary>
+            Adds an entity (asynchronously) under the specified realm in an asynchronous manner. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Add</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.UpdateAsync``1(``0)">
+            <summary>
+            Updates(asynchronously) an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.UpdateAccAsync``1(``0)">
+            <summary>
+            Updates(asynchronously) an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.DoNotUpdateAccAsync``1(``0)">
+            <summary>
+            do not Updates(asynchronously) an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.DeleteAsync``1(``0)">
+            <summary>
+            Deletes an entity (asynchronously) under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Delete</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.VoidAsync``1(``0)">
+            <summary>
+            Deletes an entity (asynchronously) under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Delete</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.GetPdfAsync``1(``0)">
+            <summary>
+            Calls the asynchronous method to get the required entity as pdf.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity"> Entity type to get as pdf</param>    
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.GetPdfCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            GetPdf call back method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.SendEmailAsync``1(``0,System.String)">
+            <summary>
+            Calls the asynchronous method to email the required entity.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity"> Entity type to email</param>    
+            <param name="sendToEmail">Email address to send email to.</param>    
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.SendEmailCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            SendEmail call back method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByIdAsync``1(``0)">
+            <summary>
+            Calls the asynchronous method to get the required entity.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity"> Entity type to Find</param>    
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByIdCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            FindByid call back method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByLevelAsync``1(``0)">
+            <summary>
+            Calls the asynchronous method to get the required entities specified by Level.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByLevelAsyncCompleted``1(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            FindByLevelAsync complete call back
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByParentIdAsync``1(``0)">
+            <summary>
+            Calls the asynchronous method to get the required entities specified by ParentId.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindByParentIdAsyncCompleted``1(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            FindByParentIdAsync completed callback
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.CDCAsync(System.Collections.Generic.List{Intuit.Ipp.Data.IEntity},System.DateTime)">
+            <summary>
+            Calls the asynchronous method to get the required CDC.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.CreateIdsException(System.Exception)">
+            <summary>
+            Creates the ids exception.
+            </summary>
+            <param name="applicationException">The application exception.</param>
+            <returns>Returns the IdsException.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.FindAllAsyncCompleted``1(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            FindAll a sync completed call back.
+            </summary>
+            <typeparam name="T">The Entity type.</typeparam>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.AddAsyncompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            call back method for asynchronously Adding entity
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.UpdateAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            Callback event
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.UpdateAccAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            Callback event
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.DeleteAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            Delete operation call back method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.VoidAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            Delete operation call back method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.AsyncService.CDCAsyncCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            CDC Async completed call back.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.Batch">
+            <summary>
+            This class contains code for Batch Processing.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.batchRequests">
+            <summary>
+            batch requests
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.batchResponses">
+            <summary>
+            batch responses
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.intuitBatchItemResponses">
+            <summary>
+            inuit batch item responses list.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.serviceContext">
+            <summary>
+            service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.restHandler">
+            <summary>
+            rest handler object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.Batch.responseSerializer">
+            <summary>
+            serializer to be used. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.#ctor(Intuit.Ipp.Core.ServiceContext,Intuit.Ipp.Core.Rest.IRestHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.Batch"/> class.
+            </summary>
+            <param name="serviceContext">The service context.</param>
+            <param name="restHandler">The rest handler.</param>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Batch.OnBatchExecuteAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for ExecuteAsync method in asynchronous call.
+            </summary>
+            <value>
+            on batch execute async completed.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Batch.Count">
+            <summary>
+            Gets the count.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Batch.IntuitBatchItemResponses">
+            <summary>
+            Gets list of entites in case ResponseType is Report.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Batch.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Intuit.Ipp.DataService.IntuitBatchResponse"/> with the specified id.
+            </summary>
+            <param name="id"> unique batchitem id. </param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Intuit.Ipp.DataService.Batch.Add(System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Intuit.Ipp.DataService.Batch.Add(System.String,System.String,System.Collections.Generic.List{System.String})" -->
+        <!-- Badly formed XML comment ignored for member "M:Intuit.Ipp.DataService.Batch.Add(Intuit.Ipp.Data.CDCQuery,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Intuit.Ipp.DataService.Batch.Add(Intuit.Ipp.Data.CDCQuery,System.String,System.Collections.Generic.List{System.String})" -->
+        <member name="M:Intuit.Ipp.DataService.Batch.Add(Intuit.Ipp.Data.IEntity,System.String,Intuit.Ipp.Data.OperationEnum)">
+            <summary>
+            Adds the specified entity operation.
+            </summary>
+            <param name="entity">entitiy for the batch operation.</param>
+            <param name="id">Unique batchitem id</param>
+            <param name="operation">operation to be performed for the entity.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.Add(Intuit.Ipp.Data.IEntity,System.String,Intuit.Ipp.Data.OperationEnum,System.Collections.Generic.List{System.String})">
+            <summary>
+            Adds the specified entity operation.
+            </summary>
+            <param name="entity">entitiy for the batch operation.</param>
+            <param name="id">Unique batchitem id</param>
+            <param name="operation">operation to be performed for the entity.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.Remove(System.String)">
+            <summary>
+             Removes batchitem with the specified batchitem id.
+            </summary>
+            <param name="id"> unique batchitem id</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.RemoveAll">
+            <summary>
+            Remove all the batchitem requests.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.Execute">
+            <summary>
+            This method executes the batch request.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.ExecuteAsync">
+            <summary>
+            This method executes the batch request Asynchronously. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.IterateFaultAndPrepareException(Intuit.Ipp.Data.Fault)">
+            <summary>
+            Prepare IdsException out of Fault object.
+            </summary>
+            <param name="fault">Fault object.</param>
+            <returns> returns IdsException object.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.ProcessBatchItemResponse(Intuit.Ipp.Data.BatchItemResponse)">
+            <summary>
+            process batch item response
+            </summary>
+            <param name="batchitemResponse">The batchitem response.</param>
+            <returns> returns IntuitBatchResponse object.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.Batch.BatchAsyncompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            call back method for asynchronous batch execution. 
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs">
+            <summary>
+            Contains events for call back methods and corresponding fields
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs.Batch">
+            <summary>
+            Gets or sets the batch.
+            </summary>
+            <value>
+            The batch.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs.Error">
+            <summary>
+            Gets or sets the error.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.BatchProcessingCallback">
+            <summary>
+            Contains event handler for call back event.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.BatchProcessingCallback.BatchExecutionCompletedEventHandler">
+            <summary>
+            event handler to handle call back for batch exceution completion
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.DataService.BatchExecutionCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.DataService">
+            <summary>
+            This class file contains DataService performs CRUD operations on V3 QuickBooks APIs.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.DataService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.DataService.restHandler">
+            <summary>
+            Rest Request Handler.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.DataService"/> class.
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnFindAllAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for find all method in asynchronous call.
+            </summary>
+            <value>
+            The OnFindAllCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnAddAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Add method in asynchronous call.
+            </summary>
+            <value>
+            The OnAddAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnFindByIdAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for FindByid method in asynchronous call.
+            </summary>
+            <value>
+            The OnFindByIdAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnFindByLevelAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for FindByLevel method in asynchronous call.
+            </summary>
+            <value>
+            The OnFindByLevelAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnFindByParentIdAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for FindByParentId method in asynchronous call.
+            </summary>
+            /// <value>
+            The OnFindByParentIdAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnGetPdfAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for GetPdf method in asynchronous call.
+            </summary>
+            <value>
+            The OnGetPdfAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnSendEmailAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for SendEmail method in asynchronous call.
+            </summary>
+            <value>
+            The OnSendEmailAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnUpdateAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Update method in asynchronous call.
+            </summary>
+            <value>
+            The OnUpdateAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnUpdateAccAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Update account method in asynchronous call.
+            </summary>
+            <value>
+            The OnUpdateAccAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnDoNotUpdateAccAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Update account method in asynchronous call.
+            </summary>
+            <value>
+            The OnDoNotUpdateAccAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnDeleteAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Delete method in asynchronous call.
+            </summary>
+            <value>
+            The OnDeleteAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnVoidAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Delete method in asynchronous call.
+            </summary>
+            <value>
+            The OnDeleteAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnRevertAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Revert method in asynchronous call.
+            </summary>
+            <value>
+            The OnRevertAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.DataService.OnCDCAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for CDC method in asynchronous call.
+            </summary>
+            <value>
+            The OnCDCCompleted call back.
+            </value>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Add``1(``0)">
+            <summary>
+            Adds an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Add.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Delete``1(``0)">
+            <summary>
+            Deletes an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Delete.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Void``1(``0)">
+            <summary>
+            Voids an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Void (only entities of type Sales Receipt and Payment are supported to be voided)</param>
+            <returns name="T">Returns the voided entity</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Update``1(``0)">
+            <summary>
+            Updates an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.UpdateAccountOnTxns``1(``0)">
+            <summary>
+            updateaccountontxns an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.DoNotUpdateAccountOnTxns``1(``0)">
+            <summary>
+            donotupdateaccountontxns an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.GetPdf``1(``0)">
+            <summary>
+            Returns an entity as pdf bytes.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to be returned as pdf bytes (entities of type Sales Receipt, Invoice and Estimate are supported to be returned as pdf).</param>
+            <returns type="byte[]">Returns pdf as bytes</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.SendEmail``1(``0,System.String)">
+            <summary>
+            Call the synchronous methods to send entity of type T in an email.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Instance of entity to be  sent in an email. This is not the actual entity that will be emailed. This entity needs to be present on server and the entity on the server will be sent in an email.Any changes in the passed in entity must be committed to the server in order for it to reflect in the email. Entities of type Sales Receipt, Invoice and Estimate are supported to be sent in an email as pdf</param>
+            <param name="sendToEmail">Optional parameter to specify an email address</param>
+            <returns name="T">Retruns the entity sent in email</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindById``1(``0)">
+            <summary>
+            Returns an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity"> Entity type to Find.</param>    
+            <returns> Returns an entity of specified Id.</returns> 
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByParentId``1(``0)">
+            <summary>
+            Returns entities by the Parent Id specified, supported for TaxClassification only.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByLevel``1(``0)">
+            <summary>
+            Returns entities by the Level specified, supported for TaxClassification only.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindAll``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Returns a list of all entities of type T under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">The entity for which the data is required.</param>
+            <param name="startPosition">The start position to retrieve.</param>
+            <param name="maxResults">Maximum no. of results to retrieve</param>
+            <returns> Returns the list of entities.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.CreateNewBatch">
+            <summary>
+            Creates new batch
+            </summary>
+            <returns> returns the batch object</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.CDC(System.Collections.Generic.List{Intuit.Ipp.Data.IEntity},System.DateTime)">
+            <summary>
+            Returns List of entities changed after certain time.
+            </summary>
+            <param name="entityList"> List of entity.</param>    
+            <param name="changedSince"> DateTime of timespan after which entities were changed.</param>    
+            <returns> Returns an IntuitCDCResponse.</returns> 
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindAllAsync``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Retrieves specified entity based passed page number and page size
+            </summary>
+            <typeparam name="T">Entity to be retrieved</typeparam>
+            <param name="entity">Instance of entity to be retrieved</param>
+            <param name="startPosition">The start position.</param>
+            <param name="maxResults">The max results.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByLevelAsync``1(``0)">
+            <summary>
+            Retrieves specified entities based on passed Level, supported for TaxClassification only.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByParentIdAsync``1(``0)">
+            <summary>
+            Retrieves specified entities based on passed ParentId, supported for TaxClassification only.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByIdAsync``1(``0)">
+            <summary>
+            Call the Asynchronous methods to get a particular entity details.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Instance of entity to find</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.GetPdfAsync``1(``0)">
+            <summary>
+            Call the Asynchronous methods to get a particular entity as pdf.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to be returned as pdf bytes (entities of type Sales Receipt, Invoice and Estimate are supported to be returned as pdf).</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.SendEmailAsync``1(``0,System.String)">
+            <summary>
+            Call the Asynchronous methods to send entity of type T in an email.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Instance of entity to be  sent in an email. This is not the actual entity that will be emailed. This entity needs to be present on server and the entity on the server will be sent in an email.Any changes in the passed in entity must be committed to the server in order for it to reflect in the email. Entities of type Sales Receipt, Invoice and Estimate are supported to be sent in an email as pdf</param>
+            <param name="sendToEmail">Optional parameter to specify an email address</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.CDCAsync(System.Collections.Generic.List{Intuit.Ipp.Data.IEntity},System.DateTime)">
+            <summary>
+            Retrieves entities changed since particular Date
+            </summary>
+            <param name="entityList">List of entities to be retrieved</param>
+            <param name="changedSince">date after which entities changed.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.AddAsync``1(``0)">
+            <summary>
+            Adds specified new entity
+            </summary>
+            <typeparam name="T">Entity to be added</typeparam>
+            <param name="entity">Instance of entity to be added</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.DeleteAsync``1(``0)">
+            <summary>
+            Deletes an entity under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Instance of entity to Delete</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.VoidAsync``1(``0)">
+            <summary>
+            Async function that Voids an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Void (only entities of type Sales Receipt and Payment are supported to be voided)</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.UpdateAsync``1(``0)">
+            <summary>
+            Updates an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.UpdateAccAsync``1(``0)">
+            <summary>
+            Updates an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.DoNotUpdateAccAsync``1(``0)">
+            <summary>
+            Updates an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.ServiceContextValidation(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validates the Service context.
+            </summary>
+            <param name="serviceContext">Service Context.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindAllAsyncCompleted(System.Object,Intuit.Ipp.Core.FindAllCallCompletedEventArgs)">
+            <summary>
+            Find Asynchronous Call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByIdAsynCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Callback method for FindBy Id
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByLevelAsyncCompleted(System.Object,Intuit.Ipp.Core.FindAllCallCompletedEventArgs)">
+            <summary>
+            CallBack method for FindByLevelAsync method
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.FindByParentIdAsyncCompleted(System.Object,Intuit.Ipp.Core.FindAllCallCompletedEventArgs)">
+            <summary>
+            CallBack method for FindByParentIdAsync method
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.GetPdfAsynCompleted(System.Object,Intuit.Ipp.Core.PdfCallCompletedEventArgs)">
+            <summary>
+            Callback method for GetPdf
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.SendEmailAsynCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Callback method for SendEmail
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.AddAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Add Asynchronous call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.DeleteAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Delete Asynchronously completed
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.VoidAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Voids the Asynchronously completed.
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.UpdateAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Update asynchronously completed
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.UpdateAccAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Update account asynchronously completed
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.DoNotUpdateAccAsyncCompleted(System.Object,Intuit.Ipp.Core.CallCompletedEventArgs{Intuit.Ipp.Data.IEntity})">
+            <summary>
+            Do Not Update account asynchronously completed
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.CDCAsyncCompleted(System.Object,Intuit.Ipp.Core.CDCCallCompletedEventArgs)">
+            <summary>
+            CDC Asynchronous Call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Upload(Intuit.Ipp.Data.Attachable,System.IO.Stream)">
+            <summary>
+            Upload a stream with metadata defined in Attachable under the specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entity">Attachment Metadata of Stream to be Uploaded.</param>
+            <param name="stream">Stream to be uploaded</param>
+            <returns>Returns an uploaded attachment with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.Download(Intuit.Ipp.Data.Attachable)">
+            <summary>
+            Returns an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <param name="entity"> Entity type to Find.</param>    
+            <returns> Returns an entity of specified Id.</returns> 
+        </member>
+        <member name="M:Intuit.Ipp.DataService.DataService.PrepareAndExecuteHttpRequest``1(System.String)">
+            <summary>
+            Prepare Http request for Reading Tax Cassification methods
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.DataService has public methods to call Intuit Data Services and 
+            The assembly has methods for all CRUD 
+            (Add, Update, FindById, FindAll and Delete) operations and also has features to query QBO entities.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IdsReportResource">
+            <summary>
+            A list of Domain entities supported by IPS. Used by the REST infrastructure to construct relevant calls.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.none">
+            <summary>
+            none Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.accountbalances">
+            <summary>
+            account balances Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.balancesheet">
+            <summary>
+            balance sheet Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.customerswhooweme">
+            <summary>
+            customers show me Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.advancedreport">
+            <summary>
+            advanced report Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.incomebreakdown">
+            <summary>
+            income breakdown Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.profitandloss">
+            <summary>
+            profitandloss Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.salessummary">
+            <summary>
+            sales summary Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsReportResource.topcustomersbysales">
+            <summary>
+            top customers by sales Resource
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IdsResource">
+            <summary>
+            A list of Domain entities supported by QBO. Used by the REST infrastructure to construct relevant calls.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.user">
+            <summary>
+            user Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.account">
+            <summary>
+            account Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.bill">
+            <summary>
+            bill Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.billpayment">
+            <summary>
+            bill payment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.billpaymentcreditcard">
+            <summary>
+            billpaymentcreditcard Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.bomcomponent">
+            <summary>
+            bom component Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.buildassembly">
+            <summary>
+            build assembly Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.charge">
+            <summary>
+            charge Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.check">
+            <summary>
+            check Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.creditcardcharge">
+            <summary>
+            credit card charge Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.creditcardcredit">
+            <summary>
+            credit card credit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.creditmemo">
+            <summary>
+            credit memo Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.currencyinfo">
+            <summary>
+            currency info Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.customer">
+            <summary>
+            customer Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.customermsg">
+            <summary>
+            customer message Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.customertype">
+            <summary>
+            customer type Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.deposit">
+            <summary>
+            deposit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.discount">
+            <summary>
+            discount Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.employee">
+            <summary>
+            employee Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.estimate">
+            <summary>
+            estimate Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.fixedasset">
+            <summary>
+            fixedasset Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.incomebreakdown">
+            <summary>
+            incomebreakdown Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.inventoryadjustment">
+            <summary>
+            inventoryadjustment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.inventorysite">
+            <summary>
+            inventorysite Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.inventorytransfer">
+            <summary>
+            inventorytransfer Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.invoice">
+            <summary>
+            invoice Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.item">
+            <summary>
+            item Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.itemconsolidated">
+            <summary>
+            itemconsolidated Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.itemreceipt">
+            <summary>
+            itemreceipt Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.job">
+            <summary>
+            job Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.jobtype">
+            <summary>
+            jobtype Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.journalentry">
+            <summary>
+            journalentry Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.othername">
+            <summary>
+            othername Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.payment">
+            <summary>
+            payment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.paymentmethod">
+            <summary>
+            paymentmethod Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.payrollitem">
+            <summary>
+            payrollitem Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.payrollnonwageitem">
+            <summary>
+            payrollnonwageitem Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.purchaseorder">
+            <summary>
+            purchaseorder Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salesorder">
+            <summary>
+            salesorder Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salesreceipt">
+            <summary>
+            salesreceipt Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salesrep">
+            <summary>
+            salesrep Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salestax">
+            <summary>
+            salestax Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salestaxcode">
+            <summary>
+            salestaxcode Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salestaxgroup">
+            <summary>
+            salestaxgroup Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.shipmethod">
+            <summary>
+            shipmethod Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.status">
+            <summary>
+            status Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.task">
+            <summary>
+            task Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.templatename">
+            <summary>
+            templatename Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.timeactivity">
+            <summary>
+            timeactivity Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.uom">
+            <summary>
+            unitofmeasure Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.vendor">
+            <summary>
+            vendor Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.vendorcredit">
+            <summary>
+            vendorcredit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.vendortype">
+            <summary>
+            vendortype Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.preferences">
+            <summary>
+            preferences Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.syncactivityrequest">
+            <summary>
+            syncactivityrequest Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.salesterm">
+            <summary>
+            salesterm Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.Class">
+            <summary>
+            class Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.creditcardrefund">
+            <summary>
+            creditcardrefun Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.companymetadata">
+            <summary>
+            company Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.customfielddefinition">
+            <summary>
+            customfielddefinition Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.namevalue">
+            <summary>
+            namevalue Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IdsResource.recordcount">
+            <summary>
+            recordcount Resource
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IDataService">
+            <summary>
+            This interface specifies the Sync CRUD operations for IDS. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.Add``1(``0)">
+            <summary>
+            Adds an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Add.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.Delete``1(``0)">
+            <summary>
+            Deletes an entity under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Delete.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.Void``1(``0)">
+            <summary>
+            Voids an entity under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Delete.</param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.Update``1(``0)">
+            <summary>
+            Updates an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">Entity to Update.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.FindById``1(``0)">
+            <summary>
+            Gets an entity under the specified realm. The realm must be set in the context.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity"> Entity type to Find.</param>    
+            <returns> Returns an entity of specified Id.</returns> 
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.FindByParentId``1(``0)">
+            <summary>
+            Gets a list of all TacClassification entities specified by ParentId under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns>Returns the list of entities.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.FindByLevel``1(``0)">
+            <summary>
+            Gets a list of all TaxClassification entities specified by Level under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns>Returns the list of entities.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IDataService.FindAll``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Gets a list of all entities of type T under the specified realm. The realm must be set in the context
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+            <param name="entity">The entity for which the data is required.</param>
+            <param name="pageNumber">The Page number to retrieve.</param>
+            <param name="pageSize">The number of record fetch in one call. Max size supported by QBO is 1000.</param>
+            <returns> Returns the list of entities.</returns>"
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IntuitBatchResponse">
+            <summary>
+            This class processes the batch request.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.batchItemId">
+            <summary>
+            unique batch item Id
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.responseType">
+            <summary>
+            enum representing ResponseType after batch execution.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.entity">
+            <summary>
+            entity in case response type is entity.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.entities">
+            <summary>
+             list of entities in case ResponseType is query.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.exception">
+            <summary>
+            IdsException in case of ResponseType is exception. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.cdcResponse">
+            <summary>
+            IntuitCDCResponse in case of ResponseType is of type CDC. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitBatchResponse.queryResponse">
+            <summary>
+            QueryResponse in case of ResponseType is of type query. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IntuitBatchResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.IntuitBatchResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.Entity">
+            <summary>
+             Gets or sets entity in case ResponseType is entity.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.Entities">
+            <summary>
+            Gets list of entites in case ResponseType is Report.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.Exception">
+            <summary>
+            Gets or sets exception in case ResponseType is exception
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.ResponseType">
+            <summary>
+            Gets or sets the type of the response return after batch execution
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.Id">
+            <summary>
+            Gets or sets the type of the response return after batch execution
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.CDCResponse">
+            <summary>
+            Gets or sets the IntuitCDCResponse returned after batch execution
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.IntuitBatchResponse.QueryResponse">
+            <summary>
+            Gets or sets the QueryResponse returned after batch execution
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IntuitBatchResponse.AddEntities(Intuit.Ipp.Data.IEntity)">
+            <summary>
+            adds the entities to entities list
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IntuitCDCResponse">
+            <summary>
+            This class processes the CDC request.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitCDCResponse.entities">
+            <summary>
+             list of entities.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitCDCResponse.exceptions">
+            <summary>
+            IdsException in case of ResponseType is exception. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IntuitCDCResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.DataService.IntuitBatchResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.IntuitCDCResponse.getEntity(System.String)">
+            <summary>
+            Gets the List of entity value with particular key
+            </summary>
+            <param name="key">key.</param>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.IntuitResponseStatus">
+            <summary>
+            status of response for delete and void operation 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitResponseStatus.Voided">
+            <summary>
+            Entity has been made void. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.IntuitResponseStatus.Deleted">
+            <summary>
+            entity has been deleted.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.ResponseType">
+            <summary>
+            type of batch response
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.ResponseType.Entity">
+            <summary>
+            batch response has single entity 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.ResponseType.Query">
+            <summary>
+            batch response has more than one enitity. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.ResponseType.Exception">
+            <summary>
+            batch response has exception.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.DataService.ResponseType.CdcQuery">
+            <summary>
+            batch response has CDCQuery.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.BatchIdAlreadyUsed">
+            <summary>
+              Looks up a localized string similar to This Batch Id is already used within this batch..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.BatchItemIdNotFound">
+            <summary>
+              Looks up a localized string similar to BatchItem having Id {0} not found for removal..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.batchItemsExceededMessage">
+            <summary>
+              Looks up a localized string similar to Number of Items in Batch Request exceeded the permissible limit of 25 items..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.CommunicationErrorMessage">
+            <summary>
+              Looks up a localized string similar to There was an error while communicating with the Ids Server..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.EmailAddressNotValid">
+            <summary>
+              Looks up a localized string similar to Email address is either not in valid format or is not provided.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.EmailAddressNotValidExceptionMessage">
+            <summary>
+              Looks up a localized string similar to No email address or invalid email address format.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.EntityConversionFailedMessage">
+            <summary>
+              Looks up a localized string similar to The provided entity cannot be converted to IntuitEntity object..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.EntityIdNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Id of the entity cannot be null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.EntityString">
+            <summary>
+              Looks up a localized string similar to entity.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ExceptionGeneratedMessage">
+            <summary>
+              Looks up a localized string similar to Exception has been generated: {0}.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.FieldNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to ParentRef field is null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.IdsLoggerNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Ids Logger cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.IdString">
+            <summary>
+              Looks up a localized string similar to Id.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.OperationNotSupportedOnEntity">
+            <summary>
+              Looks up a localized string similar to This entity does not suppport this opperation. Only supported for TaxClassification.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.PageNumberString">
+            <summary>
+              Looks up a localized string similar to pageNumber.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.PageSizeString">
+            <summary>
+              Looks up a localized string similar to pageSize.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ParameterNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ParameterZeroNegativeValueMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be zero or negative value..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.PdfOperationNotSupportedOnEntity">
+            <summary>
+              Looks up a localized string similar to Only entitites of type SalesReceipt, Invoice and Estimate are supported for this operation..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.RequestValidatorNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Request Validator cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ResponseStreamNullOrEmptyMessage">
+            <summary>
+              Looks up a localized string similar to The Response Stream was null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ServiceContextNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Service Context cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.ServiceContextParameterName">
+            <summary>
+              Looks up a localized string similar to serviceContext.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.StatusNotDeleted">
+            <summary>
+              Looks up a localized string similar to Status not deleted. .
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.StatusNotVoided">
+            <summary>
+              Looks up a localized string similar to Status not voided..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.StringParameterNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to string parameter can not be null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.DataService.Properties.Resources.VoidOperationNotSupportedOnEntity">
+            <summary>
+              Looks up a localized string similar to Only entitites of type SalesReceipt and Payment are supported for this operation..
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.DataService.ServicesHelper">
+            <summary>
+            Class contains Helper Methods for Services.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.#ctor">
+            <summary>
+            Prevents a default instance of the ServicesHelper class from being created.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.IsTypeNull(Intuit.Ipp.Data.IEntity)">
+            <summary>
+            Checks whether the entity passed has a type or not.
+            </summary>
+            <param name="entity">CDM Entity.</param>
+            <returns>True if the type exists or else false.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.ValidateEntity``1(``0,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validates if entity is null
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="serviceContext"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.ValidateId(System.String,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validate Id field null or white space for IntuitEntity object
+            </summary>
+            <param name="Id"></param>
+            <param name="serviceContext"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.ValidateEntityType``1(``0,System.String,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validate if type of entity is same as specified type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.ValidateObject(System.Object,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validate if passed object is null
+            </summary>
+            <param name="obj"></param>
+            <param name="serviceContext"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.ValidateIntuitEntity(Intuit.Ipp.Data.IntuitEntity,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validate if IntuitEntity was converted successfully
+            </summary>
+            <param name="intuitEntity"></param>
+            <param name="serviceContext"></param>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.PrepareByParentId(Intuit.Ipp.Data.IEntity,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Get ParentRef field of given object
+            </summary>
+            <param name="entity"></param>
+            <param name="serviceContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intuit.Ipp.DataService.ServicesHelper.PrepareByLevel(Intuit.Ipp.Data.IEntity,Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Get Level field of given object
+            </summary>
+            <param name="entity"></param>
+            <param name="serviceContext"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

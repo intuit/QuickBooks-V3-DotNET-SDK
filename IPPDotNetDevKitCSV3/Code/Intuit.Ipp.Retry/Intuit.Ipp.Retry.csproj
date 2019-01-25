@@ -5,6 +5,7 @@
         <Copyright>Intuit Inc. All Rights Reserved.</Copyright>
         <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	<DocumentationFile>Intuit.Ipp.Retry.XML</DocumentationFile>
     </PropertyGroup>
     <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
         <Reference Include="System.Net.Http" />
@@ -15,6 +16,6 @@
       <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;" />
+      <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)\bin\Debug\net472\$(TargetName).dll&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)\bin\Debug\net472\$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot;" />
     </Target>
 </Project>

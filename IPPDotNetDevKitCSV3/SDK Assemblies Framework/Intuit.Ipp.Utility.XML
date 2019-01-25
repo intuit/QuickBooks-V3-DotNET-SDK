@@ -1,0 +1,1215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Utility</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Utility.CoreConstants">
+            <summary>
+            Constants whose values do not change.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.SLASH_CHAR">
+            <summary>
+            Slash character.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.VERSION">
+            <summary>
+            The Intuit Services Version.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.RESOURCE">
+            <summary>
+            The Resource.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_TEXTXML">
+            <summary>
+            Content type: text/xml.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_TEXTPLAIN">
+            <summary>
+            Content type: text/plain.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_APPLICATIONTEXT">
+            <summary>
+            Content type: application/text.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML">
+            <summary>
+            Content type: application/xml.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON">
+            <summary>
+            Content type: application/xml.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_APPLICATIONPDF">
+            <summary>
+            Content type: application/pdf.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_APPLICATIONOCTETSTREAM">
+            <summary>
+            Content type: application/pdf.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_URLFORMENCODED">
+            <summary>
+            Content type: application/x-www-form-urlencoded.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.TOKEN_MIGRATION_URL">
+            <summary>
+            The Base Url for Oauth1 to Oauth2 tokens migration.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.TOKEN_MIGRATION_REDIRECT_URL">
+            <summary>
+            The Redirect url required by token migration endpoint.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.IPS_BASEURL">
+            <summary>
+            The Base Url for IPS.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.QBO_BASEURL">
+            <summary>
+            The Base Url for QBO.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.ENTITLEMENT_BASEURL">
+            <summary>
+            The Base Url for Entitlements API.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.INTUIT_WORKPLACE">
+            <summary>
+            Intuit Workplace Uri. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.OAUTHACCESSTOKENURL">
+            <summary>
+            Intuit O Auth Access token Uri. 
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.Id">
+            <summary>
+            Id Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.SYNC_TOKEN">
+            <summary>
+            Sync Token Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.DOMAIN">
+            <summary>
+            Domain Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.METADATA">
+            <summary>
+            MetaData Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.SPARSE">
+            <summary>
+            Sparse Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.STATUS">
+            <summary>
+            Status Parameter Name.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.ID_DOMAIN_QUERY">
+            <summary>
+            Id Domain Query Parameter.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.PAGE_NUM">
+            <summary>
+            Page Number Query Parameter.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.RESULTS_PERPAGE">
+            <summary>
+            Results Per page Query Parameter.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.APIACTIONHEADER">
+            <summary>
+            API Action Header Key.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.ISQBOXPATH">
+            <summary>
+            XPath for IsQbo tag.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.REALMXPATH">
+            <summary>
+            XPath for realm tag.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.API_GETISREALMQBO">
+            <summary>
+            Api for API_GetIsRealmQBO
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.API_GETIDSREALM">
+            <summary>
+            Api for API_GetIDSRealm
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.AUTHORIZATIONSTRING_FORHEADER">
+            <summary>
+            Authorization String For Header.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.INTUITAUTH_HEADERFORMAT">
+            <summary>
+            Intuit Auth header format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.REQUESTFILENAME_FORMAT">
+            <summary>
+            Request File Name Format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.RESPONSEFILENAME_FORMAT">
+            <summary>
+            Response File Name Format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.ERRORRESPONSEFILENAME_FORMAT">
+            <summary>
+            Error Response File Name Format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.XOAUTHAUTHIDPSEUDONYM">
+            <summary>
+            The o auth auth id pseudonym
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.XOAUTHREALMIDPSEUDONYM">
+            <summary>
+            The o auth realm id pseudonym
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.XOAUTHSERVICEPROVIDERID">
+            <summary>
+            The o auth service provider id
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTENCODING">
+            <summary>
+            The Compression format of the request data.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.ACCEPTENCODING">
+            <summary>
+            The Compression format of the response data.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.REQUESTSOURCEHEADER">
+            <summary>
+            The Request source header value.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTTYPE_MULTIPARTFORMDATAFORMAT">
+            <summary>
+            multipart/form-data format
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTDISPOSITION_FORMAT">
+            <summary>
+            content-disposition format for string data
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTDISPOSITION_FILENAME_FORMAT">
+            <summary>
+            content-disposition format for Filename
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTDISPOSITION_CONTENTTYPE_FORMAT">
+            <summary>
+            content-disposition format for ContentType
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CoreConstants.CONTENTDISPOSITION_CONTENTTRANSFERENCODING_FORMAT">
+            <summary>
+            content-disposition format for ContentType
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.DateHelper">
+            <summary>   
+            Helper functions for date-related problems.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.DateHelper.EpochJanFirst1970Utc">
+            <summary>
+            Defined as January 1st, 1970 UTC. Used in various ways as a reference point for date arithmetic.
+            </summary>
+            <see>GetMillisecondsSince01011970UTC</see>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.DateHelper.ParseDateTimeField(System.String)">
+            <summary>
+            Assuming the value represents a date or date/time returned by a query, parses the timestamp and converts it to a local date/time.
+            </summary>
+            <param name="value">the time stamp returned by the query</param>
+            <returns>the local time or date represented by the time stamp, or DateTime.MinValue if not a valid time stamp</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.DateHelper.GetLocalDateFromQuickBaseDate(System.Int64)">
+            <summary>
+            A so-called "QuickBaseDate" is a date used by Intuit QuickBase (and WorkPlace, if the app uses QuickBase as the underlying data store),
+            which is stored as the number of milliseconds since 1/1/1970 00:00:00 UTC.
+            This function returns the local equivalent of that date.
+            </summary>
+            <param name="quickBaseDate">a date returned from QuickBase as part of a query</param>
+            <returns>the local equivalent of that date as a DateTime object</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.RequestXmlCollection">
+            <summary>
+            A helper class to build API requests.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RequestXmlCollection.requestId">
+            <summary>
+            Request Id.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RequestXmlCollection.qdbapiElement">
+            <summary>
+            Quick book database API Element.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.RequestXmlCollection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Utility.RequestXmlCollection"/> class.
+            </summary>
+            <param name="requestId">The request id.</param>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RequestXmlCollection.QdbapiElement">
+            <summary>
+            Gets the Quick book database API element.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.RequestXmlCollection.AddTextParameter(System.String,System.String)">
+            <summary>
+            Add an API parameter of type Text
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of parameter.</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.RequestXmlCollection.AddNode(System.Xml.XmlElement,System.String,System.Xml.XmlNode)">
+            <summary>
+            Creates a new element with the given <paramref name="name"/>, appends the <paramref name="node"/> to that new element, and appends the new element to <paramref name="appendTo"/>.
+            </summary>
+            <param name="appendTo">The append to.</param>
+            <param name="name">The name of the child node.</param>
+            <param name="node">The child node.</param>
+            <returns>Returns xml element.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.DataCompressionFormat">
+            <summary>
+            Format used to compress data.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.DataCompressionFormat.None">
+            <summary>
+            No compression.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.DataCompressionFormat.GZip">
+            <summary>
+            GZip compression.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.DataCompressionFormat.Deflate">
+            <summary>
+            Deflate compression.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.DeflateCompressor">
+            <summary>
+            Deflate compressor.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.DeflateCompressor.DataCompressionFormat">
+            <summary>
+            Gets format of the data compression.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.DeflateCompressor.Compress(System.Byte[],System.IO.Stream)">
+            <summary>
+            Compresses the input byte array into stream.
+            </summary>
+            <param name="content">Input data.</param>
+            <param name="requestStream">Request stream.</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.DeflateCompressor.Decompress(System.IO.Stream)">
+            <summary>
+            Decompresses the output response stream.
+            </summary>
+            <param name="responseStream">Response stream.</param>
+            <returns>Decompressed stream.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.GZipCompressor">
+            <summary>
+            GZip compressor.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.GZipCompressor.DataCompressionFormat">
+            <summary>
+            Gets format of the data compression.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.GZipCompressor.Compress(System.Byte[],System.IO.Stream)">
+            <summary>
+            Compresses the input byte array into stream.
+            </summary>
+            <param name="content">Input data.</param>
+            <param name="requestStream">Request stream.</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.GZipCompressor.Decompress(System.IO.Stream)">
+            <summary>
+            Decompresses the output response stream.
+            </summary>
+            <param name="responseStream">Response stream.</param>
+            <returns>Decompressed stream.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.BaseUrlElement">
+            <summary>
+            Base url element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.BaseUrlElement.Qbo">
+            <summary>
+            Gets Url for QuickBooks Online Rest Service.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.BaseUrlElement.Ips">
+            <summary>
+            Gets Url for Platform Rest Service.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.BaseUrlElement.OAuthAccessTokenUrl">
+            <summary>
+            Gets Url for OAuth Authentication server.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.BaseUrlElement.UserNameAuthentication">
+            <summary>
+            Gets Url for UserName Authentication server.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.CompressionFormat">
+            <summary>
+            Format used to compress data.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CompressionFormat.DEFAULT">
+            <summary>
+            Default value used to indicate that compression is not specified in the config.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CompressionFormat.None">
+            <summary>
+            No compression.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CompressionFormat.GZip">
+            <summary>
+            GZip compression.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.CompressionFormat.Deflate">
+            <summary>
+            Deflate compression.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.CustomLoggerElement">
+            <summary>
+            Custom logger element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomLoggerElement.Name">
+            <summary>
+            Gets Name for the custom logging mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomLoggerElement.Type">
+            <summary>
+            Gets Name Type of custom logging mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomLoggerElement.Enable">
+            <summary>
+            Gets a value indicating whether this logging mechanism is to be used.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.CustomSecurityElement">
+            <summary>
+            Custom security element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSecurityElement.Name">
+            <summary>
+            Gets Name for the custom security mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSecurityElement.Type">
+            <summary>
+            Gets Type for the custom security mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSecurityElement.Enable">
+            <summary>
+            Gets a value indicating whether this security mechanism is to be used.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSecurityElement.Params">
+            <summary>
+            Gets the parameters for this security mechanism.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.CustomSerializerElement">
+            <summary>
+            Custom serializer element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSerializerElement.Name">
+            <summary>
+            Gets Name for the custom serialization mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSerializerElement.Type">
+            <summary>
+            Gets Type for the custom serialization mechanism.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.CustomSerializerElement.Enable">
+            <summary>
+            Gets a value indicating whether this serialization mechanism is to be used.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.ExponentialRetryElement">
+            <summary>
+            Exponential retry element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ExponentialRetryElement.RetryCount">
+            <summary>
+            Gets the retry count.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ExponentialRetryElement.MinBackoff">
+            <summary>
+            Gets the Minimum Backoff time.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ExponentialRetryElement.MaxBackoff">
+            <summary>
+            Gets the Maximum Backoff time.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ExponentialRetryElement.DeltaBackoff">
+            <summary>
+            Gets the Delta Backoff time.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.IncrementalRetryElement">
+            <summary>
+            Request element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IncrementalRetryElement.RetryCount">
+            <summary>
+            Gets the retry count.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IncrementalRetryElement.InitialInterval">
+            <summary>
+            Gets the initial interval.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IncrementalRetryElement.Increment">
+            <summary>
+            Gets the incremental time.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.IppConfigurationSection">
+            <summary>
+            Intuit Ipp configuration section.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Instance">
+            <summary>
+            Gets the Instance of IppConfigurationSection.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Logger">
+            <summary>
+            Gets the Logger element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Security">
+            <summary>
+            Gets the Security element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Message">
+            <summary>
+            Gets the Message element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Retry">
+            <summary>
+            Gets the Retry element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.Service">
+            <summary>
+            Gets the Service element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.IppConfigurationSection.WebhooksService">
+            <summary>
+            Gets the WebhooksService element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.LinearRetryElement">
+            <summary>
+            Linear retry element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.LinearRetryElement.RetryCount">
+            <summary>
+            Gets the Retry Count.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.LinearRetryElement.RetryInterval">
+            <summary>
+            Gets the Retry interval.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.LoggerElement">
+            <summary>
+            Logger element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.LoggerElement.RequestLog">
+            <summary>
+            Gets the RequestLog element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.LoggerElement.CustomLogger">
+            <summary>
+            Gets the CustomLogger element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.MessageElement">
+            <summary>
+            Message element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.MessageElement.Request">
+            <summary>
+            Gets the Request element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.MessageElement.Response">
+            <summary>
+            Gets the Response element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.MessageElement.CustomSerializer">
+            <summary>
+            Gets the CustomSerializer element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.MinorVersionElement">
+            <summary>
+            MinorVersion
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.MinorVersionElement.Qbo">
+            <summary>
+            Gets minorVersion for QuickBooks Online Rest Service.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.OAuthElement">
+            <summary>
+            OAuth element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.OAuthElement.AccessToken">
+            <summary>
+            Gets the Access Token.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.OAuthElement.AccessTokenSecret">
+            <summary>
+            Gets the Access Token Secret.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.OAuthElement.ConsumerKey">
+            <summary>
+            Gets the Consumer Key.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.OAuthElement.ConsumerSecret">
+            <summary>
+            Gets the Consumer Secret.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.RequestElement">
+            <summary>
+            Request element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RequestElement.SerializationFormat">
+            <summary>
+            Gets the Serialization Format.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RequestElement.CompressionFormat">
+            <summary>
+            Gets the Compression Format.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.RequestLogElement">
+            <summary>
+            Request log element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RequestLogElement.EnableRequestResponseLogging">
+            <summary>
+            Gets a value indicating whether to log request and response messages.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RequestLogElement.RequestResponseLoggingDirectory">
+            <summary>
+            Gets the logging directory.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.ResponseElement">
+            <summary>
+            Response element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ResponseElement.SerializationFormat">
+            <summary>
+            Gets the Serialization Format.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ResponseElement.CompressionFormat">
+            <summary>
+            Gets the Compression Format.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.RetryElement">
+            <summary>
+            Retry element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RetryElement.Mode">
+            <summary>
+            Gets the Retry mode.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RetryElement.LinearRetry">
+            <summary>
+            Gets the LinearRetry Element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RetryElement.IncrementatlRetry">
+            <summary>
+            Gets the IncrementalRetry Element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.RetryElement.ExponentialRetry">
+            <summary>
+            Gets the ExponentialRetry Element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.RetryMode">
+            <summary>
+            Retry mode enumeration.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RetryMode.None">
+            <summary>
+            No retry model.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RetryMode.Linear">
+            <summary>
+            Linear retry model.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RetryMode.Incremental">
+            <summary>
+            Incremental retry model.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.RetryMode.Exponential">
+            <summary>
+            Exponential retry model.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.SecurityElement">
+            <summary>
+            Security element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.SecurityElement.Mode">
+            <summary>
+            Gets the Security mode.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.SecurityElement.OAuth">
+            <summary>
+            Gets the OAuth element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.SecurityElement.CustomSecurity">
+            <summary>
+            Gets the custom security element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.SecurityMode">
+            <summary>
+            Security mode enumeration.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SecurityMode.None">
+            <summary>
+            No Security mode.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SecurityMode.OAuth">
+            <summary>
+            Open Authentication security mode.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SecurityMode.Custom">
+            <summary>
+            Custom security mode.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.SerializationFormat">
+            <summary>
+            Serialization format enumeration.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SerializationFormat.DEFAULT">
+            <summary>
+            Default value used to indicate that compression is not specified in the config.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SerializationFormat.Xml">
+            <summary>
+            Xml Serialization Format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SerializationFormat.Json">
+            <summary>
+            Java Script Obejct Notation Serialization Format.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.SerializationFormat.Custom">
+            <summary>
+            Custom serialization format.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.ServiceElement">
+            <summary>
+            Service element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ServiceElement.BaseUrl">
+            <summary>
+            Gets the BaseUrl Element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ServiceElement.MinorVersion">
+            <summary>
+            Gets the MinorVersion Element.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.TicketElement">
+            <summary>
+            Ticket element.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.TicketElement.Ticket">
+            <summary>
+            Gets the ticket value.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.WebhooksServiceElement">
+            <summary>
+            WebhooksService
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.WebhooksServiceElement.WebhooksVerifier">
+            <summary>
+            Gets Webhooks Service verifierToken
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.WebhooksVerifierElement">
+            <summary>
+            This class file contains WebhooksVerifierElement to process verification of webhooks token
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.WebhooksVerifierElement.Value">
+            <summary>
+            Gets verifier token for webhooks
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.NamespaceDoc">
+            <summary>
+            Intuit.IPP.Util has utility related information.
+                  -DateHelper class:  A helper function for date-related problems.
+                  -RequestXmlCollection: A helper class which is used to build API xml request object.
+                  -IEntitySerializer: An interface for serialization and deserialization.
+            Implement IEntitySerializer for custom serialization and deserialization. The XmlObjectSerializer implements 
+            IEntitySerializer for xml serialization and deserilazation.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.ICompressor">
+            <summary>
+            Interface for compression methods.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.ICompressor.DataCompressionFormat">
+            <summary>
+            Gets format of the data compression.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.ICompressor.Compress(System.Byte[],System.IO.Stream)">
+            <summary>
+            Compresses the input byte array into stream.
+            </summary>
+            <param name="content">Input data.</param>
+            <param name="requestStream">Request stream.</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.ICompressor.Decompress(System.IO.Stream)">
+            <summary>
+            Decompresses the output response stream.
+            </summary>
+            <param name="responseStream">Response stream.</param>
+            <returns>Decompressed stream.</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.IntuitErrorHandler">
+            <summary>
+            Intuit Error Handler class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitErrorHandler.HandleErrors(System.String)">
+            <summary>
+            Check the response for any errors it might indicate. Will throw an exception if API response indicates an error.
+            Will throw an exception if it has a problem determining success or error.
+            </summary>
+            <param name="response">the QuickBase response to examine</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitErrorHandler.HandleErrors(System.Xml.XmlNode)">
+            <summary>
+            Check the response for any errors it might indicate. Will throw an exception if API response indicates an error.
+            Will throw an exception if it has a problem determining success or error.
+            </summary>
+            <param name="responseXml">the QuickBase response to examine</param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitErrorHandler.IsValidXml(System.String)">
+            <summary>
+            Validates the input string is a well formatted xml string
+            </summary>
+            <param name="inputString">Input xml string</param>
+            <returns>True if 'inputString' is a valid xml</returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ErrorCodeMissing">
+            <summary>
+              Looks up a localized string similar to API response without error code element..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ErrorCodeNonNemeric">
+            <summary>
+              Looks up a localized string similar to Error code &quot;{0}&quot; not numeric!.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ErrorDetails0">
+            <summary>
+              Looks up a localized string similar to {0} (Error {1}, Detail: {2}).
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ErrorDetails1">
+            <summary>
+              Looks up a localized string similar to {0} (Error {1}).
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.ErrorWithNoText">
+            <summary>
+              Looks up a localized string similar to Error {0}.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.MustProvideIdOrName">
+            <summary>
+              Looks up a localized string similar to Must provide id or name of the field.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.Properties.Resources.NotAvailable">
+            <summary>
+              Looks up a localized string similar to n/a.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.IEntitySerializer">
+            <summary>
+            Entity serialize contract.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IEntitySerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>Returns the serialize entity in string format.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IEntitySerializer.Deserialize``1(System.String)">
+            <summary>
+            DeSerializes the message to Type T.
+            </summary>
+            <typeparam name="T">The type to be  serailse to</typeparam>
+            <param name="message">The message.</param>
+            <returns>
+            Returns the deserialized message.
+            </returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.IntuitConverter">
+            <summary>
+            JSON.Net extention for handling Json serialization/deserialization of POCO classes generated for Intuit XSD.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            WriteJson
+            </summary>  
+            <param name="writer">json writer</param>
+            <param name="value">object value</param>
+            <param name="serializer">json serilaizer value</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            ReadJson
+            </summary>  
+            <param name="reader">json reader</param>
+            <param name="objectType">objectType value</param>
+            <param name="existingValue">existing value</param>
+            <param name="serliazer">serliazer value</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.CanConvert(System.Type)">
+            <summary>
+            CanConvert
+            </summary>  
+            <param name="objecType">object Type value</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.AssignValueToProperty(System.Object,Newtonsoft.Json.Linq.JProperty,System.Type,System.String,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            AssignValueToProperty
+            </summary>  
+            <param name="target">target value</param>
+            <param name="prop">prop value</param>
+            <param name="type">type value</param>
+            <param name="propName">propName value</param>
+            <param name="serializer">json serilaizer value</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.ResizeArray(System.Array,System.Int32)">
+            <summary>
+            ResizeArray
+            </summary>  
+        </member>
+        <member name="M:Intuit.Ipp.Utility.IntuitConverter.GetInstanceofAbstractType(System.Type,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            GetInstanceofAbstarctType
+            </summary>  
+        </member>
+        <member name="T:Intuit.Ipp.Utility.JsonObjectSerializer">
+            <summary>
+            JSON Serialize(r) to serialize and de serialize.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.JsonObjectSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Utility.JsonObjectSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.JsonObjectSerializer.#ctor(Intuit.Ipp.Diagnostics.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Utility.JsonObjectSerializer"/> class.
+            </summary>
+            <param name="idsLogger">The ids logger.</param>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.JsonObjectSerializer.IDSLogger">
+            <summary>
+            Gets or sets IDS Logger.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.JsonObjectSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified entity in Json Format.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>
+            Returns the serialize entity in string format.
+            </returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.JsonObjectSerializer.Deserialize``1(System.String)">
+            <summary>
+            DeSerializes the specified action entity type in Json Format.
+            </summary>
+            <typeparam name="T">The type to be  serialize to</typeparam>
+            <param name="message">The message.</param>
+            <returns>
+            Returns the de serialized object.
+            </returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.ObjectToEnumConverter">
+            <summary>
+             This convertor is fired to correctly serialize enum field for JSON using XmlEnumAttribute. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.ObjectToEnumConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            This method is used for serialization of enum field.
+            </summary>
+            <param name="writer"> json writer.</param>
+            <param name="value"> Type of object being serialized. </param>
+            <param name="serializer"> json serializer. </param>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.ObjectToEnumConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            This method is used for deserialization of enum field.
+            </summary>
+            <param name="reader"> json reader object. </param>
+            <param name="objectType"> Type of object being serialized. </param>
+            <param name="existingValue"> existing value. </param>
+            <param name="serializer"> json serializer. </param>
+            <returns> returns an object </returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.ObjectToEnumConverter.CanConvert(System.Type)">
+            <summary>
+            This method is used to check if it is of enum type.
+            </summary>
+            <param name="objectType"> Type of object being serialized. </param>
+            <returns> retrun true or false. </returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.XmlObjectSerializer">
+            <summary>
+            Xml Serialize(r) to serialize and de serialize.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.XmlObjectSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Utility.XmlObjectSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.XmlObjectSerializer.#ctor(Intuit.Ipp.Diagnostics.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.Utility.XmlObjectSerializer"/> class.
+            </summary>
+            <param name="idsLogger">The ids logger.</param>
+        </member>
+        <member name="P:Intuit.Ipp.Utility.XmlObjectSerializer.IDSLogger">
+            <summary>
+            Gets or sets IDS Logger.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.XmlObjectSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>
+            Returns the serialize entity in string format.
+            </returns>
+        </member>
+        <member name="M:Intuit.Ipp.Utility.XmlObjectSerializer.Deserialize``1(System.String)">
+            <summary>
+            DeSerializes the specified action entity type.
+            </summary>
+            <typeparam name="T">The type to be  serialize to</typeparam>
+            <param name="message">The message.</param>
+            <returns>
+            Returns the de serialized object.
+            </returns>
+        </member>
+        <member name="T:Intuit.Ipp.Utility.UtilityConstants">
+            <summary>
+            Constants whose values do not change.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.ERRCODEXPATH">
+            <summary>
+            XPath for errcode tag.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.ERRTEXTXPATH">
+            <summary>
+            XPath for errtext tag.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.ERRDETAILXPATH">
+            <summary>
+            XPath for errdetail tag.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.QDBAPI">
+            <summary>
+            QDBAPI root element.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.ENCODINGATTR">
+            <summary>
+            Encoding attribute.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.ENCODINGATTRVALUE">
+            <summary>
+            Encoding attribute value.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Utility.UtilityConstants.UDATA">
+            <summary>
+            UDATA tag.
+            </summary>
+        </member>
+    </members>
+</doc>
