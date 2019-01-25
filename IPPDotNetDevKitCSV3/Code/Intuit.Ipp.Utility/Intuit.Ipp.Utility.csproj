@@ -19,25 +19,23 @@
   <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  
-  
-
 </ItemGroup>
 
 <ItemGroup>
   <Reference Include="Intuit.Ipp.Diagnostics">
-    <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Diagnostics.dll</HintPath>
+    <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Exception">
-    <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Exception.dll</HintPath>
+    <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Retry">
-    <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Retry.dll</HintPath>
+    <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
   </Reference>
   <Reference Include="Intuit.Ipp.Security">
-    <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Security.dll</HintPath>
+    <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
   </Reference>
 </ItemGroup>
+
 
 <Target Name="PostBuild" AfterTargets="PostBuildEvent">
   <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;" />

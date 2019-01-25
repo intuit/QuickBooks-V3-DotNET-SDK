@@ -23,19 +23,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Intuit.Ipp.Data">
-      <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Data.dll</HintPath>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Diagnostics">
-      <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Diagnostics.dll</HintPath>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Exception">
-      <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Exception.dll</HintPath>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Security">
-      <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Security.dll</HintPath>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Utility">
-      <HintPath>..\..\SDK Assemblies Standard\Intuit.Ipp.Utility.dll</HintPath>
+      <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
