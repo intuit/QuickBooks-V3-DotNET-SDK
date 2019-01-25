@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Threading;
 using Intuit.Ipp.DataService;
 //using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+//using Intuit.Ipp.LinqExtender;
 
 
 namespace Intuit.Ipp.Core.Test.Common

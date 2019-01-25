@@ -78,7 +78,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
             }
             catch (System.Exception ex)
@@ -97,7 +98,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(appTokenQbo, realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
                 
             }
@@ -125,7 +127,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(null, realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
             }
             catch (System.Exception ex)
@@ -145,7 +148,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(appTokenQbo, null, IntuitServicesType.QBO, oauthValidator);
             }
             catch (InvalidRealmException) { }
@@ -163,7 +167,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
                 context.Timeout = 100;
                 Assert.AreEqual(100, context.Timeout);
@@ -182,7 +187,8 @@ namespace Intuit.Ipp.Core.Test
         {
             try
             {
-                OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
+                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
                 ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
                 context.Timeout = null;
                 Assert.IsNull(context.Timeout);

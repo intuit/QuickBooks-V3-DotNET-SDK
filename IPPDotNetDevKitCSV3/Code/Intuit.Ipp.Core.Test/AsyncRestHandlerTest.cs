@@ -226,7 +226,8 @@ namespace Intuit.Ipp.Core.Test
         [TestMethod]        
         public void GetResponseInvalidTokenExceptionTest()
         {
-            OAuthRequestValidator validator = new OAuthRequestValidator("adfas", "afd", "adfas", "asdfa");
+            //OAuthRequestValidator validator = new OAuthRequestValidator("adfas", "afd", "adfas", "asdfa");
+            OAuth2RequestValidator validator = new OAuth2RequestValidator("bearertoken");
             string realmId = ConfigurationManager.AppSettings["RealmIAQBO"];
             ServiceContext serviceContext = new ServiceContext(realmId, IntuitServicesType.QBO, validator);
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
