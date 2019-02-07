@@ -41,12 +41,9 @@ namespace Intuit.Ipp.DataService.Test
         public static void MyClassInitialize(TestContext testContext)
         {
             string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string accessTokenSecretQBO = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            string consumerKeyQBO = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            string ConsumerSecretQBO = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
             string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
 
-            OAuthRequestValidator oAuthRequestValidatorQbo = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, ConsumerSecretQBO);
+            OAuth2RequestValidator oAuthRequestValidatorQbo = new OAuth2RequestValidator(accessTokenQBO);
             ServiceContext qboContext = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidatorQbo);
             qboService = new DataService(qboContext);
         }

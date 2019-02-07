@@ -1,120 +1,67 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C65E5969-E551-456A-AC79-AA625CC97C7E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Intuit.Ipp.GlobalTaxServiceTest</RootNamespace>
-    <AssemblyName>Intuit.Ipp.GlobalTaxServiceTest</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
-      <Visible>False</Visible>
-    </CodeAnalysisDependentAssemblyPaths>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GlobalTaxServiceTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirdParty\Linq Extender\Intuit.Ipp.LinqExtender.csproj">
-      <Project>{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}</Project>
-      <Name>Intuit.Ipp.LinqExtender</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj">
-      <Project>{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}</Project>
-      <Name>Intuit.Ipp.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj">
-      <Project>{2147FC87-D172-40A6-9D54-181515DAF7AC}</Project>
-      <Name>Intuit.Ipp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj">
-      <Project>{2A5A9D95-9CE2-4726-A9E2-606838ABDCD1}</Project>
-      <Name>Intuit.Ipp.DataService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj">
-      <Project>{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}</Project>
-      <Name>Intuit.Ipp.Diagnostics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj">
-      <Project>{0C815166-B7AC-45DF-AA48-0B026687228E}</Project>
-      <Name>Intuit.Ipp.Exception</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj">
-      <Project>{F9091E69-5EB8-4405-A85F-DD4307560C9A}</Project>
-      <Name>Intuit.Ipp.GlobalTaxService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.PlatformService\Intuit.Ipp.PlatformService.csproj">
-      <Project>{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}</Project>
-      <Name>Intuit.Ipp.PlatformService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj">
-      <Project>{D479AB56-8F3E-4C3E-B641-048B3552DDA9}</Project>
-      <Name>Intuit.Ipp.QueryFilter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj">
-      <Project>{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}</Project>
-      <Name>Intuit.Ipp.ReportService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj">
-      <Project>{12D82D75-ECEE-459D-A820-B6CD95B24449}</Project>
-      <Name>Intuit.Ipp.Retry</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj">
-      <Project>{160733CB-F539-4545-BEF4-F57176FD12DE}</Project>
-      <Name>Intuit.Ipp.Security</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj">
-      <Project>{1A06430B-308C-49CF-9620-70D4F7D8A501}</Project>
-      <Name>Intuit.Ipp.Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\App.config">
-      <Link>App.config</Link>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp2.0;net472</TargetFrameworks>
+        <Version>6.0.0.0</Version>
+        <Copyright>Intuit Inc. All Rights Reserved.</Copyright>
+        <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    </PropertyGroup>
+
+<PropertyGroup Condition="'$(TargetFramework)'=='net472'">
+  <DefineConstants>$(DefineConstants);NET_FRAMEWORK</DefineConstants>
+</PropertyGroup>
+<PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
+  <DefineConstants>$(DefineConstants);NET_CORE2.0</DefineConstants>
+</PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <Reference Include="System.Net.Http" />
+        
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        
+    </ItemGroup>
+    <ItemGroup>
+       <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
+       <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />      
+       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+       <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+       <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+       <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Reference Include="Intuit.Ipp.Core">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Data">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.DataService">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.QueryFilter">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
+      </Reference>
+    
+      <Reference Include="Intuit.Ipp.Diagnostics">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Exception">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.QueryFilter">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Security">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Utility">
+        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;" />
+    </Target>
 </Project>
