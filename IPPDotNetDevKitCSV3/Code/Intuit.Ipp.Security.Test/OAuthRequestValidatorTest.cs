@@ -52,12 +52,12 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTestAccessTokenEmpty()
         {
             string accessToken = string.Empty;
-            string accessTokenSecret = string.Empty;
-            string consumerKey = string.Empty;
-            string consumerSecret = string.Empty;
+            //string accessTokenSecret = string.Empty;
+            //string consumerKey = string.Empty;
+            //string consumerSecret = string.Empty;
             try
             {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerSecret);
+                OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
                 Assert.Fail();
             }
             catch (InvalidTokenException)
@@ -72,12 +72,12 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTestAccessTokenSecretEmpty()
         {
             string accessToken = "accessToken";
-            string accessTokenSecret = string.Empty;
-            string consumerKey = string.Empty;
-            string consumerSecret = string.Empty;
+            //string accessTokenSecret = string.Empty;
+            //string consumerKey = string.Empty;
+            //string consumerSecret = string.Empty;
             try
             {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerSecret);
+                OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
                 Assert.Fail();
             }
             catch (InvalidTokenException)
@@ -92,12 +92,12 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTestConsumerKeyEmpty()
         {
             string accessToken = "accessToken";
-            string accessTokenSecret = "accessTokenSecret";
-            string consumerKey = string.Empty;
-            string consumerSecret = string.Empty;
+            //string accessTokenSecret = "accessTokenSecret";
+            //string consumerKey = string.Empty;
+            //string consumerSecret = string.Empty;
             try
             {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerSecret);
+                OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
                 Assert.Fail();
             }
             catch (InvalidTokenException)
@@ -112,12 +112,10 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTestConsumerSecretEmpty()
         {
             string accessToken = "accessToken";
-            string accessTokenSecret = "accessTokenSecret";
-            string consumerKey = "consumerKey";
-            string consumerSecret = string.Empty;
+            
             try
             {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerSecret);
+                OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
                 Assert.Fail();
             }
             catch (InvalidTokenException)
@@ -132,11 +130,10 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTestAccessTokenNull()
         {
             string accessTokenSecret = string.Empty;
-            string consumerKey = string.Empty;
-            string consumerSecret = string.Empty;
+            
             try
             {
-                OAuthRequestValidator target = new OAuthRequestValidator(null, accessTokenSecret, consumerKey, consumerSecret);
+                OAuth2RequestValidator target = new OAuth2RequestValidator(null);
                 Assert.Fail();
             }
             catch (InvalidTokenException)
@@ -150,17 +147,17 @@ namespace Intuit.Ipp.Security.Test
         [TestMethod()]
         public void OAuthRequestValidatorConstructorTestAccessTokenSecretNull()
         {
-            string accessToken = "accessToken";
-            string consumerKey = string.Empty;
-            string consumerSecret = string.Empty;
-            try
-            {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, null, consumerKey, consumerSecret);
-                Assert.Fail();
-            }
-            catch (InvalidTokenException)
-            {
-            }
+            //string accessToken = "accessToken";
+            ////string consumerKey = string.Empty;
+            ////string consumerSecret = string.Empty;
+            //try
+            //{
+            //    OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken, null, consumerKey, consumerSecret);
+            //    Assert.Fail();
+            //}
+            //catch (InvalidTokenException)
+            //{
+            //}
         }
 
         /// <summary>
@@ -169,17 +166,17 @@ namespace Intuit.Ipp.Security.Test
         [TestMethod()]
         public void OAuthRequestValidatorConstructorTestConsumerKeyNull()
         {
-            string accessToken = "accessToken";
-            string accessTokenSecret = "accessTokenSecret";
-            string consumerSecret = string.Empty;
-            try
-            {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, null, consumerSecret);
-                Assert.Fail();
-            }
-            catch (InvalidTokenException)
-            {
-            }
+            //string accessToken = "accessToken";
+            //string accessTokenSecret = "accessTokenSecret";
+            //string consumerSecret = string.Empty;
+            //try
+            //{
+            //    OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, null, consumerSecret);
+            //    Assert.Fail();
+            //}
+            //catch (InvalidTokenException)
+            //{
+            //}
         }
 
         /// <summary>
@@ -188,17 +185,17 @@ namespace Intuit.Ipp.Security.Test
         [TestMethod()]
         public void OAuthRequestValidatorConstructorTestConsumerSecretNull()
         {
-            string accessToken = "accessToken";
-            string accessTokenSecret = "accessTokenSecret";
-            string consumerKey = "consumerKey";
-            try
-            {
-                OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, null);
-                Assert.Fail();
-            }
-            catch (InvalidTokenException)
-            {
-            }
+            //string accessToken = "accessToken";
+            //string accessTokenSecret = "accessTokenSecret";
+            //string consumerKey = "consumerKey";
+            //try
+            //{
+            //    OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, null);
+            //    Assert.Fail();
+            //}
+            //catch (InvalidTokenException)
+            //{
+            //}
         }
 
         /// <summary>
@@ -208,14 +205,10 @@ namespace Intuit.Ipp.Security.Test
         public void OAuthRequestValidatorConstructorTest()
         {
             string accessToken = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string accessTokenSecret = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            string consumerKey = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            string consumerKeySecret = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
-            OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerKeySecret);
+            
+            OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
             Assert.AreEqual(target.AccessToken, accessToken);
-            Assert.AreEqual(target.AccessTokenSecret, accessTokenSecret);
-            Assert.AreEqual(target.ConsumerKey, consumerKey);
-            Assert.AreEqual(target.ConsumerSecret, consumerKeySecret);
+            
         }
 
         /// <summary>
@@ -226,11 +219,9 @@ namespace Intuit.Ipp.Security.Test
         {
             string applicationToken = ConfigurationManager.AppSettings["ApplicationToken"];
 
-            OAuthRequestValidator target = new OAuthRequestValidator(applicationToken);
+            OAuth2RequestValidator target = new OAuth2RequestValidator(applicationToken);
             Assert.AreEqual(target.AccessToken, null);
-            Assert.AreEqual(target.AccessTokenSecret, null);
-            Assert.AreEqual(target.ConsumerKey, applicationToken);
-            Assert.AreEqual(target.ConsumerSecret, null);
+            
         }
 
         /// <summary>
@@ -245,7 +236,7 @@ namespace Intuit.Ipp.Security.Test
             string consumerKeySecret = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
             string requestUri = "https://appcenter.intuit.com/Developer/Create";
             WebRequest webRequest = WebRequest.Create(requestUri);
-            OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerKeySecret);
+            OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
             target.Authorize(webRequest, string.Empty);
             Assert.IsTrue(webRequest.Headers.Count > 0);
         }
@@ -257,13 +248,13 @@ namespace Intuit.Ipp.Security.Test
         public void AuthorizeWithHeadersTest()
         {
             string accessToken = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string accessTokenSecret = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            string consumerKey = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            string consumerKeySecret = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
+            //string accessTokenSecret = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
+            //string consumerKey = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
+            //string consumerKeySecret = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
             string requestUri = "https://appcenter.intuit.com/Developer/Create";
             WebRequest webRequest = WebRequest.Create(requestUri);
             webRequest.Headers.Add("ContentType", "text/xml");
-            OAuthRequestValidator target = new OAuthRequestValidator(accessToken, accessTokenSecret, consumerKey, consumerKeySecret);
+            OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
             target.Authorize(webRequest, string.Empty);
             Assert.IsTrue(webRequest.Headers.Count > 0);
         }
