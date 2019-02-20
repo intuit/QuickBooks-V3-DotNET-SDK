@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Threading;
 using Intuit.Ipp.DataService;
-using Intuit.Ipp.QueryFilter;
+//using Intuit.Ipp.QueryFilter;
 using Intuit.Ipp.LinqExtender;
 
 

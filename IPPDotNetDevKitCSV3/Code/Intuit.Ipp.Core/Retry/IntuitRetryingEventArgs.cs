@@ -18,7 +18,8 @@
 // <summary>This file contains information required for the <see cref="IntuitRetryPolicy.Retrying"/> event.</summary>
 ////***************************************************
 
-namespace Intuit.Ipp.Retry
+//namespace Intuit.Ipp.Retry  
+namespace Intuit.Ipp.Core
 {
     using System;
 

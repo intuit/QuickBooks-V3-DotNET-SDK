@@ -25,8 +25,9 @@ namespace Intuit.Ipp.Core.Rest
     using System.Globalization;
     using System.IO;
     using System.Text;
-    using Intuit.Ipp.Core;
+    //using Intuit.Ipp.Core; 
     using Intuit.Ipp.Exception;
+    using Intuit.Ipp.Utility;
 
     /// <summary>
     /// Logs API Requests/Responses To Disk
@@ -79,11 +80,11 @@ namespace Intuit.Ipp.Core.Rest
                 string filePath = string.Empty;
                 if (isRequest)
                 {
-                    filePath = string.Format(CultureInfo.InvariantCulture, CoreConstants.REQUESTFILENAME_FORMAT, this.ServiceRequestLoggingLocation, CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.REQUESTFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
                 }
                 else
                 {
-                    filePath = string.Format(CultureInfo.InvariantCulture, CoreConstants.RESPONSEFILENAME_FORMAT, this.ServiceRequestLoggingLocation, CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.RESPONSEFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
                 }
 
                 try

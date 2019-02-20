@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="ICompressor.cs" company="Intuit">
+// <copyright file="GZipCompressor.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -16,36 +16,54 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains interface for compressor.</summary>
+// <summary>This file contains implementation for gzip compressor.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core
+//namespace Intuit.Ipp.Core.Compression  
+namespace Intuit.Ipp.Utility
 {
     using System.IO;
-    using Intuit.Ipp.Core.Compression;
+    using System.IO.Compression;
+    using System.Net;
 
     /// <summary>
-    /// Interface for compression methods.
+    /// GZip compressor.
     /// </summary>
-    public interface ICompressor
+    public class GZipCompressor : ICompressor
     {
         /// <summary>
         /// Gets format of the data compression.
         /// </summary>
-        DataCompressionFormat DataCompressionFormat { get; }
+        public DataCompressionFormat DataCompressionFormat
+        {
+            get
+            {
+                return DataCompressionFormat.GZip;
+            }
+        }
 
         /// <summary>
         /// Compresses the input byte array into stream.
         /// </summary>
         /// <param name="content">Input data.</param>
         /// <param name="requestStream">Request stream.</param>
-        void Compress(byte[] content, Stream requestStream);
+        public void Compress(byte[] content, Stream requestStream)
+        {
+            using (var compressedStream = new GZipStream(requestStream, CompressionMode.Compress))
+            {
+                compressedStream.Write(content, 0, content.Length);
+            }
+        }
 
         /// <summary>
         /// Decompresses the output response stream.
         /// </summary>
         /// <param name="responseStream">Response stream.</param>
         /// <returns>Decompressed stream.</returns>
-        Stream Decompress(Stream responseStream);
+        public Stream Decompress(Stream responseStream)
+        {
+            var decompressedStream = new GZipStream(responseStream, CompressionMode.Decompress);
+            return decompressedStream;
+        }
     }
 }

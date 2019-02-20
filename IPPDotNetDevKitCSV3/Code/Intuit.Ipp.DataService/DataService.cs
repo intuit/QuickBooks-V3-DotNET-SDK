@@ -38,8 +38,8 @@ namespace Intuit.Ipp.DataService
     using Intuit.Ipp.Utility;
     using System.Text;
     using System.IO;
-    using Intuit.Ipp.QueryFilter;
-    using Intuit.Ipp.LinqExtender;
+    //using Intuit.Ipp.QueryFilter;
+    //using Intuit.Ipp.LinqExtender;
 
 
     /// <summary>

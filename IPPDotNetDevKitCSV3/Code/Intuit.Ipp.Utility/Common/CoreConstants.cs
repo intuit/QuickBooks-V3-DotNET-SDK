@@ -19,7 +19,8 @@
 // <summary>This file contains Constants.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core
+//namespace Intuit.Ipp.Core  
+namespace Intuit.Ipp.Utility
 {
     /// <summary>
     /// Constants whose values do not change.
@@ -240,7 +241,7 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// The Request source header value.
         /// </summary>
-        public const string REQUESTSOURCEHEADER = "V3DotNetSDK6.0.0.0.0";
+        public const string REQUESTSOURCEHEADER = "V3DotNetSDK6.0.0.0";
 
         /// <summary>
         /// multipart/form-data format

@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core.Test;
 using Intuit.Ipp.Core.Compression;
 using System;
+using Intuit.Ipp.Utility;
 
 namespace Intuit.Ipp.Core.Test
 {

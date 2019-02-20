@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="DeflateCompressor.cs" company="Intuit">
+// <copyright file="ICompressor.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -16,53 +16,39 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains implementation for deflate compressor.</summary>
+// <summary>This file contains interface for compressor.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core.Compression
+//namespace Intuit.Ipp.Core  
+namespace Intuit.Ipp.Utility
 {
     using System.IO;
-    using System.IO.Compression;
-    using System.Net;
+    //using Intuit.Ipp.Core.Compression; 
+    
+
 
     /// <summary>
-    /// Deflate compressor.
+    /// Interface for compression methods.
     /// </summary>
-    public class DeflateCompressor : ICompressor
+    public interface ICompressor
     {
         /// <summary>
         /// Gets format of the data compression.
         /// </summary>
-        public DataCompressionFormat DataCompressionFormat
-        {
-            get
-            {
-                return DataCompressionFormat.Deflate;
-            }
-        }
+        DataCompressionFormat DataCompressionFormat { get; }
 
         /// <summary>
         /// Compresses the input byte array into stream.
         /// </summary>
         /// <param name="content">Input data.</param>
         /// <param name="requestStream">Request stream.</param>
-        public void Compress(byte[] content, Stream requestStream)
-        {
-            using (var compressedStream = new DeflateStream(requestStream, CompressionMode.Compress))
-            {
-                compressedStream.Write(content, 0, content.Length);
-            }
-        }
+        void Compress(byte[] content, Stream requestStream);
 
         /// <summary>
         /// Decompresses the output response stream.
         /// </summary>
         /// <param name="responseStream">Response stream.</param>
         /// <returns>Decompressed stream.</returns>
-        public Stream Decompress(Stream responseStream)
-        {
-            var decompressedStream = new DeflateStream(responseStream, CompressionMode.Decompress);
-            return decompressedStream;
-        }
+        Stream Decompress(Stream responseStream);
     }
 }

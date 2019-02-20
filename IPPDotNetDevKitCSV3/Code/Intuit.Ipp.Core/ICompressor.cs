@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="DataCompressionFormat.cs" company="Intuit">
+// <copyright file="CoreHelper.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -16,29 +16,12 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains enumeration for data compression format.</summary>
+// <summary>This file contains Helper methods.</summary>
 ////*********************************************************
 
-namespace Intuit.Ipp.Core.Compression
-{
-    /// <summary>
-    /// Format used to compress data.
-    /// </summary>
-    public enum DataCompressionFormat
-    {
-        /// <summary>
-        /// No compression.
-        /// </summary>
-        None,
-
-        /// <summary>
-        /// GZip compression.
-        /// </summary>
-        GZip,
-
-        /// <summary>
-        /// Deflate compression.
-        /// </summary>
-        Deflate
-    }
-}
+//namespace Intuit.Ipp.Core
+//{
+//    public interface ICompressor  
+//    {
+//    }
+//}

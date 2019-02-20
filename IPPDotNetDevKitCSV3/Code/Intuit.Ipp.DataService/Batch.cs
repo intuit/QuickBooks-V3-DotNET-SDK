@@ -394,17 +394,17 @@ namespace Intuit.Ipp.DataService
             IntuitBatchRequest intuitBatchRequest = new IntuitBatchRequest();
             intuitBatchRequest.BatchItemRequest = this.batchRequests.ToArray<BatchItemRequest>();
 
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", CoreConstants.VERSION, this.serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", Utility.CoreConstants.VERSION, this.serviceContext.RealmId);
 
             // Creates request parameters
             RequestParameters parameters;
             if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
             else
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
             }
             // Prepares request
             HttpWebRequest request = this.restHandler.PrepareRequest(parameters, intuitBatchRequest);
@@ -448,17 +448,17 @@ namespace Intuit.Ipp.DataService
             // Create Intuit Batch Request
             IntuitBatchRequest intuitBatchRequest = new IntuitBatchRequest();
             intuitBatchRequest.BatchItemRequest = this.batchRequests.ToArray<BatchItemRequest>();
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", CoreConstants.VERSION, this.serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", Utility.CoreConstants.VERSION, this.serviceContext.RealmId);
 
             // Creates request parameters
             RequestParameters parameters;
             if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
             else
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
             }
 
             // Prepares request

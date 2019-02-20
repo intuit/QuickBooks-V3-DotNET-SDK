@@ -180,4 +180,13 @@
   <data name="DefaultMinorVersionValue" xml:space="preserve">
     <value>35</value>
   </data>
+  <data name="ArgumentCannotBeGreaterThanBaseline" xml:space="preserve">
+    <value>The specified argument {0} cannot be greater than its ceiling value of {1}.</value>
+  </data>
+  <data name="ArgumentCannotBeNegative" xml:space="preserve">
+    <value>The specified argument {0} cannot be initialized with a negative value.</value>
+  </data>
+  <data name="RetryLimitExceeded" xml:space="preserve">
+    <value>The action has exceeded its defined retry limit.</value>
+  </data>
 </root>
