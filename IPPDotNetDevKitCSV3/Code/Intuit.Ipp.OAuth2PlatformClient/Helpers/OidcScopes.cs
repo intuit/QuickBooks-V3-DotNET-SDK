@@ -71,7 +71,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         [StringValue("com.intuit.quickbooks.payroll.timetracking")]
         PayrollTimetracking = 9,
         [StringValue("com.intuit.quickbooks.payroll.benefits")]
-        PayrollBenefits = 10
+        PayrollBenefits = 10,
+        [StringValue("intuit_name")]
+        IntuitName = 11
 
 
 
