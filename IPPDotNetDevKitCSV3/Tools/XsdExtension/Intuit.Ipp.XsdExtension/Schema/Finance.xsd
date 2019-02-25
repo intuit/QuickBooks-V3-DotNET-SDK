@@ -5548,6 +5548,23 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="LessCIS" type="xs:decimal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO: Indicates the
+								less cis amount of the transaction, specific to UK region companies
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InvoiceLink" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO:  Sharable link of the invoice for external users
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -5563,6 +5580,15 @@
 						minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Extension entity for SalesReceipt
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LessCIS" type="xs:decimal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO: Indicates the
+								less cis amount of the transaction, specific to UK region companies
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -8434,6 +8460,15 @@
 								Purchase.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="LessCIS" type="xs:decimal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO: Indicates the
+								less cis amount of the transaction, specific to UK region companies
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -8609,6 +8644,15 @@
 						<xs:annotation>
 							<xs:documentation>Internal use only: extension place holder for
 								Bill.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LessCIS" type="xs:decimal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO: Indicates the
+								less cis amount of the transaction, specific to UK region companies
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
