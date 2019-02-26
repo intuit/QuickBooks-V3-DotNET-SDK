@@ -108,7 +108,7 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
         internal List<String> Include { get; set; }
 
-        /// <summary>
+        /// <-summary>
         /// Gets or sets the requestId param.
         /// </summary>
         internal string RequestId { get; set; }
@@ -242,7 +242,7 @@ namespace Intuit.Ipp.Core.Rest
                             }
 
                             // Log Request Body to a file
-                            this.RequestLogging.LogPlatformRequests(requestXML.ToString(), true);
+                            this.RequestLogging.LogPlatformRequests(" RequestUrl: "+ requestEndpoint+ ", Request Payload:" +requestXML.ToString(), true);
 
                             // Use of encoding to get bytes used to write to request stream.
                             UTF8Encoding encoding = new UTF8Encoding();
@@ -256,7 +256,6 @@ namespace Intuit.Ipp.Core.Rest
 
 
                     TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-                    
                     // Set the request properties.
                     this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request.\n Start dump: \n" + requestXML.ToString() : "Adding the payload to request.");
 
