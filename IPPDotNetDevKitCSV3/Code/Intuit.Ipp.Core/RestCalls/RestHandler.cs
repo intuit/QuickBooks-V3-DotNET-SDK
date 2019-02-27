@@ -242,7 +242,8 @@ namespace Intuit.Ipp.Core.Rest
                             }
 
                             // Log Request Body to a file
-                            this.RequestLogging.LogPlatformRequests(requestXML.ToString(), true);
+                            this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestXML.ToString(), true);
+
 
                             // Use of encoding to get bytes used to write to request stream.
                             UTF8Encoding encoding = new UTF8Encoding();

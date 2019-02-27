@@ -117,8 +117,17 @@ namespace Intuit.Ipp.Core.Rest
                         }
                     }
 
-                    // Log the error string to disk.
-                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(errorString, false);
+                    string response_intuit_tid_header = "";
+                    //get intuit_tid header
+                    for (int i = 0; i < errorResponse.Headers.Count; ++i)
+                    {
+                        if (errorResponse.Headers.Keys[i] == "intuit_tid")
+                        {
+                            response_intuit_tid_header = errorResponse.Headers[i];
+                        }
+                    }
+                    //Log errorstring to disk
+                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
                     if (isIps)
                     {

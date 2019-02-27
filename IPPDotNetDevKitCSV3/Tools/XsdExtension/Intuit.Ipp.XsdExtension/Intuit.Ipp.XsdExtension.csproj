@@ -48,9 +48,9 @@
     <AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Intuit.Ipp.Diagnostics, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
+      <HintPath>..\..\..\Code\Intuit.Ipp.Diagnostics\bin\Debug\net472\Intuit.Ipp.Diagnostics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

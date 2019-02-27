@@ -211,7 +211,7 @@ namespace Intuit.Ipp.Core.Rest
                                HttpWebRequest request = (HttpWebRequest)ar.AsyncState;
 
                                // Log Request Body to a file
-                               this.RequestLogging.LogPlatformRequests(this.requestBody, true);
+                               this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
 
                                // Using encoding get the byte value of the requestBody.
                                UTF8Encoding encoding = new UTF8Encoding();
@@ -420,8 +420,18 @@ namespace Intuit.Ipp.Core.Rest
                 }
             }
 
-            // Log response to disk.
-            this.RequestLogging.LogPlatformRequests(resultString, false);
+            string response_intuit_tid_header = "";
+            //get intuit_tid header
+            for (int i = 0; i < response.Headers.Count; ++i)
+            {
+                if (response.Headers.Keys[i] == "intuit_tid")
+                {
+                    response_intuit_tid_header = response.Headers[i];
+                }
+            }
+            // Log the response to Disk.
+            this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
+
 
             //log response to logs
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
@@ -545,7 +555,7 @@ namespace Intuit.Ipp.Core.Rest
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
 
             // Log Request Body to a file
-            this.RequestLogging.LogPlatformRequests(this.requestBody, true);
+            this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
 
             UTF8Encoding encoding = new UTF8Encoding();
             byte[] content = encoding.GetBytes(this.requestBody);

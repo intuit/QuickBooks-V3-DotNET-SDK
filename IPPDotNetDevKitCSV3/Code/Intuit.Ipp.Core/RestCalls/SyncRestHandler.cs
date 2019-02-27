@@ -364,9 +364,19 @@ namespace Intuit.Ipp.Core.Rest
                 }
 
                 // Log the response to Disk.
-                this.RequestLogging.LogPlatformRequests(response, false);
-                
-                
+                string response_intuit_tid_header = "";
+                //get intuit_tid header
+                for (int i = 0; i < httpWebResponse.Headers.Count; ++i)
+                {
+                    if (httpWebResponse.Headers.Keys[i] == "intuit_tid")
+                    {
+                        response_intuit_tid_header = httpWebResponse.Headers[i];
+                    }
+                }
+                this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
+
+
+
             }
 
             // Return the response.
