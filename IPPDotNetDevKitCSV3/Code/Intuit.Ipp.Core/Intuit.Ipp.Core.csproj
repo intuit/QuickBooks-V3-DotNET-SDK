@@ -125,7 +125,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Resources\resources.designer.cs" />
+    <None Include="Resources\resources.designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>resources.resx</DependentUpon>
+    </None>
     <Compile Include="RestCalls\AsyncRestHandler.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -162,7 +166,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Resources\resources.resx" />
+    <None Include="Resources\resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>resources.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">
