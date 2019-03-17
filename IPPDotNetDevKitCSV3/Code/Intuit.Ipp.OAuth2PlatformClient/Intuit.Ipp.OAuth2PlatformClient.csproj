@@ -1,11 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
-        <Version>6.0.0.0</Version>
-        <Copyright>Intuit Inc. All rights reserved.</Copyright>
-        <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
-        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-	<DocumentationFile>Intuit.Ipp.OAuth2PlatformClient.XML</DocumentationFile>
+       <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+	     <DocumentationFile>Intuit.Ipp.OAuth2PlatformClient.XML</DocumentationFile>
     </PropertyGroup>
 
 <ItemGroup Condition="'$(TargetFramework)' == 'net472'">

@@ -78,13 +78,29 @@ namespace Intuit.Ipp.Core.Rest
                 }
 
                 string filePath = string.Empty;
-                if (isRequest)
+                if (this.ServiceRequestLoggingLocation.Contains("\\"))
                 {
-                    filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.REQUESTFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    if (isRequest)
+                    {
+                        filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.REQUESTFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    }
+                    else
+                    {
+                        filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.RESPONSEFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    }
                 }
                 else
                 {
-                    filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.RESPONSEFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                    if (isRequest)
+                    {
+                        filePath = Path.Combine(this.ServiceRequestLoggingLocation,"Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+                        
+                    }
+                    else
+                    {
+                        filePath = Path.Combine(this.ServiceRequestLoggingLocation, "Response-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+                    }
+
                 }
 
                 try
