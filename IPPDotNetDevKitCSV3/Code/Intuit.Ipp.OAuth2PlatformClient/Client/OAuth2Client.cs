@@ -53,6 +53,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string CSRFToken {get; set;}
 
         /// <summary>
+        ///// EnableLogging
+        ///// </summary>
+        //public bool EnableLogging { get; set; }
+
+        ///// <summary>
+        ///// LogFilesPath
+        ///// </summary>
+        //public string LogFilesPath { get; set; }
+
+        //internal LogRequestsToDisk LogOAuth2Calls { get; set; }
+
+        /// <summary>
         /// OAuth2Client constructor
         /// </summary>
         /// <param name="clientID"></param>
@@ -65,6 +77,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI)); 
             ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true) ;
+            
             DiscoveryDoc = GetDiscoveryDoc();
         }
 
@@ -135,7 +148,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await  tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken );
+            return await  tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -148,7 +161,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -163,7 +176,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
             {
                 Token = accessOrRefreshToken,
-            }, cancellationToken);
+            }, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -175,7 +188,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
-            return await userInfoClient.GetAsync(accessToken, cancellationToken);
+            return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

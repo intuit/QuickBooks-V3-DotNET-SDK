@@ -44,8 +44,7 @@
     <AssemblyOriginatorKeyFile>DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Intuit.Ipp.Core, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Core">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Data, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">

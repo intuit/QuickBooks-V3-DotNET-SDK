@@ -50,8 +50,7 @@
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
       <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Intuit.Ipp.Core, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Intuit.Ipp.Core">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
     </Reference>
     <Reference Include="Intuit.Ipp.Data, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
