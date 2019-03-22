@@ -38,6 +38,27 @@ namespace Intuit.Ipp.Security
     /// </summary>
     public class OAuth1ToOAuth2TokenMigrationHelper
     {
+        /// <summary>
+        /// Add environement for migration
+        /// </summary>
+        public EnvironmentForMigration Environment { get; set; }
+        
+        /// <summary>
+        /// Constructor with environment setting
+        /// </summary>
+        public OAuth1ToOAuth2TokenMigrationHelper(EnvironmentForMigration env)
+        {
+            Environment = env;
+
+        }
+        /// <summary>
+        /// Constructor with environment setting defaulted to Prod
+        /// </summary>
+        public OAuth1ToOAuth2TokenMigrationHelper()
+        {
+            Environment = EnvironmentForMigration.Production;
+
+        }
 
         /// <summary>
         /// Authorizes the specified request.
@@ -69,7 +90,15 @@ namespace Intuit.Ipp.Security
             };
 
                 string requestBody = JsonConvert.SerializeObject(formFields);
-                string migrateUrl = CoreConstants.TOKEN_MIGRATION_URL;                 
+                string migrateUrl = "";
+                if (Environment == EnvironmentForMigration.Production)
+                {
+                     migrateUrl = CoreConstants.TOKEN_MIGRATION_URL_PROD;
+                }
+                else
+                {
+                     migrateUrl = CoreConstants.TOKEN_MIGRATION_URL_SANDBOX;
+                }
                 HttpWebRequest httpWebRequest = WebRequest.Create(migrateUrl) as HttpWebRequest;
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentType = "application/json";

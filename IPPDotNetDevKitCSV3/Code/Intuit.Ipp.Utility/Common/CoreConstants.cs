@@ -83,16 +83,24 @@ namespace Intuit.Ipp.Utility
         public const string CONTENTTYPE_URLFORMENCODED = "application/x-www-form-urlencoded";
 
         /// <summary>
-        /// The Base Url for Oauth1 to Oauth2 tokens migration.
+        /// The Base Url for Oauth1 to Oauth2 tokens migration for Prod.
         /// </summary>
-        public const string TOKEN_MIGRATION_URL = "https://developer.api.intuit.com/v2/oauth2/tokens/migrate";
+        public const string TOKEN_MIGRATION_URL_PROD = "https://developer.api.intuit.com/v2/oauth2/tokens/migrate";
 
 
         /// <summary>
         /// The Redirect url required by token migration endpoint.
         /// </summary>
-        public const string TOKEN_MIGRATION_REDIRECT_URL = "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";       
+        public const string TOKEN_MIGRATION_REDIRECT_URL= "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";
 
+
+        /// <summary>
+        /// The Base Url for Oauth1 to Oauth2 tokens migration for sandbox.
+        /// </summary>
+        public const string TOKEN_MIGRATION_URL_SANDBOX = "https://developer-sandbox.api.intuit.com/v2/oauth2/tokens/migrate";
+
+
+       
         /// <summary>
         /// The Base Url for IPS.
         /// </summary>

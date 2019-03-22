@@ -86,6 +86,7 @@
       <Link>VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Documentation\NamespaceDoc.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="GlobalSuppression.cs" />
     <Compile Include="Interface\IRequestValidator.cs" />
     <Compile Include="MigratedTokenResponse.cs" />
