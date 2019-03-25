@@ -7,13 +7,15 @@
    <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
  </PropertyGroup>
- <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+ <PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)' == 'netstandard2.0'">
 	<DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
 </PropertyGroup>
 
-<PropertyGroup Condition=" '$(TargetFramework)' == 'net472'">
+<PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)' == 'net472'">
 	<DefineConstants>NET472;NETFULL</DefineConstants>
 </PropertyGroup>
+
+ 
 
 
 </Project>
