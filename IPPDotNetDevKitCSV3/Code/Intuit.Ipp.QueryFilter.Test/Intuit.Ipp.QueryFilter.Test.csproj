@@ -5,12 +5,7 @@
         
     </PropertyGroup>
 
-<PropertyGroup Condition="'$(TargetFramework)'=='net472'">
-  <DefineConstants>$(DefineConstants);NET_FRAMEWORK</DefineConstants>
-</PropertyGroup>
-<PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
-  <DefineConstants>$(DefineConstants);NET_CORE2.0</DefineConstants>
-</PropertyGroup>
+
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
         <Reference Include="System.Net.Http" />
@@ -55,7 +50,5 @@
         <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
       </Reference>
     </ItemGroup>
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;" />
-    </Target>
+    
 </Project>
