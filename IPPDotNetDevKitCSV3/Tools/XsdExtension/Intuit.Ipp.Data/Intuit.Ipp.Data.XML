@@ -16439,45 +16439,6 @@
         <member name="F:Intuit.Ipp.Data.EmployeeTypeEnum.Statutory">
             <remarks/>
         </member>
-        <member name="T:Intuit.Ipp.Data.SubcontractorTypeEnum">
-            <remarks/>
-            <summary>
-            
-            Product: ALL
-            Description: Valid only for UK region, Subcontractor type enumeration.
-            
-            </summary>
-        </member>
-        <member name="F:Intuit.Ipp.Data.SubcontractorTypeEnum.Individual">
-            <remarks/>
-        </member>
-        <member name="F:Intuit.Ipp.Data.SubcontractorTypeEnum.Company">
-            <remarks/>
-        </member>
-        <member name="F:Intuit.Ipp.Data.SubcontractorTypeEnum.Partnership">
-            <remarks/>
-        </member>
-        <member name="F:Intuit.Ipp.Data.SubcontractorTypeEnum.Trust">
-            <remarks/>
-        </member>
-        <member name="T:Intuit.Ipp.Data.CISRateEnum">
-            <remarks/>
-            <summary>
-            
-            Product: ALL
-            Description: Valid only for UK region, CIS Rate for Vendor enumeration.
-            
-            </summary>
-        </member>
-        <member name="F:Intuit.Ipp.Data.CISRateEnum.CISgrossrate0">
-            <remarks/>
-        </member>
-        <member name="F:Intuit.Ipp.Data.CISRateEnum.CISstandardrate20">
-            <remarks/>
-        </member>
-        <member name="F:Intuit.Ipp.Data.CISRateEnum.CIShigherrate30">
-            <remarks/>
-        </member>
         <member name="T:Intuit.Ipp.Data.JobStatusEnum">
             <remarks/>
             <summary>
@@ -17187,18 +17148,6 @@
             
             </summary>
         </member>
-        <member name="P:Intuit.Ipp.Data.Customer.IsCISContractor">
-            <remarks/>
-            <summary>
-            
-            Product: QBO only
-            Description: True if the customer is CIS contractor
-            
-            </summary>
-        </member>
-        <member name="P:Intuit.Ipp.Data.Customer.IsCISContractorSpecified">
-            <remarks/>
-        </member>
         <member name="T:Intuit.Ipp.Data.ItemChoiceType4">
             <remarks/>
         </member>
@@ -17640,30 +17589,6 @@
             GST registration type of the Vendor.
             Applicable for IN region only.
             
-            </summary>
-        </member>
-        <member name="P:Intuit.Ipp.Data.Vendor.IsSubContractor">
-            <remarks/>
-            <summary>
-            
-            Product: QBO only
-            Description: True if the vendor is subcontractor
-            
-            </summary>
-        </member>
-        <member name="P:Intuit.Ipp.Data.Vendor.IsSubContractorSpecified">
-            <remarks/>
-        </member>
-        <member name="P:Intuit.Ipp.Data.Vendor.SubcontractorType">
-            <remarks/>
-            <summary>
-            Specifies the Subcontractor type. Applicable only for UK region, values are defined in the SubcontractorTypeEnum.
-            </summary>
-        </member>
-        <member name="P:Intuit.Ipp.Data.Vendor.CISRate">
-            <remarks/>
-            <summary>
-            Specifies the CIS Rate. Applicable only for UK region, values are defined in the CISRateEnum.
             </summary>
         </member>
         <member name="T:Intuit.Ipp.Data.CustomerType">
