@@ -3,23 +3,31 @@
         
         <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
         
-	<DocumentationFile>Intuit.Ipp.Core.XML</DocumentationFile>
+	       <DocumentationFile>Intuit.Ipp.Core.XML</DocumentationFile>
     </PropertyGroup>
 
+
+    
+
     <!-- Conditionally obtain references for the .NET Framework 4.0 target -->
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <!-- Conditionally obtain references for the .NET Framework 4.5 target -->
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
+      <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
+  
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-  </ItemGroup>
+    </ItemGroup>
   <ItemGroup>
     <Reference Include="Intuit.Ipp.Data">
       <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>

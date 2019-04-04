@@ -1,0 +1,912 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.ReportService</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.ReportService.AsyncService">
+            <summary>
+            Intuit Partner Platform Services for QBO.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.AsyncService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.AsyncService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.ReportService.AsyncService"/> class.
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="E:Intuit.Ipp.ReportService.AsyncService.OnExecuteReportAsyncCompleted">
+            <summary>
+            call back event for find all
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.AsyncService.ExecuteReportAsync(System.String,System.String)">
+            <summary>
+            Executes a Report (asynchronously) under the specified realm in an asynchronous manner. The realm must be set in the context.
+            </summary>
+            <param name="reportName">Name of the Report to Run</param>
+            <param name="reportsQueryParameters">Report Parameters for query string</param>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.AsyncService.CreateIdsException(System.Exception)">
+            <summary>
+            Creates the ids exception.
+            </summary>
+            <param name="applicationException">The application exception.</param>
+            <returns>Returns the IdsException.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.AsyncService.ExecuteReportAsynCompleted(System.Object,Intuit.Ipp.Core.AsyncCallCompletedEventArgs)">
+            <summary>
+            call back method for asynchronously Executing a Report
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">The <see cref="T:Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.NamespaceDoc">
+            <summary>
+            Intuit.Ipp.ReportService has public methods to call Reporting Services.
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.IdsReportResource">
+            <summary>
+            A list of Domain entities supported by IPS. Used by the REST infrastructure to construct relevant calls.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.none">
+            <summary>
+            none Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.accountbalances">
+            <summary>
+            account balances Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.balancesheet">
+            <summary>
+            balance sheet Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.customerswhooweme">
+            <summary>
+            customers show me Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.advancedreport">
+            <summary>
+            advanced report Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.incomebreakdown">
+            <summary>
+            income breakdown Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.profitandloss">
+            <summary>
+            profitandloss Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.salessummary">
+            <summary>
+            sales summary Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsReportResource.topcustomersbysales">
+            <summary>
+            top customers by sales Resource
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.IdsResource">
+            <summary>
+            A list of Domain entities supported by IDS. Used by the REST infrastructure to construct relevant calls.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.user">
+            <summary>
+            user Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.account">
+            <summary>
+            account Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.bill">
+            <summary>
+            bill Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.billpayment">
+            <summary>
+            bill payment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.billpaymentcreditcard">
+            <summary>
+            billpaymentcreditcard Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.bomcomponent">
+            <summary>
+            bom component Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.buildassembly">
+            <summary>
+            build assembly Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.charge">
+            <summary>
+            charge Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.check">
+            <summary>
+            check Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.creditcardcharge">
+            <summary>
+            credit card charge Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.creditcardcredit">
+            <summary>
+            credit card credit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.creditmemo">
+            <summary>
+            credit memo Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.currencyinfo">
+            <summary>
+            currency info Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.customer">
+            <summary>
+            customer Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.customermsg">
+            <summary>
+            customer message Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.customertype">
+            <summary>
+            customer type Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.deposit">
+            <summary>
+            deposit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.discount">
+            <summary>
+            discount Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.employee">
+            <summary>
+            employee Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.estimate">
+            <summary>
+            estimate Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.fixedasset">
+            <summary>
+            fixedasset Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.incomebreakdown">
+            <summary>
+            incomebreakdown Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.inventoryadjustment">
+            <summary>
+            inventoryadjustment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.inventorysite">
+            <summary>
+            inventorysite Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.inventorytransfer">
+            <summary>
+            inventorytransfer Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.invoice">
+            <summary>
+            invoice Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.item">
+            <summary>
+            item Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.itemconsolidated">
+            <summary>
+            itemconsolidated Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.itemreceipt">
+            <summary>
+            itemreceipt Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.job">
+            <summary>
+            job Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.jobtype">
+            <summary>
+            jobtype Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.journalentry">
+            <summary>
+            journalentry Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.othername">
+            <summary>
+            othername Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.payment">
+            <summary>
+            payment Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.paymentmethod">
+            <summary>
+            paymentmethod Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.payrollitem">
+            <summary>
+            payrollitem Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.payrollnonwageitem">
+            <summary>
+            payrollnonwageitem Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.purchaseorder">
+            <summary>
+            purchaseorder Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salesorder">
+            <summary>
+            salesorder Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salesreceipt">
+            <summary>
+            salesreceipt Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salesrep">
+            <summary>
+            salesrep Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salestax">
+            <summary>
+            salestax Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salestaxcode">
+            <summary>
+            salestaxcode Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salestaxgroup">
+            <summary>
+            salestaxgroup Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.shipmethod">
+            <summary>
+            shipmethod Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.status">
+            <summary>
+            status Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.task">
+            <summary>
+            task Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.templatename">
+            <summary>
+            templatename Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.timeactivity">
+            <summary>
+            timeactivity Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.uom">
+            <summary>
+            unitofmeasure Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.vendor">
+            <summary>
+            vendor Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.vendorcredit">
+            <summary>
+            vendorcredit Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.vendortype">
+            <summary>
+            vendortype Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.preferences">
+            <summary>
+            preferences Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.syncactivityrequest">
+            <summary>
+            syncactivityrequest Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.salesterm">
+            <summary>
+            salesterm Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.Class">
+            <summary>
+            class Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.creditcardrefund">
+            <summary>
+            creditcardrefun Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.companymetadata">
+            <summary>
+            company Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.customfielddefinition">
+            <summary>
+            customfielddefinition Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.namevalue">
+            <summary>
+            namevalue Resource
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.IdsResource.recordcount">
+            <summary>
+            recordcount Resource
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.IReportService">
+            <summary>
+            This interface specifies the ReportService Read operation
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.IReportService.ExecuteReport(System.String)">
+            <summary>
+            Executes a Report for a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="reportName">Report to Run</param>        
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.BatchIdAlreadyUsed">
+            <summary>
+              Looks up a localized string similar to This Batch Id is already used within this batch..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.BatchItemIdNotFound">
+            <summary>
+              Looks up a localized string similar to BatchItem having Id {0} not found for removal..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.batchItemsExceededMessage">
+            <summary>
+              Looks up a localized string similar to Number of Items in Batch Request exceeded the permissible limit of 25 items..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.CommunicationErrorMessage">
+            <summary>
+              Looks up a localized string similar to There was an error while communicating with the Ids Server..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.EntityConversionFailedMessage">
+            <summary>
+              Looks up a localized string similar to The provided entity cannot be converted to IntuitEntity object..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.EntityIdNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Id of the entity cannot be null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.EntityString">
+            <summary>
+              Looks up a localized string similar to entity.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ExceptionGeneratedMessage">
+            <summary>
+              Looks up a localized string similar to Exception has been generated: {0}.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.IdsLoggerNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Ids Logger cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.IdString">
+            <summary>
+              Looks up a localized string similar to Id.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.PageNumberString">
+            <summary>
+              Looks up a localized string similar to pageNumber.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.PageSizeString">
+            <summary>
+              Looks up a localized string similar to pageSize.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ParameterNotNullMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ParameterZeroNegativeValueMessage">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be zero or negative value..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.RequestValidatorNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Request Validator cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ResponseStreamNullOrEmptyMessage">
+            <summary>
+              Looks up a localized string similar to The Response Stream was null or empty..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ServiceContextNotNullMessage">
+            <summary>
+              Looks up a localized string similar to The Service Context cannot be null..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.ServiceContextParameterName">
+            <summary>
+              Looks up a localized string similar to serviceContext.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.StatusNotDeleted">
+            <summary>
+              Looks up a localized string similar to Status not deleted. .
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.StatusNotVoided">
+            <summary>
+              Looks up a localized string similar to Status not voided..
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.Properties.Resources.StringParameterNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to string parameter can not be null or empty..
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.ReportService.ReportService">
+            <summary>
+            This class file contains ReportService which performs Read operation for Reports
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.ReportService.serviceContext">
+            <summary>
+            The Service context object.
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.ReportService.ReportService.restHandler">
+            <summary>
+            Rest Request Handler.
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.ReportService.#ctor(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Intuit.Ipp.ReportService.ReportService"/> class.
+            </summary>
+            <param name="serviceContext">IPP Service Context</param>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.OnExecuteReportAsyncCompleted">
+            <summary>
+            Gets or sets the call back event for Report method in asynchronous call.
+            </summary>
+            <value>
+            The OnExecuteReportAsyncCompleted call back.
+            </value>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.ReportService.ExecuteReport(System.String)">
+            <summary>
+            Executes a report against a specified realm. The realm must be set in the context.
+            </summary>
+            <param name="reportName">Name of Report to Run.</param>
+            <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.ReportService.ExecuteReportAsync(System.String)">
+            <summary>
+            Executes a Report
+            </summary>
+            <param name="reportName">Name of Report to Run.</param>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.ReportService.ServiceContextValidation(Intuit.Ipp.Core.ServiceContext)">
+            <summary>
+            Validates the Service context.
+            </summary>
+            <param name="serviceContext">Service Context.</param>
+        </member>
+        <member name="M:Intuit.Ipp.ReportService.ReportService.ExecuteReportAsyncCompleted(System.Object,Intuit.Ipp.Core.ReportCallCompletedEventArgs{Intuit.Ipp.Data.Report})">
+            <summary>
+            ExecuteReport Asynchronous call back method
+            </summary>
+            <param name="sender">Rest handler class</param>
+            <param name="eventArgs">callback event arguments</param>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.start_date">
+            <summary>
+            Gets or sets the StartDate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.end_date">
+            <summary>
+            Gets or sets the end_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.date_macro">
+            <summary>
+            Gets or sets the date_macro
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.accounting_method">
+            <summary>
+            Gets or sets the accounting_method
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.summarize_column_by">
+            <summary>
+            Gets or sets the summarize_column_by
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.customer">
+            <summary>
+            Gets or sets the customer
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.vendor">
+            <summary>
+            Gets or sets the vendor
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.item">
+            <summary>
+            Gets or sets the item
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.classid">
+            <summary>
+            Gets or sets the class
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.department">
+            <summary>
+            Gets or sets the department
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.qzurl">
+            <summary>
+            Gets or sets the qzurl
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.aging_period">
+            <summary>
+            Gets or sets the aging_period
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.num_periods">
+            <summary>
+            Gets or sets the num_periods
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.end_createdate">
+            <summary>
+            Gets or sets the report_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.start_createdate">
+            <summary>
+            Gets or sets the report_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.journal_code">
+            <summary>
+            Gets or sets the report_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.agency_id">
+            <summary>
+            Gets or sets the report_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.report_date">
+            <summary>
+            Gets or sets the report_date
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.columns">
+            <summary>
+            Gets or sets the columns
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.aging_method">
+            <summary>
+            Gets or sets the aging_method
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.past_due">
+            <summary>
+            Gets or sets the past_due
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.end_duedate">
+            <summary>
+            Gets or sets the end_duedate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.start_duedate">
+            <summary>
+            Gets or sets the start_duedate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.term">
+            <summary>
+            Gets or sets the term
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.custom1">
+            <summary>
+            Gets or sets the custom1
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.custom2">
+            <summary>
+            Gets or sets the custom2
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.custom3">
+            <summary>
+            Gets or sets the custom3
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.shipvia">
+            <summary>
+            Gets or sets the shipvia
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.sort_by">
+            <summary>
+            Gets or sets the sort_by
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.sort_order">
+            <summary>
+            Gets or sets the sort_order
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.account">
+            <summary>
+            Gets or sets the account
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.source_account">
+            <summary>
+            Gets or sets the source_account
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.account_type">
+            <summary>
+            Gets or sets the account_type
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.source_account_type">
+            <summary>
+            Gets or sets the source_account_type
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.duedate_macro">
+            <summary>
+            Gets or sets the duedate_macro
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.appaid">
+            <summary>
+            Gets or sets the appaid
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.createdate_macro">
+            <summary>
+            Gets or sets the createdate_macro
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.end_createddate">
+            <summary>
+            Gets or sets the end_createddate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.start_createddate">
+            <summary>
+            Gets or sets the start_createddate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.moddate_macro">
+            <summary>
+            Gets or sets the moddate_macro
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.end_moddate">
+            <summary>
+            Gets or sets the end_moddate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.start_moddate">
+            <summary>
+            Gets or sets the start_moddate
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.account_status">
+            <summary>
+            Gets or sets the account_status
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.group_by">
+            <summary>
+            Gets or sets the group_by
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.payment_method">
+            <summary>
+            Gets or sets the payment_method
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.transaction_type">
+            <summary>
+            Gets or sets the transaction_type
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.cleared">
+            <summary>
+            Gets or sets the cleared
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.arpaid">
+            <summary>
+            Gets or sets the arpaid
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.printed">
+            <summary>
+            Gets or sets the printed
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.bothamount">
+            <summary>
+            Gets or sets the bothamount
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.memo">
+            <summary>
+            Gets or sets the memo
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.docnum">
+            <summary>
+            Gets or sets the docnum
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_py">
+            <summary>
+            Gets or sets the subcol_py
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_py_chg">
+            <summary>
+            Gets or sets the subcol_py_chg
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_py_pct_chg">
+            <summary>
+            Gets or sets the subcol_py_pct_chg
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_pp">
+            <summary>
+            Gets or sets the subcol_pp
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_pp_chg">
+            <summary>
+            Gets or sets the subcol_pp_chg
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_pp_pct_chg">
+            <summary>
+            Gets or sets the subcol_pp_pct_chg
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_pct_ytd">
+            <summary>
+            Gets or sets the subcol_pct_ytd
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.ReportService.ReportService.subcol_ytd">
+            <summary>
+            Gets or sets the subcol_ytd
+            </summary>
+        </member>
+    </members>
+</doc>

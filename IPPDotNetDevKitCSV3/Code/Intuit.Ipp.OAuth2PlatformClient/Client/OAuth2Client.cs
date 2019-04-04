@@ -21,7 +21,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// 
     /// </summary>
     public class OAuth2Client
-    {   
+    {
         /// <summary>
         /// ClientId
         /// </summary>
@@ -50,7 +50,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// CSRFToken
         /// </summary>
-        public string CSRFToken {get; set;}
+        public string CSRFToken { get; set; }
+
+        /// <summary>
+        ///// EnableLogging
+        ///// </summary>
+        //public bool EnableLogging { get; set; }
+
+        ///// <summary>
+        ///// LogFilesPath
+        ///// </summary>
+        //public string LogFilesPath { get; set; }
+
+        //internal LogRequestsToDisk LogOAuth2Calls { get; set; }
 
         /// <summary>
         /// OAuth2Client constructor
@@ -63,8 +75,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
-            RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI)); 
-            ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true) ;
+            RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
+            ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
+
             DiscoveryDoc = GetDiscoveryDoc();
         }
 
@@ -73,7 +86,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <returns></returns>
         public DiscoveryResponse GetDiscoveryDoc()
-        {   
+        {
             DiscoveryClient discoveryClient = new DiscoveryClient(ApplicationEnvironment);
             return discoveryClient.Get();
         }
@@ -87,7 +100,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
             string scopeValue = "";
-            for(var index = 0; index < scopes.Count; index++ )
+            for (var index = 0; index < scopes.Count; index++)
             {
                 scopeValue += scopes[index].GetStringValue() + " ";
             }
@@ -135,7 +148,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await  tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken );
+            return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -148,7 +161,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken);
+            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -163,7 +176,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
             {
                 Token = accessOrRefreshToken,
-            }, cancellationToken);
+            }, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -175,7 +188,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
-            return await userInfoClient.GetAsync(accessToken, cancellationToken);
+            return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -242,7 +255,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         {
                             return Task.FromResult(false);
                         }
-               
+
                         if (payloadData.Exp != null)
                         {
                             long expiration = Convert.ToInt64(payloadData.Exp);
@@ -253,7 +266,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                                 return Task.FromResult(false);
                             }
                         }
-          
+
                         if (payloadData.Iat == null)
                         {
                             return Task.FromResult(false);
@@ -306,7 +319,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GenerateCSRFToken()
         {
-            return CryptoRandom.CreateUniqueId(); 
+            return CryptoRandom.CreateUniqueId();
         }
     }
 }

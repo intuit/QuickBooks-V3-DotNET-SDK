@@ -27,19 +27,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Core", "Intuit.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Retry", "Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj", "{12D82D75-ECEE-459D-A820-B6CD95B24449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Retry.Test", "Intuit.Ipp.Retry.Test\Intuit.Ipp.Retry.Test.csproj", "{D0564333-039B-4FBF-88A9-CD77595F8189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Retry.Test", "Intuit.Ipp.Retry.Test\Intuit.Ipp.Retry.Test.csproj", "{D0564333-039B-4FBF-88A9-CD77595F8189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Diagnostics.Test", "Intuit.Ipp.Diagnostics.Test\Intuit.Ipp.Diagnostics.Test.csproj", "{322AAE96-5564-4721-8F1A-05ED76D42BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Diagnostics.Test", "Intuit.Ipp.Diagnostics.Test\Intuit.Ipp.Diagnostics.Test.csproj", "{322AAE96-5564-4721-8F1A-05ED76D42BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Exception.Test", "Intuit.Ipp.Exception.Test\Intuit.Ipp.Exception.Test.csproj", "{84B631F2-2D0B-48EF-8ECF-C4D05372AF0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Exception.Test", "Intuit.Ipp.Exception.Test\Intuit.Ipp.Exception.Test.csproj", "{84B631F2-2D0B-48EF-8ECF-C4D05372AF0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Utility.Test", "Intuit.Ipp.Utility.Test\Intuit.Ipp.Utility.Test.csproj", "{BE2DCB4C-EC1F-4768-8DB3-7FA63131C348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Utility.Test", "Intuit.Ipp.Utility.Test\Intuit.Ipp.Utility.Test.csproj", "{BE2DCB4C-EC1F-4768-8DB3-7FA63131C348}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Core.Test", "Intuit.Ipp.Core.Test\Intuit.Ipp.Core.Test.csproj", "{10551243-DB15-446F-AD98-A69904170BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Security.Test", "Intuit.Ipp.Security.Test\Intuit.Ipp.Security.Test.csproj", "{3C71B0EE-F73F-41A2-A7AD-C1034301CF31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Security.Test", "Intuit.Ipp.Security.Test\Intuit.Ipp.Security.Test.csproj", "{3C71B0EE-F73F-41A2-A7AD-C1034301CF31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.DataService.Test", "Intuit.Ipp.DataService.Test\Intuit.Ipp.DataService.Test.csproj", "{1581673C-81B0-4795-A7D0-A4D84B3C37CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.DataService.Test", "Intuit.Ipp.DataService.Test\Intuit.Ipp.DataService.Test.csproj", "{1581673C-81B0-4795-A7D0-A4D84B3C37CD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71} = {E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}
 	EndProjectSection
@@ -59,7 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items (2)", "Solut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.ReportService", "Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj", "{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.ReportService.Test", "Intuit.Ipp.ReportService.Test\Intuit.Ipp.ReportService.Test.csproj", "{9A3AB447-F207-4C6E-AB09-B742FD4610EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.ReportService.Test", "Intuit.Ipp.ReportService.Test\Intuit.Ipp.ReportService.Test.csproj", "{9A3AB447-F207-4C6E-AB09-B742FD4610EF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74} = {43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}
 	EndProjectSection
@@ -75,23 +75,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{86A7A1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.WebHooksService", "Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj", "{DD710EE8-17E2-433A-833A-FCC3FB04F9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.WebhooksService.Test", "Intuit.Ipp.WebhooksService.Test\Intuit.Ipp.WebhooksService.Test.csproj", "{C7AFAB6A-5A19-4845-85A5-220C848F8F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.WebhooksService.Test", "Intuit.Ipp.WebhooksService.Test\Intuit.Ipp.WebhooksService.Test.csproj", "{C7AFAB6A-5A19-4845-85A5-220C848F8F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.QueryFilter.Test", "Intuit.Ipp.QueryFilter.Test\Intuit.Ipp.QueryFilter.Test.csproj", "{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.QueryFilter.Test", "Intuit.Ipp.QueryFilter.Test\Intuit.Ipp.QueryFilter.Test.csproj", "{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth2Client", "OAuth2Client", "{1438B09F-C188-4F16-A00B-B037D8DD271C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.OAuth2PlatformClient.Test", "Intuit.Ipp.OAuth2PlatformClient.Test\Intuit.Ipp.OAuth2PlatformClient.Test.csproj", "{6FA32031-6520-4A6F-BFFA-227EEC56B292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient.Test", "Intuit.Ipp.OAuth2PlatformClient.Test\Intuit.Ipp.OAuth2PlatformClient.Test.csproj", "{6FA32031-6520-4A6F-BFFA-227EEC56B292}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient", "Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj", "{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.EntitlementService", "Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj", "{D183A5CA-B8A4-4286-A765-EED1B148547B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A06430B-308C-49CF-9620-70D4F7D8A501} = {1A06430B-308C-49CF-9620-70D4F7D8A501}
+		{0C815166-B7AC-45DF-AA48-0B026687228E} = {0C815166-B7AC-45DF-AA48-0B026687228E}
+		{2147FC87-D172-40A6-9D54-181515DAF7AC} = {2147FC87-D172-40A6-9D54-181515DAF7AC}
+		{160733CB-F539-4545-BEF4-F57176FD12DE} = {160733CB-F539-4545-BEF4-F57176FD12DE}
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB} = {34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}
+		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71} = {E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.EntitlementService.Test", "Intuit.Ipp.EntitlementService.Test\Intuit.Ipp.EntitlementService.Test.csproj", "{F2A9CA04-DA01-44CA-A18D-704948C836EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.EntitlementService.Test", "Intuit.Ipp.EntitlementService.Test\Intuit.Ipp.EntitlementService.Test.csproj", "{F2A9CA04-DA01-44CA-A18D-704948C836EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Security", "Intuit.Ipp.Security\Intuit.Ipp.Security.csproj", "{160733CB-F539-4545-BEF4-F57176FD12DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.GlobalTaxServiceTest", "Intuit.Ipp.GlobalTaxServiceTest\Intuit.Ipp.GlobalTaxServiceTest.csproj", "{C65E5969-E551-456A-AC79-AA625CC97C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.GlobalTaxServiceTest", "Intuit.Ipp.GlobalTaxServiceTest\Intuit.Ipp.GlobalTaxServiceTest.csproj", "{C65E5969-E551-456A-AC79-AA625CC97C7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

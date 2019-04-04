@@ -4,6 +4,22 @@
         <name>Intuit.Ipp.Core</name>
     </assembly>
     <members>
+        <member name="T:Intuit.Ipp.Core.Configuration.ApiSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Core.Configuration.ApiSettings.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.Core.Configuration.ApiSettings.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+        </member>
         <member name="T:Intuit.Ipp.Core.Configuration.BaseUrl">
             <summary>
             Base Urls for QBO and IPS.
