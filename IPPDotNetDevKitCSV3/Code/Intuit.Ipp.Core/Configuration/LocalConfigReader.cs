@@ -615,6 +615,7 @@ namespace Intuit.Ipp.Core.Configuration
                     break;
             }
 
+            
             switch (ippConfigurationSection.Retry.Mode)
             {
                 case RetryMode.Linear:
@@ -677,8 +678,8 @@ namespace Intuit.Ipp.Core.Configuration
 #endif
 #if NETSTANDARD2_0
 
-            //if appsettings.json not found then do this
-            // { 
+            //Setting defaults for configurations
+            #region defaults
             ippConfig.Logger = new Logger
             {
                 CustomLogger = new TraceLogger(),
@@ -723,44 +724,38 @@ namespace Intuit.Ipp.Core.Configuration
                 Value = null
             };
 
-            // return ippConfig;
-            //}
+            
+            #endregion
 
             ippConfig.Logger = new Logger();
             ippConfig.Logger.RequestLog = new RequestLog();
 
+            //Read all appsettings.json sections
             var loggerSettings = builder.GetSection("Logger").GetSection("RequestLog");
             var customLoggerSettings = builder.GetSection("CustomLogger").GetSection("RequestLog");
-            var securitySettings = builder.GetSection("Security");
-            var securityOauth2Settings = builder.GetSection("Security").GetSection("OAuth2");
-            var securityCustomSettings = builder.GetSection("Security").GetSection("Custom");
+            var securitySettings = builder.GetSection("Security").GetSection("Mode");
+            var securityOauthSettings = builder.GetSection("Security").GetSection("Mode").GetSection("OAuth");
+            var securityCustomSettings = builder.GetSection("Security").GetSection("Mode").GetSection("Custom");
             var messageRequestSettings = builder.GetSection("Message").GetSection("Request");
             var messageResponseSettings = builder.GetSection("Message").GetSection("Response");
-            var retrySettings = builder.GetSection("Retry");
-            var retrySettingsLinear = builder.GetSection("Retry").GetSection("LinearRetry"); 
-            var retrySettingsIncremental = builder.GetSection("Retry").GetSection("IncrementalRetry"); 
-            var retrySettingsExponential = builder.GetSection("Retry").GetSection("ExponentialRetry"); 
+            var retrySettings = builder.GetSection("Retry").GetSection("Mode");
+            var retrySettingsLinear = builder.GetSection("Retry").GetSection("Mode").GetSection("LinearRetry"); 
+            var retrySettingsIncremental = builder.GetSection("Retry").GetSection("Mode").GetSection("IncrementalRetry"); 
+            var retrySettingsExponential = builder.GetSection("Retry").GetSection("Mode").GetSection("ExponentialRetry"); 
             var serviceSettings = builder.GetSection("Service");
             var serviceBaseUrlSettings = builder.GetSection("Service").GetSection("BaseUrl");
             var serviceMinorversionSettings = builder.GetSection("Service").GetSection("Minorversion");
             var webhooksVerifierTokenSettings = builder.GetSection("WebhooksService").GetSection("VerifierToken");
 
-            //var enableLogs = apiSettings["EnableLogs"];
-            //logPath = apiSettings["LogDirectory"];
+            
 
-            if (string.IsNullOrEmpty(loggerSettings["LogDirectory"]))
+
+            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"])&& Convert.ToBoolean(loggerSettings["Enablelogs"])==true)
             {
-            }
-            else
-            {
+            
                 ippConfig.Logger.RequestLog.EnableRequestResponseLogging = Convert.ToBoolean(loggerSettings["Enablelogs"]);
 
-                if (string.IsNullOrEmpty(loggerSettings["LogDirectory"]))
-                {
-                    ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = Path.GetTempPath();
-                }
-                else
-                {
+               
                     string location = loggerSettings["LogDirectory"];
                     if (!Directory.Exists(location))
                     {
@@ -769,7 +764,7 @@ namespace Intuit.Ipp.Core.Configuration
                     }
 
                     ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
-                }
+                
             }
 
             if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"])==true)
@@ -782,148 +777,140 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.Logger.CustomLogger = new TraceLogger();
             }
 
-
-            switch (Enum.Parse(typeof(Utility.SecurityMode),securitySettings["Mode"]))
+            if (Convert.ToBoolean(securityOauthSettings["Enable"]) == true && !string.IsNullOrEmpty(securityOauthSettings["AccessToken"]))
             {
-                case SecurityMode.OAuth:
-                    OAuth2RequestValidator validator = new OAuth2RequestValidator(
-                        securityOauth2Settings["AccessToken"]);
-                    ippConfig.Security = validator;
-                    break;
-                case SecurityMode.Custom:
-                    if (!string.IsNullOrEmpty(securityCustomSettings["Name"]) && !string.IsNullOrEmpty(securityCustomSettings["Type"]) && Convert.ToBoolean(securityCustomSettings["Enable"]) == true)
-                    {
-                        Type customSecurityType = Type.GetType(securityCustomSettings["Type"]);
-                        string[] paramateres = securityCustomSettings["Params"].Split(',');
-                        ippConfig.Security = Activator.CreateInstance(customSecurityType, paramateres) as IRequestValidator;
-                    }
-
-                    break;
+                OAuth2RequestValidator validator = new OAuth2RequestValidator(
+                       securityOauthSettings["AccessToken"]);
+                ippConfig.Security = validator;
             }
+            else if (securityCustomSettings["Enable"] == "true")
+            {
+                if (!string.IsNullOrEmpty(securityCustomSettings["Name"]) && !string.IsNullOrEmpty(securityCustomSettings["Type"]) && Convert.ToBoolean(securityCustomSettings["Enable"]) == true)
+                {
+                    Type customSecurityType = Type.GetType(securityCustomSettings["Type"]);
+                    string[] paramateres = securityCustomSettings["Params"].Split(',');
+                    ippConfig.Security = Activator.CreateInstance(customSecurityType, paramateres) as IRequestValidator;
+                }
 
-            //// TODO : This will not be used now. 
-            ////if (!string.IsNullOrEmpty(ippConfigurationSection.Message.CustomSerializer.Name) && !string.IsNullOrEmpty(ippConfigurationSection.Message.CustomSerializer.Type) && ippConfigurationSection.Message.CustomSerializer.Enable)
-            ////{
-            ////    Type customSerializerType = Type.GetType(ippConfigurationSection.Message.CustomSerializer.Type);
-            ////    IEntitySerializer entitySerializer = Activator.CreateInstance(customSerializerType) as IEntitySerializer;
-            ////    if (ippConfigurationSection.Message.Request.SerializationFormat == SerializationFormat.Custom)
-            ////    {
-            ////        ippConfig.Message.Request.Serializer = entitySerializer;
-            ////    }
-
-            ////    if (ippConfigurationSection.Message.Response.SerializationFormat == SerializationFormat.Custom)
-            ////    {
-
-            ////        ippConfig.Message.Response.Serializer = entitySerializer;
-            ////    }
-            ////}
-
+            }
+            
             ippConfig.Message = new Message();
             ippConfig.Message.Request = new Request();
             ippConfig.Message.Response = new Response();
 
-            switch (Enum.Parse(typeof(Utility.CompressionFormat),messageRequestSettings["CompressionFormat"]))
+            if (!string.IsNullOrEmpty(messageRequestSettings["CompressionFormat"]))
             {
-                case Intuit.Ipp.Utility.CompressionFormat.None:
-                    ippConfig.Message.Request.CompressionFormat = CompressionFormat.None;
-                    break;
-                case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
-                case Intuit.Ipp.Utility.CompressionFormat.GZip:
-                    ippConfig.Message.Request.CompressionFormat = CompressionFormat.GZip;
-                    break;
-                case Intuit.Ipp.Utility.CompressionFormat.Deflate:
-                    ippConfig.Message.Request.CompressionFormat = CompressionFormat.Deflate;
-                    break;
-                default:
-                    break;
+                switch (Enum.Parse(typeof(Utility.CompressionFormat), messageRequestSettings["CompressionFormat"]))
+                {
+                    case Intuit.Ipp.Utility.CompressionFormat.None:
+                        ippConfig.Message.Request.CompressionFormat = CompressionFormat.None;
+                        break;
+                    case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
+                    case Intuit.Ipp.Utility.CompressionFormat.GZip:
+                        ippConfig.Message.Request.CompressionFormat = CompressionFormat.GZip;
+                        break;
+                    case Intuit.Ipp.Utility.CompressionFormat.Deflate:
+                        ippConfig.Message.Request.CompressionFormat = CompressionFormat.Deflate;
+                        break;
+                    default:
+                        break;
+                }
             }
 
 
-
-            switch (Enum.Parse(typeof(Utility.CompressionFormat),messageResponseSettings["CompressionFormat"]))
+            if (!string.IsNullOrEmpty(messageResponseSettings["CompressionFormat"]))
             {
-                case Intuit.Ipp.Utility.CompressionFormat.None:
-                    ippConfig.Message.Response.CompressionFormat = CompressionFormat.None;
-                    break;
-                case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
-                case Intuit.Ipp.Utility.CompressionFormat.GZip:
-                    ippConfig.Message.Response.CompressionFormat = CompressionFormat.GZip;
-                    break;
-                case Intuit.Ipp.Utility.CompressionFormat.Deflate:
-                    ippConfig.Message.Response.CompressionFormat = CompressionFormat.Deflate;
-                    break;
+                switch (Enum.Parse(typeof(Utility.CompressionFormat), messageResponseSettings["CompressionFormat"]))
+                {
+                    case Intuit.Ipp.Utility.CompressionFormat.None:
+                        ippConfig.Message.Response.CompressionFormat = CompressionFormat.None;
+                        break;
+                    case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
+                    case Intuit.Ipp.Utility.CompressionFormat.GZip:
+                        ippConfig.Message.Response.CompressionFormat = CompressionFormat.GZip;
+                        break;
+                    case Intuit.Ipp.Utility.CompressionFormat.Deflate:
+                        ippConfig.Message.Response.CompressionFormat = CompressionFormat.Deflate;
+                        break;
+                }
             }
 
-            switch (Enum.Parse(typeof(Utility.CompressionFormat),messageRequestSettings["SerializationFormat"]))
+            if (!string.IsNullOrEmpty(messageRequestSettings["SerializationFormat"]))
             {
-                case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
-                case Intuit.Ipp.Utility.SerializationFormat.Xml:
-                    ippConfig.Message.Request.SerializationFormat = SerializationFormat.Xml;
-                    break;
-                case Intuit.Ipp.Utility.SerializationFormat.Json:
-                    ippConfig.Message.Request.SerializationFormat = SerializationFormat.Json;
-                    break;
-                case Intuit.Ipp.Utility.SerializationFormat.Custom:
-                    ippConfig.Message.Request.SerializationFormat = SerializationFormat.Custom;
-                    break;
+                switch (Enum.Parse(typeof(Utility.SerializationFormat), messageRequestSettings["SerializationFormat"]))
+                {
+                    case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
+                    case Intuit.Ipp.Utility.SerializationFormat.Xml:
+                        ippConfig.Message.Request.SerializationFormat = SerializationFormat.Xml;
+                        break;
+                    case Intuit.Ipp.Utility.SerializationFormat.Json:
+                        ippConfig.Message.Request.SerializationFormat = SerializationFormat.Json;
+                        break;
+                    case Intuit.Ipp.Utility.SerializationFormat.Custom:
+                        ippConfig.Message.Request.SerializationFormat = SerializationFormat.Custom;
+                        break;
+                }
             }
 
-            switch (Enum.Parse(typeof(Utility.CompressionFormat),messageResponseSettings["SerializationFormat"]))
+
+            if (!string.IsNullOrEmpty(messageResponseSettings["SerializationFormat"]))
             {
-                case Intuit.Ipp.Utility.SerializationFormat.Xml:
-                    ippConfig.Message.Response.SerializationFormat = SerializationFormat.Xml;
-                    break;
-                case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
-                case Intuit.Ipp.Utility.SerializationFormat.Json:
-                    ippConfig.Message.Response.SerializationFormat = SerializationFormat.Json;
-                    break;
-                case Intuit.Ipp.Utility.SerializationFormat.Custom:
-                    ippConfig.Message.Response.SerializationFormat = SerializationFormat.Custom;
-                    break;
+                switch (Enum.Parse(typeof(Utility.SerializationFormat), messageResponseSettings["SerializationFormat"]))
+                {
+                    case Intuit.Ipp.Utility.SerializationFormat.Xml:
+                        ippConfig.Message.Response.SerializationFormat = SerializationFormat.Xml;
+                        break;
+                    case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
+                    case Intuit.Ipp.Utility.SerializationFormat.Json:
+                        ippConfig.Message.Response.SerializationFormat = SerializationFormat.Json;
+                        break;
+                    case Intuit.Ipp.Utility.SerializationFormat.Custom:
+                        ippConfig.Message.Response.SerializationFormat = SerializationFormat.Custom;
+                        break;
+                }
             }
 
-            switch (Enum.Parse(typeof(RetryMode), retrySettings["Mode"]))
+            
+            if (Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
             {
-                case RetryMode.Linear:
-                    if (!CoreHelper.IsInvalidaLinearRetryMode(
+                if (!CoreHelper.IsInvalidaLinearRetryMode(
+                                        Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                {
+                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
                         Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
-                    {
-                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                            Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                             TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
-                    }
-
-                    break;
-                case RetryMode.Incremental:
-                    if (!CoreHelper.IsInvalidaIncrementalRetryMode(
+                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
+                }
+            }
+            else if (Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
+            {
+                if (!CoreHelper.IsInvalidaIncrementalRetryMode(
                         Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
                         TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
                         TimeSpan.Parse(retrySettingsIncremental["Increment"])))
-                    {
-                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                            Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
-                            TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
-                            TimeSpan.Parse(retrySettingsIncremental["Increment"]));
-                    }
-
-                    break;
-                case RetryMode.Exponential:
-                    if (!CoreHelper.IsInvalidaExponentialRetryMode(
-                            Convert.ToInt32(retrySettingsExponential["RetryCount"]),
-                            TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
-                            TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
-                            TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"])))
-                    {
-                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                            Convert.ToInt32(retrySettingsExponential["RetryCount"]),
-                            TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
-                            TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
-                            TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
-                    }
-
-                    break;
+                {
+                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                        Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
+                        TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
+                        TimeSpan.Parse(retrySettingsIncremental["Increment"]));
+                }
             }
+            else if (Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
+            {
+                if (!CoreHelper.IsInvalidaExponentialRetryMode(
+                          Convert.ToInt32(retrySettingsExponential["RetryCount"]),
+                          TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
+                          TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
+                          TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"])))
+                {
+                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                        Convert.ToInt32(retrySettingsExponential["RetryCount"]),
+                        TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
+                        TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
+                        TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
+                }
+            }
+            
 
             ippConfig.BaseUrl = new BaseUrl();
 
@@ -942,21 +929,21 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.VerifierToken.Value = webhooksVerifierTokenSettings["Value"];
            
 #endif
-//#if NETSTANDARD2_0
-//            //IppConfiguration ippConfig = new IppConfiguration();
-//            string temppath = Path.Combine(this.logPath, "Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
-//            ippConfig.Logger = new Logger
-//            {
+            //#if NETSTANDARD2_0
+            //            //IppConfiguration ippConfig = new IppConfiguration();
+            //            string temppath = Path.Combine(this.logPath, "Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+            //            ippConfig.Logger = new Logger
+            //            {
 
-//                RequestLog = new RequestLog
-//                {
-//                    EnableRequestResponseLogging = true,//test
-//                    ServiceRequestLoggingLocation = temppath
-//                }
-//            };
+            //                RequestLog = new RequestLog
+            //                {
+            //                    EnableRequestResponseLogging = true,//test
+            //                    ServiceRequestLoggingLocation = temppath
+            //                }
+            //            };
 
 
-//#endif
+            //#endif
 
             return ippConfig;
 
