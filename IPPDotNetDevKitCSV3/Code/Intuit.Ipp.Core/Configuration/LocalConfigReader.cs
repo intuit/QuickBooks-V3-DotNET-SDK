@@ -724,7 +724,7 @@ namespace Intuit.Ipp.Core.Configuration
                 Value = null
             };
 
-            
+
             #endregion
 
             ippConfig.Logger = new Logger();
@@ -739,35 +739,35 @@ namespace Intuit.Ipp.Core.Configuration
             var messageRequestSettings = builder.GetSection("Message").GetSection("Request");
             var messageResponseSettings = builder.GetSection("Message").GetSection("Response");
             var retrySettings = builder.GetSection("Retry").GetSection("Mode");
-            var retrySettingsLinear = builder.GetSection("Retry").GetSection("Mode").GetSection("LinearRetry"); 
-            var retrySettingsIncremental = builder.GetSection("Retry").GetSection("Mode").GetSection("IncrementalRetry"); 
-            var retrySettingsExponential = builder.GetSection("Retry").GetSection("Mode").GetSection("ExponentialRetry"); 
+            var retrySettingsLinear = builder.GetSection("Retry").GetSection("Mode").GetSection("LinearRetry");
+            var retrySettingsIncremental = builder.GetSection("Retry").GetSection("Mode").GetSection("IncrementalRetry");
+            var retrySettingsExponential = builder.GetSection("Retry").GetSection("Mode").GetSection("ExponentialRetry");
             var serviceSettings = builder.GetSection("Service");
             var serviceBaseUrlSettings = builder.GetSection("Service").GetSection("BaseUrl");
             var serviceMinorversionSettings = builder.GetSection("Service").GetSection("Minorversion");
             var webhooksVerifierTokenSettings = builder.GetSection("WebhooksService").GetSection("VerifierToken");
 
-            
 
 
-            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"])&& Convert.ToBoolean(loggerSettings["Enablelogs"])==true)
+
+            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["Enablelogs"]) == true)
             {
-            
+
                 ippConfig.Logger.RequestLog.EnableRequestResponseLogging = Convert.ToBoolean(loggerSettings["Enablelogs"]);
 
-               
-                    string location = loggerSettings["LogDirectory"];
-                    if (!Directory.Exists(location))
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
 
-                    ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
-                
+                string location = loggerSettings["LogDirectory"];
+                if (!Directory.Exists(location))
+                {
+                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
+                    IdsExceptionManager.HandleException(exception);
+                }
+
+                ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
+
             }
 
-            if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"])==true)
+            if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]) == true)
             {
                 Type customerLoggerType = Type.GetType(customLoggerSettings["Type"]);
                 ippConfig.Logger.CustomLogger = Activator.CreateInstance(customerLoggerType) as ILogger;
@@ -777,7 +777,7 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.Logger.CustomLogger = new TraceLogger();
             }
 
-            if (Convert.ToBoolean(securityOauthSettings["Enable"]) == true && !string.IsNullOrEmpty(securityOauthSettings["AccessToken"]))
+            if (!string.IsNullOrEmpty(securityOauthSettings["AccessToken"]) && Convert.ToBoolean(securityOauthSettings["Enable"]) == true)
             {
                 OAuth2RequestValidator validator = new OAuth2RequestValidator(
                        securityOauthSettings["AccessToken"]);
@@ -788,12 +788,15 @@ namespace Intuit.Ipp.Core.Configuration
                 if (!string.IsNullOrEmpty(securityCustomSettings["Name"]) && !string.IsNullOrEmpty(securityCustomSettings["Type"]) && Convert.ToBoolean(securityCustomSettings["Enable"]) == true)
                 {
                     Type customSecurityType = Type.GetType(securityCustomSettings["Type"]);
-                    string[] paramateres = securityCustomSettings["Params"].Split(',');
-                    ippConfig.Security = Activator.CreateInstance(customSecurityType, paramateres) as IRequestValidator;
+                    if (!string.IsNullOrEmpty(securityCustomSettings["Params"]))
+                    {
+                        string[] paramateres = securityCustomSettings["Params"].Split(',');
+                        ippConfig.Security = Activator.CreateInstance(customSecurityType, paramateres) as IRequestValidator;
+                    }
                 }
 
             }
-            
+
             ippConfig.Message = new Message();
             ippConfig.Message.Request = new Request();
             ippConfig.Message.Response = new Response();
@@ -870,24 +873,24 @@ namespace Intuit.Ipp.Core.Configuration
                 }
             }
 
-            
-            if (Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
+
+            if ((!string.IsNullOrEmpty(retrySettingsLinear["Enable"])) && Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
             {
                 if (!CoreHelper.IsInvalidaLinearRetryMode(
-                                        Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                                              Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                                               TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
                 {
                     ippConfig.RetryPolicy = new IntuitRetryPolicy(
                         Convert.ToInt32(retrySettingsLinear["RetryCount"]),
                          TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
                 }
             }
-            else if (Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
+            else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
             {
                 if (!CoreHelper.IsInvalidaIncrementalRetryMode(
-                        Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
-                        TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
-                        TimeSpan.Parse(retrySettingsIncremental["Increment"])))
+                         Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
+                         TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
+                         TimeSpan.Parse(retrySettingsIncremental["Increment"])))
                 {
                     ippConfig.RetryPolicy = new IntuitRetryPolicy(
                         Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
@@ -895,7 +898,7 @@ namespace Intuit.Ipp.Core.Configuration
                         TimeSpan.Parse(retrySettingsIncremental["Increment"]));
                 }
             }
-            else if (Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
+            else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
             {
                 if (!CoreHelper.IsInvalidaExponentialRetryMode(
                           Convert.ToInt32(retrySettingsExponential["RetryCount"]),
