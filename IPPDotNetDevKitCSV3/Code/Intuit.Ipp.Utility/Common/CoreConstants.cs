@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>This file contains SdkException.</summary>
+// 
 // <summary>This file contains Constants.</summary>
 ////*********************************************************
 
