@@ -727,8 +727,8 @@ namespace Intuit.Ipp.Core.Configuration
 
             #endregion
 
-            ippConfig.Logger = new Logger();
-            ippConfig.Logger.RequestLog = new RequestLog();
+            //ippConfig.Logger = new Logger();
+            //ippConfig.Logger.RequestLog = new RequestLog();
 
             //Read all appsettings.json sections
             var loggerSettings = builder.GetSection("Logger").GetSection("RequestLog");
@@ -915,20 +915,20 @@ namespace Intuit.Ipp.Core.Configuration
             }
             
 
-            ippConfig.BaseUrl = new BaseUrl();
+            //ippConfig.BaseUrl = new BaseUrl();
 
             ippConfig.BaseUrl.Qbo = serviceBaseUrlSettings["Qbo"];
             ippConfig.BaseUrl.Ips = serviceBaseUrlSettings["Ips"];
             ippConfig.BaseUrl.OAuthAccessTokenUrl = serviceBaseUrlSettings["OAuthAccessTokenUrl"];
             ippConfig.BaseUrl.UserNameAuthentication = serviceBaseUrlSettings["UserNameAuthentication"];
 
-            ippConfig.MinorVersion = new MinorVersion();
+            //ippConfig.MinorVersion = new MinorVersion();
 
             ippConfig.MinorVersion.Qbo = serviceMinorversionSettings["Qbo"];
 
 
 
-            ippConfig.VerifierToken = new VerifierToken();
+            //ippConfig.VerifierToken = new VerifierToken();
             ippConfig.VerifierToken.Value = webhooksVerifierTokenSettings["Value"];
            
 #endif
