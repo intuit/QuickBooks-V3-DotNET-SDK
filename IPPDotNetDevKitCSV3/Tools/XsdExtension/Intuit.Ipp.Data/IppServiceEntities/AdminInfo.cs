@@ -18,7 +18,7 @@
 // <summary>This file contains SdkException.</summary>
 // <summary>This file contains class that encapsulates subscriber information as returned by API_GetAdminsForAllProducts.</summary>
 ////*********************************************************
-namespace Intuit.Ipp.Data 
+namespace Intuit.Ipp.Data
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;

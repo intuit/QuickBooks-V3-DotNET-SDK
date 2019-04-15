@@ -25,9 +25,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
+            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));
 
-            var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
+            var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));
 
             _successHandler = new NetworkHandler(request =>
             {
@@ -57,7 +57,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         {
             string input = "https:something_weird_https://something_other";
             var client = new DiscoveryClient(input);
-            
+
             //Assert.AreEqual(e.Message,("Malformed authority URL"));
             Assert.Fail();
     }

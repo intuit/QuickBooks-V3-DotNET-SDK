@@ -117,19 +117,19 @@ namespace Intuit.Ipp.Core.Test.Common
             //Initializing the Dataservice object with ServiceContext
             DataService.DataService service = new DataService.DataService(context);
 
-            
+
 
             IdsException exp = null;
 
-            // Used to signal the waiting test thread that a async operation have completed.    
+            // Used to signal the waiting test thread that a async operation have completed.
             ManualResetEvent manualEvent = new ManualResetEvent(false);
 
             T returnedEntity = default(T);
             string fileName = String.Empty;
             byte[] originalBytes = new byte[0];
 
-            // Async callback events are anonomous and are in the same scope as the test code,    
-            // and therefore have access to the manualEvent variable.    
+            // Async callback events are anonomous and are in the same scope as the test code,
+            // and therefore have access to the manualEvent variable.
             service.OnGetPdfAsyncCompleted += (sender, e) =>
             {
                 //bool isFindById = false;
@@ -166,7 +166,7 @@ namespace Intuit.Ipp.Core.Test.Common
                 throw exp;
             }
 
-            // Set the event to non-signaled before making next async call.    
+            // Set the event to non-signaled before making next async call.
             manualEvent.Reset();
             return returnedEntity;
         }
