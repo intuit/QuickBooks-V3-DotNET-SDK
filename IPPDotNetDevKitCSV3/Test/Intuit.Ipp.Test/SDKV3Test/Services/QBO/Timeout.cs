@@ -9,7 +9,7 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender; 
+ 
 using Intuit.Ipp.DataService;
 using System.Collections.ObjectModel;
 

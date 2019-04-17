@@ -11,37 +11,41 @@ using System.Reflection;
 using System.Threading;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
-using Intuit.Ipp.ReportService;
 
+using Intuit.Ipp.ReportService;
+using Intuit.Ipp.Security;
+using System.Configuration;
+using Intuit.Ipp.OAuth2PlatformClient;
+using System.Threading.Tasks;
 
 namespace Intuit.Ipp.Test
 {
     public class Helper
     {
-        internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
+         internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
         {
+            
             //Initializing the Dataservice object with ServiceContext
             DataService.DataService service = new DataService.DataService(context);
 
-            //Adding the Bill using Dataservice object
+                //Adding the Bill using Dataservice object
 
-            T added = service.Add<T>(entity);
+                T added = service.Add<T>(entity);
 
-            //get IntuitEntity from entity
-            if (added.GetType().IsSubclassOf(typeof(IntuitEntity)))
-            {
-                IntuitEntity addedEntity = (IntuitEntity)(object)added;
+                //get IntuitEntity from entity
+                if (added.GetType().IsSubclassOf(typeof(IntuitEntity)))
+                {
+                    IntuitEntity addedEntity = (IntuitEntity)(object)added;
 
-                //Checking id of added Bill is not Null. If it is Null, Bill is not added properly
-                Assert.IsNotNull(addedEntity.Id);
-            }
+                    //Checking id of added Bill is not Null. If it is Null, Bill is not added properly
+                    Assert.IsNotNull(addedEntity.Id);
+                }
 
-            return added;
-
+                return added;
+           
         }
 
-        internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
+      internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
         {
             DataService.DataService service = new DataService.DataService(context);
 

@@ -11,7 +11,7 @@ using System.Threading;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Configuration;
 using Intuit.Ipp.GlobalTaxService;
 

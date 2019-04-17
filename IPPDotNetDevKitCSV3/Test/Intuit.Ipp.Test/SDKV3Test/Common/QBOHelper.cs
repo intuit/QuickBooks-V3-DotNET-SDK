@@ -16,8 +16,6 @@ using System.Globalization;
 using System.IO;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
-
 
 
 namespace Intuit.Ipp.Test
@@ -12316,6 +12314,5 @@ namespace Intuit.Ipp.Test
         }
 
         #endregion
-
-    }
+       }
 }

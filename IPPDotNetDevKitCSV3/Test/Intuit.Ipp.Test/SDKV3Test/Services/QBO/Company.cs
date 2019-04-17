@@ -9,7 +9,7 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 
@@ -220,8 +220,9 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             QueryService<Company> entityQuery = new QueryService<Company>(qboContextoAuth);
             Company existing = Helper.FindOrAdd<Company>(qboContextoAuth, new Company());
-            List<Company> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
-            Assert.IsTrue(entities.Count() > 0);
+            // List<Company> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
+            int count = entityQuery.ExecuteIdsQuery("Select * from Company where Id='" + existing.Id + "'").Count;
+                Assert.IsTrue(count > 0);
         }
 
         #endregion

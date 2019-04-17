@@ -9,7 +9,7 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 
@@ -222,8 +222,8 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             QueryService<FixedAsset> entityQuery = new QueryService<FixedAsset>(qboContextoAuth);
             FixedAsset existing = Helper.FindOrAdd<FixedAsset>(qboContextoAuth, new FixedAsset());
-            List<FixedAsset> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
-            Assert.IsTrue(entities.Count() > 0);
+            int count = entityQuery.ExecuteIdsQuery("Select * from FixedAsset where Id='" + existing.Id + "'").Count;
+            Assert.IsTrue(count > 0);
         }
 
         #endregion

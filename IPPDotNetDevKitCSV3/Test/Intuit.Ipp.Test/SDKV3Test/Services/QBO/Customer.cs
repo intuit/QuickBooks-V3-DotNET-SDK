@@ -9,11 +9,11 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender; 
+ 
 using Intuit.Ipp.DataService;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 
 namespace Intuit.Ipp.Test.Services.QBO
 {
@@ -41,7 +41,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             //Creating the Customer for Add
             Customer customer = QBOHelper.CreateCustomer(qboContextoAuth);
-
+            Initializer.ValidateToken();
             //Adding the Customer
             Customer added = Helper.Add<Customer>(qboContextoAuth, customer);
             //Verify the added Customer
@@ -53,7 +53,8 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             try
             {
-                IRequestValidator req = new OAuthRequestValidator("gjggdj", "hhh", "gjsgj", "mnv");
+                //  IRequestValidator req = new OAuthRequestValidator("gjggdj", "hhh", "gjsgj", "mnv");
+                IRequestValidator req = new OAuth2RequestValidator("access_token");
                 ServiceContext context = new ServiceContext("345", IntuitServicesType.QBO, req);
 
                 //Creating the Customer for Add
@@ -383,7 +384,9 @@ namespace Intuit.Ipp.Test.Services.QBO
         public void CustomerQueryWithSpecialCharacterUsingoAuth()
         {
             QueryService<Customer> entityQuery = new QueryService<Customer>(qboContextoAuth);
-            List<Customer> entities = entityQuery.Where(c => c.DisplayName == "Customer\\'s Business").ToList();
+            //List<Customer> entities = entityQuery.Where(c => c.DisplayName == "Customer\\'s Business").ToList();
+            int count=entityQuery.ExecuteIdsQuery("Select * from Customer where DisplayName='Customer\\'s Business'").Count;
+            Assert.IsTrue(count > 0);
         }
 
         #endregion

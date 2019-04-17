@@ -9,14 +9,13 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
-using Intuit.Ipp.PlatformService;
 
 namespace Intuit.Ipp.Test.Services.Platform
 {
-	[TestClass]
+	[TestClass][Ignore]
 	public class PlatformApi
 	{
 		ServiceContext qboContextOAuth = null;
@@ -34,7 +33,8 @@ namespace Intuit.Ipp.Test.Services.Platform
 		[TestInitialize]
 		public void MyTestInitializer()
 		{
-            OAuthRequestValidator oAuthRequestValidatorQbo = new OAuthRequestValidator(ValidAccessToken, ValidAccessTokenSecret,ValidConsumerKey, ValidConsumerSecret);
+            // OAuthRequestValidator oAuthRequestValidatorQbo = new OAuthRequestValidator(ValidAccessToken, ValidAccessTokenSecret,ValidConsumerKey, ValidConsumerSecret);
+            OAuth2RequestValidator oAuthRequestValidatorQbo = new OAuth2RequestValidator(ValidAccessToken);
             qboContextOAuth = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidatorQbo);
         }
 
@@ -45,19 +45,20 @@ namespace Intuit.Ipp.Test.Services.Platform
 
 		public void PlatformDisconnectValidOauth(String oauthtoken,String oauthtokensecret)
 		{
-           try
-           {
-                PlatformService.PlatformService.Disconnect(ValidConsumerKey, ValidConsumerSecret,
-                     oauthtoken, oauthtokensecret);
-           }
-           catch (PlatformException pex)
-           {
-               Console.WriteLine("PlatformDisconnect throw PlatformException errCode:" + pex.ErrorCode + " errMsg:" + pex.ErrorMessage + " serverTime:" + pex.ServerTime);
-                Assert.Fail();
-           }
+           //try
+           //{
+           //     PlatformService.PlatformService.Disconnect(ValidConsumerKey, ValidConsumerSecret,
+           //          oauthtoken, oauthtokensecret);
+           //}
+           //catch (PlatformException pex)
+           //{
+           //    Console.WriteLine("PlatformDisconnect throw PlatformException errCode:" + pex.ErrorCode + " errMsg:" + pex.ErrorMessage + " serverTime:" + pex.ServerTime);
+           //     Assert.Fail();
+           //}
 
-           OAuthRequestValidator ioAuthRequestValidatorQbo = new OAuthRequestValidator(oauthtoken, oauthtokensecret, ValidConsumerKey, ValidConsumerSecret);
-           ServiceContext iqboContextOAuth = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, ioAuthRequestValidatorQbo);
+            //OAuthRequestValidator ioAuthRequestValidatorQbo = new OAuthRequestValidator(oauthtoken, oauthtokensecret, ValidConsumerKey, ValidConsumerSecret);
+            OAuth2RequestValidator ioAuthRequestValidatorQbo = new OAuth2RequestValidator(ValidAccessToken);
+            ServiceContext iqboContextOAuth = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, ioAuthRequestValidatorQbo);
            Customer customer = QBOHelper.CreateCustomer(iqboContextOAuth);
            try
            {
@@ -75,18 +76,18 @@ namespace Intuit.Ipp.Test.Services.Platform
         [TestMethod]
 		public void PlatformDisconnectInvalidOauth()
 		{
-            try
-            {
-                PlatformService.PlatformService.Disconnect(ValidConsumerKey, ValidConsumerSecret,
-                    InvalidAccessToken, InvalidAccessTokenSecret);
-            }
-            catch (PlatformException pex)
-            {
-                Assert.AreEqual("270", pex.ErrorCode);
-                Assert.AreEqual("OAuth Token rejected", pex.ErrorMessage);
-                Assert.IsNotNull(pex.ServerTime);
-                return;
-            }
+            //try
+            //{
+            //    PlatformService.PlatformService.Disconnect(ValidConsumerKey, ValidConsumerSecret,
+            //        InvalidAccessToken, InvalidAccessTokenSecret);
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Assert.AreEqual("270", pex.ErrorCode);
+            //    Assert.AreEqual("OAuth Token rejected", pex.ErrorMessage);
+            //    Assert.IsNotNull(pex.ServerTime);
+            //    return;
+            //}
             Assert.Fail();
 		}
 
@@ -101,32 +102,32 @@ namespace Intuit.Ipp.Test.Services.Platform
         [Ignore]
         public void PlatformReconnectValidOauth()
         {
-            try
-            {
-                String oauthtoken = null; ;
-                String oauthtokensecret = null;
+            //try
+            //{
+            //    String oauthtoken = null; ;
+            //    String oauthtokensecret = null;
 
-                Dictionary<string, string> oauthTokens = PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
-                     "lvprdkyvvpOSwdI8ufHlYb1IpWp8RpjAv8lZ7KK0H9jiVsFo", "gQBx9lR3F4Iwm42ir3n3zxIM75KxI7wuiC5o7oKr");
-                if (oauthTokens.ContainsKey("OAuthToken"))
-                {
-                    oauthtoken = oauthTokens["OAuthToken"];
-                    Assert.IsNotNull(oauthtoken);
-                }
+            //    Dictionary<string, string> oauthTokens = PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
+            //         "lvprdkyvvpOSwdI8ufHlYb1IpWp8RpjAv8lZ7KK0H9jiVsFo", "gQBx9lR3F4Iwm42ir3n3zxIM75KxI7wuiC5o7oKr");
+            //    if (oauthTokens.ContainsKey("OAuthToken"))
+            //    {
+            //        oauthtoken = oauthTokens["OAuthToken"];
+            //        Assert.IsNotNull(oauthtoken);
+            //    }
 
-                // See whether Dictionary contains this string.
-                if (oauthTokens.ContainsKey("OAuthTokenSecret"))
-                {
-                    oauthtokensecret = oauthTokens["OAuthTokenSecret"];
-                    Assert.IsNotNull(oauthtokensecret);
-                }
-                PlatformDisconnectValidOauth(oauthtoken,oauthtokensecret);
-            }
-            catch (PlatformException pex)
-            {
-                Console.WriteLine("PlatformReconnect throw exception. Error Code" +pex.ErrorCode + ", Error Message:"+pex.ErrorMessage);
-                Assert.Fail();
-            }
+            //    // See whether Dictionary contains this string.
+            //    if (oauthTokens.ContainsKey("OAuthTokenSecret"))
+            //    {
+            //        oauthtokensecret = oauthTokens["OAuthTokenSecret"];
+            //        Assert.IsNotNull(oauthtokensecret);
+            //    }
+            //    PlatformDisconnectValidOauth(oauthtoken,oauthtokensecret);
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Console.WriteLine("PlatformReconnect throw exception. Error Code" +pex.ErrorCode + ", Error Message:"+pex.ErrorMessage);
+            //    Assert.Fail();
+            //}
 
         }
 
@@ -137,19 +138,19 @@ namespace Intuit.Ipp.Test.Services.Platform
         [Ignore]
         public void PlatformReconnectValidOauth212()
         {
-            try
-            {
+            //try
+            //{
 
-                Dictionary<string, string> oauthTokens = PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
-                     "lvprdYXHs7Xc95g70D5UFX9mWSShDhepkCWvr95tb19SUIPD", "zdy5xPim4viFTNuBTu0c2IqJCRhJUSXTuNr3fXoR");
-            }
-            catch (PlatformException pex)
-            {
-                Assert.AreEqual("212", pex.ErrorCode);
-                Assert.AreEqual("Token Refresh Window Out of Bounds", pex.ErrorMessage);
-                Assert.IsNotNull(pex.ServerTime);
-                return;
-            }
+            //    Dictionary<string, string> oauthTokens = PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
+            //         "lvprdYXHs7Xc95g70D5UFX9mWSShDhepkCWvr95tb19SUIPD", "zdy5xPim4viFTNuBTu0c2IqJCRhJUSXTuNr3fXoR");
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Assert.AreEqual("212", pex.ErrorCode);
+            //    Assert.AreEqual("Token Refresh Window Out of Bounds", pex.ErrorMessage);
+            //    Assert.IsNotNull(pex.ServerTime);
+            //    return;
+            //}
             Assert.Fail();
            
         }
@@ -157,18 +158,18 @@ namespace Intuit.Ipp.Test.Services.Platform
         [TestMethod]
         public void PlatformReconnectInvalidOauth270()
         {
-            try
-            {
-                PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
-                    InvalidAccessToken, InvalidAccessTokenSecret);
-            }
-            catch (PlatformException pex)
-            {
-                Assert.AreEqual("270", pex.ErrorCode);
-                Assert.AreEqual("OAuth Token rejected", pex.ErrorMessage);
-                Assert.IsNotNull(pex.ServerTime);
-                return;
-            }
+            //try
+            //{
+            //    PlatformService.PlatformService.Reconnect(ValidConsumerKey, ValidConsumerSecret,
+            //        InvalidAccessToken, InvalidAccessTokenSecret);
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Assert.AreEqual("270", pex.ErrorCode);
+            //    Assert.AreEqual("OAuth Token rejected", pex.ErrorMessage);
+            //    Assert.IsNotNull(pex.ServerTime);
+            //    return;
+            //}
             Assert.Fail();
         }
 
@@ -181,29 +182,29 @@ namespace Intuit.Ipp.Test.Services.Platform
         [Ignore]
         public void PlatformGetCurrentUserWithValidOauth()
         {
-            Intuit.Ipp.PlatformService.User myuser=PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
-                    ValidAccessToken,ValidAccessTokenSecret);
-            Assert.AreEqual("yelena", myuser.FirstName);
-            Assert.AreEqual("gartsman", myuser.LastName);
-            Assert.AreEqual("yelenastage@intuit.com", myuser.EmailAddress);
-            Assert.IsTrue(myuser.IsVerified);
+            //Intuit.Ipp.PlatformService.User myuser=PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
+            //        ValidAccessToken,ValidAccessTokenSecret);
+            //Assert.AreEqual("yelena", myuser.FirstName);
+            //Assert.AreEqual("gartsman", myuser.LastName);
+            //Assert.AreEqual("yelenastage@intuit.com", myuser.EmailAddress);
+            //Assert.IsTrue(myuser.IsVerified);
         }
 
         [TestMethod]
         public void PlatformGetCurrentUserWithInvalidOauth()
         {
-            try
-            {
-                Intuit.Ipp.PlatformService.User myuser = PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
-                        InvalidAccessToken, InvalidAccessTokenSecret);
-            }
-            catch (PlatformException pex)
-            {
-                Assert.AreEqual("22", pex.ErrorCode);
-                Assert.AreEqual("This API requires Authorization.", pex.ErrorMessage);
-                Assert.IsNotNull(pex.ServerTime);
-                return;
-            }
+            //try
+            //{
+            //    Intuit.Ipp.PlatformService.User myuser = PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
+            //            InvalidAccessToken, InvalidAccessTokenSecret);
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Assert.AreEqual("22", pex.ErrorCode);
+            //    Assert.AreEqual("This API requires Authorization.", pex.ErrorMessage);
+            //    Assert.IsNotNull(pex.ServerTime);
+            //    return;
+            //}
             Assert.Fail();
         }
 
@@ -212,18 +213,18 @@ namespace Intuit.Ipp.Test.Services.Platform
         [TestMethod]
         public void PlatformGetCurrentUserWithConenctionError()
         {
-            try
-            {
-                Intuit.Ipp.PlatformService.User myuser = PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
-                    ValidAccessToken, ValidAccessTokenSecret);
-            }
-            catch (PlatformException pex)
-            {
-                Console.Write(pex.ErrorCode + pex.ErrorMessage);
-                Assert.AreEqual("ConnectFailure", pex.ErrorCode);
-                Assert.AreEqual("Unable to connect to the remote server", pex.ErrorMessage);
-                return;
-            }
+            //try
+            //{
+            //    Intuit.Ipp.PlatformService.User myuser = PlatformService.PlatformService.GetCurrentUser(ValidConsumerKey, ValidConsumerSecret,
+            //        ValidAccessToken, ValidAccessTokenSecret);
+            //}
+            //catch (PlatformException pex)
+            //{
+            //    Console.Write(pex.ErrorCode + pex.ErrorMessage);
+            //    Assert.AreEqual("ConnectFailure", pex.ErrorCode);
+            //    Assert.AreEqual("Unable to connect to the remote server", pex.ErrorMessage);
+            //    return;
+            //}
             Assert.Fail();
         }
 

@@ -7,7 +7,7 @@ using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Configuration;
 
 namespace Intuit.Ipp.Test.QBO
@@ -89,7 +89,8 @@ namespace Intuit.Ipp.Test.QBO
             }
 
             string[] values = docNumbers.ToArray();
-            batch.Add(invoiceContext.Where(c => c.DocNumber.In(values)).ToIdsQuery(), "QueryInvoice1");
+
+            batch.Add(invoiceContext.ExecuteIdsQuery("Select * from invoice where DocNumber.In('"+values+"')").ToString(), "QueryInvoice1");
             batch.Execute();
 
             int position = 0;
@@ -139,10 +140,10 @@ namespace Intuit.Ipp.Test.QBO
             DataService.Batch batch = service.CreateNewBatch();
             batch.Add(addedCustomer, "UpdateCustomer", OperationEnum.update);
             batch.Add(invoice, "AddInvoice", OperationEnum.create);
-            batch.Add(termContext.Take(5).ToIdsQuery(), "QueryTerm");
-            batch.Add(taxRateContext.Take(5).ToIdsQuery(), "QueryTaxRate");
-            batch.Add(taxCodeContext.Take(5).ToIdsQuery(), "QueryTaxCode");
-            batch.Add(itemContext.Take(5).ToIdsQuery(), "QueryItem");
+            batch.Add(termContext.ExecuteIdsQuery("Select top 5 from term").ToString(), "QueryTerm");
+            batch.Add(taxRateContext.ExecuteIdsQuery("Select top 5 from taxrate").ToString(), "QueryTaxRate");
+            batch.Add(taxCodeContext.ExecuteIdsQuery("Select top 5 from taxcode").ToString(), "QueryTaxCode");
+            batch.Add(itemContext.ExecuteIdsQuery("Select top 5 from item").ToString(), "QueryItem");
 
             batch.Execute();
             foreach (IntuitBatchResponse resp in batch.IntuitBatchItemResponses)
