@@ -1,0 +1,605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.XsdExtension</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.XsdExtension.AppInfoIgnoreHandler">
+            <summary>
+            Handles if Ignore keyword is specified in AppInfo tag
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.AppInfoIgnoreHandler.HandleAppInfo(System.CodeDom.CodeMemberProperty,System.String)">
+            <summary>
+            Handles if Ignore keyword is specified in AppInfo tag
+            </summary>
+            <param name="memberProperty">Member of particualr class in which AppInfo is available</param>
+            <param name="appInfoValue">value of AppInfo tag</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.ClassGenerator">
+            <summary>
+            Generates class from memory stream which contains parsed xsd schema
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.ClassGenerator.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Executes operation which would generate class from memory stream which contains parsed xsd schema 
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext"> Holds codeDomTree </param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.ClassGenerator.GetOutputFilePath">
+            <summary>
+            Retrieves output path to place generated class. If not found uses default path
+            </summary>        
+            <returns>path to place generated class files</returns>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.CodeDomContext">
+            <summary>
+            context class to hold code dom
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.CodeDomContext.codeNamespace">
+            <summary>
+            Variable to hold code dom
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.CodeDomContext.outputCodePath">
+            <summary>
+            Output path of generated class files
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.CodeDomContext.outputCodeFile">
+            <summary>
+            Output generated class file name
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.CodeDomContext.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CodeDomContext class with root namespace
+            </summary>
+            <param name="namespaceName">namespace name to initialize code dom</param>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.CodeDomContext.OutputCodeFile">
+            <summary>
+            Gets or sets generated class file name
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.CodeDomContext.OutputCodePath">
+            <summary>
+            Gets or sets generated class file path
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.CodeDomContext.CodeNamespace">
+            <summary>
+            Gets namespace of CodeDom object tree
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.CodeDomHelper">
+            <summary>
+            Helper class to generate or parse CodeDom
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.CodeDomHelper.SetSummaryComment(System.CodeDom.CodeTypeMember,System.String)">
+            <summary>
+            Sets passed comments to CodeDOM
+            </summary>
+            <param name="codeTypeMember">CodeDom object to be used to set comments</param>
+            <param name="comment">Comment to be set</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.CodeDomHelper.GetDocumentationForElement(System.Xml.Schema.XmlSchemaAnnotated)">
+            <summary>
+            Extracts annotation section from passes XmlSchema object
+            </summary>
+            <param name="annotatedElement">Annotation element of XSD schema with documentation and appinfo tags</param>
+            <returns>Extracted Documentation and AppInfo</returns>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.CodeDomHelper.AddEditorBrowsableAttribute(System.CodeDom.CodeMemberProperty)">
+            <summary>
+            Method to add EditorBrowsable attributes to passed property element
+            </summary>
+            <param name="memberProperty">property element to be modified</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.CodeDomTreeBuilder">
+            <summary>
+            Build CodeDom tree in memory
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.CodeDomTreeBuilder.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Performs building codedom tree objects from Xsd schema
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext">Holds codeDomTree</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.DataObjectConstants">
+            <summary>
+            Used to hold all constansts
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.CODEMEMBERPROPERTY">
+            <summary>
+            Holds type of CodeMemeberProperty
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.FMSENTITYNAMESPACE">
+            <summary>
+            Holds Qbo entity root namespaces
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.FMSOUTPUTFILE">
+            <summary>
+            Holds Qbo specific entity class file
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.DATAPROJECTPATH">
+            <summary>
+            Holds path of Intuit.Ipp.Data project
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.IENTITYINTERFACE">
+            <summary>
+            holds interface for Qbo(common) entities
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.INPUTSCHEMAFOLDER">
+            <summary>
+            Holds location of schema files of QBO
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ITEM">
+            <summary>
+            New property to handle choice element
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ITEMFIELD">
+            <summary>
+            Private variable to handle choice element
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ITEMS">
+            <summary>
+            Items property to handle choice element
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OBJECTCLASS">
+            <summary>
+            Type of Item property
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OUTPUTCLASSFILEFOLDER">
+            <summary>
+            Folder in which Fms.cs will be created
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.XMLSERIALIZEATTRIBUTE">
+            <summary>
+            Xml attribute to be added to Item Property
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.DEFAULTFOLDERNAME">
+            <summary>
+            Default folder name to fetch xsd files
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.FILESEXTENSIONS">
+            <summary>
+            File extensions to be considered
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ANYINTUITOBJECT">
+            <summary>
+            Default "Item" property will be renamed to AnyIntuitObject
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ANYINTUITOBJECTS">
+            <summary>
+            Default "Items" property will be renamed to AnyIntuitObjects
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.INTUITOBJECT">
+            <summary>
+            Root object of all Intuit objects
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.SECTION1">
+            <summary>
+            Section1 prperty name in Section class
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.SECTION">
+            <summary>
+            Section class name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ACCOUNTTYPEENUM">
+            <summary>
+            Name of AccountTypeEnum class
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ACCOUNTSRECEIVABLE">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OTHERCURRENTASSET">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.FIXEDASSET">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OTHERASSET">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ACCOUNTPAYABLE">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.CREDITCARD">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OTHERCURRENTLIABILITY">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.LONGTERMLIABILITY">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.COSTOFGOODSSOLD">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OTHERINCOME">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OTHEREXPENSE">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.NONPOSTING">
+            <summary>
+            AccountTypeEnum member name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.SUMMARY">
+            <summary>
+            Summary class name
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.SUMMARYFIELD">
+            <summary>
+            Private variable of Summary property
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.SUMMARYROW">
+            <summary>
+            String[] to be replaced with SummaryRow[]
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.QUERY">
+            <summary>
+            To add OperationEnum Type
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.REPORT">
+            <summary>
+            To add OperationEnum type
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OPERATIONENUM">
+            <summary>
+            Enum types to be added
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.XMLIGNORE">
+            <summary>
+            Required to add [JsonIgnore]
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.XSDDIRINVALID">
+            <summary>
+            Error message if xsd file directory is invalid
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.FILESFROM">
+            <summary>
+            Directory from which xsd files are fetched
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.XSDFILESNOTFOUND">
+            <summary>
+            Xsd files are not found in the specified directory
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.XSDFILESLOADEDFROM">
+            <summary>
+            Xsd files loaded from specified directory
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.OUTPUTDIRNOTFOUND">
+            <summary>
+            Output directory to save Fms.cs is not found
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.DataObjectConstants.ADDEDBY">
+            <summary>
+            Add documentation to mention its added by tool
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.HierarchyManager">
+            <summary>
+            Manager class for hierchy implementation
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Adds required interface implementatio
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext">Holds codeDomTree</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ImplementIEntity(System.CodeDom.CodeTypeDeclaration,Intuit.Ipp.XsdExtension.XsdContext)">
+            <summary>
+            Adds interface implementation to class
+            </summary>
+            <param name="codedomClass">class in which interface to be implemented</param>
+            <param name="xsdContext">Holds data about XSD schema</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ReplaceDateTime(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Replaces DataType="date" with DataType="dateTime" in System.Xml.Serialization.XmlElementAttribute
+            </summary>
+            <param name="codedomElement">Codedom element to be modified</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ReplaceSalesTerm(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Replaces Term to SalesTerm as per service url
+            </summary>
+            <param name="enumElement">Element to be preplaced</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ReplaceItem(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Replaces Item and Items property names to AnyIntuitObject and AnyIntuitObjects
+            </summary>
+            <param name="codedomElement">Class that has Item or Items property</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ModifySectionClass(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Section class has Section property with data type of Section[]. Since name of the class
+            and property are same, .Net APIs creates property name as Section1. This would cause issue while
+            using JsonSerializer.
+            </summary>
+            <param name="codedomElement">Section class</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.ModifyAccountTypeEnumeration(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            This adds [JsonPropertyAttribute] attribute to the members of AccountTypeEnum. 
+            </summary>
+            <param name="codedomElement">Section class</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.AddJsonAttribute(System.CodeDom.CodeMemberField,System.String)">
+            <summary>
+            This adds [JsonPropertyAttribute] attribute to the given field. 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.AddOperationEnums(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Adds Query and Report enum types to OperationEnum
+            </summary>
+            <param name="codedomElement">OperationEnum enum type</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.HierarchyManager.AddJsonIgnore(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Adds [JsonIgnore] attribute if [XmlIgnore] found
+            </summary>
+            <param name="codedomElement">Class in which JsonIgnore to be added</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.IAppInfoHandler">
+            <summary>
+            Defines methods to generate handle AppInfo tag
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.IAppInfoHandler.HandleAppInfo(System.CodeDom.CodeMemberProperty,System.String)">
+            <summary>
+            Executes appropriate actions based on implementation class
+            </summary>
+            <param name="memberProperty">Member of particualr class in which AppInfo is available</param>
+            <param name="appInfoValue">value of AppInfo tag</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.IXsdExtensionTask">
+            <summary>
+            Defines methods to generate Classes from Schema
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.IXsdExtensionTask.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Executes appropriate actions based on implementation class
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext">Holds codeDomTree</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.IOHelper">
+            <summary>
+            Helper class to handle IO related operations
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.IOHelper.GetDataObjectProjectPath">
+            <summary>
+            Retrieves path of Intuit.Ipp.Data project 
+            </summary>
+            <returns>path of Intuit.Ipp.Data project</returns>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.Program">
+            <summary>
+            Entry class for POCO class generation process
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.Program.Main(System.String[])">
+            <summary>
+            Entry point to perform class generation from xsd schema
+            </summary>
+            <param name="args">to be passed from command line</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.Program.GenerateFMSEntities">
+            <summary>
+            Facade method to generate classes from xsd for QBO
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.SchemaLoader">
+            <summary>
+            Holds operations related to Schema loading
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaLoader.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Loads xsd schema files into memory and compiles.
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext">Holds code dom tree object</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaLoader.GetXSDPath">
+            <summary>
+            Retrieves Xsd schema file paths from Config. If not available, returns default paths
+            </summary>
+            <returns>Xsd schema file path</returns>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaLoader.RemoveBinPath(System.String)">
+            <summary>
+            Removes bin folder path from given foler path
+            </summary>
+            <param name="folderPath">folder path in which "bin" will be removed</param>
+            <returns>folder path without bin directory</returns>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.SchemaTagHandler">
+            <summary>
+            Parses annotation section of XSD and adds to the CodeDOM 
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.Execute(Intuit.Ipp.XsdExtension.XsdContext,Intuit.Ipp.XsdExtension.CodeDomContext)">
+            <summary>
+            Executes operation which would parse annotation section of XSD and adds to the CodeDOM 
+            </summary>
+            <param name="xsdContext">Holds data about XSD schema</param>
+            <param name="codeDomContext">Code dom tree</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.HandleSchemaObject(System.Xml.Schema.XmlSchemaObject)">
+            <summary>
+            Updates annotation and choice element if presents in xsd schema
+            </summary>
+            <param name="schemaObject">Single schema object to update annotation</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.UpdateAnnotation(System.Xml.Schema.XmlSchemaObject,System.String)">
+            <summary>
+            Updates annotation in the Code DOM objects
+            </summary>
+            <param name="schemaObject">Schema object to update annotation</param>
+            <param name="className">it will be present if schema object is property type</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.DocumentClassProperties(System.Xml.Schema.XmlSchemaObject,System.String,System.String)">
+            <summary>
+            Updates documenatation to Property element
+            </summary>
+            <param name="schemaObject">Property element to be updated with annotation</param>
+            <param name="className">Complex type name in which Property elements belongs to</param>
+            <param name="propertyName">Name of the Property element to be updated</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.DocumentSchemaObjectType(System.Xml.Schema.XmlSchemaObject,System.String)">
+            <summary>
+            Sets documentation to comlext or simple type elements
+            </summary>
+            <param name="schemaObject">Schema object to set documentation</param>
+            <param name="elementName">Schema elment name to set documentation</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.SeperateItem(System.Xml.Schema.XmlSchemaElement,System.String)">
+            <summary>
+            If choice elements has single and array of objects, this method creates "Item" property for single objects
+            </summary>
+            <param name="choiceChildElement">Attribute elements to be added in the "Item" property</param>
+            <param name="className">Class name in which "Item" element is present</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.GetIntuitEntities(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Adds if it is type of IntuitObject
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.HandleChoiceElement(System.CodeDom.CodeTypeDeclaration,System.String)">
+            <summary>
+            Adds "Item" property if not exists already
+            Adds attributes to "Item" property
+            </summary>
+            <param name="classToAddItem">Class in which "Item" property to be added</param>
+            <param name="XmlAttributeName">Xml attribute to be added to "Item" property</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.AddItemProperty(System.CodeDom.CodeTypeDeclaration,System.String)">
+            <summary>
+            Adds "Item" property to class
+            </summary>
+            <param name="classToAddItem">Class in which "Item" property to be added</param>
+            <param name="XmlAttributeName">Xml attribute to be added to "Item" property</param>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.SchemaTagHandler.RemoveXmlAttributeFromItems(System.CodeDom.CodeTypeDeclaration,System.String)">
+            <summary>
+            Removes attributes from Items property
+            </summary>
+            <param name="classToAddItem">Class in which "Items" property is present</param>
+            <param name="XmlAttributeName">Xml attribute to be revemod from class</param>
+        </member>
+        <member name="T:Intuit.Ipp.XsdExtension.XsdContext">
+            <summary>
+            Context class used to hold meta data on xsd schema files
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.XsdContext.xmlSchemas">
+            <summary>
+            Holds all Schema objects
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.XsdContext.xmlSchemaList">
+            <summary>
+            List of Schema objects
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.XsdExtension.XsdContext.codeExporter">
+            <summary>
+            Exports compiled schema to code namespace
+            </summary>
+        </member>
+        <member name="M:Intuit.Ipp.XsdExtension.XsdContext.#ctor">
+            <summary>
+            Initializes a new instance of the XsdContext class
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.XsdContext.CodeExporter">
+            <summary>
+            Gets or sets exporter to export code from xsd schema to codedom
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.XsdContext.XmlSchemaList">
+            <summary>
+            Gets or sets list of Schema
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.XsdExtension.XsdContext.XmlSchemas">
+            <summary>
+            Gets or sets xml schema
+            </summary>
+        </member>
+    </members>
+</doc>

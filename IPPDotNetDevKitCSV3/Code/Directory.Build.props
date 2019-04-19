@@ -14,10 +14,10 @@
     <PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
     <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
     <Copyright>Copyright © 2018 Intuit, Inc.</Copyright>
-    <AssemblyVersion>6.0.0.0</AssemblyVersion>
-    <FileVersion>6.0.0.0</FileVersion>
+    <AssemblyVersion>7.5.0.3</AssemblyVersion>
+    <FileVersion>7.5.0.3</FileVersion>
     <Company>Intuit</Company>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
 
