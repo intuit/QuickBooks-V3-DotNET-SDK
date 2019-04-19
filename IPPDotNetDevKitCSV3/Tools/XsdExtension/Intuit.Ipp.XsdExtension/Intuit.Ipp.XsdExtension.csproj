@@ -6,7 +6,7 @@
     <AssemblyTitle>Intuit.Sb.CDM</AssemblyTitle>
     <Product>Intuit.Sb.CDM</Product>
     <DebugType>full</DebugType>
-    <DocumentationFile>Intuit.Ipp.XsdExtension.XML</DocumentationFile>
+    <DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
     <AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 

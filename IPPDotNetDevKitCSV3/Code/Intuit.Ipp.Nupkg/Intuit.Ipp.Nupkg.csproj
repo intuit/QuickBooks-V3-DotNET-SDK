@@ -1,15 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <!--<GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>-->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <LibTargetFrameworks>netstandard2.0</LibTargetFrameworks>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <Version>7.5.0.2</Version>
+    <MainVersion>7.5.0.3</MainVersion>
+    <PackageVersionSuffix>beta</PackageVersionSuffix>
+    <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <NoBuild>true</NoBuild>
@@ -17,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" />
+    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" PrivateAssets="all" />
