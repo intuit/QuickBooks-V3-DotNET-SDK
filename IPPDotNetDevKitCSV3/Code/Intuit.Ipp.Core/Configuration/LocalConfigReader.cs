@@ -97,7 +97,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             IppConfiguration ippConfig = new IppConfiguration();
 
-#if NETFULL
+#if !NETSTANDARD2_0
             
             IppConfigurationSection ippConfigurationSection = IppConfigurationSection.Instance;
             if (ippConfigurationSection == null)
