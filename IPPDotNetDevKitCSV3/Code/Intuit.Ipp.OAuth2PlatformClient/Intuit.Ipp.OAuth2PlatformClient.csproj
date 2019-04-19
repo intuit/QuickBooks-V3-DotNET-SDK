@@ -1,24 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-       <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
-	     <DocumentationFile>Intuit.Ipp.OAuth2PlatformClient.XML</DocumentationFile>
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+  <DocumentationFile>Intuit.Ipp.OAuth2PlatformClient.XML</DocumentationFile>
     </PropertyGroup>
-
-<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
-   
-</ItemGroup>
-
-<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-</ItemGroup>
-
-<ItemGroup>
-  <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
-  <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-  <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  
-</ItemGroup>
-
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <Reference Include="System.Net.Http" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    </ItemGroup>
+    
 <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)bin\Debug\net472\$(TargetName).dll&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)bin\Debug\net472\$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot;" />
+    <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies\&quot; /v /y&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot; /v /y&#xD;&#xA;xcopy &quot;$(TargetDir)$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Standard\&quot;/v /y&#xD;&#xA;xcopy &quot;$(ProjectDir)bin\Debug\net472\$(TargetName).dll&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot; /v /y&#xD;&#xA;xcopy &quot;$(ProjectDir)bin\Debug\net472\$(TargetName).XML&quot; &quot;$(SolutionDir)..\SDK Assemblies Framework\&quot; /v /y" />
   </Target>
 </Project>

@@ -22059,6 +22059,8 @@ namespace Intuit.Ipp.Data {
         
         private bool remainingCreditFieldSpecified;
         
+        private ReferenceType invoiceRefField;
+        
         private IntuitAnyType creditMemoExField;
         
         /// <remarks/>
@@ -22088,6 +22090,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.remainingCreditFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: A credit memo needs to have an invoice number to save successfully
+        /// Applicable for IN Region.
+        /// 
+        /// </summary>
+        public ReferenceType InvoiceRef {
+            get {
+                return this.invoiceRefField;
+            }
+            set {
+                this.invoiceRefField = value;
             }
         }
         
@@ -31881,6 +31900,58 @@ namespace Intuit.Ipp.Data {
     /// <summary>
     /// 
     /// Product: ALL
+    /// Description: Valid only for UK region, Subcontractor type enumeration.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "6.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum SubcontractorTypeEnum {
+        
+        /// <remarks/>
+        Individual,
+        
+        /// <remarks/>
+        Company,
+        
+        /// <remarks/>
+        Partnership,
+        
+        /// <remarks/>
+        Trust,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Valid only for UK region, CIS Rate for Vendor enumeration.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "6.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum CISRateEnum {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("CIS gross rate (0%)")]
+        CISgrossrate0,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("CIS standard rate (20%)")]
+        CISstandardrate20,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("CIS higher rate (30%)")]
+        CIShigherrate30,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
     /// Description: Job status enumeration.
     /// 
     /// </summary>
@@ -32529,6 +32600,10 @@ namespace Intuit.Ipp.Data {
         private string gSTINField;
         
         private string gSTRegistrationTypeField;
+        
+        private bool isCISContractorField;
+        
+        private bool isCISContractorFieldSpecified;
         
         /// <remarks/>
         /// <summary>
@@ -33358,6 +33433,34 @@ namespace Intuit.Ipp.Data {
                 this.gSTRegistrationTypeField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO only
+        /// Description: True if the customer is CIS contractor
+        /// 
+        /// </summary>
+        public bool IsCISContractor {
+            get {
+                return this.isCISContractorField;
+            }
+            set {
+                this.isCISContractorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool IsCISContractorSpecified {
+            get {
+                return this.isCISContractorFieldSpecified;
+            }
+            set {
+                this.isCISContractorFieldSpecified = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -33850,6 +33953,14 @@ namespace Intuit.Ipp.Data {
         private string gSTINField;
         
         private string gSTRegistrationTypeField;
+        
+        private bool isSubContractorField;
+        
+        private bool isSubContractorFieldSpecified;
+        
+        private string subcontractorTypeField;
+        
+        private string cISRateField;
         
         /// <remarks/>
         /// <summary>
@@ -34479,6 +34590,60 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.gSTRegistrationTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO only
+        /// Description: True if the vendor is subcontractor
+        /// 
+        /// </summary>
+        public bool IsSubContractor {
+            get {
+                return this.isSubContractorField;
+            }
+            set {
+                this.isSubContractorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool IsSubContractorSpecified {
+            get {
+                return this.isSubContractorFieldSpecified;
+            }
+            set {
+                this.isSubContractorFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the Subcontractor type. Applicable only for UK region, values are defined in the SubcontractorTypeEnum.
+        /// </summary>
+        public string SubcontractorType {
+            get {
+                return this.subcontractorTypeField;
+            }
+            set {
+                this.subcontractorTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Specifies the CIS Rate. Applicable only for UK region, values are defined in the CISRateEnum.
+        /// </summary>
+        public string CISRate {
+            get {
+                return this.cISRateField;
+            }
+            set {
+                this.cISRateField = value;
             }
         }
     }

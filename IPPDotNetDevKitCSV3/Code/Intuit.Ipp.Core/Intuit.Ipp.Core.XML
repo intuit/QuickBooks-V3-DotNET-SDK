@@ -132,6 +132,12 @@
             Specifies the Default Configuration Reader implmentation used by the SDK.
             </summary>
         </member>
+        <member name="M:Intuit.Ipp.Core.Configuration.LocalConfigReader.#ctor(System.String)">
+            <summary>
+            Get Appsettings.json path
+            </summary>
+            <param name="path"></param>
+        </member>
         <member name="M:Intuit.Ipp.Core.Configuration.LocalConfigReader.ReadConfiguration">
             <summary>
             Reads the configuration from the config file and converts it to custom 
