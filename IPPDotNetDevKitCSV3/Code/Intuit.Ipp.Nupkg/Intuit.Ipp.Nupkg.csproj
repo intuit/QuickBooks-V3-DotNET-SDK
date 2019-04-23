@@ -4,7 +4,7 @@
     <GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
     <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-    <LibTargetFrameworks>netstandard2.0</LibTargetFrameworks>
+    <LibTargetFrameworks>netstandard2.0;net472;net461</LibTargetFrameworks>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
@@ -69,8 +69,22 @@
     <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
     <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+    
+    <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
+
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
   </ItemGroup>
 
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
