@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
+    <GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+    <LibTargetFrameworks>netstandard2.0</LibTargetFrameworks>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
+    <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
+    <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
+    <MainVersion>7.5.0.3</MainVersion>
+    <PackageVersionSuffix>beta</PackageVersionSuffix>
+    <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
+    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj"  AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net472"  PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net461"  PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
+  <Target Name="CopyPdbToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
+    <PropertyGroup>
+      <CurrentReference>%(ProjectReference.Identity)</CurrentReference>
+      <CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <AllPdbItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
+      <PdbFiles Include="@(AllPdbItems -> '%(RelativeDir)%(Filename).pdb')" Condition="%(extension) == '.dll'" />
+    </ItemGroup>
+
+    <Message Text="Copying @(PdbFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
+
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="@(PdbFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
+        <PackagePath>lib/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CopyXmlToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
+    <PropertyGroup>
+      <CurrentReference>%(ProjectReference.Identity)</CurrentReference>
+      <CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <AllXmlItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
+      <XmlFiles Include="@(AllXmlItems -> '%(RelativeDir)%(Filename).xml')" Condition="%(extension) == '.dll'" />
+    </ItemGroup>
+
+    <Message Text="Copying @(XmlFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
+
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="@(XmlFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
+        <PackagePath>lib/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+</Project>

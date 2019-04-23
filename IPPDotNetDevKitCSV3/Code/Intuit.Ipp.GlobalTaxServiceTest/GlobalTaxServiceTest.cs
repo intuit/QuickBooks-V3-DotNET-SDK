@@ -94,7 +94,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
                 //taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-                //Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);                
+                //Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
                 //Assert.IsNotNull(taxCodeAdded.TaxCodeId);
 
 
@@ -122,8 +122,8 @@ namespace Intuit.Ipp.GlobalTaxService.Test
                 taxCodetobeAdded.TaxCode = "taxC_" + Guid.NewGuid().ToString("N");
 
                 QueryService<TaxAgency> taxagency = new QueryService<TaxAgency>(context);
-                TaxAgency taxagencyResult = taxagency.ExecuteIdsQuery("select * from TaxAgency").FirstOrDefault<TaxAgency>();                          
-                
+                TaxAgency taxagencyResult = taxagency.ExecuteIdsQuery("select * from TaxAgency").FirstOrDefault<TaxAgency>();
+
 
 
                 List<TaxRateDetails> lstTaxRate = new List<TaxRateDetails>();
@@ -234,7 +234,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
             taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-           
+
 
             try
             {

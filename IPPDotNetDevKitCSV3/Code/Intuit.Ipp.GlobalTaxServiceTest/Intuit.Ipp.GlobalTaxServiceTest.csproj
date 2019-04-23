@@ -1,57 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    
-    <PropertyGroup>
-        <TargetFrameworks>netcoreapp2.0;net472</TargetFrameworks>
-        
-    </PropertyGroup>
 
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <OutputPath>$(SolutionDir)\artifacts\tests</OutputPath>
+  </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
+  </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
-        <Reference Include="System.Net.Http" />
-        
-    </ItemGroup>
-    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-        
-    </ItemGroup>
-    <ItemGroup>
-       <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
-       <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />      
-       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-       <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-       <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-       <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Reference Include="Intuit.Ipp.Core">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.Data">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.DataService">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.QueryFilter">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
-      </Reference>
-    
-      <Reference Include="Intuit.Ipp.Diagnostics">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.Exception">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.QueryFilter">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.Security">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
-      </Reference>
-      <Reference Include="Intuit.Ipp.Utility">
-        <HintPath>..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-    
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
+  </ItemGroup>
+
 </Project>

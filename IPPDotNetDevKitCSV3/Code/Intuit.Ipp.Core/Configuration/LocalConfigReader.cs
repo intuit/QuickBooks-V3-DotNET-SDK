@@ -1,23 +1,24 @@
-﻿//////*********************************************************
-//// <copyright file="LocalConfigReader.cs" company="Intuit">
-///*******************************************************************************
-// * Copyright 2016 Intuit
-// *
-// * Licensed under the Apache License, Version 2.0 (the "License");
-// * you may not use this file except in compliance with the License.
-// * You may obtain a copy of the License at
-// *
-// *     http://www.apache.org/licenses/LICENSE-2.0
-// *
-// * Unless required by applicable law or agreed to in writing, software
-// * distributed under the License is distributed on an "AS IS" BASIS,
-// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// * See the License for the specific language governing permissions and
-// * limitations under the License.
-// *******************************************************************************/
-//// <summary>This file contains SdkException.</summary>
-//// <summary>This file contains Local Config Reader.</summary>
-//////*********************************************************
+﻿////*********************************************************
+// <copyright file="LocalConfigReader.cs" company="Intuit">
+/*******************************************************************************
+ * Copyright 2016 Intuit
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implieC:\Users\nshrivastava\Documents\Git\QuickBooks-V3-DotNET-SDK\IPPDotNetDevKitCSV3\Code\Intuit.Ipp.Core\Configuration\LocalConfigReader.csd.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *******************************************************************************/
+//
+// <summary>This file contains Local Config Reader.</summary>
+////*********************************************************
+
 
 
 namespace Intuit.Ipp.Core.Configuration
@@ -36,7 +37,7 @@ namespace Intuit.Ipp.Core.Configuration
     using Microsoft.Extensions.Configuration;
 #endif
 
-    
+   
 
     /// <summary>
     /// Specifies the Default Configuration Reader implmentation used by the SDK.
@@ -47,17 +48,34 @@ namespace Intuit.Ipp.Core.Configuration
 #if NETSTANDARD2_0
         public string logPath { get; set; }
         IConfigurationRoot builder;
-        /// <summary>
-        /// Get Appsettings.json path
-        /// </summary>
-        /// <param name="path"></param>
         public LocalConfigReader(string path)
         {
             builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(path)
                 .Build();
-           
+            //var builder = new ConfigurationBuilder()
+            //    .AddJsonFile(path)
+            //    .Build();
+
+            //// First way  
+            //string value1 = _iconfiguration.GetSection("Data").GetSection("ConnectionString").Value;
+            //// Second way  
+            //string value2 = _iconfiguration.GetValue<string>("Data:ConnectionString");
+
+
+            //var apiSettings = builder.GetSection("Logger").GetSection("RequestLog");
+
+            ////var enableLogs = apiSettings["EnableLogs"];
+            //logPath = apiSettings["LogDirectory"];
+            //LogPath = LogDirectory.ToString();
+
+            //if (!Enum.TryParse(apiSettings["AppType"], true, out XeroApiAppType appType))
+            //{
+            //    throw new ArgumentOutOfRangeException(nameof(apiSettings), apiSettings["AppType"], "AppType did not match one of: private, public, partner");
+            //}
+
+            //AppType = appType;
 
 
         }
@@ -79,7 +97,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             IppConfiguration ippConfig = new IppConfiguration();
 
-#if NET472
+#if !NETSTANDARD2_0
             
             IppConfigurationSection ippConfigurationSection = IppConfigurationSection.Instance;
             if (ippConfigurationSection == null)
@@ -520,41 +538,51 @@ namespace Intuit.Ipp.Core.Configuration
 
             if ((!string.IsNullOrEmpty(retrySettingsLinear["Enable"])) && Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaLinearRetryMode(
-                                              Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                                               TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["RetryInterval"]))
                 {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
+                    if (!CoreHelper.IsInvalidaLinearRetryMode(
+                                                  Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                                                   TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                             TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
+                    }
                 }
             }
             else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaIncrementalRetryMode(
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["InitialInterval"]) && !string.IsNullOrEmpty(retrySettingsLinear["Increment"]))
+                {
+                    if (!CoreHelper.IsInvalidaIncrementalRetryMode(
                          Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
                          TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
                          TimeSpan.Parse(retrySettingsIncremental["Increment"])))
-                {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
-                        TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
-                        TimeSpan.Parse(retrySettingsIncremental["Increment"]));
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
+                            TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
+                            TimeSpan.Parse(retrySettingsIncremental["Increment"]));
+                    }
                 }
             }
             else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaExponentialRetryMode(
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["MinBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["MaxBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["DeltaBackoff"]))
+                {
+
+                    if (!CoreHelper.IsInvalidaExponentialRetryMode(
                           Convert.ToInt32(retrySettingsExponential["RetryCount"]),
                           TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
                           TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
                           TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"])))
-                {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsExponential["RetryCount"]),
-                        TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
-                        TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
-                        TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsExponential["RetryCount"]),
+                            TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
+                            TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
+                            TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
+                    }
                 }
             }
             
