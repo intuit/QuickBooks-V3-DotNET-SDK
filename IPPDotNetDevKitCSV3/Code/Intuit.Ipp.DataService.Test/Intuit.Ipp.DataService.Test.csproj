@@ -10,6 +10,10 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +25,7 @@
     <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
   </ItemGroup>
 
 </Project>

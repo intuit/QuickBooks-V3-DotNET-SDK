@@ -538,41 +538,51 @@ namespace Intuit.Ipp.Core.Configuration
 
             if ((!string.IsNullOrEmpty(retrySettingsLinear["Enable"])) && Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaLinearRetryMode(
-                                              Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                                               TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["RetryInterval"]))
                 {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsLinear["RetryCount"]),
-                         TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
+                    if (!CoreHelper.IsInvalidaLinearRetryMode(
+                                                  Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                                                   TimeSpan.Parse(retrySettingsLinear["RetryInterval"])))
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsLinear["RetryCount"]),
+                             TimeSpan.Parse(retrySettingsLinear["RetryInterval"]));
+                    }
                 }
             }
             else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaIncrementalRetryMode(
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["InitialInterval"]) && !string.IsNullOrEmpty(retrySettingsLinear["Increment"]))
+                {
+                    if (!CoreHelper.IsInvalidaIncrementalRetryMode(
                          Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
                          TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
                          TimeSpan.Parse(retrySettingsIncremental["Increment"])))
-                {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
-                        TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
-                        TimeSpan.Parse(retrySettingsIncremental["Increment"]));
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
+                            TimeSpan.Parse(retrySettingsIncremental["InitialInterval"]),
+                            TimeSpan.Parse(retrySettingsIncremental["Increment"]));
+                    }
                 }
             }
             else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
             {
-                if (!CoreHelper.IsInvalidaExponentialRetryMode(
+                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["MinBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["MaxBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["DeltaBackoff"]))
+                {
+
+                    if (!CoreHelper.IsInvalidaExponentialRetryMode(
                           Convert.ToInt32(retrySettingsExponential["RetryCount"]),
                           TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
                           TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
                           TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"])))
-                {
-                    ippConfig.RetryPolicy = new IntuitRetryPolicy(
-                        Convert.ToInt32(retrySettingsExponential["RetryCount"]),
-                        TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
-                        TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
-                        TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
+                    {
+                        ippConfig.RetryPolicy = new IntuitRetryPolicy(
+                            Convert.ToInt32(retrySettingsExponential["RetryCount"]),
+                            TimeSpan.Parse(retrySettingsExponential["MinBackoff"]),
+                            TimeSpan.Parse(retrySettingsExponential["MaxBackoff"]),
+                            TimeSpan.Parse(retrySettingsExponential["DeltaBackoff"]));
+                    }
                 }
             }
             
