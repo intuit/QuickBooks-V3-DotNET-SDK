@@ -16,10 +16,14 @@
 	<DefineConstants>NET472;NETFULL</DefineConstants>
   <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 </PropertyGroup>
-  
-  
 
- 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net461'">
+    <DefineConstants>NET461;NETFULL</DefineConstants>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+
+
 
 
 </Project>
