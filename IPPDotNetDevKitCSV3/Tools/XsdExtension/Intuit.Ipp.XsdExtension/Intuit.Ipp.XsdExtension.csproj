@@ -9,6 +9,9 @@
     <DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
     <AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="App.config" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DevDefined.OAuth" Version="0.2" />
