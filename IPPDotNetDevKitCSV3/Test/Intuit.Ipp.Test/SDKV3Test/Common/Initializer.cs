@@ -118,6 +118,10 @@ namespace Intuit.Ipp.Test
                     return serviceContext;
 
                 }
+                else
+                {
+                    throw;
+                }
             }
 
         }
