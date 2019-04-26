@@ -29,25 +29,21 @@ namespace Intuit.Ipp.Test
         {
             var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
             var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
-            if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
-            {
-                string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
-                var jObj = JObject.Parse(jsonFile);
-                jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
-                jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
-                
-                string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
-                File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
-                //tokenDict.Clear();
-                var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
-                return serviceContext;
-            }
-           else
-            {
-                return null;
-            }
+
+            FileInfo fileinfo = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+            string jsonFile = File.ReadAllText(fileinfo.FullName);
+            var jObj = JObject.Parse(jsonFile);
+            jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+            jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+
+            string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+            File.WriteAllText(fileinfo.FullName, output);
+            //tokenDict.Clear();
+            var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
+            return serviceContext;
+
         }
-         internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
+        internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
         {
             try
             {
@@ -73,25 +69,22 @@ namespace Intuit.Ipp.Test
             {
                 if (ex.Message == "Unauthorized-401")
                 {
-                    var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
-                    var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
-                    if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
-                    {
-                        string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
-                        var jObj = JObject.Parse(jsonFile);
-                        jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
-                        jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
-                        string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
-                        File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
-                        //tokenDict.Clear();
-                        var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
-                        Add(serviceContext, entity);
-                        return entity;
-                    }
-                    else
-                    {
-                        return default(T);
-                    }
+                    //var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
+                    //var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
+                    //if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
+                    //{
+                    //    string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
+                    //    var jObj = JObject.Parse(jsonFile);
+                    //    jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                    //    jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+                    //    string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+                    //    File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
+                    //    //tokenDict.Clear();
+                    //    var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Add(serviceContext, entity);
+                    return entityResponse;
+
 
                 }
                 else
@@ -102,43 +95,121 @@ namespace Intuit.Ipp.Test
 
         }
 
-      internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
+        internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                DataService.DataService service = new DataService.DataService(context);
 
-            ReadOnlyCollection<T> entityList = service.FindAll(entity, startPosition, maxResults);
+                ReadOnlyCollection<T> entityList = service.FindAll(entity, startPosition, maxResults);
 
-            return entityList.ToList<T>();
+                return entityList.ToList<T>();
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    List<T> entityResponse = FindAll<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static List<T> FindByLevel<T>(ServiceContext context, T entity) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                DataService.DataService service = new DataService.DataService(context);
 
-            ReadOnlyCollection<T> entityList = service.FindByLevel(entity);
+                ReadOnlyCollection<T> entityList = service.FindByLevel(entity);
 
-            return entityList.ToList<T>();
+                return entityList.ToList<T>();
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    List<T> entityResponse = FindByLevel<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static List<T> FindByParentId<T>(ServiceContext context, T entity) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                DataService.DataService service = new DataService.DataService(context);
 
-            ReadOnlyCollection<T> entityList = service.FindByParentId(entity);
+                ReadOnlyCollection<T> entityList = service.FindByParentId(entity);
 
-            return entityList.ToList<T>();
+                return entityList.ToList<T>();
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    List<T> entityResponse = FindByParentId<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static T FindById<T>(ServiceContext context, T entity) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
-            T foundEntity = service.FindById(entity);
+            try
+            {
+                DataService.DataService service = new DataService.DataService(context);
+                T foundEntity = service.FindById(entity);
 
-            return foundEntity;
+                return foundEntity;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = FindById<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static T Update<T>(ServiceContext context, T entity) where T : IEntity
         {
+            try
+            { 
             //initializing the dataservice object with servicecontext
             DataService.DataService service = new DataService.DataService(context);
 
@@ -146,21 +217,57 @@ namespace Intuit.Ipp.Test
             T updated = service.Update<T>(entity);
 
             return updated;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Update<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
-        
+
         internal static T UpdateAccountOnTxnsFrance<T>(ServiceContext context, T entity) where T : IEntity
         {
-            //initializing the dataservice object with servicecontext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                //initializing the dataservice object with servicecontext
+                DataService.DataService service = new DataService.DataService(context);
 
-            //updating the entity
-            // update account for historical transactions 
-            T updated = service.UpdateAccountOnTxns<T>(entity);
+                //updating the entity
+                // update account for historical transactions 
+                T updated = service.UpdateAccountOnTxns<T>(entity);
 
-            return updated;
+                return updated;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = UpdateAccountOnTxnsFrance<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
-       
+
 
         internal static T DonotUpdateAccountOnTxnsFrance<T>(ServiceContext context, T entity) where T : IEntity
         {
@@ -177,25 +284,65 @@ namespace Intuit.Ipp.Test
 
         internal static T SparseUpdate<T>(ServiceContext context, T entity) where T : IEntity
         {
-            //initializing the dataservice object with servicecontext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
 
-            //updating the entity
-            T updated = service.Update<T>(entity);
+                //initializing the dataservice object with servicecontext
+                DataService.DataService service = new DataService.DataService(context);
 
-            return updated;
+                //updating the entity
+                T updated = service.Update<T>(entity);
+
+                return updated;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = SparseUpdate<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static T Delete<T>(ServiceContext context, T entity) where T : IEntity
         {
-            //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                //Initializing the Dataservice object with ServiceContext
+                DataService.DataService service = new DataService.DataService(context);
 
-            //Deleting the Bill using the service
-            T deleted = service.Delete<T>(entity);
+                //Deleting the Bill using the service
+                T deleted = service.Delete<T>(entity);
 
-            return deleted;
+                return deleted;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Delete<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
+    
 
 
         internal static T Void<T>(ServiceContext context, T entity) where T : IEntity
@@ -213,8 +360,21 @@ namespace Intuit.Ipp.Test
                 Assert.IsNotNull(found);
                 return found;
             }
-            catch (IdsException)
+            catch (IdsException ex)
             {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Delete<T>(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    
+                }
             }
 
             return entity;
@@ -693,7 +853,7 @@ namespace Intuit.Ipp.Test
             return returnedEntity;
         }
 
-     
+
         internal static T UpdateAccountOnTxnsAsyncFrance<T>(ServiceContext context, T entity) where T : IEntity
         {
             //Initializing the Dataservice object with ServiceContext
@@ -958,13 +1118,13 @@ namespace Intuit.Ipp.Test
             {
                 DataService.DataService service = new DataService.DataService(context);
                 Account account;
-                
+
                 account = QBOHelper.CreateAccount(context, accountType, classification);
                 account.Classification = classification;
                 account.AccountType = accountType;
                 Account createdAccount = service.Add<Account>(account);
                 typeOfAccount = createdAccount;
-                
+
 
             }
 
@@ -1001,7 +1161,7 @@ namespace Intuit.Ipp.Test
                         typeOfPurchase = createdPurchase;
                     }
                 }
-                
+
             }
 
             return typeOfPurchase;
@@ -1036,7 +1196,7 @@ namespace Intuit.Ipp.Test
                         typeOfPayment = createdPurchase;
                     }
                 }
-               
+
             }
 
             return typeOfPayment;
@@ -1062,11 +1222,11 @@ namespace Intuit.Ipp.Test
             {
                 DataService.DataService service = new DataService.DataService(context);
                 Item item;
-                
-                    item = QBOHelper.CreateItem(context);
-                    Item createdItem = service.Add<Item>(item);
-                    typeOfItem = createdItem;
-                
+
+                item = QBOHelper.CreateItem(context);
+                Item createdItem = service.Add<Item>(item);
+                typeOfItem = createdItem;
+
 
             }
 
@@ -1075,6 +1235,6 @@ namespace Intuit.Ipp.Test
 
 
 
-       
+
     }
 }
