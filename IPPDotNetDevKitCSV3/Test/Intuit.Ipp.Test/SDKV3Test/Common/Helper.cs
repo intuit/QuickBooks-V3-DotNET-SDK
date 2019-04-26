@@ -17,16 +17,43 @@ using Intuit.Ipp.Security;
 using System.Configuration;
 using Intuit.Ipp.OAuth2PlatformClient;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace Intuit.Ipp.Test
 {
     public class Helper
     {
+        internal static ServiceContext GetNewTokens_ServiceContext()
+        {
+            var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
+            var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
+            if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
+            {
+                string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
+                var jObj = JObject.Parse(jsonFile);
+                jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+                //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
+                //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
+                string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+                File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
+                //tokenDict.Clear();
+                var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
+                return serviceContext;
+            }
+           else
+            {
+                return null;
+            }
+        }
          internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
         {
-            
-            //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                //Initializing the Dataservice object with ServiceContext
+                DataService.DataService service = new DataService.DataService(context);
 
                 //Adding the Bill using Dataservice object
 
@@ -42,7 +69,40 @@ namespace Intuit.Ipp.Test
                 }
 
                 return added;
-           
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+                    var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
+                    var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
+                    if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
+                    {
+                        string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
+                        var jObj = JObject.Parse(jsonFile);
+                        jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                        jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+                        //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
+                        //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
+                        string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+                        File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
+                        //tokenDict.Clear();
+                        var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
+                        Add(serviceContext, entity);
+                        return entity;
+                    }
+                    else
+                    {
+                        return default(T);
+                    }
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
         }
 
       internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
@@ -1015,6 +1075,8 @@ namespace Intuit.Ipp.Test
 
             return typeOfItem;
         }
+
+
 
        
     }

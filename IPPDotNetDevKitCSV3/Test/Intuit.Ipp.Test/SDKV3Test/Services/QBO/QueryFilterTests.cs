@@ -30,7 +30,7 @@ namespace Intuit.Ipp.Test.QBO
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            serviceContextoAuth = Initializer.InitializeQueryServiceContextUsingoAuth();
+            serviceContextoAuth = Initializer.InitializeQBOServiceContextUsingoAuth();
             customerQueryService = new QueryService<Customer>(serviceContextoAuth);
             invoiceQueryService = new QueryService<Invoice>(serviceContextoAuth);
             DataService.DataService service = new DataService.DataService(serviceContextoAuth);

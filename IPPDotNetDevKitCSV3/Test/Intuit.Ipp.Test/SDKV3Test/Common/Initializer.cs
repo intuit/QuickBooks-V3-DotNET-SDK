@@ -14,89 +14,110 @@ using Intuit.Ipp.Data;
 using Intuit.Ipp.OAuth2PlatformClient;
 using Microsoft.Extensions.Configuration;
 using Intuit.Ipp.Core.Configuration;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Intuit.Ipp.Test
 {
     public class Initializer
     {
-       
+
         static OAuth2Client oauthClient = null;
         public static Dictionary<string, string> tokenDict = new Dictionary<string, string>();
-       
-        IConfigurationRoot builder;
+        public static string pathFile = "";
+        static int counter = 0;
+
+        static IConfigurationRoot builder;
         public Initializer(string path)
         {
-            IppConfiguration ippConfig = new IppConfiguration();
+            pathFile = path;
             builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(path)
-                .Build();
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .AddJsonFile(path, optional: true, reloadOnChange: true)
+                 .Build();
 
 
-            tokenDict.Add("accessTokenQBO", builder.GetSection("Oauth2Keys")["AccessToken"]);
-            tokenDict.Add("refreshTokenQBO", builder.GetSection("Oauth2Keys")["RefreshToken"]);
-            tokenDict.Add("clientIdQBO", builder.GetSection("Oauth2Keys")["ClientId"]);
-            tokenDict.Add("clientSecretQBO", builder.GetSection("Oauth2Keys")["ClientSecret"]);
-            tokenDict.Add("realmIdIAQBO", builder.GetSection("Oauth2Keys")["RealmId"]);
-            tokenDict.Add("redirectUrl", builder.GetSection("Oauth2Keys")["RedirectUrl"]);
-            tokenDict.Add("qboBaseUrl", builder.GetSection("Oauth2Keys")["QBOBaseUrl"])
-                
+            AuthorizationKeysQBO.accessTokenQBO= builder.GetSection("Oauth2Keys")["AccessToken"];
+
+            AuthorizationKeysQBO.refreshTokenQBO = builder.GetSection("Oauth2Keys")["RefreshToken"];
+            AuthorizationKeysQBO.clientIdQBO = builder.GetSection("Oauth2Keys")["ClientId"];
+            AuthorizationKeysQBO.clientSecretQBO = builder.GetSection("Oauth2Keys")["ClientSecret"];
+            AuthorizationKeysQBO.realmIdIAQBO = builder.GetSection("Oauth2Keys")["RealmId"];
+            AuthorizationKeysQBO.redirectUrl = builder.GetSection("Oauth2Keys")["RedirectUrl"];
+            AuthorizationKeysQBO.qboBaseUrl = builder.GetSection("Oauth2Keys")["QBOBaseUrl"];
+            AuthorizationKeysQBO.appEnvironment = builder.GetSection("Oauth2Keys")["Environment"];
+
+            counter++;
+
 
         }
         public Initializer() : this("Appsettings.json")
         {
+
         }
 
 
+        static Initializer()
+        { }
 
 
-
-        //private static void Initialize()
-        //{
-
-        //    //Oauth1 tokens
-        //    //accessTokenQBO = ConfigurationManager.AppSettings["accessTokenQBO"];
-        //    //refreshTokenQBO  = ConfigurationManager.AppSettings["refreshTokenQBO"];
-        //    //tokenDict.Add("accessToken", accessTokenQBO);
-        //    //tokenDict.Add("refreshToken", refreshTokenQBO);
-        //    //////Ouath2 tokens
-        //    //accessTokenQBO = ConfigurationManager.AppSettings["accessTokenQBO"];
-        //    //refreshTokenQBO = ConfigurationManager.AppSettings["refreshTokenQBO"];
-        //    //realmIdIAQBO = ConfigurationManager.AppSettings["realmIdIAQBO"];
-        //    //clientIdQBO = ConfigurationManager.AppSettings["clientIdKeyQBO"];
-        //    //clientSecretQBO = ConfigurationManager.AppSettings["clientSecretQBO"];
-
-
-
-        //}
+        private static void Initialize()
+        {
+            Initializer initializer = new Initializer();
+        }
 
 
         internal static ServiceContext InitializeQBOServiceContextUsingoAuth()
         {
+            if (counter==0)
+                //if(tokenDict.Count == 0)
+                Initialize();
+            else
+            {
+                string jsonFile = File.ReadAllText(pathFile);
+                var jObj = JObject.Parse(jsonFile);
+                AuthorizationKeysQBO.accessTokenQBO= jObj["Oauth2Keys"]["AccessToken"].ToString();
+                AuthorizationKeysQBO.refreshTokenQBO = jObj["Oauth2Keys"]["RefreshToken"].ToString();
+            }
+
+            ServiceContext context = null;
+            OAuth2RequestValidator reqValidator = null;
             //ValidateToken();
             //Initialize();
             ////Oauth1 validator
             // OAuthRequestValidator reqValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, consumerKeySecretQBO);
             try
             {
-                ////Oauth2 validator
-                OAuth2RequestValidator reqValidator = new OAuth2RequestValidator(tokenDict["accessTokenQBO"]);
-                ServiceContext context = new ServiceContext(tokenDict["realmIdIAQBO"], IntuitServicesType.QBO, reqValidator);
+
+                reqValidator = new OAuth2RequestValidator(AuthorizationKeysQBO.accessTokenQBO);
+                context = new ServiceContext(AuthorizationKeysQBO.realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
                 context.IppConfiguration.MinorVersion.Qbo = "37";
-                DataService service = new DataService(context);
+                DataService.DataService service = new DataService.DataService(context);
+                service.FindAll<Customer>(new Customer());
+
                 //Add a dataservice call to check 401
+
                 return context;
             }
             catch (IdsException ex)
             {
                 if (ex.Message == "Unauthorized-401")
                 {
-                    var tokenResp = oauthClient.RefreshTokenAsync(tokenDict["refreshTokenQBO"]).Result;
+                    oauthClient = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
+                    var tokenResp = oauthClient.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
                     if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
                     {
-                        tokenDict["accessTokenQBO"] = tokenResp.AccessToken;
-                        tokenDict["refreshTokenQBO"] = tokenResp.RefreshToken;
-                        //?=InitializeQBOServiceContextUsingoAuth();
+                        string jsonFile = File.ReadAllText(pathFile);
+                        var jObj = JObject.Parse(jsonFile);
+                        jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                        jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+                        //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
+                        //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
+                        string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+                        File.WriteAllText(pathFile, output);
+                        //tokenDict.Clear();
+                        InitializeQBOServiceContextUsingoAuth();
+                        return context;
                     }
                     else
                     {
@@ -133,14 +154,14 @@ namespace Intuit.Ipp.Test
 
         //}
 
-        //internal static string ValidateToken()
+        //internal static string ValidateToken(ServiceContext context=null)
         //{
         //    try
         //    {
-        //        if (!tokenDict.ContainsKey("accessToken"))
+        //        if (!tokenDict.ContainsKey("accessTokenQBO"))
         //        {
-        //            OAuth2RequestValidator oAuthValidator = new OAuth2RequestValidator(tokenDict["accessToken"]);
-        //            DataService service = new DataService(context);
+        //            OAuth2RequestValidator oAuthValidator = new OAuth2RequestValidator(tokenDict["accessTokenQBO"]);
+        //            DataService.DataService service = new DataService.DataService(context);
 
         //        }
         //    }
@@ -148,12 +169,12 @@ namespace Intuit.Ipp.Test
         //    {
         //        if (ex.Message == "Unauthorized-401")
         //        {
-        //            var tokenResp = oauthClient.RefreshTokenAsync(tokenDict["refreshToken"]).Result;
+        //            var tokenResp = oauthClient.RefreshTokenAsync(tokenDict["refreshTokenQBO"]).Result;
         //            if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
         //            {
-        //                tokenDict["accessToken"] = tokenResp.AccessToken;
-        //                tokenDict["refreshToken"] = tokenResp.RefreshToken;
-        //                ValidateToken();
+        //                tokenDict["accessTokenQBO"] = tokenResp.AccessToken;
+        //                tokenDict["refreshTokenQBO"] = tokenResp.RefreshToken;
+        //                ValidateToken(context);
         //            }
         //            else
         //            {
@@ -165,9 +186,9 @@ namespace Intuit.Ipp.Test
         //        {
         //            return null;
         //        }
-              
+
         //    }
-        //    return tokenDict["accessToken"];
+        //    return tokenDict["accessTokenQBO"];
         //}
 
 
@@ -331,13 +352,13 @@ namespace Intuit.Ipp.Test
             //Adding the Customer using Dataservice object
             Customer addedCustomer = service.Add<Customer>(customer);
 
-            
+
 
             return addedCustomer;
         }
 
-        
-    
+
+
 
     }
 }
