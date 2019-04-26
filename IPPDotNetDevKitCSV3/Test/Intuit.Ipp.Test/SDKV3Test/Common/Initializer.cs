@@ -30,7 +30,7 @@ namespace Intuit.Ipp.Test
         static IConfigurationRoot builder;
         public Initializer(string path)
         {
-            AuthorizationKeysQBO.tokenFilePath = path;
+            AuthorizationKeysQBO.tokenFilePath = Path.Combine(Directory.GetCurrentDirectory(),"TokenStore.json");
             builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile(path, optional: true, reloadOnChange: true)
@@ -75,7 +75,8 @@ namespace Intuit.Ipp.Test
             else
             {
                 //Load the second json file
-                string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
+                FileInfo f = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+                string jsonFile = File.ReadAllText(f.FullName);
                 var jObj = JObject.Parse(jsonFile);
                 AuthorizationKeysQBO.accessTokenQBO= jObj["Oauth2Keys"]["AccessToken"].ToString();
                 AuthorizationKeysQBO.refreshTokenQBO = jObj["Oauth2Keys"]["RefreshToken"].ToString();
@@ -94,7 +95,7 @@ namespace Intuit.Ipp.Test
                 context = new ServiceContext(AuthorizationKeysQBO.realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
                 context.IppConfiguration.MinorVersion.Qbo = "37";
                 DataService.DataService service = new DataService.DataService(context);
-                service.FindAll<Customer>(new Customer());
+                //service.FindAll<Customer>(new Customer());
 
                 //Add a dataservice call to check 401
 
@@ -108,27 +109,28 @@ namespace Intuit.Ipp.Test
                     var tokenResp = oauthClient.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
                     if (tokenResp.AccessToken != null && tokenResp.RefreshToken != null)
                     {
-                        string jsonFile = File.ReadAllText(pathFile);
+                        FileInfo f = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+                        string jsonFile = File.ReadAllText(f.FullName);
                         var jObj = JObject.Parse(jsonFile);
                         jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
                         jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
                         //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
                         //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
                         string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
-                        File.WriteAllText(pathFile, output);
+                        File.WriteAllText(f.FullName, output);
                         //tokenDict.Clear();
                         InitializeQBOServiceContextUsingoAuth();
                         return context;
                     }
                     else
                     {
-                        return null;
+                        throw;
                     }
 
                 }
                 else
                 {
-                    return null;
+                    throw;
                 }
 
             }
