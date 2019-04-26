@@ -140,10 +140,10 @@ namespace Intuit.Ipp.Test.QBO
             DataService.Batch batch = service.CreateNewBatch();
             batch.Add(addedCustomer, "UpdateCustomer", OperationEnum.update);
             batch.Add(invoice, "AddInvoice", OperationEnum.create);
-            batch.Add(termContext.ExecuteIdsQuery("Select top 5 from term").ToString(), "QueryTerm");
-            batch.Add(taxRateContext.ExecuteIdsQuery("Select top 5 from taxrate").ToString(), "QueryTaxRate");
-            batch.Add(taxCodeContext.ExecuteIdsQuery("Select top 5 from taxcode").ToString(), "QueryTaxCode");
-            batch.Add(itemContext.ExecuteIdsQuery("Select top 5 from item").ToString(), "QueryItem");
+            batch.Add(termContext.ExecuteIdsQuery("Select * from term").ToString(), "QueryTerm");
+            batch.Add(taxRateContext.ExecuteIdsQuery("Select * from taxrate").ToString(), "QueryTaxRate");
+            batch.Add(taxCodeContext.ExecuteIdsQuery("Select * from taxcode").ToString(), "QueryTaxCode");
+            batch.Add(itemContext.ExecuteIdsQuery("Select * from item").ToString(), "QueryItem");
 
             batch.Execute();
             foreach (IntuitBatchResponse resp in batch.IntuitBatchItemResponses)
