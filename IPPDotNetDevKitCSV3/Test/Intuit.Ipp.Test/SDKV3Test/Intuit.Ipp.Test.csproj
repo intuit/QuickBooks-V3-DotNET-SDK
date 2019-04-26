@@ -70,6 +70,11 @@
         <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\IppDotNetSdkForQuickBooksApiV3.dll</HintPath>
       </Reference>
     </ItemGroup>
+    <ItemGroup>
+      <None Update="Appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
     
 
 </Project>

@@ -74,6 +74,7 @@ namespace Intuit.Ipp.Test
                 Initialize();
             else
             {
+                //Load the second json file
                 string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
                 var jObj = JObject.Parse(jsonFile);
                 AuthorizationKeysQBO.accessTokenQBO= jObj["Oauth2Keys"]["AccessToken"].ToString();
