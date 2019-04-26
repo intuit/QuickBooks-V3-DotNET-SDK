@@ -48,7 +48,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             QBOHelper.VerifyCustomer(customer, added);
         }
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void CustomerAddTestsUsingoAuthInvalid()
         {
             try

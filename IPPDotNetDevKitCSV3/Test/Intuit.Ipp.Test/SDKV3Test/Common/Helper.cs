@@ -388,57 +388,133 @@ namespace Intuit.Ipp.Test
             List<IEntity> entityList = new List<IEntity>();
             entityList.Add(entity);
 
-            IntuitCDCResponse response = service.CDC(entityList, changedSince);
-            if (response.entities.Count == 0)
-            {
-                return null;
+            try
+            { 
+                IntuitCDCResponse response = service.CDC(entityList, changedSince);
+                if (response.entities.Count == 0)
+                {
+                    return null;
+                }
+                //Retrieving the entity List
+                List<T> found = response.getEntity(entity.GetType().Name).Cast<T>().ToList();
+                Assert.IsNotNull(found);
+                return found;
             }
-            //Retrieving the entity List
-            List<T> found = response.getEntity(entity.GetType().Name).Cast<T>().ToList();
-            Assert.IsNotNull(found);
-            return found;
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    List<T> entityResponse = CDC<T>(serviceContext, entity, changedSince);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static Attachable Upload(ServiceContext context, Attachable attachable, System.IO.Stream stream)
         {
-            //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                //Initializing the Dataservice object with ServiceContext
+                DataService.DataService service = new DataService.DataService(context);
 
-            Attachable uploaded = service.Upload(attachable, stream);
-            return uploaded;
+                Attachable uploaded = service.Upload(attachable, stream);
+                return uploaded;
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Upload(serviceContext, attachable, stream);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static byte[] Download(ServiceContext context, Attachable entity)
         {
-            //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            try
+            {
+                //Initializing the Dataservice object with ServiceContext
+                DataService.DataService service = new DataService.DataService(context);
 
-            return service.Download(entity);
+                return service.Download(entity);
+            }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var entityResponse = Download(serviceContext, entity);
+                    return entityResponse;
+
+
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         internal static ReadOnlyCollection<IntuitBatchResponse> BatchTest<T>(ServiceContext context, Dictionary<OperationEnum, object> operationDictionary) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
-            List<T> addedList = new List<T>();
-            List<T> newList = new List<T>();
-
-
-            QueryService<T> entityContext = new QueryService<T>(context);
-
-            DataService.Batch batch = service.CreateNewBatch();
-
-            foreach (KeyValuePair<OperationEnum, object> entry in operationDictionary)
+            try
             {
-                if (entry.Value.GetType().Name.Equals(typeof(T).Name))
-                    batch.Add(entry.Value as IEntity, entry.Key.ToString() + entry.Value.GetType().Name, entry.Key);
-                else
-                    batch.Add(entry.Value as string, "Query" + typeof(T).Name);
+                DataService.DataService service = new DataService.DataService(context);
+                List<T> addedList = new List<T>();
+                List<T> newList = new List<T>();
+
+
+                QueryService<T> entityContext = new QueryService<T>(context);
+
+                DataService.Batch batch = service.CreateNewBatch();
+
+                foreach (KeyValuePair<OperationEnum, object> entry in operationDictionary)
+                {
+                    if (entry.Value.GetType().Name.Equals(typeof(T).Name))
+                        batch.Add(entry.Value as IEntity, entry.Key.ToString() + entry.Value.GetType().Name, entry.Key);
+                    else
+                        batch.Add(entry.Value as string, "Query" + typeof(T).Name);
+                }
+
+
+                batch.Execute();
+
+                return batch.IntuitBatchItemResponses;
             }
+            catch (IdsException ex)
+            {
+                if (ex.Message == "Unauthorized-401")
+                {
+
+                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    ReadOnlyCollection<IntuitBatchResponse> entityResponse = BatchTest<T>(serviceContext, operationDictionary);
+                    return entityResponse;
 
 
-            batch.Execute();
-
-            return batch.IntuitBatchItemResponses;
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
 
