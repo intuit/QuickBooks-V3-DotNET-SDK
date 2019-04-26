@@ -84,10 +84,6 @@ namespace Intuit.Ipp.Test
 
             ServiceContext context = null;
             OAuth2RequestValidator reqValidator = null;
-            //ValidateToken();
-            //Initialize();
-            ////Oauth1 validator
-            // OAuthRequestValidator reqValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, consumerKeySecretQBO);
             try
             {
 
@@ -95,7 +91,7 @@ namespace Intuit.Ipp.Test
                 context = new ServiceContext(AuthorizationKeysQBO.realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
                 context.IppConfiguration.MinorVersion.Qbo = "37";
                 DataService.DataService service = new DataService.DataService(context);
-                //service.FindAll<Customer>(new Customer());
+                var compinfo= service.FindAll<CompanyInfo>(new CompanyInfo());
 
                 //Add a dataservice call to check 401
 

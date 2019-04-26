@@ -35,8 +35,7 @@ namespace Intuit.Ipp.Test
                 var jObj = JObject.Parse(jsonFile);
                 jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
                 jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
-                //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
-                //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
+                
                 string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
                 File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
                 //tokenDict.Clear();
@@ -82,8 +81,6 @@ namespace Intuit.Ipp.Test
                         var jObj = JObject.Parse(jsonFile);
                         jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
                         jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
-                        //tokenDict["accessTokenQBO"] = jObj["Oauth2Keys"]["AccessToken"].ToString();
-                        //tokenDict["refreshTokenQBO"] = jObj["Oauth2Keys"]["RefreshToken"].ToString();
                         string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
                         File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
                         //tokenDict.Clear();
