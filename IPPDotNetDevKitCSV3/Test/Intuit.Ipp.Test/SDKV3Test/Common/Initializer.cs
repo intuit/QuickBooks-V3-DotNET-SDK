@@ -30,7 +30,7 @@ namespace Intuit.Ipp.Test
         static IConfigurationRoot builder;
         public Initializer(string path)
         {
-            pathFile = path;
+            AuthorizationKeysQBO.tokenFilePath = path;
             builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile(path, optional: true, reloadOnChange: true)
@@ -74,7 +74,7 @@ namespace Intuit.Ipp.Test
                 Initialize();
             else
             {
-                string jsonFile = File.ReadAllText(pathFile);
+                string jsonFile = File.ReadAllText(AuthorizationKeysQBO.tokenFilePath);
                 var jObj = JObject.Parse(jsonFile);
                 AuthorizationKeysQBO.accessTokenQBO= jObj["Oauth2Keys"]["AccessToken"].ToString();
                 AuthorizationKeysQBO.refreshTokenQBO = jObj["Oauth2Keys"]["RefreshToken"].ToString();
