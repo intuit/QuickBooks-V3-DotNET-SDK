@@ -214,7 +214,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
             batchEntries.Add(OperationEnum.create, QBOHelper.CreateAttachable(qboContextoAuth));
 
-            batchEntries.Add(OperationEnum.update, QBOHelper.UpdateAttachable(qboContextoAuth, existing));
+            //batchEntries.Add(OperationEnum.update, QBOHelper.UpdateAttachable(qboContextoAuth, existing));
 
             batchEntries.Add(OperationEnum.query, "select * from Attachable");
 
