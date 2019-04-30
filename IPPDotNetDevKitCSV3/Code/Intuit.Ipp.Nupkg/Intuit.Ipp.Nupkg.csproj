@@ -9,7 +9,7 @@
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <MainVersion>7.5.0.3</MainVersion>
+    <MainVersion>7.5.1.0</MainVersion>
     <PackageVersionSuffix>beta</PackageVersionSuffix>
     <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <DebugType>full</DebugType>
@@ -71,11 +71,13 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
     <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
+    
+    
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
     
     <PackageReference Update="Newtonsoft.Json" Version="12.0.1" />
-
+   
   </ItemGroup>
   
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">

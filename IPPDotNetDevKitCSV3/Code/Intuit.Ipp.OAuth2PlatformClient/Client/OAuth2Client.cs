@@ -53,6 +53,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string CSRFToken { get; set; }
 
         /// <summary>
+        /// DiscoveryUrl
+        /// </summary>
+        public string DiscoveryUrl { get; set; }
+
+        /// <summary>
         ///// EnableLogging
         ///// </summary>
         //public bool EnableLogging { get; set; }
@@ -70,16 +75,33 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="clientID"></param>
         /// <param name="clientSecret"></param>
         /// <param name="redirectURI"></param>
-        /// <param name="environment"></param>
+        /// <param name="environment">This can either be sandbox, production or an actual discovery url</param>
         public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment)
         {
             ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
-            ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
+            if (environment != null && environment != "")
+            {
+                try
+                {
+                    ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
+                }
+                catch (Exception ex)
+                {
+                    ApplicationEnvironment = AppEnvironment.Default;
+                    DiscoveryUrl = environment;
+                }
+          
+
+             }
+               
 
             DiscoveryDoc = GetDiscoveryDoc();
+
         }
+
+       
 
         /// <summary>
         /// Gets Discovery Doc
@@ -87,7 +109,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public DiscoveryResponse GetDiscoveryDoc()
         {
-            DiscoveryClient discoveryClient = new DiscoveryClient(ApplicationEnvironment);
+            DiscoveryClient discoveryClient;
+            if (ApplicationEnvironment == AppEnvironment.Default)
+            {
+                discoveryClient = new DiscoveryClient(DiscoveryUrl);
+            }
+            else
+            {
+                discoveryClient = new DiscoveryClient(ApplicationEnvironment);
+            }
             return discoveryClient.Get();
         }
 
