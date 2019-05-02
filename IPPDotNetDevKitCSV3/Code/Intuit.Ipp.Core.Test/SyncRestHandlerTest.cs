@@ -82,7 +82,7 @@ namespace Intuit.Ipp.Core.Test
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
             IRestHandler handler = new SyncRestHandler(serviceContext);
-            string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+            string AccountId = "1";
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_TEXTXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
@@ -99,7 +99,7 @@ namespace Intuit.Ipp.Core.Test
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
             serviceContext.IppConfiguration.RetryPolicy = new IntuitRetryPolicy(3, TimeSpan.FromSeconds(2));
             IRestHandler handler = new SyncRestHandler(serviceContext);
-            string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+            string AccountId = "1";
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
@@ -115,12 +115,9 @@ namespace Intuit.Ipp.Core.Test
         [ExpectedException(typeof(InvalidTokenException))]
         public void GetResponseInvalidTokenExceptionTest()
         {
-            //OAuthRequestValidator validator = new OAuthRequestValidator("adfas", "afd", "adfas", "asdfa");
-            OAuth2RequestValidator validator = new OAuth2RequestValidator("bearertoken");
-            string realmId = ConfigurationManager.AppSettings["RealmIAQBO"];
-            ServiceContext serviceContext = new ServiceContext(realmId, IntuitServicesType.QBO, validator);
+            ServiceContext serviceContext = Initializer.InitializeServiceContextQbo("Invalid");
             IRestHandler handler = new SyncRestHandler(serviceContext);
-            string resourceUri = string.Format("v3/company/{0}/customer", serviceContext.RealmId);
+            string resourceUri = string.Format("v3/company/{0}/customer", AuthorizationKeysQBO.realmIdIAQBO);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             Intuit.Ipp.Data.Customer customer = new Data.Customer();
             HttpWebRequest request = handler.PrepareRequest(parameters, customer);
@@ -139,7 +136,7 @@ namespace Intuit.Ipp.Core.Test
             //Set timeout 10 milliseconds
             serviceContext.Timeout = 10;
             IRestHandler handler = new SyncRestHandler(serviceContext);
-            string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+            string AccountId = "1";
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_TEXTXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
@@ -157,7 +154,7 @@ namespace Intuit.Ipp.Core.Test
             //Set timeout 200 seconds
             serviceContext.Timeout = 200000; 
             IRestHandler handler = new SyncRestHandler(serviceContext);
-            string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+            string AccountId = "1";
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_TEXTXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
@@ -219,7 +216,7 @@ namespace Intuit.Ipp.Core.Test
             {
                 ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
                 IRestHandler handler = new SyncRestHandler(serviceContext);
-                string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+                string AccountId = "1";
                 string resourceUri = string.Format("v3/company/{0}/salesreceipt/3/", serviceContext.RealmId);
                 RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 HttpWebRequest request = handler.PrepareRequest(parameters, null, includeRequestId: false);

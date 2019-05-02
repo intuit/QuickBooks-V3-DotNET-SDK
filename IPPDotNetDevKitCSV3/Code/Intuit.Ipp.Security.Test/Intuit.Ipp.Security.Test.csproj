@@ -19,8 +19,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" />
+    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TokenStore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

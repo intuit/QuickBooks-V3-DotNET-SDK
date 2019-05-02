@@ -4,6 +4,7 @@
     <OutputPath>$(SolutionDir)\artifacts\tests</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Initializer.cs" />
     <Compile Remove="LocalConfigReaderTest.cs" />
     <Compile Remove="TestHelper.cs" />
   </ItemGroup>
@@ -28,6 +29,15 @@
     <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TokenStore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

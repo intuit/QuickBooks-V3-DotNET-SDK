@@ -67,7 +67,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Exception_should_be_handled_correctly()
         {
-            var handler = new NetworkHandler(new Exception("exception"));
+            var handler = new NetworkHandler(HttpStatusCode.BadRequest,"exception");
 
             var client = new UserInfoClient(
                 Endpoint,
@@ -76,9 +76,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var response = await client.GetAsync("token");
 
             Assert.AreEqual(true, response.IsError);
-            Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);
+            Assert.AreEqual(ResponseErrorType.Http, response.ErrorType);
             Assert.AreEqual("exception", response.Error);
-            Assert.IsNotNull(response.Exception);
+            Assert.IsNotNull(response.Error);
 
 
         }

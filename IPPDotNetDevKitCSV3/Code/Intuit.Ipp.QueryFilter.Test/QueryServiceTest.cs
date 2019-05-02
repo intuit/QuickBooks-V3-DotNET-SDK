@@ -10,6 +10,7 @@ using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
+using Intuit.Ipp.QueryFilter.Test.Common;
 
 namespace Intuit.Ipp.QueryFilter.Test
 {
@@ -32,13 +33,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         public QueryServiceTest()
         {
             this.dateTime = new DateTime(2012, 07, 10);
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            //string accessTokenSecretQBO = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            //string consumerKeyQBO = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            //string ConsumerSecretQBO = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO); this.serviceContext = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
             this.customerContext = new QueryService<Customer>(serviceContext);
             this.invoiceContext = new QueryService<Invoice>(serviceContext);
             this.accountContext = new QueryService<Account>(serviceContext);
@@ -518,6 +513,8 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod]
         public void ChangeDataTest()
         {
+            ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
+
             DataService.DataService service = new DataService.DataService(serviceContext);
             List<IEntity> entityList = new List<IEntity>();
             entityList.Add(new Customer());

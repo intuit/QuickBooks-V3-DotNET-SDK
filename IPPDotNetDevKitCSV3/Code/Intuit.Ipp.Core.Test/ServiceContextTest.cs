@@ -8,7 +8,7 @@ using System.Configuration;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.Utility;
 using System.IO;
-
+using Intuit.Ipp.Core.Test.Common;
 
 namespace Intuit.Ipp.Core.Test
 {
@@ -79,8 +79,9 @@ namespace Intuit.Ipp.Core.Test
             try
             {
                 //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
-                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
-                ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
+                //OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
+                //ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
+                ServiceContext context = Initializer.InitializeServiceContextQbo();
             }
             catch (System.Exception ex)
             {
@@ -168,8 +169,7 @@ namespace Intuit.Ipp.Core.Test
             try
             {
                 //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
-                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
-                ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
+                ServiceContext context = Initializer.InitializeServiceContextQbo();
                 context.Timeout = 100;
                 Assert.AreEqual(100, context.Timeout);
             }
@@ -188,8 +188,7 @@ namespace Intuit.Ipp.Core.Test
             try
             {
                 //OAuthRequestValidator oauthValidator = new OAuthRequestValidator(accessTokenQbo, accessTokenSecretQbo, consumerKeyQbo, consumerSecretQbo);
-                OAuth2RequestValidator oauthValidator = new OAuth2RequestValidator("bearertoken");
-                ServiceContext context = new ServiceContext(realmIdIAQbo, IntuitServicesType.QBO, oauthValidator);
+                ServiceContext context = Initializer.InitializeServiceContextQbo();
                 context.Timeout = null;
                 Assert.IsNull(context.Timeout);
             }

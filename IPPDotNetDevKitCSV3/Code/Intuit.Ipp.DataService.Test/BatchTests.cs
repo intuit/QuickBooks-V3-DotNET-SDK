@@ -22,10 +22,7 @@ namespace Intuit.Ipp.DataService.Test
         [TestMethod()]
         public void BatchTest()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];           
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
             context.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
             context.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
@@ -75,10 +72,7 @@ namespace Intuit.Ipp.DataService.Test
         [TestMethod()]
         public void batchtestall()
         {
-            string accesstokenqbo = ConfigurationManager.AppSettings["accesstokenqbo"];           
-            string realmiaqbo = ConfigurationManager.AppSettings["realmiaqbo"];
-            OAuth2RequestValidator oauthrequestvalidator = new OAuth2RequestValidator(accesstokenqbo);
-            ServiceContext context = new ServiceContext(realmiaqbo, IntuitServicesType.QBO, oauthrequestvalidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
 
             Customer customer1 = new Customer();
@@ -136,12 +130,8 @@ namespace Intuit.Ipp.DataService.Test
         [TestMethod()]
         public void BatchTestAsync()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
-
             Customer customer = new Customer();
             string guid = Guid.NewGuid().ToString("N");
             customer.GivenName = guid.Substring(0, 25);
@@ -206,12 +196,8 @@ namespace Intuit.Ipp.DataService.Test
         [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
         public void UseSameBatchIDTwice()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
-
             Customer customer = new Customer();
             string guid = Guid.NewGuid().ToString("N");
             customer.GivenName = guid.Substring(0, 25);
@@ -228,10 +214,7 @@ namespace Intuit.Ipp.DataService.Test
         [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
         public void AddNullEntityInBatch()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
             Customer customer = null;
             Batch batch = service.CreateNewBatch();
@@ -243,10 +226,7 @@ namespace Intuit.Ipp.DataService.Test
         [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
         public void AddMoreThanTwentyFiveItemsInBatch()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
             Batch batch = service.CreateNewBatch();
             for (int i = 0; i <= 26; i++)
@@ -441,13 +421,7 @@ namespace Intuit.Ipp.DataService.Test
         #region Helper
         private Batch GetBatch()
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string accessTokenSecretQBO = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            string consumerKeyQBO = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            string ConsumerSecretQBO = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
             return service.CreateNewBatch();
         }
@@ -482,13 +456,8 @@ namespace Intuit.Ipp.DataService.Test
         public void BatchIDLengthTest()
         {
 
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["realmIAQBO"];
-
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
-
             Customer customer = new Customer();
             string guid = Guid.NewGuid().ToString("N");
             customer.GivenName = guid.Substring(0, 25);

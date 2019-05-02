@@ -21,7 +21,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             ReturnDocument
         }
 
-        private readonly Exception _exception;
+       //private readonly Exception _exception;
         private readonly Behavior _behavior;
         private readonly HttpStatusCode _statusCode;
         private readonly string _reason;
@@ -32,11 +32,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         public HttpRequestMessage Request { get; set; }
         public string Body { get; set; }
 
-        public NetworkHandler(Exception exception)
-        {
-            _exception = exception;
-            _behavior = Behavior.Throw;
-        }
+        //public NetworkHandler(Exception exception)
+        //{
+        //    _exception = exception;
+        //    _behavior = Behavior.Throw;
+        //}
 
         public NetworkHandler(HttpStatusCode statusCode, string reason)
         {
@@ -75,7 +75,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
                 return _action(request);
             }
 
-            if (_behavior == Behavior.Throw) throw _exception;
+           // if (_behavior == Behavior.Throw) throw _exception;
 
             var response = new HttpResponseMessage(_statusCode);
 

@@ -15,7 +15,7 @@ using Intuit.Ipp.QueryFilter;
 using System.Collections.Specialized;
 using System.Text;
 using System.Net;
-
+using Intuit.Ipp.GlobalTaxService.Test.Common;
 
 namespace Intuit.Ipp.GlobalTaxService.Test
 {
@@ -47,13 +47,9 @@ namespace Intuit.Ipp.GlobalTaxService.Test
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            context = Initializer.InitializeServiceContextQbo();
             context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\logsProdv3";
+            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\\Logs";
 
         }
 

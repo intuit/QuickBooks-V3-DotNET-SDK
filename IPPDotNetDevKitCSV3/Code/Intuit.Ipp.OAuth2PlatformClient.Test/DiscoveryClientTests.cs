@@ -90,7 +90,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Exception_should_be_handled_correctly()
         {
-            var handler = new NetworkHandler(new Exception("error"));
+            var handler = new NetworkHandler(HttpStatusCode.InternalServerError,"error");
 
             var client = new DiscoveryClient(_endpoint, handler);
             var disco = await client.GetAsync();
@@ -145,7 +145,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public void Exception_should_be_handled_correctly_Get()
         {
-            var handler = new NetworkHandler(new Exception("error"));
+            var handler = new NetworkHandler(HttpStatusCode.InternalServerError,"error");
             var client = new DiscoveryClient(_endpoint, handler);
             var disco = client.Get();
 

@@ -9,13 +9,14 @@ using Intuit.Ipp.Core.Configuration;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.Security;
-using Intuit.Ipp.Core.Test.Common;
+
 using Intuit.Ipp.DataService.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.ObjectModel;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using Intuit.Ipp.DataService.Test.Common;
 
 namespace Intuit.Ipp.DataService.Test
 {
@@ -49,11 +50,7 @@ namespace Intuit.Ipp.DataService.Test
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];            
-            string realmIAQBO = ConfigurationManager.AppSettings["realmIAQBO"];
-
-            OAuth2RequestValidator oAuthRequestValidator = new OAuth2RequestValidator(accessTokenQBO);
-            context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            context = Initializer.InitializeServiceContextQbo();
             dataServiceTestCases = new DataServiceTestCases(context);
             
         }
@@ -76,7 +73,7 @@ namespace Intuit.Ipp.DataService.Test
             }
         }
 
-        [TestMethod()]
+        [TestMethod()][Ignore]
         public void AddBillPaymentTest_BillPaymentCheck()
         {
             //Creating the BillPayment for Add
@@ -225,12 +222,24 @@ namespace Intuit.Ipp.DataService.Test
         [TestMethod()]
         public void FindByLevelTest()
         {
-            List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            // List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            IEnumerable<IEntity> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as IEnumerable<IEntity>;
             try
             {
+                //TaxClassification taxClassification = new TaxClassification
+                //{
+                //    Level = taxClassList[0].Level
+                //};
+                string lvl = "";
+                foreach (TaxClassification tx in taxClassList)
+                {
+                    lvl = tx.Level;
+                    break;
+                }
+
                 TaxClassification taxClassification = new TaxClassification
                 {
-                    Level = taxClassList[0].Level
+                    Level = lvl
                 };
                 IEnumerable<IEntity> taxClassifications = dataServiceTestCases.FindByLevelEntities(taxClassification);
                 Assert.IsNotNull(taxClassifications);
@@ -263,6 +272,7 @@ namespace Intuit.Ipp.DataService.Test
         [ExpectedException(typeof(IdsException))]
         public void FindByLevelTestInvalidLevel()
         {
+
             TaxClassification taxClassification = new TaxClassification
             {
                 Level = "level"
@@ -276,12 +286,25 @@ namespace Intuit.Ipp.DataService.Test
         [TestMethod()]
         public void FindByParentIdTest()
         {
-            List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            // List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
+            IEnumerable<IEntity> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as IEnumerable<IEntity>;
+
             try
             {
+                //TaxClassification taxClassification = new TaxClassification
+                //{
+                //    ParentRef = taxClassList[0].ParentRef
+                //};
+                ReferenceType pRef = new ReferenceType(); 
+                foreach (TaxClassification tx in taxClassList)
+                {
+                    pRef = tx.ParentRef;
+                    break;
+                }
+
                 TaxClassification taxClassification = new TaxClassification
                 {
-                    ParentRef = taxClassList[0].ParentRef
+                    ParentRef = pRef
                 };
                 IEnumerable<IEntity> taxClassifications = dataServiceTestCases.FindByParentIdEntities(taxClassification);
                 Assert.IsNotNull(taxClassifications);
