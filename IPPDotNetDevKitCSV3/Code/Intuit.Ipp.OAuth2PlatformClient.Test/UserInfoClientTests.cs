@@ -23,7 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_userinfo_response.json"));
+            var document = File.ReadAllText(Path.Combine(binDir, "Documents", "success_userinfo_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new UserInfoClient(

@@ -206,9 +206,10 @@ namespace Intuit.Ipp.Security.Test
         [TestMethod()]
         public void OAuthRequestValidatorConstructorTest()
         {
-            string accessToken = AuthorizationKeysQBO.accessTokenQBO;
+            
             ServiceContext context = Initializer.InitializeServiceContextQbo();
-            DataService.DataService service = new DataService.DataService(context);
+            string accessToken = AuthorizationKeysQBO.accessTokenQBO;
+            //DataService.DataService service = new DataService.DataService(context);
 
             OAuth2RequestValidator target = new OAuth2RequestValidator(accessToken);
             Assert.AreEqual(target.AccessToken, accessToken);
