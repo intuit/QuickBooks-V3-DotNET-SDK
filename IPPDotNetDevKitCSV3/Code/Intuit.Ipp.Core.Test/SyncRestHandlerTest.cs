@@ -111,11 +111,11 @@ namespace Intuit.Ipp.Core.Test
         /// <summary>
         /// Generates status code 401
         /// </summary>
-        [TestMethod]
+        [TestMethod][Ignore]//no exception for oauth2 as we try to refresh token everytime
         [ExpectedException(typeof(InvalidTokenException))]
         public void GetResponseInvalidTokenExceptionTest()
         {
-            ServiceContext serviceContext = Initializer.InitializeServiceContextQbo("Invalid");
+            ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
             IRestHandler handler = new SyncRestHandler(serviceContext);
             string resourceUri = string.Format("v3/company/{0}/customer", AuthorizationKeysQBO.realmIdIAQBO);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);

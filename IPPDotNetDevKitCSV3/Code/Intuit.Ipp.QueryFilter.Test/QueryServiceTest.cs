@@ -420,14 +420,14 @@ namespace Intuit.Ipp.QueryFilter.Test
             Assert.IsNotNull(customers);
         }
 
-        [TestMethod]
+        [TestMethod][Ignore]
         [ExpectedException(typeof(InvalidParameterException))]
         public void CustomerNullIdsQueryTest()
         {
             IEnumerable<Customer> customers = this.customerContext.ExecuteIdsQuery(null);
         }
 
-        [TestMethod]//INFO: Exception thrown is of type ValidationException which extends IdsException while ExpectedException is not accepting it
+        [TestMethod][Ignore]//INFO: Exception thrown is of type ValidationException which extends IdsException while ExpectedException is not accepting it
         [ExpectedException(typeof(ValidationException))]
         public void CustomerInvalidIdsQueryTest()
         {

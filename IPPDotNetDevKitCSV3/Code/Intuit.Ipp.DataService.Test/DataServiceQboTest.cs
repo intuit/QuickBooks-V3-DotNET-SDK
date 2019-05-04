@@ -223,9 +223,11 @@ namespace Intuit.Ipp.DataService.Test
         public void FindByLevelTest()
         {
             // List<TaxClassification> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as List<TaxClassification>;
-            IEnumerable<IEntity> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) as IEnumerable<IEntity>;
+            IEnumerable<IEntity> taxClassList = dataServiceTestCases.FindAllEntities(new TaxClassification()) ;
             try
             {
+              
+              
                 //TaxClassification taxClassification = new TaxClassification
                 //{
                 //    Level = taxClassList[0].Level

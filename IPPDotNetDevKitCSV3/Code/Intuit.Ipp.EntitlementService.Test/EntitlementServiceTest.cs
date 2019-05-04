@@ -23,12 +23,12 @@ namespace Intuit.Ipp.EntitlementService.Test
 
         }
 
-        [TestMethod][Ignore]
+        [TestMethod]
         public void GetEntitlementsTest()
         {
             try
             {
-                EntitlementsResponse entitlements = entitlementServiceTestCases.GetEntitlements("https://qbo.sbfinance.intuit.com/manage");
+                EntitlementsResponse entitlements = entitlementServiceTestCases.GetEntitlements("https://sandbox-quickbooks.api.intuit.com/manage");
                 Assert.IsNotNull(entitlements);
 
             }
