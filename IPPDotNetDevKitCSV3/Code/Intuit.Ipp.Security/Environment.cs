@@ -1,8 +1,5 @@
-﻿
-////********************************************************************
-//https://github.com/mehfuzh/LinqExtender/blob/master/License.txt
-//Copyright (c) 2007- 2010 LinqExtender Toolkit Project. 
-//Project Modified by Intuit
+﻿////*********************************************************
+// <copyright file="CoreConstants.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -19,35 +16,32 @@
  * limitations under the License.
  *******************************************************************************/
 // 
-////********************************************************************
+// <summary>This file contains Security environments.</summary>
+////*********************************************************
+
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Intuit.Ipp.LinqExtender.Ast
+namespace Intuit.Ipp.Security
 {
-  
     /// <summary>
-    /// TODO: Update summary.
+    /// Define environments for migration
     /// </summary>
-    [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-    public class NotExpression : Ast.Expression
+    public enum EnvironmentForMigration
     {
-        public string PropertyName { get; set; }
+        /// <summary>
+        /// Sandbox environment
+        /// </summary>
+        Sandbox=0,
 
         /// <summary>
-        /// Member NotExpression
+        /// Production environment
         /// </summary>
-        public NotExpression(string propName)
-        {
-            this.PropertyName = propName;
-        }
+        Production=1
 
-        /// <summary>
-        /// Override Member CodeType
-        /// </summary>
-        public override CodeType CodeType
-        {
-            get { return CodeType.NotExpression; }
-        }
     }
 }

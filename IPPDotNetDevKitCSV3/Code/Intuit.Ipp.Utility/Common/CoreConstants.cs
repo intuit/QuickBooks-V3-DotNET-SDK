@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>This file contains SdkException.</summary>
+// 
 // <summary>This file contains Constants.</summary>
 ////*********************************************************
 
@@ -83,16 +83,24 @@ namespace Intuit.Ipp.Utility
         public const string CONTENTTYPE_URLFORMENCODED = "application/x-www-form-urlencoded";
 
         /// <summary>
-        /// The Base Url for Oauth1 to Oauth2 tokens migration.
+        /// The Base Url for Oauth1 to Oauth2 tokens migration for Prod.
         /// </summary>
-        public const string TOKEN_MIGRATION_URL = "https://developer.api.intuit.com/v2/oauth2/tokens/migrate";
+        public const string TOKEN_MIGRATION_URL_PROD = "https://developer.api.intuit.com/v2/oauth2/tokens/migrate";
 
 
         /// <summary>
         /// The Redirect url required by token migration endpoint.
         /// </summary>
-        public const string TOKEN_MIGRATION_REDIRECT_URL = "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";       
+        public const string TOKEN_MIGRATION_REDIRECT_URL= "https://developer.intuit.com/v2/OAuth2Playground/RedirectUrl";
 
+
+        /// <summary>
+        /// The Base Url for Oauth1 to Oauth2 tokens migration for sandbox.
+        /// </summary>
+        public const string TOKEN_MIGRATION_URL_SANDBOX = "https://developer-sandbox.api.intuit.com/v2/oauth2/tokens/migrate";
+
+
+       
         /// <summary>
         /// The Base Url for IPS.
         /// </summary>
@@ -241,7 +249,7 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// The Request source header value.
         /// </summary>
-        public const string REQUESTSOURCEHEADER = "V3DotNetSDK7.5.0.4-beta";
+        public const string REQUESTSOURCEHEADER = "V3DotNetSDK7.5.0.0";
 
         /// <summary>
         /// multipart/form-data format
