@@ -38,6 +38,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Helpers
         [StringValue("e2esandbox")]
         E2ESandbox = 3,
         [StringValue("e2eproduction")]
-        E2EProduction = 4
+        E2EProduction = 4,
+        [StringValue("betasandbox")]
+        BetaSandbox = 5,
+        [StringValue("betaproduction")]
+        BetaProduction = 6,
+        [StringValue("deafult")]
+        Default
+
     }
 }

@@ -2131,19 +2131,29 @@ namespace Intuit.Ipp.DataService
             QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
 
             List<T> entities = new List<T>();
-            queryResponse.maxResults = queryResponse.AnyIntuitObjects.Length;
-            queryResponse.maxResultsSpecified = true;
 
-            if (queryResponse.maxResults > 0)
+            if (queryResponse.AnyIntuitObjects == null)
             {
-                object tempEntities = queryResponse.AnyIntuitObjects;
-                object[] tempEntityArray = (object[])tempEntities;
+                IdsException exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.ResponseStreamNullOrEmptyMessage));
+                throw exception;
+            }
+            else
+            {
+                queryResponse.maxResults = queryResponse.AnyIntuitObjects.Length;
 
-                if (tempEntityArray.Length > 0)
+                queryResponse.maxResultsSpecified = true;
+
+                if (queryResponse.maxResults > 0)
                 {
-                    foreach (object item in tempEntityArray)
+                    object tempEntities = queryResponse.AnyIntuitObjects;
+                    object[] tempEntityArray = (object[])tempEntities;
+
+                    if (tempEntityArray.Length > 0)
                     {
-                        entities.Add((T)item);
+                        foreach (object item in tempEntityArray)
+                        {
+                            entities.Add((T)item);
+                        }
                     }
                 }
             }

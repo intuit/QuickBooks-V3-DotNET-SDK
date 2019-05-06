@@ -8,6 +8,7 @@ using Intuit.Ipp.Core.Test;
 using Intuit.Ipp.Core.Compression;
 using System;
 using Intuit.Ipp.Utility;
+using Intuit.Ipp.Core.Test.Common;
 
 namespace Intuit.Ipp.Core.Test
 {

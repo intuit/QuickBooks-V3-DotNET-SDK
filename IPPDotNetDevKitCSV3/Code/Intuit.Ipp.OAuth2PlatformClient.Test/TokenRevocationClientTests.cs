@@ -42,7 +42,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "failure_token_revocation_response.json"));
+            var document = File.ReadAllText(Path.Combine(binDir, "Documents", "failure_token_revocation_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.BadRequest);
 
             var client = new TokenRevocationClient(
@@ -82,8 +82,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Exception_should_be_handled_correctly()
         {
-            var handler = new NetworkHandler(new Exception("exception"));
-
+            var handler = new NetworkHandler(HttpStatusCode.InternalServerError, "exception");
             var client = new TokenRevocationClient(
                 Endpoint,
                 "client",
@@ -93,8 +92,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var response = await client.RevokeAccessTokenAsync("token");
 
             Assert.AreEqual(true, response.IsError);
-            Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);
-            Assert.IsNotNull(response.Exception);
+            Assert.AreEqual(ResponseErrorType.Http, response.ErrorType);
+            Assert.IsNotNull(response.Error);
             Assert.AreEqual("exception", response.Error);
         }
 

@@ -5,13 +5,13 @@ using System.Linq;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.LinqExtender;
+//using Intuit.Ipp.LinqExtender;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.Security;
 
-namespace Intuit.Ipp.ReportService.Test
+namespace Intuit.Ipp.ReportService.Test.Common 
 {
     /// <summary>
     ///This is a test class for ReportService and is intended
@@ -26,14 +26,8 @@ namespace Intuit.Ipp.ReportService.Test
             [ClassInitialize()]
             public static void MyClassInitialize(TestContext testContext)
             {
-                string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-                string accessTokenSecretQBO = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-                string consumerKeyQBO = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-                string ConsumerSecretQBO = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
-                string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-                OAuthRequestValidator oAuthRequestValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, ConsumerSecretQBO);
-                ServiceContext context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
-                context.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
+            ServiceContext context = Initializer.InitializeServiceContextQbo();
+            context.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
                 reportServiceTestCases = new ReportService(context);
                 
             }

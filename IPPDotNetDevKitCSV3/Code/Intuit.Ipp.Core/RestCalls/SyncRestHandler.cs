@@ -362,7 +362,9 @@ namespace Intuit.Ipp.Core.Rest
                         reader.Close();
                     }
                 }
-                string response_intuit_tid_header="";
+
+                // Log the response to Disk.
+                string response_intuit_tid_header = "";
                 //get intuit_tid header
                 for (int i = 0; i < httpWebResponse.Headers.Count; ++i)
                 {
@@ -371,10 +373,10 @@ namespace Intuit.Ipp.Core.Rest
                         response_intuit_tid_header = httpWebResponse.Headers[i];
                     }
                 }
-                // Log the response to Disk.
-                this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: "+ response_intuit_tid_header + ", Response Payload: " +response, false);
-                
-                
+                this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
+
+
+
             }
 
             // Return the response.

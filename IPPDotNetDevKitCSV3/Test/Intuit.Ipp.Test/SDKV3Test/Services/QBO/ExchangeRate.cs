@@ -9,7 +9,7 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 
@@ -38,7 +38,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
             QueryService<ExchangeRate> entityQuery = new QueryService<ExchangeRate>(qboContextoAuth);
 
-            var found = entityQuery.Where(c => c.Id == existing.Id).FirstOrDefault();
+            var found = entityQuery.ExecuteIdsQuery("Select * from ExchangeRate where Id='"+existing.Id+"'").FirstOrDefault();
 
 
             QBOHelper.VerifyExchangeRate(found, existing);

@@ -16,8 +16,6 @@ using System.Globalization;
 using System.IO;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
-
 
 
 namespace Intuit.Ipp.Test
@@ -1360,7 +1358,9 @@ namespace Intuit.Ipp.Test
             //line.LinkedTxn = linkedTxnList.ToArray();
             line.DetailType = LineDetailTypeEnum.SalesItemLineDetail;
             line.DetailTypeSpecified = true;
-            Item item = Helper.FindOrAdd<Item>(context, new Item());
+            //Item item = Helper.FindOrAdd<Item>(context, new Item());
+            QueryService<Item> service1 = new QueryService<Item>(context);
+            var item = service1.ExecuteIdsQuery("select * from Item where Type='Service'").FirstOrDefault();
             TaxCode findOrAddResult = Helper.FindOrAdd<TaxCode>(context, new TaxCode());
             TaxCode taxCode = Helper.FindAll<TaxCode>(context, new TaxCode())[0];
             line.AnyIntuitObject = new SalesItemLineDetail()
@@ -1649,8 +1649,9 @@ namespace Intuit.Ipp.Test
             //linkedTxn.TxnLineId = "TxnLineId";
             //linkedTxnList.Add(linkedTxn);
             //estimate.LinkedTxn = linkedTxnList.ToArray();
-            Item item = Helper.FindOrAdd<Item>(context, new Item());
-
+            //Item item = Helper.FindOrAdd<Item>(context, new Item());
+            QueryService<Item> service1 = new QueryService<Item>(context);
+            var item = service1.ExecuteIdsQuery("select * from Item where Type='Service'").FirstOrDefault();
             estimate.TotalAmt = new Decimal(100.00);
             TaxCode findOrAddResult = Helper.FindOrAdd<TaxCode>(context, new TaxCode());
             TaxCode taxcode = Helper.FindAll<TaxCode>(context, new TaxCode())[0];
@@ -5098,7 +5099,12 @@ namespace Intuit.Ipp.Test
             //line.LinkedTxn = linkedTxnList.ToArray();
             line1.DetailType = LineDetailTypeEnum.SalesItemLineDetail;
             line1.DetailTypeSpecified = true;
-            Item item = Helper.FindOrAdd<Item>(context, new Item());
+            //Item item = Helper.FindOrAdd<Item>(context, new Item());
+            QueryService<Item> service1 = new QueryService<Item>(context);
+            var item = service1.ExecuteIdsQuery("select * from Item where Type='Service'").FirstOrDefault();
+            DataService.DataService service = new DataService.DataService(context);
+            var compinfo = service.FindAll<CompanyInfo>(new CompanyInfo());
+
             TaxCode taxcode = Helper.FindOrAdd<TaxCode>(context, new TaxCode());
             line1.AnyIntuitObject = new SalesItemLineDetail()
             {
@@ -5379,7 +5385,9 @@ namespace Intuit.Ipp.Test
             //linkedTxnList.Add(linkedTxn);
             line.DetailType = LineDetailTypeEnum.SalesItemLineDetail;
             line.DetailTypeSpecified = true;
-            Item item = Helper.FindOrAdd<Item>(context, new Item());
+            //Item item = Helper.FindOrAdd<Item>(context, new Item());
+            QueryService<Item> service1 = new QueryService<Item>(context);
+            var item = service1.ExecuteIdsQuery("select * from Item where Type='Service'").FirstOrDefault();
             TaxCode taxCode = Helper.FindOrAdd<TaxCode>(context, new TaxCode());
             line.AnyIntuitObject = new SalesItemLineDetail()
             {
@@ -9330,8 +9338,8 @@ namespace Intuit.Ipp.Test
             //Assert.AreEqual(expected.ShipDateSpecified, actual.ShipDateSpecified);
             //Assert.AreEqual(expected.TrackingNum, actual.TrackingNum);
             //Assert.AreEqual(expected.GlobalTaxCalculationSpecified, actual.GlobalTaxCalculationSpecified);
-            Assert.AreEqual(expected.TotalAmt, actual.TotalAmt);
-            Assert.AreEqual(expected.TotalAmtSpecified, actual.TotalAmtSpecified);
+            //Assert.AreEqual(expected.TotalAmt, actual.TotalAmt);
+            //Assert.AreEqual(expected.TotalAmtSpecified, actual.TotalAmtSpecified);
             //Assert.AreEqual(expected.HomeTotalAmt, actual.HomeTotalAmt);
             //Assert.AreEqual(expected.HomeTotalAmtSpecified, actual.HomeTotalAmtSpecified);
             Assert.AreEqual(expected.ApplyTaxAfterDiscount, actual.ApplyTaxAfterDiscount);
@@ -12316,6 +12324,5 @@ namespace Intuit.Ipp.Test
         }
 
         #endregion
-
-    }
+       }
 }

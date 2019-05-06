@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.QueryFilter;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.LinqExtender;
+
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.Exception;
@@ -30,7 +30,7 @@ namespace Intuit.Ipp.Test.QBO
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            serviceContextoAuth = Initializer.InitializeQueryServiceContextUsingoAuth(true);
+            serviceContextoAuth = Initializer.InitializeQBOServiceContextUsingoAuth();
             customerQueryService = new QueryService<Customer>(serviceContextoAuth);
             invoiceQueryService = new QueryService<Invoice>(serviceContextoAuth);
             DataService.DataService service = new DataService.DataService(serviceContextoAuth);
@@ -77,7 +77,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C*'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.StartsWith('C')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers, false);
 
@@ -92,7 +92,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MiddleName LIKE '12'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.EndsWith("t")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.EndsWith('t')").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -106,7 +106,7 @@ namespace Intuit.Ipp.Test.QBO
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'Test*12' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.Contains("Cust")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName like 'Cust')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -121,7 +121,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName == "Cust").ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName == 'Cust'").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -135,7 +135,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE GivenName LIKE 'C%'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.GivenName.StartsWith("C")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where GivenName.StartsWith('C')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers, false);
 
@@ -150,7 +150,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE GivenName LIKE '12'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.GivenName.EndsWith("t")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where GivenName.EndsWith('t')").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -164,7 +164,7 @@ namespace Intuit.Ipp.Test.QBO
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
             //QUERY * FROM Customer  WHERE GivenName LIKE 'Test*12' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.GivenName.Contains("C%t")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where GivenName.Contains('C %t')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -179,7 +179,7 @@ namespace Intuit.Ipp.Test.QBO
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
             //QUERY * FROM Customer  WHERE GivenName LIKE 'Test*12' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.GivenName.Contains("est")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where GivenName.Contains('est')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -194,7 +194,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.GivenName == "Cust").ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where GivenName == 'Cust'").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -208,7 +208,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE FamilyName LIKE 'C*'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.FamilyName.StartsWith("C")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName.StartsWith('C')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers, false);
 
@@ -223,7 +223,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE FamilyName LIKE '12'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.FamilyName.EndsWith("t")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName.EndsWith('t')").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -237,7 +237,7 @@ namespace Intuit.Ipp.Test.QBO
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
             //QUERY * FROM Customer  WHERE FamilyName LIKE 'Test*12' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.FamilyName.Contains("C%t")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName.Contains('C %t')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -252,7 +252,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.FamilyName == "Cust").ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName == 'Cust'").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -267,7 +267,7 @@ namespace Intuit.Ipp.Test.QBO
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
             //QUERY * FROM Customer  WHERE Active EQ True
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Active == true).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Active == true").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -294,7 +294,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Balance EQ '1000'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Balance == 1000).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance == 1000").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -308,7 +308,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Balance LT '1000'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Balance < 1000).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance < 1000").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -321,7 +321,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Balance GT '1000'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Balance > 1000).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance > 1000").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -333,7 +333,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Balance LTE '1000'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Balance <= 1000).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance <= 1000").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -345,7 +345,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Balance GTE '1000'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Balance >= 1000).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance >= 1000").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -357,7 +357,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime == DateTime.Now).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime =="+ DateTime.Now).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -370,7 +370,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime == DateTime.Today).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime == "+DateTime.Today).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -382,7 +382,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > DateTime.Now.AddDays(-2)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime > "+DateTime.Now.AddDays(-2)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -395,7 +395,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > DateTime.Today.AddDays(-2)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Custo mer whereMetaData.CreateTime >"+ DateTime.Today.AddDays(-2)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -408,7 +408,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > new DateTime(2012, 06, 30, 11, 20, 50)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime > "+new DateTime(2012, 06, 30, 11, 20, 50)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -420,7 +420,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > new DateTime(2012, 06, 30)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer whereMetaData.CreateTime > "+new DateTime(2012, 06, 30)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -432,7 +432,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime == DateTime.Now).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime =="+ DateTime.Now).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -445,7 +445,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime != DateTime.Today).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime != "+DateTime.Today).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -457,7 +457,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > DateTime.Now.AddDays(-2)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime >"+ DateTime.Now.AddDays(-2)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -470,7 +470,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > DateTime.Today.AddDays(-2)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime >"+ DateTime.Today.AddDays(-2)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -483,7 +483,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime >"+ new DateTime(2012, 06, 30, 11, 20, 50)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -495,7 +495,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30)).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.LastUpdatedTime > "+new DateTime(2012, 06, 30)).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -507,7 +507,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE Id EQ 'NG:456344'
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Id == "1").ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Id='1'").ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
 
@@ -521,7 +521,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C' AND FamilyName LIKE 'C' AND GivenName LIKE 'Test' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C") && c.FamilyName.StartsWith("C") && c.GivenName.StartsWith("Test")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where MiddleName like'C' && FamilyName like 'C' && GivenName like 'Test')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -536,7 +536,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C' AND FamilyName LIKE 'C' AND GivenName LIKE 'Test' 
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.EndsWith("C") && c.FamilyName.EndsWith("C") && c.GivenName.EndsWith("Test")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer Where MiddleName.EndsWith('C') && FamilyName.EndsWith('C') && GivenName.EndsWith('Test')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -550,7 +550,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.MiddleName.Contains("C%t") && c.FamilyName.Contains("T%1") && c.GivenName.Contains("T%1")).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer Where MiddleName.Contains('C%t') && FamilyName.Contains('T%1') && GivenName.Contains('T%1')").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers);
         }
@@ -567,7 +567,7 @@ namespace Intuit.Ipp.Test.QBO
 
 
 
-            var actualCustomers = customerQueryService.Select(c => new { Customer = c, c.BalanceWithJobs });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer").Select(c => new { Customer = c, c.BalanceWithJobs });
             foreach (var cust in actualCustomers)
             {
                 Debug.WriteLine(cust.BalanceWithJobs + " --- " + cust.Customer.GivenName);
@@ -581,7 +581,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomers = from customer in customers
                                   select new { customer, customer.BalanceWithJobs };
 
-            var actualCustomers = customerQueryService.Select(c => new { Customer = c, c.BalanceWithJobs });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").Select(c => new { Customer = c, c.BalanceWithJobs });
             foreach (var cust in actualCustomers)
             {
                 Debug.WriteLine(cust.BalanceWithJobs + " --- " + cust.Customer.GivenName);
@@ -595,7 +595,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select customer;
 
-            var actualCustomers = customerQueryService.Select(c => c);
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").Select(c => c);
             //int i = 0;
             foreach (var cust in actualCustomers)
             {
@@ -612,7 +612,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select customer.BalanceWithJobs;
 
-            var actualCustomers = customerQueryService.Select(c => c.BalanceWithJobs);
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer").Select(c => c.BalanceWithJobs);
 
             foreach (var cust in actualCustomers)
             {
@@ -626,7 +626,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select new { customer.BalanceWithJobs, customer.GivenName };
 
-            var actualCustomers = customerQueryService.Select(c => new { c.BalanceWithJobs, c.GivenName });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").Select(c => new { c.BalanceWithJobs, c.GivenName });
 
             foreach (var cust in actualCustomers)
             {
@@ -640,7 +640,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select new { customer.Id, customer.GivenName };
 
-            var actualCustomers = customerQueryService.Select(c => new { c.Id, c.GivenName });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").Select(c => new { c.Id, c.GivenName });
 
             foreach (var cust in actualCustomers)
             {
@@ -654,7 +654,7 @@ namespace Intuit.Ipp.Test.QBO
             //var filterCustomer = from customer in customers
             //                     select new { customer.Id, customer.GivenName };
 
-            var actualInvoices = invoiceQueryService.Select(i => new { i.Id, i.DocNumber });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from customer").Select(i => new { i.Id, i.DocNumber });
 
             foreach (var invoice in actualInvoices)
             {
@@ -670,7 +670,7 @@ namespace Intuit.Ipp.Test.QBO
             //var filterCustomer = from customer in customers
             //                     select new { customer.Id, customer.GivenName };
 
-            var actualInvoices = invoiceQueryService.Select(i => new { i.Id, i.Line });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from customer").Select(i => new { i.Id, i.Line });
 
             foreach (var invoice in actualInvoices)
             {
@@ -685,7 +685,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from invoice in invoices
                                  select new { invoice.Line };
 
-            var actualInvoices = invoiceQueryService.Select(i => new { Line = i.Line });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from invoice").Select(i => new { Line = i.Line });
 
             foreach (var inv in actualInvoices)
             {
@@ -708,7 +708,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.OrderBy(c => c.FamilyName).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").OrderBy(c => c.FamilyName).ToList<Customer>();
            // VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -720,7 +720,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.OrderBy(c => c.FamilyName).OrderByDescending(c => c.GivenName).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").OrderBy(c => c.FamilyName).OrderByDescending(c => c.GivenName).ToList<Customer>();
             //VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -732,7 +732,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.OrderByDescending(c => c.FamilyName).OrderBy(c => c.GivenName).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").OrderByDescending(c => c.FamilyName).OrderBy(c => c.GivenName).ToList<Customer>();
             //VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -744,7 +744,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.OrderByDescending(c => c.FamilyName).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer").OrderByDescending(c => c.FamilyName).ToList<Customer>();
             //VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
 
@@ -758,7 +758,7 @@ namespace Intuit.Ipp.Test.QBO
             int filterCustomer = (from customer in customers
                                   select customer).Count();
 
-            int actualLinq = customerQueryService.Count();
+            int actualLinq = customerQueryService.ExecuteIdsQuery("Select * from customer").Count();
             int actualString = ((ReadOnlyCollection<Customer>)customerQueryService.ExecuteIdsQuery("Select Count(*) From Customer")).Count();
 
             Assert.IsTrue(filterCustomer <= actualLinq && actualLinq == actualString);
@@ -770,7 +770,7 @@ namespace Intuit.Ipp.Test.QBO
             int filterCustomer = (from invoice in invoices
                                   select invoice).Count();
 
-            int actualLinq = invoiceQueryService.Count();
+            int actualLinq = invoiceQueryService.ExecuteIdsQuery("Select * from invoice").Count();
             int actualString = ((ReadOnlyCollection<Invoice>)invoiceQueryService.ExecuteIdsQuery("Select Count(*) From Invoice")).Count();
 
             Assert.IsTrue(filterCustomer <= actualLinq && actualLinq == actualString);
@@ -786,7 +786,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomers = from customer in customers
                                   select customer;
 
-            var actualCustomers = customerQueryService.Take(6).Skip(3);
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer").Take(6).Skip(3);
             foreach (var cust in actualCustomers)
             {
             }
@@ -806,7 +806,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            IEnumerable<Customer> actualCustomers = customerQueryService.Where(c => c.Id.In(values));
+            IEnumerable<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Id.In('" + values + "')");
             VerifyCustomers(expectedCustomers, actualCustomers.ToList<Customer>());
         }
 
@@ -819,9 +819,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            string idsQuery = customerQueryService.Where(c => c.Id.In(values)).ToIdsQuery();
-
-            List<Customer> actualcustomers = customerQueryService.ExecuteIdsQuery(idsQuery, QueryOperationType.query).ToList<Customer>();
+            List <Customer> actualcustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Id.In('" + values + "')", QueryOperationType.query).ToList<Customer>();
             VerifyCustomers(expectedCustomers, actualcustomers);
         }
 
@@ -834,7 +832,7 @@ namespace Intuit.Ipp.Test.QBO
                                                  select invoice;
 
             List<Invoice> expectedInvoices = filterInvoice.ToList<Invoice>();
-            IEnumerable<Invoice> actualInvoices = invoiceQueryService.Where(c => c.Id.In(values));
+            IEnumerable<Invoice> actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from Customer where Id.In('"+values+"')");
             //VerifyInvoices(expectedInvoices, actualInvoices.ToList<Invoice>()); //Result sets are not the same
         }
 
@@ -848,7 +846,7 @@ namespace Intuit.Ipp.Test.QBO
                                   where customer.MetaData.CreateTime < DateTime.Today
                                   select new { customer, customer.BalanceWithJobs };
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => new { Customer = c, c.BalanceWithJobs });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(c => new { Customer = c, c.BalanceWithJobs });
             foreach (var cust in actualCustomers)
             {
                 Debug.WriteLine(cust.BalanceWithJobs + " --- " + cust.Customer.GivenName);
@@ -862,7 +860,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomers = from customer in customers
                                   select new { customer, customer.BalanceWithJobs };
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => new { Customer = c, c.BalanceWithJobs });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime < "+DateTime.Today).Select(c => new { Customer = c, c.BalanceWithJobs });
             foreach (var cust in actualCustomers)
             {
                 Debug.WriteLine(cust.BalanceWithJobs + " --- " + cust.Customer.GivenName);
@@ -876,7 +874,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select customer;
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => c);
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(c => c);
             //int i = 0;
             foreach (var cust in actualCustomers)
             {
@@ -893,7 +891,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select customer.BalanceWithJobs;
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => c.BalanceWithJobs);
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(c => c.BalanceWithJobs);
 
             foreach (var cust in actualCustomers)
             {
@@ -907,7 +905,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select new { customer.BalanceWithJobs, customer.GivenName };
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => new { c.BalanceWithJobs, c.GivenName });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(c => new { c.BalanceWithJobs, c.GivenName });
 
             foreach (var cust in actualCustomers)
             {
@@ -921,7 +919,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from customer in customers
                                  select new { customer.Id, customer.GivenName };
 
-            var actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime < DateTime.Today).Select(c => new { c.Id, c.GivenName });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(c => new { c.Id, c.GivenName });
 
             foreach (var cust in actualCustomers)
             {
@@ -936,7 +934,7 @@ namespace Intuit.Ipp.Test.QBO
             //var filterCustomer = from customer in customers
             //                     select new { customer.Id, customer.GivenName };
 
-            var actualInvoices = invoiceQueryService.Where(i => i.MetaData.CreateTime < DateTime.Today).Select(i => new { i.Id, i.DocNumber });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(i => new { i.Id, i.DocNumber });
 
             foreach (var invoice in actualInvoices)
             {
@@ -951,7 +949,7 @@ namespace Intuit.Ipp.Test.QBO
             //var filterCustomer = from customer in customers
             //                     select new { customer.Id, customer.GivenName };
 
-            var actualInvoices = invoiceQueryService.Where(i => i.MetaData.CreateTime < DateTime.Today).Select(i => new { i.Id, i.Line });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(i => new { i.Id, i.Line });
 
             foreach (var invoice in actualInvoices)
             {
@@ -966,7 +964,7 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomer = from invoice in invoices
                                  select new { invoice.Line };
 
-            var actualInvoices = invoiceQueryService.Where(i => i.MetaData.CreateTime < DateTime.Today).Select(i => new { Line = i.Line });
+            var actualInvoices = invoiceQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime <"+ DateTime.Today).Select(i => new { Line = i.Line });
 
             foreach (var inv in actualInvoices)
             {
@@ -991,7 +989,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            IEnumerable<Customer> actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime >= DateTime.Today.AddDays(-5)).OrderBy(c => c.FamilyName).OrderByDescending(c => c.GivenName).Skip(2);
+            IEnumerable<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime >= "+DateTime.Today.AddDays(-5)).OrderBy(c => c.FamilyName).OrderByDescending(c => c.GivenName).Skip(2);
         }
 
         [TestMethod]
@@ -1004,7 +1002,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
-            List<Customer> actualCustomers = customerQueryService.Where(c => c.Id.In(values)).OrderByDescending(c => c.GivenName).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Id.In('"+values+"')").OrderByDescending(c => c.GivenName).ToList<Customer>();
         }
 
         #endregion
@@ -1020,7 +1018,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C*'
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.StartsWith('C')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
 
@@ -1035,7 +1033,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MiddleName LIKE '12'
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.EndsWith("t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.EndsWith('t')").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1049,7 +1047,7 @@ namespace Intuit.Ipp.Test.QBO
             int expectedCustomers = filterCustomer.Count();
 
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'Test*12' 
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.Contains("C%t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.Contains('C %t')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1064,7 +1062,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
 
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName == "Cust").Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName == 'Cust'").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1078,7 +1076,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE GivenName LIKE 'C*'
-            int actualCustomers = customerQueryService.Where(c => c.GivenName.StartsWith("C")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where GivenName.StartsWith('C')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
 
@@ -1093,7 +1091,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE GivenName LIKE '12'
-            int actualCustomers = customerQueryService.Where(c => c.GivenName.EndsWith("t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where GivenName.EndsWith('t')").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1107,7 +1105,7 @@ namespace Intuit.Ipp.Test.QBO
             int expectedCustomers = filterCustomer.Count();
 
             //QUERY * FROM Customer  WHERE GivenName LIKE 'Test*12' 
-            int actualCustomers = customerQueryService.Where(c => c.GivenName.Contains("C%t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where GivenName like ('C%t')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1122,7 +1120,7 @@ namespace Intuit.Ipp.Test.QBO
             int expectedCustomers = filterCustomer.Count();
 
             //QUERY * FROM Customer  WHERE GivenName LIKE 'Test*12' 
-            int actualCustomers = customerQueryService.Where(c => c.GivenName.Contains("est")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where GivenName like 'est'").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1137,7 +1135,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
 
-            int actualCustomers = customerQueryService.Where(c => c.GivenName == "Cust").Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where GivenName == 'Cust'").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1151,7 +1149,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE FamilyName LIKE 'C*'
-            int actualCustomers = customerQueryService.Where(c => c.FamilyName.StartsWith("C")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where FamilyName.StartsWith('C')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
 
@@ -1166,7 +1164,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE FamilyName LIKE '12'
-            int actualCustomers = customerQueryService.Where(c => c.FamilyName.EndsWith("t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName.EndsWith('t')").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1180,7 +1178,7 @@ namespace Intuit.Ipp.Test.QBO
             int expectedCustomers = filterCustomer.Count();
 
             //QUERY * FROM Customer  WHERE FamilyName LIKE 'Test*12' 
-            int actualCustomers = customerQueryService.Where(c => c.FamilyName.Contains("C%t")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName.Contains('C%t')").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1195,7 +1193,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
 
-            int actualCustomers = customerQueryService.Where(c => c.FamilyName == "Cust").Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where FamilyName == 'Cust'").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1210,7 +1208,7 @@ namespace Intuit.Ipp.Test.QBO
             int expectedCustomers = filterCustomer.Count();
 
             //QUERY * FROM Customer  WHERE Active EQ True
-            int actualCustomers = customerQueryService.Where(c => c.Active == true).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where Active == true").Count();
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1238,7 +1236,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Balance EQ '1000'
-            int actualCustomers = customerQueryService.Where(c => c.Balance == 1000).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where Balance == 1000").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1252,7 +1250,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Balance LT '1000'
-            int actualCustomers = customerQueryService.Where(c => c.Balance < 1000).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where Balance < 1000").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1265,7 +1263,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Balance GT '1000'
-            int actualCustomers = customerQueryService.Where(c => c.Balance > 1000).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where Balance > 1000").Count;
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1277,7 +1275,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Balance LTE '1000'
-            int actualCustomers = customerQueryService.Where(c => c.Balance <= 1000).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Balance <= 1000").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1289,7 +1287,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Balance GTE '1000'
-            int actualCustomers = customerQueryService.Where(c => c.Balance >= 1000).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where Balance >= 1000").Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1301,8 +1299,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime == DateTime.Now).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+             var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime == DateTime.Now)
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1314,8 +1321,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime == DateTime.Today).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime == DateTime.Today)
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1326,7 +1342,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > DateTime.Now.AddDays(-2)).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MetaData.CreateTime >"+ DateTime.Now.AddDays(-2)).Count();
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1339,8 +1355,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > DateTime.Today.AddDays(-2)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+           var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > DateTime.Today.AddDays(-2))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1352,8 +1377,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > new DateTime(2012, 06, 30, 11, 20, 50)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+           var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1364,8 +1398,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.CreateTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.CreateTime > new DateTime(2012, 06, 30)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+           var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1376,8 +1419,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime == DateTime.Now).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime == DateTime.Now)
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1389,8 +1441,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime != DateTime.Today).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime != DateTime.Today)
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1401,8 +1462,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > DateTime.Now.AddDays(-2)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > DateTime.Now.AddDays(-2))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1414,8 +1484,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > DateTime.Today.AddDays(-2)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > DateTime.Today.AddDays(-2))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1427,8 +1506,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T15:16:51+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach (Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30, 11, 20, 50))
+                    if (c.MetaData != null && c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30))
+                    {
+                        count++;
+                    }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1439,8 +1527,17 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MetaData.LastUpdatedTime EQ '2012-07-10T00:00:00+05:30'
-            int actualCustomers = customerQueryService.Where(c => c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30)).Count();
-            Assert.IsTrue(expectedCustomers <= actualCustomers);
+            var actualCustomersData = customerQueryService.ExecuteIdsQuery("Select * from Customer").ToList<Customer>();
+            int count = 0;
+            foreach(Customer c in actualCustomersData)
+            {
+                if (c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30))
+                if (c.MetaData!=null && c.MetaData.LastUpdatedTime > new DateTime(2012, 06, 30))
+                {
+                    count++;
+                }
+            }
+            Assert.IsTrue(expectedCustomers <= count);
         }
 
         [TestMethod]
@@ -1451,7 +1548,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE Id EQ 'NG:456344'
-            int actualCustomers = customerQueryService.Where(c => c.Id == "1").Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where Id='1'").Count;
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
 
@@ -1466,7 +1563,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C' AND FamilyName LIKE 'C' AND GivenName LIKE 'Test' 
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C") && c.FamilyName.StartsWith("C") && c.GivenName.StartsWith("Test")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customer where MiddleName.StartsWith('C') && FamilyName.StartsWith('C') && GivenName.StartsWith('Test')").Count;
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1481,7 +1578,7 @@ namespace Intuit.Ipp.Test.QBO
 
             int expectedCustomers = filterCustomer.Count();
             //QUERY * FROM Customer  WHERE MiddleName LIKE 'C' AND FamilyName LIKE 'C' AND GivenName LIKE 'Test' 
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.EndsWith("C") && c.FamilyName.EndsWith("C") && c.GivenName.EndsWith("Test")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.EndsWith('C') && FamilyName.EndsWith('C') && GivenName.EndsWith('Test')").Count;
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1495,7 +1592,7 @@ namespace Intuit.Ipp.Test.QBO
                                                    select customer;
 
             int expectedCustomers = filterCustomer.Count();
-            int actualCustomers = customerQueryService.Where(c => c.MiddleName.Contains("C%t") && c.FamilyName.Contains("T%1") && c.GivenName.Contains("T%1")).Count();
+            int actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where MiddleName.Contains('C%t') && FamilyName.Contains('T%1') && GivenName.Contains('T%1')").Count;
 
             Assert.IsTrue(expectedCustomers <= actualCustomers);
         }
@@ -1514,7 +1611,8 @@ namespace Intuit.Ipp.Test.QBO
             var filterCustomers = from customer in customers
                                   select customer;
 
-            var actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C")).Take(7).Skip(2).Select(c => new { c.Id, c.GivenName, c.FamilyName });
+           // var actualCustomers = customerQueryService.Where(c => c.MiddleName.StartsWith("C")).Take(7).Skip(2).Select(c => new { c.Id, c.GivenName, c.FamilyName });
+            var actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from customers where c.MiddleName.StartsWith('C')").Take(7).Skip(2).Select(c => new { c.Id, c.GivenName, c.FamilyName });
             foreach (var cust in actualCustomers)
             {
             }
@@ -1534,7 +1632,7 @@ namespace Intuit.Ipp.Test.QBO
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
 
-            List<Customer> actualCustomers = customerQueryService.Where(c => !(c.Active != true) && !(c.MetaData.CreateTime < DateTime.Today.AddDays(-5))).ToList<Customer>();
+            List<Customer> actualCustomers = customerQueryService.ExecuteIdsQuery("Select * from Customer where !(Active != true) && !(MetaData.CreateTime < DateTime.Today.AddDays(-5))).ToList<Customer>()").ToList<Customer>();
 
             VerifyCustomers(expectedCustomers, actualCustomers, false);
         }
@@ -1546,9 +1644,8 @@ namespace Intuit.Ipp.Test.QBO
         [TestMethod]
         public void MultipleQueryTests()
         {
-            string customerQueryValue = customerQueryService.Where(c => c.MetaData.CreateTime > DateTime.Today.AddDays(-20)).ToIdsQuery();
-            string invoiceQueryValue = invoiceQueryService.Select(i => new { i.Id, i.status }).ToIdsQuery();
-            List<string> values = new List<string> { customerQueryValue, invoiceQueryValue };
+            string invoiceQueryValue = invoiceQueryService.ExecuteIdsQuery("Select * from invoice").Select(i => new { i.Id, i.status }).ToString();
+            List<string> values = new List<string> { "Select * from customer where MetaData.CreateTime > " + DateTime.Today.AddDays(-20), invoiceQueryValue };
 
             try
             {
@@ -1574,7 +1671,7 @@ namespace Intuit.Ipp.Test.QBO
         [TestMethod]
         public void PredefinedPropertySetTest()
         {
-            var query = customerQueryService.Select(c => new { c.MiddleName, c.Balance });
+            var query = customerQueryService.ExecuteIdsQuery("Select * from customer").Select(c => new { c.MiddleName, c.Balance });
             foreach (var item in query)
             {
 

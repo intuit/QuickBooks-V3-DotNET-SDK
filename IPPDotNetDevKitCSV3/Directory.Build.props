@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+ <PropertyGroup>
+   <DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>   
+   <Version>7.2.0.0</Version>
+   <Copyright>Intuit Inc. All rights reserved.</Copyright>
+   <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
+   <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+ </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'netstandard2.0'">
+ <DefineConstants>NETCORE2_1;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+ <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+</PropertyGroup>
+
+<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net472'">
+	<DefineConstants>NET472;NETFULL</DefineConstants>
+  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+</PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net461'">
+    <DefineConstants>NET461;NETFULL</DefineConstants>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+
+
+
+
+</Project>

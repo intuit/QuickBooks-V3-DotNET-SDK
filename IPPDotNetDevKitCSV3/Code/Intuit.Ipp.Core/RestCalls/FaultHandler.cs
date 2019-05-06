@@ -116,6 +116,7 @@ namespace Intuit.Ipp.Core.Rest
                             reader.Close();
                         }
                     }
+
                     string response_intuit_tid_header = "";
                     //get intuit_tid header
                     for (int i = 0; i < errorResponse.Headers.Count; ++i)
@@ -125,9 +126,8 @@ namespace Intuit.Ipp.Core.Rest
                             response_intuit_tid_header = errorResponse.Headers[i];
                         }
                     }
-                    
-                    // Log the error string to disk.
-                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: "+ errorString, false);
+                    //Log errorstring to disk
+                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
                     if (isIps)
                     {

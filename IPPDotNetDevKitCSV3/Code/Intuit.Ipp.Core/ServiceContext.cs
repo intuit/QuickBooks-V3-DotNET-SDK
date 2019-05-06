@@ -27,10 +27,16 @@ namespace Intuit.Ipp.Core
     using System.Xml;
     using Configuration;
     using Rest;
-    using Diagnostics;
-    using Exception;
-    using Security;
+    using Intuit.Ipp.Diagnostics;
+    using Intuit.Ipp.Exception;
+    using Intuit.Ipp.Security;
     using System.Collections.Generic;
+
+    using System.Configuration;
+#if NETCORE
+    using Microsoft.Extensions.Configuration;
+#endif 
+
 
     /// <summary>
     /// This Enumeration specifies which Intuit service to connect to.

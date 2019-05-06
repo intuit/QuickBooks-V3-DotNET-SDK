@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;
+using System.Runtime;
 using System.Threading.Tasks;
 using Intuit.Ipp.OAuth2PlatformClient;
 using System.Configuration;
@@ -17,17 +18,21 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
     public class DiscoveryClientTests
     {
         NetworkHandler _successHandler;
-        string _endpoint = ConfigurationManager.AppSettings["DiscoveryUrlProduction"];
+        string _endpoint = "https://developer.api.intuit.com/.well-known/openid_configuration";
 
         public DiscoveryClientTests()
         {
             var binDir = AppDomain.CurrentDomain.BaseDirectory;
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
+            var document = File.ReadAllText(Path.Combine(binDir,"Documents", "discovery.json"));
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
+            var jwks = File.ReadAllText(Path.Combine(binDir, "Documents","discovery.json"));
 
-            var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json")); 
+
+            //var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));
+
+            //var jwks = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "discovery.json"));
 
             _successHandler = new NetworkHandler(request =>
             {
@@ -52,27 +57,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void malformed_authority_url_should_throw()
-        {
-            string input = "https:something_weird_https://something_other";
-            var client = new DiscoveryClient(input);
-            
-            //Assert.AreEqual(e.Message,("Malformed authority URL"));
-            Assert.Fail();
-    }
-
-        [TestMethod]
-        public void various_urls_should_normalize()
-        {
-            string input = "https://server:123/";
-            var client = new DiscoveryClient(input);
-
-            Assert.AreEqual(client.Url,"https://server:123/.well-known/openid_configuration");
-            Assert.AreEqual(client.Authority,"https://server:123");
-        }
-
-        [TestMethod]
         public async Task Http_error_should_be_handled_correctly()
         {
             var handler = new NetworkHandler(HttpStatusCode.NotFound, "not found");
@@ -81,16 +65,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var disco = await client.GetAsync();
 
             Assert.AreEqual(disco.IsError, true);
-            Assert.AreEqual(disco.ErrorType,(ResponseErrorType.Http));
+            Assert.AreEqual(disco.ErrorType, (ResponseErrorType.Http));
             Assert.AreEqual(disco.Error.StartsWith("Error connecting to"), true);
             Assert.AreEqual(disco.Error.EndsWith("not found"), true);
-            Assert.AreEqual(disco.StatusCode,(HttpStatusCode.NotFound));
+            Assert.AreEqual(disco.StatusCode, (HttpStatusCode.NotFound));
         }
 
         [TestMethod]
         public async Task Exception_should_be_handled_correctly()
         {
-            var handler = new NetworkHandler(new Exception("error"));
+            var handler = new NetworkHandler(new System.Exception("error"));
 
             var client = new DiscoveryClient(_endpoint, handler);
             var disco = await client.GetAsync();
@@ -145,7 +129,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public void Exception_should_be_handled_correctly_Get()
         {
-            var handler = new NetworkHandler(new Exception("error"));
+            var handler = new NetworkHandler(new System.Exception("error"));
             var client = new DiscoveryClient(_endpoint, handler);
             var disco = client.Get();
 

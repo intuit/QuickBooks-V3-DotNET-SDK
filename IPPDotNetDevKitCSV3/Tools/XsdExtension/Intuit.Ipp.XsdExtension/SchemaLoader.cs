@@ -57,7 +57,7 @@ namespace Intuit.Ipp.XsdExtension
                 target.Log(TraceLevel.Verbose, DataObjectConstants.XSDFILESNOTFOUND);
             }
 
-            // Read .xsd files and create XmlSchema List 
+            // Read .xsd files and create XmlSchema List
             foreach (string xsdFilePath in xsdFiles)
             {
                 target.Log(TraceLevel.Verbose, DataObjectConstants.XSDFILESLOADEDFROM + xsdFilePath);

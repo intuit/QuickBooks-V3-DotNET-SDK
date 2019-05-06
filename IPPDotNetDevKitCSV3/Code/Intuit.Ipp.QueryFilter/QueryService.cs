@@ -37,14 +37,14 @@ namespace Intuit.Ipp.QueryFilter
     using Intuit.Ipp.Exception;
     using Intuit.Ipp.QueryFilter.Properties;
     using Intuit.Ipp.Utility;
-    using Intuit.Ipp.LinqExtender;
+   // using Intuit.Ipp.LinqExtender;
 
     
     /// <summary>
     /// Contains methods used to parse the expression tree and execute the query generated and return the result.
     /// </summary>
     /// <typeparam name="T">The type of the entity.</typeparam>
-    public class QueryService<T> : ExpressionVisitor, IQueryContext<T>
+    public class QueryService<T>   //ExpressionVisitor, IQueryContext<T>
     {
         #region Private Members
 
@@ -88,10 +88,10 @@ namespace Intuit.Ipp.QueryFilter
         /// </summary>
         private ServiceContext serviceContext;
 
-        /// <summary>
-        /// Operation Type.
-        /// </summary>
-        private QueryOperationType operationType;
+        ///// <summary>
+        ///// Operation Type.
+        ///// </summary>
+        //private QueryOperationType operationType;
 
         /// <summary>
         /// Rest Request Handler.
@@ -103,11 +103,11 @@ namespace Intuit.Ipp.QueryFilter
         /// </summary>
         private IEntitySerializer responseSerializer;
 
-        /// <summary>
-        /// Collection of Not expressions.
-        /// </summary>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        private IEnumerable<LinqExtender.Ast.Expression> notExpressions;
+        ///// <summary>
+        ///// Collection of Not expressions.
+        ///// </summary>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //private IEnumerable<LinqExtender.Ast.Expression> notExpressions;
 
         #endregion
 
@@ -366,344 +366,344 @@ namespace Intuit.Ipp.QueryFilter
             return returnValues.AsReadOnly();
         }
 
-        #region IQueryContext<T> methods
+        //#region IQueryContext<T> methods
 
-        /// <summary>
-        /// Executes the LinqExtender expression by converting it to Ids Query and return the response.
-        /// </summary>
-        /// <param name="expression">The LinqExtender expression.</param>
-        /// <param name="isToIdsQueryMethod">If true executes the ids query and returns the response else does not execute the ids query.</param>
-        /// <param name="idsQuery">The generated ids query.</param>
-        /// <returns>A collection of items of type T.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        public IEnumerable<T> Execute(LinqExtender.Ast.Expression expression, bool isToIdsQueryMethod, out string idsQuery)
-        {
-            this.queryBuilder.Clear();
-            this.countBuilder.Clear();
-            this.selectBuilder.Clear();
-            this.orderByBuilder.Clear();
-            this.whereBuilder.Clear();
-            this.fromBuilder.Clear();
-            this.pageBuilder.Clear();
-            this.notExpressions = (expression as LinqExtender.Ast.BlockExpression).Expressions.Where(e => e.CodeType == CodeType.NotExpression);
+        ///// <summary>
+        ///// Executes the LinqExtender expression by converting it to Ids Query and return the response.
+        ///// </summary>
+        ///// <param name="expression">The LinqExtender expression.</param>
+        ///// <param name="isToIdsQueryMethod">If true executes the ids query and returns the response else does not execute the ids query.</param>
+        ///// <param name="idsQuery">The generated ids query.</param>
+        ///// <returns>A collection of items of type T.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //public IEnumerable<T> Execute(LinqExtender.Ast.Expression expression, bool isToIdsQueryMethod, out string idsQuery)
+        //{
+        //    this.queryBuilder.Clear();
+        //    this.countBuilder.Clear();
+        //    this.selectBuilder.Clear();
+        //    this.orderByBuilder.Clear();
+        //    this.whereBuilder.Clear();
+        //    this.fromBuilder.Clear();
+        //    this.pageBuilder.Clear();
+        //    this.notExpressions = (expression as LinqExtender.Ast.BlockExpression).Expressions.Where(e => e.CodeType == CodeType.NotExpression);
 
-            this.Visit(expression);
-            if (!string.IsNullOrWhiteSpace(this.selectBuilder.ToString()))
-            {
-                this.queryBuilder.Append(this.selectBuilder.ToString().TrimEnd(new char[] { ',' }));
-            }
-            else
-            {
-                this.queryBuilder.Append("*");
-            }
+        //    this.Visit(expression);
+        //    if (!string.IsNullOrWhiteSpace(this.selectBuilder.ToString()))
+        //    {
+        //        this.queryBuilder.Append(this.selectBuilder.ToString().TrimEnd(new char[] { ',' }));
+        //    }
+        //    else
+        //    {
+        //        this.queryBuilder.Append("*");
+        //    }
 
-            string count = this.countBuilder.ToString();
-            if (!string.IsNullOrWhiteSpace(count))
-            {
-                var queryValue = this.queryBuilder.ToString();
-                var pattern = @"(?<=^|\s)\*(?=\s|$)"; //find asterisk as whole word
-                queryValue = System.Text.RegularExpressions.Regex.Replace(queryValue, pattern, count);
-                this.queryBuilder.Clear();
-                this.queryBuilder.Append(queryValue);
-            }
+        //    string count = this.countBuilder.ToString();
+        //    if (!string.IsNullOrWhiteSpace(count))
+        //    {
+        //        var queryValue = this.queryBuilder.ToString();
+        //        var pattern = @"(?<=^|\s)\*(?=\s|$)"; //find asterisk as whole word
+        //        queryValue = System.Text.RegularExpressions.Regex.Replace(queryValue, pattern, count);
+        //        this.queryBuilder.Clear();
+        //        this.queryBuilder.Append(queryValue);
+        //    }
 
-            this.queryBuilder.Append(this.fromBuilder);
+        //    this.queryBuilder.Append(this.fromBuilder);
 
-            if (!string.IsNullOrWhiteSpace(this.whereBuilder.ToString()))
-            {
-                string whereString = this.whereBuilder.ToString();
-                if (whereString.StartsWith(" AND", StringComparison.OrdinalIgnoreCase))
-                {
-                    //whereString = whereString.TrimStart(new char[] { ' ', 'A', 'N', 'D' });
-                    whereString = whereString.TrimStart().Remove(0, 3);
-                }
+        //    if (!string.IsNullOrWhiteSpace(this.whereBuilder.ToString()))
+        //    {
+        //        string whereString = this.whereBuilder.ToString();
+        //        if (whereString.StartsWith(" AND", StringComparison.OrdinalIgnoreCase))
+        //        {
+        //            //whereString = whereString.TrimStart(new char[] { ' ', 'A', 'N', 'D' });
+        //            whereString = whereString.TrimStart().Remove(0, 3);
+        //        }
 
-                this.queryBuilder.Append(" WHERE " + whereString);
-            }
+        //        this.queryBuilder.Append(" WHERE " + whereString);
+        //    }
 
-            if (!string.IsNullOrWhiteSpace(this.orderByBuilder.ToString()))
-            {
-                this.queryBuilder.Append(" ORDER BY " + this.orderByBuilder.ToString().TrimStart(new char[] { ',' }));
-            }
+        //    if (!string.IsNullOrWhiteSpace(this.orderByBuilder.ToString()))
+        //    {
+        //        this.queryBuilder.Append(" ORDER BY " + this.orderByBuilder.ToString().TrimStart(new char[] { ',' }));
+        //    }
 
-            if (!string.IsNullOrWhiteSpace(this.pageBuilder.ToString()))
-            {
-                this.queryBuilder.Append(this.pageBuilder);
-            }
+        //    if (!string.IsNullOrWhiteSpace(this.pageBuilder.ToString()))
+        //    {
+        //        this.queryBuilder.Append(this.pageBuilder);
+        //    }
 
-            string query = idsQuery = this.queryBuilder.ToString();
-            if (isToIdsQueryMethod)
-            {
-                return new List<T>();
-            }
+        //    string query = idsQuery = this.queryBuilder.ToString();
+        //    if (isToIdsQueryMethod)
+        //    {
+        //        return new List<T>();
+        //    }
 
-            return this.ExecuteIdsQuery(query, this.operationType);
-        }
+        //    return this.ExecuteIdsQuery(query, this.operationType);
+        //}
 
-        #endregion
+        //#endregion
 
-        #region ExpressionVisitor methods
+        //#region ExpressionVisitor methods
 
-        /// <summary>
-        /// Visit Select Call expression.
-        /// </summary>
-        /// <param name="selectExpression">Select expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitSelectCallExpression(LinqExtender.Ast.SelectExpression selectExpression)
-        {
-            this.selectBuilder.Append(selectExpression.PropertyName + ",");
-            return selectExpression;
-        }
+        ///// <summary>
+        ///// Visit Select Call expression.
+        ///// </summary>
+        ///// <param name="selectExpression">Select expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitSelectCallExpression(LinqExtender.Ast.SelectExpression selectExpression)
+        //{
+        //    this.selectBuilder.Append(selectExpression.PropertyName + ",");
+        //    return selectExpression;
+        //}
 
-        /// <summary>
-        /// Visit Type Expression.
-        /// </summary>
-        /// <param name="expression">Type expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitTypeExpression(LinqExtender.Ast.TypeExpression expression)
-        {
-            // For Report entities the format of the query string is different
-            string format = string.Empty;
-            if (expression.Type.UnderlyingType.BaseType.Name.Equals("ReportQueryBase"))
-            {
-                this.operationType = QueryOperationType.report;
+        ///// <summary>
+        ///// Visit Type Expression.
+        ///// </summary>
+        ///// <param name="expression">Type expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitTypeExpression(LinqExtender.Ast.TypeExpression expression)
+        //{
+        //    // For Report entities the format of the query string is different
+        //    string format = string.Empty;
+        //    if (expression.Type.UnderlyingType.BaseType.Name.Equals("ReportQueryBase"))
+        //    {
+        //        this.operationType = QueryOperationType.report;
 
-                // TODO: Uncomment this if the query language is different for report and query
-                // format = "REPORT {0} WITH ";
-                format = " {0} ";
-            }
-            else if (expression.Type.UnderlyingType.Name.Equals("ChangeData"))
-            {
-                this.operationType = QueryOperationType.changedata;
-            }
-            else
-            {
-                this.operationType = QueryOperationType.query;
-                format = " FROM {0} ";
-            }
+        //        // TODO: Uncomment this if the query language is different for report and query
+        //        // format = "REPORT {0} WITH ";
+        //        format = " {0} ";
+        //    }
+        //    else if (expression.Type.UnderlyingType.Name.Equals("ChangeData"))
+        //    {
+        //        this.operationType = QueryOperationType.changedata;
+        //    }
+        //    else
+        //    {
+        //        this.operationType = QueryOperationType.query;
+        //        format = " FROM {0} ";
+        //    }
 
-            this.queryBuilder.Append("Select ");
-            this.fromBuilder.Append(string.Format(CultureInfo.InvariantCulture, format, expression.Type.Name));
-            return expression;
-        }
+        //    this.queryBuilder.Append("Select ");
+        //    this.fromBuilder.Append(string.Format(CultureInfo.InvariantCulture, format, expression.Type.Name));
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit Lambda Expression.
-        /// </summary>
-        /// <param name="expression">Lambda expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitLambdaExpression(LinqExtender.Ast.LambdaExpression expression)
-        {
-            this.Visit(expression.Body);
-            return expression;
-        }
+        ///// <summary>
+        ///// Visit Lambda Expression.
+        ///// </summary>
+        ///// <param name="expression">Lambda expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitLambdaExpression(LinqExtender.Ast.LambdaExpression expression)
+        //{
+        //    this.Visit(expression.Body);
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit Binary Expression.
-        /// </summary>
-        /// <param name="expression">Binary expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitBinaryExpression(LinqExtender.Ast.BinaryExpression expression)
-        {
-            this.Visit(expression.Left);
-            this.whereBuilder.Append(GetBinaryOperator(expression.Operator));
-            this.Visit(expression.Right);
-            return expression;
-        }
+        ///// <summary>
+        ///// Visit Binary Expression.
+        ///// </summary>
+        ///// <param name="expression">Binary expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitBinaryExpression(LinqExtender.Ast.BinaryExpression expression)
+        //{
+        //    this.Visit(expression.Left);
+        //    this.whereBuilder.Append(GetBinaryOperator(expression.Operator));
+        //    this.Visit(expression.Right);
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit Logical Expression.
-        /// </summary>
-        /// <param name="expression">Logical expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitLogicalExpression(LinqExtender.Ast.LogicalExpression expression)
-        {
-            this.Visit(expression.Left);
-            this.WriteLogicalOperator(expression.Operator);
-            this.Visit(expression.Right);
-            return expression;
-        }
+        ///// <summary>
+        ///// Visit Logical Expression.
+        ///// </summary>
+        ///// <param name="expression">Logical expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitLogicalExpression(LinqExtender.Ast.LogicalExpression expression)
+        //{
+        //    this.Visit(expression.Left);
+        //    this.WriteLogicalOperator(expression.Operator);
+        //    this.Visit(expression.Right);
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit Member Expression.
-        /// </summary>
-        /// <param name="expression">Member expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitMemberExpression(LinqExtender.Ast.MemberExpression expression)
-        {
-            string name = expression.FullName.TrimStart(new char[] { '.' });
-            if (this.IsNotUsed(name))
-            {
-                this.whereBuilder.Append(" NOT ");
-            }
+        ///// <summary>
+        ///// Visit Member Expression.
+        ///// </summary>
+        ///// <param name="expression">Member expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitMemberExpression(LinqExtender.Ast.MemberExpression expression)
+        //{
+        //    string name = expression.FullName.TrimStart(new char[] { '.' });
+        //    if (this.IsNotUsed(name))
+        //    {
+        //        this.whereBuilder.Append(" NOT ");
+        //    }
 
-            Type t = new ReferenceType().GetType();
-            if (expression.DeclaringType == t && name.Contains(".Value"))
-                name = name.Replace(".Value", "");
+        //    Type t = new ReferenceType().GetType();
+        //    if (expression.DeclaringType == t && name.Contains(".Value"))
+        //        name = name.Replace(".Value", "");
             
-            this.whereBuilder.Append(name);
-            return expression;
-        }
+        //    this.whereBuilder.Append(name);
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit Literal Expression.
-        /// </summary>
-        /// <param name="expression">Literal expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitLiteralExpression(LinqExtender.Ast.LiteralExpression expression)
-        {
-            this.WriteValue(expression.Type, expression.Value);
-            return expression;
-        }
+        ///// <summary>
+        ///// Visit Literal Expression.
+        ///// </summary>
+        ///// <param name="expression">Literal expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitLiteralExpression(LinqExtender.Ast.LiteralExpression expression)
+        //{
+        //    this.WriteValue(expression.Type, expression.Value);
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit OrderBy Expression.
-        /// </summary>
-        /// <param name="expression">OrderBy expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitOrderbyExpression(LinqExtender.Ast.OrderbyExpression expression)
-        {
-            this.orderByBuilder.Append(string.Format(CultureInfo.InvariantCulture, ", {0}{1} {2} ", expression.Member.Name, expression.Suffix, expression.Ascending ? " " : " DESC "));
-            return expression;
-        }
+        ///// <summary>
+        ///// Visit OrderBy Expression.
+        ///// </summary>
+        ///// <param name="expression">OrderBy expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitOrderbyExpression(LinqExtender.Ast.OrderbyExpression expression)
+        //{
+        //    this.orderByBuilder.Append(string.Format(CultureInfo.InvariantCulture, ", {0}{1} {2} ", expression.Member.Name, expression.Suffix, expression.Ascending ? " " : " DESC "));
+        //    return expression;
+        //}
 
-        /// <summary>
-        /// Visit MethodCall Expression.
-        /// </summary>
-        /// <param name="methodCallExpression">MethodCall expression.</param>
-        /// <returns>The LinqExtender Expression.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        internal override LinqExtender.Ast.Expression VisitMethodCallExpression(LinqExtender.Ast.MethodCallExpression methodCallExpression)
-        {
-            if (methodCallExpression.IsTake)
-            {
-                this.pageBuilder.Append(string.Format(CultureInfo.InvariantCulture, " maxResults {0} ", methodCallExpression.Paramters[0].Value));
-            }
+        ///// <summary>
+        ///// Visit MethodCall Expression.
+        ///// </summary>
+        ///// <param name="methodCallExpression">MethodCall expression.</param>
+        ///// <returns>The LinqExtender Expression.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //internal override LinqExtender.Ast.Expression VisitMethodCallExpression(LinqExtender.Ast.MethodCallExpression methodCallExpression)
+        //{
+        //    if (methodCallExpression.IsTake)
+        //    {
+        //        this.pageBuilder.Append(string.Format(CultureInfo.InvariantCulture, " maxResults {0} ", methodCallExpression.Paramters[0].Value));
+        //    }
 
-            if (methodCallExpression.IsSkip)
-            {
-                int skip = Convert.ToInt32(methodCallExpression.Paramters[0].Value, CultureInfo.InvariantCulture);
-                this.pageBuilder.Append(string.Format(CultureInfo.InvariantCulture, " startPosition {0} ", (skip + 1)));
-            }
+        //    if (methodCallExpression.IsSkip)
+        //    {
+        //        int skip = Convert.ToInt32(methodCallExpression.Paramters[0].Value, CultureInfo.InvariantCulture);
+        //        this.pageBuilder.Append(string.Format(CultureInfo.InvariantCulture, " startPosition {0} ", (skip + 1)));
+        //    }
 
-            if (methodCallExpression.Method.Name == "StartsWith" || methodCallExpression.Method.Name == "EndsWith" || methodCallExpression.Method.Name == "Contains")
-            {
-                this.whereBuilder.Append(" AND ");
-                if (this.IsNotUsed(methodCallExpression.Target.ToString()))
-                {
-                    this.whereBuilder.Append(" NOT ");
-                }
+        //    if (methodCallExpression.Method.Name == "StartsWith" || methodCallExpression.Method.Name == "EndsWith" || methodCallExpression.Method.Name == "Contains")
+        //    {
+        //        this.whereBuilder.Append(" AND ");
+        //        if (this.IsNotUsed(methodCallExpression.Target.ToString()))
+        //        {
+        //            this.whereBuilder.Append(" NOT ");
+        //        }
 
-                if (methodCallExpression.Method.Name == "Contains")
-                {
-                    this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} '%{2}%' ", methodCallExpression.Target, "like", methodCallExpression.Paramters[0].Value));
-                }
-                else
-                {
-                    this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} '{2}' ", methodCallExpression.Target, "like", methodCallExpression.Paramters[0].Value));
-                }
-            }
+        //        if (methodCallExpression.Method.Name == "Contains")
+        //        {
+        //            this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} '%{2}%' ", methodCallExpression.Target, "like", methodCallExpression.Paramters[0].Value));
+        //        }
+        //        else
+        //        {
+        //            this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} '{2}' ", methodCallExpression.Target, "like", methodCallExpression.Paramters[0].Value));
+        //        }
+        //    }
 
-            if (methodCallExpression.Method.Name == "In")
-            {
-                string[] values = methodCallExpression.Paramters[0].Value as string[];
-                string inValues = string.Empty;
-                foreach (var item in values)
-                {
-                    inValues += string.Format(CultureInfo.InvariantCulture, "'{0}',", item);
-                }
+        //    if (methodCallExpression.Method.Name == "In")
+        //    {
+        //        string[] values = methodCallExpression.Paramters[0].Value as string[];
+        //        string inValues = string.Empty;
+        //        foreach (var item in values)
+        //        {
+        //            inValues += string.Format(CultureInfo.InvariantCulture, "'{0}',", item);
+        //        }
 
-                inValues = inValues.TrimEnd(new char[] { ',' });
-                this.whereBuilder.Append(" AND ");
-                if (this.IsNotUsed(methodCallExpression.Target.ToString()))
-                {
-                    this.whereBuilder.Append(" NOT ");
-                }
+        //        inValues = inValues.TrimEnd(new char[] { ',' });
+        //        this.whereBuilder.Append(" AND ");
+        //        if (this.IsNotUsed(methodCallExpression.Target.ToString()))
+        //        {
+        //            this.whereBuilder.Append(" NOT ");
+        //        }
             
-                this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} ({2}) ", methodCallExpression.Target, "IN", inValues));
-            }
+        //        this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} ({2}) ", methodCallExpression.Target, "IN", inValues));
+        //    }
 
-            if (methodCallExpression.Method.Name == "Count")
-            {
-                this.countBuilder.Append(" COUNT(*) ");
-            }
+        //    if (methodCallExpression.Method.Name == "Count")
+        //    {
+        //        this.countBuilder.Append(" COUNT(*) ");
+        //    }
 
-            return methodCallExpression;
-        }
+        //    return methodCallExpression;
+        //}
 
-        #endregion
+        //#endregion
 
-        /// <summary>
-        /// Gets the string representation of the BinaryOperator.
-        /// </summary>
-        /// <param name="operator">The BinaryOperator enum value.</param>
-        /// <returns>String representation of the binary operator.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        private static string GetBinaryOperator(BinaryOperator @operator)
-        {
-            switch (@operator)
-            {
-                case BinaryOperator.Contains:
-                    return " like ";
-                case BinaryOperator.Equal:
-                    return " = ";
-                case BinaryOperator.GreaterThan:
-                    return " > ";
-                case BinaryOperator.GreaterThanEqual:
-                    return " >= ";
-                case BinaryOperator.LessThan:
-                    return " < ";
-                case BinaryOperator.LessThanEqual:
-                    return " <= ";
-                case BinaryOperator.NotEqual:
-                    return " != ";
-            }
+        ///// <summary>
+        ///// Gets the string representation of the BinaryOperator.
+        ///// </summary>
+        ///// <param name="operator">The BinaryOperator enum value.</param>
+        ///// <returns>String representation of the binary operator.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //private static string GetBinaryOperator(BinaryOperator @operator)
+        //{
+        //    switch (@operator)
+        //    {
+        //        case BinaryOperator.Contains:
+        //            return " like ";
+        //        case BinaryOperator.Equal:
+        //            return " = ";
+        //        case BinaryOperator.GreaterThan:
+        //            return " > ";
+        //        case BinaryOperator.GreaterThanEqual:
+        //            return " >= ";
+        //        case BinaryOperator.LessThan:
+        //            return " < ";
+        //        case BinaryOperator.LessThanEqual:
+        //            return " <= ";
+        //        case BinaryOperator.NotEqual:
+        //            return " != ";
+        //    }
 
-            throw new ArgumentException("Invalid binary operator");
-        }
+        //    throw new ArgumentException("Invalid binary operator");
+        //}
 
-        /// <summary>
-        /// Writes the logical operator value to the query builder.
-        /// </summary>
-        /// <param name="logicalOperator">The Logical Operator enum value.</param>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        private void WriteLogicalOperator(LogicalOperator logicalOperator)
-        {
-            this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} ", logicalOperator.ToString().ToUpper(CultureInfo.InvariantCulture)));
-        }
+        ///// <summary>
+        ///// Writes the logical operator value to the query builder.
+        ///// </summary>
+        ///// <param name="logicalOperator">The Logical Operator enum value.</param>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //private void WriteLogicalOperator(LogicalOperator logicalOperator)
+        //{
+        //    this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} ", logicalOperator.ToString().ToUpper(CultureInfo.InvariantCulture)));
+        //}
 
-        /// <summary>
-        /// Writes the literal value to the query builder.
-        /// </summary>
-        /// <param name="type">The type of the value.</param>
-        /// <param name="value">The value of the object.</param>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        private void WriteValue(TypeReference type, object value)
-        {
-            if (type.UnderlyingType == typeof(bool))
-            {
-                this.whereBuilder.Append(value);
-            }
-            else
-            {
-                if (type.UnderlyingType.IsEnum)
-                {
-                    this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, "'{0}'", StringValueOf(Enum.ToObject(type.UnderlyingType, value) as Enum)));
-                }
-                else
-                {
-                    this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, "'{0}'", this.GetIdsDateTimeFormat(value)));
-                }
-            }
-        }
+        ///// <summary>
+        ///// Writes the literal value to the query builder.
+        ///// </summary>
+        ///// <param name="type">The type of the value.</param>
+        ///// <param name="value">The value of the object.</param>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //private void WriteValue(TypeReference type, object value)
+        //{
+        //    if (type.UnderlyingType == typeof(bool))
+        //    {
+        //        this.whereBuilder.Append(value);
+        //    }
+        //    else
+        //    {
+        //        if (type.UnderlyingType.IsEnum)
+        //        {
+        //            this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, "'{0}'", StringValueOf(Enum.ToObject(type.UnderlyingType, value) as Enum)));
+        //        }
+        //        else
+        //        {
+        //            this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, "'{0}'", this.GetIdsDateTimeFormat(value)));
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// Returns the XmlEnumAttribute name if present else returns the enum object.
@@ -751,34 +751,34 @@ namespace Intuit.Ipp.QueryFilter
             return value;
         }
 
-        /// <summary>
-        /// Indicates whether the property name has been used with the NOT operator.
-        /// </summary>
-        /// <param name="propName">Name of the property.</param>
-        /// <returns>True if the property has been used with the NOT operator else false.</returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        private bool IsNotUsed(string propName)
-        {
-            foreach (LinqExtender.Ast.NotExpression item in this.notExpressions)
-            {
-                if (item.PropertyName.Equals(propName))
-                {
-                    return true;
-                }
-            }
+        ///// <summary>
+        ///// Indicates whether the property name has been used with the NOT operator.
+        ///// </summary>
+        ///// <param name="propName">Name of the property.</param>
+        ///// <returns>True if the property has been used with the NOT operator else false.</returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //private bool IsNotUsed(string propName)
+        //{
+        //    foreach (LinqExtender.Ast.NotExpression item in this.notExpressions)
+        //    {
+        //        if (item.PropertyName.Equals(propName))
+        //        {
+        //            return true;
+        //        }
+        //    }
 
-            return false;
-        }
+        //    return false;
+        //}
 
-        /// <summary>
-        /// TODO: Update summary
-        /// </summary>
-        /// <param name="exprssion"></param>
-        /// <returns></returns>
-        [Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
-        public IEnumerable<T> Execute(LinqExtender.Ast.Expression exprssion)
-        {
-            throw new NotImplementedException();
-        }
+        ///// <summary>
+        ///// TODO: Update summary
+        ///// </summary>
+        ///// <param name="exprssion"></param>
+        ///// <returns></returns>
+        //[Obsolete("Deprecated. Use QueryService->ExecuteIdsQuery")]
+        //public IEnumerable<T> Execute(LinqExtender.Ast.Expression exprssion)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

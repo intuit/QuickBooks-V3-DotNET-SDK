@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28809.33
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{D65F7456-F8DB-4EC0-8C03-C22961C80649}"
 EndProject
@@ -11,105 +11,91 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataService", "DataService"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlatformService", "PlatformService", "{84904425-B30F-4BF2-ABA1-7D8CEB8B7132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Diagnostics", "Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj", "{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Diagnostics", "Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj", "{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Utility", "Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj", "{1A06430B-308C-49CF-9620-70D4F7D8A501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Utility", "Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj", "{1A06430B-308C-49CF-9620-70D4F7D8A501}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Exception", "Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj", "{0C815166-B7AC-45DF-AA48-0B026687228E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Exception", "Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj", "{0C815166-B7AC-45DF-AA48-0B026687228E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D1049A30-DC40-4FC8-923D-AF59779D1F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.DataService", "Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj", "{2A5A9D95-9CE2-4726-A9E2-606838ABDCD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.DataService", "Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj", "{2A5A9D95-9CE2-4726-A9E2-606838ABDCD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.QueryFilter", "Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj", "{D479AB56-8F3E-4C3E-B641-048B3552DDA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.QueryFilter", "Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj", "{D479AB56-8F3E-4C3E-B641-048B3552DDA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.PlatformService", "Intuit.Ipp.PlatformService\Intuit.Ipp.PlatformService.csproj", "{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Core", "Intuit.Ipp.Core\Intuit.Ipp.Core.csproj", "{2147FC87-D172-40A6-9D54-181515DAF7AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Core", "Intuit.Ipp.Core\Intuit.Ipp.Core.csproj", "{2147FC87-D172-40A6-9D54-181515DAF7AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Retry", "Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj", "{12D82D75-ECEE-459D-A820-B6CD95B24449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Retry", "Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj", "{12D82D75-ECEE-459D-A820-B6CD95B24449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Retry.Test", "Intuit.Ipp.Retry.Test\Intuit.Ipp.Retry.Test.csproj", "{D0564333-039B-4FBF-88A9-CD77595F8189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Retry.Test", "Intuit.Ipp.Retry.Test\Intuit.Ipp.Retry.Test.csproj", "{D0564333-039B-4FBF-88A9-CD77595F8189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Diagnostics.Test", "Intuit.Ipp.Diagnostics.Test\Intuit.Ipp.Diagnostics.Test.csproj", "{322AAE96-5564-4721-8F1A-05ED76D42BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Diagnostics.Test", "Intuit.Ipp.Diagnostics.Test\Intuit.Ipp.Diagnostics.Test.csproj", "{322AAE96-5564-4721-8F1A-05ED76D42BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Exception.Test", "Intuit.Ipp.Exception.Test\Intuit.Ipp.Exception.Test.csproj", "{84B631F2-2D0B-48EF-8ECF-C4D05372AF0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Exception.Test", "Intuit.Ipp.Exception.Test\Intuit.Ipp.Exception.Test.csproj", "{84B631F2-2D0B-48EF-8ECF-C4D05372AF0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Utility.Test", "Intuit.Ipp.Utility.Test\Intuit.Ipp.Utility.Test.csproj", "{BE2DCB4C-EC1F-4768-8DB3-7FA63131C348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Utility.Test", "Intuit.Ipp.Utility.Test\Intuit.Ipp.Utility.Test.csproj", "{BE2DCB4C-EC1F-4768-8DB3-7FA63131C348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Core.Test", "Intuit.Ipp.Core.Test\Intuit.Ipp.Core.Test.csproj", "{10551243-DB15-446F-AD98-A69904170BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Core.Test", "Intuit.Ipp.Core.Test\Intuit.Ipp.Core.Test.csproj", "{10551243-DB15-446F-AD98-A69904170BE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Security.Test", "Intuit.Ipp.Security.Test\Intuit.Ipp.Security.Test.csproj", "{3C71B0EE-F73F-41A2-A7AD-C1034301CF31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Security.Test", "Intuit.Ipp.Security.Test\Intuit.Ipp.Security.Test.csproj", "{3C71B0EE-F73F-41A2-A7AD-C1034301CF31}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.DataService.Test", "Intuit.Ipp.DataService.Test\Intuit.Ipp.DataService.Test.csproj", "{1581673C-81B0-4795-A7D0-A4D84B3C37CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.DataService.Test", "Intuit.Ipp.DataService.Test\Intuit.Ipp.DataService.Test.csproj", "{1581673C-81B0-4795-A7D0-A4D84B3C37CD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71} = {E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.PlatformServices.Test", "Intuit.Ipp.PlatformServices.Test\Intuit.Ipp.PlatformServices.Test.csproj", "{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Data", "..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj", "{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Data", "..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj", "{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSD", "XSD", "{711574A5-0FC7-4F42-BBBF-1CEBCF6E7C68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.XsdExtension", "..\Tools\XsdExtension\Intuit.Ipp.XsdExtension\Intuit.Ipp.XsdExtension.csproj", "{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.XsdExtension", "..\Tools\XsdExtension\Intuit.Ipp.XsdExtension\Intuit.Ipp.XsdExtension.csproj", "{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.LinqExtender", "..\ThirdParty\Linq Extender\Intuit.Ipp.LinqExtender.csproj", "{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items (2)", "Solution Items (2)", "{DEC31404-E957-447F-9E31-D80F64D708F5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEC31404-E957-447F-9E31-D80F64D708F5}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
 		IppDotNetDevKitCSV3.vsmdi = IppDotNetDevKitCSV3.vsmdi
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.ReportService", "Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj", "{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.ReportService", "Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj", "{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.ReportService.Test", "Intuit.Ipp.ReportService.Test\Intuit.Ipp.ReportService.Test.csproj", "{9A3AB447-F207-4C6E-AB09-B742FD4610EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.ReportService.Test", "Intuit.Ipp.ReportService.Test\Intuit.Ipp.ReportService.Test.csproj", "{9A3AB447-F207-4C6E-AB09-B742FD4610EF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74} = {43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.GlobalTaxService", "Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj", "{F9091E69-5EB8-4405-A85F-DD4307560C9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.GlobalTaxService", "Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj", "{F9091E69-5EB8-4405-A85F-DD4307560C9A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{86A7A1D2-A596-454E-AD15-4655BDBF3539}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.WebHooksService", "Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj", "{DD710EE8-17E2-433A-833A-FCC3FB04F9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.WebHooksService", "Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj", "{DD710EE8-17E2-433A-833A-FCC3FB04F9B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.WebhooksService.Test", "Intuit.Ipp.WebhooksService.Test\Intuit.Ipp.WebhooksService.Test.csproj", "{C7AFAB6A-5A19-4845-85A5-220C848F8F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.WebhooksService.Test", "Intuit.Ipp.WebhooksService.Test\Intuit.Ipp.WebhooksService.Test.csproj", "{C7AFAB6A-5A19-4845-85A5-220C848F8F73}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.QueryFilter.Test", "Intuit.Ipp.QueryFilter.Test\Intuit.Ipp.QueryFilter.Test.csproj", "{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.QueryFilter.Test", "Intuit.Ipp.QueryFilter.Test\Intuit.Ipp.QueryFilter.Test.csproj", "{CE6A8BE5-23E1-4BE1-8343-9C48374F7672}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth2Client", "OAuth2Client", "{1438B09F-C188-4F16-A00B-B037D8DD271C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.OAuth2PlatformClient.Test", "Intuit.Ipp.OAuth2PlatformClient.Test\Intuit.Ipp.OAuth2PlatformClient.Test.csproj", "{6FA32031-6520-4A6F-BFFA-227EEC56B292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient.Test", "Intuit.Ipp.OAuth2PlatformClient.Test\Intuit.Ipp.OAuth2PlatformClient.Test.csproj", "{6FA32031-6520-4A6F-BFFA-227EEC56B292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.OAuth2PlatformClient", "Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj", "{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient", "Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj", "{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples to test SDK", "Samples to test SDK", "{A0ED5BF7-1149-4C3D-B48C-E3D10CD638A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.EntitlementService", "Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj", "{D183A5CA-B8A4-4286-A765-EED1B148547B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A06430B-308C-49CF-9620-70D4F7D8A501} = {1A06430B-308C-49CF-9620-70D4F7D8A501}
+		{0C815166-B7AC-45DF-AA48-0B026687228E} = {0C815166-B7AC-45DF-AA48-0B026687228E}
+		{2147FC87-D172-40A6-9D54-181515DAF7AC} = {2147FC87-D172-40A6-9D54-181515DAF7AC}
+		{160733CB-F539-4545-BEF4-F57176FD12DE} = {160733CB-F539-4545-BEF4-F57176FD12DE}
+		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB} = {34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB}
+		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71} = {E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth1", "OAuth1", "{F69BCC7C-6728-409B-93C1-9208B58288DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.EntitlementService.Test", "Intuit.Ipp.EntitlementService.Test\Intuit.Ipp.EntitlementService.Test.csproj", "{F2A9CA04-DA01-44CA-A18D-704948C836EB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth2", "OAuth2", "{09E90970-0C09-4958-9CA4-4B644E462E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Security", "Intuit.Ipp.Security\Intuit.Ipp.Security.csproj", "{160733CB-F539-4545-BEF4-F57176FD12DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDGOauthSample", "..\Sample app for testing SDK\OAuth1\IDG Oauth Sample\IDGOauthSample\IDGOauthSample.csproj", "{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.GlobalTaxServiceTest", "Intuit.Ipp.GlobalTaxServiceTest\Intuit.Ipp.GlobalTaxServiceTest.csproj", "{C65E5969-E551-456A-AC79-AA625CC97C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Manual Code Flow Client", "..\Sample app for testing SDK\OAuth2\MvcCodeFlowClientManual\MVC Manual Code Flow Client.csproj", "{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2-Dotnet_UsingSDK", "..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.csproj", "{5573F08E-0683-49D1-86C6-BF68E29A3EE8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.EntitlementService", "Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj", "{D183A5CA-B8A4-4286-A765-EED1B148547B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.EntitlementService.Test", "Intuit.Ipp.EntitlementService.Test\Intuit.Ipp.EntitlementService.Test.csproj", "{F2A9CA04-DA01-44CA-A18D-704948C836EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Security", "Intuit.Ipp.Security\Intuit.Ipp.Security.csproj", "{160733CB-F539-4545-BEF4-F57176FD12DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Nupkg", "Intuit.Ipp.Nupkg\Intuit.Ipp.Nupkg.csproj", "{C7499C40-3068-4B1F-921C-3D63DA9A94EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,16 +157,6 @@ Global
 		{D479AB56-8F3E-4C3E-B641-048B3552DDA9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D479AB56-8F3E-4C3E-B641-048B3552DDA9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D479AB56-8F3E-4C3E-B641-048B3552DDA9}.Release|x86.ActiveCfg = Release|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03}.Release|x86.ActiveCfg = Release|Any CPU
 		{2147FC87-D172-40A6-9D54-181515DAF7AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2147FC87-D172-40A6-9D54-181515DAF7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2147FC87-D172-40A6-9D54-181515DAF7AC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -271,16 +247,6 @@ Global
 		{1581673C-81B0-4795-A7D0-A4D84B3C37CD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1581673C-81B0-4795-A7D0-A4D84B3C37CD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1581673C-81B0-4795-A7D0-A4D84B3C37CD}.Release|x86.ActiveCfg = Release|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3}.Release|x86.ActiveCfg = Release|Any CPU
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -301,16 +267,6 @@ Global
 		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C}.Release|x86.ActiveCfg = Release|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2}.Release|x86.ActiveCfg = Release|Any CPU
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -399,42 +355,6 @@ Global
 		{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}.Release|x86.ActiveCfg = Release|Any CPU
 		{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126}.Release|x86.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Debug|x86.Build.0 = Debug|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|x86.ActiveCfg = Release|Any CPU
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE}.Release|x86.Build.0 = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Debug|x86.Build.0 = Debug|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|x86.ActiveCfg = Release|Any CPU
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB}.Release|x86.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.Build.0 = Release|Any CPU
 		{D183A5CA-B8A4-4286-A765-EED1B148547B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D183A5CA-B8A4-4286-A765-EED1B148547B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D183A5CA-B8A4-4286-A765-EED1B148547B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -471,19 +391,42 @@ Global
 		{160733CB-F539-4545-BEF4-F57176FD12DE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{160733CB-F539-4545-BEF4-F57176FD12DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{160733CB-F539-4545-BEF4-F57176FD12DE}.Release|x86.Build.0 = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Debug|x86.Build.0 = Debug|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{C65E5969-E551-456A-AC79-AA625CC97C7E}.Release|x86.Build.0 = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{697C38AE-D094-4D77-BD08-C15BD1B2BB7B} = {D1049A30-DC40-4FC8-923D-AF59779D1F94}
-		{84904425-B30F-4BF2-ABA1-7D8CEB8B7132} = {D1049A30-DC40-4FC8-923D-AF59779D1F94}
+		{EEB954D6-D751-4E7F-BEC3-8D10CC55FF81} = {DEC31404-E957-447F-9E31-D80F64D708F5}
 		{34F2D8E7-2239-4EE0-AE53-3B8F6B0513BB} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{1A06430B-308C-49CF-9620-70D4F7D8A501} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{0C815166-B7AC-45DF-AA48-0B026687228E} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{2A5A9D95-9CE2-4726-A9E2-606838ABDCD1} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
 		{D479AB56-8F3E-4C3E-B641-048B3552DDA9} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
-		{3EBC3539-A7D7-4524-9950-A1C84B2E3D03} = {84904425-B30F-4BF2-ABA1-7D8CEB8B7132}
 		{2147FC87-D172-40A6-9D54-181515DAF7AC} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{12D82D75-ECEE-459D-A820-B6CD95B24449} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{D0564333-039B-4FBF-88A9-CD77595F8189} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
@@ -493,10 +436,8 @@ Global
 		{10551243-DB15-446F-AD98-A69904170BE1} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{3C71B0EE-F73F-41A2-A7AD-C1034301CF31} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{1581673C-81B0-4795-A7D0-A4D84B3C37CD} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
-		{1AB4DE58-3750-4475-81B2-D6E85BAFDDB3} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{E54BBDFF-F3FB-4497-ACEC-7BC6F4404F71} = {8A94E382-5E13-467F-9564-FFE47D0B4646}
 		{B66D0AB3-36DF-4E0A-83E0-772D31C6108C} = {711574A5-0FC7-4F42-BBBF-1CEBCF6E7C68}
-		{A2171F32-6AB4-4BA4-920B-EB1D28F5F7F2} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
 		{43C587BD-F5EE-46B8-A52A-BBD3CA6C1C74} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
 		{9A3AB447-F207-4C6E-AB09-B742FD4610EF} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{F9091E69-5EB8-4405-A85F-DD4307560C9A} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
@@ -505,14 +446,11 @@ Global
 		{CE6A8BE5-23E1-4BE1-8343-9C48374F7672} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{6FA32031-6520-4A6F-BFFA-227EEC56B292} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{F9C4B669-E10B-44C4-8ED4-85CEAAFC4126} = {1438B09F-C188-4F16-A00B-B037D8DD271C}
-		{F69BCC7C-6728-409B-93C1-9208B58288DF} = {A0ED5BF7-1149-4C3D-B48C-E3D10CD638A0}
-		{09E90970-0C09-4958-9CA4-4B644E462E0D} = {A0ED5BF7-1149-4C3D-B48C-E3D10CD638A0}
-		{7A3F50D7-0993-4D4E-B3E8-B82CABC620FE} = {F69BCC7C-6728-409B-93C1-9208B58288DF}
-		{C67DB8BB-6083-436D-9748-4BDD9EC8C0EB} = {09E90970-0C09-4958-9CA4-4B644E462E0D}
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8} = {09E90970-0C09-4958-9CA4-4B644E462E0D}
 		{D183A5CA-B8A4-4286-A765-EED1B148547B} = {697C38AE-D094-4D77-BD08-C15BD1B2BB7B}
 		{F2A9CA04-DA01-44CA-A18D-704948C836EB} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{160733CB-F539-4545-BEF4-F57176FD12DE} = {D65F7456-F8DB-4EC0-8C03-C22961C80649}
+		{C65E5969-E551-456A-AC79-AA625CC97C7E} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
+		{C7499C40-3068-4B1F-921C-3D63DA9A94EC} = {DEC31404-E957-447F-9E31-D80F64D708F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D58CF63B-6932-4503-893A-42C15952609D}

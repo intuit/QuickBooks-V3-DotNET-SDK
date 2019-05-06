@@ -9,7 +9,7 @@ using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+//
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 
@@ -222,8 +222,9 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             QueryService<VendorType> entityQuery = new QueryService<VendorType>(qboContextoAuth);
             VendorType existing = Helper.FindOrAdd<VendorType>(qboContextoAuth, new VendorType());
-            List<VendorType> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
-            Assert.IsTrue(entities.Count() > 0);
+            //List<VendorType> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
+            int count=entityQuery.ExecuteIdsQuery("Select * from VendorType where Id='"+existing.Id+"'").Count;
+            Assert.IsTrue(count > 0);
         }
 
         #endregion

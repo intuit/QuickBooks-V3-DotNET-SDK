@@ -409,13 +409,12 @@ namespace Intuit.Ipp.Core
                                                 }
                                             }
 
+
                                             // Log the error string to disk.
                                             CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
-
-                                            
+                                        }
                                     }
-                                }
 
                                     Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
                                     IdsException idsException = fault.ParseErrorResponseAndPrepareException(errorString);
@@ -615,6 +614,7 @@ namespace Intuit.Ipp.Core
                                 }
                             }
 
+                                // Log the error string to disk.
                                 string response_intuit_tid_header = "";
                                 //get intuit_tid header
                                 for (int i = 0; i < errorResponse.Headers.Count; ++i)

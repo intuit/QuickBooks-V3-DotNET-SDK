@@ -5,7 +5,7 @@ using System.Linq;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.LinqExtender;
+//using Intuit.Ipp.LinqExtender;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
@@ -15,7 +15,7 @@ using Intuit.Ipp.QueryFilter;
 using System.Collections.Specialized;
 using System.Text;
 using System.Net;
-
+using Intuit.Ipp.GlobalTaxService.Test.Common;
 
 namespace Intuit.Ipp.GlobalTaxService.Test
 {
@@ -47,16 +47,9 @@ namespace Intuit.Ipp.GlobalTaxService.Test
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
-            string accessTokenQBO = ConfigurationManager.AppSettings["AccessTokenQBO"];
-            string accessTokenSecretQBO = ConfigurationManager.AppSettings["AccessTokenSecretQBO"];
-            string consumerKeyQBO = ConfigurationManager.AppSettings["ConsumerKeyQBO"];
-            string ConsumerSecretQBO = ConfigurationManager.AppSettings["ConsumerSecretQBO"];
-            string realmIAQBO = ConfigurationManager.AppSettings["RealmIAQBO"];
-
-            OAuthRequestValidator oAuthRequestValidator = new OAuthRequestValidator(accessTokenQBO, accessTokenSecretQBO, consumerKeyQBO, ConsumerSecretQBO);
-            context = new ServiceContext(realmIAQBO, IntuitServicesType.QBO, oAuthRequestValidator);
+            context = Initializer.InitializeServiceContextQbo();
             context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\logsProdv3";
+            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\\Logs";
 
         }
 
@@ -97,7 +90,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
                 //taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-                //Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);                
+                //Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
                 //Assert.IsNotNull(taxCodeAdded.TaxCodeId);
 
 
@@ -125,8 +118,8 @@ namespace Intuit.Ipp.GlobalTaxService.Test
                 taxCodetobeAdded.TaxCode = "taxC_" + Guid.NewGuid().ToString("N");
 
                 QueryService<TaxAgency> taxagency = new QueryService<TaxAgency>(context);
-                TaxAgency taxagencyResult = taxagency.ExecuteIdsQuery("select * from TaxAgency").FirstOrDefault<TaxAgency>();                          
-                
+                TaxAgency taxagencyResult = taxagency.ExecuteIdsQuery("select * from TaxAgency").FirstOrDefault<TaxAgency>();
+
 
 
                 List<TaxRateDetails> lstTaxRate = new List<TaxRateDetails>();
@@ -237,7 +230,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
             taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-           
+
 
             try
             {

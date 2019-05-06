@@ -23,7 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             FileInfo fileInfo = new FileInfo(binDir);
             DirectoryInfo dir = fileInfo.Directory.Parent.Parent;
 
-            var document = File.ReadAllText(Path.Combine(dir.FullName, "Intuit.Ipp.OAuth2PlatformClient.Test\\Documents", "success_userinfo_response.json"));
+            var document = File.ReadAllText(Path.Combine(binDir, "Documents", "success_userinfo_response.json"));
             var handler = new NetworkHandler(document, HttpStatusCode.OK);
 
             var client = new UserInfoClient(
@@ -67,7 +67,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
         [TestMethod]
         public async Task Exception_should_be_handled_correctly()
         {
-            var handler = new NetworkHandler(new Exception("exception"));
+            var handler = new NetworkHandler(HttpStatusCode.BadRequest,"exception");
 
             var client = new UserInfoClient(
                 Endpoint,
@@ -76,9 +76,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var response = await client.GetAsync("token");
 
             Assert.AreEqual(true, response.IsError);
-            Assert.AreEqual(ResponseErrorType.Exception, response.ErrorType);
+            Assert.AreEqual(ResponseErrorType.Http, response.ErrorType);
             Assert.AreEqual("exception", response.Error);
-            Assert.IsNotNull(response.Exception);
+            Assert.IsNotNull(response.Error);
 
 
         }

@@ -1,229 +1,83 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{060832A6-5005-4155-9B07-9586EDED2EB5}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Intuit.Ipp.Test</RootNamespace>
-    <AssemblyName>Intuit.Ipp.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevDefined.OAuth.0.2\lib\DevDefined.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Core, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Data, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.DataService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.DataService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Diagnostics, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Diagnostics.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.EntitlementService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.EntitlementService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Exception, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Exception.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.GlobalTaxService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.GlobalTaxService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.LinqExtender, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.LinqExtender.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.OAuth2PlatformClient, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.PlatformService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.PlatformService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.QueryFilter, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.QueryFilter.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.ReportService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.ReportService.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Retry">
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Retry.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Security, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.Utility, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.Utility.dll</HintPath>
-    </Reference>
-    <Reference Include="Intuit.Ipp.WebHooksService, Version=5.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SDK Assemblies\Intuit.Ipp.WebHooksService.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.XML" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
-      <Visible>False</Visible>
-    </CodeAnalysisDependentAssemblyPaths>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Common\Helper.cs" />
-    <Compile Include="Common\Initializer.cs" />
-    <Compile Include="Common\UserInformation.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\QBOHelper.cs" />
-    <Compile Include="Services\Platform\PlatformApi.cs" />
-    <Compile Include="Services\QBO\Account.cs" />
-    <Compile Include="Services\QBO\Attachable.cs" />
-    <Compile Include="Services\QBO\BatchProcessingTests.cs" />
-    <Compile Include="Services\QBO\Bill.cs" />
-    <Compile Include="Services\QBO\BillPayment.cs" />
-    <Compile Include="Services\QBO\BooleanTypeCustomFieldDefinition.cs" />
-    <Compile Include="Services\QBO\Budget.cs" />
-    <Compile Include="Services\QBO\Class.cs" />
-    <Compile Include="Services\QBO\Company.cs" />
-    <Compile Include="Services\QBO\CompanyInfo.cs" />
-    <Compile Include="Services\QBO\CreditMemo.cs" />
-    <Compile Include="Services\QBO\CompanyCurrency.cs" />
-    <Compile Include="Services\QBO\ExchangeRate.cs" />
-    <Compile Include="Services\QBO\GlobalTaxService.cs" />
-    <Compile Include="Services\QBO\JournalCode.cs" />
-    <Compile Include="Services\QBO\Timeout.cs" />
-    <Compile Include="Services\QBO\Customer.cs" />
-    <Compile Include="Services\QBO\CustomerMsg.cs" />
-    <Compile Include="Services\QBO\CustomerType.cs" />
-    <Compile Include="Services\QBO\CustomFieldDefinition.cs" />
-    <Compile Include="Services\QBO\DateTypeCustomFieldDefinition.cs" />
-    <Compile Include="Services\QBO\Department.cs" />
-    <Compile Include="Services\QBO\Deposit.cs" />
-    <Compile Include="Services\QBO\Employee.cs" />
-    <Compile Include="Services\QBO\Estimate.cs" />
-    <Compile Include="Services\QBO\FixedAsset.cs" />
-    <Compile Include="Services\QBO\InventorySite.cs" />
-    <Compile Include="Services\QBO\Invoice.cs" />
-    <Compile Include="Services\QBO\Item.cs" />
-    <Compile Include="Services\QBO\JobType.cs" />
-    <Compile Include="Services\QBO\JournalEntry.cs" />
-    <Compile Include="Services\QBO\NameBase.cs" />
-    <Compile Include="Services\QBO\NameValue.cs" />
-    <Compile Include="Services\QBO\NumberTypeCustomFieldDefinition.cs" />
-    <Compile Include="Services\QBO\OtherName.cs" />
-    <Compile Include="Services\QBO\Payment.cs" />
-    <Compile Include="Services\QBO\PaymentMethod.cs" />
-    <Compile Include="Services\QBO\Preferences.cs" />
-    <Compile Include="Services\QBO\PriceLevel.cs" />
-    <Compile Include="Services\QBO\PriceLevelPerItem.cs" />
-    <Compile Include="Services\QBO\Purchase.cs" />
-    <Compile Include="Services\QBO\PurchaseByVendor.cs" />
-    <Compile Include="Services\QBO\PurchaseOrder.cs" />
-    <Compile Include="Services\QBO\QueryFilterTests.cs" />
-    <Compile Include="Services\QBO\RefundReceipt.cs" />
-    <Compile Include="Services\QBO\Reports.cs" />
-    <Compile Include="Services\QBO\SalesOrder.cs" />
-    <Compile Include="Services\QBO\SalesReceipt.cs" />
-    <Compile Include="Services\QBO\SalesRep.cs" />
-    <Compile Include="Services\QBO\SalesTransaction.cs" />
-    <Compile Include="Services\QBO\ShipMethod.cs" />
-    <Compile Include="Services\QBO\StatementCharge.cs" />
-    <Compile Include="Services\QBO\Status.cs" />
-    <Compile Include="Services\QBO\StringTypeCustomFieldDefinition.cs" />
-    <Compile Include="Services\QBO\SyncActivity.cs" />
-    <Compile Include="Services\QBO\Task.cs" />
-    <Compile Include="Services\QBO\TaxAgency.cs" />
-    <Compile Include="Services\QBO\TaxCode.cs" />
-    <Compile Include="Services\QBO\TaxRate.cs" />
-    <Compile Include="Services\QBO\TemplateName.cs" />
-    <Compile Include="Services\QBO\Term.cs" />
-    <Compile Include="Services\QBO\TimeActivity.cs" />
-    <Compile Include="Services\QBO\Transaction.cs" />
-    <Compile Include="Services\QBO\Transfer.cs" />
-    <Compile Include="Services\QBO\TaxClassification.cs" />
-    <Compile Include="Services\QBO\UOM.cs" />
-    <Compile Include="Services\QBO\User.cs" />
-    <Compile Include="Services\QBO\Vendor.cs" />
-    <Compile Include="Services\QBO\VendorCredit.cs" />
-    <Compile Include="Services\QBO\VendorType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App.config.Prod.US" />
-    <None Include="App.config.Prod.UK" />
-    <None Include="Certificates\ACS.ServiceManagementWrapper.pfx" />
-    <None Include="Certificates\idp.pfx" />
-    <None Include="App.config.Stage.US">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App.config.Prod.AUS">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Services\Resource\image.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+        
+    </PropertyGroup>
+
+
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        
+    </ItemGroup>
+    <ItemGroup>
+       <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+       <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
+       <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />      
+       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+       <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+       <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+       <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Intuit.Ipp.Core">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Data">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.DataService">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.DataService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Diagnostics">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Diagnostics.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.EntitlementService">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.EntitlementService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Exception">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Exception.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.GlobalTaxService">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.GlobalTaxService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.OAuth2PlatformClient">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.QueryFilter">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.QueryFilter.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.ReportService">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.ReportService.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Retry">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Retry.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Security">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Security.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.Utility">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Utility.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.WebHooksService">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.WebHooksService.dll</HintPath>
+      </Reference>
+      <Reference Include="IppDotNetSdkForQuickBooksApiV3">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\IppDotNetSdkForQuickBooksApiV3.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="TokenStore.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    
+
 </Project>

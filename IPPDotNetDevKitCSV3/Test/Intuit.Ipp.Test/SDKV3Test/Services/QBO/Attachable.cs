@@ -12,7 +12,7 @@ using System.Threading;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+
 
 namespace Intuit.Ipp.Test.Services.QBO
 {
@@ -214,7 +214,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
             batchEntries.Add(OperationEnum.create, QBOHelper.CreateAttachable(qboContextoAuth));
 
-            batchEntries.Add(OperationEnum.update, QBOHelper.UpdateAttachable(qboContextoAuth, existing));
+            //batchEntries.Add(OperationEnum.update, QBOHelper.UpdateAttachable(qboContextoAuth, existing));
 
             batchEntries.Add(OperationEnum.query, "select * from Attachable");
 

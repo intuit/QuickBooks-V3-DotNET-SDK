@@ -40,7 +40,7 @@ namespace Intuit.Ipp.Exception
         /// <param name="idsException">Ids Exception</param>
         public static void HandleException(IdsException idsException)
         {
-            throw idsException;
+        throw idsException;
         }
 
         /// <summary>

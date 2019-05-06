@@ -211,7 +211,7 @@ namespace Intuit.Ipp.Core.Test
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
             serviceContext.IppConfiguration.RetryPolicy = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(2));
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
-            string AccountId = ConfigurationManager.AppSettings["AccountId"].ToString();
+            string AccountId = "1";
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_TEXTXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
@@ -226,8 +226,9 @@ namespace Intuit.Ipp.Core.Test
         [TestMethod]        
         public void GetResponseInvalidTokenExceptionTest()
         {
-            OAuthRequestValidator validator = new OAuthRequestValidator("adfas", "afd", "adfas", "asdfa");
-            string realmId = ConfigurationManager.AppSettings["RealmIAQBO"];
+            //OAuthRequestValidator validator = new OAuthRequestValidator("adfas", "afd", "adfas", "asdfa");
+            OAuth2RequestValidator validator = new OAuth2RequestValidator("bearertoken");
+            string realmId = AuthorizationKeysQBO.realmIdIAQBO;
             ServiceContext serviceContext = new ServiceContext(realmId, IntuitServicesType.QBO, validator);
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
             string resourceUri = string.Format("v3/company/{0}/customer", serviceContext.RealmId);

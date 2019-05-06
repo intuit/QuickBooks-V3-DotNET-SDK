@@ -10,6 +10,7 @@ using Intuit.Ipp.Data;
 using Intuit.Ipp.QueryFilter;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.DataService;
+using Intuit.Ipp.Core.Test.Common;
 
 /// <summary>
 ///This test case covers Include parameter, minorversion, requestId tests.

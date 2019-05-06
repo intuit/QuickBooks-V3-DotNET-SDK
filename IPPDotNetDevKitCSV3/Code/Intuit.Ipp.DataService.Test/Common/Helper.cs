@@ -12,10 +12,13 @@ using System.Reflection;
 using System.Threading;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.LinqExtender;
+using Newtonsoft.Json;
+using Intuit.Ipp.OAuth2PlatformClient;
+using Newtonsoft.Json.Linq;
+//using Intuit.Ipp.LinqExtender;
 
 
-namespace Intuit.Ipp.Core.Test.Common
+namespace Intuit.Ipp.DataService.Test.Common
 {
     /// <summary>
     /// Summary description for Helper.
@@ -23,18 +26,60 @@ namespace Intuit.Ipp.Core.Test.Common
 
     public class Helper
     {
+        internal static ServiceContext GetNewTokens_ServiceContext()
+        {
+
+
+            FileInfo fileinfo = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+            string jsonFile = File.ReadAllText(fileinfo.FullName);
+            var jObj = JObject.Parse(jsonFile);
+
+            var oauth2Client = new OAuth2Client(AuthorizationKeysQBO.clientIdQBO, AuthorizationKeysQBO.clientSecretQBO, AuthorizationKeysQBO.redirectUrl, AuthorizationKeysQBO.appEnvironment);
+            try
+            {
+                var tokenResp = oauth2Client.RefreshTokenAsync(AuthorizationKeysQBO.refreshTokenQBO).Result;
+                jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+            }
+            catch (IdsException ex)
+            {
+
+                if (jObj["Oauth2Keys"]["RefreshToken"] != null)
+                {
+                    var tokenResp = oauth2Client.RefreshTokenAsync(jObj["Oauth2Keys"]["RefreshToken"].ToString()).Result;
+                    jObj["Oauth2Keys"]["AccessToken"] = tokenResp.AccessToken;
+                    jObj["Oauth2Keys"]["RefreshToken"] = tokenResp.RefreshToken;
+                }
+                else
+                {
+                    throw ex;
+                }
+            }
+
+
+            string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+            File.WriteAllText(fileinfo.FullName, output);
+            //tokenDict.Clear();
+            var serviceContext = Initializer.InitializeServiceContextQbo();
+            return serviceContext;
+
+
+
+        }
+
         internal static List<T> FindAll<T>(ServiceContext context, T entity, int startPosition = 1, int maxResults = 100) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             ReadOnlyCollection<T> entityList = service.FindAll(entity, startPosition, maxResults);
 
             return entityList.ToList<T>();
         }
 
+
         internal static T FindById<T>(ServiceContext context, T entity) where T : IEntity
         {
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
             T foundEntity = service.FindById(entity);
 
             return foundEntity;
@@ -43,7 +88,7 @@ namespace Intuit.Ipp.Core.Test.Common
         internal static T Add<T>(ServiceContext context, T entity) where T : IEntity
         {
             //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             //Adding the Bill using Dataservice object
 
@@ -64,7 +109,7 @@ namespace Intuit.Ipp.Core.Test.Common
         internal static T Update<T>(ServiceContext context, T entity) where T : IEntity
         {
             //initializing the dataservice object with servicecontext
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             //updating the entity
             T updated = service.Update<T>(entity);
@@ -75,7 +120,7 @@ namespace Intuit.Ipp.Core.Test.Common
         internal static T SparseUpdate<T>(ServiceContext context, T entity) where T : IEntity
         {
             //initializing the dataservice object with servicecontext
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             //updating the entity
             T updated = service.Update<T>(entity);
@@ -86,7 +131,7 @@ namespace Intuit.Ipp.Core.Test.Common
         internal static T Delete<T>(ServiceContext context, T entity) where T : IEntity
         {
             //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             //Deleting the Bill using the service
             T deleted = service.Delete<T>(entity);
@@ -97,7 +142,7 @@ namespace Intuit.Ipp.Core.Test.Common
         internal static T Void<T>(ServiceContext context, T entity) where T : IEntity
         {
             //Initializing the Dataservice object with ServiceContext
-            DataService.DataService service = new DataService.DataService(context);
+            DataService service = new DataService(context);
 
             //Voiding the entity using the service
             service.Void<T>(entity);
@@ -121,7 +166,7 @@ namespace Intuit.Ipp.Core.Test.Common
             try
             {
                 //Initializing the Dataservice object with ServiceContext
-                DataService.DataService service = new DataService.DataService(context);
+                DataService service = new DataService(context);
 
                 
 
@@ -188,7 +233,7 @@ namespace Intuit.Ipp.Core.Test.Common
             try
             {
                 //Initializing the Dataservice object with ServiceContext
-                DataService.DataService service = new DataService.DataService(context);
+                DataService service = new DataService(context);
 
                 //bool isFindById = false;
 
@@ -227,7 +272,7 @@ namespace Intuit.Ipp.Core.Test.Common
             try
             {
                 //Initializing the Dataservice object with ServiceContext
-                DataService.DataService service = new DataService.DataService(context);
+                DataService service = new DataService(context);
 
                 IdsException exp = null;
 

@@ -24,7 +24,7 @@ namespace Intuit.Ipp.DataService.Test
     using System.IO;
     using Intuit.Ipp.Exception;
     using Intuit.Ipp.QueryFilter;
-    using Intuit.Ipp.LinqExtender;
+    //using Intuit.Ipp.LinqExtender;
 
 
 

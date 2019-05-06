@@ -107,7 +107,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// DiscoveryClient constructor which takes in app environment
         /// </summary>
-        /// <param name="appEnvironment">authority</param>
+        /// <param name="appEnvironment">app Environment</param>
         public DiscoveryClient(AppEnvironment appEnvironment)
         {
             var handler = new HttpClientHandler();
@@ -148,6 +148,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             url = discoveryAuthority + discoveryUrl;
             Url = url;
+            _client = new HttpClient(handler);
+        }
+
+        /// <summary>
+        /// DiscoveryClient constructor which takes in  string discovery Url
+        /// </summary>
+        /// <param name="discoveryUrl">authority</param>
+        public DiscoveryClient(string discoveryUrl)
+        {
+            var handler = new HttpClientHandler();
+           
+            Url = discoveryUrl;
             _client = new HttpClient(handler);
         }
 
@@ -235,8 +247,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public DiscoveryResponse Get(CancellationToken cancellationToken = default(CancellationToken))
         {
-            //Policy.Authority = Authority;
-            string jwkUrl = "";
+           
 
             if (!DiscoveryUrlHelper.IsSecureScheme(new Uri(Url), Policy))
             {
@@ -245,6 +256,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             try
             {
+                //Policy.Authority = Authority;
+                string jwkUrl = "";
                 var response =  _client.GetAsync(Url, cancellationToken).Result;
 
                 if (!response.IsSuccessStatusCode)
