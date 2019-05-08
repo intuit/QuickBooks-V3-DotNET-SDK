@@ -10,6 +10,7 @@ using Intuit.Ipp.OAuth2PlatformClient;
 using Intuit.Ipp.QueryFilter.Test.Common;
 using Intuit.Ipp.Security;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Intuit.Ipp.QueryFilter.Test.Common 
@@ -42,6 +43,14 @@ namespace Intuit.Ipp.QueryFilter.Test.Common
             AuthorizationKeysQBO.redirectUrl = builder.GetSection("Oauth2Keys")["RedirectUrl"];
             AuthorizationKeysQBO.qboBaseUrl = builder.GetSection("Oauth2Keys")["QBOBaseUrl"];
             AuthorizationKeysQBO.appEnvironment = builder.GetSection("Oauth2Keys")["Environment"];
+            FileInfo fileinfo = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+            string jsonFile = File.ReadAllText(fileinfo.FullName);
+            var jObj = JObject.Parse(jsonFile);
+            jObj["Oauth2Keys"]["AccessToken"] = AuthorizationKeysQBO.accessTokenQBO;
+            jObj["Oauth2Keys"]["RefreshToken"] = AuthorizationKeysQBO.refreshTokenQBO;
+
+            string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+            File.WriteAllText(fileinfo.FullName, output);
 
             counter++;
 

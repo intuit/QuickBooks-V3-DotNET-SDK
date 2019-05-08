@@ -12,6 +12,7 @@ using Intuit.Ipp.Security;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Intuit.Ipp.DataService;
+using Newtonsoft.Json;
 
 namespace Intuit.Ipp.Security.Test.Common 
 {
@@ -43,7 +44,14 @@ namespace Intuit.Ipp.Security.Test.Common
             AuthorizationKeysQBO.redirectUrl = builder.GetSection("Oauth2Keys")["RedirectUrl"];
             AuthorizationKeysQBO.qboBaseUrl = builder.GetSection("Oauth2Keys")["QBOBaseUrl"];
             AuthorizationKeysQBO.appEnvironment = builder.GetSection("Oauth2Keys")["Environment"];
+            FileInfo fileinfo = new FileInfo(AuthorizationKeysQBO.tokenFilePath);
+            string jsonFile = File.ReadAllText(fileinfo.FullName);
+            var jObj = JObject.Parse(jsonFile);
+            jObj["Oauth2Keys"]["AccessToken"] = AuthorizationKeysQBO.accessTokenQBO;
+            jObj["Oauth2Keys"]["RefreshToken"] = AuthorizationKeysQBO.refreshTokenQBO;
 
+            string output = JsonConvert.SerializeObject(jObj, Formatting.Indented);
+            File.WriteAllText(fileinfo.FullName, output);
             counter++;
 
 
