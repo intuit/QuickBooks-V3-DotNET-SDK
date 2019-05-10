@@ -29,6 +29,8 @@ The QuickBooks Online .NET SDK provides a set of .NET class libraries that make 
 * Change data that enables you to retrieve a list of entities modified during specified time points.
 * Support for both OAuth1 and OAuth2
 
+Note: Oauth1 support has been removed from this SDK. Retry logic now have been moved to Core. So, if you see Retry not found issues while updating your code, just remove that Using statement and add Using Intuit.Ipp.Core if not already present.
+
 ## Running Tests
 
 Refer to the following steps to generate all the keys required to run tests using OAuth Playground-
