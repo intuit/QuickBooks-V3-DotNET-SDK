@@ -38,15 +38,15 @@ Note:
 
 Refer to the following steps to generate all the keys required to run tests using OAuth Playground-
   
-* Go to [Developer Docs](https://developer.intuit.com/). 
+* Go to [Developer Docs](https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net). 
 * Create an app on our IDG platform for the QuickBooks Online v3 APIs. 
 * For OAuth2 apps, you will get a set of Development keys, including client key and client secret. This can be used to get OAuth access token and refresh token for sandbox companies.  
-* OR for OAuth1 apps, you will get a set of Development keys, including consumer key, consumer secret, and app token. This can be used to get OAuth access tokens for sandbox companies. 
+
 * To get Prod app keys to get OAuth tokens for live companies: Go to your app->Settings tab-> enter all URLs and save. Then get the prod keys from Keys tab under Prod section. 
 * To get OAuth access tokens, go to your app's dashboard, Click `Oauth Playground`
     * For OAuth2 apps, select the desired app and make sure the OAuth playground redirect_uri is present under Keys tab and go through the OAuth authorization flow to get access and refresh tokens along with the realmid to make API calls for QuickBooks company. 
       * Access tokens are valid for 1 hour which can be refreshed using refesh token. When you request a fresh access token, always use the refresh token returned in the most recent refreshing access token API response. A refresh token expires 24 hours after you receive it. More info can be found at: [Refreshing the access token](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0#/Refreshing_the_access_token)
-    * For OAuth1 apps, set time duration in seconds for 15552000sec and get the access token and secret for your app and company by right-clicking on the page and doing a view source. You will see access token and access token secret and realmid/companyid to make API calls for their QuickBooks company which is valid for 180 days. 
+  
       * To 'renew tokens', you can call [Reconnect api](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/0085_develop_quickbooks_apps/0004_authentication_and_authorization/oauth_management_api) after 150 days or do Connect to Quickbooks after 180 days to get new tokens. 
 
 
