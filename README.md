@@ -9,7 +9,7 @@ IDG .NET SDK for QuickBooks V3
 (Class lib Project written in .NET Standard 2.0- Supports .Net Full Framework 4.6.1, 4.7.2 and .Net Core 2.1,.Net Core 2.2)
 
 **Support:** [![Help](https://img.shields.io/badge/Support-Intuit%20Developer-blue.svg)](https://help.developer.intuit.com/s/) <br/>
-**Documentation:** [![User Guide](https://img.shields.io/badge/User%20Guide-SDK%20docs-blue.svg)](https://developer.intuit.com/docs/0100_quickbooks_online/0400_tools/0005_sdks/0010.net_tools) [![Refer SDK class lib docs](https://img.shields.io/badge/Class%20Lib%20Docs-.Net%20SDK-blue.svg)](https://developer-static.intuit.com/SDKDocs/QBV3Doc/IPPDotNetDevKitV3/html/5ca993d2-af77-d050-e246-681e5983b440.htm)<br/>
+**Documentation:** [![User Guide](https://img.shields.io/badge/User%20Guide-SDK%20docs-blue.svg)](https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net) [![Refer SDK class lib docs](https://img.shields.io/badge/Class%20Lib%20Docs-.Net%20SDK-blue.svg)](https://developer-static.intuit.com/SDKDocs/QBV3Doc/IPPDotNetDevKitV3/html/5ca993d2-af77-d050-e246-681e5983b440.htm)<br/>
 **License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
 **Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-7.5.3stable-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
 
@@ -38,7 +38,7 @@ Note:
 
 Refer to the following steps to generate all the keys required to run tests using OAuth Playground-
   
-* Go to [Developer Docs](https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net). 
+* Go to [Developer Docs](https://developer.intuit.com/). 
 * Create an app on our IDG platform for the QuickBooks Online v3 APIs. 
 * For OAuth2 apps, you will get a set of Development keys, including client key and client secret. This can be used to get OAuth access token and refresh token for sandbox companies.  
 
