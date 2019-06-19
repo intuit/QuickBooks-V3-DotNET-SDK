@@ -285,7 +285,7 @@ namespace Intuit.Ipp.Core.Rest
                     return null;
                 }
 
-                throw ex;
+                throw;
             }
 
             // Return the fault.

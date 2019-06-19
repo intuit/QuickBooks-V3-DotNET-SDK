@@ -46,7 +46,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 

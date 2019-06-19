@@ -47,7 +47,7 @@ namespace Intuit.Ipp.DataService.Test
             catch (Intuit.Ipp.Exception.IdsException ex)
             {
                 this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
-                throw ex;
+                throw;
             }
 
             this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;

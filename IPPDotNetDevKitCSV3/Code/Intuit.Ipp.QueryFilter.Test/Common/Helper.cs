@@ -45,7 +45,7 @@ namespace Intuit.Ipp.QueryFilter.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 

@@ -51,7 +51,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 

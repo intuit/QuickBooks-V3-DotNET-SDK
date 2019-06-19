@@ -155,7 +155,7 @@ namespace Intuit.Ipp.Core.Rest
 
 
                 this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
-                throw retryExceededException;
+                throw;
 
             }
             catch (WebException webException)

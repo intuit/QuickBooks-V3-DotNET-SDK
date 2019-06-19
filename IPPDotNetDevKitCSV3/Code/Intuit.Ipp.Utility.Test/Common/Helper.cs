@@ -51,7 +51,7 @@ namespace Intuit.Ipp.Utility.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 

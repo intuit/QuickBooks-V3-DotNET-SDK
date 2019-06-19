@@ -45,7 +45,7 @@ namespace Intuit.Ipp.ReportService.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 
