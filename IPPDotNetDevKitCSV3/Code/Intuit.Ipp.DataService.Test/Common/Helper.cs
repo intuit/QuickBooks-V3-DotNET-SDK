@@ -52,7 +52,7 @@ namespace Intuit.Ipp.DataService.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 
@@ -223,8 +223,8 @@ namespace Intuit.Ipp.DataService.Test.Common
             }
             catch (IdsException idsEx)
             {
-                
-                throw idsEx;
+
+                throw;
             }
         }
 
@@ -263,7 +263,7 @@ namespace Intuit.Ipp.DataService.Test.Common
             catch (IdsException idsEx)
             {
 
-                throw idsEx;
+                throw;
             }
         }
         
@@ -311,7 +311,7 @@ namespace Intuit.Ipp.DataService.Test.Common
             catch (IdsException idsEx)
             {
 
-                throw idsEx;
+                throw;
             }
         }
     }

@@ -44,7 +44,7 @@ namespace Intuit.Ipp.Security.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 

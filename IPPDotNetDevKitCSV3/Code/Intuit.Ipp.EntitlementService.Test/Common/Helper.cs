@@ -51,7 +51,7 @@ namespace Intuit.Ipp.EntitlementService.Test.Common
                 }
                 else
                 {
-                    throw ex;
+                    throw;
                 }
             }
 
