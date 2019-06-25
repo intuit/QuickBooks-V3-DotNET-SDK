@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Retry.Test</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Retry.Test.IntuitRetryHelperTest">
+            <summary>
+            This is a test class for IntuitRetryHelperTest and is intended
+            to contain all IntuitRetryHelperTest Unit Tests
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Retry.Test.IntuitRetryHelperTest.testContextInstance">
+            <summary>
+            The test Context Instance.
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Retry.Test.IntuitRetryHelperTest.TestContext">
+            <summary>
+            Gets or sets the test context which provides information about and functionality for the current test run.
+            </summary>
+        </member>
+    </members>
+</doc>

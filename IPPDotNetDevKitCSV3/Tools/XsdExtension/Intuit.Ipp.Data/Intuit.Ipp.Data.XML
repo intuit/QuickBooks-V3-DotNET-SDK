@@ -819,6 +819,12 @@
             
             </summary>
         </member>
+        <member name="F:Intuit.Ipp.Data.AccountSubTypeEnum.IncomeTaxPayable">
+            <remarks/>
+        </member>
+        <member name="F:Intuit.Ipp.Data.AccountSubTypeEnum.IntangibleAssetsOther">
+            <remarks/>
+        </member>
         <member name="F:Intuit.Ipp.Data.AccountSubTypeEnum.AccountsPayable">
             <remarks/>
         </member>
@@ -3455,6 +3461,18 @@
         <member name="F:Intuit.Ipp.Data.AgencyPaymentMethodEnum.OTHER">
             <remarks/>
         </member>
+        <member name="T:Intuit.Ipp.Data.TaxReviewStatusEnum">
+            <remarks/>
+            <summary>
+            Enumeration of Reasons to review AST Taxes
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Data.TaxReviewStatusEnum.NON_AST_TAX">
+            <remarks/>
+        </member>
+        <member name="F:Intuit.Ipp.Data.TaxReviewStatusEnum.AST_TAX_OVERRIDE">
+            <remarks/>
+        </member>
         <member name="T:Intuit.Ipp.Data.LinkedTxn">
             <remarks/>
             <summary>
@@ -5349,6 +5367,22 @@
         <member name="P:Intuit.Ipp.Data.Line.AmountSpecified">
             <remarks/>
         </member>
+        <member name="P:Intuit.Ipp.Data.Line.Received">
+            <remarks/>
+            <summary>
+            
+            Product: All
+            Description: The amount/quantity received of the line,
+            which depends on the type of the line. It can represent the
+            received amount or received quantity
+            based on the line type detail. ReadOnly field for Purchase Order.
+            Applies to existing and new entities.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Line.ReceivedSpecified">
+            <remarks/>
+        </member>
         <member name="P:Intuit.Ipp.Data.Line.LinkedTxn">
             <remarks/>
             <summary>
@@ -6827,6 +6861,18 @@
             </summary>
         </member>
         <member name="P:Intuit.Ipp.Data.TxnTaxDetail.TotalTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Intuit.Ipp.Data.TxnTaxDetail.TaxReviewStatus">
+            <remarks/>
+            <summary>
+            
+            Product: ALL
+            Description: Enumerated reasons to review Taxes on the Transaction.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.TxnTaxDetail.TaxReviewStatusSpecified">
             <remarks/>
         </member>
         <member name="P:Intuit.Ipp.Data.TxnTaxDetail.TaxLine">
@@ -9754,6 +9800,18 @@
         <member name="P:Intuit.Ipp.Data.Purchase.LessCISSpecified">
             <remarks/>
         </member>
+        <member name="P:Intuit.Ipp.Data.Purchase.IncludeInAnnualTPAR">
+            <remarks/>
+            <summary>
+            
+            Product: QBO Only
+            Description: True if the Purchase should be included in annual TPAR, specific to AU region.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Purchase.IncludeInAnnualTPARSpecified">
+            <remarks/>
+        </member>
         <member name="T:Intuit.Ipp.Data.PurchaseByVendor">
             <remarks/>
             <summary>
@@ -9953,6 +10011,18 @@
         <member name="P:Intuit.Ipp.Data.Bill.LessCISSpecified">
             <remarks/>
         </member>
+        <member name="P:Intuit.Ipp.Data.Bill.IncludeInAnnualTPAR">
+            <remarks/>
+            <summary>
+            
+            Product: QBO Only
+            Description: True if the Bill should be included in annual TPAR, specific to AU region.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Bill.IncludeInAnnualTPARSpecified">
+            <remarks/>
+        </member>
         <member name="T:Intuit.Ipp.Data.VendorCredit">
             <remarks/>
             <summary>
@@ -9983,6 +10053,18 @@
             </summary>
         </member>
         <member name="P:Intuit.Ipp.Data.VendorCredit.BalanceSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorCredit.IncludeInAnnualTPAR">
+            <remarks/>
+            <summary>
+            
+            Product: QBO Only
+            Description: True if the VendorCredit should be included in annual TPAR, specific to AU region.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorCredit.IncludeInAnnualTPARSpecified">
             <remarks/>
         </member>
         <member name="T:Intuit.Ipp.Data.StatementCharge">
@@ -14585,6 +14667,18 @@
         <member name="P:Intuit.Ipp.Data.VendorAndPurchasesPrefs.AutomaticBillPaymentSpecified">
             <remarks/>
         </member>
+        <member name="P:Intuit.Ipp.Data.VendorAndPurchasesPrefs.TPAREnabled">
+            <remarks/>
+            <summary>
+            
+            Product:All
+            Enables TPAR by vendors
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorAndPurchasesPrefs.TPAREnabledSpecified">
+            <remarks/>
+        </member>
         <member name="P:Intuit.Ipp.Data.VendorAndPurchasesPrefs.POCustomField">
             <remarks/>
             <summary>
@@ -17676,6 +17770,72 @@
             Specifies the CIS Rate. Applicable only for UK region, values are defined in the CISRateEnum.
             </summary>
         </member>
+        <member name="P:Intuit.Ipp.Data.Vendor.HasTPAR">
+            <remarks/>
+            <summary>
+            
+            Product: QBO Only
+            Description: True if the Vendor has TPAR. Applicable for AU region only.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Vendor.HasTPARSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Vendor.VendorPaymentBankDetail">
+            <remarks/>
+            <summary>
+            
+            Product: QBO Only
+            Description: Contains Bank Account details to enable Vendor Batch Payment. Applicable for AU region only.
+            
+            </summary>
+        </member>
+        <member name="T:Intuit.Ipp.Data.VendorBankAccountDetail">
+            <remarks/>
+            <summary>
+            
+            Product: ALL
+            Description: Contains Bank Account details to process the batch payment for Vendors. Applicable for AU region only..
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorBankAccountDetail.BankBranchIdentifier">
+            <remarks/>
+            <summary>
+            
+            Product: QBO only
+            Description: Specifies the BankBranchIdentifier for ABA processing. Applicable for AU region only.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorBankAccountDetail.BankAccountNumber">
+            <remarks/>
+            <summary>
+            
+            Product: QBO only
+            Description: Specifies the BankAccountNumber for ABA processing. Applicable for AU region only.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorBankAccountDetail.BankAccountName">
+            <remarks/>
+            <summary>
+            
+            Product: QBO only
+            Description: Specifies the BankAccountName for ABA processing. Applicable for AU region only.
+            
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.VendorBankAccountDetail.StatementText">
+            <remarks/>
+            <summary>
+            
+            Product: QBO only
+            Description: Specifies the Statement text for ABA processing. Applicable for AU region only.
+            
+            </summary>
+        </member>
         <member name="T:Intuit.Ipp.Data.CustomerType">
             <remarks/>
             <summary>
@@ -18094,6 +18254,12 @@
             <remarks/>
             <summary>
             Detailed error localized or unlocalized error that is thrown by the business logic backend that caused the error
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Data.Error.DetailLink">
+            <remarks/>
+            <summary>
+            Link to get more details about error like common cause, remedy etc
             </summary>
         </member>
         <member name="P:Intuit.Ipp.Data.Error.code">

@@ -478,7 +478,7 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=void", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=void", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
                 //// Create request parameters
                 RequestParameters parameters;

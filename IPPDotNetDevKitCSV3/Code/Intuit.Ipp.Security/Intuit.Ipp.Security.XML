@@ -10,6 +10,21 @@
             Intuit services. By default it provides OAuth and user name validators. It can also use other Authorize methods such as SAML, OpenID, etc., to validate Intuit service requests.
             </summary>
         </member>
+        <member name="T:Intuit.Ipp.Security.EnvironmentForMigration">
+            <summary>
+            Define environments for migration
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Security.EnvironmentForMigration.Sandbox">
+            <summary>
+            Sandbox environment
+            </summary>
+        </member>
+        <member name="F:Intuit.Ipp.Security.EnvironmentForMigration.Production">
+            <summary>
+            Production environment
+            </summary>
+        </member>
         <member name="T:Intuit.Ipp.Security.IRequestValidator">
             <summary>
             Interface for request validate

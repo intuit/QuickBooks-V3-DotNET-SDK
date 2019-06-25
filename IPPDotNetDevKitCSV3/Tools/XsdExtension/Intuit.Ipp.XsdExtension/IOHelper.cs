@@ -22,7 +22,7 @@ namespace Intuit.Ipp.XsdExtension
         public static string GetDataObjectProjectPath()
         {
             DirectoryInfo dir = new DirectoryInfo(System.IO.Directory.GetCurrentDirectory());
-            string rootPath = dir.Parent.Parent.Parent.FullName;
+            string rootPath = dir.Parent.Parent.Parent.Parent.FullName;
             rootPath = rootPath + DataObjectConstants.DATAPROJECTPATH;
             return rootPath;
         }
