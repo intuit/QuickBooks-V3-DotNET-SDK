@@ -13,9 +13,9 @@
     <PackageOutputPath>$(SolutionDir)artifacts\nupkg</PackageOutputPath>
     <PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
     <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
-    <Copyright>Copyright © 2018 Intuit, Inc.</Copyright>
-    <AssemblyVersion>8.0.0.0</AssemblyVersion>
-    <FileVersion>8.0.0.0</FileVersion>
+    <Copyright>Copyright © 2019 Intuit, Inc.</Copyright>
+    <AssemblyVersion>8.0.0.1</AssemblyVersion>
+    <FileVersion>8.0.0.1</FileVersion>
     <Company>Intuit</Company>
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -29,7 +29,7 @@
     <DefineConstants>NET472;NETFULL</DefineConstants>
 
   </PropertyGroup>
-  
+
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net461'">
     <DefineConstants>NET461;NETFULL</DefineConstants>
 
@@ -43,7 +43,7 @@
 
 
 
-  
-  
+
+
 
 </Project>

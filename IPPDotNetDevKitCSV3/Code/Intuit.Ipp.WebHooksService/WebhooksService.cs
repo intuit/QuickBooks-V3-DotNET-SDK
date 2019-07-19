@@ -21,7 +21,7 @@
 namespace Intuit.Ipp.WebhooksService
 {
 
-    
+
     using Intuit.Ipp.Core;
     using System;
     using Intuit.Ipp.Core.Configuration;
@@ -83,11 +83,12 @@ namespace Intuit.Ipp.WebhooksService
 
         #region constructor
         /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceContext"/> class.
+        /// Initializes a new instance of the <see cref="WebhooksService"/> class.
         /// </summary>
+        
         public WebhooksService()
         {
-            
+
             this.verifierToken = this.GetVerfierToken();
         }
         #endregion
@@ -101,7 +102,7 @@ namespace Intuit.Ipp.WebhooksService
             //Get intuitHeader
             string hmacHeaderSignature = intuitHeaderSignature;
 
-            //Get Webhooks verifier token          
+            //Get Webhooks verifier token
             this.verifier = this.VerifierToken;
 
 
@@ -118,15 +119,15 @@ namespace Intuit.Ipp.WebhooksService
                 var hmac = new HMACSHA256(keyBytes);
                 var hmacBytes = hmac.ComputeHash(dataBytes);
 
-                //Get payload signature value. 
-                
+                //Get payload signature value.
+
                 var payloadSignature = Convert.ToBase64String(hmacBytes);//Payload value
-                
+
 
                 //Compare webhooks response payload's signature with the signature passed in the header of the post webhooks request from Intuit. If they match, the call is verified.
                 if ((string)hmacHeaderSignature == payloadSignature)
                 {
-                    
+
 
                     return true;
 
@@ -144,7 +145,7 @@ namespace Intuit.Ipp.WebhooksService
 
 
 
-            
+
         }
 
 
@@ -152,7 +153,7 @@ namespace Intuit.Ipp.WebhooksService
 
         /// <summary>
         /// Executes a Deserialization operation for Webhooks Events payload
-        /// </summary>        
+        /// </summary>
         /// <returns>Returns a WebhooksEvent object.</returns>
         public WebhooksEvent GetWebooksEvents(string payload)
         {
@@ -168,7 +169,7 @@ namespace Intuit.Ipp.WebhooksService
         /// <returns>Returns string verifier token object.</returns>
         private string GetVerfierToken()
         {
-            this.IppConfiguration = new LocalConfigReader().ReadConfiguration();
+            this.IppConfiguration = new JsonFileConfigurationProvider().GetConfiguration();
             this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetVerifierToken method.");
             string verifierToken = this.IppConfiguration.VerifierToken.Value;
 
