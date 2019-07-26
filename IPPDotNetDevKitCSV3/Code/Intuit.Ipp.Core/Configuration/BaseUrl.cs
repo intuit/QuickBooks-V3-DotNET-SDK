@@ -26,8 +26,6 @@ namespace Intuit.Ipp.Core.Configuration
     /// </summary>
     public class BaseUrl
     {
-        
-
         /// <summary>
         /// Gets or sets the url for QuickBooks Online Rest Service.
         /// </summary>

@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="IConfigReader.cs" company="Intuit">
+// <copyright file="IConfigurationProvider.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -24,15 +24,15 @@ namespace Intuit.Ipp.Core
     using Intuit.Ipp.Core.Configuration;
 
     /// <summary>
-    /// Interface to read the configuration file and convert them to local custom objects.
+    /// Interface, that can provide <see cref="IppConfiguration"/> from file for example.
+    /// <seealso cref="JsonFileConfigurationProvider"/>
     /// </summary>
-    public interface IConfigReader
+    public interface IConfigurationProvider
     {
         /// <summary>
-        /// Reads the configuration from the config file and converts it to custom 
-        /// config objects which the end developer will use to get or set the properties.
+        /// Returns the <see cref="IppConfiguration"/> object.
         /// </summary>
         /// <returns>The custom config object.</returns>
-        IppConfiguration ReadConfiguration();
+        IppConfiguration GetConfiguration();
     }
 }

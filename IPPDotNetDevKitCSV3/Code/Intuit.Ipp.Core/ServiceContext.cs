@@ -35,7 +35,7 @@ namespace Intuit.Ipp.Core
     using System.Configuration;
 #if NETCORE
     using Microsoft.Extensions.Configuration;
-#endif 
+#endif
 
 
     /// <summary>
@@ -43,7 +43,7 @@ namespace Intuit.Ipp.Core
     /// </summary>
     public enum IntuitServicesType
     {
-        
+
 
         /// <summary>
         /// QuickBooks Online Data through IDS.
@@ -83,14 +83,14 @@ namespace Intuit.Ipp.Core
         /// </summary>
         private string baseserviceURL;
 
- 
+
 
         /// <summary>
         /// Application Token.
         /// </summary>
         private string appToken;
 
-    
+
 
         /// <summary>
         /// this flag indicates if static create methods of this class has been invoked.
@@ -125,13 +125,15 @@ namespace Intuit.Ipp.Core
         /// <param name="realmId">The realm id.</param>
         /// <param name="serviceType">Service Type - QBO/QB.</param>
         /// <param name="requestValidator">The request validate.</param>
+        /// <param name="configReader">The config reader, if <see langword="null"/>, <see cref="JsonFileConfigurationProvider" /> will be used</param>
         /// <returns>Returns ServiceContext object.</returns>
         /// <exception cref="Intuit.Ipp.Exception.IdsException">If arguments are null or empty.</exception>
         /// <exception cref="Intuit.Ipp.Exception.InvalidRealmException">If realm id is invalid.</exception>
         /// <exception cref="Intuit.Ipp.Exception.InvalidTokenException">If the token is invalid.</exception>
-        public ServiceContext(string realmId, IntuitServicesType serviceType, IRequestValidator requestValidator = null)
-            : this()
+        public ServiceContext(string realmId, IntuitServicesType serviceType, IRequestValidator requestValidator = null, IConfigurationProvider configReader = null)
         {
+            this.IppConfiguration = (configReader ?? new JsonFileConfigurationProvider()).GetConfiguration();
+
             // Validate Parameters
             if (string.IsNullOrWhiteSpace(realmId))
             {
@@ -199,14 +201,11 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// Prevents a default instance of the <see cref="ServiceContext"/> class from being created.
         /// </summary>
-        private ServiceContext()
-        {
-            this.IppConfiguration = new LocalConfigReader().ReadConfiguration();
-        }
+        private ServiceContext() { }
 
         #endregion
 
-    
+
 
         #endregion
 
@@ -241,8 +240,8 @@ namespace Intuit.Ipp.Core
             get { return this.appToken; }
         }
 
-      
-        
+
+
 
         /// <summary>
         /// Gets Intuit Service Type.
@@ -301,7 +300,7 @@ namespace Intuit.Ipp.Core
         }
 
         /// <summary>
-        /// timeout param to be passed to services.  To setup the ReadWriteTimeout property in HttpWebRequest. 
+        /// timeout param to be passed to services.  To setup the ReadWriteTimeout property in HttpWebRequest.
         /// It is only for sync web requests. If not set, the default timeout will be used.
         /// </summary>
         public Nullable<int> Timeout { get; set; }
@@ -320,7 +319,7 @@ namespace Intuit.Ipp.Core
             if (this.isCreateMethod)
             {
                 this.serviceType = IntuitServicesType.QBO;
-                
+
                 // Get the base Uri for the new service type
                 this.baseserviceURL = this.GetBaseURL();
                 this.RevertConfiguration();
@@ -389,11 +388,11 @@ namespace Intuit.Ipp.Core
             this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetBaseURL method.");
             string baseurl = string.Empty;
 
-           
+
             if (this.serviceType == IntuitServicesType.QBO)
             {
                 baseurl = this.IppConfiguration.BaseUrl.Qbo;
-              
+
                 if (string.IsNullOrEmpty(baseurl))
                 {
                     baseurl = Utility.CoreConstants.QBO_BASEURL;
@@ -431,15 +430,15 @@ namespace Intuit.Ipp.Core
         {
             this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetMinorVersion method.");
             string minorversion = null;
-            
+
             minorversion = this.IppConfiguration.MinorVersion.Qbo;
             this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "MinorVersion set for QBO Service Type: {0}.", minorversion));
-      
+
 
             return minorversion;
         }
 
-        
+
 
         #endregion
     }

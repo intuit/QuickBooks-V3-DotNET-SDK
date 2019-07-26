@@ -1,5 +1,5 @@
 ﻿////*********************************************************
-// <copyright file="LocalConfigReader.cs" company="Intuit">
+// <copyright file="JsonFileConfigurationProvider.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -11,12 +11,12 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implieC:\Users\nshrivastava\Documents\Git\QuickBooks-V3-DotNET-SDK\IPPDotNetDevKitCSV3\Code\Intuit.Ipp.Core\Configuration\LocalConfigReader.csd.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
 //
-// <summary>This file contains Local Config Reader.</summary>
+// <summary>This file contains Json file config Reader.</summary>
 ////*********************************************************
 
 
@@ -28,7 +28,7 @@ namespace Intuit.Ipp.Core.Configuration
     using System.IO;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
-    //using Intuit.Ipp.Retry;  
+    //using Intuit.Ipp.Retry;
     using Intuit.Ipp.Security;
     using Intuit.Ipp.Utility;
 
@@ -37,30 +37,30 @@ namespace Intuit.Ipp.Core.Configuration
     using Microsoft.Extensions.Configuration;
 #endif
 
-   
+
 
     /// <summary>
-    /// Specifies the Default Configuration Reader implmentation used by the SDK.
+    /// Specifies the Default Json file configuration provider implementation used by the SDK.
+    /// By default reads "appsettings.json" file.
     /// </summary>
-    public class LocalConfigReader : IConfigReader
+    public class JsonFileConfigurationProvider : Core.IConfigurationProvider
     {
 
 #if NETSTANDARD2_0
         public string logPath { get; set; }
         IConfigurationRoot builder;
-        public LocalConfigReader(string path)
+        public JsonFileConfigurationProvider(string path)
         {
             builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(path)
+                .AddJsonFile(path, optional: true)
                 .Build();
             //var builder = new ConfigurationBuilder()
             //    .AddJsonFile(path)
             //    .Build();
 
-            //// First way  
+            //// First way
             //string value1 = _iconfiguration.GetSection("Data").GetSection("ConnectionString").Value;
-            //// Second way  
+            //// Second way
             //string value2 = _iconfiguration.GetValue<string>("Data:ConnectionString");
 
 
@@ -79,7 +79,7 @@ namespace Intuit.Ipp.Core.Configuration
 
 
         }
-        public LocalConfigReader() : this("appsettings.json")
+        public JsonFileConfigurationProvider() : this("appsettings.json")
         {
         }
 
@@ -87,18 +87,18 @@ namespace Intuit.Ipp.Core.Configuration
 #endif
 
         /// <summary>
-        /// Reads the configuration from the config file and converts it to custom 
+        /// Reads the configuration from the config file and converts it to custom
         /// config objects which the end developer will use to get or set the properties.
         /// </summary>
         /// <returns>The custom config object.</returns>
-        public IppConfiguration ReadConfiguration()
+        public IppConfiguration GetConfiguration()
         {
 
 
             IppConfiguration ippConfig = new IppConfiguration();
 
 #if !NETSTANDARD2_0
-            
+
             IppConfigurationSection ippConfigurationSection = IppConfigurationSection.Instance;
             if (ippConfigurationSection == null)
             {
@@ -196,7 +196,7 @@ namespace Intuit.Ipp.Core.Configuration
                     break;
             }
 
-            //// TODO : This will not be used now. 
+            //// TODO : This will not be used now.
             ////if (!string.IsNullOrEmpty(ippConfigurationSection.Message.CustomSerializer.Name) && !string.IsNullOrEmpty(ippConfigurationSection.Message.CustomSerializer.Type) && ippConfigurationSection.Message.CustomSerializer.Enable)
             ////{
             ////    Type customSerializerType = Type.GetType(ippConfigurationSection.Message.CustomSerializer.Type);
@@ -277,7 +277,7 @@ namespace Intuit.Ipp.Core.Configuration
                     break;
             }
 
-            
+
             switch (ippConfigurationSection.Retry.Mode)
             {
                 case RetryMode.Linear:
@@ -336,7 +336,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             ippConfig.VerifierToken = new VerifierToken();
             ippConfig.VerifierToken.Value = ippConfigurationSection.WebhooksService.WebhooksVerifier.Value;
-           
+
 #endif
 #if NETSTANDARD2_0
 
@@ -447,7 +447,7 @@ namespace Intuit.Ipp.Core.Configuration
             }
             else if (securityCustomSettings["Enable"] == "true")
             {
-                if (!string.IsNullOrEmpty(securityCustomSettings["Name"]) && !string.IsNullOrEmpty(securityCustomSettings["Type"]) && Convert.ToBoolean(securityCustomSettings["Enable"]) == true)
+                if (!string.IsNullOrEmpty(securityCustomSettings["Name"]) && !string.IsNullOrEmpty(securityCustomSettings["Type"]))
                 {
                     Type customSecurityType = Type.GetType(securityCustomSettings["Type"]);
                     if (!string.IsNullOrEmpty(securityCustomSettings["Params"]))
@@ -585,7 +585,7 @@ namespace Intuit.Ipp.Core.Configuration
                     }
                 }
             }
-            
+
 
             //ippConfig.BaseUrl = new BaseUrl();
 
@@ -602,7 +602,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             //ippConfig.VerifierToken = new VerifierToken();
             ippConfig.VerifierToken.Value = webhooksVerifierTokenSettings["Value"];
-           
+
 #endif
             //#if NETSTANDARD2_0
             //            //IppConfiguration ippConfig = new IppConfiguration();
