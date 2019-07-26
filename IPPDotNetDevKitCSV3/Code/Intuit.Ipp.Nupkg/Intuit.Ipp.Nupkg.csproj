@@ -142,4 +142,15 @@
       </TfmSpecificPackageFile>
     </ItemGroup>
   </Target>
+
+  <!--code for signing-->
+  <!--<PropertyGroup>
+   <SignToolPath>C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</SignToolPath>
+   <SigningCertificateSubjectName>your-subject</SigningCertificateSubjectName>
+ </PropertyGroup>
+
+ <Target Name="SignAssembly" DependsOnTargets="Build">
+   <Message Text="Signing assembly '$(TargetDir)$(TargetFileName)'" Importance="high"/>
+   <Exec Command="&quot;$(SignToolPath)&quot; sign /n &quot;$(SigningCertificateSubjectName)&quot; &quot;$(TargetDir)$(TargetFileName)&quot;"/>
+ </Target>-->
 </Project>

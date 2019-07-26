@@ -54,28 +54,7 @@ namespace Intuit.Ipp.Core.Configuration
             builder = new ConfigurationBuilder()
                 .AddJsonFile(path, optional: true)
                 .Build();
-            //var builder = new ConfigurationBuilder()
-            //    .AddJsonFile(path)
-            //    .Build();
-
-            //// First way
-            //string value1 = _iconfiguration.GetSection("Data").GetSection("ConnectionString").Value;
-            //// Second way
-            //string value2 = _iconfiguration.GetValue<string>("Data:ConnectionString");
-
-
-            //var apiSettings = builder.GetSection("Logger").GetSection("RequestLog");
-
-            ////var enableLogs = apiSettings["EnableLogs"];
-            //logPath = apiSettings["LogDirectory"];
-            //LogPath = LogDirectory.ToString();
-
-            //if (!Enum.TryParse(apiSettings["AppType"], true, out XeroApiAppType appType))
-            //{
-            //    throw new ArgumentOutOfRangeException(nameof(apiSettings), apiSettings["AppType"], "AppType did not match one of: private, public, partner");
-            //}
-
-            //AppType = appType;
+           
 
 
         }
