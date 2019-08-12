@@ -43,7 +43,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Helpers
         BetaSandbox = 5,
         [StringValue("betaproduction")]
         BetaProduction = 6,
-        [StringValue("deafult")]
+        [StringValue("default")]
         Default
 
     }
