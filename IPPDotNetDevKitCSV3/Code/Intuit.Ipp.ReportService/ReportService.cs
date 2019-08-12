@@ -265,8 +265,10 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(subcol_pp_pct_chg)) { uriParametersList.Add(new string[] { "subcol_pp_pct_chg", subcol_pp_pct_chg }); }
             if (!string.IsNullOrEmpty(subcol_pct_ytd)) { uriParametersList.Add(new string[] { "subcol_pct_ytd", subcol_pct_ytd }); }
             if (!string.IsNullOrEmpty(subcol_ytd)) { uriParametersList.Add(new string[] { "subcol_ytd", subcol_ytd }); }
+            if (!string.IsNullOrEmpty(subcol_pct_inc)) { uriParametersList.Add(new string[] { "subcol_pct_inc", subcol_pct_inc }); }
+            if (!string.IsNullOrEmpty(subcol_pct_exp)) { uriParametersList.Add(new string[] { "subcol_pct_exp", subcol_pct_exp }); }
 
-           
+
 
             StringBuilder uriParameters = new StringBuilder();
             foreach (string[] uriParameter in uriParametersList)
@@ -628,7 +630,17 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the subcol_ytd
         /// </summary>
         public string subcol_ytd { get; set; }
-       
+
+        /// <summary>
+        /// Gets or sets the subcol_pct_inc
+        /// </summary>
+        public string subcol_pct_inc { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subcol_pct_exp
+        /// </summary>
+        public string subcol_pct_exp { get; set; }
+
 
         #endregion
 
