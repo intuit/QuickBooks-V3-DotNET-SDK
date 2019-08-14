@@ -2,9 +2,9 @@ language: csharp
 
 mono: none
 
-dotnet: 2.1.502
+dotnet: 2.0.0
 
-solution: solution-name.sln
+solution: IppDotNetDevKitCSV3.sln
 
 script:
  
