@@ -65,12 +65,67 @@ namespace Intuit.Ipp.Client
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <typeparam name="T"></typeparam>
-       /// <param name="entity"></param>
-       /// <returns></returns>
+        /// <summary>
+        ///  Updates an entity under the specified realm. The realm must be set in the context.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<T> UpdateAsync<T>(T entity) where T : IEntity
+        {
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}{1}/company/{2}/{3}", this.serviceContext.BaseUrl, CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+
+            HttpRequestMessage request = PrepareBody(entity, uri);
+            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+
+            string content = "";
+            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            }
+            CoreHelper.CheckNullResponseAndThrowException(content);
+            // de serialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            return (T)(restResponse.AnyIntuitObject as IEntity);
+        }
+        /// <summary>
+        ///  Deletes an entity under the specified realm. The realm must be set in the context.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<T> DeleteAsync<T>(T entity) where T : IEntity
+        {
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}{1}/company/{2}/{3}?operation=delete", this.serviceContext.BaseUrl, CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+
+            HttpRequestMessage request = PrepareBody(entity, uri);
+            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+
+            string content = "";
+            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            }
+            CoreHelper.CheckNullResponseAndThrowException(content);
+            // de serialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            return (T)(restResponse.AnyIntuitObject as IEntity);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<T>> FindAllAsync<T>(T entity, int startPosition = 1, int maxResults = 500) where T : IEntity
         {
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
