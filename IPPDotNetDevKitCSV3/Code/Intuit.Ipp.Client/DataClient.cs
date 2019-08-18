@@ -49,10 +49,10 @@ namespace Intuit.Ipp.Client
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}{1}/company/{2}/{3}", this.serviceContext.BaseUrl, CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
+            string content = "";
             HttpRequestMessage request = PrepareBody(entity,uri);
             HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
             
-            string content = "";
             if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
             {
                  content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -62,7 +62,8 @@ namespace Intuit.Ipp.Client
             // de serialize object
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
-            return (T)(restResponse.AnyIntuitObject as IEntity);
+            IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
+            return (T)entityResponse;
         }
 
         /// <summary>
@@ -89,7 +90,8 @@ namespace Intuit.Ipp.Client
             // de serialize object
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
-            return (T)(restResponse.AnyIntuitObject as IEntity);
+            IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
+            return (T)entityResponse;
         }
         /// <summary>
         ///  Deletes an entity under the specified realm. The realm must be set in the context.
@@ -115,7 +117,8 @@ namespace Intuit.Ipp.Client
             // de serialize object
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
-            return (T)(restResponse.AnyIntuitObject as IEntity);
+            IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
+            return (T)entityResponse;
         }
 
 
@@ -167,7 +170,54 @@ namespace Intuit.Ipp.Client
             return readOnlyCollection;
         }
 
-         private HttpRequestMessage PrepareBody<T>(T entity,string uri) where T : IEntity
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<T> FindByIdAsync<T>(T entity) where T : IEntity
+        {
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            string uri = "";
+            string accessToken = "";
+            IntuitEntity intuitEntity = entity as IntuitEntity;
+            if (resourceString.Equals("preferences"))
+            {
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}{1}/company/{2}/{3}",this.serviceContext.BaseUrl, CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            }
+            else
+            {
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}{1}/company/{2}/{3}/{4}", this.serviceContext.BaseUrl, CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, intuitEntity.Id);
+            }
+            if (this.serviceContext.IppConfiguration.Security != null)
+            {
+                OAuth2RequestValidator tokens = (OAuth2RequestValidator)this.serviceContext.IppConfiguration.Security;
+                accessToken = tokens.AccessToken;
+
+            }
+
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, uri);
+            request.Content = new StringContent(JsonConvert.SerializeObject(entity), Encoding.UTF8, "application/json");
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+            string content = "";
+            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
+
+            }
+            CoreHelper.CheckNullResponseAndThrowException(content);
+            // de serialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
+            return (T)entityResponse;
+        }
+
+        private HttpRequestMessage PrepareBody<T>(T entity,string uri) where T : IEntity
         {
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string accessToken = "";
