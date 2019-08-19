@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{D65F7456-F8DB-4EC0-8C03-C22961C80649}"
 EndProject
@@ -96,8 +96,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.GlobalTaxServiceTest", "Intuit.Ipp.GlobalTaxServiceTest\Intuit.Ipp.GlobalTaxServiceTest.csproj", "{C65E5969-E551-456A-AC79-AA625CC97C7E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Nupkg", "Intuit.Ipp.Nupkg\Intuit.Ipp.Nupkg.csproj", "{C7499C40-3068-4B1F-921C-3D63DA9A94EC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Client", "Intuit.Ipp.Client\Intuit.Ipp.Client.csproj", "{4CF15D72-8227-4844-81BF-417E5E5C935B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -417,18 +415,6 @@ Global
 		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|x86.ActiveCfg = Release|Any CPU
 		{C7499C40-3068-4B1F-921C-3D63DA9A94EC}.Release|x86.Build.0 = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Debug|x86.Build.0 = Debug|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|x86.ActiveCfg = Release|Any CPU
-		{4CF15D72-8227-4844-81BF-417E5E5C935B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -465,7 +451,6 @@ Global
 		{160733CB-F539-4545-BEF4-F57176FD12DE} = {D65F7456-F8DB-4EC0-8C03-C22961C80649}
 		{C65E5969-E551-456A-AC79-AA625CC97C7E} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{C7499C40-3068-4B1F-921C-3D63DA9A94EC} = {DEC31404-E957-447F-9E31-D80F64D708F5}
-		{4CF15D72-8227-4844-81BF-417E5E5C935B} = {D1049A30-DC40-4FC8-923D-AF59779D1F94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D58CF63B-6932-4503-893A-42C15952609D}
