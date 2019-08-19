@@ -11,7 +11,7 @@ dotnet: 2.0.0
 solution: Intuit.Ipp.Test.sln
 
 script:
-- cd IPPDotNetDevKitCSV3/Test/
+- cd IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test
 
 - dotnet restore
  
