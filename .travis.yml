@@ -8,10 +8,10 @@ mono: none
 
 dotnet: 2.0.0
 
-solution: IppDotNetDevKitCSV3.sln
+solution: Intuit.Ipp.Test.sln
 
 script:
-- cd IPPDotNetDevKitCSV3/Code/
+- cd IPPDotNetDevKitCSV3/Test/
 
 - dotnet restore
  
