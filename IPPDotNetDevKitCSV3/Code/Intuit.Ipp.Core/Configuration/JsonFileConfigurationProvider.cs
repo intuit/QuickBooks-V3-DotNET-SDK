@@ -52,6 +52,7 @@ namespace Intuit.Ipp.Core.Configuration
         public JsonFileConfigurationProvider(string path)
         {
             builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(path, optional: true)
                 .Build();
            
