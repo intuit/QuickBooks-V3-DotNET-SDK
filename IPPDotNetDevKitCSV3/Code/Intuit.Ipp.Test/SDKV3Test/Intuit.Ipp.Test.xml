@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intuit.Ipp.Test</name>
+    </assembly>
+    <members>
+        <member name="T:Intuit.Ipp.Test.UserInformation">
+            <summary>
+            User Information
+            </summary>
+        </member>
+        <member name="P:Intuit.Ipp.Test.UserInformation.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.Test.UserInformation.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Intuit.Ipp.Test.UserInformation.RoleId">
+            <summary>
+            Gets or sets the role id.
+            </summary>
+            <value>
+            The role id.
+            </value>
+        </member>
+    </members>
+</doc>
