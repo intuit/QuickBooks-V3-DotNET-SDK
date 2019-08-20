@@ -30,7 +30,10 @@ namespace Intuit.Ipp.Test
         static IConfigurationRoot builder;
         public Initializer(string path)
         {
-            AuthorizationKeysQBO.tokenFilePath = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))), "TokenStore.json");
+            //AuthorizationKeysQBO.tokenFilePath = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))), "TokenStore.json");
+
+            AuthorizationKeysQBO.tokenFilePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "TokenStore.json");
+
             builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile(path, optional: true, reloadOnChange: true)
