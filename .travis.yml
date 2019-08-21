@@ -1,6 +1,6 @@
 dist: xenial
 
-sudo: true
+sudo: required
 
 language: csharp
 
