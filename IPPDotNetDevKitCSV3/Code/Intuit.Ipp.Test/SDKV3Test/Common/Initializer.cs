@@ -35,12 +35,13 @@ namespace Intuit.Ipp.Test
 
             AuthorizationKeysQBO.tokenFilePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "TokenStore.json");
 
-            builder = new ConfigurationBuilder()
+            var builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile(path, optional: true, reloadOnChange: true)
+                 .AddEnvironmentVariables()
                  .Build();
 
-
+           
             AuthorizationKeysQBO.accessTokenQBO= builder.GetSection("Oauth2Keys")["AccessToken"];
 
             AuthorizationKeysQBO.refreshTokenQBO = builder.GetSection("Oauth2Keys")["RefreshToken"];
