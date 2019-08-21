@@ -95,14 +95,7 @@ namespace Intuit.Ipp.Client
 
             RequestGenerator helper = new RequestGenerator(serviceContext);
             HttpRequestMessage request = helper.PrepareRequest(parameters, null);
-            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-            string content = "";
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
-                CoreHelper.CheckNullResponseAndThrowException(content);
-            }
-
+            string content = await GetResponse(request);
             return content;
         }
 
@@ -131,14 +124,7 @@ namespace Intuit.Ipp.Client
 
             RequestGenerator helper = new RequestGenerator(serviceContext);
             HttpRequestMessage request = helper.PrepareRequest(parameters, query);
-            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-
-            string content = "";
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
-                CoreHelper.CheckNullResponseAndThrowException(content);
-            }
+            string content = await GetResponse(request);
             return content;
         }
 
@@ -154,7 +140,7 @@ namespace Intuit.Ipp.Client
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
-            string content = "";
+         
             RequestParameters parameters;
             if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
             {
@@ -166,38 +152,38 @@ namespace Intuit.Ipp.Client
             }
             RequestGenerator requestGenerator = new RequestGenerator(serviceContext);
             HttpRequestMessage request = requestGenerator.PrepareRequest(parameters, entity);
-            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-            //Task<HttpResponseMessage> httpResponse = GetResponse(request);
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                CoreHelper.CheckNullResponseAndThrowException(content);
-            }
-
+            string content = await GetResponse(request);
             return content;
         }
 
-        //private async Task<string> GetResponse(HttpRequestMessage request)
-        //{
-        //    HttpResponseMessage httpResponse = new HttpResponseMessage();
-        //    try
-        //    {
-        //        if (this.serviceContext.IppConfiguration.RetryPolicy == null)
-        //        {
-        //            httpResponse = await client.SendAsync(request).ConfigureAwait(false);
-        //        }
-        //        else
-        //        {
-        //            //this.ExecAsyncRequestWithRetryPolicy(request);
-        //        }
-        //        return null;
-        //    }
-        //    finally
-        //    {
-        //        this.serviceContext.RequestId = null;
-        //    }
-        //     return (T)httpResponse;
-        //}
+        private async Task<string> GetResponse(HttpRequestMessage request)
+        {
+           
+            string content = "";
+            try
+            {
+              
+                if (this.serviceContext.IppConfiguration.RetryPolicy == null)
+                {
+                    HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+                    if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+                    {
+                        content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                        CoreHelper.CheckNullResponseAndThrowException(content);
+                    }
+                }
+                else
+                {
+                    //this.ExecAsyncRequestWithRetryPolicy(request);
+                }
+              
+            }
+            finally
+            {
+                this.serviceContext.RequestId = null;
+            }
+            return content;
+        }
 
 
         /// <summary>
@@ -211,7 +197,6 @@ namespace Intuit.Ipp.Client
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
-            string content = "";
             RequestParameters parameters;
             if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
             {
@@ -223,14 +208,7 @@ namespace Intuit.Ipp.Client
             }
             RequestGenerator requestGenerator = new RequestGenerator(serviceContext);
             HttpRequestMessage request = requestGenerator.PrepareRequest(parameters, entity); ;
-            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                CoreHelper.CheckNullResponseAndThrowException(content);
-            }
-
+            string content = await GetResponse(request);
             return content;
         }
 
@@ -245,7 +223,6 @@ namespace Intuit.Ipp.Client
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
             this.requestedEntity = entity;
-            string content = "";
             RequestParameters parameters;
             if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
             {
@@ -257,13 +234,7 @@ namespace Intuit.Ipp.Client
             }
             RequestGenerator requestGenerator = new RequestGenerator(serviceContext);
             HttpRequestMessage request = requestGenerator.PrepareRequest(parameters, entity); ;
-            HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                CoreHelper.CheckNullResponseAndThrowException(content);
-            }
+            string content = await GetResponse(request);
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
             IntuitEntity intuitEntity = restResponse.AnyIntuitObject as IntuitEntity;
