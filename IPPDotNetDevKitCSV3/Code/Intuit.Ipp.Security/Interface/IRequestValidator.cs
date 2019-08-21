@@ -21,6 +21,7 @@
 namespace Intuit.Ipp.Security
 {
     using System.Net;
+    using System.Net.Http;
 
     /// <summary>
     /// Interface for request validate
@@ -33,5 +34,12 @@ namespace Intuit.Ipp.Security
         /// <param name="webRequest">The web request.</param>
         /// <param name="requestBody">The request body.</param>
         void Authorize(WebRequest webRequest, string requestBody);
+
+        /// <summary>
+        /// Authorizes the web request.
+        /// </summary>
+        /// <param name="httpRequest">The web request.</param>
+        /// <param name="requestBody">The request body.</param>
+        void Authorize(HttpRequestMessage httpRequest, string requestBody);
     }
 }

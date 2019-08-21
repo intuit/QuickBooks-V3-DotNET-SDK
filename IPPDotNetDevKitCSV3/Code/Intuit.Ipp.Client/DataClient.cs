@@ -1,11 +1,8 @@
 ﻿using Intuit.Ipp.Client.Properties;
 using Intuit.Ipp.Core;
-using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Diagnostics;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Security;
-using Intuit.Ipp.Utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

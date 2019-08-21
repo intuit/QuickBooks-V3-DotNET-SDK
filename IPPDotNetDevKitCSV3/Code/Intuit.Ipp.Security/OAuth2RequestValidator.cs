@@ -11,6 +11,7 @@ namespace Intuit.Ipp.Security
     using System.Collections.Specialized;
     using System.Configuration;
     using System.Net;
+    using System.Net.Http;
     using System.Security.Cryptography;
     using System.Text.RegularExpressions;
     //using DevDefined.OAuth.Consumer;
@@ -88,6 +89,19 @@ namespace Intuit.Ipp.Security
             //string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
             string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
             webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
+        }
+
+
+
+        /// <summary>
+        /// Authorizes the specified request.
+        /// </summary>
+        /// <param name="httpRequest">The request.</param>
+        /// <param name="requestBody">The requestBody if form encoded parameters.</param>
+        public void Authorize(HttpRequestMessage httpRequest, string requestBody)
+        {
+            string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
+            httpRequest.Headers.Add(AuthorizationHeader, oauthHeader);
         }
     }
 }

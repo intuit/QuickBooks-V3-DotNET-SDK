@@ -273,17 +273,17 @@ namespace Intuit.Ipp.Client
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
 
             }
-
-            Type type = this.requestedEntity.GetType();
-            PropertyInfo[] propertyInfoArray = type.GetProperties();
-            PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == CoreConstants.STATUS);
-            if (statusPropInfo != null)
+            else
             {
-                statusPropInfo.SetValue(this.requestedEntity, intuitEntity.status, null);
+                Type type = this.requestedEntity.GetType();
+                PropertyInfo[] propertyInfoArray = type.GetProperties();
+                PropertyInfo statusPropInfo = propertyInfoArray.FirstOrDefault(pi => pi.Name == CoreConstants.STATUS);
+                if (statusPropInfo != null)
+                {
+                    statusPropInfo.SetValue(this.requestedEntity, intuitEntity.status, null);
+                }
+
             }
-
-
-      
         }
     }
 }
