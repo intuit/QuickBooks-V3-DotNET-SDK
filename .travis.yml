@@ -14,5 +14,6 @@ script:
 - cd IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Test
 
 - dotnet restore
+- dotnet build
  
 - dotnet test
