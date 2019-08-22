@@ -133,7 +133,7 @@ namespace Intuit.Ipp.Test
                 }
                 else
                 {
-                    throw ex;
+                    throw ex.InnerException;
                 }
             }
 

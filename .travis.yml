@@ -13,7 +13,6 @@ solution: Intuit.Ipp.Test.sln
 script:
 - cd IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Test
 
-- dotnet restore
-- dotnet build
+
  
 - dotnet test
