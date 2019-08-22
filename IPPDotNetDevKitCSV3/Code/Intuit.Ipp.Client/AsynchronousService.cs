@@ -4,6 +4,8 @@ using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.Utility;
+using Serilog;
+using Serilog.Events;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -137,6 +139,7 @@ namespace Intuit.Ipp.Client
         /// <returns></returns>
         public async Task<string> AddAsync<T>(T entity)
         {
+           
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
@@ -156,6 +159,7 @@ namespace Intuit.Ipp.Client
             return content;
         }
 
+
         private async Task<string> GetResponse(HttpRequestMessage request)
         {
            
@@ -174,6 +178,8 @@ namespace Intuit.Ipp.Client
                 }
                 else
                 {
+                    //IntuitRetryPolicy retryPolicy = new IntuitRetryPolicy(this.serviceContext,)
+                    //await retryPolicy.ExecuteActionAsync<>();
                     //this.ExecAsyncRequestWithRetryPolicy(request);
                 }
               

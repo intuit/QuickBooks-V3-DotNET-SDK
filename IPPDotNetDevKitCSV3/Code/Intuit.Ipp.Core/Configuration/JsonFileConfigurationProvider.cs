@@ -532,7 +532,7 @@ namespace Intuit.Ipp.Core.Configuration
             }
             else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
             {
-                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["InitialInterval"]) && !string.IsNullOrEmpty(retrySettingsLinear["Increment"]))
+                if (!string.IsNullOrEmpty(retrySettingsIncremental["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsIncremental["InitialInterval"]) && !string.IsNullOrEmpty(retrySettingsIncremental["Increment"]))
                 {
                     if (!CoreHelper.IsInvalidaIncrementalRetryMode(
                          Convert.ToInt32(retrySettingsIncremental["RetryCount"]),
@@ -548,7 +548,7 @@ namespace Intuit.Ipp.Core.Configuration
             }
             else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
             {
-                if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["MinBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["MaxBackoff"]) && !string.IsNullOrEmpty(retrySettingsLinear["DeltaBackoff"]))
+                if (!string.IsNullOrEmpty(retrySettingsExponential["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsExponential["MinBackoff"]) && !string.IsNullOrEmpty(retrySettingsExponential["MaxBackoff"]) && !string.IsNullOrEmpty(retrySettingsExponential["DeltaBackoff"]))
                 {
 
                     if (!CoreHelper.IsInvalidaExponentialRetryMode(

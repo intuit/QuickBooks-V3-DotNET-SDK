@@ -5,10 +5,14 @@ using Intuit.Ipp.Diagnostics;
 using Intuit.Ipp.Exception;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Serilog;
+using Serilog.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -38,7 +42,7 @@ namespace Intuit.Ipp.Client
             this.serviceContext.UseDataServices();
         }
 
-      
+
         /// <summary>
         /// Adds an entity under the specified realm. The realm must be set in the context.
         /// </summary>
@@ -47,6 +51,12 @@ namespace Intuit.Ipp.Client
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public async Task<T> AddAsync<T>(T entity) where T : IEntity
         {
+            Stream myFile = AddListener(this.serviceContext.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation);
+            Log.Logger = new LoggerConfiguration()
+         .WriteTo.Trace(LogEventLevel.Information, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}")
+        .CreateLogger();
+
+            Log.Information("Request");
             string content = "";
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
             if (!ServicesHelper.IsTypeNull(entity))
@@ -63,7 +73,7 @@ namespace Intuit.Ipp.Client
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
 
                 }
@@ -71,9 +81,13 @@ namespace Intuit.Ipp.Client
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
             IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
+            //if (entityResponse.Json != null)
+            //    Log.Information("Response is " + response.Json.ToString());
+            //else
+            //    Log.Information("Response is " + response.HttpResponse.ToString());
+            myFile.Close();
             return (T)entityResponse;
         }
-
         /// <summary>
         ///  Updates an entity under the specified realm. The realm must be set in the context.
         /// </summary>
@@ -87,7 +101,7 @@ namespace Intuit.Ipp.Client
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
             }
             else
             {
@@ -98,13 +112,13 @@ namespace Intuit.Ipp.Client
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
 
                 }
             }
             IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
             IEntity entityResponse = restResponse.AnyIntuitObject as IEntity;
             return (T)entityResponse;
         }
@@ -117,11 +131,11 @@ namespace Intuit.Ipp.Client
         /// <returns></returns>
         public async void DeleteAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
             }
             else
             {
@@ -132,7 +146,7 @@ namespace Intuit.Ipp.Client
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
 
                 }
@@ -150,11 +164,11 @@ namespace Intuit.Ipp.Client
         {
             string content = "";
             List<T> entities = new List<T>();
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
             }
             else
             {
@@ -168,7 +182,7 @@ namespace Intuit.Ipp.Client
                     }
                     catch (SystemException systemException)
                     {
-                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                         IdsException idsException = new IdsException(systemException.Message);
 
                     }
@@ -178,14 +192,14 @@ namespace Intuit.Ipp.Client
                     if (startPosition <= 0)
                     {
                         IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
-                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                         return null;
                     }
 
                     if (maxResults <= 0)
                     {
                         IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageSizeString));
-                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                         return null;
                     }
 
@@ -196,7 +210,7 @@ namespace Intuit.Ipp.Client
                     }
                     catch (SystemException systemException)
                     {
-                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                         IdsException idsException = new IdsException(systemException.Message);
 
                     }
@@ -204,7 +218,7 @@ namespace Intuit.Ipp.Client
 
                 // de serialize object
                 IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
                 QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
               
                 if (queryResponse.maxResults > 0)
@@ -236,11 +250,11 @@ namespace Intuit.Ipp.Client
         public async Task<T> FindByIdAsync<T>(T entity) where T : IEntity
         {
             string content = "";
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
             }
             else
             {
@@ -251,7 +265,7 @@ namespace Intuit.Ipp.Client
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
 
                 }
@@ -274,6 +288,22 @@ namespace Intuit.Ipp.Client
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.ServiceContextParameterName, Resources.ServiceContextNotNullMessage));
                 IdsExceptionManager.HandleException(exception);
             }
+        }
+
+        public static Stream AddListener(string path)
+        {
+            string filename = path + "TraceLog-" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
+            Stream myFile = null;
+            if (File.Exists(filename))
+                myFile = new FileStream(filename, FileMode.Append);
+            else
+                myFile = new FileStream(filename, FileMode.Create);
+            TextWriterTraceListener myTextListener = new
+            TextWriterTraceListener(myFile);
+            Trace.Listeners.Add(myTextListener);
+            Trace.AutoFlush = true;
+            return myFile;
+
         }
     }
 }

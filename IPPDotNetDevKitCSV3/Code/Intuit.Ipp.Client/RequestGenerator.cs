@@ -270,43 +270,22 @@ namespace Intuit.Ipp.Client
             return requestEndpointBuilder.ToString();
         }
         /// <summary>
-        /// Returns the response by calling REST service.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <returns>Response from REST service.</returns>
-        public string GetResponse(System.Net.HttpWebRequest request)
+
+
+        public static Stream AddListener(string path)
         {
-            try
-            {
+            string filename = path + "TraceLog-" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
+            Stream myFile = null;
+            if (File.Exists(filename))
+                myFile = new FileStream(filename, FileMode.Append);
+            else
+                myFile = new FileStream(filename, FileMode.Create);
+            TextWriterTraceListener myTextListener = new
+            TextWriterTraceListener(myFile);
+            Trace.Listeners.Add(myTextListener);
+            Trace.AutoFlush = true;
+            return myFile;
 
-
-                return null;
-            }
-            finally
-            {
-                this.serviceContext.RequestId = null;
-            }
-        }
-
-        /// <summary>
-        /// Returns the response stream by calling REST service.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <returns>Response from REST service.</returns>
-        public byte[] GetResponseStream(System.Net.HttpWebRequest request)
-        {
-            try
-            {
-
-                //return null;
-                byte[] pdf = new byte[0];
-                return pdf;
-            }
-            catch (IdsException)
-            {
-
-                throw;
-            }
         }
     }
 }

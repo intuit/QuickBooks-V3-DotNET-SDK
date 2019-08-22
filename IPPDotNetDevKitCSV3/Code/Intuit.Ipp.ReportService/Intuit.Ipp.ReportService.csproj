@@ -6,6 +6,10 @@
     <None Remove="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
