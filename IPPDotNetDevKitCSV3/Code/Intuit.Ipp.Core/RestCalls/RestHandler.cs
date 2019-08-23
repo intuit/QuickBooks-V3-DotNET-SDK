@@ -166,10 +166,13 @@ namespace Intuit.Ipp.Core.Rest
                     {
                         maximumBatchIdLength = Math.Max(maximumBatchIdLength, batchRequest.BatchItemRequest[batchIndex].bId.Length);
                     }
-                    this.RequestId = this.RequestId.Substring(0, (int)Math.Min(this.RequestId.Length, 50 - maximumBatchIdLength));
+                    if (maximumBatchIdLength < 50)
+                    {
+                        this.RequestId = this.RequestId.Substring(0, (int)Math.Min(this.RequestId.Length, 50 - maximumBatchIdLength));
+                    }
                 }
 
-                if (includeRequestId)
+                if (includeRequestId && !String.IsNullOrWhiteSpace(this.RequestId))
                 {
                     requestEndpoint = requestEndpoint.Contains("?") ? requestEndpoint += "&" : requestEndpoint += "?";
                     requestEndpoint += "requestid=";
