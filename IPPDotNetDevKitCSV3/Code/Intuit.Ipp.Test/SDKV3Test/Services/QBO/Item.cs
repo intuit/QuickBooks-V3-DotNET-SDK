@@ -386,7 +386,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         //newly added
         #region Test Cases for Do Not Update Account Operation
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void ItemDonotUpdatedaccAsyncTestsUsingoAuthFrance()
         {
             //Creating the Item for Adding

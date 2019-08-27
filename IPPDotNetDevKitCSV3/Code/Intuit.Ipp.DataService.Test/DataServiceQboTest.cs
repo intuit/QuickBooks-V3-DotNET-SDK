@@ -733,6 +733,7 @@ namespace Intuit.Ipp.DataService.Test
         #region AsyncTests
 
         [TestMethod]
+        [Ignore]//needs physical path access
         public void GetPdfByIdAsyncTest()
         {
             //Creating the SalesReceipt for Adding
@@ -810,7 +811,7 @@ namespace Intuit.Ipp.DataService.Test
         #region Sync tests
 
 
-        [TestMethod]
+        [TestMethod][Ignore]//needs physical path access
         public void GetPdfByIdTest()
         {
             List<SalesReceipt> salesReceipts = Helper.FindAll<SalesReceipt>(dataServiceTestCases.GetContext(), new SalesReceipt(), 1, 10);

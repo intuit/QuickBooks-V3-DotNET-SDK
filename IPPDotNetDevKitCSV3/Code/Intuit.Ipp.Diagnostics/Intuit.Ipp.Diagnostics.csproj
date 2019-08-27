@@ -2,4 +2,15 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="SerilogLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+  </ItemGroup>
 </Project>
