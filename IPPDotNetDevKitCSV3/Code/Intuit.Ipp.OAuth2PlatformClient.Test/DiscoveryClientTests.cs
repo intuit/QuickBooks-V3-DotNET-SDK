@@ -80,9 +80,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var disco = await client.GetAsync();
 
             Assert.AreEqual(disco.IsError, true);
-            Assert.AreEqual(disco.ErrorType, (ResponseErrorType.Exception));
+            Assert.AreEqual(disco.ErrorType, (ResponseErrorType.Http));
             Assert.AreEqual(disco.Error.StartsWith("Error connecting to"), true);
-            Assert.AreEqual(disco.Error.EndsWith("error"), true);
+            
         }
 
         [TestMethod]
@@ -134,9 +134,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests
             var disco = client.Get();
 
             Assert.AreEqual(disco.IsError, true);
-            Assert.AreEqual(disco.ErrorType, (ResponseErrorType.Exception));
+            Assert.AreEqual(disco.ErrorType, (ResponseErrorType.Http));
             Assert.AreEqual(disco.Error.StartsWith("Error connecting to"), true);
-            Assert.AreEqual(disco.Error.EndsWith("errors occurred."), true);
+            
         }
 
         [TestMethod]
