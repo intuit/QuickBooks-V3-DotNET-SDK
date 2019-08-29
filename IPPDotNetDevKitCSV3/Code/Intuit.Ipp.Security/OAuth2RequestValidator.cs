@@ -101,7 +101,7 @@ namespace Intuit.Ipp.Security
         public void Authorize(HttpRequestMessage httpRequest, string requestBody)
         {
             string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
-            httpRequest.Headers.Add(AuthorizationHeader, oauthHeader);
+           httpRequest.Headers.Add(AuthorizationHeader, oauthHeader);
         }
     }
 }

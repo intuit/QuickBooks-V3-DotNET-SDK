@@ -99,8 +99,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Nupkg", "Intuit.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Test", "Intuit.Ipp.Test\SDKV3Test\Intuit.Ipp.Test.csproj", "{C66BE803-C649-4D9B-9F0D-77B00D18444A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.Client", "Intuit.Ipp.Client\Intuit.Ipp.Client.csproj", "{35604B34-82CA-4BCC-8E25-A905B035C8B8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -431,18 +429,6 @@ Global
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|x86.ActiveCfg = Release|Any CPU
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|x86.Build.0 = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Debug|x86.Build.0 = Debug|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|x86.ActiveCfg = Release|Any CPU
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -480,7 +466,6 @@ Global
 		{C65E5969-E551-456A-AC79-AA625CC97C7E} = {EEB954D6-D751-4E7F-BEC3-8D10CC55FF81}
 		{C7499C40-3068-4B1F-921C-3D63DA9A94EC} = {DEC31404-E957-447F-9E31-D80F64D708F5}
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A} = {DEC31404-E957-447F-9E31-D80F64D708F5}
-		{35604B34-82CA-4BCC-8E25-A905B035C8B8} = {D1049A30-DC40-4FC8-923D-AF59779D1F94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D58CF63B-6932-4503-893A-42C15952609D}

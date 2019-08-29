@@ -38,6 +38,9 @@ namespace Intuit.Ipp.DataService
     using Intuit.Ipp.Utility;
     using System.Text;
     using System.IO;
+    using System.Threading.Tasks;
+    using System.Net.Http;
+
     //using Intuit.Ipp.QueryFilter;
     //using Intuit.Ipp.LinqExtender;
 
@@ -58,6 +61,34 @@ namespace Intuit.Ipp.DataService
         private IRestHandler restHandler;
 
         /// <summary>
+        /// Client entity
+        /// </summary>
+        protected HttpClient client;
+
+        /// <summary>
+        /// Intuit Service Type(QBO).
+        /// </summary>
+        private IntuitAsyncType asyncType;
+
+        public enum IntuitAsyncType
+        {
+            /// <summary>
+            /// Async calls using Async Await
+            /// </summary>
+            AsyncAwait,
+
+            /// <summary>
+            /// Async calls using delegates
+            /// </summary>
+            Delegates,
+
+            /// <summary>
+            /// Default service type.
+            /// </summary>
+            Default
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DataService"/> class.
         /// </summary>
         /// <param name="serviceContext">IPP Service Context</param>
@@ -69,6 +100,8 @@ namespace Intuit.Ipp.DataService
 
             // Set the Service type to QBO by calling a method.
             this.serviceContext.UseDataServices();
+
+            client = new HttpClient();
         }
 
         #region Async handlers
@@ -877,7 +910,7 @@ namespace Intuit.Ipp.DataService
         public ReadOnlyCollection<T> FindByParentId<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByParentId.");
-            
+
             ServicesHelper.ValidateEntity(entity, serviceContext);
             ServicesHelper.ValidateEntityType(entity, "TaxClassification", serviceContext);
 
@@ -931,7 +964,7 @@ namespace Intuit.Ipp.DataService
 
             // Check whether the Level is null and throw an exception if it is null.
             ServicesHelper.ValidateId(level, serviceContext);
-            
+
             string uri = string.Empty;
             uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?level={3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, level);
 
@@ -964,7 +997,7 @@ namespace Intuit.Ipp.DataService
                 string uri = string.Empty;
                 uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
 
-                entities = PrepareAndExecuteHttpRequest<T>(uri); 
+                entities = PrepareAndExecuteHttpRequest<T>(uri);
             }
             else
             {
@@ -1263,6 +1296,118 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+
+
+        /// <summary>
+        /// Retrieves specified entity based passed page number and page size
+        /// </summary>
+        /// <typeparam name="T">Entity to be retrieved</typeparam>
+        /// <param name="entity">Instance of entity to be retrieved</param>
+        /// <param name="startPosition">The start position.</param>
+        /// <param name="maxResults">The max results.</param>
+        /// <param name="useAsync">Async</param>
+        public async Task<IEnumerable<T>> FindAllAsync<T>(T entity, IntuitAsyncType useAsync, int startPosition = 1, int maxResults = 500) where T : IEntity
+        {
+            AsyncService asyncService = new AsyncService(this.serviceContext);
+            string content = "";
+            List<T> entities = new List<T>();
+            ReadOnlyCollection<T> readOnlyCollection = null;
+            HttpResponseMessage response = new HttpResponseMessage();
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            string query = string.Format(CultureInfo.InvariantCulture, "select * from {0} startPosition {1} maxResults {2}", resourceString, startPosition, maxResults);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query?query={2}", CoreConstants.VERSION, this.serviceContext.RealmId, query);
+            RequestParameters parameters;
+            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+            }
+            else
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+            }
+
+            RequestGenerator helper = new RequestGenerator(serviceContext);
+            HttpRequestMessage request = helper.PrepareRequest(parameters, query);
+
+            if (entity.GetType().Name == "TaxClassification")
+            {
+                try
+                {
+
+                    if (useAsync == IntuitAsyncType.AsyncAwait)
+                    {
+                         response = await client.SendAsync(request).ConfigureAwait(false);
+                   
+
+                    }
+                }
+                catch(SystemException systemException)
+                {
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    IdsException idsException = new IdsException(systemException.Message);
+
+                }
+            }
+            else
+            {
+                if (startPosition <= 0)
+                {
+                    IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+
+                    return null;
+                }
+
+                if (maxResults <= 0)
+                {
+                    IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageSizeString));
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+
+                    return null;
+                }
+
+                try
+                {
+                    if (useAsync == IntuitAsyncType.AsyncAwait)
+                    {
+                        response = await client.SendAsync(request).ConfigureAwait(false);
+                    }
+                }
+                catch (SystemException systemException)
+                {
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    IdsException idsException = new IdsException(systemException.Message);
+                }
+            }
+
+            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                CoreHelper.CheckNullResponseAndThrowException(content);
+            }
+            // de serialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
+
+            if (queryResponse.maxResults > 0)
+            {
+                object tempEntities = queryResponse.AnyIntuitObjects;
+                object[] tempEntityArray = (object[])tempEntities;
+
+                if (tempEntityArray.Length > 0)
+                {
+                    foreach (object item in tempEntityArray)
+                    {
+                        entities.Add((T)item);
+                    }
+                }
+            }
+            readOnlyCollection = new ReadOnlyCollection<T>(entities);
+
+            return readOnlyCollection;
+        }
+
         /// <summary>
         /// Retrieves specified entities based on passed Level, supported for TaxClassification only.
         /// </summary>
@@ -1525,14 +1670,17 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+
+
+
         #endregion
 
-        #region Async Delete Void
-        /// <summary>
-        /// Deletes an entity under the specified realm. The realm must be set in the context
-        /// </summary>
-        /// <typeparam name="T">Generic Type T.</typeparam>
-        /// <param name="entity">Instance of entity to Delete</param>
+            #region Async Delete Void
+            /// <summary>
+            /// Deletes an entity under the specified realm. The realm must be set in the context
+            /// </summary>
+            /// <typeparam name="T">Generic Type T.</typeparam>
+            /// <param name="entity">Instance of entity to Delete</param>
         public void DeleteAsync<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method delete Asynchronously.");
@@ -2161,4 +2309,5 @@ namespace Intuit.Ipp.DataService
         }
 
     }
+
 }

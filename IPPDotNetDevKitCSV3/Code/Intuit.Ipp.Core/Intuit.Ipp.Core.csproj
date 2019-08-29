@@ -22,6 +22,11 @@
     <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Intuit.Ipp.Client">
+      <HintPath>..\artifacts\bin\netstandard2.0\Intuit.Ipp.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <None Update="AppSettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -198,4 +198,7 @@
   <data name="FieldNullOrEmpty" xml:space="preserve">
     <value>ParentRef field is null or empty.</value>
   </data>
+  <data name="DefaultMinorVersionValue" xml:space="preserve">
+    <value>40</value>
+  </data>
 </root>

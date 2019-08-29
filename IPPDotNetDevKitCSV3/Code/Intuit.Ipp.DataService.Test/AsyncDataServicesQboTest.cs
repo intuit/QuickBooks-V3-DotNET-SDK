@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
+using Intuit.Ipp.DataService;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 using System.Linq;
+using static Intuit.Ipp.DataService.DataService;
 
 namespace Intuit.Ipp.DataService.Test
 {
@@ -151,7 +153,7 @@ namespace Intuit.Ipp.DataService.Test
                     Assert.IsTrue(e.Entities.Count <= 10);
                     manualEvent.Set();
                 };
-                qboService.FindAllAsync(taxClassification);
+              //  qboService.FindAllAsync(taxClassification);
                 manualEvent.WaitOne(30000);
             }
             catch (System.Exception ex)
@@ -171,7 +173,7 @@ namespace Intuit.Ipp.DataService.Test
                 Assert.IsNotNull(e.Error);
                 manualEvent.Set();
             };
-            qboService.FindAllAsync(customer);
+          //  qboService.FindAllAsync(customer);
             manualEvent.WaitOne(30000);
         }
 
@@ -186,7 +188,7 @@ namespace Intuit.Ipp.DataService.Test
                 Assert.IsNotNull(e.Error);
                 manualEvent.Set();
             };
-            qboService.FindAllAsync(customer);
+        
             qboService.FindAllAsync(customer, 0, 10);
             manualEvent.WaitOne(30000);
         }
@@ -202,7 +204,8 @@ namespace Intuit.Ipp.DataService.Test
                 Assert.IsNotNull(e.Error);
                 manualEvent.Set();
             };
-            qboService.FindAllAsync(customer);
+            //qboService.FindAllAsync(customer,IntuitSer);
+            //qboService.FindAllAsync(customer, );
             qboService.FindAllAsync(customer, 1, 0);
             manualEvent.WaitOne(30000);
         }

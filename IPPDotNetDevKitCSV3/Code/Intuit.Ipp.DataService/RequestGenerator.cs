@@ -12,8 +12,9 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using Intuit.Ipp.DataService.Properties;
 
-namespace Intuit.Ipp.Client
+namespace Intuit.Ipp.DataService
 {
     public class RequestGenerator
     {
@@ -108,7 +109,7 @@ namespace Intuit.Ipp.Client
                 requestEndpoint = this.AppendQueryParameters(requestEndpoint, "include", string.Join(",", this.Include.ToArray()));
             }
 
-            requestEndpoint = !String.IsNullOrWhiteSpace(this.MinorVersion) ? this.AppendQueryParameters(requestEndpoint, "minorversion", this.MinorVersion) : this.AppendQueryParameters(requestEndpoint, "minorversion", Properties.Resources.DefaultMinorVersionValue);
+           requestEndpoint = !String.IsNullOrWhiteSpace(this.MinorVersion) ? this.AppendQueryParameters(requestEndpoint, "minorversion", this.MinorVersion) : this.AppendQueryParameters(requestEndpoint, "minorversion", Properties.Resources.DefaultMinorVersionValue);
 
             if (!String.IsNullOrWhiteSpace(this.RequestId))
             {
@@ -143,7 +144,7 @@ namespace Intuit.Ipp.Client
             }
 
 
-         
+
             // Set the accept header type to JSON.
             if (this.responseSerializer is JsonObjectSerializer)
             {
@@ -227,7 +228,7 @@ namespace Intuit.Ipp.Client
                             requestStream.Write(content, 0, content.Length);
                         }
 
-                     
+
                     }
                 }
 
@@ -246,8 +247,8 @@ namespace Intuit.Ipp.Client
             this.serviceContext.IppConfiguration.Security.Authorize(httpRequest, requestBody == null ? null : requestBody.ToString());
 
             // Add the Request Source header value.
-          httpRequest.Headers.Add("UserAgent",CoreConstants.REQUESTSOURCEHEADER);
-          
+            httpRequest.Headers.Add("UserAgent", CoreConstants.REQUESTSOURCEHEADER);
+
             // Return the created http web request.
             return httpRequest;
         }
@@ -269,7 +270,6 @@ namespace Intuit.Ipp.Client
             requestEndpointBuilder.Append(value);
             return requestEndpointBuilder.ToString();
         }
-        /// <summary>
 
 
         public static Stream AddListener(string path)

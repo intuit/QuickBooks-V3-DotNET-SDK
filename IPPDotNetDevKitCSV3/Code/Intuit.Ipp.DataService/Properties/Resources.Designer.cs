@@ -302,5 +302,16 @@ namespace Intuit.Ipp.DataService.Properties {
                 return ResourceManager.GetString("VoidOperationNotSupportedOnEntity", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 40.
+        /// </summary>
+        internal static string DefaultMinorVersionValue
+        {
+            get
+            {
+                return ResourceManager.GetString("DefaultMinorVersionValue", resourceCulture);
+            }
+        }
     }
 }

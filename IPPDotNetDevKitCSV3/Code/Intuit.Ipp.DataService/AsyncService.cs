@@ -24,7 +24,9 @@ namespace Intuit.Ipp.DataService
     using System.Globalization;
     using System.Linq;
     using System.Net;
+    using System.Net.Http;
     using System.Reflection;
+    using System.Threading.Tasks;
     using Intuit.Ipp.Core;
     using Intuit.Ipp.Core.Rest;
     using Intuit.Ipp.Data;
@@ -49,6 +51,11 @@ namespace Intuit.Ipp.DataService
         private IEntity requestedEntity;
 
         /// <summary>
+        /// Client entity
+        /// </summary>
+        protected HttpClient client;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AsyncService"/> class.
         /// </summary>
         /// <param name="serviceContext">IPP Service Context</param>
@@ -71,7 +78,7 @@ namespace Intuit.Ipp.DataService
                 InvalidRealmException exception = new InvalidRealmException();
                 IdsExceptionManager.HandleException(exception);
             }
-
+            client = new HttpClient();
             this.serviceContext = serviceContext;
         }
 
@@ -216,6 +223,8 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+
+      
         #endregion
 
         #region add
@@ -1547,7 +1556,7 @@ namespace Intuit.Ipp.DataService
             }
         }
 
-        #endregion 
+   
 
         private void PrepareHttpRequestAsync(string uri, AsyncRestHandler asyncRestHandler)
         {
@@ -1568,5 +1577,8 @@ namespace Intuit.Ipp.DataService
             // get response
             asyncRestHandler.GetResponse(request);
         }
+
+   
+        #endregion
     }
 }
