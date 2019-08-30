@@ -16,18 +16,15 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains interface for REST request handler.</summary>
+// <summary>This file contains interface for REST Async Await request handler.</summary>
 ////********************************************************************
 
 namespace Intuit.Ipp.Core.Rest
 {
-    using System.Net;
-    
+    using System.Net.Http;
+    using System.Threading.Tasks;
 
-    /// <summary>
-    /// IRestHandler contains the methods for preparing the REST request, calls REST services and returns the response.
-    /// </summary>
-    public interface IRestHandler
+    public interface IAsyncAwaitHandler
     {
         /// <summary>
         /// Prepares the HttpWebRequest along with authentication header added to the request.
@@ -38,25 +35,21 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>
         /// Http web request object.
         /// </returns>
-        HttpWebRequest PrepareRequest(RequestParameters requestParameters, object requestBody, string oauthRequestUri = null, bool includeRequestId = true);
+        HttpRequestMessage PrepareRequestMessage(RequestParameters requestParameters, object requestBody, string oauthRequestUri = null, bool includeRequestId = true);
+
 
         /// <summary>
-        /// Returns the response by calling REST service.
+        /// Returns the response by calling REST service using HttpRequestMessage.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>Response from REST service.</returns>
-        string GetResponse( HttpWebRequest request);
+        Task<string> GetResponseAsync(HttpClient client, HttpRequestMessage request);
 
         /// <summary>
-        /// Returns the response as streamn by calling REST service.
+        /// Returns the response as streamn by calling REST service using HttpRequestMessage.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>Response from REST service.</returns>
-        byte[] GetResponseStream( HttpWebRequest request);
-
-
-        
-
-        
+        Task<byte[]> GetResponseStreamAsync(HttpClient client, HttpRequestMessage request);
     }
 }

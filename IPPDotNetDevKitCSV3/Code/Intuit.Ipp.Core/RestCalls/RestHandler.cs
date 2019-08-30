@@ -30,6 +30,10 @@ namespace Intuit.Ipp.Core.Rest
     using Intuit.Ipp.Utility;
     using System.IO;
     using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using Newtonsoft.Json;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Rest Handler class.
@@ -294,6 +298,190 @@ namespace Intuit.Ipp.Core.Rest
             return httpWebRequest;
         }
 
+        /// <summary>
+        /// Prepares the HttpRequestMessage for AsyncAwait calls
+        /// </summary>
+        /// <param name="requestParameters"></param>
+        /// <param name="requestBody"></param>
+        /// <param name="oauthRequestUri"></param>
+        /// <param name="includeRequestId"></param>
+        /// <returns></returns>
+        public virtual HttpRequestMessage PrepareRequestMessage(RequestParameters requestParameters, object requestBody, string oauthRequestUri = null, bool includeRequestId = true)
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Called PrepareRequest method");
+
+            // This step is required since the configuration settings might have been changed.
+            this.RequestCompressor = CoreHelper.GetCompressor(this.serviceContext, true);
+            this.ResponseCompressor = CoreHelper.GetCompressor(this.serviceContext, false);
+            this.RequestSerializer = CoreHelper.GetSerializer(this.serviceContext, true);
+            this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+
+            this.Include = this.serviceContext.Include;
+            this.MinorVersion = this.serviceContext.MinorVersion;
+            this.RequestId = this.serviceContext.RequestId;
+
+            string requestEndpoint;
+            // Prepare the request Uri from base Uri and resource Uri.
+            if (oauthRequestUri == null)
+            {
+                requestEndpoint = this.serviceContext.BaseUrl + StripFirstSlash(requestParameters.ResourceUri);
+            }
+            else
+            {
+                requestEndpoint = oauthRequestUri;
+            }
+
+            if (this.Include != null && this.Include.Count > 0)
+            {
+                requestEndpoint = this.AppendQueryParameters(requestEndpoint, "include", string.Join(",", this.Include.ToArray()));
+            }
+
+            requestEndpoint = !String.IsNullOrWhiteSpace(this.MinorVersion) ? this.AppendQueryParameters(requestEndpoint, "minorversion", this.MinorVersion) : this.AppendQueryParameters(requestEndpoint, "minorversion", Properties.Resources.DefaultMinorVersionValue);
+
+            if (!String.IsNullOrWhiteSpace(this.RequestId))
+            {
+                if (requestBody != null && requestBody is Intuit.Ipp.Data.IntuitBatchRequest)
+                {
+                    //The maximum request ID + batch ID length is 50 characters.
+                    //For backwards compatibility, truncate the request ID if necessary.
+                    Intuit.Ipp.Data.IntuitBatchRequest batchRequest = (Intuit.Ipp.Data.IntuitBatchRequest)requestBody;
+                    int maximumBatchIdLength = 0;
+                    for (int batchIndex = 0; batchIndex < batchRequest.BatchItemRequest.Length; batchIndex++)
+                    {
+                        maximumBatchIdLength = Math.Max(maximumBatchIdLength, batchRequest.BatchItemRequest[batchIndex].bId.Length);
+                    }
+                    this.RequestId = this.RequestId.Substring(0, (int)Math.Min(this.RequestId.Length, 50 - maximumBatchIdLength));
+                }
+
+                if (includeRequestId)
+                {
+                    requestEndpoint = requestEndpoint.Contains("?") ? requestEndpoint += "&" : requestEndpoint += "?";
+                    requestEndpoint += "requestid=";
+                    requestEndpoint += this.RequestId;
+                }
+            }
+
+            Uri requestUri = new Uri(requestEndpoint);
+            HttpRequestMessage httpRequest = new HttpRequestMessage();
+            httpRequest.RequestUri = requestUri;
+            if (requestParameters.Verb == HttpVerbType.POST) { httpRequest.Method = HttpMethod.Post; }
+            else
+            {
+                httpRequest.Method = HttpMethod.Get;
+            }
+
+
+
+            // Set the accept header type to JSON.
+            if (this.responseSerializer is JsonObjectSerializer)
+            {
+                httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(CoreConstants.CONTENTTYPE_APPLICATIONJSON));
+            }
+
+            // If the service type is IPS then set the Api name in header. 
+            if (this.serviceContext.ServiceType == IntuitServicesType.IPS && (oauthRequestUri == null))
+            {
+                // Add the API name as header to the request.
+                httpRequest.Headers.Add(CoreConstants.APIACTIONHEADER, requestParameters.ApiName);
+            }
+
+            if (this.RequestCompressor != null)
+            {
+                httpRequest.Headers.Add(CoreConstants.CONTENTENCODING, this.RequestCompressor.DataCompressionFormat.ToString().ToLowerInvariant());
+            }
+
+
+            if (requestParameters.Verb == HttpVerbType.POST)
+            {
+                byte[] content = null;
+
+                MemoryStream streamRequestBody = requestBody as MemoryStream;
+                StringBuilder requestData = new StringBuilder();
+                if (streamRequestBody == null)
+                {
+
+                    // Check whether the requestBody is null or not.
+                    if (requestBody != null)
+                    {
+                        // Check whether the requestBody is string type.
+                        string stringRequestBody = requestBody as string;
+                        if (!string.IsNullOrWhiteSpace(stringRequestBody))
+                        {
+                            // If yes then append the string to the builder.
+                            requestData.Append(stringRequestBody);
+                        }
+                        else
+                        {
+                            // If not, then serialize the requestBody using the Serializer and append to builder.
+                            requestData.Append(this.RequestSerializer.Serialize(requestBody));
+                        }
+
+                        // Log Request Body to a file
+                        this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestData.ToString(), true);
+
+
+                        // Use of encoding to get bytes used to write to request stream.
+                        UTF8Encoding encoding = new UTF8Encoding();
+                        content = encoding.GetBytes(requestData.ToString());
+                    }
+                }
+                else
+                {
+                    content = streamRequestBody.ToArray();
+                }
+
+
+                TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+
+                // Set the request properties.
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, (int)traceSwitch.Level > (int)Intuit.Ipp.Diagnostics.TraceLevel.Info ? "Adding the payload to request.\n Start dump: \n" + requestData.ToString() : "Adding the payload to request.");
+
+                if (content != null)
+                {
+                    if (this.RequestCompressor != null)
+                    {
+                        // Get the request stream.
+                        using (var requestStream = new MemoryStream())
+                        {
+                            this.RequestCompressor.Compress(content, requestStream);
+                        }
+                    }
+                    else
+                    {
+                        // Get the request stream.
+                        using (var requestStream = new MemoryStream())
+                        {
+                            // Write the content to stream.
+                            requestStream.Write(content, 0, content.Length);
+                        }
+
+
+                    }
+                }
+
+                // Set the content type
+                if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+                {
+                    httpRequest.Content = new StringContent(requestData.ToString(), Encoding.UTF8, "application/json");
+                }
+                else
+                {
+                    httpRequest.Content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+                }
+            }
+
+            // Authorize the request
+            this.serviceContext.IppConfiguration.Security.Authorize(httpRequest, requestBody == null ? null : requestBody.ToString());
+
+            // Add the Request Source header value.
+            httpRequest.Headers.Add("UserAgent", CoreConstants.REQUESTSOURCEHEADER);
+
+            // Return the created http web request.
+            return httpRequest;
+        }
+
+
+
         private string StripFirstSlash(string uri)
         {
             if (string.Compare(uri, 0, "/", 0, 1) == 0)
@@ -326,5 +514,7 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="request">The request.</param>
         /// <returns>Response from REST service.</returns>
         public abstract byte[] GetResponseStream(System.Net.HttpWebRequest request);
+
+        
     }
 }

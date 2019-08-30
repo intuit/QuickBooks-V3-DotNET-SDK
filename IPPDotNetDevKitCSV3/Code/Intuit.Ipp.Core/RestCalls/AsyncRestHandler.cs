@@ -27,7 +27,9 @@ namespace Intuit.Ipp.Core.Rest
     using System.Globalization;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
     using System.Text;
+    using System.Threading.Tasks;
     using System.Xml;
     using Intuit.Ipp.Core.Properties;
     using Intuit.Ipp.Diagnostics;
@@ -37,7 +39,7 @@ namespace Intuit.Ipp.Core.Rest
     /// <summary>
     /// RestRequestHandler contains the logic for preparing the REST request, calls REST services and returns the response.
     /// </summary>
-    public class AsyncRestHandler : RestHandler
+    public class AsyncRestHandler : RestHandler, IAsyncAwaitHandler
     {
         /// <summary>
         /// Request Body.
@@ -640,5 +642,276 @@ namespace Intuit.Ipp.Core.Rest
             resultArguments = new AsyncCallCompletedEventArgs(null, exception);
             return resultArguments;
         }
+
+        private async Task<string> ParseResponseAsync(HttpResponseMessage httpResponseMessage)
+        {
+            // Create a variable for storing the response.
+            string response = string.Empty;
+
+            // Check whether the Status Code is OK which denotes that successful response.
+            // TODO: This check might be rhetorical since any response from Ids will be 200OK with error response.
+            if (httpResponseMessage.StatusCode == HttpStatusCode.OK || httpResponseMessage.StatusCode == HttpStatusCode.BadRequest)
+            {
+                response = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
+                //CoreHelper.CheckNullResponseAndThrowException(response); check if required or not
+            }
+
+            //// Log the response to Disk.
+            //string response_intuit_tid_header = "";
+            //    //get intuit_tid header
+            //    for (int i = 0; i < httpResponseMessage.Headers.Count; ++i)
+            //    {
+            //        if (httpWebResponse.Headers.Keys[i] == "intuit_tid")
+            //        {
+            //            response_intuit_tid_header = httpWebResponse.Headers[i];
+            //        }
+            //    }
+            //    this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
+
+
+
+            //}
+
+            // Return the response.
+            return response;
+        }
+
+        /// <summary>
+        /// Call rest service
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<string> GetResponseAsync(HttpClient client, HttpRequestMessage request)
+        {
+            FaultHandler handler = new FaultHandler(this.context);
+
+            // Create a variable for storing the response.
+            string responseContent = string.Empty;
+            string response = string.Empty;
+            try
+            {
+                // Check whether the retryPolicy is null.
+                if (this.context.IppConfiguration.RetryPolicy == null)
+                {
+                    // If yes then call the rest service without retry framework enabled.
+                    responseContent = await this.CallRestServiceAsync(client, request).ConfigureAwait(false);
+
+                }
+                else
+                {
+                    //TO be implmented
+                    //// If no then call the rest service using the execute action of retry framework.
+                    //this.context.IppConfiguration.RetryPolicy.ExecuteAction(() =>
+                    //{
+                    //    response = this.CallRestService(request);
+                    //});
+                }
+                if (request != null && request.RequestUri != null && request.RequestUri.Segments != null)
+                {
+                    if (System.Array.IndexOf(request.RequestUri.Segments, "reports/") >= 0)
+                    {
+                        if (!response.StartsWith("{\"Report\":")) { response = "{\"Report\":" + response + "}"; }
+                    }
+                }
+
+                if (request != null && request.RequestUri != null && request.RequestUri.Segments != null)
+                {
+                    if (System.Array.IndexOf(request.RequestUri.Segments, "taxservice/") >= 0)
+                    {
+                        //This if condition was added as Json serialization was failing for the FaultResponse bcoz of missing TaxService seriliazation tag on AnyIntuitObject in Fms.cs class
+
+                        if (!response.Contains("Fault"))
+                        {
+
+                            if (!response.StartsWith("{\"TaxService\":")) { response = "{\"TaxService\":" + response + "}"; }
+                        }
+                    }
+
+
+                }
+            }
+            catch (RetryExceededException retryExceededException)
+            {
+                // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
+                // period for the request expired.-or- An error occurred while processing the request.
+                bool isIps = false;
+                if (this.context.ServiceType == IntuitServicesType.IPS)
+                {
+                    isIps = true;
+                }
+
+
+                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
+                throw;
+
+            }
+            catch (WebException webException)
+            {
+                // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
+                // period for the request expired.-or- An error occurred while processing the request.
+                bool isIps = false;
+                if (this.context.ServiceType == IntuitServicesType.IPS)
+                {
+                    isIps = true;
+                }
+
+                IdsException idsException = handler.ParseResponseAndThrowException(webException, isIps);//check again what exception types is thrown
+                if (idsException != null)
+                {
+                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    throw idsException;
+                }
+            }
+            finally
+            {
+                this.context.RequestId = null;
+            }
+
+            if (this.context.ServiceType == IntuitServicesType.IPS)
+            {
+                // Handle errors here
+                Utility.IntuitErrorHandler.HandleErrors(response);
+            }
+            else
+            {
+                // Check the response if there are any fault tags and throw appropriate exceptions.
+                IdsException exception = handler.ParseErrorResponseAndPrepareException(response);
+                if (exception != null)
+                {
+                    throw exception;
+                }
+            }
+
+            // Return the response.
+            return response;
+        }
+
+        /// <summary>
+        /// Calls the rest service.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>Returns the response.</returns>
+        private async Task<string> CallRestServiceAsync(HttpClient client, HttpRequestMessage request)
+        {
+
+            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service.");
+
+            //Make async call
+            HttpResponseMessage httpResponseMessage = await client.SendAsync(request).ConfigureAwait(false);
+            //Get the parsed response
+            string parsedResponse = await this.ParseResponseAsync(httpResponseMessage).ConfigureAwait(false);
+            //Logs
+            TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start dump: \n " + parsedResponse : "Got the response from service.");
+
+            // Parse the response from the call and return.
+            return parsedResponse;
+
+        }
+
+        /// <summary>
+        /// Calls the rest service.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>Returns the response.</returns>
+        private async Task<byte[]> GetRestServiceCallResponseStreamAsync(HttpClient client, HttpRequestMessage request)
+        {
+            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service as response stream.");
+
+            Stream receiveStream = new MemoryStream();
+            byte[] receiveBytes = new byte[0];
+            MemoryStream mem = new MemoryStream();
+
+            //Make async call
+            HttpResponseMessage httpResponseMessage = await client.SendAsync(request).ConfigureAwait(false);
+            //Get the parsed response content
+            string parsedResponse = await this.ParseResponseAsync(httpResponseMessage).ConfigureAwait(false);//check solutions here- https://stackoverflow.com/questions/23884182/how-to-get-byte-array-properly-from-an-web-api-method-in-c/23884972
+            receiveBytes = Convert.FromBase64String(parsedResponse);
+           
+
+            //if ((httpResponseMessage.Content.Headers.ContentEncoding.Count!=0) && this.ResponseCompressor != null)
+            //{
+            //    using (var responseStream = httpWebResponse.GetResponseStream())
+            //    {
+            //        using (var decompressedStream = this.ResponseCompressor.Decompress(responseStream))
+            //        {
+            //            decompressedStream.CopyTo(mem);
+            //            receiveBytes = mem.ToArray();
+            //        }
+            //    }
+            //}
+            //else
+            //{
+
+            //    using (var responseStream = httpWebResponse.GetResponseStream())
+            //    {
+            //        responseStream.CopyTo(mem);
+            //        receiveBytes = mem.ToArray();
+            //    }
+            //}
+
+            TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Got the response from service.");
+            
+
+            // Return the response stream
+            return receiveBytes;
+        }
+
+       
+
+        /// <summary>
+        /// Returns the response stream by calling REST service.Used for PDF enpoint
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>Response from REST service.</returns>
+        public async Task<byte[]> GetResponseStreamAsync(HttpClient client, HttpRequestMessage request)
+        {
+            FaultHandler handler = new FaultHandler(this.context);
+            byte[] receivedBytes = new byte[0];
+
+            try
+            {
+                // Check whether the retryPolicy is null.
+                if (this.context.IppConfiguration.RetryPolicy == null)
+                {
+                    // If yes then call the rest service without retry framework enabled.
+                    receivedBytes = await GetRestServiceCallResponseStreamAsync(client,request).ConfigureAwait(false);
+                }
+                else
+                {
+                    //might need to change this for new retry
+                    // If no then call the rest service using the execute action of retry framework.
+                    this.context.IppConfiguration.RetryPolicy.ExecuteAction(async () =>
+                    {
+                        receivedBytes = await GetRestServiceCallResponseStreamAsync(client, request).ConfigureAwait(false);
+                    });
+                }
+            }
+            catch (WebException webException)
+            {
+                // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
+                // period for the request expired.-or- An error occurred while processing the request.
+                bool isIps = false;
+                if (this.context.ServiceType == IntuitServicesType.IPS)
+                {
+                    isIps = true;
+                }
+
+                IdsException idsException = handler.ParseResponseAndThrowException(webException, isIps);
+                if (idsException != null)
+                {
+                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    throw idsException;
+                }
+            }
+            finally
+            {
+                this.context.RequestId = null;
+            }
+
+            return receivedBytes;
+        }
+
     }
 }

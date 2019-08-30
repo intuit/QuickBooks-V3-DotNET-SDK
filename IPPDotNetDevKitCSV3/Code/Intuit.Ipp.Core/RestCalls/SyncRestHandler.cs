@@ -26,9 +26,11 @@ namespace Intuit.Ipp.Core.Rest
     using System;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
+    using System.Threading.Tasks;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility; 
+    using Intuit.Ipp.Utility;
 
     /// <summary>
     /// SyncRestHandler contains the logic for preparing the REST request, calls REST services and returns the response.
@@ -285,7 +287,7 @@ namespace Intuit.Ipp.Core.Rest
             Stream receiveStream = new MemoryStream();
             byte[] receiveBytes = new byte[0];
             MemoryStream mem = new MemoryStream();
-            
+
             // Call the service and get response.
             using (HttpWebResponse httpWebResponse = request.GetResponse() as HttpWebResponse)
             {
@@ -310,7 +312,7 @@ namespace Intuit.Ipp.Core.Rest
                         receiveBytes = mem.ToArray();
                     }
                 }
-                
+
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
                 this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Got the response from service.");
             }
@@ -382,5 +384,7 @@ namespace Intuit.Ipp.Core.Rest
             // Return the response.
             return response;
         }
+        
+        
     }
 }

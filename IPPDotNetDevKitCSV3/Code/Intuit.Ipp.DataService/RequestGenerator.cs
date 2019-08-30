@@ -252,6 +252,8 @@ namespace Intuit.Ipp.DataService
             // Return the created http web request.
             return httpRequest;
         }
+
+
         private string StripFirstSlash(string uri)
         {
             if (string.Compare(uri, 0, "/", 0, 1) == 0)
