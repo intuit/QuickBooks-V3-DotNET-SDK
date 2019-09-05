@@ -34,6 +34,7 @@ namespace Intuit.Ipp.Core.Rest
     using System.Net.Http.Headers;
     using Newtonsoft.Json;
     using System.Threading.Tasks;
+    using System.IO.Compression;
 
     /// <summary>
     /// Rest Handler class.
@@ -362,6 +363,7 @@ namespace Intuit.Ipp.Core.Rest
             }
 
             Uri requestUri = new Uri(requestEndpoint);
+
             HttpRequestMessage httpRequest = new HttpRequestMessage();
             httpRequest.RequestUri = requestUri;
             if (requestParameters.Verb == HttpVerbType.POST) { httpRequest.Method = HttpMethod.Post; }
@@ -369,8 +371,6 @@ namespace Intuit.Ipp.Core.Rest
             {
                 httpRequest.Method = HttpMethod.Get;
             }
-
-
 
             // Set the accept header type to JSON.
             if (this.responseSerializer is JsonObjectSerializer)
@@ -383,11 +383,6 @@ namespace Intuit.Ipp.Core.Rest
             {
                 // Add the API name as header to the request.
                 httpRequest.Headers.Add(CoreConstants.APIACTIONHEADER, requestParameters.ApiName);
-            }
-
-            if (this.RequestCompressor != null)
-            {
-                httpRequest.Headers.Add(CoreConstants.CONTENTENCODING, this.RequestCompressor.DataCompressionFormat.ToString().ToLowerInvariant());
             }
 
 
@@ -430,7 +425,11 @@ namespace Intuit.Ipp.Core.Rest
                     content = streamRequestBody.ToArray();
                 }
 
-
+                // Set the content type
+                if (this.responseSerializer is JsonObjectSerializer)
+                {
+                    httpRequest.Content = new StringContent(requestData.ToString(), Encoding.UTF8, requestParameters.ContentType);
+                }
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
 
                 // Set the request properties.
@@ -441,10 +440,18 @@ namespace Intuit.Ipp.Core.Rest
                     if (this.RequestCompressor != null)
                     {
                         // Get the request stream.
-                        using (var requestStream = new MemoryStream())
+                      
+                        MemoryStream ms = new MemoryStream();
+                        using (GZipStream gzip = new GZipStream(ms, CompressionMode.Compress, true))
                         {
-                            this.RequestCompressor.Compress(content, requestStream);
+                            gzip.Write(content, 0, content.Length);
                         }
+                        ms.Position = 0;
+                        StreamContent streamContent = new StreamContent(ms);
+                        streamContent.Headers.ContentType = new MediaTypeHeaderValue(requestParameters.ContentType);
+                        streamContent.Headers.ContentEncoding.Add(this.RequestCompressor.DataCompressionFormat.ToString().ToLowerInvariant());
+
+                        httpRequest.Content = streamContent;
                     }
                     else
                     {
@@ -454,21 +461,10 @@ namespace Intuit.Ipp.Core.Rest
                             // Write the content to stream.
                             requestStream.Write(content, 0, content.Length);
                         }
-
-
                     }
                 }
-
-                // Set the content type
-                if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
-                {
-                    httpRequest.Content = new StringContent(requestData.ToString(), Encoding.UTF8, "application/json");
-                }
-                else
-                {
-                    httpRequest.Content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
-                }
             }
+
 
             // Authorize the request
             this.serviceContext.IppConfiguration.Security.Authorize(httpRequest, requestBody == null ? null : requestBody.ToString());

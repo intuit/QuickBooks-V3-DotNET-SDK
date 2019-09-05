@@ -62,6 +62,22 @@ namespace Intuit.Ipp.Core
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    public enum IntuitAsyncType
+    {
+        /// <summary>
+        /// Async calls using Async Await
+        /// </summary>
+        AsyncAwait,
+
+        /// <summary>
+        /// Default service type.
+        /// </summary>
+        Default
+    }
+
+    /// <summary>
     /// Intuit Partner Platform Service Context.
     /// </summary>
     public class ServiceContext
@@ -113,6 +129,10 @@ namespace Intuit.Ipp.Core
         private string requestId;
 
 
+        /// <summary>
+        /// Intuit Async/Sync Type.
+        /// </summary>
+        public IntuitAsyncType asyncType;
         #endregion
 
         #region Constructors

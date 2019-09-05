@@ -71,29 +71,7 @@ namespace Intuit.Ipp.DataService
         /// Client entity
         /// </summary>
         protected HttpClient client;
-
-        /// <summary>
-        /// Intuit Service Type(QBO).
-        /// </summary>
-        private IntuitAsyncType asyncType;
-
-        public enum IntuitAsyncType
-        {
-            /// <summary>
-            /// Async calls using Async Await
-            /// </summary>
-            AsyncAwait,
-
-            /// <summary>
-            /// Async calls using delegates
-            /// </summary>
-            Delegates,
-
-            /// <summary>
-            /// Default service type.
-            /// </summary>
-            Default
-        }
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataService"/> class.
@@ -1354,7 +1332,6 @@ namespace Intuit.Ipp.DataService
             string resourceString = entity.GetType().Name;
             List<T> entities = new List<T>();
 
-
             if (startPosition <= 0)
             {
                 IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
@@ -1402,16 +1379,11 @@ namespace Intuit.Ipp.DataService
                 request = this.asyncawaitRestHandler.PrepareRequestMessage(parameters, query);
             }
 
-
-
-
-          
-            
             string response = string.Empty;
             try
             {
 
-                if (useAsync == IntuitAsyncType.AsyncAwait)
+                if (useAsync == IntuitAsyncType.AsyncAwait | useAsync == IntuitAsyncType.Default)
                 {
                     // Gets response
                     response = await this.asyncawaitRestHandler.GetResponseAsync(client, request).ConfigureAwait(false);
@@ -1443,124 +1415,11 @@ namespace Intuit.Ipp.DataService
                 }
             }
 
-
-            //}
-
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
 
             ReadOnlyCollection<T> readOnlyCollection = new ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
         }
-
-        /// <summary>
-        /// Retrieves specified entity based passed page number and page size
-        /// </summary>
-        /// <typeparam name="T">Entity to be retrieved</typeparam>
-        /// <param name="entity">Instance of entity to be retrieved</param>
-        /// <param name="startPosition">The start position.</param>
-        /// <param name="maxResults">The max results.</param>
-        /// <param name="useAsync">Async</param>
-        //public async Task<IEnumerable<T>> FindAllAsync<T>(T entity, IntuitAsyncType useAsync, int startPosition = 1, int maxResults = 500) where T : IEntity
-        //{
-        //    AsyncService asyncService = new AsyncService(this.serviceContext);
-        //    string content = "";
-        //    List<T> entities = new List<T>();
-        //    ReadOnlyCollection<T> readOnlyCollection = null;
-        //    HttpResponseMessage response = new HttpResponseMessage();
-        //    string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
-        //    string query = string.Format(CultureInfo.InvariantCulture, "select * from {0} startPosition {1} maxResults {2}", resourceString, startPosition, maxResults);
-        //    string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query?query={2}", CoreConstants.VERSION, this.serviceContext.RealmId, query);
-        //    RequestParameters parameters;
-        //    if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
-        //    {
-        //        parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
-        //    }
-        //    else
-        //    {
-        //        parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
-        //    }
-
-        //    RequestGenerator helper = new RequestGenerator(serviceContext);
-        //    HttpRequestMessage request = helper.PrepareRequest(parameters, query);
-
-        //    if (entity.GetType().Name == "TaxClassification")
-        //    {
-        //        try
-        //        {
-
-        //            if (useAsync == IntuitAsyncType.AsyncAwait)
-        //            {
-        //                 response = await client.SendAsync(request).ConfigureAwait(false);
-                   
-
-        //            }
-        //        }
-        //        catch(SystemException systemException)
-        //        {
-        //            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
-        //            IdsException idsException = new IdsException(systemException.Message);
-
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (startPosition <= 0)
-        //        {
-        //            IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
-        //            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-
-        //            return null;
-        //        }
-
-        //        if (maxResults <= 0)
-        //        {
-        //            IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageSizeString));
-        //            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-
-        //            return null;
-        //        }
-
-        //        try
-        //        {
-        //            if (useAsync == IntuitAsyncType.AsyncAwait)
-        //            {
-        //                response = await client.SendAsync(request).ConfigureAwait(false);
-        //            }
-        //        }
-        //        catch (SystemException systemException)
-        //        {
-        //            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
-        //            IdsException idsException = new IdsException(systemException.Message);
-        //        }
-        //    }
-
-        //    if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-        //    {
-        //        content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-        //        CoreHelper.CheckNullResponseAndThrowException(content);
-        //    }
-        //    // de serialize object
-        //    IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(content);
-        //    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Intuit.Ipp.Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
-        //    QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
-
-        //    if (queryResponse.maxResults > 0)
-        //    {
-        //        object tempEntities = queryResponse.AnyIntuitObjects;
-        //        object[] tempEntityArray = (object[])tempEntities;
-
-        //        if (tempEntityArray.Length > 0)
-        //        {
-        //            foreach (object item in tempEntityArray)
-        //            {
-        //                entities.Add((T)item);
-        //            }
-        //        }
-        //    }
-        //    readOnlyCollection = new ReadOnlyCollection<T>(entities);
-
-        //    return readOnlyCollection;
-        //}
 
         /// <summary>
         /// Retrieves specified entities based on passed Level, supported for TaxClassification only.
@@ -1824,17 +1683,74 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        public async Task<T> AddAsync<T>(T entity, IntuitAsyncType intuitAsyncType) where T : IEntity
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindAll.");
 
+            ServicesHelper.ValidateEntity(entity, serviceContext);
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture); 
 
+            // Creates request parameters
+            RequestParameters parameters = null;
+           
+            HttpRequestMessage request;
+
+            // Builds resource Uri
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+
+           
+            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+            }
+            else
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+            }
+
+            request = this.asyncawaitRestHandler.PrepareRequestMessage(parameters, entity);
+
+            string response = string.Empty;
+            try
+            {
+
+                if (intuitAsyncType == IntuitAsyncType.AsyncAwait | intuitAsyncType == IntuitAsyncType.Default)
+                {
+                    // Gets response
+                    response = await this.asyncawaitRestHandler.GetResponseAsync(client, request).ConfigureAwait(false);
+
+                }
+            }
+            catch (IdsException ex)
+            {
+                IdsExceptionManager.HandleException(ex);
+            }
+
+            CoreHelper.CheckNullResponseAndThrowException(response);
+
+            // Deserialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            object value = restResponse.AnyIntuitObject;
+            if (value != null)
+            {
+                return (T)(value as IEntity);
+            }
+            else
+            {
+                return default(T);
+            }
+
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
+        }
 
         #endregion
 
-            #region Async Delete Void
-            /// <summary>
-            /// Deletes an entity under the specified realm. The realm must be set in the context
-            /// </summary>
-            /// <typeparam name="T">Generic Type T.</typeparam>
-            /// <param name="entity">Instance of entity to Delete</param>
+        #region Async Delete Void
+        /// <summary>
+        /// Deletes an entity under the specified realm. The realm must be set in the context
+        /// </summary>
+        /// <typeparam name="T">Generic Type T.</typeparam>
+        /// <param name="entity">Instance of entity to Delete</param>
         public void DeleteAsync<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method delete Asynchronously.");
