@@ -55,7 +55,7 @@ namespace Intuit.Ipp.Core.Configuration
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(path, optional: true)
                 .Build();
-           
+
 
 
         }
@@ -445,6 +445,14 @@ namespace Intuit.Ipp.Core.Configuration
 
             if (!string.IsNullOrEmpty(messageRequestSettings["CompressionFormat"]))
             {
+                if (messageRequestSettings["CompressionFormat"].ToLower() == CompressionFormat.GZip.ToString().ToLower())
+                {
+                    messageRequestSettings["CompressionFormat"] = CompressionFormat.GZip.ToString();
+                }
+                else if (messageRequestSettings["CompressionFormat"].ToLower() == CompressionFormat.Deflate.ToString().ToLower())
+                {
+                    messageRequestSettings["CompressionFormat"] = CompressionFormat.Deflate.ToString();
+                }
                 switch (Enum.Parse(typeof(Utility.CompressionFormat), messageRequestSettings["CompressionFormat"]))
                 {
                     case Intuit.Ipp.Utility.CompressionFormat.None:
@@ -465,6 +473,14 @@ namespace Intuit.Ipp.Core.Configuration
 
             if (!string.IsNullOrEmpty(messageResponseSettings["CompressionFormat"]))
             {
+                if (messageResponseSettings["CompressionFormat"].ToLower() == CompressionFormat.GZip.ToString().ToLower())
+                {
+                    messageResponseSettings["CompressionFormat"] = CompressionFormat.GZip.ToString();
+                }
+                else if (messageResponseSettings["CompressionFormat"].ToLower() == CompressionFormat.Deflate.ToString().ToLower())
+                {
+                    messageResponseSettings["CompressionFormat"] = CompressionFormat.Deflate.ToString();
+                }
                 switch (Enum.Parse(typeof(Utility.CompressionFormat), messageResponseSettings["CompressionFormat"]))
                 {
                     case Intuit.Ipp.Utility.CompressionFormat.None:
