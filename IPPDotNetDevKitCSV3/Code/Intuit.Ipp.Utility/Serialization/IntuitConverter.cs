@@ -399,7 +399,10 @@ namespace Intuit.Ipp.Utility
             PropertyInfo targetProp = target.GetType().GetProperty(propName);
             if (!targetProp.PropertyType.IsArray)
             {
-                targetProp.SetValue(target, prop.Value.ToObject(type, serializer), null);
+                if (prop.Value.Type.ToString().ToLower() != "null")
+                {
+                    targetProp.SetValue(target, prop.Value.ToObject(type, serializer), null);
+                }
             }
             else
             {
@@ -435,12 +438,15 @@ namespace Intuit.Ipp.Utility
                 targetProp.SetValue(target, arr, null);
             }
 
-            //find specified field and set it true
-            propName = targetProp.Name + "Specified";
-            PropertyInfo specifiedProp = target.GetType().GetProperty(propName);
-            if (specifiedProp != null)
+            if (prop.Value.Type.ToString().ToLower() != "null")
             {
-                specifiedProp.SetValue(target, true, null);
+                //find specified field and set it true
+                propName = targetProp.Name + "Specified";
+                PropertyInfo specifiedProp = target.GetType().GetProperty(propName);
+                if (specifiedProp != null)
+                {
+                    specifiedProp.SetValue(target, true, null);
+                }
             }
         }
 

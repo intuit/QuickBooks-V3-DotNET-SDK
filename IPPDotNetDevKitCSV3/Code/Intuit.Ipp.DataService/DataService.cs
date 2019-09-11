@@ -1429,7 +1429,7 @@ namespace Intuit.Ipp.DataService
         {
             Type givenType = entity.GetType();
 
-            if (!(givenType == typeof(SalesReceipt) || givenType == typeof(Invoice) || givenType == typeof(Estimate)))
+            if (!(givenType == typeof(SalesReceipt) || givenType == typeof(Invoice) || givenType == typeof(Estimate) || (givenType == typeof(CreditMemo) || givenType == typeof(RefundReceipt) || givenType == typeof(PurchaseOrder) || givenType == typeof(Payment))))
             {
                 IdsException exception = new IdsException(Resources.PdfOperationNotSupportedOnEntity);
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));

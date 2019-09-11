@@ -80,7 +80,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         }
 
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void AddAccountWithAccAliasTestUsingoAuthFrance()
         {
             //Creating the Account for Add
