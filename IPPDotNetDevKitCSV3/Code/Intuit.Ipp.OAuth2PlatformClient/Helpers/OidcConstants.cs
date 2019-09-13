@@ -20,7 +20,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string ClientId            = "client_id";
             public const string RedirectUri         = "redirect_uri";
             public const string State               = "state";
-           
+            public const string IdToken_ReamId      = "{\"id_token\":{\"realmId\":null}}";
+
         }
 
         /// <summary>

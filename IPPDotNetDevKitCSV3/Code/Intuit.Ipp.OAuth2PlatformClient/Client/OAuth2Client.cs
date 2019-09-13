@@ -57,7 +57,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public string DiscoveryUrl { get; set; }
 
-        /// <summary>
+        ///// <summary>
         ///// EnableLogging
         ///// </summary>
         //public bool EnableLogging { get; set; }
@@ -168,6 +168,124 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
             return authorizationRequest;
         }
+
+        #region realmId changes to be included in later release
+
+        ///// <summary>
+        ///// Get Authorization Url
+        ///// </summary>
+        ///// <param name="scopes"></param>
+        ///// <param name="CSRFToken"></param>
+        ///// <param name="getRealmId"></param>
+        ///// <returns></returns>
+        //public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken, bool getRealmId )
+        //{
+        //    string scopeValue = "";
+        //    string realmIdJson = OidcConstants.AuthorizeRequest.IdToken_ReamId;
+        //    string authorizationRequest = "";
+        //    for (var index = 0; index < scopes.Count; index++)
+        //    {
+        //        scopeValue += scopes[index].GetStringValue() + " ";
+        //    }
+        //    scopeValue = scopeValue.TrimEnd();
+        //    this.CSRFToken = CSRFToken;
+        //    if (getRealmId == true)
+        //    {
+        //        authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}&claims={5}",
+        //            DiscoveryDoc.AuthorizeEndpoint,
+        //            ClientID,
+        //            Uri.EscapeDataString(scopeValue),
+        //            Uri.EscapeDataString(RedirectURI),
+        //            Uri.EscapeDataString(realmIdJson),
+        //            CSRFToken);
+        //    }
+        //    else
+        //    {
+        //        authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
+        //            DiscoveryDoc.AuthorizeEndpoint,
+        //            ClientID,
+        //            Uri.EscapeDataString(scopeValue),
+        //            Uri.EscapeDataString(RedirectURI),
+        //            CSRFToken);
+        //    }
+        //    return authorizationRequest;
+        //}
+
+        ///// <summary>
+        ///// Get Authorization Url
+        ///// </summary>
+        ///// <param name="scopes"></param>
+        ///// <param name="CSRFToken"></param>
+        ///// <param name="getRealmId"></param>
+        ///// <returns></returns>
+        //public string GetAuthorizationURL(List<OidcScopes> scopes, bool getRealmId)
+        //{
+        //    string scopeValue = "";
+        //    string realmIdJson = OidcConstants.AuthorizeRequest.IdToken_ReamId;
+        //    string authorizationRequest = "";
+        //    for (var index = 0; index < scopes.Count; index++)
+        //    {
+        //        scopeValue += scopes[index].GetStringValue() + " ";
+        //    }
+        //    scopeValue = scopeValue.TrimEnd();
+        //    this.CSRFToken = GenerateCSRFToken();
+        //    if (getRealmId == true)
+        //    {
+        //        authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}&claims={5}",
+        //            DiscoveryDoc.AuthorizeEndpoint,
+        //            ClientID,
+        //            Uri.EscapeDataString(scopeValue),
+        //            Uri.EscapeDataString(RedirectURI),
+        //            Uri.EscapeDataString(realmIdJson),
+        //            CSRFToken);
+        //    }
+        //    else
+        //    {
+        //        authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
+        //            DiscoveryDoc.AuthorizeEndpoint,
+        //            ClientID,
+        //            Uri.EscapeDataString(scopeValue),
+        //            Uri.EscapeDataString(RedirectURI),
+        //            CSRFToken);
+        //    }
+        //    return authorizationRequest;
+        //}
+
+
+        ///// <summary>
+        ///// Validates ID token
+        ///// </summary>
+        ///// <param name="idToken"></param>
+        ///// <returns></returns>
+        //public string GetRealmIdFromIDTokenAsync(string idToken)
+        //{
+
+        //    if (idToken != null)
+        //    {
+        //        string[] splitValues = idToken.Split('.');
+
+
+        //        if (splitValues[1] != null)
+        //        {
+        //            var payloadJson = Encoding.UTF8.GetString(Base64Url.Decode(splitValues[1].ToString()));
+        //            IdTokenJWTClaimTypes payloadData = JsonConvert.DeserializeObject<IdTokenJWTClaimTypes>(payloadJson);
+
+        //            if (payloadData.RealmId != null)
+        //            {
+        //                return payloadData.RealmId.ToString();
+        //            }
+
+        //        }
+
+        //    }
+
+        //    return null;
+
+        //}
+
+        #endregion
+
+
 
         /// <summary>
         /// Gets Bearer token from Authorization code
@@ -342,6 +460,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             return Task.FromResult(false);
         }
+
+        
 
         /// <summary>
         /// Generate random CSRF token
