@@ -265,9 +265,7 @@ namespace Intuit.Ipp.Core.Rest
             using (HttpWebResponse httpWebResponse = request.GetResponse() as HttpWebResponse)
             {
                 string parsedResponse = this.ParseResponse(httpWebResponse);
-                TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start dump: \n " + parsedResponse : "Got the response from service.");
-
+                
                 // Parse the response from the call and return.
                 return parsedResponse;
             }
@@ -375,6 +373,8 @@ namespace Intuit.Ipp.Core.Rest
                 }
                 this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
 
+                TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + "Intuit-tid:" + response_intuit_tid_header + "\n Response Payload: \n" + response : "Got the response from service.");
 
 
             }

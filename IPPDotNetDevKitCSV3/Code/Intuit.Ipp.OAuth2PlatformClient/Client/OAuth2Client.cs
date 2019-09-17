@@ -57,7 +57,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public string DiscoveryUrl { get; set; }
 
-        /// <summary>
+        //// <summary>
         ///// EnableLogging
         ///// </summary>
         //public bool EnableLogging { get; set; }

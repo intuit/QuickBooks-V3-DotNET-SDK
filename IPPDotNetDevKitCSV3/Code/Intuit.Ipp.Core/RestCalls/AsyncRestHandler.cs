@@ -435,7 +435,7 @@ namespace Intuit.Ipp.Core.Rest
 
             //log response to logs
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
+            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n"+"Intuit-tid:"+ response_intuit_tid_header + "\n Response Payload: \n" + resultString : "Got the response from service.");
 
             //if response is of not type pdf do as usual
             if (!isResponsePdf)
