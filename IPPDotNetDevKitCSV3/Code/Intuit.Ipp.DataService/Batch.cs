@@ -137,6 +137,24 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        /// <summary>
+        /// Tries to get the <see cref="Intuit.Ipp.DataService.IntuitBatchResponse"/> with the specified id
+        /// </summary>
+        /// <param name="id"> unique batchitem id. </param>
+        /// <returns>True if the item was found, otherwise false</returns>
+        public bool TryGetValue(string id, out IntuitBatchResponse intuitBatchResponse)
+        {
+            BatchItemResponse batchresponse = this.batchResponses.FirstOrDefault(item => item.bId == id);
+            if (batchresponse == null)
+            {
+                intuitBatchResponse = null;
+                return false;
+            }
+
+            intuitBatchResponse = ProcessBatchItemResponse(batchresponse);
+            return true;
+        }
+
         #endregion
 
         #region methods
@@ -644,27 +662,26 @@ namespace Intuit.Ipp.DataService
                     if (entity == null)
                     {
                         QueryResponse queryResponse = batchitemResponse.AnyIntuitObject as QueryResponse;
-                        result.ResponseType = ResponseType.Query;
-                        QueryResponse returnValue = new QueryResponse();
-                        returnValue.totalCount= queryResponse.totalCount;
-                        returnValue.totalCountSpecified= queryResponse.totalCountSpecified;
-                        result.QueryResponse = returnValue;
-                        
-
-
-                        if (queryResponse.AnyIntuitObjects != null && queryResponse.AnyIntuitObjects.Count() > 0)
+                        if (queryResponse != null)
                         {
-                            foreach (object obj in queryResponse.AnyIntuitObjects)
-                            { 
-                                result.AddEntities(obj as IEntity);
+                            result.ResponseType = ResponseType.Query;
+                            QueryResponse returnValue = new QueryResponse();
+                            returnValue.totalCount = queryResponse.totalCount;
+                            returnValue.totalCountSpecified = queryResponse.totalCountSpecified;
+                            result.QueryResponse = returnValue;
+
+                            if (queryResponse.AnyIntuitObjects != null && queryResponse.AnyIntuitObjects.Count() > 0)
+                            {
+                                foreach (object obj in queryResponse.AnyIntuitObjects)
+                                {
+                                    result.AddEntities(obj as IEntity);
+                                }
                             }
-
                         }
-                       
-                        
-                            
-                        
-
+                        else
+                        {
+                            //Not sure how we end up here
+                        }
                     }
                     else
                     {
