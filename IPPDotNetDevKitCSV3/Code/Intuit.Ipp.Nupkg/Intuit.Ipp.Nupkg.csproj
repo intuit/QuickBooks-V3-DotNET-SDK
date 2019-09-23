@@ -23,7 +23,7 @@
     <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
     <PackageProjectUrl>https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/blob/master/License.md</PackageLicenseUrl>
-    <RepositoryType>C#</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/releases</PackageReleaseNotes>
   </PropertyGroup>
