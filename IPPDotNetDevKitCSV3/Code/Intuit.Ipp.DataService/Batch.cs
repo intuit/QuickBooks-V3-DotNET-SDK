@@ -137,6 +137,24 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        /// <summary>
+        /// Tries to get the <see cref="Intuit.Ipp.DataService.IntuitBatchResponse"/> with the specified id
+        /// </summary>
+        /// <param name="id"> unique batchitem id. </param>
+        /// <returns>True if the item was found, otherwise false</returns>
+        public bool TryGetValue(string id, out IntuitBatchResponse intuitBatchResponse)
+        {
+            BatchItemResponse batchresponse = this.batchResponses.FirstOrDefault(item => item.bId == id);
+            if (batchresponse == null)
+            {
+                intuitBatchResponse = null;
+                return false;
+            }
+
+            intuitBatchResponse = ProcessBatchItemResponse(batchresponse);
+            return true;
+        }
+
         #endregion
 
         #region methods
