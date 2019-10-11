@@ -109,7 +109,42 @@ namespace Intuit.Ipp.Exception
         public IdsException(string errorMessage, string errorCode, string source, System.Exception innerException)
             : base(errorMessage, innerException)
         {
-            this.errorMessage = errorMessage;
+            string errorDetail = string.Empty;
+           
+            if (innerException != null)
+            {
+                if (innerException.GetType() == typeof(ValidationException))
+                {
+                    ValidationException tempException = innerException as ValidationException; 
+
+                    if (tempException.InnerExceptions != null)
+                    {
+                        for (int i = tempException.InnerExceptions.Count - 1; i >= 0; i--)
+                        {
+                            errorDetail += tempException.innerExceptions[i].Detail + " , ";
+                        }
+
+                        this.innerExceptions = tempException.InnerExceptions;
+                    }
+
+                }
+
+                if (!string.IsNullOrEmpty(errorDetail))
+                {
+                    this.errorMessage = errorMessage + ". Details: " + errorDetail;
+
+                }
+                else
+                {
+                    this.errorMessage = errorMessage;
+                }
+
+            }
+            else
+            {
+                this.errorMessage = errorMessage;
+            }
+            
             this.errorCode = errorCode;
             this.source = source;
             this.innerException = innerException;
