@@ -210,7 +210,7 @@ namespace Intuit.Ipp.Utility
         /// <param name="reader">json reader</param>
         /// <param name="objectType">objectType value</param>
         /// <param name="existingValue">existing value</param>
-        /// <param name="serliazer">serliazer value</param>
+        /// <param name="serializer">serializer value</param>
         /// <returns>void</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
@@ -378,7 +378,7 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// CanConvert
         /// </summary>  
-        /// <param name="objecType">object Type value</param>
+        /// <param name="objectType">object Type value</param>
         /// <returns>void</returns>
         public override bool CanConvert(Type objectType)
         {
