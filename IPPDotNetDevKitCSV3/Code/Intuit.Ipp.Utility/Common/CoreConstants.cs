@@ -209,6 +209,11 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// Request File Name Format.
         /// </summary>
+        public const string ADVANCED_ROLLING_FILE_FORMAT = "{0}{1}QBOApiLogs-{2}.txt";
+
+        /// <summary>
+        /// Request File Name Format.
+        /// </summary>
         public const string REQUESTFILENAME_FORMAT = "{0}{1}Request-{2}.txt";
 
         /// <summary>
@@ -249,7 +254,7 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// The Request source header value.
         /// </summary>
-        public const string REQUESTSOURCEHEADER = "V3DotNetSDK8.1.0.0";
+        public const string REQUESTSOURCEHEADER = "V3DotNetSDK9.0.0.0";
 
         /// <summary>
         /// multipart/form-data format

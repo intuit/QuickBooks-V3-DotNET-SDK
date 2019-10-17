@@ -43,6 +43,8 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
         private ServiceContext context;
 
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FaultHandler"/> class.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Intuit.Ipp.Core.Rest
             : this()
         {
             this.context = context;
+    
         }
 
         /// <summary>
@@ -129,10 +132,14 @@ namespace Intuit.Ipp.Core.Rest
                     //Log errorstring to disk
                     CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
+                    //Log errorstring to Serilog
+                    CoreHelper.GetAdvancedLogging(this.context).Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
+
                     if (isIps)
                     {
                         IdsException exception = new IdsException(errorString, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source);
                         this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, exception.ToString());
+                        CoreHelper.GetAdvancedLogging(this.context).Log(idsException.ToString());
                         return exception;
                     }
 

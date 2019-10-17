@@ -32,7 +32,7 @@ namespace Intuit.Ipp.Core.Rest
     using Intuit.Ipp.Core.Properties;
     using Intuit.Ipp.Diagnostics;
     using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;  
+    using Intuit.Ipp.Utility;
 
     /// <summary>
     /// RestRequestHandler contains the logic for preparing the REST request, calls REST services and returns the response.
@@ -180,11 +180,11 @@ namespace Intuit.Ipp.Core.Rest
             }
             catch (Exception)
             {
-                    
+
                 throw;
             }
-            
-            
+
+
         }
 
         /// <summary>
@@ -210,8 +210,23 @@ namespace Intuit.Ipp.Core.Rest
                                // Invoke the end method of the asynchronous call.
                                HttpWebRequest request = (HttpWebRequest)ar.AsyncState;
 
+                               //enabling header logging in Serilogger
+                               WebHeaderCollection allHeaders = request.Headers;
+
+                               this.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri);
+                               this.AdvancedLogging.Log("Logging all headers in the request:");
+
+                               for (int i = 0; i < allHeaders.Count; i++)
+                               {
+                                   this.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
+                               }
+
                                // Log Request Body to a file
                                this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+                               // Log Request Body to Serilog
+                               this.AdvancedLogging.Log(" Request Payload: " + this.requestBody);
+
+
 
                                // Using encoding get the byte value of the requestBody.
                                UTF8Encoding encoding = new UTF8Encoding();
@@ -220,6 +235,7 @@ namespace Intuit.Ipp.Core.Rest
                                TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
                                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request. \n Start dump: " + this.requestBody : "Adding the payload to request.");
 
+                               
                                // Check whether compression is enabled and compress the stream accordingly.
                                if (this.RequestCompressor != null)
                                {
@@ -328,6 +344,7 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    this.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
             }
@@ -337,11 +354,13 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    this.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
                 else
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    this.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, new IdsException("Exception has been generated.", exception));
                 }
             }
@@ -399,7 +418,7 @@ namespace Intuit.Ipp.Core.Rest
             {
                 using (Stream responseStream = response.GetResponseStream())
                 {
-                    
+
 
                     //get the response in bytes if the conten-type is application/pdf
                     if (response.ContentType.ToLower().Contains(CoreConstants.CONTENTTYPE_APPLICATIONPDF.ToLower()))
@@ -411,7 +430,7 @@ namespace Intuit.Ipp.Core.Rest
                     {
                         // Get the response stream.
                         StreamReader reader = new StreamReader(responseStream);
-                        
+
                         // Read the Stream
                         resultString = reader.ReadToEnd();
                         // Close reader
@@ -431,12 +450,15 @@ namespace Intuit.Ipp.Core.Rest
             }
             // Log the response to Disk.
             this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
-
+            // Log response to Serilog
+            this.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString);
 
             //log response to logs
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
 
+
+            this.AdvancedLogging.Log("Got the response from service.\n Start Dump: \n" + resultString);
             //if response is of not type pdf do as usual
             if (!isResponsePdf)
             {
@@ -460,6 +482,7 @@ namespace Intuit.Ipp.Core.Rest
                         if (idsException != null)
                         {
                             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                            this.AdvancedLogging.Log(idsException.ToString());
                             resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                         }
                         else
@@ -477,7 +500,7 @@ namespace Intuit.Ipp.Core.Rest
                     exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.ResponseStreamNullOrEmptyMessage));
                     resultArguments = new AsyncCallCompletedEventArgs(null, exception);
                 }
-                
+
                 //faults not applicable here since we are expecting only pdf in binary
                 resultArguments = new AsyncCallCompletedEventArgs(null, null, receiveBytes);
             }
@@ -492,7 +515,7 @@ namespace Intuit.Ipp.Core.Rest
         private byte[] ConvertResponseStreamToBytes(Stream responseStream)
         {
             byte[] bytes = new byte[0];
-            
+
             MemoryStream mem = new MemoryStream();
 
             if (responseStream != null)
@@ -502,7 +525,7 @@ namespace Intuit.Ipp.Core.Rest
 
             return bytes;
         }
-        
+
         /// <summary>
         /// Executes the Asynchronous Request.
         /// </summary>
@@ -556,14 +579,15 @@ namespace Intuit.Ipp.Core.Rest
 
             // Log Request Body to a file
             this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
-
+            // Log Request Body to Serilog
+            this.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody);
             UTF8Encoding encoding = new UTF8Encoding();
             byte[] content = encoding.GetBytes(this.requestBody);
 
 
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request.\n Start dump of request: \n" + this.requestBody : "Adding the payload to request.");
-
+            this.AdvancedLogging.Log("Adding the payload to request.\n Start dump of request: \n" + this.requestBody);
             // Check whether compression is enabled and compress the stream accordingly.
             if (this.RequestCompressor != null)
             {

@@ -15,6 +15,9 @@ using System.Threading;
 using System.Net;
 using System.Reflection;
 using System.Linq;
+using Intuit.Ipp.Core.Rest;
+using Intuit.Ipp.Exception;
+using System.IO;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -22,6 +25,145 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class OAuth2Client
     {
+        /// <summary>
+        /// Advanced Logger for OAuth2 calls
+        /// </summary>
+        public static AdvancedLogging AdvancedLogger;
+        
+
+        /// <summary>
+        /// request logging location.
+        /// </summary>
+        private string serviceRequestLoggingLocationForFile;
+
+        /// <summary>
+        /// request Azure Document DB url.
+        /// </summary>
+        private Uri serviceRequestAzureDocumentDBUrl;
+
+        /// <summary>
+        /// request Azure Document DB Secure Key
+        /// </summary>
+        private string serviceRequestAzureDocumentDBSecureKey;
+
+        /// <summary>
+        /// request TTL-time to live for all logs 
+        /// </summary>
+        public double ServiceRequestAzureDocumentDBTTL { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForDebug { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Trace logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForTrace { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Console logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForRollingFile { get; set; }
+
+
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
+        /// </summary>
+        public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
+
+
+
+
+        /// <summary>
+        /// Gets or sets the service request logging location for File, Rolling File.
+        /// </summary>
+        public string ServiceRequestLoggingLocationForFile
+        {
+            get
+            {
+                return this.serviceRequestLoggingLocationForFile;
+            }
+
+            set
+            {
+                if (!Directory.Exists(value))
+                {
+                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
+                    IdsExceptionManager.HandleException(exception);
+                }
+
+                this.serviceRequestLoggingLocationForFile = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the service request logging location for File, Rolling File.
+        /// </summary>
+        public Uri ServiceRequestAzureDocumentDBUrl
+        {
+            get
+            {
+                return this.serviceRequestAzureDocumentDBUrl;
+            }
+
+            set
+            {
+                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+                {
+                    if (value == null)
+                    {
+                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
+                        IdsExceptionManager.HandleException(exception);
+                    }
+                }
+
+                this.serviceRequestAzureDocumentDBUrl = value;
+
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the service request logging location for File, Rolling File.
+        /// </summary>
+        public string ServiceRequestAzureDocumentDBSecureKey
+        {
+            get
+            {
+                return this.serviceRequestAzureDocumentDBSecureKey;
+            }
+
+            set
+            {
+                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+                {
+                    if (value == null && value == "")
+                    {
+                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+                        IdsExceptionManager.HandleException(exception);
+                    }
+                }
+
+                this.serviceRequestAzureDocumentDBSecureKey = value;
+            }
+        }
+
+
         /// <summary>
         /// ClientId
         /// </summary>
@@ -57,17 +199,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public string DiscoveryUrl { get; set; }
 
-        ///// <summary>
-        ///// EnableLogging
-        ///// </summary>
-        //public bool EnableLogging { get; set; }
 
-        ///// <summary>
-        ///// LogFilesPath
-        ///// </summary>
-        //public string LogFilesPath { get; set; }
-
-        //internal LogRequestsToDisk LogOAuth2Calls { get; set; }
 
         /// <summary>
         /// OAuth2Client constructor
@@ -87,7 +219,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 {
                     ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
                 }
-                catch (Exception ex)
+                catch (System.Exception ex)
                 {
                     ApplicationEnvironment = AppEnvironment.Default;
                     DiscoveryUrl = environment;
@@ -96,12 +228,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
              }
                
+           
 
             DiscoveryDoc = GetDiscoveryDoc();
 
         }
 
-       
 
         /// <summary>
         /// Gets Discovery Doc
@@ -109,6 +241,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public DiscoveryResponse GetDiscoveryDoc()
         {
+            
+
+
             DiscoveryClient discoveryClient;
             if (ApplicationEnvironment == AppEnvironment.Default)
             {
@@ -129,6 +264,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, enableSerilogRequestResponseLoggingForAzureDocumentDB: this.EnableSerilogRequestResponseLoggingForAzureDocumentDB, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile, serviceRequestAzureDocumentDBUrl: this.ServiceRequestAzureDocumentDBUrl, serviceRequestAzureDocumentDBSecureKey: this.ServiceRequestAzureDocumentDBSecureKey, serviceRequestAzureDocumentDBTTL: 7);
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -136,12 +273,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             scopeValue = scopeValue.TrimEnd();
             this.CSRFToken = CSRFToken;
+
+            //builiding authorization request
             string authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
                 DiscoveryDoc.AuthorizeEndpoint,
                 ClientID,
                 Uri.EscapeDataString(scopeValue),
                 Uri.EscapeDataString(RedirectURI),
                 CSRFToken);
+
+            //Logging authorization request
+            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            
             return authorizationRequest;
         }
 
@@ -152,6 +295,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, enableSerilogRequestResponseLoggingForAzureDocumentDB: this.EnableSerilogRequestResponseLoggingForAzureDocumentDB, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile, serviceRequestAzureDocumentDBUrl: this.ServiceRequestAzureDocumentDBUrl, serviceRequestAzureDocumentDBSecureKey: this.ServiceRequestAzureDocumentDBSecureKey, serviceRequestAzureDocumentDBTTL: 7);
+
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -159,13 +305,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             scopeValue = scopeValue.TrimEnd();
 
+            //creating CSRF token since client did not send one
             CSRFToken = GenerateCSRFToken();
+
+            //builiding authorization request
             string authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
                 DiscoveryDoc.AuthorizeEndpoint,
                 ClientID,
                 Uri.EscapeDataString(scopeValue),
                 Uri.EscapeDataString(RedirectURI),
                 CSRFToken);
+
+            //Logging authorization request
+            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
             return authorizationRequest;
         }
 

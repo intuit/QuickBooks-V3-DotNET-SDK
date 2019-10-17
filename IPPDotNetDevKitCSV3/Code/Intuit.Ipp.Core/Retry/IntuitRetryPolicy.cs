@@ -412,8 +412,10 @@ namespace Intuit.Ipp.Core
 
                                             // Log the error string to disk.
                                             CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
-
+                                            //Log to Serilog
+                                            CoreHelper.GetAdvancedLogging(this.context).Log("Response Intuit_Tid header: " + response_intuit_tid_header + ",Response Payload: " + errorString);
                                         }
+
                                     }
 
                                     Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
@@ -627,6 +629,9 @@ namespace Intuit.Ipp.Core
 
                                 // Log the error string to disk.
                                 CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + " Response Payload: " + errorString, false);
+                                //Log to Serilog
+                                CoreHelper.GetAdvancedLogging(this.context).Log("Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
+
 
                             }
                         }

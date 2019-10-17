@@ -229,12 +229,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                     return disco;
                 }
-                catch (Exception ex)
+                catch (System.Exception ex)
                 {
                     return new DiscoveryResponse(ex, $"Error connecting to {jwkUrl}");
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return new DiscoveryResponse(ex, $"Error connecting to {Url}");
             }
@@ -305,12 +305,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                     return disco;
                 }
-                catch (Exception ex)
+                catch (System.Exception ex)
                 {
                     return new DiscoveryResponse(ex, $"Error connecting to {jwkUrl}");
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return new DiscoveryResponse(ex, $"Error connecting to {Url}");
             }

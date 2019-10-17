@@ -51,6 +51,24 @@ namespace Intuit.Ipp.Core.Configuration
                     }
                 };
             }
+
+            if (cfg.AdvancedLogger == null)
+            {
+                cfg.AdvancedLogger = new AdvancedLogger
+                {
+          
+                    RequestAdvancedLog = new RequestAdvancedLog()
+                    {
+                        EnableSerilogRequestResponseLoggingForDebug = false,
+                        EnableSerilogRequestResponseLoggingForTrace = false,
+                        EnableSerilogRequestResponseLoggingForConsole = false,
+                        EnableSerilogRequestResponseLoggingForRollingFile = false,
+                        EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                        ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
+                    }
+                };
+            }
+
             if (cfg.Message == null)
             {
                 cfg.Message = new Message

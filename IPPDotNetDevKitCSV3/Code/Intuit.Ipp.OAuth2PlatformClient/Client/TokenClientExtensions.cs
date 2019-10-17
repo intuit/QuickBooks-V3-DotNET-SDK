@@ -28,6 +28,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestTokenFromCodeAsync(this TokenClient client, string code, string redirectUri, string codeVerifier = null, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            OAuth2Client.AdvancedLogger.Log("Access/Bearer token request initiated");
             var fields = new Dictionary<string, string>
             {
                 { OidcConstants.TokenRequest.GrantType, OidcConstants.GrantTypes.AuthorizationCode },
@@ -51,6 +52,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestRefreshTokenAsync(this TokenClient client, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            OAuth2Client.AdvancedLogger.Log("Refresh token request initiated");
             var fields = new Dictionary<string, string>
             {
                 { OidcConstants.TokenRequest.GrantType, OidcConstants.GrantTypes.RefreshToken },

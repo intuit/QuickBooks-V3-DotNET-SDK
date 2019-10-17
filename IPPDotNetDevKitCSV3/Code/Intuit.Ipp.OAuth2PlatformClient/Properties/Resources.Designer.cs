@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Intuit.Ipp.Core.Properties {
+namespace Intuit.Ipp.OAuth2PlatformClient.Properties {
     using System;
     
     

@@ -170,7 +170,40 @@ namespace Intuit.Ipp.Core
             return requestLogger;
         }
 
-        
+
+        /// <summary>
+        /// Gets the Request Response Logging mechanism for advanced logging using serilog.
+        /// </summary>
+        /// <param name="serviceContext">The serivce context object.</param>
+        /// <returns>Returns value which specifies the request response logging mechanism.</returns>
+        public static Rest.AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
+        {
+            Rest.AdvancedLogging requestLogger;
+            if (serviceContext.IppConfiguration != null &&
+                serviceContext.IppConfiguration.AdvancedLogger != null &&
+                serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog != null)
+            {
+                requestLogger = new Rest.AdvancedLogging(
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForAzureDocumentDB,
+
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBUrl,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBSecureKey,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL);
+       
+            }
+            else
+            {
+                requestLogger = new Rest.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, enableSerilogRequestResponseLoggingForAzureDocumentDB: false, serviceRequestLoggingLocationForFile: null, serviceRequestAzureDocumentDBUrl: null, serviceRequestAzureDocumentDBSecureKey: null, serviceRequestAzureDocumentDBTTL: 7);
+            }
+
+            return requestLogger;
+        }
+
 
         /// <summary>
         /// Checks whether the retry count is less than or equal to zero.

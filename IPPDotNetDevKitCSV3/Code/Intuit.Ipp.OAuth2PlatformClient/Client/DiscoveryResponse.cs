@@ -23,7 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public HttpStatusCode StatusCode { get; }
         public string Error { get; }
         public ResponseErrorType ErrorType { get; set; } = ResponseErrorType.None;
-        public Exception Exception { get; }
+        public System.Exception Exception { get; }
 
         public JsonWebKeySet KeySet { get; set; }
 
@@ -55,7 +55,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     Error = validationError;
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 IsError = true;
 
@@ -84,7 +84,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="exception">exception</param>
         /// <param name="errorMessage">errorMessage</param>
-        public DiscoveryResponse(Exception exception, string errorMessage)
+        public DiscoveryResponse(System.Exception exception, string errorMessage)
         {
             IsError = true;
 

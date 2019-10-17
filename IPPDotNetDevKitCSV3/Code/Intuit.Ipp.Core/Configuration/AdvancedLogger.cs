@@ -26,16 +26,15 @@ namespace Intuit.Ipp.Core.Configuration
     /// <summary>
     /// Contains properties used to set the Logging mechanism.
     /// </summary>
-    public class Logger
+    public class AdvancedLogger
     {
         /// <summary>
         /// Gets or sets the Request logging mechanism.
         /// </summary>
-        public RequestLog RequestLog { get; set; }
+        public RequestAdvancedLog RequestAdvancedLog { get; set; }
 
-        /// <summary>
-        /// Gets or sets the Custom logger implementation class.
-        /// </summary>
-        public ILogger CustomLogger { get; set; }
+
+
     }
 }
+

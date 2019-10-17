@@ -23,7 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string Error { get; }
 
         public HttpStatusCode HttpStatusCode { get; }
-        public Exception Exception { get; }
+        public System.Exception Exception { get; }
         public ResponseErrorType ErrorType { get; set; }
         
         /// <summary>
@@ -41,7 +41,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 Json = JObject.Parse(raw);
                 Claims = Json.ToClaims();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 IsError = true;
                 Error = ex.Message;
@@ -68,7 +68,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// UserInfoResponse
         /// </summary>
         /// <param name="exception">exception</param>
-        public UserInfoResponse(Exception exception)
+        public UserInfoResponse(System.Exception exception)
         {
             IsError = true;
 

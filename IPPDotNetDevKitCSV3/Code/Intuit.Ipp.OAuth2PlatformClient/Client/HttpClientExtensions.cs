@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 // Modified for Intuit's Oauth2 implementation
 
+using Intuit.Ipp.OAuth2PlatformClient;
 using System.Net.Http.Headers;
 
 namespace System.Net.Http
@@ -20,6 +21,7 @@ namespace System.Net.Http
         public static void SetBasicAuthentication(this HttpClient client, string clientId, string clientSecret)
         {
             client.DefaultRequestHeaders.Authorization = new BasicAuthenticationHeaderValue(clientId, clientSecret);
+            //OAuth2Client.AdvancedLogger.Log("Logging Basic Authorization Header value:" + client.DefaultRequestHeaders.Authorization);
         }
 
         /// <summary>
@@ -42,6 +44,7 @@ namespace System.Net.Http
         public static void SetBearerToken(this HttpClient client, string token)
         {
             client.SetToken("Bearer", token);
+           // OAuth2Client.AdvancedLogger.Log("Logging Bearer Token value:" + token);
         }
     }
 }

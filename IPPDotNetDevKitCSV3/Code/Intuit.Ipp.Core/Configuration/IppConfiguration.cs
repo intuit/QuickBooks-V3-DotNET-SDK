@@ -33,6 +33,12 @@ namespace Intuit.Ipp.Core.Configuration
     public class IppConfiguration
     {
         /// <summary>
+        /// Gets or sets the Serilog Logger mechanism.
+        /// </summary>
+        public AdvancedLogger AdvancedLogger { get; set; }
+
+
+        /// <summary>
         /// Gets or sets the Logger mechanism.
         /// </summary>
         public Logger Logger { get; set; }

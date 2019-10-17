@@ -25,7 +25,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 Json = JObject.Parse(raw);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 IsError = true;
                 ErrorType = ResponseErrorType.Exception;
@@ -51,7 +51,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Handles exception response from Token api call
         /// </summary>
         /// <param name="exception">exception</param>
-        public TokenResponse(Exception exception)
+        public TokenResponse(System.Exception exception)
         {
             IsError = true;
 
@@ -76,7 +76,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
         public string Raw { get; }
         public JObject Json { get; }
-        public Exception Exception { get; set; }
+        public System.Exception Exception { get; set; }
 
         public bool IsError { get; }
         public ResponseErrorType ErrorType { get; } = ResponseErrorType.None;

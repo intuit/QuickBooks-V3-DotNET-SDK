@@ -63,6 +63,7 @@ namespace Intuit.Ipp.Core.Rest
             this.RequestSerializer = CoreHelper.GetSerializer(this.serviceContext, true);
             this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
             this.RequestLogging = CoreHelper.GetRequestLogging(this.serviceContext);
+            this.AdvancedLogging =  CoreHelper.GetAdvancedLogging(this.serviceContext);
         }
 
         /// <summary>
@@ -97,6 +98,11 @@ namespace Intuit.Ipp.Core.Rest
         /// Gets or sets Request Logging.
         /// </summary>
         internal LogRequestsToDisk RequestLogging { get; set; }
+
+        /// <summary>
+        /// Gets or sets Serilog Request Logging.
+        /// </summary>
+        internal AdvancedLogging AdvancedLogging { get; set; }
 
         /// <summary>
         /// Gets or sets the minorVersion.
@@ -244,9 +250,23 @@ namespace Intuit.Ipp.Core.Rest
                                 requestXML.Append(this.RequestSerializer.Serialize(requestBody));
                             }
 
+
+                            //enabling header logging in Serilogger
+                            WebHeaderCollection allHeaders = httpWebRequest.Headers;
+
+                            this.AdvancedLogging.Log(" RequestUrl: " + httpWebRequest.RequestUri);
+                            this.AdvancedLogging.Log("Logging all headers in the request:");
+
+                            for (int i = 0; i < allHeaders.Count; i++)
+                            {
+                                this.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
+                            }
+
+
                             // Log Request Body to a file
                             this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestXML.ToString(), true);
-
+                            //Log to Serilog
+                            this.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
 
                             // Use of encoding to get bytes used to write to request stream.
                             UTF8Encoding encoding = new UTF8Encoding();
