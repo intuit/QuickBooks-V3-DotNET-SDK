@@ -133,13 +133,13 @@ namespace Intuit.Ipp.Core.Rest
                     CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
                     //Log errorstring to Serilog
-                    CoreHelper.GetAdvancedLogging(this.context).Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
+                    CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 
                     if (isIps)
                     {
                         IdsException exception = new IdsException(errorString, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source);
                         this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, exception.ToString());
-                        CoreHelper.GetAdvancedLogging(this.context).Log(idsException.ToString());
+                        //CoreHelper.AdvancedLogging.Log(idsException.ToString());
                         return exception;
                     }
 

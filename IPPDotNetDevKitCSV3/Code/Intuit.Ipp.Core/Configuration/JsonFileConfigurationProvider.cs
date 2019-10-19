@@ -90,7 +90,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForTrace = false,
                     EnableSerilogRequestResponseLoggingForConsole = false,
                     EnableSerilogRequestResponseLoggingForRollingFile = false,
-                    EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                   // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
             };
@@ -350,7 +350,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForTrace = false,
                     EnableSerilogRequestResponseLoggingForConsole = false,
                     EnableSerilogRequestResponseLoggingForRollingFile = false,
-                    EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                   // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
             };
@@ -425,8 +425,8 @@ namespace Intuit.Ipp.Core.Configuration
             var serilogLoggerSettingsDebug = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("Debug");
             var serilogLoggerSettingsConsole = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("Console");
             var serilogLoggerSettingsRollingFile = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("RollingFile");
-            var serilogLoggerSettingsFile= builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("File");
-            var serilogLoggerSettingsAzureDocumentDB = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("AzureDocumentDB");
+            //var serilogLoggerSettingsFile= builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("File");
+            //var serilogLoggerSettingsAzureDocumentDB = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("AzureDocumentDB");
 
 
             if (!string.IsNullOrEmpty(serilogLoggerSettingsRollingFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsRollingFile["EnableLogs"]) == true)
@@ -448,64 +448,47 @@ namespace Intuit.Ipp.Core.Configuration
 
             }
 
-            if (!string.IsNullOrEmpty(serilogLoggerSettingsFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]) == true)
-            {
+            #region support later
+
+            //if (!string.IsNullOrEmpty(serilogLoggerSettingsAzureDocumentDB["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsAzureDocumentDB["EnableLogs"]) == true)
+            //{
 
 
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]);
-
-
-                string location = loggerSettings["LogDirectory"];
-                if (!Directory.Exists(location))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsFile["LogDirectory"];
-
-            }
-
-            if (!string.IsNullOrEmpty(serilogLoggerSettingsAzureDocumentDB["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsAzureDocumentDB["EnableLogs"]) == true)
-            {
-               
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForAzureDocumentDB = Convert.ToBoolean(serilogLoggerSettingsAzureDocumentDB["EnableLogs"]);
+            //    ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForAzureDocumentDB = Convert.ToBoolean(serilogLoggerSettingsAzureDocumentDB["EnableLogs"]);
 
 
-                string url = serilogLoggerSettingsAzureDocumentDB["Url"];
-                Uri parsedUrl = new Uri(url);
-                string secureKey = serilogLoggerSettingsAzureDocumentDB["SecureKey"];
+            //    string url = serilogLoggerSettingsAzureDocumentDB["Url"];
+            //    Uri parsedUrl = new Uri(url);
+            //    string secureKey = serilogLoggerSettingsAzureDocumentDB["SecureKey"];
 
-                if (string.IsNullOrEmpty(url))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-                if (string.IsNullOrEmpty(secureKey))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-
-               
-                if (string.IsNullOrEmpty(serilogLoggerSettingsAzureDocumentDB["TimeToLive"]))
-                {
-                     ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL = 7;//Defaulted to last 7 days logs
-                }
-                else
-	            {
-                     ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL = Convert.ToInt32(serilogLoggerSettingsAzureDocumentDB["TimeToLive"]);
-	            }
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBUrl = parsedUrl;
-                 ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBSecureKey = secureKey;
-                
-
-            }
+            //    if (string.IsNullOrEmpty(url))
+            //    {
+            //        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+            //        IdsExceptionManager.HandleException(exception);
+            //    }
+            //    if (string.IsNullOrEmpty(secureKey))
+            //    {
+            //        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+            //        IdsExceptionManager.HandleException(exception);
+            //    }
 
 
+            //    if (string.IsNullOrEmpty(serilogLoggerSettingsAzureDocumentDB["TimeToLive"]))
+            //    {
+            //         ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL = 7;//Defaulted to last 7 days logs
+            //    }
+            //    else
+            // {
+            //         ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL = Convert.ToInt32(serilogLoggerSettingsAzureDocumentDB["TimeToLive"]);
+            // }
+
+            //    ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBUrl = parsedUrl;
+            //     ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBSecureKey = secureKey;
+
+
+            //}
+
+            #endregion
 
             if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)
             {
@@ -701,21 +684,7 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.VerifierToken.Value = webhooksVerifierTokenSettings["Value"];
 
 #endif
-            //#if NETSTANDARD2_0
-            //            //IppConfiguration ippConfig = new IppConfiguration();
-            //            string temppath = Path.Combine(this.logPath, "Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
-            //            ippConfig.Logger = new Logger
-            //            {
-
-            //                RequestLog = new RequestLog
-            //                {
-            //                    EnableRequestResponseLogging = true,//test
-            //                    ServiceRequestLoggingLocation = temppath
-            //                }
-            //            };
-
-
-            //#endif
+           
 
             return ippConfig;
 

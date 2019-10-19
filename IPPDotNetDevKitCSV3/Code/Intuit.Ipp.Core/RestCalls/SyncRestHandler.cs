@@ -155,7 +155,7 @@ namespace Intuit.Ipp.Core.Rest
 
 
                 this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
-                this.AdvancedLogging.Log(retryExceededException.ToString());
+                CoreHelper.AdvancedLogging.Log(retryExceededException.ToString());
 
                 throw;
 
@@ -174,7 +174,7 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    this.AdvancedLogging.Log(idsException.ToString());
+                    CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     throw idsException;
                 }
             }
@@ -243,7 +243,7 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    this.AdvancedLogging.Log(idsException.ToString());
+                    CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     throw idsException;
                 }
             }
@@ -271,7 +271,7 @@ namespace Intuit.Ipp.Core.Rest
                 string parsedResponse = this.ParseResponse(httpWebResponse);
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
                 this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start dump: \n " + parsedResponse : "Got the response from service.");
-                this.AdvancedLogging.Log("Got the response from service.\n Start dump: \n " + parsedResponse );
+                CoreHelper.AdvancedLogging.Log("Got the response from service.\n Start dump: \n " + parsedResponse );
 
                 // Parse the response from the call and return.
                 return parsedResponse;
@@ -286,7 +286,7 @@ namespace Intuit.Ipp.Core.Rest
         private byte[] GetRestServiceCallResponseStream(HttpWebRequest request)
         {
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service as response stream.");
-            this.AdvancedLogging.Log("Getting the response from service as response stream.");
+            CoreHelper.AdvancedLogging.Log("Getting the response from service as response stream.");
             Stream receiveStream = new MemoryStream();
             byte[] receiveBytes = new byte[0];
             MemoryStream mem = new MemoryStream();
@@ -318,7 +318,7 @@ namespace Intuit.Ipp.Core.Rest
                 
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
                 this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Got the response from service.");
-                this.AdvancedLogging.Log("Got the response from service.");
+                CoreHelper.AdvancedLogging.Log("Got the response from service.");
             }
 
             // Return the response stream
@@ -381,7 +381,7 @@ namespace Intuit.Ipp.Core.Rest
                 }
                 this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
                 //Log to Serilog
-                this.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response);
+                CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response);
 
 
             }

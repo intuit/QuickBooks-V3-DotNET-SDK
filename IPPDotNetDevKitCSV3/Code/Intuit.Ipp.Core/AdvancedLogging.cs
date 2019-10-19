@@ -82,10 +82,10 @@ namespace Intuit.Ipp.Core.Rest
 
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
+        ///// <summary>
+        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        ///// </summary>
+        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>
@@ -118,56 +118,59 @@ namespace Intuit.Ipp.Core.Rest
             }
         }
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public Uri ServiceRequestAzureDocumentDBUrl
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBUrl;
-            }
+        #region support later
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public Uri ServiceRequestAzureDocumentDBUrl
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBUrl;
+        //    }
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null)
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null)
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-                this.serviceRequestAzureDocumentDBUrl = value;
+        //        this.serviceRequestAzureDocumentDBUrl = value;
 
-            }
-        }
+        //    }
+        //}
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public string ServiceRequestAzureDocumentDBSecureKey
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBSecureKey;
-            }
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public string ServiceRequestAzureDocumentDBSecureKey
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBSecureKey;
+        //    }
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null && value == "")
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null && value == "")
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-                this.serviceRequestAzureDocumentDBSecureKey = value;
-            }
-        }
+        //        this.serviceRequestAzureDocumentDBSecureKey = value;
+        //    }
+        //}
+
+        #endregion
 
         /// <summary>
         /// Serilog Logger
@@ -183,7 +186,7 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
  
         public AdvancedLogging()
-            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, enableSerilogRequestResponseLoggingForAzureDocumentDB: false, serviceRequestLoggingLocationForFile: null, serviceRequestAzureDocumentDBUrl: null, serviceRequestAzureDocumentDBSecureKey: null, serviceRequestAzureDocumentDBTTL: 7)
+            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false,  serviceRequestLoggingLocationForFile: null)
         {
         }
 
@@ -194,23 +197,19 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="enableSerilogRequestResponseLoggingForTrace"></param>
         /// <param name="enableSerilogRequestResponseLoggingForConsole"></param>
         /// <param name="enableSerilogRequestResponseLoggingForRollingFile"></param>
-        /// <param name="enableSerilogRequestResponseLoggingForAzureDocumentDB"></param>
         /// <param name="serviceRequestLoggingLocationForFile"></param>
-        /// <param name="serviceRequestAzureDocumentDBUrl"></param>
-        /// <param name="serviceRequestAzureDocumentDBSecureKey"></param>
-        /// <param name="serviceRequestAzureDocumentDBTTL"></param>
-        public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile, bool enableSerilogRequestResponseLoggingForAzureDocumentDB, string serviceRequestLoggingLocationForFile, Uri serviceRequestAzureDocumentDBUrl, string serviceRequestAzureDocumentDBSecureKey, double serviceRequestAzureDocumentDBTTL=7)//TTL is defaulted to 7 for saving azure log for a default of 7 days 
+        public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile, string serviceRequestLoggingLocationForFile)
         {
             this.EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
             this.EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
             this.EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
             this.EnableSerilogRequestResponseLoggingForRollingFile = enableSerilogRequestResponseLoggingForRollingFile;
-            this.EnableSerilogRequestResponseLoggingForAzureDocumentDB = enableSerilogRequestResponseLoggingForAzureDocumentDB;
+            //this.EnableSerilogRequestResponseLoggingForAzureDocumentDB = enableSerilogRequestResponseLoggingForAzureDocumentDB;
            
             this.ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
-            this.ServiceRequestAzureDocumentDBUrl = serviceRequestAzureDocumentDBUrl;
-            this.ServiceRequestAzureDocumentDBSecureKey = serviceRequestAzureDocumentDBSecureKey;
-            this.ServiceRequestAzureDocumentDBTTL = serviceRequestAzureDocumentDBTTL;
+            //this.ServiceRequestAzureDocumentDBUrl = serviceRequestAzureDocumentDBUrl;
+            //this.ServiceRequestAzureDocumentDBSecureKey = serviceRequestAzureDocumentDBSecureKey;
+            //this.ServiceRequestAzureDocumentDBTTL = serviceRequestAzureDocumentDBTTL;
 
 
 
@@ -262,20 +261,16 @@ namespace Intuit.Ipp.Core.Rest
             }
 
 
-            //Enabling AzureDocumentDB
-            if (!string.IsNullOrEmpty(this.ServiceRequestAzureDocumentDBSecureKey) && this.ServiceRequestAzureDocumentDBUrl != null)
-            {
-                loggerConfig = loggerConfig.WriteTo.AzureDocumentDB(this.ServiceRequestAzureDocumentDBUrl, this.ServiceRequestAzureDocumentDBSecureKey, timeToLive: TimeSpan.FromDays(this.ServiceRequestAzureDocumentDBTTL));//add DB
+            ////Enabling AzureDocumentDB
+            //if (!string.IsNullOrEmpty(this.ServiceRequestAzureDocumentDBSecureKey) && this.ServiceRequestAzureDocumentDBUrl != null)
+            //{
+            //    loggerConfig = loggerConfig.WriteTo.AzureDocumentDB(this.ServiceRequestAzureDocumentDBUrl, this.ServiceRequestAzureDocumentDBSecureKey, timeToLive: TimeSpan.FromDays(this.ServiceRequestAzureDocumentDBTTL));//add DB
 
-            }
+            //}
 
             //Creating the Logger for Serilog
             log = loggerConfig.CreateLogger();
 
-
-            ////var listener = new global::SerilogTraceListener.SerilogTraceListener(log);
-            //listener.
-            //Trace.Listeners.Add(listener);
 
 
             //Logging first info

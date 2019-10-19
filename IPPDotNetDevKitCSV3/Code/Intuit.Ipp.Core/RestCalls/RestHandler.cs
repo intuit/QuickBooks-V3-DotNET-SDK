@@ -63,7 +63,7 @@ namespace Intuit.Ipp.Core.Rest
             this.RequestSerializer = CoreHelper.GetSerializer(this.serviceContext, true);
             this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
             this.RequestLogging = CoreHelper.GetRequestLogging(this.serviceContext);
-            this.AdvancedLogging =  CoreHelper.GetAdvancedLogging(this.serviceContext);
+           // this.AdvancedLogging =  CoreHelper.GetAdvancedLogging(this.serviceContext);
         }
 
         /// <summary>
@@ -99,10 +99,10 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
         internal LogRequestsToDisk RequestLogging { get; set; }
 
-        /// <summary>
-        /// Gets or sets Serilog Request Logging.
-        /// </summary>
-        internal AdvancedLogging AdvancedLogging { get; set; }
+        ///// <summary>
+        ///// Gets or sets Serilog Request Logging.
+        ///// </summary>
+        //internal static AdvancedLogging AdvancedLogging { get; set; }
 
         /// <summary>
         /// Gets or sets the minorVersion.
@@ -130,6 +130,8 @@ namespace Intuit.Ipp.Core.Rest
         /// </returns>
         public virtual System.Net.HttpWebRequest PrepareRequest(RequestParameters requestParameters, object requestBody, string oauthRequestUri, bool includeRequestId = true)
         {
+            //initialize the Advanced logger
+            CoreHelper.AdvancedLogging = CoreHelper.GetAdvancedLogging(this.serviceContext);
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called PrepareRequest method");
 
             // This step is required since the configuration settings might have been changed.
@@ -254,19 +256,19 @@ namespace Intuit.Ipp.Core.Rest
                             //enabling header logging in Serilogger
                             WebHeaderCollection allHeaders = httpWebRequest.Headers;
 
-                            this.AdvancedLogging.Log(" RequestUrl: " + httpWebRequest.RequestUri);
-                            this.AdvancedLogging.Log("Logging all headers in the request:");
+                            CoreHelper.AdvancedLogging.Log(" RequestUrl: " + httpWebRequest.RequestUri);
+                            CoreHelper.AdvancedLogging.Log("Logging all headers in the request:");
 
                             for (int i = 0; i < allHeaders.Count; i++)
                             {
-                                this.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
+                                CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                             }
 
 
                             // Log Request Body to a file
                             this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestXML.ToString(), true);
                             //Log to Serilog
-                            this.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
+                            CoreHelper.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
 
                             // Use of encoding to get bytes used to write to request stream.
                             UTF8Encoding encoding = new UTF8Encoding();

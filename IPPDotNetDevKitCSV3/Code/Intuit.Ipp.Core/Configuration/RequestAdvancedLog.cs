@@ -36,20 +36,20 @@ namespace Intuit.Ipp.Core.Configuration
         /// </summary>
         private string serviceRequestLoggingLocationForFile;
 
-        /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
+        ///// <summary>
+        ///// request Azure Document DB url.
+        ///// </summary>
+        //private Uri serviceRequestAzureDocumentDBUrl;
 
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
+        ///// <summary>
+        ///// request Azure Document DB Secure Key
+        ///// </summary>
+        //private string serviceRequestAzureDocumentDBSecureKey;
 
-        /// <summary>
-        /// request TTL-time to live for all logs 
-        /// </summary>
-        public int ServiceRequestAzureDocumentDBTTL { get; set; }
+        ///// <summary>
+        ///// request TTL-time to live for all logs 
+        ///// </summary>
+        //public int ServiceRequestAzureDocumentDBTTL { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
@@ -76,10 +76,10 @@ namespace Intuit.Ipp.Core.Configuration
 
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
+        ///// <summary>
+        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        ///// </summary>
+        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>
@@ -112,59 +112,60 @@ namespace Intuit.Ipp.Core.Configuration
             }
         }
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public Uri ServiceRequestAzureDocumentDBUrl
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBUrl;
-            }
+        #region support later
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public Uri ServiceRequestAzureDocumentDBUrl
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBUrl;
+        //    }
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null)
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null)
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-                this.serviceRequestAzureDocumentDBUrl = value;
-                
-            }
-        }
+        //        this.serviceRequestAzureDocumentDBUrl = value;
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public string ServiceRequestAzureDocumentDBSecureKey
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBSecureKey;
-            }
+        //    }
+        //}
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null || value == "")
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public string ServiceRequestAzureDocumentDBSecureKey
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBSecureKey;
+        //    }
 
-                this.serviceRequestAzureDocumentDBSecureKey = value;
-            }
-        }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null || value == "")
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-  
+        //        this.serviceRequestAzureDocumentDBSecureKey = value;
+        //    }
+        //}
+        #endregion
 
-        
+
+
     }
 }

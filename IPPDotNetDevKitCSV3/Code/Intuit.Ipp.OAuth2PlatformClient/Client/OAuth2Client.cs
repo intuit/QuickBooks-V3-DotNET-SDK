@@ -76,10 +76,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
+        ///// <summary>
+        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        ///// </summary>
+        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
             //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, enableSerilogRequestResponseLoggingForAzureDocumentDB: this.EnableSerilogRequestResponseLoggingForAzureDocumentDB, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile, serviceRequestAzureDocumentDBUrl: this.ServiceRequestAzureDocumentDBUrl, serviceRequestAzureDocumentDBSecureKey: this.ServiceRequestAzureDocumentDBSecureKey, serviceRequestAzureDocumentDBTTL: 7);
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -296,7 +296,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
             //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, enableSerilogRequestResponseLoggingForAzureDocumentDB: this.EnableSerilogRequestResponseLoggingForAzureDocumentDB, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile, serviceRequestAzureDocumentDBUrl: this.ServiceRequestAzureDocumentDBUrl, serviceRequestAzureDocumentDBSecureKey: this.ServiceRequestAzureDocumentDBSecureKey, serviceRequestAzureDocumentDBTTL: 7);
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)

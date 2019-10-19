@@ -35,7 +35,14 @@ namespace Intuit.Ipp.Core
     /// Helper class.
     /// </summary>
     public static class CoreHelper
-    {
+    { 
+
+
+        /// <summary>
+        /// Gets or sets Serilog Request Logging.
+        /// </summary>
+        internal static AdvancedLogging AdvancedLogging;
+    
         /// <summary>
         /// Gets the serializer mechanism using the service context and the depending on the request and response.
         /// </summary>
@@ -188,21 +195,18 @@ namespace Intuit.Ipp.Core
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile,
-                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForAzureDocumentDB,
+                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile);
+              
 
-                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile,
-                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBUrl,
-                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBSecureKey,
-                    serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestAzureDocumentDBTTL);
-       
             }
             else
             {
-                requestLogger = new Rest.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, enableSerilogRequestResponseLoggingForAzureDocumentDB: false, serviceRequestLoggingLocationForFile: null, serviceRequestAzureDocumentDBUrl: null, serviceRequestAzureDocumentDBSecureKey: null, serviceRequestAzureDocumentDBTTL: 7);
+                requestLogger = new Rest.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: null);
             }
 
             return requestLogger;
         }
+
 
 
         /// <summary>

@@ -277,27 +277,27 @@ namespace Intuit.Ipp.Core.Properties {
         }
 
 
-        /// <summary>
-        ///   Looks up a Azure Document DB url
-        /// </summary>
-        internal static string AzureDocumentDBUrlNullEmptyMessage
-        {
-            get
-            {
-                return ResourceManager.GetString("AzureDocumentDBUrlNullEmptyMessage", resourceCulture);
-            }
-        }
+        ///// <summary>
+        /////   Looks up a Azure Document DB url
+        ///// </summary>
+        //internal static string AzureDocumentDBUrlNullEmptyMessage
+        //{
+        //    get
+        //    {
+        //        return ResourceManager.GetString("AzureDocumentDBUrlNullEmptyMessage", resourceCulture);
+        //    }
+        //}
 
 
-        /// <summary>
-        ///   Looks up a Azure Document DB secure key
-        /// </summary>
-        internal static string AzureDocumentDBSecureKeyNullEmptyMessage
-        {
-            get
-            {
-                return ResourceManager.GetString("AzureDocumentDBSecureKeyNullEmptyMessage", resourceCulture);
-            }
-        }
+        ///// <summary>
+        /////   Looks up a Azure Document DB secure key
+        ///// </summary>
+        //internal static string AzureDocumentDBSecureKeyNullEmptyMessage
+        //{
+        //    get
+        //    {
+        //        return ResourceManager.GetString("AzureDocumentDBSecureKeyNullEmptyMessage", resourceCulture);
+        //    }
+        //}
     }
 }
