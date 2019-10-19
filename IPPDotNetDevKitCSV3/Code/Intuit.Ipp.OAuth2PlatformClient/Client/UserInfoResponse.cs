@@ -54,7 +54,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Handles exception response from UserInfo api call
         /// </summary>
         /// <param name="statusCode">statusCode</param>
-        /// <param name="reason">reason</param>
+        /// <param name="httpErrorReason">reason</param>
         public UserInfoResponse(HttpStatusCode statusCode, string httpErrorReason)
         {
             IsError = true;

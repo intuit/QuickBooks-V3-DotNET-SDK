@@ -273,7 +273,7 @@ namespace Intuit.Ipp.Core.Rest
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Calls the rest service.
         /// </summary>
         /// <param name="request">The request.</param>

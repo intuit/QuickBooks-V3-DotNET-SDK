@@ -43,7 +43,7 @@ namespace Intuit.Ipp.GlobalTaxService
         /// <summary>
         /// Checks whether the entity passed has a type or not.
         /// </summary>
-        /// <param name="entity">CDM Entity.</param>
+        /// <param name="taxCodeName">CDM Entity.</param>
         /// <returns>True if the type exists or else false.</returns>
         internal static bool IsTypeNull(Intuit.Ipp.Data.TaxService taxCodeName)
         {

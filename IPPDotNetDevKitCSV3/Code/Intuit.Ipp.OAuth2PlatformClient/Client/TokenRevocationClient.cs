@@ -60,7 +60,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="endpoint">endpoint</param>
         /// <param name="clientId">clientId</param>
-        /// <param name="clientSecret"clientSecret></param>
+        /// <param name="clientSecret">clientSecret</param>
         /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         public TokenRevocationClient(string endpoint, string clientId = "", string clientSecret = "", HttpMessageHandler innerHttpMessageHandler = null)
         {
