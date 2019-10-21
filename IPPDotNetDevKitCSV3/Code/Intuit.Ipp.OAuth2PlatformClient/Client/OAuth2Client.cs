@@ -267,6 +267,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -298,6 +299,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
 
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
@@ -448,6 +450,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -461,6 +466,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
@@ -473,6 +481,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
             return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
             {
@@ -488,6 +499,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
             return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
         }
