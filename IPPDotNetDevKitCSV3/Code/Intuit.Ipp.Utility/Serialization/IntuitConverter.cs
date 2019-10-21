@@ -378,7 +378,7 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// CanConvert
         /// </summary>  
-        /// <param name="objecType">object Type value</param>
+        /// <param name="objectType">object Type value</param>
         /// <returns>void</returns>
         public override bool CanConvert(Type objectType)
         {

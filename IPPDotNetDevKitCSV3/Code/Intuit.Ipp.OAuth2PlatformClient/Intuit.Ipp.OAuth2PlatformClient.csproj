@@ -9,6 +9,7 @@
     <None Remove="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   <ItemGroup>

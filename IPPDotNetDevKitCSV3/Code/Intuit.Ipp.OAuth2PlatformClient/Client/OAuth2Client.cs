@@ -18,6 +18,7 @@ using System.Linq;
 using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Exception;
 using System.IO;
+using System.Globalization;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -46,10 +47,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         private string serviceRequestAzureDocumentDBSecureKey;
 
-        /// <summary>
-        /// request TTL-time to live for all logs 
-        /// </summary>
-        public double ServiceRequestAzureDocumentDBTTL { get; set; }
+        ///// <summary>
+        ///// request TTL-time to live for all logs 
+        ///// </summary>
+        //public double ServiceRequestAzureDocumentDBTTL { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
@@ -82,10 +83,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
+        ///// <summary>
+        ///// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
+        ///// </summary>
+        //public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
 
 
 
@@ -112,56 +113,56 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public Uri ServiceRequestAzureDocumentDBUrl
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBUrl;
-            }
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public Uri ServiceRequestAzureDocumentDBUrl
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBUrl;
+        //    }
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null)
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null)
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBUrlNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-                this.serviceRequestAzureDocumentDBUrl = value;
+        //        this.serviceRequestAzureDocumentDBUrl = value;
 
-            }
-        }
+        //    }
+        //}
 
-        /// <summary>
-        /// Gets or sets the service request logging location for File, Rolling File.
-        /// </summary>
-        public string ServiceRequestAzureDocumentDBSecureKey
-        {
-            get
-            {
-                return this.serviceRequestAzureDocumentDBSecureKey;
-            }
+        ///// <summary>
+        ///// Gets or sets the service request logging location for File, Rolling File.
+        ///// </summary>
+        //public string ServiceRequestAzureDocumentDBSecureKey
+        //{
+        //    get
+        //    {
+        //        return this.serviceRequestAzureDocumentDBSecureKey;
+        //    }
 
-            set
-            {
-                if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
-                {
-                    if (value == null && value == "")
-                    {
-                        IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
-                        IdsExceptionManager.HandleException(exception);
-                    }
-                }
+        //    set
+        //    {
+        //        if (EnableSerilogRequestResponseLoggingForAzureDocumentDB == true)
+        //        {
+        //            if (value == null && value == "")
+        //            {
+        //                IdsException exception = new IdsException(Properties.Resources.AzureDocumentDBSecureKeyNullEmptyMessage, new ArgumentNullException());
+        //                IdsExceptionManager.HandleException(exception);
+        //            }
+        //        }
 
-                this.serviceRequestAzureDocumentDBSecureKey = value;
-            }
-        }
+        //        this.serviceRequestAzureDocumentDBSecureKey = value;
+        //    }
+        //}
 
 
         /// <summary>

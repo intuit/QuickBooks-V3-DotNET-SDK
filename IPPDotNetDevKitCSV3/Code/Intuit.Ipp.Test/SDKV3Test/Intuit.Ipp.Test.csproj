@@ -6,39 +6,35 @@
     </PropertyGroup>
 
 
-  <!--<ItemGroup>
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" />
-    <ProjectReference Include="..\Code\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" />
-   
-    <ProjectReference Include="..\Code\Intuit.Ipp.Core\Intuit.Ipp.WebHooksService.csproj" />
-  
-  </ItemGroup>-->
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
         
     </ItemGroup>
     <ItemGroup>
-       <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+       <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
+       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.0" />
-       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-       <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
-       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />      
+       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-       <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-       <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-       <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+       <PackageReference Include="Microsoft.NETCore.Targets" Version="3.0.0" />
+       <PackageReference Include="Microsoft.TestPlatform" Version="16.3.0" />
+       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+       <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
+       <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+       <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+      <PackageReference Include="Serilog" Version="2.9.0" />
+      <PackageReference Include="Serilog.Sinks.AzureDocumentDb" Version="4.0.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+      <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+      <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+      <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+      <PackageReference Include="Serilog.Sinks.Debug" Version="1.0.1" />
+      <PackageReference Include="Serilog.Sinks.Literate" Version="3.0.0" />
+      <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+      <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+      <PackageReference Include="SerilogTraceListener" Version="3.2.0" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Properties\" />

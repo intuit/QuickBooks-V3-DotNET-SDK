@@ -80,7 +80,7 @@ namespace Intuit.Ipp.GlobalTaxService
         /// <summary>
         /// Adds an entity (asynchronously) under the specified realm in an asynchronous manner. The realm must be set in the context.
         /// </summary>
-        /// <param name="entity">Entity to Add</param>
+        /// <param name="taxCode">Entity to Add</param>
         public void AddTaxCodeAsync(Intuit.Ipp.Data.TaxService taxCode)
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add Asynchronously.");

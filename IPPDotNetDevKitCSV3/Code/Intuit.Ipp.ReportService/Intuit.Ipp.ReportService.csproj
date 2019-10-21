@@ -6,6 +6,9 @@
     <None Remove="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
