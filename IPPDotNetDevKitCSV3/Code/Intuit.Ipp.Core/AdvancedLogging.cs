@@ -110,8 +110,7 @@ namespace Intuit.Ipp.Core.Rest
             {
                 if (!Directory.Exists(value))
                 {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
+                    this.serviceRequestLoggingLocationForFile = System.IO.Path.GetTempPath();
                 }
 
                 this.serviceRequestLoggingLocationForFile = value;
