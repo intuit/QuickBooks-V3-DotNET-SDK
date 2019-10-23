@@ -105,11 +105,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 if (!Directory.Exists(value))
                 {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
+                    this.serviceRequestLoggingLocationForFile = System.IO.Path.GetTempPath();
                 }
-
-                this.serviceRequestLoggingLocationForFile = value;
+                
+            
+                    this.serviceRequestLoggingLocationForFile = value;
+               
             }
         }
 
