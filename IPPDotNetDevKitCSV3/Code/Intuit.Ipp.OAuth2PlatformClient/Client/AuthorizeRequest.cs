@@ -22,6 +22,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="authorizeEndpoint"></param>
         public AuthorizeRequest(Uri authorizeEndpoint)
         {
+            //if (OAuth2Client.AdvancedLoggerEnabled == false)
+            //{
+            //    //Intialize Logger
+            //    OAuth2Client.AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: false, enableSerilogRequestResponseLoggingForTrace: false, enableSerilogRequestResponseLoggingForConsole: false, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: System.IO.Path.GetTempPath());
+            //}
+
             _authorizeEndpoint = authorizeEndpoint;
         }
 
@@ -44,12 +50,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (_authorizeEndpoint.IsAbsoluteUri)
             {
+
                 return string.Format("{0}?{1}", _authorizeEndpoint.AbsoluteUri, qs);
             }
             else
             {
                 return string.Format("{0}?{1}", _authorizeEndpoint.OriginalString, qs);
             }
+
+           
         }
     }
 }
