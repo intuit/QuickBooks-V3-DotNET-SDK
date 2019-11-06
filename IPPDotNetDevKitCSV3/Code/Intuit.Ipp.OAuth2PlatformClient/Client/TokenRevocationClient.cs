@@ -64,6 +64,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="innerHttpMessageHandler">innerHttpMessageHandler</param>
         public TokenRevocationClient(string endpoint, string clientId = "", string clientSecret = "", HttpMessageHandler innerHttpMessageHandler = null)
         {
+            if (OAuth2Client.AdvancedLoggerEnabled == false)
+            {
+                //Intialize Logger
+                OAuth2Client.AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: false, enableSerilogRequestResponseLoggingForTrace: false, enableSerilogRequestResponseLoggingForConsole: false, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: System.IO.Path.GetTempPath());
+            }
+
             if (endpoint == null) throw new ArgumentNullException(nameof(endpoint));
             if (innerHttpMessageHandler == null) innerHttpMessageHandler = new HttpClientHandler();
 
@@ -116,12 +122,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             msgRequest.Content = stringContent;
 
-            OAuth2Client.AdvancedLogger.Log("Request url- " + Address);
-            OAuth2Client.AdvancedLogger.Log("Request headers- ");
-            OAuth2Client.AdvancedLogger.Log("Authorization Header: " + Client.DefaultRequestHeaders.Authorization.ToString());//check
-            OAuth2Client.AdvancedLogger.Log("ContentType header: " + "application/json");
-            OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
-            OAuth2Client.AdvancedLogger.Log("Request Body: " + await msgRequest.Content.ReadAsStringAsync().ConfigureAwait(false));
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("Request url- " + Address);
+                OAuth2Client.AdvancedLogger.Log("Request headers- ");
+                OAuth2Client.AdvancedLogger.Log("Authorization Header: " + Client.DefaultRequestHeaders.Authorization.ToString());//check
+                OAuth2Client.AdvancedLogger.Log("ContentType header: " + "application/json");
+                OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
+                OAuth2Client.AdvancedLogger.Log("Request Body: " + await msgRequest.Content.ReadAsStringAsync().ConfigureAwait(false));
+            }
 
             try
             {
@@ -129,13 +138,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Token Revoked successfully");
+                    if (OAuth2Client.AdvancedLoggerEnabled != false)
+                    {
+                        OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Token Revoked successfully");
+                    }
                     return new TokenRevocationResponse();
                 }
                 else if (response.StatusCode == HttpStatusCode.BadRequest)
                 {
                     var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+                    if (OAuth2Client.AdvancedLoggerEnabled != false)
+                    {
+                        OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+                    }
                     return new TokenRevocationResponse(content); //errorDetail can be added here if required.
                 }
                 else
@@ -150,12 +165,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                     if (errorDetail != null && errorDetail != "")
                     {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+                            OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                        }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
                     }
                     else
                     {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+                            OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+
+                        }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase);
                     }
                 }
