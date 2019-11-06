@@ -53,8 +53,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             _client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            OAuth2Client.AdvancedLogger.Log("UserInfo request initiated");
-            OAuth2Client.AdvancedLogger.Log("Request url- " + endpoint);
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("UserInfo request initiated");
+                OAuth2Client.AdvancedLogger.Log("Request url- " + endpoint);
+            }
         }
 
         /// <summary>
@@ -85,11 +88,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            
-            OAuth2Client.AdvancedLogger.Log("Request headers- ");
-            OAuth2Client.AdvancedLogger.Log("Authorization Header: " + request.Headers.Authorization.ToString());
-        
-            OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("Request headers- ");
+                OAuth2Client.AdvancedLogger.Log("Authorization Header: " + request.Headers.Authorization.ToString());
+
+                OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
+            }
 
 
             HttpResponseMessage response;
@@ -115,19 +120,30 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                 if (errorDetail != null && errorDetail !="")
                 {
-                    OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                    if (OAuth2Client.AdvancedLoggerEnabled != false)
+                    {
+                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+
+                    }
                     return new UserInfoResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
 
                 }
                 else
                 {
-                    OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+                    if (OAuth2Client.AdvancedLoggerEnabled != false)
+                    {
+                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+
+                    }
                     return new UserInfoResponse(response.StatusCode, response.ReasonPhrase);
                 }
             }
 
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+            }
             return new UserInfoResponse(content);
         }
     }
