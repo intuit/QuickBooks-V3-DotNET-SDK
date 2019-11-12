@@ -28,7 +28,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestTokenFromCodeAsync(this TokenClient client, string code, string redirectUri, string codeVerifier = null, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Access/Bearer token request initiated");
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("Access/Bearer token request initiated");
+            }
             var fields = new Dictionary<string, string>
             {
                 { OidcConstants.TokenRequest.GrantType, OidcConstants.GrantTypes.AuthorizationCode },
@@ -45,14 +48,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// RequestRefreshTokenAsync call
         /// </summary>
-        /// <param name="client">client</param>
+        /// <param name="client">client</param>F
         /// <param name="refreshToken">refreshToken</param>
         /// <param name="extra">extra</param>
         /// <param name="cancellationToken">cancellationToken</param>
         /// <returns>task of TokenResponse</returns>
         public static Task<TokenResponse> RequestRefreshTokenAsync(this TokenClient client, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Refresh token request initiated");
+            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            {
+                OAuth2Client.AdvancedLogger.Log("Refresh token request initiated");
+            }
             var fields = new Dictionary<string, string>
             {
                 { OidcConstants.TokenRequest.GrantType, OidcConstants.GrantTypes.RefreshToken },
