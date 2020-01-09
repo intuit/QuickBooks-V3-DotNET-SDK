@@ -23,6 +23,8 @@ namespace Intuit.Ipp.Data {
         
         private EntitlementsResponseEntitlement[] entitlementField;
         
+        private object[] thresholdsField;
+        
         /// <remarks/>
         public bool QboCompany {
             get {
@@ -84,6 +86,17 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.entitlementField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Thresholds")]
+        public object[] Thresholds {
+            get {
+                return this.thresholdsField;
+            }
+            set {
+                this.thresholdsField = value;
             }
         }
     }
@@ -984,6 +997,98 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.columnsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
+    public partial class Thresholds {
+        
+        private ThresholdsThreshold[] thresholdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Threshold")]
+        public ThresholdsThreshold[] Threshold {
+            get {
+                return this.thresholdField;
+            }
+            set {
+                this.thresholdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class ThresholdsThreshold {
+        
+        private string nameField;
+        
+        private string limitField;
+        
+        private string enforcedField;
+        
+        private string currentCountField;
+        
+        private string aboveThresholdField;
+        
+        /// <remarks/>
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string limit {
+            get {
+                return this.limitField;
+            }
+            set {
+                this.limitField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string enforced {
+            get {
+                return this.enforcedField;
+            }
+            set {
+                this.enforcedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string currentCount {
+            get {
+                return this.currentCountField;
+            }
+            set {
+                this.currentCountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string aboveThreshold {
+            get {
+                return this.aboveThresholdField;
+            }
+            set {
+                this.aboveThresholdField = value;
             }
         }
     }
@@ -4602,40 +4707,39 @@ namespace Intuit.Ipp.Data {
     /// Description: Base type of any top level Intuit Entity of small business type.
     /// 
     /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UOM))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShipMethod))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerMsg))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevelPerItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxService))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QbdtEntityIdMapping))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TDSMetadata))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Budget))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncActivity))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Status))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Attachable))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Preferences))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserAlert))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Task))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventorySite))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxReturn))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxClassification))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxClassification))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxReturn))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TDSMetadata))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Budget))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Attachable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UOM))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanTypeCustomFieldDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTypeCustomFieldDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumberTypeCustomFieldDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringTypeCustomFieldDefinition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Preferences))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserAlert))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Task))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ShipMethod))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventorySite))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeActivity))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerMsg))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevelPerItem))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PriceLevel))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesRep))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExchangeRate))]
@@ -4677,6 +4781,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Invoice))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Company))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QbdtEntityIdMapping))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -21918,7 +22023,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType1 itemElementNameField;
+        private ItemChoiceType2 itemElementNameField;
         
         private PhysicalAddress shipAddrField;
         
@@ -22101,7 +22206,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType1 ItemElementName {
+        public ItemChoiceType2 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -22293,7 +22398,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType1 {
+    public enum ItemChoiceType2 {
         
         /// <remarks/>
         DropShipToEntity,
@@ -23717,7 +23822,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType2 itemElementNameField;
+        private ItemChoiceType3 itemElementNameField;
         
         private string initialsField;
         
@@ -23803,7 +23908,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType2 ItemElementName {
+        public ItemChoiceType3 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -23852,7 +23957,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType2 {
+    public enum ItemChoiceType3 {
         
         /// <remarks/>
         EmployeeRef,
@@ -24004,7 +24109,7 @@ namespace Intuit.Ipp.Data {
         
         private decimal itemField;
         
-        private ItemChoiceType7 itemElementNameField;
+        private ItemChoiceType4 itemElementNameField;
         
         private IntuitAnyType priceLevelPerItemExField;
         
@@ -24034,7 +24139,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType7 ItemElementName {
+        public ItemChoiceType4 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -24062,7 +24167,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType7 {
+    public enum ItemChoiceType4 {
         
         /// <remarks/>
         CustomPrice,
@@ -25714,7 +25819,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType3 itemElementNameField;
+        private ItemChoiceType1 itemElementNameField;
         
         private PaySalesTaxEnum paySalesTaxField;
         
@@ -25806,7 +25911,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType3 ItemElementName {
+        public ItemChoiceType1 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -25884,7 +25989,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType3 {
+    public enum ItemChoiceType1 {
         
         /// <remarks/>
         TaxGroupCodeRef,
@@ -32906,7 +33011,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType4 itemElementNameField;
+        private ItemChoiceType6 itemElementNameField;
         
         private ReferenceType paymentMethodRefField;
         
@@ -33289,7 +33394,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType4 ItemElementName {
+        public ItemChoiceType6 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -33876,7 +33981,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType4 {
+    public enum ItemChoiceType6 {
         
         /// <remarks/>
         TaxGroupCodeRef,
@@ -38271,7 +38376,7 @@ namespace Intuit.Ipp.Data {
         
         private object itemField;
         
-        private ItemChoiceType6 itemElementNameField;
+        private ItemChoiceType7 itemElementNameField;
         
         private string bIdField;
         
@@ -38361,7 +38466,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType6 ItemElementName {
+        public ItemChoiceType7 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -38486,7 +38591,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType6 {
+    public enum ItemChoiceType7 {
         
         /// <remarks/>
         Account,

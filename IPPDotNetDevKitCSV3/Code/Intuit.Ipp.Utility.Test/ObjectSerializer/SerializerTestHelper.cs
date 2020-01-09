@@ -295,7 +295,7 @@ namespace Intuit.Ipp.Utility.Test
             customer.Fax = new TelephoneNumber();
             //customer.HasAttachment = true;
             //customer.HasAttachmentSpecified = true;
-            customer.ItemElementName = ItemChoiceType4.TaxGroupCodeRef;
+            customer.ItemElementName = ItemChoiceType6.TaxGroupCodeRef;
             customer.Job = true;
             customer.JobInfo = new JobInfo();
             customer.JobSpecified = true;

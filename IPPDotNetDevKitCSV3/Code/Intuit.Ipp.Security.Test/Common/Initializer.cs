@@ -97,7 +97,7 @@ namespace Intuit.Ipp.Security.Test.Common
 
                 reqValidator = new OAuth2RequestValidator(AuthorizationKeysQBO.accessTokenQBO);
                 context = new ServiceContext(AuthorizationKeysQBO.realmIdIAQBO, IntuitServicesType.QBO, reqValidator);
-                context.IppConfiguration.MinorVersion.Qbo = "37";
+                context.IppConfiguration.MinorVersion.Qbo = "43";
                 DataService.DataService service = new DataService.DataService(context);
                 var compinfo = service.FindAll<CompanyInfo>(new CompanyInfo());
                 return context;

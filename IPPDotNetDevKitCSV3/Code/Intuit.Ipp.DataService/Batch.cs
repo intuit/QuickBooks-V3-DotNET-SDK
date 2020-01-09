@@ -231,7 +231,7 @@ namespace Intuit.Ipp.DataService
             //batchItem.operation = OperationEnum.query;
             batchItem.operationSpecified = false;
             if (optionsData != null && optionsData.Count > 0) { batchItem.optionsData = string.Join(",", optionsData.ToArray()).ToLower(); }
-            batchItem.ItemElementName = ItemChoiceType6.Query;
+            batchItem.ItemElementName = ItemChoiceType7.Query;
             this.batchRequests.Add(batchItem);
         }
 
@@ -303,7 +303,7 @@ namespace Intuit.Ipp.DataService
 
             BatchItemRequest batchItem = new BatchItemRequest();
             batchItem.AnyIntuitObject = query;
-            batchItem.ItemElementName = ItemChoiceType6.CDCQuery;
+            batchItem.ItemElementName = ItemChoiceType7.CDCQuery;
             batchItem.bId = id;
             batchItem.operationSpecified = false;
             if (optionsData != null && optionsData.Count > 0) { batchItem.optionsData = string.Join(",", optionsData.ToArray()).ToLower(); }
@@ -364,7 +364,7 @@ namespace Intuit.Ipp.DataService
             batchItem.operation = operation;
             batchItem.operationSpecified = true;
             if (optionsData != null && optionsData.Count > 0) { batchItem.optionsData = string.Join(",", optionsData.ToArray()).ToLower(); }
-            ItemChoiceType6 result;
+            ItemChoiceType7 result;
             if (Enum.TryParse(entity.GetType().Name, out result))
             {
                 batchItem.ItemElementName = result;
