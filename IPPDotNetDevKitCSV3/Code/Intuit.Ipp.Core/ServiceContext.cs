@@ -167,6 +167,7 @@ namespace Intuit.Ipp.Core
         /// <exception cref="Intuit.Ipp.Exception.IdsException">If arguments are null or empty.</exception>
         /// <exception cref="Intuit.Ipp.Exception.InvalidRealmException">If realm id is invalid.</exception>
         /// <exception cref="Intuit.Ipp.Exception.InvalidTokenException">If the token is invalid.</exception>
+        [Obsolete("This constructor is deprecated as appToken is not supported in OAuth2. Please use the other constuctor")]
         public ServiceContext(string appToken, string realmId, IntuitServicesType serviceType, IRequestValidator requestValidator = null)
             : this()
         {
@@ -184,6 +185,7 @@ namespace Intuit.Ipp.Core
             this.realmId = realmId;
             this.serviceType = serviceType;
             this.appToken = appToken;
+            
             if (requestValidator != null)
             {
                 this.IppConfiguration.Security = requestValidator;
@@ -235,6 +237,7 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// Gets or Sets the Application Token.
         /// </summary>
+        [Obsolete("This property is deprecated as appToken is not supported in OAuth2")]
         public string AppToken
         {
             get { return this.appToken; }

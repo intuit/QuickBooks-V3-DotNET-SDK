@@ -14,8 +14,8 @@
     <PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
     <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
     <Copyright>Copyright © 2019 Intuit, Inc.</Copyright>
-    <AssemblyVersion>10.0.0.0</AssemblyVersion>
-    <FileVersion>10.0.0.0</FileVersion>
+    <AssemblyVersion>10.0.0.1</AssemblyVersion>
+    <FileVersion>10.0.0.1</FileVersion>
     <Company>Intuit</Company>
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
