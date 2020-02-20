@@ -33,6 +33,40 @@ Note:
 ->Oauth1 support has been removed from this SDK. Intuit.Ipp.Retry logic now have been moved to Intuit.Ipp.Core. So, if you see Retry not found issues while updating your code, just remove that Using Intuit.Ipp.Retry statement and add Using Intuit.Ipp.Core if not already present.
 ->If you are doing Migration from Oauth1 to Oauth2 using this SDK then please use 7.5.0 version from Nuget only as that is still using .Net 4.6.1 Full Framework and supports both Oauth1 and Oauth2.
 
+## Enabling logs for the SDK
+New logging support added which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
+Serilogger logs can be enabled for **OAuth2PlatformClient** using the following lines -
+ static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
+ 
+ 
+            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForRollingFile = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
+            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
+            
+            
+Serilogger logs can be enabled for **QBO Api calls** using the following lines -
+
+ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
+
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
+            
+Old file based logs can be enabled by using the following lines-
+ 
+            context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
+            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
+            
+Fiddler logs are really useful too. You can enable them by following the steps below-
+
+           Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
+When you download Fiddler, open it, go to Tools > Fiddler Option > Enable (Tick Mark) Capture HTTPS connects > Enable Decrypt Https traffic. That’s it. No other setting is required. The .NET localhost is by default captured in Fiddler, so after you have enabled https traffic in Fiddler just run your code. (Fiddler should be open.) You will see requests and responses logged in Fiddler.
+You should set 'decode the raw request body' by clicking on the yellow bar in Fiddler. Then go to the File menu on top, select Save all session > Save the fiddler session. A .saz file is created, which can be viewed later.
+
 
 ## Running Tests
 
