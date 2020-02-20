@@ -43,7 +43,7 @@ Serilogger logs can be enabled for **OAuth2PlatformClient** using the following 
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
             oauthClient.EnableSerilogRequestResponseLoggingForRollingFile = true;
             oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
+            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//Any drive logging location
             
             
 Serilogger logs can be enabled for **QBO Api calls** using the following lines -
@@ -54,12 +54,12 @@ ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitService
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log"; //Any drive logging location
             
 Old file based logs can be enabled by using the following lines-
  
             context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
+            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log"; //Any drive logging location
             
 Fiddler logs are really useful too. You can enable them by following the steps below-
 
