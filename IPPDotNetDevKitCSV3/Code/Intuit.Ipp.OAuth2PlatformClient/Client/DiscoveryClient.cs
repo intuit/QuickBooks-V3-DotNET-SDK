@@ -36,6 +36,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         private readonly HttpClient _client;
 
+  
+
 
         /// <summary>
         /// Authority
@@ -50,7 +52,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Policy
         /// </summary>
-        public DiscoveryPolicy Policy { get; set; } = new DiscoveryPolicy();
+        public DiscoveryPolicy Policy { get; set; }= new DiscoveryPolicy();
 
         /// <summary>
         /// Timeout
@@ -110,16 +112,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="appEnvironment">app Environment</param>
         public DiscoveryClient(AppEnvironment appEnvironment)
         {
+            Policy.SetAuthority(appEnvironment);//Issuer url set, used in DiscoverResponse too for validation
             var handler = new HttpClientHandler();
             string url = "";
-            //if (appEnvironment == AppEnvironment.Production)
-            //{
-            //    url = OidcConstants.Discovery.DiscoveryUrlProduction;
-            //}
-            //else
-            //{
-            //    url = OidcConstants.Discovery.DiscoveryUrlSandbox;
-            //}
+         
 
             string discoveryUrl = "";
             string discoveryAuthority = "";
@@ -133,7 +129,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             else if (appEnvironment == AppEnvironment.E2EProduction)
             {
                 discoveryUrl = OidcConstants.Discovery.E2EProdDiscoveryEndpoint;
-                discoveryAuthority = OidcConstants.Discovery.E2EAuthority; ;
+                discoveryAuthority = OidcConstants.Discovery.E2EAuthority; 
             }
             else if (appEnvironment == AppEnvironment.E2ESandbox)
             {

@@ -55,6 +55,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 		IppDotNetDevKitCSV3.vsmdi = IppDotNetDevKitCSV3.vsmdi
 		Local.testsettings = Local.testsettings
+		..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.sln = ..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.sln
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject

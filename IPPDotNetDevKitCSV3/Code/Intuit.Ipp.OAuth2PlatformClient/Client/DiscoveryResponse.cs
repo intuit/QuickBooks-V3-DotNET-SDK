@@ -44,6 +44,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             try
             {
                 Json = JObject.Parse(raw);
+
+                //Remove validation as it impacts e2e testing
                 var validationError = Validate(policy);
 
                 if (!string.IsNullOrEmpty(validationError))

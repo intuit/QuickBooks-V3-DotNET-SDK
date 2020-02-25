@@ -171,6 +171,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string DiscoveryUrlSandbox                         = "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration";
             public const string DiscoveryUrlProduction                      = "https://developer.api.intuit.com/.well-known/openid_configuration";
             public const string IssuerUrl                                   = "https://oauth.platform.intuit.com/op/v1";
+            public const string IssuerUrlE2E                                = "https://oauth-e2e.platform.intuit.com/op/v1";
+
 
 
 

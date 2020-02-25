@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Configuration;
+using Intuit.Ipp.OAuth2PlatformClient.Helpers;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
@@ -12,14 +13,48 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class DiscoveryPolicy
     {
+        internal string Authority = OidcConstants.Discovery.IssuerUrl;
 
-        internal string Authority = OidcConstants.Discovery.IssuerUrl;      
-        
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public DiscoveryPolicy()
+        {
+
+        }
+
+
+
         /// <summary>
         /// Sets the discovery authority if not present in application configuration
         /// </summary>        
         public void SetAuthority(string authority = OidcConstants.Discovery.IssuerUrl)
         {
+            Authority = authority;
+        }
+
+        /// <summary>
+        /// Sets the discovery authority if not present in application configuration
+        /// </summary>        
+        public void SetAuthority(AppEnvironment appEnvironment)
+        {
+            string authority = "";
+            if (appEnvironment == AppEnvironment.Production)
+            {
+                authority = OidcConstants.Discovery.IssuerUrl;
+            }
+            else if (appEnvironment == AppEnvironment.E2EProduction)
+            {
+                authority = OidcConstants.Discovery.IssuerUrlE2E;
+            }
+            else if (appEnvironment == AppEnvironment.E2ESandbox)
+            {
+                authority = OidcConstants.Discovery.IssuerUrlE2E;
+            }
+            else
+            {
+                authority = OidcConstants.Discovery.IssuerUrl;
+            }
             Authority = authority;
         }
 
