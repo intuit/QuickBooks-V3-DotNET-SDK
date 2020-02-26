@@ -48,7 +48,7 @@ Serilogger logs can be enabled for **OAuth2PlatformClient** using the following 
             
 Serilogger logs can be enabled for **QBO Api calls** using the following lines -
 
-ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
+            ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
 
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
