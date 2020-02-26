@@ -36,8 +36,8 @@ Note:
 ## Enabling logs for the SDK
 New logging support added which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
 Serilogger logs can be enabled for **OAuth2PlatformClient** using the following lines -
- static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
- 
+
+            static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
  
             oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
@@ -63,7 +63,7 @@ Old file based logs can be enabled by using the following lines-
             
 Fiddler logs are really useful too. You can enable them by following the steps below-
 
-           Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
+Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
 When you download Fiddler, open it, go to Tools > Fiddler Option > Enable (Tick Mark) Capture HTTPS connects > Enable Decrypt Https traffic. That’s it. No other setting is required. The .NET localhost is by default captured in Fiddler, so after you have enabled https traffic in Fiddler just run your code. (Fiddler should be open.) You will see requests and responses logged in Fiddler.
 You should set 'decode the raw request body' by clicking on the yellow bar in Fiddler. Then go to the File menu on top, select Save all session > Save the fiddler session. A .saz file is created, which can be viewed later.
 
