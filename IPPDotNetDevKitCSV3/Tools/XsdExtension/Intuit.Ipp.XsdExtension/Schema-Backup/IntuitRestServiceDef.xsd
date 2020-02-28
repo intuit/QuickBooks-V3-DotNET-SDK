@@ -22,6 +22,7 @@
     <xs:element name="CreditMemo" type="CreditMemo" substitutionGroup="IntuitObject"/>
     <xs:element name="StatementCharge" type="StatementCharge" substitutionGroup="IntuitObject"/>
     <xs:element name="ChargeCredit" type="ChargeCredit" substitutionGroup="IntuitObject"/>
+    <xs:element name="CreditCardPaymentTxn" type="CreditCardPaymentTxn" substitutionGroup="IntuitObject"/>
     <xs:element name="ReimburseCharge" type="ReimburseCharge" substitutionGroup="IntuitObject"/>
     <xs:element name="PaymentMethod" type="PaymentMethod" substitutionGroup="IntuitObject"/>
     <xs:element name="Term" type="Term" substitutionGroup="IntuitObject"/>
@@ -76,6 +77,7 @@
 	<xs:element name="JournalCode" type="JournalCode" substitutionGroup="IntuitObject"/>  
 	<xs:element name="QbdtEntityIdMapping" type="QbdtEntityIdMapping" substitutionGroup="IntuitObject"/>
     <xs:element name="MasterAccount" type="MasterAccount" substitutionGroup="IntuitObject"/>
+    <xs:element name="Tag" type="Tag" substitutionGroup="IntuitObject"/>
 	  	
     <xs:simpleType name="FaultTypeEnum">
         <xs:annotation>
