@@ -18,7 +18,7 @@ namespace Intuit.Ipp.Test.Services.QBO
     [TestClass]
     public class TaxPaymentTest
     {
-        ServiceContext qboContextoAuth = null;
+        ServiceContext qboContextoAuth;
         [TestInitialize]
         public void MyTestInitializer()
         {
@@ -73,7 +73,6 @@ namespace Intuit.Ipp.Test.Services.QBO
         [TestMethod]
         public void TaxPaymentQueryAsyncTest()
         {
-            QueryService<TaxPayment> entityQuery = new QueryService<TaxPayment>(qboContextoAuth);
             List<TaxPayment> entities = Helper.FindAllAsync<TaxPayment>(qboContextoAuth, new TaxPayment());
             Assert.IsTrue(entities.Count() > 0);
         }

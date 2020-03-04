@@ -18,7 +18,7 @@ namespace Intuit.Ipp.Test.Services.QBO
     [TestClass]
     public class CreditCardPaymentTest
     {
-        ServiceContext qboContextoAuth = null;
+        ServiceContext qboContextoAuth;
         [TestInitialize]
         public void MyTestInitializer()
         {
@@ -137,7 +137,6 @@ namespace Intuit.Ipp.Test.Services.QBO
         [TestMethod]
         public void CreditCardPaymentQueryAsyncTest()
         {
-            QueryService<CreditCardPaymentTxn> entityQuery = new QueryService<CreditCardPaymentTxn>(qboContextoAuth);
             List<CreditCardPaymentTxn> entities = Helper.FindAllAsync<CreditCardPaymentTxn>(qboContextoAuth, new CreditCardPaymentTxn());
             Assert.IsTrue(entities.Count() > 0);
         }
