@@ -238,8 +238,36 @@ namespace Intuit.Ipp.Test
             return company;
         }
 
+        internal static CreditCardPaymentTxn CreateCreditCardPayment(ServiceContext qboContextoAuth)
+        {
+            CreditCardPaymentTxn creditCardPaymentTxn = new CreditCardPaymentTxn();
+            creditCardPaymentTxn.AmountSpecified = true;
+            creditCardPaymentTxn.Amount = 10;
+            creditCardPaymentTxn.CreditCardAccountRef = new ReferenceType {
+                Value="101",
+                name="TestCArd"
+            };
+            creditCardPaymentTxn.BankAccountRef = new ReferenceType
+            {
+                Value = "35",
+                name = "Checking"
+            };
+            creditCardPaymentTxn.TxnDate =new DateTime(2019,11,21);
+            creditCardPaymentTxn.CurrencyRef = new ReferenceType {
+                Value="USD",
+                name="United State Dollar"
+            };
+            creditCardPaymentTxn.PrivateNote = "Testing123";
+            return creditCardPaymentTxn;
+        }
 
 
+        internal static CreditCardPaymentTxn UpdateCreditCardPayment(ServiceContext context, CreditCardPaymentTxn entity)
+        {
+            //update the properties of entity
+            entity.Amount=entity.Amount+100;
+            return entity;
+        }
         internal static Company UpdateCompany(ServiceContext context, Company entity)
         {
             //update the properties of entity
@@ -1996,6 +2024,18 @@ namespace Intuit.Ipp.Test
             taxRate.DisplayTypeSpecified = true;
             //taxRate.TaxRateEx = 
             return taxRate;
+        }
+
+        internal static TaxPayment CreateTaxPayment(ServiceContext qboContextoAuth)
+        {
+            TaxPayment taxPayment = new TaxPayment();
+            taxPayment.PaymentDate = DateTime.UtcNow;
+            taxPayment.PaymentAccountRef = new ReferenceType {
+                name = "cash and cash equivalents-BAS Payment",
+                Value ="57"
+            };
+            taxPayment.PaymentAmount = 100;
+            return taxPayment;
         }
 
 
@@ -9938,6 +9978,19 @@ namespace Intuit.Ipp.Test
         {
             Assert.AreEqual(expected.Name, actual.Name);
             Assert.AreEqual(expected.FullyQualifiedName, actual.FullyQualifiedName);
+        }
+
+        internal static void VerifyCreditCardPayment(CreditCardPaymentTxn  expected, CreditCardPaymentTxn actual)
+        {
+            Assert.AreEqual(expected.PrivateNote, actual.PrivateNote);
+            Assert.AreEqual(expected.Amount, actual.Amount);
+            Assert.AreEqual(expected.CreditCardAccountRef.name, actual.CreditCardAccountRef.name);
+        }
+
+        internal static void VerifyTaxPayment(TaxPayment expected, TaxPayment actual)
+        {
+            Assert.AreEqual(expected.Id, actual.Id);
+           
         }
 
         internal static void VerifyPayment(Payment expected, Payment actual)

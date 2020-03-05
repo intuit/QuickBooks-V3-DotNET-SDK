@@ -3050,6 +3050,9 @@ namespace Intuit.Ipp.Data {
         Check,
         
         /// <remarks/>
+        CreditCardPayment,
+        
+        /// <remarks/>
         CreditMemo,
         
         /// <remarks/>
@@ -4526,6 +4529,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         PAID,
+        
+        /// <remarks/>
+        DISABLED,
     }
     
     /// <remarks/>
@@ -4720,6 +4726,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vendor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxAgency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Customer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxPayment))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxClassification))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxReturn))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TDSMetadata))]
@@ -4758,10 +4765,12 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FixedAsset))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EmailDeliveryInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConvenienceFeeDetail))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Tag))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transaction))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChargeCredit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReimburseCharge))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalEntry))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreditCardPaymentTxn))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
@@ -7871,6 +7880,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChargeCredit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReimburseCharge))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JournalEntry))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreditCardPaymentTxn))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
@@ -7927,6 +7937,8 @@ namespace Intuit.Ipp.Data {
         private string taxFormNumField;
         
         private string transactionLocationTypeField;
+        
+        private Tag[] tagField;
         
         /// <remarks/>
         /// <summary>
@@ -8264,6 +8276,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.transactionLocationTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Descripton: List of tags used to identify the transaction.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("Tag")]
+        public Tag[] Tag {
+            get {
+                return this.tagField;
+            }
+            set {
+                this.tagField = value;
             }
         }
     }
@@ -11487,6 +11516,10 @@ namespace Intuit.Ipp.Data {
         
         private Line[] taxLineField;
         
+        private bool useAutomatedSalesTaxField;
+        
+        private bool useAutomatedSalesTaxFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -11597,6 +11630,75 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: All
+        /// Description: This is a boolean which defines if developer intends to use
+        /// Automated Sales Tax or tax code that they have provided in the payload.
+        /// If the v3 developer sets this to true, then txn going in QBO will always
+        /// have AST rates. In case this flag is set to false, then it will depend on the
+        /// QBO user pref - AllowPartnerTaxOverride, which tells if QBO user wants to allow
+        /// v3 app to override AST rates or not. If user allows v3 apps to override AST,
+        /// then the txn will get saved with v3 app specified rates.
+        /// [span style="display: none"] I18n: US [/span]
+        /// 
+        /// </summary>
+        public bool UseAutomatedSalesTax {
+            get {
+                return this.useAutomatedSalesTaxField;
+            }
+            set {
+                this.useAutomatedSalesTaxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool UseAutomatedSalesTaxSpecified {
+            get {
+                return this.useAutomatedSalesTaxFieldSpecified;
+            }
+            set {
+                this.useAutomatedSalesTaxFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: A Tag applied to a transaction
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class Tag : IntuitEntity, IEntity {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: The name of the tag.
+        /// 
+        /// </summary>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
             }
         }
     }
@@ -14127,6 +14229,8 @@ namespace Intuit.Ipp.Data {
         
         private string invoiceLinkField;
         
+        private string paymentDetailsMessageField;
+        
         private ConvenienceFeeDetail convenienceFeeDetailField;
         
         /// <remarks/>
@@ -14447,6 +14551,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.invoiceLinkField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: QBO:  Message displayed to customer about payment Instructions. eg: bank account info.
+        /// 
+        /// </summary>
+        public string PaymentDetailsMessage {
+            get {
+                return this.paymentDetailsMessageField;
+            }
+            set {
+                this.paymentDetailsMessageField = value;
             }
         }
         
@@ -16640,6 +16760,8 @@ namespace Intuit.Ipp.Data {
         
         private string accountSubTypeField;
         
+        private ReferenceType[] accountPurposesField;
+        
         private string acctNumField;
         
         private string acctNumExtnField;
@@ -16932,6 +17054,25 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.accountSubTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Internal use only: Account purpose indicates the mapping of the
+        /// chart-of-account to a purpose (eg: DEFAULT_QB_CASH_CHECKING_ACCOUNT). A chart-of-account
+        /// can have multiple account purpose mapping.
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("AccountPurposes")]
+        public ReferenceType[] AccountPurposes {
+            get {
+                return this.accountPurposesField;
+            }
+            set {
+                this.accountPurposesField = value;
             }
         }
         
@@ -18118,6 +18259,8 @@ namespace Intuit.Ipp.Data {
         
         private PhysicalAddress shipAddrField;
         
+        private PhysicalAddress vendorAddrField;
+        
         private decimal balanceField;
         
         private bool balanceFieldSpecified;
@@ -18221,6 +18364,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.shipAddrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Vendor Mailing Address
+        /// 
+        /// </summary>
+        public PhysicalAddress VendorAddr {
+            get {
+                return this.vendorAddrField;
+            }
+            set {
+                this.vendorAddrField = value;
             }
         }
         
@@ -18378,6 +18537,8 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
     public partial class VendorCredit : PurchaseByVendor {
         
+        private PhysicalAddress vendorAddrField;
+        
         private IntuitAnyType vendorCreditExField;
         
         private decimal balanceField;
@@ -18387,6 +18548,22 @@ namespace Intuit.Ipp.Data {
         private bool includeInAnnualTPARField;
         
         private bool includeInAnnualTPARFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Vendor Mailing Address
+        /// 
+        /// </summary>
+        public PhysicalAddress VendorAddr {
+            get {
+                return this.vendorAddrField;
+            }
+            set {
+                this.vendorAddrField = value;
+            }
+        }
         
         /// <remarks/>
         /// <summary>
@@ -21505,6 +21682,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType vendorRefField;
         
+        private PhysicalAddress vendorAddrField;
+        
         private ReferenceType aPAccountRefField;
         
         private BillPaymentTypeEnum payTypeField;
@@ -21535,6 +21714,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.vendorRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Vendor Mailing Address
+        /// 
+        /// </summary>
+        public PhysicalAddress VendorAddr {
+            get {
+                return this.vendorAddrField;
+            }
+            set {
+                this.vendorAddrField = value;
             }
         }
         
@@ -22634,6 +22829,100 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.refundReceiptExField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Financial transaction representing recording of a Credit Card balance payment.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class CreditCardPaymentTxn : Transaction {
+        
+        private ReferenceType creditCardAccountRefField;
+        
+        private ReferenceType bankAccountRefField;
+        
+        private decimal amountField;
+        
+        private bool amountFieldSpecified;
+        
+        private IntuitAnyType creditCardPaymentExField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// Credit Card account for which a payment is being entered.
+        /// Must be a Credit Card account.
+        /// 
+        /// </summary>
+        public ReferenceType CreditCardAccountRef {
+            get {
+                return this.creditCardAccountRefField;
+            }
+            set {
+                this.creditCardAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Bank account used to pay the Credit Card balance.
+        /// Must be a Bank account.
+        /// 
+        /// </summary>
+        public ReferenceType BankAccountRef {
+            get {
+                return this.bankAccountRefField;
+            }
+            set {
+                this.bankAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Total amount of the payment. Denominated in the currency of the credit card account.
+        /// 
+        /// </summary>
+        public decimal Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AmountSpecified {
+            get {
+                return this.amountFieldSpecified;
+            }
+            set {
+                this.amountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Internal use only: extension place holder for
+        /// CreditCardPayment
+        /// </summary>
+        public IntuitAnyType CreditCardPaymentEx {
+            get {
+                return this.creditCardPaymentExField;
+            }
+            set {
+                this.creditCardPaymentExField = value;
             }
         }
     }
@@ -31558,6 +31847,155 @@ namespace Intuit.Ipp.Data {
     /// <remarks/>
     /// <summary>
     /// 
+    /// Product: QBO
+    /// Description: Tax Payment/Refund made against filed taxReturn.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class TaxPayment : IntuitEntity, IEntity {
+        
+        private System.DateTime paymentDateField;
+        
+        private bool paymentDateFieldSpecified;
+        
+        private ReferenceType paymentAccountRefField;
+        
+        private decimal paymentAmountField;
+        
+        private bool paymentAmountFieldSpecified;
+        
+        private string descriptionField;
+        
+        private bool refundField;
+        
+        private bool refundFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The tax payment date
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime PaymentDate {
+            get {
+                return this.paymentDateField;
+            }
+            set {
+                this.paymentDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool PaymentDateSpecified {
+            get {
+                return this.paymentDateFieldSpecified;
+            }
+            set {
+                this.paymentDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Account ID from which the payment was made (or refund was moved to)
+        /// 
+        /// </summary>
+        public ReferenceType PaymentAccountRef {
+            get {
+                return this.paymentAccountRefField;
+            }
+            set {
+                this.paymentAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Specifies the tax payment amount paid towards a filed tax return.
+        /// 
+        /// </summary>
+        public decimal PaymentAmount {
+            get {
+                return this.paymentAmountField;
+            }
+            set {
+                this.paymentAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool PaymentAmountSpecified {
+            get {
+                return this.paymentAmountFieldSpecified;
+            }
+            set {
+                this.paymentAmountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Memo/Description added for this payment.
+        /// 
+        /// </summary>
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicate if this transaction is a refund. Returns false for the tax payment.
+        /// 
+        /// </summary>
+        public bool Refund {
+            get {
+                return this.refundField;
+            }
+            set {
+                this.refundField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool RefundSpecified {
+            get {
+                return this.refundFieldSpecified;
+            }
+            set {
+                this.refundFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
     /// Product: ALL
     /// Description: Provides for strong-typing of the StringType CustomField.
     /// 
@@ -32215,6 +32653,9 @@ namespace Intuit.Ipp.Data {
         CompanyInfo,
         
         /// <remarks/>
+        CreditCardPaymentTxn,
+        
+        /// <remarks/>
         CreditMemo,
         
         /// <remarks/>
@@ -32311,10 +32752,16 @@ namespace Intuit.Ipp.Data {
         StatementCharge,
         
         /// <remarks/>
+        Tag,
+        
+        /// <remarks/>
         TaxCode,
         
         /// <remarks/>
         TaxClassification,
+        
+        /// <remarks/>
+        TaxPayment,
         
         /// <remarks/>
         TaxRate,
@@ -36069,6 +36516,8 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType taxAgencyExtField;
         
+        private string taxAgencyConfigField;
+        
         /// <remarks/>
         public ReferenceType SalesTaxCodeRef {
             get {
@@ -36248,6 +36697,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxAgencyExtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Tax agency config. Identify if the agency is System generated or User created.
+        /// 
+        /// </summary>
+        public string TaxAgencyConfig {
+            get {
+                return this.taxAgencyConfigField;
+            }
+            set {
+                this.taxAgencyConfigField = value;
             }
         }
     }
@@ -36563,6 +37028,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
         [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
         [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
         [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
         [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
         [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
@@ -36574,6 +37040,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
         [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
         [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
         [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
         [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
         [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
@@ -36609,6 +37076,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
         [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
         [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
         [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
@@ -36698,6 +37166,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
         [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
         [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
@@ -36739,10 +37208,12 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
         [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
         [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
         [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
         [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
         [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
         [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
         [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
         [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
@@ -36901,6 +37372,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
         [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
         [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
@@ -36939,10 +37411,12 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
         [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
         [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
         [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
         [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
         [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
         [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
         [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
         [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
@@ -38299,6 +38773,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
         [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
         [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
@@ -38338,10 +38813,12 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
         [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
         [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
         [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
         [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
         [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
         [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
         [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
         [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
@@ -38399,6 +38876,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
         [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
         [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
         [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
@@ -38439,10 +38917,12 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
         [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
         [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
         [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
         [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
         [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
         [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
         [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
         [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
@@ -38630,6 +39110,9 @@ namespace Intuit.Ipp.Data {
         CompanyInfo,
         
         /// <remarks/>
+        CreditCardPaymentTxn,
+        
+        /// <remarks/>
         CreditMemo,
         
         /// <remarks/>
@@ -38750,6 +39233,9 @@ namespace Intuit.Ipp.Data {
         TDSMetadata,
         
         /// <remarks/>
+        Tag,
+        
+        /// <remarks/>
         Task,
         
         /// <remarks/>
@@ -38760,6 +39246,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         TaxCode,
+        
+        /// <remarks/>
+        TaxPayment,
         
         /// <remarks/>
         TaxRate,

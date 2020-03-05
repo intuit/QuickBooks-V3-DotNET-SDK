@@ -208,6 +208,10 @@ namespace Intuit.Ipp.DataService
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            if(resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
 
             // Builds resource Uri
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
@@ -266,7 +270,10 @@ namespace Intuit.Ipp.DataService
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
-
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             // Builds resource Uri
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
@@ -404,7 +411,10 @@ namespace Intuit.Ipp.DataService
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
-
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             // Builds resource Uri
             string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
 
@@ -793,7 +803,10 @@ namespace Intuit.Ipp.DataService
 
             string id = string.Empty;
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
-
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             // Convert to role base to get the Id property which is required to Find the entity.
             IntuitEntity intuitEntity = entity as IntuitEntity;
             if (intuitEntity == null)
@@ -957,6 +970,11 @@ namespace Intuit.Ipp.DataService
 
             ServicesHelper.ValidateEntity(entity, serviceContext);
             string resourceString = entity.GetType().Name;
+
+           if (resourceString.ToLower(CultureInfo.InvariantCulture) == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             List<T> entities = new List<T>();
 
             if (resourceString == "TaxClassification")

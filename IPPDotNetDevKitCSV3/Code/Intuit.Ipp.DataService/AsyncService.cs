@@ -199,8 +199,11 @@ namespace Intuit.Ipp.DataService
             AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
             asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.FindAllAsyncCompleted<IEntity>);
             FindAllCallCompletedEventArgs findAllCompletedEventArgs = new FindAllCallCompletedEventArgs();
-
             string resourceString = entity.GetType().Name;
+            if (resourceString.ToLower(CultureInfo.InvariantCulture) == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             try
             {
                 string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
@@ -232,6 +235,10 @@ namespace Intuit.Ipp.DataService
             asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.AddAsyncompleted);
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             this.requestedEntity = entity;
             try
             {
@@ -280,6 +287,10 @@ namespace Intuit.Ipp.DataService
             asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.UpdateAsyncCompleted);
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             this.requestedEntity = entity;
             try
             {
@@ -427,6 +438,10 @@ namespace Intuit.Ipp.DataService
             asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.DeleteAsyncCompleted);
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             this.requestedEntity = entity;
             try
             {
@@ -755,6 +770,10 @@ namespace Intuit.Ipp.DataService
 
             id = intuitEntity.Id;
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+            if (resourceString == "creditcardpaymenttxn")
+            {
+                resourceString = "creditcardpayment";
+            }
             this.requestedEntity = entity;
             try
             {
