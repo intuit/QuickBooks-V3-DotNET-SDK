@@ -267,6 +267,8 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(subcol_ytd)) { uriParametersList.Add(new string[] { "subcol_ytd", subcol_ytd }); }
             if (!string.IsNullOrEmpty(subcol_pct_inc)) { uriParametersList.Add(new string[] { "subcol_pct_inc", subcol_pct_inc }); }
             if (!string.IsNullOrEmpty(subcol_pct_exp)) { uriParametersList.Add(new string[] { "subcol_pct_exp", subcol_pct_exp }); }
+            if (!string.IsNullOrEmpty(subcol_pct_inc)) { uriParametersList.Add(new string[] { "subcol_pct_inc", subcol_pct_inc }); }
+            if (!string.IsNullOrEmpty(subcol_pct_exp)) { uriParametersList.Add(new string[] { "adjusted_gain_loss", adjusted_gain_loss }); }
 
 
 
@@ -640,6 +642,11 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the subcol_pct_exp
         /// </summary>
         public string subcol_pct_exp { get; set; }
+
+        /// <summary>
+        /// Gets or sets the adjusted gain and loss
+        /// </summary>
+        public string adjusted_gain_loss { get; set; }
 
 
         #endregion
