@@ -36,6 +36,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         internal static bool AdvancedLoggerEnabled = false;
 
+        /// <summary>
+        /// Internal field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
+        /// </summary>
+        internal static bool ShowInfoLogs = false;
+
+        /// <summary>
+        /// Enable extra field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
+        /// </summary>
+        public bool EnableAdvancedLoggerInfoMode { get; set; } = false;
+
+
 
         /// <summary>
         /// request logging location.
@@ -108,7 +119,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             set
             {
-                if (!Directory.Exists(value) )
+                if (!Directory.Exists(value))
                 {
                     this.serviceRequestLoggingLocationForFile = System.IO.Path.GetTempPath();
                 }
@@ -217,6 +228,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="environment">This can either be sandbox, production or an actual discovery url</param>
         public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment)
         {
+
             ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
@@ -272,6 +284,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
@@ -306,8 +323,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
 
 
 
@@ -328,10 +352,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 Uri.EscapeDataString(scopeValue),
                 Uri.EscapeDataString(RedirectURI),
                 CSRFToken);
-            
-                //Logging authorization request
-                AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
-            
+
+            //Logging authorization request
+            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+
             return authorizationRequest;
         }
 
@@ -462,8 +486,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
 
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
@@ -480,6 +510,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
@@ -497,8 +532,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
 
 
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
@@ -517,8 +558,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
             AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
             //Intialize Logger
             AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
 
 
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);

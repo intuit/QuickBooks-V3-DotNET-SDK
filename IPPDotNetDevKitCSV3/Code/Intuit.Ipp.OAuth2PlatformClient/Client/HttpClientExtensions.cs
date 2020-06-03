@@ -21,7 +21,7 @@ namespace System.Net.Http
         public static void SetBasicAuthentication(this HttpClient client, string clientId, string clientSecret)
         {
             client.DefaultRequestHeaders.Authorization = new BasicAuthenticationHeaderValue(clientId, clientSecret);
-            //OAuth2Client.AdvancedLogger.Log("Logging Basic Authorization Header value:" + client.DefaultRequestHeaders.Authorization);
+
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace System.Net.Http
         public static void SetBearerToken(this HttpClient client, string token)
         {
             client.SetToken("Bearer", token);
-           // OAuth2Client.AdvancedLogger.Log("Logging Bearer Token value:" + token);
+       
         }
     }
 }

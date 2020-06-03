@@ -4616,6 +4616,124 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
+    /// Details of approval status for the specific transaction.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class TxnApprovalInfo {
+        
+        private string approvalStatusField;
+        
+        private string approvalStatusDetailField;
+        
+        private string lastChangedByUserField;
+        
+        private System.DateTime lastChangedDateField;
+        
+        private bool lastChangedDateFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Overall Approval Status, collective of all user approvals.
+        /// InputType: QBO: ReadOnly
+        /// 
+        /// </summary>
+        public string ApprovalStatus {
+            get {
+                return this.approvalStatusField;
+            }
+            set {
+                this.approvalStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description:ApprovalStatusDetail represents the detailed approval statuses of a transaction. For a given ApprovalStatus, ApprovalStatusDetail can have one of the many values described below.
+        /// Following are the approval status and their possible detailed approval statuses:
+        /// Approval Status - APPROVED
+        /// Approval Status Detail - APPROVED,AUTO_APPROVED,FORCE_APPROVED,WORKFLOW_AUTO_APPROVED
+        /// 
+        /// Approval Status - REJECTED
+        /// Approval Status Detail - REJECTED,WORKFLOW_AUTO_REJECTED
+        /// 
+        /// Approval Status - REQUIRES_APPROVAL
+        /// Approval Status Detail - REQUIRES_APPROVAL,CANNOT_DETERMINE
+        /// 
+        /// Approval Status - PENDING_APPROVAL
+        /// Approval Status Detail - PENDING_APPROVAL
+        /// 
+        /// Approval Status - IN_PROGRESS
+        /// Approval Status Detail - IN_PROGRESS
+        /// InputType: QBO: ReadOnly
+        /// 
+        /// </summary>
+        public string ApprovalStatusDetail {
+            get {
+                return this.approvalStatusDetailField;
+            }
+            set {
+                this.approvalStatusDetailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: User-id of the user last updating the approval status.
+        /// InputType: QBO: ReadOnly
+        /// 
+        /// </summary>
+        public string LastChangedByUser {
+            get {
+                return this.lastChangedByUserField;
+            }
+            set {
+                this.lastChangedByUserField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Date when the approval status was last updated.
+        /// InputType: QBO: ReadOnly
+        /// 
+        /// </summary>
+        public System.DateTime LastChangedDate {
+            get {
+                return this.lastChangedDateField;
+            }
+            set {
+                this.lastChangedDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool LastChangedDateSpecified {
+            get {
+                return this.lastChangedDateFieldSpecified;
+            }
+            set {
+                this.lastChangedDateFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
     /// Provides the mapping between ListId and TxnId in
     /// Desktop to the same Entity Id in QBO. These mappings are available
     /// for only companies that have migrated from Desktop to QBO
@@ -6179,6 +6297,8 @@ namespace Intuit.Ipp.Data {
         
         private string countryCodeField;
         
+        private string countyField;
+        
         private string countrySubDivisionCodeField;
         
         private string postalCodeField;
@@ -6348,6 +6468,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.countryCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: County name.[br /]Max. length: 25 characters.
+        /// 
+        /// </summary>
+        public string County {
+            get {
+                return this.countyField;
+            }
+            set {
+                this.countyField = value;
             }
         }
         
@@ -7940,6 +8076,8 @@ namespace Intuit.Ipp.Data {
         
         private Tag[] tagField;
         
+        private TxnApprovalInfo txnApprovalInfoField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -8293,6 +8431,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.tagField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Details of the Approval Status for current transaction in QBO workflows.
+        /// 
+        /// </summary>
+        public TxnApprovalInfo TxnApprovalInfo {
+            get {
+                return this.txnApprovalInfoField;
+            }
+            set {
+                this.txnApprovalInfoField = value;
             }
         }
     }
@@ -10163,6 +10317,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType taxCodeRefField;
         
+        private ReferenceType taxRateRefField;
+        
         private TaxApplicableOnEnum taxApplicableOnField;
         
         private bool taxApplicableOnFieldSpecified;
@@ -10291,6 +10447,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxCodeRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Sales/Purchase tax rate Id
+        /// associated with the JournalEntry Line. For CA Companies.
+        /// 
+        /// </summary>
+        public ReferenceType TaxRateRef {
+            get {
+                return this.taxRateRefField;
+            }
+            set {
+                this.taxRateRefField = value;
             }
         }
         
@@ -15862,6 +16035,10 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType taxCodeExField;
         
+        private GTMConfigTypeEnum taxCodeConfigTypeField;
+        
+        private bool taxCodeConfigTypeFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -16093,6 +16270,35 @@ namespace Intuit.Ipp.Data {
                 this.taxCodeExField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Tax code configuration type tracks
+        /// whether the user created the TaxCode or it was System Generated.
+        /// 
+        /// </summary>
+        public GTMConfigTypeEnum TaxCodeConfigType {
+            get {
+                return this.taxCodeConfigTypeField;
+            }
+            set {
+                this.taxCodeConfigTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxCodeConfigTypeSpecified {
+            get {
+                return this.taxCodeConfigTypeFieldSpecified;
+            }
+            set {
+                this.taxCodeConfigTypeFieldSpecified = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -16268,6 +16474,33 @@ namespace Intuit.Ipp.Data {
                 this.taxOnTaxOrderFieldSpecified = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBO
+    /// Description: Enumeration of
+    /// ConfigType taxCode taxRate taxAgency
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum GTMConfigTypeEnum {
+        
+        /// <remarks/>
+        SYSTEM_GENERATED,
+        
+        /// <remarks/>
+        USER_DEFINED,
+        
+        /// <remarks/>
+        SCRA_DEFINED,
+        
+        /// <remarks/>
+        HIDDEN_AGENCY,
     }
     
     /// <remarks/>
@@ -24839,6 +25072,10 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType timeActivityExField;
         
+        private bool hoursInEmployeeTimeZoneField;
+        
+        private bool hoursInEmployeeTimeZoneFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// The timezone from where the time activity is
@@ -25273,6 +25510,34 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.timeActivityExField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// True if the start, end hours are already with company/employee time zone offset.
+        /// 
+        /// Couple of TimeActivity API integrations are already submitting start, end hours with right company/employee time zone offsets. Such integrations will pass this attribute as true to avoid company time zone offsets by TimeActivity API.
+        /// 
+        /// </summary>
+        public bool HoursInEmployeeTimeZone {
+            get {
+                return this.hoursInEmployeeTimeZoneField;
+            }
+            set {
+                this.hoursInEmployeeTimeZoneField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HoursInEmployeeTimeZoneSpecified {
+            get {
+                return this.hoursInEmployeeTimeZoneFieldSpecified;
+            }
+            set {
+                this.hoursInEmployeeTimeZoneFieldSpecified = value;
             }
         }
     }

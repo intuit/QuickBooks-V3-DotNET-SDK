@@ -81,7 +81,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public async Task<UserInfoResponse> GetAsync(string token, CancellationToken cancellationToken = default(CancellationToken))
         {
 
-           
+
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
 
             var request = new HttpRequestMessage(HttpMethod.Get, "");
@@ -101,50 +101,63 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             try
             {
                 response = await _client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                HttpResponseHeaders headers = response.Headers;
+                string intuit_tid = response.Headers.GetValues("intuit_tid").FirstOrDefault();
+
+
+                if (!response.IsSuccessStatusCode)
+                {
+
+                    string errorDetail = "";
+
+
+                    if (headers.WwwAuthenticate != null)
+                    {
+                        errorDetail = headers.WwwAuthenticate.ToString();
+                    }
+
+                    if (errorDetail != null && errorDetail != "")
+                    {
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+
+                        }
+                        return new UserInfoResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
+
+                    }
+                    else
+                    {
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+
+                        }
+                        return new UserInfoResponse(response.StatusCode, response.ReasonPhrase);
+                    }
+                }
+
+                var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                if (OAuth2Client.AdvancedLoggerEnabled != false)
+                {
+                    if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                        OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode);
+                    else
+                        OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+                }
+                return new UserInfoResponse(content);
             }
             catch (System.Exception ex)
             {
                 return new UserInfoResponse(ex);
             }
-
-            if (!response.IsSuccessStatusCode)
-            {
-              
-                string errorDetail = "";
-
-                HttpResponseHeaders headers = response.Headers;
-                if (headers.WwwAuthenticate != null)
-                {
-                    errorDetail = headers.WwwAuthenticate.ToString();
-                }
-
-                if (errorDetail != null && errorDetail !="")
-                {
-                    if (OAuth2Client.AdvancedLoggerEnabled != false)
-                    {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
-
-                    }
-                    return new UserInfoResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
-
-                }
-                else
-                {
-                    if (OAuth2Client.AdvancedLoggerEnabled != false)
-                    {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
-
-                    }
-                    return new UserInfoResponse(response.StatusCode, response.ReasonPhrase);
-                }
-            }
-
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            if (OAuth2Client.AdvancedLoggerEnabled != false)
-            {
-                OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
-            }
-            return new UserInfoResponse(content);
         }
     }
 }

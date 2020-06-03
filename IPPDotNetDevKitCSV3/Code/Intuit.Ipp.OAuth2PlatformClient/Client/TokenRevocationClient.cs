@@ -135,12 +135,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             try
             {
                 var response = await Client.PostAsync("", msgRequest.Content).ConfigureAwait(false);
+                HttpResponseHeaders headers = response.Headers;
+                string intuit_tid = response.Headers.GetValues("intuit_tid").FirstOrDefault();
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     if (OAuth2Client.AdvancedLoggerEnabled != false)
                     {
-                        OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Token Revoked successfully");
+                        if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Token Revoked successfully");
+                        else
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Token Revoked successfully");
                     }
                     return new TokenRevocationResponse();
                 }
@@ -149,7 +154,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     if (OAuth2Client.AdvancedLoggerEnabled != false)
                     {
-                        OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+                        if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode);
+                        else
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Response Body- " + content);
                     }
                     return new TokenRevocationResponse(content); //errorDetail can be added here if required.
                 }
@@ -157,7 +165,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 {
                     string errorDetail = "";
 
-                    HttpResponseHeaders headers = response.Headers;
+
                     if (headers.WwwAuthenticate != null)
                     {
                         errorDetail = headers.WwwAuthenticate.ToString();
@@ -167,7 +175,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     {
                         if (OAuth2Client.AdvancedLoggerEnabled != false)
                         {
-                            OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
                         }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
                     }
@@ -175,8 +186,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     {
                         if (OAuth2Client.AdvancedLoggerEnabled != false)
                         {
-                            OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
-
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
                         }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase);
                     }

@@ -13949,4 +13949,58 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TaxPayment">
+		<xs:annotation>
+			<xs:documentation>
+				Product: QBO
+				Description: Tax Payment/Refund made against filed taxReturn.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IntuitEntity">
+				<xs:sequence>
+					<xs:element name="PaymentDate" type="xs:date" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: QBO
+								Description: The tax payment date
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PaymentAccountRef" type="ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: QBO
+								Description: Account ID from which the payment was made (or refund was moved to)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PaymentAmount" type="xs:decimal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: QBO
+								Description: Specifies the tax payment amount paid towards a filed tax return.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Description" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: QBO
+								Description: Memo/Description added for this payment.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Refund" type="xs:boolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: QBO
+								Description: Indicate if this transaction is a refund. Returns false for the tax payment.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 </xs:schema>

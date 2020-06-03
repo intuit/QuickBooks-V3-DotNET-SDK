@@ -1870,6 +1870,7 @@
 			<xs:enumeration value="Tag"/>
 			<xs:enumeration value="TaxCode"/>
 			<xs:enumeration value="TaxClassification"/>
+			<xs:enumeration value="TaxPayment"/>
 			<xs:enumeration value="TaxRate"/>
 			<xs:enumeration value="TaxReturn"/>
 			<xs:enumeration value="Term"/>

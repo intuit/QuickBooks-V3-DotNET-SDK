@@ -128,7 +128,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             HttpResponseMessage response;
 
             var request = new HttpRequestMessage(HttpMethod.Post, Address);
-          
+
             request.Content = new FormUrlEncodedContent(form);
 
             if (AuthenticationStyle == AuthenticationStyle.OAuth2)
@@ -149,49 +149,63 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             try
             {
                 response = await Client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+
+                HttpResponseHeaders headers = response.Headers;
+                string intuit_tid = response.Headers.GetValues("intuit_tid").FirstOrDefault();
+
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
+                    if (OAuth2Client.AdvancedLoggerEnabled != false)
+                    {
+                        if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode);
+                        else
+                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Response Body- " + content);
+                    }
+                    return new TokenResponse(content);
+                }
+                else
+                {
+                    string errorDetail = "";
+
+
+
+
+                    if (headers.WwwAuthenticate != null)
+                    {
+                        errorDetail = headers.WwwAuthenticate.ToString();
+                    }
+
+                    if (errorDetail != null && errorDetail != "")
+                    {
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+
+                        }
+                        return new TokenResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
+                    }
+                    else
+                    {
+                        if (OAuth2Client.AdvancedLoggerEnabled != false)
+                        {
+                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                            else
+                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
+
+                        }
+                        return new TokenResponse(response.StatusCode, response.ReasonPhrase);
+                    }
+                }
             }
             catch (System.Exception ex)
             {
                 return new TokenResponse(ex);
-            }
-
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
-                if (OAuth2Client.AdvancedLoggerEnabled != false)
-                {
-                    OAuth2Client.AdvancedLogger.Log("Response Status Code- " + response.StatusCode + ", Response Body- " + content);
-                }
-                return new TokenResponse(content);
-            }
-            else
-            {
-                string errorDetail = "";
-
-                HttpResponseHeaders headers = response.Headers;
-                if (headers.WwwAuthenticate != null)
-                {
-                    errorDetail = headers.WwwAuthenticate.ToString();
-                }
-
-                if (errorDetail != null && errorDetail != "")
-                {
-                    if (OAuth2Client.AdvancedLoggerEnabled != false)
-                    {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
-
-                    }
-                    return new TokenResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
-                }
-                else
-                {
-                    if (OAuth2Client.AdvancedLoggerEnabled != false)
-                    {
-                        OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
-
-                    }
-                    return new TokenResponse(response.StatusCode, response.ReasonPhrase);
-                }
             }
         }
 
