@@ -38,7 +38,8 @@ New logging support added which includes support for reporting headers and multi
 Serilogger logs can be enabled for **OAuth2PlatformClient** using the following lines -
 
             static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
- 
+            //use this line to enable only intuit-tid based logs, no tokens/response will be logged
+            oauthClient.EnableAdvancedLoggerInfoMode = true;
             oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
             oauthClient.EnableSerilogRequestResponseLoggingForRollingFile = true;
