@@ -27,7 +27,7 @@ The QuickBooks Online .NET SDK provides a set of .NET class libraries that make 
 * Queries for accessing QuickBooks Reports.
 * Sparse Update to update writable properties specified in a request and leave the others unchanged.
 * Change data that enables you to retrieve a list of entities modified during specified time points.
-* Support for both OAuth1 and OAuth2
+* Supports OAuth2
 
 Note: 
 ->Oauth1 support has been removed from this SDK. Intuit.Ipp.Retry logic now have been moved to Intuit.Ipp.Core. So, if you see Retry not found issues while updating your code, just remove that Using Intuit.Ipp.Retry statement and add Using Intuit.Ipp.Core if not already present.
