@@ -37,7 +37,7 @@ Note:
 **Schema**
 * [Schema](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.XsdExtension/Schema) - Schema files for QBO V3 APIs are available under this folder.
 
-The code has been divided into 3 main categories-
+The code has been divided into following main categories-
 
 **Data projects**
 * [Intuit.Ipp.XsdExtension](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.XsdExtension) - This is an external tool whose exe is used to generate the different classes based on the input QBO V3 service schema. 
