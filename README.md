@@ -105,7 +105,7 @@ Serilogger logs can be enabled for **OAuth2PlatformClient** using the following 
             oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//Any drive logging location
             
             
-Serilogger logs can be enabled for **QBO Api calls** using the following lines -
+Serilogger logs can be enabled for **QBO API calls** using the following lines -
 
             ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
 
