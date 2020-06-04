@@ -82,9 +82,9 @@ The code has been divided into 3 main categories-
 * [Intuit.Ipp.Nupkg](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Nupkg)- This project has the configuration for version of package and all dependencies.After you do a build in Release mode, this project will generate the Nuget packages under the folder Code->artifacts->nupkg for the different .Net supported versions listed above. You can then upload the package to a Nuget org.
 
 
-**Understanding some important exception**
-* **IdsException** - This is the base execption thrown when other sub exceptions cannot catch it. Make sure to enable logs to get details for the internal error when you see this exception.
-* **ValidationException** - These are valid business validation rules based error and should be corrected in the code.
+**Understanding some important exceptions thrown by the SDK**
+* **IdsException** - This is the base execption thrown when other sub exceptions cannot catch it. Make sure to enable logs to get details for the internal error when you see this exception. These may be related to service downtime.
+* **ValidationException** - These are valid business validation rules based error and should be corrected in the code. These are all API related exceptions,
 * **InvalidTokenException** - This exception is thrown when your OAuth2 token has expired or is invalid. You will need to regenerate a new token by doing OAuth2 again or renew you tokens if they are still valid.
 
 
