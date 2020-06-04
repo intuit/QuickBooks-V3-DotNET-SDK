@@ -75,10 +75,11 @@ The code has been divided into 3 main categories-
 * [Intuit.Ipp.Security](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Security) - Generates the Authorization header for the API calls 
 
 **Test Projects**
-All unit test projects are available under the [Code](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code) folder. You can identify them if they have a .Test suffix in their name.
+* Unit Tests - All unit test projects are available under the [Code](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code) folder. You can identify them if they have a .Test suffix in their name.
+* Integration Tests -  All integration tests are available under [Intuit.Ipp.Test](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test)
 
 **Nuget Package Creation Project**
-* [Intuit.Ipp.Nupkg](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Nupkg)- This project has the configuration for version of package and all dependencies.After you do a build in Release mode, this project will generate the Nuget packages for the different .Net supported versions above under the folder. You can then upload the package to a Nuget org.
+* [Intuit.Ipp.Nupkg](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Nupkg)- This project has the configuration for version of package and all dependencies.After you do a build in Release mode, this project will generate the Nuget packages under the folder Code->artifacts->nupkg for the different .Net supported versions listed above. You can then upload the package to a Nuget org.
 
 
 ## Enabling logs for the SDK
