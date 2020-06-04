@@ -144,19 +144,7 @@ Refer to the following steps to generate all the keys required to run tests usin
  * NOTE: For sandbox testing, you need to use dev app keys and sandbox base URL. 
 For live/prod QuickBooks company testing, use prod app keys and prod base URL after doing a private publish as mentioned below. 
 Go to your app->Prod tab-> enter all URLs and save. Then get the prod keys from Keys tab under Prod tab of the app. 
-Please refer- 
-  * [Blog 1]() 
-  * [Blog 2](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes) 
 
-
-* [Unit Tests]() 
-  
-  * Add all app keys in the [Appsettings.json] and run tests
-    
-* [Integration Tests]()
- 
-  
-  * Add All app keys in the [Appsettings.json]() and run tests
 
 
 ## Contribute:
