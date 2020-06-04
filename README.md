@@ -32,7 +32,7 @@ The QuickBooks Online .NET SDK provides a set of .NET class libraries that make 
 Note: 
 ->Oauth1 support has been removed from this SDK. Intuit.Ipp.Retry logic now have been moved to Intuit.Ipp.Core. So, if you see Retry not found issues while updating your code, just remove that Using Intuit.Ipp.Retry statement and add Using Intuit.Ipp.Core if not already present.
 
-Understanding the .Net SDK code structure:
+**Understanding the .Net SDK code structure:**
 
 **Schema**
 * [Schema](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.XsdExtension/Schema) - Schema files for QBO V3 APIs are available under this folder.
@@ -82,12 +82,21 @@ The code has been divided into 3 main categories-
 * [Intuit.Ipp.Nupkg](https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Nupkg)- This project has the configuration for version of package and all dependencies.After you do a build in Release mode, this project will generate the Nuget packages under the folder Code->artifacts->nupkg for the different .Net supported versions listed above. You can then upload the package to a Nuget org.
 
 
+**Understanding some important exception**
+* **IdsException** - This is the base execption thrown when other sub exceptions cannot catch it. Make sure to enable logs to get details for the internal error when you see this exception.
+* **ValidationException** - These are valid business validation rules based error and should be corrected in the code.
+* **InvalidTokenException** - This exception is thrown when your OAuth2 token has expired or is invalid. You will need to regenerate a new token by doing OAuth2 again or renew you tokens if they are still valid.
+
+
 ## Enabling logs for the SDK
-New logging support added which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
+Logs help you in easliy identifying detailed issues with your payload, get more info in the exception details for fixing them.
+* New logging support was added to the SDK which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
 Serilogger logs can be enabled for **OAuth2PlatformClient** using the following lines -
 
             static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
-            //Use this line to enable only intuit-tid based logs, no tokens/response will be logged. If set to false, all detailed logs will be available
+            //Use this line to enable only intuit-tid based logs, no tokens/response will be logged. 
+            //If set to false, all detailed logs will be available for response
+            //If set to true, only intuit-tid response headers will be available
             oauthClient.EnableAdvancedLoggerInfoMode = true;
             oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
@@ -111,7 +120,7 @@ Old file based logs can be enabled by using the following lines-
             context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
             context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log"; //Any drive logging location
             
-Fiddler logs are really useful too. You can enable them by following the steps below-
+* **Fiddler logs are really useful too. You can enable them by following the steps below**
 
 Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
 When you download Fiddler, open it, go to Tools > Fiddler Option > Enable (Tick Mark) Capture HTTPS connects > Enable Decrypt Https traffic. That’s it. No other setting is required. The .NET localhost is by default captured in Fiddler, so after you have enabled https traffic in Fiddler just run your code. (Fiddler should be open.) You will see requests and responses logged in Fiddler.
