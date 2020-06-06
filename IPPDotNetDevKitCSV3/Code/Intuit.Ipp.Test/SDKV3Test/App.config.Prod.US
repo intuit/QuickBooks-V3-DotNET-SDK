@@ -41,19 +41,19 @@
 
     <!--US Company - MyCo Production LLC -->
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBO" value="lvprdh5yQS6HVPdhQbphNjkumRA0s5qq8jZPHAfHy8wvgyDU"/>
+    <add key="accessTokenQBO" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="T6PkfOMsy1Y44PH7YY6quWpCBt71I9v6xwBVuRDD"/>
+    <add key="accessTokenSecretQBO" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="qyprdc4hZzJUxDcoIbtMl6aKt3SiVF"/>
+    <add key="consumerKeyQBO" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="8r0Y8gW2ICu2h2peaTRv46POktPCguf0pAP9bXMY"/>
+    <add key="consumerSecretQBO" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
-    <add key="realmIdIAQBO" value="1208374680"/>
+    <add key="realmIdIAQBO" value=""/>
 
   </appSettings>
 </configuration>

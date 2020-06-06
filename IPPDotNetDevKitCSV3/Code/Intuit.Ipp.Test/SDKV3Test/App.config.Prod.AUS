@@ -38,19 +38,19 @@
 
     <!--AUS Company -->
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBO" value="qyprd3szo2uzhmosF2QbzduF9SYWcV963yAjkDbVGnIa4MRI"/>
+    <add key="accessTokenQBO" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="wdvypSrSzxTQVFxNrs9m8ElcU4OIcI9N7y5XxrKa"/>
+    <add key="accessTokenSecretQBO" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="qyprddrkWeF9nPbheC77IVdYFQrsbt"/>
+    <add key="consumerKeyQBO" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="6j3eE6lGvfuB8rLmpTmYRz0lmUloYtUXdFdHDLmX"/>
+    <add key="consumerSecretQBO" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
-    <add key="realmIdIAQBO" value="1024008555"/>
+    <add key="realmIdIAQBO" value=""/>
 
     <!--Specify whether it is a global realm-->
     <add key="global" value="true" />
