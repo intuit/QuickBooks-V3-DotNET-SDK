@@ -155,8 +155,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             
-            public const string E2EProdDiscoveryEndpoint                    = ".well-known/openid_configuration";
-            public const string E2ESandboxDiscoveryEndpoint                 = ".well-known/openid_sandbox_configuration";
+          
             public const string ProdAuthority                               = "https://developer.api.intuit.com/";
  
 
