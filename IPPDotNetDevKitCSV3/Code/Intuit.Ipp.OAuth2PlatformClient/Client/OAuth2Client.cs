@@ -240,7 +240,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 }
                 catch (System.Exception ex)
                 {
-                    ApplicationEnvironment = AppEnvironment.Default;
+                    ApplicationEnvironment = AppEnvironment.Custom;
                     DiscoveryUrl = environment;
                 }
 
@@ -254,6 +254,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
 
+
         /// <summary>
         /// Gets Discovery Doc
         /// </summary>
@@ -264,7 +265,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             DiscoveryClient discoveryClient;
-            if (ApplicationEnvironment == AppEnvironment.Default)
+            if (ApplicationEnvironment == AppEnvironment.Default || ApplicationEnvironment == AppEnvironment.Custom)
             {
                 discoveryClient = new DiscoveryClient(DiscoveryUrl);
             }
@@ -322,6 +323,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
+            if(string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -485,6 +491,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Token Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -509,6 +520,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. RefreshToken Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -531,6 +547,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Revoke Token Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -557,6 +578,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. User Info Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)

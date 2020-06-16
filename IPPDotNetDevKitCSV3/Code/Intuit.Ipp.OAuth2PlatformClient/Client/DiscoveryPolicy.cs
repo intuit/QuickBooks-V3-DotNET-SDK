@@ -43,17 +43,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 authority = OidcConstants.Discovery.IssuerUrl;
             }
-            else if (appEnvironment == AppEnvironment.E2EProduction)
-            {
-                authority = OidcConstants.Discovery.IssuerUrlE2E;
-            }
-            else if (appEnvironment == AppEnvironment.E2ESandbox)
-            {
-                authority = OidcConstants.Discovery.IssuerUrlE2E;
-            }
+            //else if (appEnvironment == AppEnvironment.E2EProduction)
+            //{
+            //    authority = OidcConstants.Discovery.IssuerUrlE2E;
+            //}
+            //else if (appEnvironment == AppEnvironment.E2ESandbox)
+            //{
+            //    authority = OidcConstants.Discovery.IssuerUrlE2E;
+            //}
             else
             {
-                authority = OidcConstants.Discovery.IssuerUrl;
+                authority = "";//ignore authority validation for all other env
             }
             Authority = authority;
         }
