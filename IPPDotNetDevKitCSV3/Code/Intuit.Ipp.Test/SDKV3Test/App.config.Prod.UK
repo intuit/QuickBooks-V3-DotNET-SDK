@@ -34,7 +34,7 @@
   <appSettings>
 
     <add key="OAUTHACCESSTOKENURL" value="https://oauth.intuit.com/oauth/v1/get_access_token_by_intuit_pseudonym"/>
-    <add key="ApplicationToken" value="d94s3zbeng825ckytirubtudes5"/>
+    <add key="ApplicationToken" value=""/>
     <add key="CertificateName" value="idp.pfx"/>
     <add key="InvalidCertificateName" value="ACS.ServiceManagementWrapper.pfx"/>
     <add key="WrongCertificateName" value="WrongCertificateName.pfx"/>
@@ -52,19 +52,19 @@
 
     <!--UK Company -->
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBO" value="lvprdCkYAxJQsr73K9bAAl3Szerv5vaFeFHj30aFZmPzFQbs"/>
+    <add key="accessTokenQBO" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="SNWUQjtyPQyVfTeCu86pk0HDkAsBH5z85EcxoF4R"/>
+    <add key="accessTokenSecretQBO" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="qyprddrkWeF9nPbheC77IVdYFQrsbt"/>
+    <add key="consumerKeyQBO" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="6j3eE6lGvfuB8rLmpTmYRz0lmUloYtUXdFdHDLmX"/>
+    <add key="consumerSecretQBO" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
-    <add key="realmIdIAQBO" value="797266115"/>
+    <add key="realmIdIAQBO" value=""/>
 
 
 
@@ -75,35 +75,35 @@
     
     <!--UK Company -->
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBOQuery" value="lvprdCkYAxJQsr73K9bAAl3Szerv5vaFeFHj30aFZmPzFQbs" />
+    <add key="accessTokenQBOQuery" value="" />
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBOQuery" value="SNWUQjtyPQyVfTeCu86pk0HDkAsBH5z85EcxoF4R" />
+    <add key="accessTokenSecretQBOQuery" value="" />
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBOQuery" value="qyprddrkWeF9nPbheC77IVdYFQrsbt"/>
+    <add key="consumerKeyQBOQuery" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBOQuery" value="6j3eE6lGvfuB8rLmpTmYRz0lmUloYtUXdFdHDLmX"/>
+    <add key="consumerSecretQBOQuery" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
-    <add key="realmIdIAQBOQuery" value="797266115"/>
+    <add key="realmIdIAQBOQuery" value=""/>
 
     <!--Specify AppToken Value for QBO-->
-    <add key="appTokenQuery" value="72f3ada0b2209b4b99ba424ba404db6456ae"/>
+    <add key="appTokenQuery" value=""/>
 
     <!--Specify AppDBId Value for QBO-->
-    <add key="appDBIdQuery" value="bg7rn435q"/>
+    <add key="appDBIdQuery" value=""/>
 
     <add key="TargetUrl" value="http://www.intuit.com"/>
 
     <!--Specify UserName -->
-    <add key ="UserName" value="chinmayeep@aditi.com"/>
+    <add key ="UserName" value=""/>
 
     <!--Specify Password -->
-    <add key ="Password" value="Aditi01*"/>
+    <add key ="Password" value=""/>
 
-    <add key="EmailDomain" value="@aditi.com"/>
+    <add key="EmailDomain" value=""/>
 
     <add key="InvitationText" value="Invitation sent from Test case"/>
 

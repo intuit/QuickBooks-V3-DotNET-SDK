@@ -53,45 +53,45 @@
     <!-- ******************************************************************************************************-->
 
     <!--Specify AccessToken Value for QBD-->
-    <add key="accessTokenQBD" value="qye2edcx1FekeIQuevQllMHdD2vH9EtDm2dRlCWRTByM77bg"/>
+    <add key="accessTokenQBD" value=""/>
 
     <!--Specify accessTokenSecret Value for QBD-->
-    <add key="accessTokenSecretQBD" value="Okcb7hKZFkLZKrvksWNyr6L7U0JPx2x9zYoYQL7W"/>
+    <add key="accessTokenSecretQBD" value=""/>
 
     <!--Specify consumerKey Value for QBD-->
-    <add key="consumerKeyQBD" value="qye2eDHCAgJvkMX8k38i9KlbFUshIT"/>
+    <add key="consumerKeyQBD" value=""/>
 
     <!--Specify consumerSecret Value for QBD-->
-    <add key="consumerSecretQBD" value="bToc5c9k7nzXot17i3VyYvKTgoGelpcMhyVKbYv6"/>
+    <add key="consumerSecretQBD" value=""/>
 
     <!--Specify realmIdIA Value for QBD-->
-    <add key="realmIdIAQBD" value="253793687"/>
+    <add key="realmIdIAQBD" value=""/>
 
      <!--UK Company--> 
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBO" value="qye2eAsNu6h2PntMbuKg14zQP8IICzVEapHef6OIBmJdLwY4"/>
+    <add key="accessTokenQBO" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="mqpMNhDRVB1XUaYPILBeG4slgLlHJbhFvjEOLCFW"/>
+    <add key="accessTokenSecretQBO" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="qye2eU2Qzda8fqAiBhYenJQz7FfRdJ"/>
+    <add key="consumerKeyQBO" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="KcqszGbJT63SYl3OWgdtKXlLO9WGo8iBGIJ5f1qj"/>
+    <add key="consumerSecretQBO" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
     <add key="realmIdIAQBO" value="1043882911"/>
 
 
     <!--Specify AppToken Value for QBD-->
-    <add key="appToken" value="ca63d33fb1a78b44adb9dbabea04b87e932f"/>
+    <add key="appToken" value=""/>
 
     <!--Specify AppDBId Value for QBD-->
     <add key="appDbId" value="b7nkdghwk3"/>
 
     <!--Specify UserName Password Ticket for QBO-->
-    <add key="ticket" value="6_bhgg99qcg_by3yjj_b_cymnyf57jxeb4de7pnkhddz3sv3_ddatdru42rfssa38cv7irsdav73c3fpx4erd7dswrym823ivp2gb_bhgfy3cug"/>
+    <add key="ticket" value=""/>
 
     <!--Specify Cookie-->
     <add key="cookie" value=""/>
@@ -99,33 +99,33 @@
    
      <!--Query Related-->
     <!--Specify AccessToken Value for QBD-->
-    <add key="accessTokenQBDQuery" value="qye2eKug7q8irMYQEHVnrcyFABLYwElfRpeHFckvKWgdK1GW"/>
+    <add key="accessTokenQBDQuery" value=""/>
 
     <!--Specify accessTokenSecret Value for QBD-->
-    <add key="accessTokenSecretQBDQuery" value="FabL69OV4p2pUjRNAb5Bhyi86oWzccbAuUhZc88u"/>
+    <add key="accessTokenSecretQBDQuery" value=""/>
 
     <!--Specify consumerKey Value for QBD-->
-    <add key="consumerKeyQBDQuery" value="qye2eDHCAgJvkMX8k38i9KlbFUshIT"/>
+    <add key="consumerKeyQBDQuery" value=""/>
 
     <!--Specify consumerSecret Value for QBD-->
-    <add key="consumerSecretQBDQuery" value="bToc5c9k7nzXot17i3VyYvKTgoGelpcMhyVKbYv6"/>
+    <add key="consumerSecretQBDQuery" value=""/>
 
     <!--Specify realmIdIA Value for QBD-->
-    <add key="realmIdIAQBDQuery" value="253793687"/>
+    <add key="realmIdIAQBDQuery" value=""/>
 
 
      <!--US Company--> 
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBOQuery" value="qye2eVUc3uZYBaHcDf3QL1VHNmHtYa59mnEvmG53WKRZ9wpw"/>
+    <add key="accessTokenQBOQuery" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBOQuery" value="QRvM6sEI2GSQalrOFlfYj5mvwrdH1oLSHPCEclNQ"/>
+    <add key="accessTokenSecretQBOQuery" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBOQuery" value="qye2eU2Qzda8fqAiBhYenJQz7FfRdJ"/>
+    <add key="consumerKeyQBOQuery" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBOQuery" value="KcqszGbJT63SYl3OWgdtKXlLO9WGo8iBGIJ5f1qj"/>
+    <add key="consumerSecretQBOQuery" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
     <add key="realmIdIAQBOQuery" value="1012695574"/>

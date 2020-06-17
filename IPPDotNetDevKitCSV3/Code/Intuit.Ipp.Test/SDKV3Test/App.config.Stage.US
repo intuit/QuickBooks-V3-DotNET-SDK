@@ -56,16 +56,16 @@
 
      <!--US Company--> 
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBO" value="qye2eVUc3uZYBaHcDf3QL1VHNmHtYa59mnEvmG53WKRZ9wpw"/>
+    <add key="accessTokenQBO" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBO" value="QRvM6sEI2GSQalrOFlfYj5mvwrdH1oLSHPCEclNQ"/>
+    <add key="accessTokenSecretQBO" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBO" value="qye2eU2Qzda8fqAiBhYenJQz7FfRdJ"/>
+    <add key="consumerKeyQBO" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBO" value="KcqszGbJT63SYl3OWgdtKXlLO9WGo8iBGIJ5f1qj"/>
+    <add key="consumerSecretQBO" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
     <add key="realmIdIAQBO" value="1012695574"/>
@@ -75,16 +75,16 @@
 
      <!--US Company--> 
     <!--Specify AccessToken Value for QBO-->
-    <add key="accessTokenQBOQuery" value="qye2eVUc3uZYBaHcDf3QL1VHNmHtYa59mnEvmG53WKRZ9wpw"/>
+    <add key="accessTokenQBOQuery" value=""/>
 
     <!--Specify accessTokenSecret Value for QBO-->
-    <add key="accessTokenSecretQBOQuery" value="QRvM6sEI2GSQalrOFlfYj5mvwrdH1oLSHPCEclNQ"/>
+    <add key="accessTokenSecretQBOQuery" value=""/>
 
     <!--Specify consumerKey Value for QBO-->
-    <add key="consumerKeyQBOQuery" value="qye2eU2Qzda8fqAiBhYenJQz7FfRdJ"/>
+    <add key="consumerKeyQBOQuery" value=""/>
 
     <!--Specify consumerSecret Value for QBO-->
-    <add key="consumerSecretQBOQuery" value="KcqszGbJT63SYl3OWgdtKXlLO9WGo8iBGIJ5f1qj"/>
+    <add key="consumerSecretQBOQuery" value=""/>
 
     <!--Specify realmIdIA Value for QBO-->
     <add key="realmIdIAQBOQuery" value="1012695574"/>
