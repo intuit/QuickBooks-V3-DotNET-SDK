@@ -39,7 +39,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public void SetAuthority(AppEnvironment appEnvironment)
         {
             string authority = "";
-            if (appEnvironment == AppEnvironment.Production)
+            if (appEnvironment == AppEnvironment.Production|| appEnvironment == AppEnvironment.Sandbox)
             {
                 authority = OidcConstants.Discovery.IssuerUrl;
             }

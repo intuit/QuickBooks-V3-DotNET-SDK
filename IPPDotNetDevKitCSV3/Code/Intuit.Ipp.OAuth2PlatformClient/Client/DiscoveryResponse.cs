@@ -132,7 +132,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (policy.ValidateIssuerName)
             {
                 if (string.IsNullOrWhiteSpace(Issuer)) return "Issuer name is missing";
-                if (Issuer == OidcConstants.Discovery.IssuerUrl)//do this check only for prod url as partners may test with e2e
+                if (Issuer == OidcConstants.Discovery.IssuerUrl)//do this check only for prod/sandbox url as partners may test with e2e
                 {
                     var isValid = ValidateIssuerName(Issuer.RemoveTrailingSlash(), policy.Authority.RemoveTrailingSlash());
                     if (!isValid) return "Issuer name does not match authority: " + Issuer;
