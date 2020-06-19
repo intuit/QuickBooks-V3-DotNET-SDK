@@ -493,7 +493,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                throw new System.Exception("Discovery Call failed. Token Endpoint is empty.");
+                AdvancedLogger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. BearerToken Endpoint is empty.");
             }
 
             AdvancedLoggerEnabled = true;
@@ -522,7 +523,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                throw new System.Exception("Discovery Call failed. RefreshToken Endpoint is empty.");
+                AdvancedLogger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RefreshToken Endpoint is empty.");
             }
 
             AdvancedLoggerEnabled = true;
@@ -549,7 +551,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
             {
-                throw new System.Exception("Discovery Call failed. Revoke Token Endpoint is empty.");
+                AdvancedLogger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
+                return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RevokeToken Endpoint is empty.");
             }
 
             AdvancedLoggerEnabled = true;
@@ -580,7 +583,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
             {
-                throw new System.Exception("Discovery Call failed. User Info Endpoint is empty.");
+                AdvancedLogger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
+                return new UserInfoResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. UserInfo Endpoint is empty.");
             }
 
             AdvancedLoggerEnabled = true;
