@@ -165,13 +165,19 @@ namespace Intuit.Ipp.Core.Rest
 
                         // ServiceUnavailable: 503
                         case HttpStatusCode.ServiceUnavailable:
+                            idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, new EndpointNotFoundException("Call to the endpoint returned a 503- Service Unavailable response"));
+                            break;
                         // InternalServerError: 500
                         case HttpStatusCode.InternalServerError:
+                            idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, new EndpointNotFoundException("Call to the endpoint returned a 500 - Internal Server Error response"));
+                            break;
                         // Forbidden: 403
                         case HttpStatusCode.Forbidden:
+                            idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, new EndpointNotFoundException("Call to the endpoint returned a 403 - Forbidden response"));
+                            break;
                         // NotFound: 404
                         case HttpStatusCode.NotFound:
-                            idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, new EndpointNotFoundException());
+                            idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, new EndpointNotFoundException("Call to the endpoint returned a 404 - Endpoint not found response"));
                             break;
                         // Throttle Exceeded: 429
                        case (HttpStatusCode)429:
