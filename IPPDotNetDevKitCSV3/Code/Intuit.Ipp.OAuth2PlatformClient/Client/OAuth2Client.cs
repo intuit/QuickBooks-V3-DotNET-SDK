@@ -250,6 +250,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             DiscoveryDoc = GetDiscoveryDoc();
+            
 
         }
 
@@ -262,19 +263,69 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public DiscoveryResponse GetDiscoveryDoc()
         {
 
-
-
-            DiscoveryClient discoveryClient;
-            if (ApplicationEnvironment == AppEnvironment.Default || ApplicationEnvironment == AppEnvironment.Custom)
+                DiscoveryClient discoveryClient;
+                if (ApplicationEnvironment == AppEnvironment.Default || ApplicationEnvironment == AppEnvironment.Custom)
+                {
+                    discoveryClient = new DiscoveryClient(DiscoveryUrl);
+                }
+                else
+                {
+                    discoveryClient = new DiscoveryClient(ApplicationEnvironment);
+                }
+                DiscoveryResponse discoveryResponse =  discoveryClient.Get();
+             if(discoveryResponse.IsError==true)
             {
-                discoveryClient = new DiscoveryClient(DiscoveryUrl);
+                throw new System.Exception(discoveryResponse.Error);
             }
-            else
-            {
-                discoveryClient = new DiscoveryClient(ApplicationEnvironment);
-            }
-            return discoveryClient.Get();
+
+            return discoveryResponse;
         }
+
+
+        /// <summary>
+        /// Get Authorization Url
+        /// </summary>
+        /// <param name="scopes"></param>
+        /// <param name="CSRFToken"></param>
+        /// <returns></returns>
+        public string GetAuthorizationURL(List<string> scopes, string CSRFToken)
+        {
+            if (string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+            string scopeValue = "";
+            for (var index = 0; index < scopes.Count; index++)
+            {
+                scopeValue += scopes[index] + " ";
+            }
+            scopeValue = scopeValue.TrimEnd();
+            this.CSRFToken = CSRFToken;
+
+            //builiding authorization request
+            string authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
+                DiscoveryDoc.AuthorizeEndpoint,
+                ClientID,
+                Uri.EscapeDataString(scopeValue),
+                Uri.EscapeDataString(RedirectURI),
+                CSRFToken);
+
+            //Logging authorization request
+            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+
+            return authorizationRequest;
+        }
+
 
         /// <summary>
         /// Get Authorization Url
@@ -284,6 +335,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
