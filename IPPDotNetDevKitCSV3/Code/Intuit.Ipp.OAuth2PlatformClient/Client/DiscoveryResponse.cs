@@ -132,9 +132,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (policy.ValidateIssuerName)
             {
                 if (string.IsNullOrWhiteSpace(Issuer)) return "Issuer name is missing";
-
-                var isValid = ValidateIssuerName(Issuer.RemoveTrailingSlash(), policy.Authority.RemoveTrailingSlash());
-                if (!isValid) return "Issuer name does not match authority: " + Issuer;
+                if (Issuer == OidcConstants.Discovery.IssuerUrl)//do this check only for prod/sandbox url as partners may test with e2e
+                {
+                    var isValid = ValidateIssuerName(Issuer.RemoveTrailingSlash(), policy.Authority.RemoveTrailingSlash());
+                    if (!isValid) return "Issuer name does not match authority: " + Issuer;
+                }
             }
 
             var error = ValidateEndpoints(Json, policy);
@@ -162,7 +164,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="json">json</param>
         /// <param name="policy">policy</param>
         /// <returns>bool</returns>
-        public string ValidateEndpoints(JObject json, DiscoveryPolicy policy)
+        public string ValidateEndpoints(JObject json, DiscoveryPolicy policy)//policy for later use
         {
             //var authorityHost = new Uri(policy.Authority).Authority;
 

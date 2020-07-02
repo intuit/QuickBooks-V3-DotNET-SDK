@@ -126,23 +126,25 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 
 
             }
-            else if (appEnvironment == AppEnvironment.E2EProduction)
-            {
-                discoveryUrl = OidcConstants.Discovery.E2EProdDiscoveryEndpoint;
-                discoveryAuthority = OidcConstants.Discovery.E2EAuthority; 
-            }
-            else if (appEnvironment == AppEnvironment.E2ESandbox)
-            {
-                discoveryUrl = OidcConstants.Discovery.E2ESandboxDiscoveryEndpoint;
-                discoveryAuthority = OidcConstants.Discovery.E2EAuthority;
-            }
-            else
+          
+            //else if (appEnvironment == AppEnvironment.E2EProduction)
+            //{
+            //    discoveryUrl = OidcConstants.Discovery.E2EProdDiscoveryEndpoint;
+            //    discoveryAuthority = OidcConstants.Discovery.E2EAuthority; 
+            //}
+            //else if (appEnvironment == AppEnvironment.E2ESandbox)
+            //{
+            //    discoveryUrl = OidcConstants.Discovery.E2ESandboxDiscoveryEndpoint;
+            //    discoveryAuthority = OidcConstants.Discovery.E2EAuthority;
+            //}
+            else //everything else defaults to sandbox env
             {
                 discoveryUrl = OidcConstants.Discovery.SandboxDiscoveryEndpoint;
                 discoveryAuthority = OidcConstants.Discovery.ProdAuthority;
             }
+          
 
-            url = discoveryAuthority + discoveryUrl;
+                url = discoveryAuthority + discoveryUrl;
             Url = url;
             _client = new HttpClient(handler);
         }

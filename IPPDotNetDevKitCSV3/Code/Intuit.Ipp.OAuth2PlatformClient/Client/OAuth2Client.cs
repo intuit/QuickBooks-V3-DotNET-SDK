@@ -240,7 +240,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 }
                 catch (System.Exception ex)
                 {
-                    ApplicationEnvironment = AppEnvironment.Default;
+                    ApplicationEnvironment = AppEnvironment.Custom;
                     DiscoveryUrl = environment;
                 }
 
@@ -250,8 +250,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             DiscoveryDoc = GetDiscoveryDoc();
+            
 
         }
+
 
 
         /// <summary>
@@ -261,19 +263,69 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public DiscoveryResponse GetDiscoveryDoc()
         {
 
-
-
-            DiscoveryClient discoveryClient;
-            if (ApplicationEnvironment == AppEnvironment.Default)
+                DiscoveryClient discoveryClient;
+                if (ApplicationEnvironment == AppEnvironment.Default || ApplicationEnvironment == AppEnvironment.Custom)
+                {
+                    discoveryClient = new DiscoveryClient(DiscoveryUrl);
+                }
+                else
+                {
+                    discoveryClient = new DiscoveryClient(ApplicationEnvironment);
+                }
+                DiscoveryResponse discoveryResponse =  discoveryClient.Get();
+             if(discoveryResponse.IsError==true)
             {
-                discoveryClient = new DiscoveryClient(DiscoveryUrl);
+                throw new System.Exception(discoveryResponse.Error);
             }
-            else
-            {
-                discoveryClient = new DiscoveryClient(ApplicationEnvironment);
-            }
-            return discoveryClient.Get();
+
+            return discoveryResponse;
         }
+
+
+        /// <summary>
+        /// Get Authorization Url
+        /// </summary>
+        /// <param name="scopes"></param>
+        /// <param name="CSRFToken"></param>
+        /// <returns></returns>
+        public string GetAuthorizationURL(List<string> scopes, string CSRFToken)
+        {
+            if (string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+            string scopeValue = "";
+            for (var index = 0; index < scopes.Count; index++)
+            {
+                scopeValue += scopes[index] + " ";
+            }
+            scopeValue = scopeValue.TrimEnd();
+            this.CSRFToken = CSRFToken;
+
+            //builiding authorization request
+            string authorizationRequest = string.Format("{0}?client_id={1}&response_type=code&scope={2}&redirect_uri={3}&state={4}",
+                DiscoveryDoc.AuthorizeEndpoint,
+                ClientID,
+                Uri.EscapeDataString(scopeValue),
+                Uri.EscapeDataString(RedirectURI),
+                CSRFToken);
+
+            //Logging authorization request
+            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+
+            return authorizationRequest;
+        }
+
 
         /// <summary>
         /// Get Authorization Url
@@ -283,6 +335,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes, string CSRFToken)
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -322,6 +378,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public string GetAuthorizationURL(List<OidcScopes> scopes)
         {
+            if(string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
+            {
+                throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -485,6 +546,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
+            {
+                AdvancedLogger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. BearerToken Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -509,6 +576,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
+            {
+                AdvancedLogger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RefreshToken Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -531,6 +604,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
+            {
+                AdvancedLogger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
+                return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RevokeToken Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
@@ -557,6 +636,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
+            {
+                AdvancedLogger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
+                return new UserInfoResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. UserInfo Endpoint is empty.");
+            }
+
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
