@@ -102,13 +102,24 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 response = await _client.SendAsync(request, cancellationToken).ConfigureAwait(false);
                 HttpResponseHeaders headers = response.Headers;
-                string intuit_tid = response.Headers.GetValues("intuit_tid").FirstOrDefault();
+                string intuit_tid;
+                IEnumerable<string> values;
+                if (headers.TryGetValues("intuit_tid", out values))
+                {
+                    intuit_tid = values.First();
+                }
+                else
+                {
+                    intuit_tid = "None";
+                }
+
+                string errorDetail = "";
 
 
                 if (!response.IsSuccessStatusCode)
                 {
 
-                    string errorDetail = "";
+                   
 
 
                     if (headers.WwwAuthenticate != null)

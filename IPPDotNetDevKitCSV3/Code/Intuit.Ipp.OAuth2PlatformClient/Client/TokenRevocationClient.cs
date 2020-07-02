@@ -136,10 +136,21 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 var response = await Client.PostAsync("", msgRequest.Content).ConfigureAwait(false);
                 HttpResponseHeaders headers = response.Headers;
-                string intuit_tid = response.Headers.GetValues("intuit_tid").FirstOrDefault();
 
+              
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
+                    string intuit_tid;
+                      IEnumerable<string> values;
+                    if (headers.TryGetValues("intuit_tid", out values))
+                    {
+                        intuit_tid = values.First();
+                    }
+                    else
+                    {
+                        intuit_tid = "None";
+                    }
+
                     if (OAuth2Client.AdvancedLoggerEnabled != false)
                     {
                         if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
@@ -151,6 +162,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 }
                 else if (response.StatusCode == HttpStatusCode.BadRequest)
                 {
+                    string intuit_tid;
+                    IEnumerable<string> values;
+                    if (headers.TryGetValues("intuit_tid", out values))
+                    {
+                        intuit_tid = values.First();
+                    }
+                    else
+                    {
+                        intuit_tid = "None";
+                    }
+
                     var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     if (OAuth2Client.AdvancedLoggerEnabled != false)
                     {
@@ -176,9 +198,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         if (OAuth2Client.AdvancedLoggerEnabled != false)
                         {
                             if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
-                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode);
                             else
-                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
                         }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
                     }
@@ -187,9 +209,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         if (OAuth2Client.AdvancedLoggerEnabled != false)
                         {
                             if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
-                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode);
+                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode);
                             else
-                                OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
+                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
                         }
                         return new TokenRevocationResponse(response.StatusCode, response.ReasonPhrase);
                     }
