@@ -4834,6 +4834,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaxService))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncActivity))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Status))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RecurringTransaction))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VendorType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerType))]
@@ -8078,6 +8079,10 @@ namespace Intuit.Ipp.Data {
         
         private TxnApprovalInfo txnApprovalInfoField;
         
+        private ReferenceType recurDataRefField;
+        
+        private RecurringInfo recurringInfoField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -8447,6 +8452,40 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.txnApprovalInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Reference to the
+        /// RecurTemplate which was used to create the Transaction
+        /// InputType: Read
+        /// 
+        /// </summary>
+        public ReferenceType RecurDataRef {
+            get {
+                return this.recurDataRefField;
+            }
+            set {
+                this.recurDataRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Recurring Schedule information for the Transaction
+        /// 
+        /// </summary>
+        public RecurringInfo RecurringInfo {
+            get {
+                return this.recurringInfoField;
+            }
+            set {
+                this.recurringInfoField = value;
             }
         }
     }
@@ -11872,6 +11911,528 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Description: Describes the Recurring Schedules for Transactions
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class RecurringInfo {
+        
+        private string nameField;
+        
+        private string recurTypeField;
+        
+        private bool activeField;
+        
+        private bool activeFieldSpecified;
+        
+        private RecurringScheduleInfo scheduleInfoField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The name of the Recurring Schedule Template.
+        /// 
+        /// </summary>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Recur Type which can be Automated, Reminded, UnScheduled or Manual.
+        /// 
+        /// </summary>
+        public string RecurType {
+            get {
+                return this.recurTypeField;
+            }
+            set {
+                this.recurTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicates whether the Recurring Schedule is enabled.
+        /// 
+        /// </summary>
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ActiveSpecified {
+            get {
+                return this.activeFieldSpecified;
+            }
+            set {
+                this.activeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Scheduling Information.
+        /// 
+        /// </summary>
+        public RecurringScheduleInfo ScheduleInfo {
+            get {
+                return this.scheduleInfoField;
+            }
+            set {
+                this.scheduleInfoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Scheduling Information for the Transaction
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class RecurringScheduleInfo {
+        
+        private string intervalTypeField;
+        
+        private int numIntervalField;
+        
+        private bool numIntervalFieldSpecified;
+        
+        private int dayOfMonthField;
+        
+        private bool dayOfMonthFieldSpecified;
+        
+        private WeekEnum dayOfWeekField;
+        
+        private bool dayOfWeekFieldSpecified;
+        
+        private int weekOfMonthField;
+        
+        private bool weekOfMonthFieldSpecified;
+        
+        private MonthEnum monthOfYearField;
+        
+        private bool monthOfYearFieldSpecified;
+        
+        private int remindDaysField;
+        
+        private bool remindDaysFieldSpecified;
+        
+        private int daysBeforeField;
+        
+        private bool daysBeforeFieldSpecified;
+        
+        private int maxOccurrencesField;
+        
+        private bool maxOccurrencesFieldSpecified;
+        
+        private System.DateTime startDateField;
+        
+        private bool startDateFieldSpecified;
+        
+        private System.DateTime endDateField;
+        
+        private bool endDateFieldSpecified;
+        
+        private System.DateTime nextDateField;
+        
+        private bool nextDateFieldSpecified;
+        
+        private System.DateTime previousDateField;
+        
+        private bool previousDateFieldSpecified;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Interval Type which can be Yearly, Monthly, Daily or Weekly
+        /// 
+        /// </summary>
+        public string IntervalType {
+            get {
+                return this.intervalTypeField;
+            }
+            set {
+                this.intervalTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Interval based on the Interval Type
+        /// 
+        /// </summary>
+        public int NumInterval {
+            get {
+                return this.numIntervalField;
+            }
+            set {
+                this.numIntervalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool NumIntervalSpecified {
+            get {
+                return this.numIntervalFieldSpecified;
+            }
+            set {
+                this.numIntervalFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Day of the Month
+        /// 
+        /// </summary>
+        public int DayOfMonth {
+            get {
+                return this.dayOfMonthField;
+            }
+            set {
+                this.dayOfMonthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool DayOfMonthSpecified {
+            get {
+                return this.dayOfMonthFieldSpecified;
+            }
+            set {
+                this.dayOfMonthFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Day of the Week
+        /// 
+        /// </summary>
+        public WeekEnum DayOfWeek {
+            get {
+                return this.dayOfWeekField;
+            }
+            set {
+                this.dayOfWeekField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool DayOfWeekSpecified {
+            get {
+                return this.dayOfWeekFieldSpecified;
+            }
+            set {
+                this.dayOfWeekFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Week of the Month
+        /// 
+        /// </summary>
+        public int WeekOfMonth {
+            get {
+                return this.weekOfMonthField;
+            }
+            set {
+                this.weekOfMonthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool WeekOfMonthSpecified {
+            get {
+                return this.weekOfMonthFieldSpecified;
+            }
+            set {
+                this.weekOfMonthFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Month of the Year
+        /// 
+        /// </summary>
+        public MonthEnum MonthOfYear {
+            get {
+                return this.monthOfYearField;
+            }
+            set {
+                this.monthOfYearField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool MonthOfYearSpecified {
+            get {
+                return this.monthOfYearFieldSpecified;
+            }
+            set {
+                this.monthOfYearFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The days before StartDate for a Reminded RecurType
+        /// 
+        /// </summary>
+        public int RemindDays {
+            get {
+                return this.remindDaysField;
+            }
+            set {
+                this.remindDaysField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool RemindDaysSpecified {
+            get {
+                return this.remindDaysFieldSpecified;
+            }
+            set {
+                this.remindDaysFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Days before the Scheduled Date
+        /// 
+        /// </summary>
+        public int DaysBefore {
+            get {
+                return this.daysBeforeField;
+            }
+            set {
+                this.daysBeforeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool DaysBeforeSpecified {
+            get {
+                return this.daysBeforeFieldSpecified;
+            }
+            set {
+                this.daysBeforeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Max number of Recurring Occurrences
+        /// 
+        /// </summary>
+        public int MaxOccurrences {
+            get {
+                return this.maxOccurrencesField;
+            }
+            set {
+                this.maxOccurrencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool MaxOccurrencesSpecified {
+            get {
+                return this.maxOccurrencesFieldSpecified;
+            }
+            set {
+                this.maxOccurrencesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Start Date for the Recurring Schedule
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime StartDate {
+            get {
+                return this.startDateField;
+            }
+            set {
+                this.startDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool StartDateSpecified {
+            get {
+                return this.startDateFieldSpecified;
+            }
+            set {
+                this.startDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The End Date for the Recurring Schedule
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime EndDate {
+            get {
+                return this.endDateField;
+            }
+            set {
+                this.endDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool EndDateSpecified {
+            get {
+                return this.endDateFieldSpecified;
+            }
+            set {
+                this.endDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Date when the next Transaction will created. (Read Only)
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime NextDate {
+            get {
+                return this.nextDateField;
+            }
+            set {
+                this.nextDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool NextDateSpecified {
+            get {
+                return this.nextDateFieldSpecified;
+            }
+            set {
+                this.nextDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: The Date when the last Transaction was created.(Read Only)
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime PreviousDate {
+            get {
+                return this.previousDateField;
+            }
+            set {
+                this.previousDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool PreviousDateSpecified {
+            get {
+                return this.previousDateFieldSpecified;
+            }
+            set {
+                this.previousDateFieldSpecified = value;
             }
         }
     }
@@ -37278,6 +37839,7 @@ namespace Intuit.Ipp.Data {
             }
         }
         
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
         [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
         [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
@@ -37462,6 +38024,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
         [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
         [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
         [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
         [System.Xml.Serialization.XmlElementAttribute("Report", typeof(Report))]
@@ -37666,6 +38229,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
         [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
         [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
         [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
         [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
@@ -37781,6 +38345,97 @@ namespace Intuit.Ipp.Data {
         
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         public object AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// The Recurrence Transaction Object
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class RecurringTransaction : IntuitEntity, IEntity {
+        
+        private IntuitEntity itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Account", typeof(Account))]
+        [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
+        [System.Xml.Serialization.XmlElementAttribute("BillPayment", typeof(BillPayment))]
+        [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Budget", typeof(Budget))]
+        [System.Xml.Serialization.XmlElementAttribute("ChargeCredit", typeof(ChargeCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("Class", typeof(Class))]
+        [System.Xml.Serialization.XmlElementAttribute("Company", typeof(Company))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyCurrency", typeof(CompanyCurrency))]
+        [System.Xml.Serialization.XmlElementAttribute("CompanyInfo", typeof(CompanyInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCardPaymentTxn", typeof(CreditCardPaymentTxn))]
+        [System.Xml.Serialization.XmlElementAttribute("CreditMemo", typeof(CreditMemo))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Customer", typeof(Customer))]
+        [System.Xml.Serialization.XmlElementAttribute("CustomerType", typeof(CustomerType))]
+        [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
+        [System.Xml.Serialization.XmlElementAttribute("Deposit", typeof(Deposit))]
+        [System.Xml.Serialization.XmlElementAttribute("EmailDeliveryInfo", typeof(EmailDeliveryInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("Employee", typeof(Employee))]
+        [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
+        [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
+        [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
+        [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
+        [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
+        [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalCode", typeof(JournalCode))]
+        [System.Xml.Serialization.XmlElementAttribute("JournalEntry", typeof(JournalEntry))]
+        [System.Xml.Serialization.XmlElementAttribute("MasterAccount", typeof(MasterAccount))]
+        [System.Xml.Serialization.XmlElementAttribute("NumberTypeCustomFieldDefinition", typeof(NumberTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("OtherName", typeof(OtherName))]
+        [System.Xml.Serialization.XmlElementAttribute("Payment", typeof(Payment))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMethod", typeof(PaymentMethod))]
+        [System.Xml.Serialization.XmlElementAttribute("Preferences", typeof(Preferences))]
+        [System.Xml.Serialization.XmlElementAttribute("PriceLevel", typeof(PriceLevel))]
+        [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
+        [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
+        [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesReceipt", typeof(SalesReceipt))]
+        [System.Xml.Serialization.XmlElementAttribute("SalesRep", typeof(SalesRep))]
+        [System.Xml.Serialization.XmlElementAttribute("StatementCharge", typeof(StatementCharge))]
+        [System.Xml.Serialization.XmlElementAttribute("Status", typeof(Status))]
+        [System.Xml.Serialization.XmlElementAttribute("StringTypeCustomFieldDefinition", typeof(StringTypeCustomFieldDefinition))]
+        [System.Xml.Serialization.XmlElementAttribute("SyncActivity", typeof(SyncActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("TDSMetadata", typeof(TDSMetadata))]
+        [System.Xml.Serialization.XmlElementAttribute("Tag", typeof(Tag))]
+        [System.Xml.Serialization.XmlElementAttribute("Task", typeof(Task))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxAgency", typeof(TaxAgency))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxClassification", typeof(TaxClassification))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCode", typeof(TaxCode))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPayment", typeof(TaxPayment))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxRate", typeof(TaxRate))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxReturn", typeof(TaxReturn))]
+        [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
+        [System.Xml.Serialization.XmlElementAttribute("Term", typeof(Term))]
+        [System.Xml.Serialization.XmlElementAttribute("TimeActivity", typeof(TimeActivity))]
+        [System.Xml.Serialization.XmlElementAttribute("Transfer", typeof(Transfer))]
+        [System.Xml.Serialization.XmlElementAttribute("UserAlert", typeof(UserAlert))]
+        [System.Xml.Serialization.XmlElementAttribute("Vendor", typeof(Vendor))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorCredit", typeof(VendorCredit))]
+        [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
+        public IntuitEntity AnyIntuitObject {
             get {
                 return this.itemField;
             }
@@ -39068,6 +39723,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Purchase", typeof(Purchase))]
         [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
         [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
         [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
         [System.Xml.Serialization.XmlElementAttribute("SalesOrder", typeof(SalesOrder))]
@@ -39171,6 +39827,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("PurchaseOrder", typeof(PurchaseOrder))]
         [System.Xml.Serialization.XmlElementAttribute("QbdtEntityIdMapping", typeof(QbdtEntityIdMapping))]
         [System.Xml.Serialization.XmlElementAttribute("Query", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("RecurringTransaction", typeof(RecurringTransaction))]
         [System.Xml.Serialization.XmlElementAttribute("RefundReceipt", typeof(RefundReceipt))]
         [System.Xml.Serialization.XmlElementAttribute("ReimburseCharge", typeof(ReimburseCharge))]
         [System.Xml.Serialization.XmlElementAttribute("ReportQuery", typeof(string))]
@@ -39465,6 +40122,9 @@ namespace Intuit.Ipp.Data {
         Query,
         
         /// <remarks/>
+        RecurringTransaction,
+        
+        /// <remarks/>
         RefundReceipt,
         
         /// <remarks/>
@@ -39573,6 +40233,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         send,
+        
+        /// <remarks/>
+        merge,
         
         /// <summary>
         /// Added by XsdExtension
