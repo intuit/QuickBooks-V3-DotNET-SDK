@@ -15,8 +15,6 @@ using System.Threading;
 using System.Net;
 using System.Reflection;
 using System.Linq;
-using Intuit.Ipp.Core.Rest;
-using Intuit.Ipp.Exception;
 using System.IO;
 using System.Globalization;
 
@@ -29,7 +27,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Advanced Logger for OAuth2 calls
         /// </summary>
-        public static AdvancedLogging AdvancedLogger;
+        public static OAuthAdvancedLogging AdvancedLogger;
 
         /// <summary>
         /// Enable extra field to check if new OAuth2Client is used for OAuth calls and Advanced logging
