@@ -565,6 +565,37 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+
+        /// <summary>
+        /// Gets Bearer token from Authorization code and manually passing Bearer Token url
+        /// </summary>
+        /// <param name="tokenEndpoint"></param>
+        /// <param name="code"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<TokenResponse> GetBearerTokenAsync(string tokenEndpoint, string code, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (string.IsNullOrEmpty(tokenEndpoint))
+            {
+                AdvancedLogger.Log("BearerToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "BearerToken Endpoint is empty.");
+            }
+
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+
+            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
+            return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Refreshes access token to get new access token
         /// </summary>
@@ -591,6 +622,36 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Refreshes access token to get new access token by manually passing token url
+        /// </summary>
+        ///  <param name="tokenEndpoint"></param>
+        /// <param name="refreshToken"></param>
+        /// <param name="extra"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<TokenResponse> RefreshTokenAsync(string tokenEndpoint, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (string.IsNullOrEmpty(tokenEndpoint))
+            {
+                AdvancedLogger.Log("RefreshToken Endpoint is empty.");
+                return new TokenResponse(HttpStatusCode.InternalServerError, "RefreshToken Endpoint is empty.");
+            }
+
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
 
@@ -627,6 +688,39 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         }
 
         /// <summary>
+        /// Revoke token using either access or refresh token
+        /// </summary>
+        /// <param name="revokeTokenEndpoint"></param>
+        /// <param name="accessOrRefreshToken"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<TokenRevocationResponse> RevokeTokenAsync(string revokeTokenEndpoint,string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (string.IsNullOrEmpty(revokeTokenEndpoint))
+            {
+                AdvancedLogger.Log("Revoke Token Endpoint is empty.");
+                return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Revoke Token Endpoint is empty.");
+            }
+
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+
+            TokenRevocationClient revokeTokenClient = new TokenRevocationClient(revokeTokenEndpoint, ClientID, ClientSecret);
+            return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
+            {
+                Token = accessOrRefreshToken,
+            }, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Get User Info
         /// </summary>
         /// <param name="accessToken"></param>
@@ -652,6 +746,36 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
+            return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get User Info
+        /// </summary>
+        /// <param name="userInfoEndpoint"></param>
+        /// <param name="accessToken"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<UserInfoResponse> GetUserInfoAsync(string userInfoEndpoint, string accessToken, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (string.IsNullOrEmpty(userInfoEndpoint))
+            {
+                AdvancedLogger.Log("UserInfo Endpoint is empty.");
+                return new UserInfoResponse(HttpStatusCode.InternalServerError, "UserInfo Endpoint is empty.");
+            }
+
+            AdvancedLoggerEnabled = true;
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                ShowInfoLogs = true;
+            }
+            //Intialize Logger
+            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: this.EnableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+
+
+            UserInfoClient userInfoClient = new UserInfoClient(userInfoEndpoint);
             return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
         }
 

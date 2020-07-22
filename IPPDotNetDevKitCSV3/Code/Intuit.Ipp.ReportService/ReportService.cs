@@ -226,6 +226,9 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(sort_by)) { uriParametersList.Add(new string[] { "sort_by", sort_by }); }
             if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "sort_order", sort_order }); }
 
+            if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "low_pp_date", low_pp_date }); }
+            if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "high_pp_date", high_pp_date }); }
+
 
             if (!string.IsNullOrEmpty(end_createdate)) { uriParametersList.Add(new string[] { "end_createdate", end_createdate }); }
             if (!string.IsNullOrEmpty(start_createdate)) { uriParametersList.Add(new string[] { "start_createdate", start_createdate }); }
@@ -647,6 +650,16 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the adjusted gain and loss
         /// </summary>
         public string adjusted_gain_loss { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subcol_py
+        /// </summary>
+        public string low_pp_date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subcol_py
+        /// </summary>
+        public string high_pp_date { get; set; }
 
 
         #endregion
