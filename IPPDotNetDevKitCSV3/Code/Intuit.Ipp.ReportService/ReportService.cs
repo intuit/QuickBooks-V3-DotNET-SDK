@@ -226,8 +226,9 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(sort_by)) { uriParametersList.Add(new string[] { "sort_by", sort_by }); }
             if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "sort_order", sort_order }); }
 
-            if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "low_pp_date", low_pp_date }); }
-            if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "high_pp_date", high_pp_date }); }
+            if (!string.IsNullOrEmpty(low_pp_date)) { uriParametersList.Add(new string[] { "low_pp_date", low_pp_date }); }
+            if (!string.IsNullOrEmpty(high_pp_date)) { uriParametersList.Add(new string[] { "high_pp_date", high_pp_date }); }
+            if (!string.IsNullOrEmpty(custom_pp)) { uriParametersList.Add(new string[] { "custom_pp", custom_pp }); }
 
 
             if (!string.IsNullOrEmpty(end_createdate)) { uriParametersList.Add(new string[] { "end_createdate", end_createdate }); }
@@ -652,14 +653,21 @@ namespace Intuit.Ipp.ReportService
         public string adjusted_gain_loss { get; set; }
 
         /// <summary>
-        /// Gets or sets the subcol_py
+        /// Gets or sets the low_pp_date
         /// </summary>
         public string low_pp_date { get; set; }
 
         /// <summary>
-        /// Gets or sets the subcol_py
+        /// Gets or sets the high_pp_date
         /// </summary>
         public string high_pp_date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom_pp
+        /// </summary>
+        public string custom_pp { get; set; }
+
+       
 
 
         #endregion
