@@ -10366,6 +10366,10 @@ namespace Intuit.Ipp.Data {
         
         private bool taxAmountFieldSpecified;
         
+        private decimal taxInclusiveAmtField;
+        
+        private bool taxInclusiveAmtFieldSpecified;
+        
         private BillableStatusEnum billableStatusField;
         
         private bool billableStatusFieldSpecified;
@@ -10561,6 +10565,35 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxAmountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicates the total
+        /// amount of line item including tax.
+        /// 
+        /// </summary>
+        public decimal TaxInclusiveAmt {
+            get {
+                return this.taxInclusiveAmtField;
+            }
+            set {
+                this.taxInclusiveAmtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TaxInclusiveAmtSpecified {
+            get {
+                return this.taxInclusiveAmtFieldSpecified;
+            }
+            set {
+                this.taxInclusiveAmtFieldSpecified = value;
             }
         }
         
@@ -25366,6 +25399,10 @@ namespace Intuit.Ipp.Data {
         
         private bool enteredInHomeCurrencyFieldSpecified;
         
+        private GlobalTaxCalculationEnum globalTaxCalculationField;
+        
+        private bool globalTaxCalculationFieldSpecified;
+        
         private decimal totalAmtField;
         
         private bool totalAmtFieldSpecified;
@@ -25467,6 +25504,36 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.enteredInHomeCurrencyFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicates the
+        /// GlobalTax model if the model inclusive of tax, exclusive of
+        /// taxes or not applicable
+        /// 
+        /// </summary>
+        public GlobalTaxCalculationEnum GlobalTaxCalculation {
+            get {
+                return this.globalTaxCalculationField;
+            }
+            set {
+                this.globalTaxCalculationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool GlobalTaxCalculationSpecified {
+            get {
+                return this.globalTaxCalculationFieldSpecified;
+            }
+            set {
+                this.globalTaxCalculationFieldSpecified = value;
             }
         }
         
@@ -33552,6 +33619,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         PurchaseOrder,
+        
+        /// <remarks/>
+        RecurringTransaction,
         
         /// <remarks/>
         RefundReceipt,
