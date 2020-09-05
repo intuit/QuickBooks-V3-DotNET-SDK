@@ -338,15 +338,15 @@ namespace OAuth2_Dotnet_UsingSDK
             //var CDCResponse1 = dataService.CDC(entityList1, do1.LocalDateTime).entities;
 
             
-            Customer cust = new Customer();
-            cust.DisplayName = "memo11";
+            //Customer cust = new Customer();
+            //cust.DisplayName = "memo11";
 
 
           
-            Batch batch = dataService.CreateNewBatch();
-            batch.Add(cust, "CreateCustomer", OperationEnum.create);
-            batch.Add("select * from Customer", "CustomerQuery");
-            batch.Execute();
+            //Batch batch = dataService.CreateNewBatch();
+            //batch.Add(cust, "CreateCustomer", OperationEnum.create);
+            //batch.Add("select * from Customer", "CustomerQuery");
+            //batch.Execute();
 
 
             RecurringTransaction recur = new RecurringTransaction();
@@ -371,6 +371,7 @@ namespace OAuth2_Dotnet_UsingSDK
             Term term = termQueryService.ExecuteIdsQuery("Select * From Term StartPosition 1 MaxResults 1").FirstOrDefault<Term>();
 
             Invoice invoice = new Invoice();
+            //SalesReceipt invoice = new SalesReceipt();
 
             //DocNumber - QBO Only, otherwise use DocNumber
             invoice.AutoDocNumber = true;
@@ -487,7 +488,7 @@ namespace OAuth2_Dotnet_UsingSDK
             {
                 Active = true,
                 ActiveSpecified = true,
-                Name = "RecurTemplate13",
+                Name = "RecurTemplate143",
                 RecurType = "Automated",
                 ScheduleInfo = new RecurringScheduleInfo()
                 {

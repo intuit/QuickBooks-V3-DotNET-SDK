@@ -169,7 +169,22 @@ namespace Intuit.Ipp.Utility
                                         }
                                         else
                                         {
-                                            writer.WritePropertyName(propertyInfo.Name);
+                                            //Adding additional hardcode for recurring txn json serializtion issue
+                                            string[] entitiesSupportedforRecurTxn = { "Bill", "Invoice", "Purchase", "CreditMemo", "Deposit", "Estimate", "JournalEntry", "RefundReceipt", "SalesReceipt", "Transfer", "VendorCredit", "PurchaseOrder" };
+
+                                            if (propertyInfo.Name == "AnyIntuitObject" && value.GetType().Name == "RecurringTransaction" )
+                                            {
+                                                string entityNametoCheckForRecurTxn = propertyInfo.GetValue(value, null).GetType().Name;
+                                                if (entitiesSupportedforRecurTxn.Contains(entityNametoCheckForRecurTxn))
+                                                {
+                                                    writer.WritePropertyName(entityNametoCheckForRecurTxn);
+                                                }
+                                                else { writer.WritePropertyName(propertyInfo.Name); }
+
+                                            }
+                                            else {
+                                                writer.WritePropertyName(propertyInfo.Name);
+                                            }
                                         }
 
                                         //check if its XmlArrayItem (NameValue)

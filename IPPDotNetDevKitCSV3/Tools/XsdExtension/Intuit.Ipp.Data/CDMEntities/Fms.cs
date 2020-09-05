@@ -23681,6 +23681,16 @@ namespace Intuit.Ipp.Data {
         
         private bool amountFieldSpecified;
         
+        private ReferenceType vendorRefField;
+        
+        private string checkNumField;
+        
+        private PrintStatusEnum printStatusField;
+        
+        private bool printStatusFieldSpecified;
+        
+        private string memoField;
+        
         private IntuitAnyType creditCardPaymentExField;
         
         /// <remarks/>
@@ -23741,8 +23751,80 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         /// <summary>
-        /// Internal use only: extension place holder for
-        /// CreditCardPayment
+        /// 
+        /// Product: ALL
+        /// Description: Specifies the vendor reference for this transaction.
+        /// 
+        /// </summary>
+        public ReferenceType VendorRef {
+            get {
+                return this.vendorRefField;
+            }
+            set {
+                this.vendorRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: The check number printed on the check.
+        /// 
+        /// </summary>
+        public string CheckNum {
+            get {
+                return this.checkNumField;
+            }
+            set {
+                this.checkNumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// PrintStatus if to be printed or already printed.
+        /// 
+        /// </summary>
+        public PrintStatusEnum PrintStatus {
+            get {
+                return this.printStatusField;
+            }
+            set {
+                this.printStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool PrintStatusSpecified {
+            get {
+                return this.printStatusFieldSpecified;
+            }
+            set {
+                this.printStatusFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Memo associated with the Credit Card Payment transaction.
+        /// 
+        /// </summary>
+        public string Memo {
+            get {
+                return this.memoField;
+            }
+            set {
+                this.memoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Internal use only: extension place holder for CreditCardPayment
+        /// 
         /// </summary>
         public IntuitAnyType CreditCardPaymentEx {
             get {

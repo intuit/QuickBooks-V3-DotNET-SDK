@@ -5609,8 +5609,8 @@ namespace Intuit.Ipp.Test
             //type = 
             //Value = 
             //};
-            ItemChoiceType2 itemChoiceType2 = new ItemChoiceType2();
-            salesRep.ItemElementName = itemChoiceType2;
+            ItemChoiceType3 itemChoiceType3 = new ItemChoiceType3();
+            salesRep.ItemElementName = itemChoiceType3;
 
             salesRep.Initials = "Initials";
             //salesRep.SalesRepEx = 
