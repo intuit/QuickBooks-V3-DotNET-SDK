@@ -326,8 +326,8 @@ namespace OAuth2_Dotnet_UsingSDK
 
 
 
-            //QueryService<RecurringTransaction> re1 = new QueryService<RecurringTransaction>(context);
-            //RecurringTransaction r1 = re1.ExecuteIdsQuery("Select * From RecurringTransaction StartPosition 1 MaxResults 1").First();
+            QueryService<RecurringTransaction> re1 = new QueryService<RecurringTransaction>(context);
+            RecurringTransaction r1 = re1.ExecuteIdsQuery("Select * From RecurringTransaction StartPosition 1 MaxResults 1").First();
 
 
             DataService dataService = new DataService(context);
@@ -337,17 +337,23 @@ namespace OAuth2_Dotnet_UsingSDK
 
             //var CDCResponse1 = dataService.CDC(entityList1, do1.LocalDateTime).entities;
 
-            
+
             //Customer cust = new Customer();
             //cust.DisplayName = "memo11";
 
 
-          
+
             //Batch batch = dataService.CreateNewBatch();
             //batch.Add(cust, "CreateCustomer", OperationEnum.create);
             //batch.Add("select * from Customer", "CustomerQuery");
             //batch.Execute();
 
+            RecurringTransaction recur1 = new RecurringTransaction();
+            Invoice inv1 = new Invoice();
+            inv1.Id = r1.AnyIntuitObject.Id;
+            inv1.SyncToken = r1.AnyIntuitObject.SyncToken;
+            recur1.AnyIntuitObject = inv1;
+            var s = dataService.Delete(recur1);
 
             RecurringTransaction recur = new RecurringTransaction();
             //Find Customer
