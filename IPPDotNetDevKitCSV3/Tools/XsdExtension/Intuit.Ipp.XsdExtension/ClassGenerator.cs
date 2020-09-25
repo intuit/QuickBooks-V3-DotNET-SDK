@@ -46,7 +46,7 @@ namespace Intuit.Ipp.XsdExtension
                 codeProvider.GenerateCodeFromNamespace(codeDomContext.CodeNamespace, writer, new CodeGeneratorOptions());
 
                 // Console.WriteLine(writer.GetStringBuilder().ToString());
-                StreamWriter outfile = new StreamWriter(this.GetOutputFilePath(), false);
+                StreamWriter outfile = new StreamWriter(GetOutputFilePath(), false);
                 outfile.Write(writer.GetStringBuilder().ToString());
                 outfile.Flush();
                 outfile.Close();

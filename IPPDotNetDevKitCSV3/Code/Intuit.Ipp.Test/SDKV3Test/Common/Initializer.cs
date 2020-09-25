@@ -33,7 +33,7 @@ namespace Intuit.Ipp.Test
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             //AuthorizationKeysQBO.tokenFilePath = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))), "TokenStore.json");
 
-            AuthorizationKeysQBO.tokenFilePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "TokenStore.json");
+            AuthorizationKeysQBO.tokenFilePath = Path.Combine(Directory.GetCurrentDirectory(), "TokenStore.json");
 
             var builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())

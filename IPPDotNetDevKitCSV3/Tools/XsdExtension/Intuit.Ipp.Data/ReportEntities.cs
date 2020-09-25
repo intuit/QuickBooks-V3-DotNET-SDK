@@ -207,7 +207,7 @@ namespace Intuit.Ipp.Data
         /// <summary>
         /// time
         /// </summary>
-        private System.DateTime timeField;
+        private DateTime timeField;
 
         /// <summary>
         /// time specified
@@ -319,11 +319,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.startPageField;
+                return startPageField;
             }
             set
             {
-                this.startPageField = value;
+                startPageField = value;
             }
         }
 
@@ -334,11 +334,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.chunkSizeField;
+                return chunkSizeField;
             }
             set
             {
-                this.chunkSizeField = value;
+                chunkSizeField = value;
             }
         }
 
@@ -349,11 +349,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.startTransactionDate;
+                return startTransactionDate;
             }
             set
             {
-                this.startTransactionDate = value;
+                startTransactionDate = value;
             }
         }
 
@@ -364,11 +364,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.endTransactionDate;
+                return endTransactionDate;
             }
             set
             {
-                this.endTransactionDate = value;
+                endTransactionDate = value;
             }
         }
 
@@ -379,11 +379,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.dateMacro;
+                return dateMacro;
             }
             set
             {
-                this.dateMacro = value;
+                dateMacro = value;
             }
         }
 
@@ -395,11 +395,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.reportBasisField;
+                return reportBasisField;
             }
             set
             {
-                this.reportBasisField = value;
+                reportBasisField = value;
             }
         }
 
@@ -411,15 +411,15 @@ namespace Intuit.Ipp.Data
         /// <summary>
         /// time
         /// </summary>
-        public System.DateTime TimeField
+        public DateTime TimeField
         {
             get
             {
-                return this.timeField;
+                return timeField;
             }
             set
             {
-                this.timeField = value;
+                timeField = value;
             }
         }
 
@@ -431,11 +431,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.timeFieldSpecified;
+                return timeFieldSpecified;
             }
             set
             {
-                this.timeFieldSpecified = value;
+                timeFieldSpecified = value;
             }
         }
 
@@ -446,11 +446,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.reportNameField;
+                return reportNameField;
             }
             set
             {
-                this.reportNameField = value;
+                reportNameField = value;
             }
         }
 
@@ -462,11 +462,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.reportBasisFieldSpecified;
+                return reportBasisFieldSpecified;
             }
             set
             {
-                this.reportBasisFieldSpecified = value;
+                reportBasisFieldSpecified = value;
             }
         }
 
@@ -477,11 +477,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.startPeriodField;
+                return startPeriodField;
             }
             set
             {
-                this.startPeriodField = value;
+                startPeriodField = value;
             }
         }
 
@@ -492,11 +492,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.endPeriodField;
+                return endPeriodField;
             }
             set
             {
-                this.endPeriodField = value;
+                endPeriodField = value;
             }
         }
 
@@ -507,11 +507,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.summarizeColumnsByField;
+                return summarizeColumnsByField;
             }
             set
             {
-                this.summarizeColumnsByField = value;
+                summarizeColumnsByField = value;
             }
         }
 
@@ -522,11 +522,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.currencyField;
+                return currencyField;
             }
             set
             {
-                this.currencyField = value;
+                currencyField = value;
             }
         }
 
@@ -537,11 +537,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.customerField;
+                return customerField;
             }
             set
             {
-                this.customerField = value;
+                customerField = value;
             }
         }
 
@@ -552,11 +552,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.vendorField;
+                return vendorField;
             }
             set
             {
-                this.vendorField = value;
+                vendorField = value;
             }
         }
 
@@ -567,11 +567,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.employeeField;
+                return employeeField;
             }
             set
             {
-                this.employeeField = value;
+                employeeField = value;
             }
         }
 
@@ -582,11 +582,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.itemField;
+                return itemField;
             }
             set
             {
-                this.itemField = value;
+                itemField = value;
             }
         }
 
@@ -597,11 +597,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.classField;
+                return classField;
             }
             set
             {
-                this.classField = value;
+                classField = value;
             }
         }
 
@@ -612,11 +612,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.departmentField;
+                return departmentField;
             }
             set
             {
-                this.departmentField = value;
+                departmentField = value;
             }
         }
 
@@ -627,11 +627,11 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.optionField;
+                return optionField;
             }
             set
             {
-                this.optionField = value;
+                optionField = value;
             }
         }
 

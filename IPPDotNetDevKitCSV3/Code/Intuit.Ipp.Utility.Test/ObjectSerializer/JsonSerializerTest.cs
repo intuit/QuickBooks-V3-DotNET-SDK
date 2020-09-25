@@ -8,13 +8,13 @@
 namespace Intuit.Ipp.Utility.Test
 {
     using System;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Data;
+    using Exception;
+    using Utility;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Intuit.Ipp.Diagnostics;
+    using Diagnostics;
     using System.Collections.Generic;
-    using Intuit.Ipp.Core;
+    using Core;
 
 
     /// <summary>
@@ -39,12 +39,12 @@ namespace Intuit.Ipp.Utility.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 
@@ -54,7 +54,7 @@ namespace Intuit.Ipp.Utility.Test
         /// <value>
         /// The IDS logger.
         /// </value>
-        internal Intuit.Ipp.Diagnostics.ILogger IDSLogger { get; set; }
+        internal ILogger IDSLogger { get; set; }
 
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Intuit.Ipp.Utility.Test
         [TestMethod]
         public void SerializerConstructorWithArgsTest()
         {
-            JsonObjectSerializer serializer = new JsonObjectSerializer(this.IDSLogger);
+            JsonObjectSerializer serializer = new JsonObjectSerializer(IDSLogger);
         }
 
 
@@ -91,9 +91,9 @@ namespace Intuit.Ipp.Utility.Test
                 Bill deserializedEntity = (Bill)serializer.Deserialize<Bill>(serializedJson);
                 Assert.Fail();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                if (ex.InnerException == null || ex.GetType() != typeof(Intuit.Ipp.Exception.SerializationException))
+                if (ex.InnerException == null || ex.GetType() != typeof(SerializationException))
                 {
                     Assert.Fail(ex.ToString());
                 }

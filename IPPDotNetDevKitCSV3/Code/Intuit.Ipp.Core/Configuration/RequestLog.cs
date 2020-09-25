@@ -24,7 +24,7 @@ using System;
 namespace Intuit.Ipp.Core.Configuration
 {
     using System.IO;
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
@@ -54,7 +54,7 @@ namespace Intuit.Ipp.Core.Configuration
         {
             get
             {
-                return this.serviceRequestLoggingLocation;
+                return serviceRequestLoggingLocation;
             }
 
             set
@@ -65,7 +65,7 @@ namespace Intuit.Ipp.Core.Configuration
                     IdsExceptionManager.HandleException(exception);
                 }
 
-                this.serviceRequestLoggingLocation = value;
+                serviceRequestLoggingLocation = value;
             }
         }
     }

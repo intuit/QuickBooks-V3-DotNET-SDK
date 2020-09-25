@@ -35,19 +35,19 @@ namespace Intuit.Ipp.Data
         /// <param name="singleEntitlementNode">The single entitlement node.</param>
         public Entitlement(XmlNode singleEntitlementNode)
         {
-            this.Id = singleEntitlementNode.Attributes.GetNamedItem("id").InnerText;
+            Id = singleEntitlementNode.Attributes.GetNamedItem("id").InnerText;
             XmlNode n = singleEntitlementNode.SelectSingleNode("./name");
             if (n != null)
             {
-                this.Name = n.InnerText;
+                Name = n.InnerText;
             }
 
             n = singleEntitlementNode.SelectSingleNode("./term");
 
             if (n != null)
             {
-                this.TermId = n.Attributes.GetNamedItem("id").InnerText;
-                this.Term = n.InnerText;
+                TermId = n.Attributes.GetNamedItem("id").InnerText;
+                Term = n.InnerText;
             }
         }
 

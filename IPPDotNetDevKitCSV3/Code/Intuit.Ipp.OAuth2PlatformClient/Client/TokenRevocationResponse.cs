@@ -19,7 +19,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public HttpStatusCode HttpStatusCode { get; }
         public string HttpErrorReason { get; }
         public ResponseErrorType ErrorType { get;  }
-        public System.Exception Exception { get;  }
+        public Exception Exception { get;  }
 
         /// <summary>
         /// Handles successful raw response from Token Revoke api call
@@ -52,7 +52,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     HttpStatusCode = HttpStatusCode.BadRequest;
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 IsError = true;
                 ErrorType = ResponseErrorType.Exception;
@@ -83,7 +83,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Handles exception response from UserInfo api call
         /// </summary>
         /// <param name="exception">exception</param>
-        public TokenRevocationResponse(System.Exception exception)
+        public TokenRevocationResponse(Exception exception)
         {
             IsError = true;
 

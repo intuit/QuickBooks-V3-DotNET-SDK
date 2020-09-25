@@ -21,7 +21,7 @@
 namespace Intuit.Ipp.Exception
 {
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// Represents an Exception raised when an batch collection exceeds 25 items.

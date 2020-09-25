@@ -27,9 +27,9 @@ namespace Intuit.Ipp.Core
     using System.Xml;
     using Configuration;
     using Rest;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Security;
+    using Diagnostics;
+    using Exception;
+    using Security;
     using System.Collections.Generic;
 
     using System.Configuration;
@@ -132,7 +132,7 @@ namespace Intuit.Ipp.Core
         /// <exception cref="Intuit.Ipp.Exception.InvalidTokenException">If the token is invalid.</exception>
         public ServiceContext(string realmId, IntuitServicesType serviceType, IRequestValidator requestValidator = null, IConfigurationProvider configReader = null)
         {
-            this.IppConfiguration = (configReader ?? new JsonFileConfigurationProvider()).GetConfiguration();
+            IppConfiguration = (configReader ?? new JsonFileConfigurationProvider()).GetConfiguration();
 
             // Validate Parameters
             if (string.IsNullOrWhiteSpace(realmId))
@@ -144,16 +144,16 @@ namespace Intuit.Ipp.Core
             this.serviceType = serviceType;
             if (requestValidator != null)
             {
-                this.IppConfiguration.Security = requestValidator;
+                IppConfiguration.Security = requestValidator;
             }
 
-            if (this.IppConfiguration.Security == null)
+            if (IppConfiguration.Security == null)
             {
                 throw new InvalidTokenException("Atleast one security mechanism has to be specified for the SDK to work. Either use config file or use constructor to specify the authentication type.");
             }
 
-            this.baseserviceURL = this.GetBaseURL();
-            this.isCreateMethod = false;
+            baseserviceURL = GetBaseURL();
+            isCreateMethod = false;
         }
 
         /// <summary>
@@ -188,16 +188,16 @@ namespace Intuit.Ipp.Core
             
             if (requestValidator != null)
             {
-                this.IppConfiguration.Security = requestValidator;
+                IppConfiguration.Security = requestValidator;
             }
 
-            if (this.IppConfiguration.Security == null)
+            if (IppConfiguration.Security == null)
             {
                 throw new InvalidTokenException("Atleast one security mechanism has to be specified for the SDK to work. Either use config file or use constructor to specify the authenticatio type.");
             }
 
-            this.baseserviceURL = this.GetBaseURL();
-            this.isCreateMethod = false;
+            baseserviceURL = GetBaseURL();
+            isCreateMethod = false;
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public string BaseUrl
         {
-            get { return this.GetBaseURL(); }
+            get { return GetBaseURL(); }
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public string RealmId
         {
-            get { return this.realmId; }
+            get { return realmId; }
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Intuit.Ipp.Core
         [Obsolete("This property is deprecated as appToken is not supported in OAuth2")]
         public string AppToken
         {
-            get { return this.appToken; }
+            get { return appToken; }
         }
 
 
@@ -253,7 +253,7 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                return this.serviceType;
+                return serviceType;
             }
         }
 
@@ -265,11 +265,11 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                return this.include;
+                return include;
             }
             set
             {
-                this.include = value;
+                include = value;
             }
         }
 
@@ -280,7 +280,7 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                return this.GetMinorVersion();
+                return GetMinorVersion();
             }
         }
 
@@ -290,15 +290,15 @@ namespace Intuit.Ipp.Core
         public string RequestId {
             get
             {
-                if (this.requestId ==null)
+                if (requestId ==null)
                 {
-                    this.requestId = Guid.NewGuid().ToString("N");
+                    requestId = Guid.NewGuid().ToString("N");
                 }
-                return this.requestId;
+                return requestId;
             }
             set
             {
-                this.requestId = value;
+                requestId = value;
             }
         }
 
@@ -319,13 +319,13 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public void UseDataServices()
         {
-            if (this.isCreateMethod)
+            if (isCreateMethod)
             {
-                this.serviceType = IntuitServicesType.QBO;
+                serviceType = IntuitServicesType.QBO;
 
                 // Get the base Uri for the new service type
-                this.baseserviceURL = this.GetBaseURL();
-                this.RevertConfiguration();
+                baseserviceURL = GetBaseURL();
+                RevertConfiguration();
             }
         }
 
@@ -334,8 +334,8 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public void UsePlatformServices()
         {
-            this.serviceType = IntuitServicesType.IPS;
-            this.baseserviceURL = this.GetBaseURL();
+            serviceType = IntuitServicesType.IPS;
+            baseserviceURL = GetBaseURL();
         }
 
         #endregion
@@ -347,25 +347,25 @@ namespace Intuit.Ipp.Core
         /// </summary>
         private void SetDefaultConfigurationForIPS()
         {
-            this.messageValues = new Message
+            messageValues = new Message
             {
                 Request = new Request
                 {
-                    CompressionFormat = this.IppConfiguration.Message.Request.CompressionFormat,
-                    SerializationFormat = this.IppConfiguration.Message.Request.SerializationFormat
+                    CompressionFormat = IppConfiguration.Message.Request.CompressionFormat,
+                    SerializationFormat = IppConfiguration.Message.Request.SerializationFormat
                 },
                 Response = new Response
                 {
-                    CompressionFormat = this.IppConfiguration.Message.Response.CompressionFormat,
-                    SerializationFormat = this.IppConfiguration.Message.Response.SerializationFormat
+                    CompressionFormat = IppConfiguration.Message.Response.CompressionFormat,
+                    SerializationFormat = IppConfiguration.Message.Response.SerializationFormat
                 }
             };
 
             // Set the serviceContext IPP configuration to what IPS is accepting.
-            this.IppConfiguration.Message.Request.SerializationFormat = Configuration.SerializationFormat.Xml;
-            this.IppConfiguration.Message.Request.CompressionFormat = Configuration.CompressionFormat.None;
-            this.IppConfiguration.Message.Response.SerializationFormat = Configuration.SerializationFormat.Xml;
-            this.IppConfiguration.Message.Response.CompressionFormat = Configuration.CompressionFormat.None;
+            IppConfiguration.Message.Request.SerializationFormat = SerializationFormat.Xml;
+            IppConfiguration.Message.Request.CompressionFormat = CompressionFormat.None;
+            IppConfiguration.Message.Response.SerializationFormat = SerializationFormat.Xml;
+            IppConfiguration.Message.Response.CompressionFormat = CompressionFormat.None;
         }
 
         /// <summary>
@@ -373,12 +373,12 @@ namespace Intuit.Ipp.Core
         /// </summary>
         private void RevertConfiguration()
         {
-            if (this.messageValues != null && this.messageValues.Request != null && this.messageValues.Response != null)
+            if (messageValues != null && messageValues.Request != null && messageValues.Response != null)
             {
-                this.IppConfiguration.Message.Request.SerializationFormat = this.messageValues.Request.SerializationFormat;
-                this.IppConfiguration.Message.Request.CompressionFormat = this.messageValues.Request.CompressionFormat;
-                this.IppConfiguration.Message.Response.SerializationFormat = this.messageValues.Response.SerializationFormat;
-                this.IppConfiguration.Message.Response.CompressionFormat = this.messageValues.Response.CompressionFormat;
+                IppConfiguration.Message.Request.SerializationFormat = messageValues.Request.SerializationFormat;
+                IppConfiguration.Message.Request.CompressionFormat = messageValues.Request.CompressionFormat;
+                IppConfiguration.Message.Response.SerializationFormat = messageValues.Response.SerializationFormat;
+                IppConfiguration.Message.Response.CompressionFormat = messageValues.Response.CompressionFormat;
             }
         }
 
@@ -388,13 +388,13 @@ namespace Intuit.Ipp.Core
         /// <returns>Returns the base Uri endpoint for a user.</returns>
         private string GetBaseURL()
         {
-            this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetBaseURL method.");
+            IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetBaseURL method.");
             string baseurl = string.Empty;
 
 
-            if (this.serviceType == IntuitServicesType.QBO)
+            if (serviceType == IntuitServicesType.QBO)
             {
-                baseurl = this.IppConfiguration.BaseUrl.Qbo;
+                baseurl = IppConfiguration.BaseUrl.Qbo;
 
                 if (string.IsNullOrEmpty(baseurl))
                 {
@@ -409,17 +409,17 @@ namespace Intuit.Ipp.Core
                 }
 
 
-                this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for QBO Service Type: {0}.", baseurl));
+                IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for QBO Service Type: {0}.", baseurl));
             }
-            else if (this.serviceType == IntuitServicesType.IPS)
+            else if (serviceType == IntuitServicesType.IPS)
             {
-                baseurl = this.IppConfiguration.BaseUrl.Ips;
+                baseurl = IppConfiguration.BaseUrl.Ips;
                 if (string.IsNullOrEmpty(baseurl))
                 {
                     baseurl = Utility.CoreConstants.IPS_BASEURL;
                 }
 
-                this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for Intuit Platform Service Type: {0}.", baseurl));
+                IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "BaseUrl set for Intuit Platform Service Type: {0}.", baseurl));
             }
 
             return baseurl;
@@ -431,11 +431,11 @@ namespace Intuit.Ipp.Core
         /// <returns>Returns the minorVersion</returns>
         private string GetMinorVersion()
         {
-            this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetMinorVersion method.");
+            IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetMinorVersion method.");
             string minorversion = null;
 
-            minorversion = this.IppConfiguration.MinorVersion.Qbo;
-            this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "MinorVersion set for QBO Service Type: {0}.", minorversion));
+            minorversion = IppConfiguration.MinorVersion.Qbo;
+            IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, string.Format(CultureInfo.InvariantCulture, "MinorVersion set for QBO Service Type: {0}.", minorversion));
 
 
             return minorversion;

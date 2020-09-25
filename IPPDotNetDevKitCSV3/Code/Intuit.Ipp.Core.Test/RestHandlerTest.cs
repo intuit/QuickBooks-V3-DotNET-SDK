@@ -99,8 +99,8 @@ namespace Intuit.Ipp.Core.Test
         public void PreparRequestGZipCompressionTest()
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            serviceContext.IppConfiguration.Message.Request.CompressionFormat =  Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
-            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
+            serviceContext.IppConfiguration.Message.Request.CompressionFormat =  Configuration.CompressionFormat.GZip;
+            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Configuration.CompressionFormat.GZip;
             IRestHandler handler = new SyncRestHandler(serviceContext);
             string resourceUri = string.Format("v3/company/{0}/customer", serviceContext.RealmId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);

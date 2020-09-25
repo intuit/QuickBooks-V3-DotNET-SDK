@@ -41,65 +41,65 @@ namespace Intuit.Ipp.Data
             XmlNode n = entitlementNode.SelectSingleNode("//appId");
             if (n != null)
             {
-                this.AppId = n.InnerText;
+                AppId = n.InnerText;
             }
 
             n = entitlementNode.SelectSingleNode("//productId");
             if (n != null)
             {
-                this.ProductId = n.InnerText;
+                ProductId = n.InnerText;
             }
 
             n = entitlementNode.SelectSingleNode("//planName");
             if (n != null)
             {
-                this.PlanName = n.InnerText;
+                PlanName = n.InnerText;
             }
 
             n = entitlementNode.SelectSingleNode("//planType");
             if (n != null)
             {
-                this.PlanType = n.InnerText;
+                PlanType = n.InnerText;
             }
 
             n = entitlementNode.SelectSingleNode("//maxUsers");
             if (n != null)
             {
-                this.MaxUsers = int.Parse(n.InnerText);
+                MaxUsers = int.Parse(n.InnerText);
             }
 
             n = entitlementNode.SelectSingleNode("//currentUsers");
             if (n != null)
             {
-                this.CurrentUsers = int.Parse(n.InnerText);
+                CurrentUsers = int.Parse(n.InnerText);
             }
 
             n = entitlementNode.SelectSingleNode("//daysRemainingTrial");
             if (n != null)
             {
-                this.DaysRemaining = int.Parse(n.InnerText);
+                DaysRemaining = int.Parse(n.InnerText);
             }
 
             n = entitlementNode.SelectSingleNode("//fee");
             if (n != null)
             {
-                this.Fee = double.Parse(n.InnerText);
+                Fee = double.Parse(n.InnerText);
             }
 
             n = entitlementNode.SelectSingleNode("//betaExpirationDate");
             if (n != null)
             {
                 // comes in longMonth DD, YYYY  format (e.g. June 10,2010)
-                this.BetaExpirationDate = DateTime.Parse(n.InnerText);
+                BetaExpirationDate = DateTime.Parse(n.InnerText);
             }
 
             n = entitlementNode.SelectSingleNode("//currentFileUsage");
             if (n != null)
             {
-                this.CurrentFileUsage = long.Parse(n.InnerText);
+                CurrentFileUsage = long.Parse(n.InnerText);
             }
 
-            this.Entitlements = Entitlement.ParseEntitlements(entitlementNode);
+            Entitlements = Entitlement.ParseEntitlements(entitlementNode);
         }
 
         #endregion

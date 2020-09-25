@@ -42,7 +42,7 @@ namespace Intuit.Ipp.Utility
                     return serializationFormat;
                 }
 
-                return Utility.SerializationFormat.Xml;
+                return SerializationFormat.Xml;
             }
         }
 

@@ -7,7 +7,7 @@
 namespace Intuit.Ipp.DataService.Test
 {
     using System;
-    using Intuit.Ipp.Data;
+    using Data;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
@@ -15,15 +15,15 @@ namespace Intuit.Ipp.DataService.Test
     using System.Text;
     using Intuit.Ipp.DataService;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Intuit.Ipp.Core;
+    using Core;
     using System.Collections.ObjectModel;
     using System.Configuration;
-    using Intuit.Ipp.Security;
+    using Security;
     using System.Net;
     using System.Globalization;
     using System.IO;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.QueryFilter;
+    using Exception;
+    using QueryFilter;
     //using Intuit.Ipp.LinqExtender;
 
 

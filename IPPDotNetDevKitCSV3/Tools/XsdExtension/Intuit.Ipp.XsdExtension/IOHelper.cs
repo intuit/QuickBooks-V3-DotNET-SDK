@@ -21,7 +21,7 @@ namespace Intuit.Ipp.XsdExtension
         /// <returns>path of Intuit.Ipp.Data project</returns>
         public static string GetDataObjectProjectPath()
         {
-            DirectoryInfo dir = new DirectoryInfo(System.IO.Directory.GetCurrentDirectory());
+            DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
             string rootPath = dir.Parent.Parent.Parent.Parent.FullName;
             rootPath = rootPath + DataObjectConstants.DATAPROJECTPATH;
             return rootPath;

@@ -29,13 +29,13 @@ namespace Intuit.Ipp.DataService
     using System.Linq;
     using System.Net;
     using System.Reflection;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.DataService.Properties;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Core.Rest;
+    using Data;
+    using Properties;
+    using Diagnostics;
+    using Exception;
+    using Utility;
     using System.Text;
     using System.IO;
     //using Intuit.Ipp.QueryFilter;
@@ -65,7 +65,7 @@ namespace Intuit.Ipp.DataService
         {
             ServiceContextValidation(serviceContext);
             this.serviceContext = serviceContext;
-            this.restHandler = new SyncRestHandler(this.serviceContext);
+            restHandler = new SyncRestHandler(this.serviceContext);
 
             // Set the Service type to QBO by calling a method.
             this.serviceContext.UseDataServices();
@@ -197,13 +197,13 @@ namespace Intuit.Ipp.DataService
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public T Add<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -214,11 +214,11 @@ namespace Intuit.Ipp.DataService
             }
 
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -228,13 +228,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -244,8 +244,8 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Add.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
@@ -259,13 +259,13 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Entity to Delete.</param>
         public T Delete<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Void.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -275,11 +275,11 @@ namespace Intuit.Ipp.DataService
                 resourceString = "creditcardpayment";
             }
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=delete", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -289,13 +289,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -305,17 +305,17 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
             IntuitEntity intuitEntity = restResponse.AnyIntuitObject as IntuitEntity;
 
             if (intuitEntity != null && intuitEntity.status != EntityStatusEnum.Deleted)
             {
                 IdsException exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.StatusNotDeleted));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Void.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Void.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
@@ -327,13 +327,13 @@ namespace Intuit.Ipp.DataService
         /// <returns name="T">Returns the voided entity</returns>
         public T Void<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Void.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -341,11 +341,11 @@ namespace Intuit.Ipp.DataService
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
 
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=void", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=void", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -355,13 +355,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -371,7 +371,7 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
 
             if (restResponse.AnyIntuitObjects != null)
             {
@@ -380,12 +380,12 @@ namespace Intuit.Ipp.DataService
                 if (restResponse != null && restResponse.status != IntuitResponseStatus.Deleted.ToString())
                 {
                     IdsException exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.StatusNotVoided));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                     IdsExceptionManager.HandleException(exception);
                 }
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Void.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Void.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
         #endregion
@@ -400,13 +400,13 @@ namespace Intuit.Ipp.DataService
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public T Update<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -416,11 +416,11 @@ namespace Intuit.Ipp.DataService
                 resourceString = "creditcardpayment";
             }
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -430,13 +430,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -446,8 +446,8 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Add.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
@@ -463,24 +463,24 @@ namespace Intuit.Ipp.DataService
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public T UpdateAccountOnTxns<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
 
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=updateaccountontxns", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=updateaccountontxns", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -490,13 +490,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -506,8 +506,8 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Add.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
@@ -523,24 +523,24 @@ namespace Intuit.Ipp.DataService
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public T DoNotUpdateAccountOnTxns<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
 
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=donotupdateaccountontxns", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?include=donotupdateaccountontxns", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -550,13 +550,13 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, entity);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -566,8 +566,8 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Add.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
 
@@ -589,11 +589,11 @@ namespace Intuit.Ipp.DataService
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetPdf by " + entity.GetType().FullName);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method GetPdf by " + entity.GetType().FullName);
 
             string id = string.Empty;
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
@@ -603,7 +603,7 @@ namespace Intuit.Ipp.DataService
             if (intuitEntity == null)
             {
                 IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -611,7 +611,7 @@ namespace Intuit.Ipp.DataService
             if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
             {
                 IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -622,12 +622,12 @@ namespace Intuit.Ipp.DataService
 
             //build the url to be called
             string uri = string.Empty;
-            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/pdf", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
+            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/pdf", CoreConstants.VERSION, serviceContext.RealmId, resourceString, id);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
-                Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
+                Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -637,7 +637,7 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepare request
-            HttpWebRequest request = this.restHandler.PrepareRequest(requestParameters: parameters, requestBody: null, includeRequestId: false);
+            HttpWebRequest request = restHandler.PrepareRequest(requestParameters: parameters, requestBody: null, includeRequestId: false);
             request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
 
             //Exception for Download, it does not accept "Accept" header
@@ -646,7 +646,7 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponseStream(request);
+                response = restHandler.GetResponseStream(request);
             }
             catch (IdsException ex)
             {
@@ -673,11 +673,11 @@ namespace Intuit.Ipp.DataService
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method SendEmail by " + entity.GetType().FullName);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method SendEmail by " + entity.GetType().FullName);
 
             string id = string.Empty;
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
@@ -687,7 +687,7 @@ namespace Intuit.Ipp.DataService
             if (intuitEntity == null)
             {
                 IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -695,7 +695,7 @@ namespace Intuit.Ipp.DataService
             if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
             {
                 IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -710,12 +710,12 @@ namespace Intuit.Ipp.DataService
             string uri = string.Empty;
 
             //IF sendtoemail is specidfied that takes priority and is used to send the email to, if not specified it uses the email from BillEmail.Address from the entity saved on the server and not from the passes in entity
-            uri = String.IsNullOrWhiteSpace(sendToEmail) ? string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id) : string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send?sendTo={4}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id, sendToEmail);
+            uri = String.IsNullOrWhiteSpace(sendToEmail) ? string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send", CoreConstants.VERSION, serviceContext.RealmId, resourceString, id) : string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/send?sendTo={4}", CoreConstants.VERSION, serviceContext.RealmId, resourceString, id, sendToEmail);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
-                Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
+                Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -725,14 +725,14 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepare request
-            HttpWebRequest request = this.restHandler.PrepareRequest(requestParameters: parameters, requestBody: null, includeRequestId: false);
+            HttpWebRequest request = restHandler.PrepareRequest(requestParameters: parameters, requestBody: null, includeRequestId: false);
             request.ContentType = CoreConstants.CONTENTTYPE_APPLICATIONOCTETSTREAM;
 
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -742,7 +742,7 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // De serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
 
             object value = restResponse.AnyIntuitObject;
             if (value != null)
@@ -765,7 +765,7 @@ namespace Intuit.Ipp.DataService
 
             IdsException exception = new IdsException(Resources.EmailAddressNotValid,
                     new ArgumentNullException(Resources.IdString));
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error,
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error,
                 string.Format(
                     CultureInfo.InvariantCulture,
                     Resources.EmailAddressNotValidExceptionMessage,
@@ -791,13 +791,13 @@ namespace Intuit.Ipp.DataService
         /// <returns> Returns an entity of specified Id.</returns> 
         public T FindById<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindById.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -812,7 +812,7 @@ namespace Intuit.Ipp.DataService
             if (intuitEntity == null)
             {
                 IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -820,7 +820,7 @@ namespace Intuit.Ipp.DataService
             if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
             {
                 IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -831,17 +831,17 @@ namespace Intuit.Ipp.DataService
             if (resourceString.Equals("preferences"))
 
             {
-                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
             }
             else
             {
-                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, id);
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}", CoreConstants.VERSION, serviceContext.RealmId, resourceString, id);
             }
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
-                Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
+                Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -851,12 +851,12 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, null);
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -868,7 +868,7 @@ namespace Intuit.Ipp.DataService
             // De serialize object
             IntuitResponse restResponse =
                 (IntuitResponse)
-                CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+                CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
 
             object value = restResponse.AnyIntuitObject;
             if (value != null)
@@ -889,7 +889,7 @@ namespace Intuit.Ipp.DataService
         /// <returns></returns>
         public ReadOnlyCollection<T> FindByParentId<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByParentId.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindByParentId.");
             
             ServicesHelper.ValidateEntity(entity, serviceContext);
             ServicesHelper.ValidateEntityType(entity, "TaxClassification", serviceContext);
@@ -909,11 +909,11 @@ namespace Intuit.Ipp.DataService
             ServicesHelper.ValidateId(parentId, serviceContext);
 
             string uri = string.Empty;
-            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/children", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, parentId);
+            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/{3}/children", CoreConstants.VERSION, serviceContext.RealmId, resourceString, parentId);
 
             List<T> entities = PrepareAndExecuteHttpRequest<T>(uri);
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindByParentId.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindByParentId.");
 
             ReadOnlyCollection<T> readOnlyCollection = new ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
@@ -927,7 +927,7 @@ namespace Intuit.Ipp.DataService
         /// <returns></returns>
         public ReadOnlyCollection<T> FindByLevel<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByLevel.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindByLevel.");
 
             // Validate parameter
             ServicesHelper.ValidateEntity(entity, serviceContext);
@@ -946,11 +946,11 @@ namespace Intuit.Ipp.DataService
             ServicesHelper.ValidateId(level, serviceContext);
             
             string uri = string.Empty;
-            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?level={3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, level);
+            uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?level={3}", CoreConstants.VERSION, serviceContext.RealmId, resourceString, level);
 
             List<T> entities = PrepareAndExecuteHttpRequest<T>(uri);
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindByLevel.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindByLevel.");
 
             ReadOnlyCollection<T> readOnlyCollection = new ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
@@ -966,7 +966,7 @@ namespace Intuit.Ipp.DataService
         /// <returns> Returns the list of entities.</returns>
         public ReadOnlyCollection<T> FindAll<T>(T entity, int startPosition = 1, int maxResults = 500) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindAll.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindAll.");
 
             ServicesHelper.ValidateEntity(entity, serviceContext);
             string resourceString = entity.GetType().Name;
@@ -980,7 +980,7 @@ namespace Intuit.Ipp.DataService
             if (resourceString == "TaxClassification")
             {
                 string uri = string.Empty;
-                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
 
                 entities = PrepareAndExecuteHttpRequest<T>(uri); 
             }
@@ -989,20 +989,20 @@ namespace Intuit.Ipp.DataService
                 if (startPosition <= 0)
                 {
                     IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                     IdsExceptionManager.HandleException(exception);
                 }
 
                 if (maxResults <= 0)
                 {
                     IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageSizeString));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                     IdsExceptionManager.HandleException(exception);
                 }
 
                 // Gets the resource name to be added to the resource Uri
                 string query = string.Format(CultureInfo.InvariantCulture, "select * from {0} startPosition {1} maxResults {2}", resourceString, startPosition, maxResults);
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, this.serviceContext.RealmId);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, serviceContext.RealmId);
 
                 // Creates request parameters
                 RequestParameters parameters = null;
@@ -1011,12 +1011,12 @@ namespace Intuit.Ipp.DataService
 
 
                 // Prepares request
-                HttpWebRequest request = this.restHandler.PrepareRequest(parameters, query);
+                HttpWebRequest request = restHandler.PrepareRequest(parameters, query);
                 string response = string.Empty;
                 try
                 {
                     // Gets response
-                    response = this.restHandler.GetResponse(request);
+                    response = restHandler.GetResponse(request);
                 }
                 catch (IdsException ex)
                 {
@@ -1026,7 +1026,7 @@ namespace Intuit.Ipp.DataService
                 CoreHelper.CheckNullResponseAndThrowException(response);
 
                 // Deserialize object
-                IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+                IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
                 QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
 
                 if (queryResponse.maxResults > 0)
@@ -1072,7 +1072,7 @@ namespace Intuit.Ipp.DataService
                 //return readOnlyCollection;
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindAll.");
 
             ReadOnlyCollection<T> readOnlyCollection = new ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
@@ -1088,7 +1088,7 @@ namespace Intuit.Ipp.DataService
         /// <returns> returns the batch object</returns>
         public Batch CreateNewBatch()
         {
-            Batch batch = new Batch(this.serviceContext, this.restHandler);
+            Batch batch = new Batch(serviceContext, restHandler);
             return batch;
         }
 
@@ -1104,13 +1104,13 @@ namespace Intuit.Ipp.DataService
         /// <returns> Returns an IntuitCDCResponse.</returns> 
         public IntuitCDCResponse CDC(List<IEntity> entityList, DateTime changedSince)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method CDC.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method CDC.");
 
             // Validate parameter
             if (entityList.Count <= 0)
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -1131,19 +1131,19 @@ namespace Intuit.Ipp.DataService
 
             {
                 query = "entities=" + entityString + "&changedSince=" + changedSince.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'");
-                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/cdc?{2}", CoreConstants.VERSION, this.serviceContext.RealmId, query);
+                uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/cdc?{2}", CoreConstants.VERSION, serviceContext.RealmId, query);
             }
 
             // Creates request parameters
             RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, null);
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -1153,7 +1153,7 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // De serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
             object[] cdcResponses = restResponse.AnyIntuitObjects;
 
             IntuitCDCResponse returnValue = new IntuitCDCResponse();
@@ -1199,7 +1199,7 @@ namespace Intuit.Ipp.DataService
                 }
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method CDC.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method CDC.");
             return returnValue;
         }
 
@@ -1217,15 +1217,15 @@ namespace Intuit.Ipp.DataService
         /// <param name="maxResults">The max results.</param>
         public void FindAllAsync<T>(T entity, int startPosition = 1, int maxResults = 500) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindAll Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindAll Asynchronously.");
             FindAllCallCompletedEventArgs findAllCompletedEventArgs = new FindAllCallCompletedEventArgs();
             //// Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 findAllCompletedEventArgs.Error = exception;
-                this.OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
+                OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
                 return;
             }
 
@@ -1233,16 +1233,16 @@ namespace Intuit.Ipp.DataService
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnFindAllAsynCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(this.FindAllAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnFindAllAsynCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(FindAllAsyncCompleted);
                     asyncService.FindAllAsync<T>(entity, startPosition, maxResults);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     findAllCompletedEventArgs.Error = idsException;
-                    this.OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
+                    OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
                 }
             }
             else
@@ -1250,33 +1250,33 @@ namespace Intuit.Ipp.DataService
                 if (startPosition <= 0)
                 {
                     IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageNumberString));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                     findAllCompletedEventArgs.Error = exception;
-                    this.OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
+                    OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
                     return;
                 }
 
                 if (maxResults <= 0)
                 {
                     IdsException exception = new IdsException(Resources.ParameterZeroNegativeValueMessage, new ArgumentException(Resources.PageSizeString));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                     findAllCompletedEventArgs.Error = exception;
-                    this.OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
+                    OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
                     return;
                 }
 
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnFindAllAsynCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(this.FindAllAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnFindAllAsynCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(FindAllAsyncCompleted);
                     asyncService.FindAllAsync<T>(entity, startPosition, maxResults);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     findAllCompletedEventArgs.Error = idsException;
-                    this.OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
+                    OnFindAllAsyncCompleted(this, findAllCompletedEventArgs);
                 }
             }
         }
@@ -1288,21 +1288,21 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity"></param>
         public void FindByLevelAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByLevelAsync.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindByLevelAsync.");
             FindAllCallCompletedEventArgs callCompletedEventArgs = new FindAllCallCompletedEventArgs();
 
             try
             {
-                AsyncService asyncService = new AsyncService(this.serviceContext);
-                asyncService.OnFindByLevelAsyncCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(this.FindByLevelAsyncCompleted);
+                AsyncService asyncService = new AsyncService(serviceContext);
+                asyncService.OnFindByLevelAsyncCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(FindByLevelAsyncCompleted);
                 asyncService.FindByLevelAsync<T>(entity);
             }
             catch (SystemException systemException)
             {
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                 IdsException idsException = new IdsException(systemException.Message);
                 callCompletedEventArgs.Error = idsException;
-                this.OnFindByLevelAsyncCompleted(this, callCompletedEventArgs);
+                OnFindByLevelAsyncCompleted(this, callCompletedEventArgs);
             }
         }
 
@@ -1313,21 +1313,21 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity"></param>
         public void FindByParentIdAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByParentIdAsync.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindByParentIdAsync.");
             FindAllCallCompletedEventArgs callCompletedEventArgs = new FindAllCallCompletedEventArgs();
 
             try
             {
-                AsyncService asyncService = new AsyncService(this.serviceContext);
-                asyncService.OnFindByParentIdAsyncCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(this.FindByParentIdAsyncCompleted);
+                AsyncService asyncService = new AsyncService(serviceContext);
+                asyncService.OnFindByParentIdAsyncCompleted += new DataServiceCallback<IEntity>.FindAllCallCompletedEventHandler(FindByParentIdAsyncCompleted);
                 asyncService.FindByParentIdAsync<T>(entity);
             }
             catch (SystemException systemException)
             {
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                 IdsException idsException = new IdsException(systemException.Message);
                 callCompletedEventArgs.Error = idsException;
-                this.OnFindByParentIdAsyncCompleted(this, callCompletedEventArgs);
+                OnFindByParentIdAsyncCompleted(this, callCompletedEventArgs);
             }
         }
 
@@ -1338,29 +1338,29 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Instance of entity to find</param>
         public void FindByIdAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindById Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method FindById Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnFindByIdAsyncCompleted(this, callCompletedEventArgs);
+                OnFindByIdAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnFindByIdAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.FindByIdAsynCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnFindByIdAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(FindByIdAsynCompleted);
                     asyncService.FindByIdAsync<T>(entity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnFindByIdAsyncCompleted(this, callCompletedEventArgs);
+                    OnFindByIdAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1372,14 +1372,14 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Entity to be returned as pdf bytes (entities of type Sales Receipt, Invoice and Estimate are supported to be returned as pdf).</param>
         public void GetPdfAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method GetPdf Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method GetPdf Asynchronously.");
             PdfCallCompletedEventArgs pdfCallCompletedEventArgs = new PdfCallCompletedEventArgs();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 pdfCallCompletedEventArgs.Error = exception;
-                this.OnGetPdfAsyncCompleted(this, pdfCallCompletedEventArgs);
+                OnGetPdfAsyncCompleted(this, pdfCallCompletedEventArgs);
             }
             else
             {
@@ -1388,16 +1388,16 @@ namespace Intuit.Ipp.DataService
 
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnGetPdfAsynCompleted += new DataServiceCallback<IEntity>.PdfCallCompletedEventHandler(this.GetPdfAsynCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnGetPdfAsynCompleted += new DataServiceCallback<IEntity>.PdfCallCompletedEventHandler(GetPdfAsynCompleted);
                     asyncService.GetPdfAsync<T>(entity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     pdfCallCompletedEventArgs.Error = idsException;
-                    this.OnGetPdfAsyncCompleted(this, pdfCallCompletedEventArgs);
+                    OnGetPdfAsyncCompleted(this, pdfCallCompletedEventArgs);
                 }
             }
         }
@@ -1410,14 +1410,14 @@ namespace Intuit.Ipp.DataService
         /// <param name="sendToEmail">Optional parameter to specify an email address</param>
         public void SendEmailAsync<T>(T entity, String sendToEmail = null) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method SendEmail Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method SendEmail Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnSendEmailAsyncCompleted(this, callCompletedEventArgs);
+                OnSendEmailAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
@@ -1429,16 +1429,16 @@ namespace Intuit.Ipp.DataService
 
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnSendEmailAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.SendEmailAsynCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnSendEmailAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(SendEmailAsynCompleted);
                     asyncService.SendEmailAsync<T>(entity, sendToEmail);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnSendEmailAsyncCompleted(this, callCompletedEventArgs);
+                    OnSendEmailAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1450,7 +1450,7 @@ namespace Intuit.Ipp.DataService
             if (!(givenType == typeof(SalesReceipt) || givenType == typeof(Invoice) || givenType == typeof(Estimate) || (givenType == typeof(CreditMemo) || givenType == typeof(RefundReceipt) || givenType == typeof(PurchaseOrder) || givenType == typeof(Payment))))
             {
                 IdsException exception = new IdsException(Resources.PdfOperationNotSupportedOnEntity);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
 
                 IdsExceptionManager.HandleException(exception);
             }
@@ -1463,7 +1463,7 @@ namespace Intuit.Ipp.DataService
             if (!(givenType == typeof(SalesReceipt) || givenType == typeof(Payment) || givenType == typeof(Invoice)))
             {
                 IdsException exception = new IdsException(Resources.VoidOperationNotSupportedOnEntity);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
 
                 IdsExceptionManager.HandleException(exception);
             }
@@ -1476,30 +1476,30 @@ namespace Intuit.Ipp.DataService
         /// <param name="changedSince">date after which entities changed.</param>
         public void CDCAsync(List<IEntity> entityList, DateTime changedSince)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method CDC Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method CDC Asynchronously.");
             CDCCallCompletedEventArgs cdcCompletedEventArgs = new CDCCallCompletedEventArgs();
             //// Validate parameter
             if (entityList.Count <= 0)
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 cdcCompletedEventArgs.Error = exception;
-                this.OnCDCAsyncCompleted(this, cdcCompletedEventArgs);
+                OnCDCAsyncCompleted(this, cdcCompletedEventArgs);
                 return;
             }
 
             try
             {
-                AsyncService asyncService = new AsyncService(this.serviceContext);
-                asyncService.OnCDCAsynCompleted += new DataServiceCallback<IEntity>.CDCCallCompletedEventHandler(this.CDCAsyncCompleted);
+                AsyncService asyncService = new AsyncService(serviceContext);
+                asyncService.OnCDCAsynCompleted += new DataServiceCallback<IEntity>.CDCCallCompletedEventHandler(CDCAsyncCompleted);
                 asyncService.CDCAsync(entityList, changedSince);
             }
             catch (SystemException systemException)
             {
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                 IdsException idsException = new IdsException(systemException.Message);
                 cdcCompletedEventArgs.Error = idsException;
-                this.OnCDCAsyncCompleted(this, cdcCompletedEventArgs);
+                OnCDCAsyncCompleted(this, cdcCompletedEventArgs);
             }
         }
 
@@ -1514,31 +1514,31 @@ namespace Intuit.Ipp.DataService
         public void AddAsync<T>(T entity) where T : IEntity
         {
             Console.Write("AddAsync started \n");
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             Console.Write("callCompletedEventArgs instantiated \n");
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
                 Console.Write("IdsException instantiated \n");
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+                OnAddAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnAddAsyncCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.AddAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnAddAsyncCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(AddAsyncCompleted);
                     asyncService.AddAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnAddAsyncCompleted(this, callCompletedEventArgs);
+                    OnAddAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1553,29 +1553,29 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Instance of entity to Delete</param>
         public void DeleteAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method delete Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method delete Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnDeleteAsyncCompleted(this, callCompletedEventArgs);
+                OnDeleteAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnDeleteAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.DeleteAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnDeleteAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(DeleteAsyncCompleted);
                     asyncService.DeleteAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnDeleteAsyncCompleted(this, callCompletedEventArgs);
+                    OnDeleteAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1587,30 +1587,30 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Entity to Void (only entities of type Sales Receipt and Payment are supported to be voided)</param>
         public void VoidAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Void Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnVoidAsyncCompleted(this, callCompletedEventArgs);
+                OnVoidAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 CheckForVoidAllowedEntities(entity);
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnVoidAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.VoidAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnVoidAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(VoidAsyncCompleted);
                     asyncService.VoidAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnVoidAsyncCompleted(this, callCompletedEventArgs);
+                    OnVoidAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1625,29 +1625,29 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
         public void UpdateAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Update Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Update Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnUpdateAsyncCompleted(this, callCompletedEventArgs);
+                OnUpdateAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
-                    asyncService.OnUpdateAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.UpdateAsyncCompleted);
+                    AsyncService asyncService = new AsyncService(serviceContext);
+                    asyncService.OnUpdateAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(UpdateAsyncCompleted);
                     asyncService.UpdateAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnUpdateAsyncCompleted(this, callCompletedEventArgs);
+                    OnUpdateAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1662,31 +1662,31 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
         public void UpdateAccAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Update account Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Update account Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnUpdateAccAsyncCompleted(this, callCompletedEventArgs);
+                OnUpdateAccAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
+                    AsyncService asyncService = new AsyncService(serviceContext);
 
-                    asyncService.OnUpdateAccAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.UpdateAccAsyncCompleted);
+                    asyncService.OnUpdateAccAsynCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(UpdateAccAsyncCompleted);
                     //check
                     asyncService.UpdateAccAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnUpdateAccAsyncCompleted(this, callCompletedEventArgs);
+                    OnUpdateAccAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1702,31 +1702,31 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Returns an updated version of the entity with updated identifier and sync token</param>
         public void DoNotUpdateAccAsync<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Not Update account Asynchronously.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Not Update account Asynchronously.");
             CallCompletedEventArgs<IEntity> callCompletedEventArgs = new CallCompletedEventArgs<IEntity>();
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 callCompletedEventArgs.Error = exception;
-                this.OnDoNotUpdateAccAsyncCompleted(this, callCompletedEventArgs);
+                OnDoNotUpdateAccAsyncCompleted(this, callCompletedEventArgs);
             }
             else
             {
                 try
                 {
-                    AsyncService asyncService = new AsyncService(this.serviceContext);
+                    AsyncService asyncService = new AsyncService(serviceContext);
 
-                    asyncService.OnDoNotUpdateAccAsyncCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(this.DoNotUpdateAccAsyncCompleted);
+                    asyncService.OnDoNotUpdateAccAsyncCompleted += new DataServiceCallback<IEntity>.CallCompletedEventHandler(DoNotUpdateAccAsyncCompleted);
                     //check
                     asyncService.DoNotUpdateAccAsync<IEntity>(entity as IEntity);
                 }
                 catch (SystemException systemException)
                 {
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                     IdsException idsException = new IdsException(systemException.Message);
                     callCompletedEventArgs.Error = idsException;
-                    this.OnDoNotUpdateAccAsyncCompleted(this, callCompletedEventArgs);
+                    OnDoNotUpdateAccAsyncCompleted(this, callCompletedEventArgs);
                 }
             }
         }
@@ -1761,8 +1761,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void FindAllAsyncCompleted(object sender, FindAllCallCompletedEventArgs eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAllAsync.");
-            this.OnFindAllAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindAllAsync.");
+            OnFindAllAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1772,8 +1772,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void FindByIdAsynCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindByIdAsync.");
-            this.OnFindByIdAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindByIdAsync.");
+            OnFindByIdAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1783,8 +1783,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs"></param>
         private void FindByLevelAsyncCompleted(object sender, FindAllCallCompletedEventArgs eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindByLevelAsyncCompleted.");
-            this.OnFindByLevelAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindByLevelAsyncCompleted.");
+            OnFindByLevelAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1794,8 +1794,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs"></param>
         private void FindByParentIdAsyncCompleted(object sender, FindAllCallCompletedEventArgs eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindByParentIdAsyncCompleted.");
-            this.OnFindByParentIdAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method FindByParentIdAsyncCompleted.");
+            OnFindByParentIdAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1805,8 +1805,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void GetPdfAsynCompleted(object sender, PdfCallCompletedEventArgs eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method GetPdfAsync.");
-            this.OnGetPdfAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method GetPdfAsync.");
+            OnGetPdfAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1816,8 +1816,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void SendEmailAsynCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method SendEmail.");
-            this.OnSendEmailAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method SendEmail.");
+            OnSendEmailAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1827,8 +1827,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void AddAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method add Async.");
-            this.OnAddAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method add Async.");
+            OnAddAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1838,8 +1838,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void DeleteAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Delete Asyn.");
-            this.OnDeleteAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Delete Asyn.");
+            OnDeleteAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1849,8 +1849,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void VoidAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method VoidAsync.");
-            this.OnVoidAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method VoidAsync.");
+            OnVoidAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1860,8 +1860,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void UpdateAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method UpdateAsync.");
-            this.OnUpdateAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method UpdateAsync.");
+            OnUpdateAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1871,8 +1871,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void UpdateAccAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method UpdateAccAsync.");
-            this.OnUpdateAccAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method UpdateAccAsync.");
+            OnUpdateAccAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1882,8 +1882,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void DoNotUpdateAccAsyncCompleted(object sender, CallCompletedEventArgs<IEntity> eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method DoNotUpdateaccAsync.");
-            this.OnDoNotUpdateAccAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method DoNotUpdateaccAsync.");
+            OnDoNotUpdateAccAsyncCompleted(sender, eventArgs);
         }
 
         /// <summary>
@@ -1893,8 +1893,8 @@ namespace Intuit.Ipp.DataService
         /// <param name="eventArgs">callback event arguments</param>
         private void CDCAsyncCompleted(object sender, CDCCallCompletedEventArgs eventArgs)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method CDCAsync.");
-            this.OnCDCAsyncCompleted(sender, eventArgs);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method CDCAsync.");
+            OnCDCAsyncCompleted(sender, eventArgs);
         }
 
         #endregion
@@ -1907,20 +1907,20 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Attachment Metadata of Stream to be Uploaded.</param>
         /// <param name="stream">Stream to be uploaded</param>
         /// <returns>Returns an uploaded attachment with updated identifier and sync token.</returns>
-        public Attachable Upload(Attachable entity, System.IO.Stream stream)
+        public Attachable Upload(Attachable entity, Stream stream)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Upload.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Upload.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             // Builds resource Uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/upload", CoreConstants.VERSION, this.serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/upload", CoreConstants.VERSION, serviceContext.RealmId);
 
             // Creates request parameters
 
@@ -1931,12 +1931,12 @@ namespace Intuit.Ipp.DataService
             parameters = new RequestParameters(uri, HttpVerbType.POST, string.Format(CultureInfo.InvariantCulture, CoreConstants.CONTENTTYPE_MULTIPARTFORMDATAFORMAT, guid));
 
             //Construct attachement multipart request body
-            IEntitySerializer serializer = CoreHelper.GetSerializer(this.serviceContext, true);
+            IEntitySerializer serializer = CoreHelper.GetSerializer(serviceContext, true);
             string entityboundaryHeader = string.Empty;
 
             string contentTypeHeader = string.Empty;
 
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
                 contentTypeHeader = string.Format(CoreConstants.CONTENTDISPOSITION_CONTENTTYPE_FORMAT, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -1947,7 +1947,7 @@ namespace Intuit.Ipp.DataService
 
             entityboundaryHeader = String.Format(CoreConstants.CONTENTDISPOSITION_FORMAT, guid, "file_metadata_0", null, contentTypeHeader, null);
 
-            System.IO.Stream body = new System.IO.MemoryStream();
+            Stream body = new MemoryStream();
             //adding serialized attachement entity to request body
             UTF8Encoding enc = new UTF8Encoding();
 
@@ -1990,13 +1990,13 @@ namespace Intuit.Ipp.DataService
             body.Write(bytes, 0, bytes.Length);
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, body);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, body);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -2006,8 +2006,8 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing Method Add.");
             foreach (AttachableResponse returnEntity in restResponse.AnyIntuitObjects)
             {
                 return returnEntity.AnyIntuitObject as Attachable;
@@ -2022,13 +2022,13 @@ namespace Intuit.Ipp.DataService
         /// <returns> Returns an entity of specified Id.</returns> 
         public byte[] Download(Attachable entity)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Download.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Download.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -2038,7 +2038,7 @@ namespace Intuit.Ipp.DataService
             if (string.IsNullOrWhiteSpace(entity.FileAccessUri))
             {
                 IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -2048,7 +2048,7 @@ namespace Intuit.Ipp.DataService
             RequestParameters parameters = new RequestParameters(uri, HttpVerbType.GET, null);
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, null);
 
             //Exception for Download, it does not accept "Accept" header
             request.Accept = null;
@@ -2057,7 +2057,7 @@ namespace Intuit.Ipp.DataService
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -2119,8 +2119,8 @@ namespace Intuit.Ipp.DataService
         {
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
-                Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat ==
+                Core.Configuration.SerializationFormat.Json)
             {
                 parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
@@ -2130,12 +2130,12 @@ namespace Intuit.Ipp.DataService
             }
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, null);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, null);
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -2145,7 +2145,7 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // Deserialize object
-            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(serviceContext, false).Deserialize<IntuitResponse>(response);
             QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
 
             List<T> entities = new List<T>();

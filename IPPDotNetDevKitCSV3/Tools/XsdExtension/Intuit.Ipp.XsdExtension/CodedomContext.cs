@@ -37,7 +37,7 @@ namespace Intuit.Ipp.XsdExtension
         /// <param name="namespaceName">namespace name to initialize code dom</param>
         public CodeDomContext(string namespaceName)
         {
-            this.codeNamespace = new CodeNamespace(namespaceName);
+            codeNamespace = new CodeNamespace(namespaceName);
         }
         #endregion
 
@@ -48,8 +48,8 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public string OutputCodeFile
         {
-            get { return this.outputCodeFile; }
-            set { this.outputCodeFile = value; }
+            get { return outputCodeFile; }
+            set { outputCodeFile = value; }
         }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public string OutputCodePath
         {
-            get { return this.outputCodePath; }
-            set { this.outputCodePath = value; }
+            get { return outputCodePath; }
+            set { outputCodePath = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public CodeNamespace CodeNamespace
         {
-            get { return this.codeNamespace; }
+            get { return codeNamespace; }
         }
         #endregion
     }

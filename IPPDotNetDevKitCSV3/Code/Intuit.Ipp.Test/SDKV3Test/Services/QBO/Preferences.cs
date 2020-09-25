@@ -190,7 +190,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             DataService.DataService service = new DataService.DataService(qboContextoAuth);
             Preferences found = Helper.FindOrAdd<Preferences>(qboContextoAuth, new Preferences());
             
-            DataService.Batch batch = service.CreateNewBatch();
+            Batch batch = service.CreateNewBatch();
             batch.Add(QBOHelper.UpdatePreferences(qboContextoAuth, found),"Update",OperationEnum.update);
             
             batch.Execute();

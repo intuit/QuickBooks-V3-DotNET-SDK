@@ -100,8 +100,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Nupkg", "Intuit.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.Test", "Intuit.Ipp.Test\SDKV3Test\Intuit.Ipp.Test.csproj", "{C66BE803-C649-4D9B-9F0D-77B00D18444A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2-Dotnet_UsingSDK", "OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.csproj", "{5573F08E-0683-49D1-86C6-BF68E29A3EE8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -981,36 +979,6 @@ Global
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|x86.ActiveCfg = Release|Any CPU
 		{C66BE803-C649-4D9B-9F0D-77B00D18444A}.Release|x86.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Debug|x86.Build.0 = Debug|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|Any CPU.ActiveCfg = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|Any CPU.Build.0 = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|Mixed Platforms.ActiveCfg = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|Mixed Platforms.Build.0 = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|x86.ActiveCfg = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net461|x86.Build.0 = net461|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|Any CPU.ActiveCfg = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|Any CPU.Build.0 = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|Mixed Platforms.ActiveCfg = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|Mixed Platforms.Build.0 = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|x86.ActiveCfg = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.net472|x86.Build.0 = net472|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|Any CPU.ActiveCfg = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|Any CPU.Build.0 = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|Mixed Platforms.ActiveCfg = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|Mixed Platforms.Build.0 = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|x86.ActiveCfg = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.netstandard2.0|x86.Build.0 = netstandard2.0|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.ActiveCfg = Release|Any CPU
-		{5573F08E-0683-49D1-86C6-BF68E29A3EE8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

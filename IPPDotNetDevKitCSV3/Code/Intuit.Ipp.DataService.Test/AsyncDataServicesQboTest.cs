@@ -247,7 +247,7 @@ namespace Intuit.Ipp.DataService.Test
                 Assert.IsTrue(getcustomer.Id == (e.Entity as Customer).Id);
                 manualEvent.Set();
             };
-            Intuit.Ipp.Data.IntuitEntity intuitEntity = getcustomer as Intuit.Ipp.Data.IntuitEntity;
+            IntuitEntity intuitEntity = getcustomer as IntuitEntity;
             qboService.FindByIdAsync(getcustomer);
             manualEvent.WaitOne(30000);
         }

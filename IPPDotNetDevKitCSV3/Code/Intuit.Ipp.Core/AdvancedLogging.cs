@@ -24,7 +24,7 @@ using System;
 namespace Intuit.Ipp.Core.Rest
 {
     using System.IO;
-    using Intuit.Ipp.Exception;
+    using Exception;
     using System;
     using Serilog;
     using Serilog.Sinks;
@@ -103,17 +103,17 @@ namespace Intuit.Ipp.Core.Rest
         {
             get
             {
-                return this.serviceRequestLoggingLocationForFile;
+                return serviceRequestLoggingLocationForFile;
             }
 
             set
             {
                 if (!Directory.Exists(value))
                 {
-                    this.serviceRequestLoggingLocationForFile = System.IO.Path.GetTempPath();
+                    serviceRequestLoggingLocationForFile = Path.GetTempPath();
                 }
 
-                this.serviceRequestLoggingLocationForFile = value;
+                serviceRequestLoggingLocationForFile = value;
             }
         }
 
@@ -199,13 +199,13 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="serviceRequestLoggingLocationForFile"></param>
         public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile, string serviceRequestLoggingLocationForFile)
         {
-            this.EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
-            this.EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
-            this.EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
-            this.EnableSerilogRequestResponseLoggingForRollingFile = enableSerilogRequestResponseLoggingForRollingFile;
+            EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
+            EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
+            EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
+            EnableSerilogRequestResponseLoggingForRollingFile = enableSerilogRequestResponseLoggingForRollingFile;
             //this.EnableSerilogRequestResponseLoggingForAzureDocumentDB = enableSerilogRequestResponseLoggingForAzureDocumentDB;
            
-            this.ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
+            ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
             //this.ServiceRequestAzureDocumentDBUrl = serviceRequestAzureDocumentDBUrl;
             //this.ServiceRequestAzureDocumentDBSecureKey = serviceRequestAzureDocumentDBSecureKey;
             //this.ServiceRequestAzureDocumentDBTTL = serviceRequestAzureDocumentDBTTL;
@@ -214,17 +214,17 @@ namespace Intuit.Ipp.Core.Rest
 
             string filePath = string.Empty;
 
-            if (this.EnableSerilogRequestResponseLoggingForRollingFile)
+            if (EnableSerilogRequestResponseLoggingForRollingFile)
             {
                 //Assign tempath if no location found
-                if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
+                if (string.IsNullOrWhiteSpace(ServiceRequestLoggingLocationForFile))
                 {
-                    this.ServiceRequestLoggingLocationForFile = Path.GetTempPath();
+                    ServiceRequestLoggingLocationForFile = Path.GetTempPath();
                 }
 
 
                 //Log file path for widows n ios
-                filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+                filePath = Path.Combine(ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
            
             }
 
@@ -234,27 +234,27 @@ namespace Intuit.Ipp.Core.Rest
                  
 
             //Enabling console log
-            if (this.EnableSerilogRequestResponseLoggingForConsole == true)
+            if (EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
                 loggerConfig = loggerConfig.WriteTo.LiterateConsole();
             }
 
             //Enabling Trace log
-            if (this.EnableSerilogRequestResponseLoggingForTrace == true)
+            if (EnableSerilogRequestResponseLoggingForTrace == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Trace();
             }
 
             //Enabling Debug log
-            if (this.EnableSerilogRequestResponseLoggingForDebug == true)
+            if (EnableSerilogRequestResponseLoggingForDebug == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Debug();
 
             }
 
             //Enabling Rolling file log
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
+            if (!string.IsNullOrEmpty(ServiceRequestLoggingLocationForFile) && EnableSerilogRequestResponseLoggingForRollingFile == true)
             {
                 loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
             }

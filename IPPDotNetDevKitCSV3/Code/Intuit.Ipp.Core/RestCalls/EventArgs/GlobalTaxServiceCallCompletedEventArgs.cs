@@ -21,13 +21,13 @@
 
 namespace Intuit.Ipp.Core
 {
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// Contains events for call back methods and corresponding fields
     /// </summary>
     /// <typeparam name="T">Generic constraint of type TaxService.</typeparam>
-    public class GlobalTaxServiceCallCompletedEventArgs<T> where T : Intuit.Ipp.Data.TaxService
+    public class GlobalTaxServiceCallCompletedEventArgs<T> where T : Data.TaxService
     {
         /// <summary>
         /// Initializes a new instance of the CallCompletedEventArgs class.

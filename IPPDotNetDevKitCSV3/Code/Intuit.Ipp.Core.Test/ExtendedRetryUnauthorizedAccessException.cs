@@ -8,7 +8,7 @@
 namespace Intuit.Ipp.Retry.Test
 {
     using System;
-    using Intuit.Ipp.Core;
+    using Core;
     //using Intuit.Ipp.Retry;
 
     /// <summary>
@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Retry.Test
         /// <returns>
         ///   <c>true</c> if [is retry exception] [the specified ex]; otherwise, <c>false</c>.
         /// </returns>
-        public bool IsRetryException(System.Exception ex)
+        public bool IsRetryException(Exception ex)
         {
             bool flag = false;
             

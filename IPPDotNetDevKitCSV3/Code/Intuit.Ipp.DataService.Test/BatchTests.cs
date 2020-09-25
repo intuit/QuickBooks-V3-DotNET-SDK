@@ -24,8 +24,8 @@ namespace Intuit.Ipp.DataService.Test
         {
             ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
-            context.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
-            context.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
+            context.IppConfiguration.Message.Response.CompressionFormat = Core.Configuration.CompressionFormat.GZip;
+            context.IppConfiguration.Message.Response.SerializationFormat = Core.Configuration.SerializationFormat.Json;
             Customer customer = new Customer();
             string guid = Guid.NewGuid().ToString("N");
             customer.GivenName = guid.Substring(0, 25);
@@ -63,7 +63,7 @@ namespace Intuit.Ipp.DataService.Test
                     Assert.Fail();
                 }
             }
-            catch (Ipp.Exception.IdsException ex)
+            catch (Exception.IdsException ex)
             {
                 Assert.Fail(ex.ToString());
             }
@@ -121,7 +121,7 @@ namespace Intuit.Ipp.DataService.Test
                 List<Customer> customers = inuititemresponse.Entities.ToList().ConvertAll(item => item as Customer);
                 Assert.IsTrue(customers.Count >= 2);
             }
-            catch (Ipp.Exception.IdsException ex)
+            catch (Exception.IdsException ex)
             {
                 Assert.Fail(ex.ToString());
             }
@@ -186,14 +186,14 @@ namespace Intuit.Ipp.DataService.Test
                 batch.ExecuteAsync();
                 manualEvent.WaitOne(30000);
             }
-            catch (Ipp.Exception.IdsException ex)
+            catch (Exception.IdsException ex)
             {
                 Assert.Fail(ex.ToString());
             }
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void UseSameBatchIDTwice()
         {
             ServiceContext context = Initializer.InitializeServiceContextQbo();
@@ -211,7 +211,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddNullEntityInBatch()
         {
             ServiceContext context = Initializer.InitializeServiceContextQbo();
@@ -223,7 +223,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddMoreThanTwentyFiveItemsInBatch()
         {
             ServiceContext context = Initializer.InitializeServiceContextQbo();
@@ -245,7 +245,7 @@ namespace Intuit.Ipp.DataService.Test
         #region Add IDS Query Tests
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddEmptyQueryToBatch()
         {
             Batch batch = GetBatch();
@@ -255,7 +255,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddEmptyIdToBatch()
         {
             Batch batch = GetBatch();
@@ -265,7 +265,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddTwentyFivePlusToBatch()
         {
             Batch batch = GetBatch();
@@ -277,7 +277,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddDuplicateItemToBatch()
         {
             Batch batch = GetBatch();
@@ -287,7 +287,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddNullIdToBatch()
         {
             Batch batch = GetBatch();
@@ -300,7 +300,7 @@ namespace Intuit.Ipp.DataService.Test
         #region Add Entity Item Tests
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddEmptyQueryToBatchEntity()
         {
             Batch batch = GetBatch();
@@ -310,7 +310,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddEmptyIdToBatchEntity()
         {
             Batch batch = GetBatch();
@@ -321,7 +321,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddTwentyFivePlusToBatchEntity()
         {
             Batch batch = GetBatch();
@@ -336,7 +336,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddDuplicateItemToBatchEntity()
         {
             Batch batch = GetBatch();
@@ -347,7 +347,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void AddNullIdToBatchEntity()
         {
             Batch batch = GetBatch();
@@ -359,7 +359,7 @@ namespace Intuit.Ipp.DataService.Test
 
         #region Remove Tests
         [TestMethod]
-        [ExpectedException(typeof(System.NullReferenceException))]
+        [ExpectedException(typeof(NullReferenceException))]
         public void RemoveItem()
         {
             Batch batch = GetBatch();
@@ -373,7 +373,7 @@ namespace Intuit.Ipp.DataService.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Intuit.Ipp.Exception.IdsException))]
+        [ExpectedException(typeof(Exception.IdsException))]
         public void RemoveWrongItem()
         {
             Batch batch = GetBatch();
@@ -447,7 +447,7 @@ namespace Intuit.Ipp.DataService.Test
             response.Exception = new Exception.IdsException();
             response.Id = "addCustomer";
             Assert.AreEqual(response.Id, "addCustomer");
-            Assert.ReferenceEquals(response.Exception, new Exception.IdsException());
+            ReferenceEquals(response.Exception, new Exception.IdsException());
         }
 
 
@@ -473,7 +473,7 @@ namespace Intuit.Ipp.DataService.Test
                 batch.Add(new CDCQuery() { ChangedSince = DateTime.Now.AddDays(-1), ChangedSinceSpecified = true, Entities = "Customer" }, "cdcOpration");
                 batch.Execute();
             }
-            catch (Ipp.Exception.IdsException ex)
+            catch (Exception.IdsException ex)
             {
                 Assert.Fail(ex.ToString());
             }

@@ -71,7 +71,7 @@ namespace Intuit.Ipp.Exception.Test
             string errorMessage = "Unauthorized";
             string errorCode = "401";
             string source = "Intuit.Ipp.Test";
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException(errorMessage, errorCode, source);
+            SerializationException target = new SerializationException(errorMessage, errorCode, source);
             Assert.AreEqual(target.Message, errorMessage);
             Assert.AreEqual(target.ErrorCode, errorCode);
             Assert.AreEqual(target.Source, source);
@@ -87,11 +87,11 @@ namespace Intuit.Ipp.Exception.Test
             string errorCode = "401";
             string source = "Intuit.Ipp.Test";
             System.Exception innerException = new ArgumentNullException();
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException(errorMessage, errorCode, source, innerException);
+            SerializationException target = new SerializationException(errorMessage, errorCode, source, innerException);
             Assert.AreEqual(target.Message, errorMessage);
             Assert.AreEqual(target.ErrorCode, errorCode);
             Assert.AreEqual(target.Source, source);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
 
         /// <summary>
@@ -104,21 +104,21 @@ namespace Intuit.Ipp.Exception.Test
             string errorCode = "401";
             string source = "Intuit.Ipp.Test";
             System.Exception innerException = new ArgumentNullException();
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException(errorMessage, errorCode, source, innerException);
-            Intuit.Ipp.Exception.SerializationException newTarget = null;
+            SerializationException target = new SerializationException(errorMessage, errorCode, source, innerException);
+            SerializationException newTarget = null;
             using (Stream s = new MemoryStream())
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(s, target);
                 s.Position = 0; // Reset stream position
-                newTarget = (Intuit.Ipp.Exception.SerializationException)formatter.Deserialize(s);
+                newTarget = (SerializationException)formatter.Deserialize(s);
             }
 
             Assert.IsNotNull(newTarget);
             Assert.AreEqual(newTarget.Message, errorMessage);
             Assert.AreEqual(newTarget.ErrorCode, errorCode);
             Assert.AreEqual(newTarget.Source, source);
-            Assert.ReferenceEquals(newTarget.InnerException, innerException);
+            ReferenceEquals(newTarget.InnerException, innerException);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Intuit.Ipp.Exception.Test
         public void SerializationExceptionConstructorTest3()
         {
             string message = "Serialization Exception was raised.";
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException();
+            SerializationException target = new SerializationException();
             Assert.AreEqual(target.Message, message);
         }
 
@@ -139,7 +139,7 @@ namespace Intuit.Ipp.Exception.Test
         public void SerializationExceptionConstructorTest4()
         {
             string errorMessage = "This is an error message.";
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException(errorMessage);
+            SerializationException target = new SerializationException(errorMessage);
             Assert.AreEqual(target.Message, errorMessage);
         }
 
@@ -151,9 +151,9 @@ namespace Intuit.Ipp.Exception.Test
         {
             string errorMessage = "This is an error message.";
             System.Exception innerException = new ArgumentNullException();
-            Intuit.Ipp.Exception.SerializationException target = new Intuit.Ipp.Exception.SerializationException(errorMessage, innerException);
+            SerializationException target = new SerializationException(errorMessage, innerException);
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
     }
 }

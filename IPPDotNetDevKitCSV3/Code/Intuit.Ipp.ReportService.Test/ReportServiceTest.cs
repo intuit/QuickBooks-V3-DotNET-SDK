@@ -27,7 +27,7 @@ namespace Intuit.Ipp.ReportService.Test.Common
             public static void MyClassInitialize(TestContext testContext)
             {
             ServiceContext context = Initializer.InitializeServiceContextQbo();
-            context.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
+            context.IppConfiguration.Message.Response.SerializationFormat = Core.Configuration.SerializationFormat.Json;
                 reportServiceTestCases = new ReportService(context);
                 
             }

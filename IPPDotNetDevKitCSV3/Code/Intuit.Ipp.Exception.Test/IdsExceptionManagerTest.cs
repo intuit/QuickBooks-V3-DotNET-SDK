@@ -99,7 +99,7 @@ namespace Intuit.Ipp.Exception.Test
                 Assert.AreEqual(target.Message, errorMessage);
                 Assert.AreEqual(target.ErrorCode, errorCode);
                 Assert.AreEqual(target.Source, source);
-                Assert.ReferenceEquals(target.InnerException, innerException);
+                ReferenceEquals(target.InnerException, innerException);
             }
         }
 
@@ -118,7 +118,7 @@ namespace Intuit.Ipp.Exception.Test
             catch (IdsException target)
             {
                 Assert.AreEqual(target.Message, errorMessage);
-                Assert.ReferenceEquals(target.InnerException, innerException);
+                ReferenceEquals(target.InnerException, innerException);
             }
         }
 
@@ -152,7 +152,7 @@ namespace Intuit.Ipp.Exception.Test
             }
             catch (IdsException target)
             {
-                Assert.ReferenceEquals(target, exception);
+                ReferenceEquals(target, exception);
             }
         }
     }

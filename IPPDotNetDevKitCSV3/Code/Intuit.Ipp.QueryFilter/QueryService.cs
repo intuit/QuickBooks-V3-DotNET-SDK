@@ -31,12 +31,12 @@ namespace Intuit.Ipp.QueryFilter
     using System.Net;
     using System.Reflection;
     using System.Text;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.QueryFilter.Properties;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Core.Rest;
+    using Data;
+    using Exception;
+    using Properties;
+    using Utility;
    // using Intuit.Ipp.LinqExtender;
 
     
@@ -122,15 +122,15 @@ namespace Intuit.Ipp.QueryFilter
             // Set the Service type to either QBO by calling a method.
             this.serviceContext.UseDataServices();
 
-            this.restHandler = new SyncRestHandler(this.serviceContext);
-            this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
-            this.queryBuilder = new StringBuilder();
-            this.selectBuilder = new StringBuilder();
-            this.countBuilder = new StringBuilder();
-            this.orderByBuilder = new StringBuilder();
-            this.whereBuilder = new StringBuilder();
-            this.fromBuilder = new StringBuilder();
-            this.pageBuilder = new StringBuilder();
+            restHandler = new SyncRestHandler(this.serviceContext);
+            responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+            queryBuilder = new StringBuilder();
+            selectBuilder = new StringBuilder();
+            countBuilder = new StringBuilder();
+            orderByBuilder = new StringBuilder();
+            whereBuilder = new StringBuilder();
+            fromBuilder = new StringBuilder();
+            pageBuilder = new StringBuilder();
             //this.notExpressions = new List<LinqExtender.Ast.Expression>();
         }
 
@@ -149,7 +149,7 @@ namespace Intuit.Ipp.QueryFilter
             }
 
             // Buid the service uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, queryOperationType);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, serviceContext.RealmId, queryOperationType);
 
             // Creates request parameters
             RequestParameters parameters = null;
@@ -158,12 +158,12 @@ namespace Intuit.Ipp.QueryFilter
         
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, idsQuery);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, idsQuery);
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -174,7 +174,7 @@ namespace Intuit.Ipp.QueryFilter
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // Deserialize object
-            IntuitResponse restResponse = (IntuitResponse)this.responseSerializer.Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(response);
             QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
 
             if (idsQuery.ToLower().Contains("count(*)"))
@@ -238,7 +238,7 @@ namespace Intuit.Ipp.QueryFilter
                  }
              }*/
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
             System.Collections.ObjectModel.ReadOnlyCollection<T> readOnlyCollection = new System.Collections.ObjectModel.ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
         }
@@ -300,7 +300,7 @@ namespace Intuit.Ipp.QueryFilter
             }
 
             // Buid the service uri
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, this.serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, serviceContext.RealmId);
 
             // Creates request parameters
             RequestParameters parameters = null;
@@ -309,12 +309,12 @@ namespace Intuit.Ipp.QueryFilter
     
 
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, idsQuery);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, idsQuery);
             string response = string.Empty;
             try
             {
                 // Gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -325,7 +325,7 @@ namespace Intuit.Ipp.QueryFilter
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // Deserialize object
-            IntuitResponse restResponse = (IntuitResponse)this.responseSerializer.Deserialize<IntuitResponse>(response);
+            IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(response);
             QueryResponse[] queryResponses = restResponse.AnyIntuitObjects as QueryResponse[];
 
             List<System.Collections.ObjectModel.ReadOnlyCollection<TSource>> returnValues = new List<System.Collections.ObjectModel.ReadOnlyCollection<TSource>>();
@@ -362,7 +362,7 @@ namespace Intuit.Ipp.QueryFilter
                 returnValues.Add(entities.AsReadOnly());
             }
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
             return returnValues.AsReadOnly();
         }
 

@@ -20,7 +20,7 @@
 
 namespace Intuit.Ipp.DataService
 {
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// Contains events for call back methods and corresponding fields

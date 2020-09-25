@@ -8,7 +8,7 @@ namespace Intuit.Ipp.Utility.Test
 {
     using System;
     using System.Globalization;
-    using Intuit.Ipp.Utility;
+    using Utility;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     
     /// <summary>
@@ -37,7 +37,7 @@ namespace Intuit.Ipp.Utility.Test
         /// </summary>
         public RequestXmlCollectionTest()
         {
-            this.target = new RequestXmlCollection(this.requestId);
+            target = new RequestXmlCollection(requestId);
         }
 
         /// <summary>
@@ -47,12 +47,12 @@ namespace Intuit.Ipp.Utility.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 
@@ -62,8 +62,8 @@ namespace Intuit.Ipp.Utility.Test
         [TestMethod()]
         public void RequestXmlCollectionConstructorTest()
         {
-            this.target.AddTextParameter("test", "test");
-            Assert.IsTrue(this.target.InnerXml.Contains(this.requestId));
+            target.AddTextParameter("test", "test");
+            Assert.IsTrue(target.InnerXml.Contains(requestId));
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Intuit.Ipp.Utility.Test
         {
             string name = "xmlField";
             string value = "xmlValue";
-            this.target.AddTextParameter(name, value);
-            Assert.IsTrue(this.target.InnerXml.Contains("<" + name + ">" + value + "</" + name + ">"));
+            target.AddTextParameter(name, value);
+            Assert.IsTrue(target.InnerXml.Contains("<" + name + ">" + value + "</" + name + ">"));
         }
     }
 }

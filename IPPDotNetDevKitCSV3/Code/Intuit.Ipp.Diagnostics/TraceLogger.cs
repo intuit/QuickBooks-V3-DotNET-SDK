@@ -43,7 +43,7 @@ namespace Intuit.Ipp.Diagnostics
         {
             // Searches for the switch name "IPPTraceSwitch" in the config file of the client.
             // If not found then default trace switch is OFF.
-            this.traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+            traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Intuit.Ipp.Diagnostics
         /// <param name="messageToWrite">The message to write.</param>
         public void Log(TraceLevel idsTraceLevel, string messageToWrite)
         {
-            if ((int)this.traceSwitch.Level < (int)idsTraceLevel)
+            if ((int)traceSwitch.Level < (int)idsTraceLevel)
             {
                 return;
             }

@@ -3899,7 +3899,7 @@ namespace Intuit.Ipp.Test
         internal static BillPayment CreateBillPaymentCheck(ServiceContext context)
         {
             BillPayment billPayment = new BillPayment();
-            VendorCredit vendorCredit = Helper.Add(context, QBOHelper.CreateVendorCredit(context));
+            VendorCredit vendorCredit = Helper.Add(context, CreateVendorCredit(context));
             billPayment.PayType = BillPaymentTypeEnum.Check;
             billPayment.PayTypeSpecified = true;
             //billPayment.AnyIntuitObject = 
@@ -3962,7 +3962,7 @@ namespace Intuit.Ipp.Test
             //line.LineNum = "LineNum";
             //line.Description = "Description";
 
-            Bill bill = Helper.Add<Bill>(context, QBOHelper.CreateBill(context));
+            Bill bill = Helper.Add<Bill>(context, CreateBill(context));
             line1.Amount = bill.TotalAmt;
             line1.AmountSpecified = true;
             List<LinkedTxn> LinkedTxnList1 = new List<LinkedTxn>();
@@ -3998,7 +3998,7 @@ namespace Intuit.Ipp.Test
         internal static BillPayment CreateBillPaymentCreditCard(ServiceContext context)
         {
             BillPayment billPayment = new BillPayment();
-            VendorCredit vendorCredit = Helper.Add(context, QBOHelper.CreateVendorCredit(context));
+            VendorCredit vendorCredit = Helper.Add(context, CreateVendorCredit(context));
             billPayment.PayType = BillPaymentTypeEnum.Check;
             billPayment.PayTypeSpecified = true;
             //billPayment.AnyIntuitObject = 
@@ -4063,7 +4063,7 @@ namespace Intuit.Ipp.Test
             //line.LineNum = "LineNum";
             //line.Description = "Description";
 
-            Bill bill = Helper.Add<Bill>(context, QBOHelper.CreateBill(context));
+            Bill bill = Helper.Add<Bill>(context, CreateBill(context));
             line1.Amount = bill.TotalAmt;
             line1.AmountSpecified = true;
             List<LinkedTxn> LinkedTxnList1 = new List<LinkedTxn>();

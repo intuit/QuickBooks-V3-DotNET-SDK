@@ -15,7 +15,7 @@ namespace Intuit.Ipp.Security
     using System.Text.RegularExpressions;
     //using DevDefined.OAuth.Consumer;
     //using DevDefined.OAuth.Framework;
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// OAuth implementation for Request validate contract.
@@ -48,7 +48,7 @@ namespace Intuit.Ipp.Security
                 throw new InvalidTokenException("Access token contains forbidden char.");
             }
 
-            this.AccessToken = accessToken;
+            AccessToken = accessToken;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Intuit.Ipp.Security
             //IOAuthSession oauthSession = CreateOAuthSessionWithConsumerContext(consumerContext);
             //oauthSession.AccessToken = this.CreateAccessToken();
             //string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
-            string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
+            string oauthHeader = string.Format("Bearer {0}", AccessToken);
             webRequest.Headers.Add(AuthorizationHeader, oauthHeader);
         }
     }

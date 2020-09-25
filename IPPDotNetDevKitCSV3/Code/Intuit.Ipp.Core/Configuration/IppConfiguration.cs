@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Core.Configuration
 {
    
     //using Intuit.Ipp.Retry;  
-    using Intuit.Ipp.Security;
+    using Security;
     
 
 

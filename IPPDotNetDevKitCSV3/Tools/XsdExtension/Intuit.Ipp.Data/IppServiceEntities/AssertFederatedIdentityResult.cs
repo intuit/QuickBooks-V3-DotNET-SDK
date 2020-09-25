@@ -37,29 +37,29 @@ namespace Intuit.Ipp.Data
             XmlNode actionNode = singleUserNode.SelectSingleNode("//action");
             if (actionNode != null)
             {
-                this.Action = actionNode.InnerText;
+                Action = actionNode.InnerText;
             }
 
             XmlNode errCodeNode = singleUserNode.SelectSingleNode("//errcode");
             if (errCodeNode != null)
             {
-                this.ErrorCode = errCodeNode.InnerText;
-                if (this.ErrorCode.Equals("0"))
+                ErrorCode = errCodeNode.InnerText;
+                if (ErrorCode.Equals("0"))
                 {
-                    this.IsSuccess = true;
+                    IsSuccess = true;
                 }
             }
 
             XmlNode errTextNode = singleUserNode.SelectSingleNode("//errtext");
             if (errTextNode != null)
             {
-                this.ErrorText = errTextNode.InnerText;
+                ErrorText = errTextNode.InnerText;
             }
 
             XmlNode uDataNode = singleUserNode.SelectSingleNode("//udata");
             if (uDataNode != null)
             {
-                this.UData = uDataNode.InnerText;
+                UData = uDataNode.InnerText;
             }
         }
 

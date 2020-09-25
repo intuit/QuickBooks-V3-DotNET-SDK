@@ -21,13 +21,13 @@
 
 namespace Intuit.Ipp.Core
 {
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// Contains events for call back methods and corresponding fields
     /// </summary>
     /// <typeparam name="T">Generic constraint of type IEntity.</typeparam>
-    public class ReportCallCompletedEventArgs<T> where T : Intuit.Ipp.Data.Report
+    public class ReportCallCompletedEventArgs<T> where T : Data.Report
     {
         /// <summary>
         /// Initializes a new instance of the CallCompletedEventArgs class.

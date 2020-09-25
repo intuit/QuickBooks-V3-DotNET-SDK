@@ -67,12 +67,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             
            
             
-            this.Kty = key.Kty;
-            this.E = key.E;
-            this.Use = key.Use;
-            this.Kid = key.Kid;
-            this.Alg = key.Alg;
-            this.N = key.N;
+            Kty = key.Kty;
+            E = key.E;
+            Use = key.Use;
+            Kid = key.Kid;
+            Alg = key.Alg;
+            N = key.N;
 
         }
             

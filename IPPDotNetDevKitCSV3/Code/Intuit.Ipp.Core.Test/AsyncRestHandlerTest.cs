@@ -62,20 +62,20 @@ namespace Intuit.Ipp.Core.Test
 
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
             HttpWebRequest request = handler.PrepareRequest(parameters, query);
-            this.GetResponseHelper(handler, request);
+            GetResponseHelper(handler, request);
         }
 
         [TestMethod]
         public void GetResponseCompressedSuccessTest()
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
+            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Configuration.CompressionFormat.GZip;
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
             string query = "select * from Account startPosition 1 maxResults 10";
             string resourceUri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/query", CoreConstants.VERSION, serviceContext.RealmId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
             HttpWebRequest request = handler.PrepareRequest(parameters, query);
-            this.GetResponseHelper(handler, request);
+            GetResponseHelper(handler, request);
         }
 
         [TestMethod]
@@ -89,13 +89,13 @@ namespace Intuit.Ipp.Core.Test
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null, includeRequestId: false);
             request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
-            this.GetResponseStreamHelper(handler, request);
+            GetResponseStreamHelper(handler, request);
         }
         [TestMethod]
         public void GetResponseStreamCompressedSuccessTest()
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
+            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Configuration.CompressionFormat.GZip;
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
             List<SalesReceipt> salesReceipts = Helper.FindAll<SalesReceipt>(serviceContext, new SalesReceipt());
             Assert.IsTrue(salesReceipts.Count > 0);
@@ -103,7 +103,7 @@ namespace Intuit.Ipp.Core.Test
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null, includeRequestId: false);
             request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
-            this.GetResponseStreamHelper(handler, request);
+            GetResponseStreamHelper(handler, request);
         }
         [TestMethod]
         public void GetResponseStreamRetrySuccessTest()
@@ -117,7 +117,7 @@ namespace Intuit.Ipp.Core.Test
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null, includeRequestId: false);
             request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
-            this.GetResponseStreamHelper(handler, request);
+            GetResponseStreamHelper(handler, request);
         }
 
         [TestMethod]
@@ -133,7 +133,7 @@ namespace Intuit.Ipp.Core.Test
                 RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 HttpWebRequest request = handler.PrepareRequest(parameters, null, includeRequestId: false);
                 request.Accept = CoreConstants.CONTENTTYPE_APPLICATIONPDF;
-                this.GetResponseStreamHelper(handler, request);
+                GetResponseStreamHelper(handler, request);
             }
             catch (IdsException idsEx)
             {
@@ -215,7 +215,7 @@ namespace Intuit.Ipp.Core.Test
             string resourceUri = string.Format("v3/company/{0}/account/{1}", serviceContext.RealmId, AccountId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_TEXTXML);
             HttpWebRequest request = handler.PrepareRequest(parameters, null);
-            this.GetResponseHelper(handler, request);
+            GetResponseHelper(handler, request);
         }
 
         
@@ -233,9 +233,9 @@ namespace Intuit.Ipp.Core.Test
             AsyncRestHandler handler = new AsyncRestHandler(serviceContext);
             string resourceUri = string.Format("v3/company/{0}/customer", serviceContext.RealmId);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
-            Intuit.Ipp.Data.Customer customer = new Data.Customer();
+            Customer customer = new Customer();
             HttpWebRequest request = handler.PrepareRequest(parameters, customer);
-            this.GetResponseHelper(handler, request, true);
+            GetResponseHelper(handler, request, true);
         }
 
        

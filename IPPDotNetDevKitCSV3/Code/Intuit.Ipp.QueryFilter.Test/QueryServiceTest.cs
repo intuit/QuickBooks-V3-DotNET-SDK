@@ -32,11 +32,11 @@ namespace Intuit.Ipp.QueryFilter.Test
 
         public QueryServiceTest()
         {
-            this.dateTime = new DateTime(2012, 07, 10);
+            dateTime = new DateTime(2012, 07, 10);
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            this.customerContext = new QueryService<Customer>(serviceContext);
-            this.invoiceContext = new QueryService<Invoice>(serviceContext);
-            this.accountContext = new QueryService<Account>(serviceContext);
+            customerContext = new QueryService<Customer>(serviceContext);
+            invoiceContext = new QueryService<Invoice>(serviceContext);
+            accountContext = new QueryService<Account>(serviceContext);
             service = new DataService.DataService(serviceContext);
         }
 
@@ -369,7 +369,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void CustomerWhereSimpleTest()
         {
-            string idsQuery = string.Format("select * FROM Customer WHERE Metadata.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select * FROM Customer WHERE Metadata.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(customers);
         }
@@ -377,7 +377,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void CustomerWhereOrderBySimpleTest()
         {
-            string idsQuery = string.Format("select * FROM Customer WHERE Metadata.CreateTime >= '{0}' ORDER BY GivenName", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select * FROM Customer WHERE Metadata.CreateTime >= '{0}' ORDER BY GivenName", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(customers);
         }
@@ -385,7 +385,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void CustomerWhereOrderBySelectSimpleTest()
         {
-            string idsQuery = string.Format("select GivenName FROM Customer WHERE Metadata.CreateTime >= '{0}' ORDER BY GivenName", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select GivenName FROM Customer WHERE Metadata.CreateTime >= '{0}' ORDER BY GivenName", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(customers);
         }
@@ -393,7 +393,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void CustomerWhereSelectSimpleTest()
         {
-            string idsQuery = string.Format("select GivenName, Metadata.CreateTime FROM Customer WHERE Metadata.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select GivenName, Metadata.CreateTime FROM Customer WHERE Metadata.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(customers);
         }
@@ -401,7 +401,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void CustomerWhereCountTest()
         {
-            string idsQuery = string.Format("select COUNT(*) FROM Customer WHERE MetaData.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select COUNT(*) FROM Customer WHERE MetaData.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             int count = customerContext.ExecuteIdsQuery(idsQuery).Count();
         }
 
@@ -416,7 +416,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         public void CustomerSelectTest()
         {
             string idsQuery = "Select Id, MetaData.CreateTime FROM Customer";
-            IEnumerable<Customer> customers = this.customerContext.ExecuteIdsQuery(idsQuery);
+            IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(customers);
         }
 
@@ -424,14 +424,14 @@ namespace Intuit.Ipp.QueryFilter.Test
         [ExpectedException(typeof(InvalidParameterException))]
         public void CustomerNullIdsQueryTest()
         {
-            IEnumerable<Customer> customers = this.customerContext.ExecuteIdsQuery(null);
+            IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery(null);
         }
 
         [TestMethod][Ignore]//INFO: Exception thrown is of type ValidationException which extends IdsException while ExpectedException is not accepting it
         [ExpectedException(typeof(ValidationException))]
         public void CustomerInvalidIdsQueryTest()
         {
-           IEnumerable<Customer> customers = this.customerContext.ExecuteIdsQuery("select *");
+           IEnumerable<Customer> customers = customerContext.ExecuteIdsQuery("select *");
         }
 
         #endregion
@@ -441,7 +441,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void InvoiceWhereSimpleTest()
         {
-            string idsQuery = string.Format("select * FROM Invoice WHERE Metadata.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select * FROM Invoice WHERE Metadata.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Invoice> invoices = invoiceContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(invoices);
         }
@@ -449,7 +449,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void InvoiceWhereOrderBySimpleTest()
         {
-            string idsQuery = string.Format("select * FROM Invoice WHERE Metadata.CreateTime >= '{0}' ORDER BY MetaData.CreateTime DESC", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select * FROM Invoice WHERE Metadata.CreateTime >= '{0}' ORDER BY MetaData.CreateTime DESC", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Invoice> invoices = invoiceContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(invoices);
         }
@@ -457,7 +457,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void InvoiceWhereOrderBySelectSimpleTest()
         {
-            string idsQuery = string.Format("select Id FROM Invoice WHERE Metadata.CreateTime >= '{0}' ORDER BY MetaData.CreateTime", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select Id FROM Invoice WHERE Metadata.CreateTime >= '{0}' ORDER BY MetaData.CreateTime", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Invoice> invoices = invoiceContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(invoices);
         }
@@ -465,7 +465,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void InvoiceWhereSelectSimpleTest()
         {
-            string idsQuery = string.Format("select Id, Line.* FROM Invoice WHERE Metadata.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select Id, Line.* FROM Invoice WHERE Metadata.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             IEnumerable<Invoice> invoices = invoiceContext.ExecuteIdsQuery(idsQuery);
             Assert.IsNotNull(invoices);
         }
@@ -473,7 +473,7 @@ namespace Intuit.Ipp.QueryFilter.Test
         [TestMethod()]
         public void InvoiceWhereCountTest()
         {
-            string idsQuery = string.Format("select COUNT(*) FROM Invoice WHERE Metadata.CreateTime >= '{0}'", this.dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
+            string idsQuery = string.Format("select COUNT(*) FROM Invoice WHERE Metadata.CreateTime >= '{0}'", dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK"));
             int count = invoiceContext.ExecuteIdsQuery(idsQuery).Count();
         }
 

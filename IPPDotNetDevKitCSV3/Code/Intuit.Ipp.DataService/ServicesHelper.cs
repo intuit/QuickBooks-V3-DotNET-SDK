@@ -23,10 +23,10 @@ namespace Intuit.Ipp.DataService
     using System;
     using System.Globalization;
     using System.Reflection;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.DataService.Properties;
-    using Intuit.Ipp.Exception;
+    using Core;
+    using Data;
+    using Properties;
+    using Exception;
 
     /// <summary>
     /// Class contains Helper Methods for Services.

@@ -28,10 +28,10 @@ namespace Intuit.Ipp.Core.Rest
     using System.IO;
     using System.Linq;
     using System.Net;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Data;
+    using Diagnostics;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// Handles the fault tags in the response and handles them.
@@ -89,7 +89,7 @@ namespace Intuit.Ipp.Core.Rest
                     int statusCode = (int)errorResponse.StatusCode;
                     string errorString = string.Empty;
 
-                    ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
+                    ICompressor responseCompressor = CoreHelper.GetCompressor(context, false);
                     if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
                     {
                         using (var responseStream = errorResponse.GetResponseStream())
@@ -130,7 +130,7 @@ namespace Intuit.Ipp.Core.Rest
                         }
                     }
                     //Log errorstring to disk
-                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
+                    CoreHelper.GetRequestLogging(context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
                     //Log errorstring to Serilog
                     CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
@@ -138,7 +138,7 @@ namespace Intuit.Ipp.Core.Rest
                     if (isIps)
                     {
                         IdsException exception = new IdsException(errorString, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source);
-                        this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, exception.ToString());
+                        context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, exception.ToString());
                         //CoreHelper.AdvancedLogging.Log(idsException.ToString());
                         return exception;
                     }
@@ -151,14 +151,14 @@ namespace Intuit.Ipp.Core.Rest
                         // Bad Request: 400
                         case HttpStatusCode.BadRequest:
                             // Parse the error response and create the aggregate exception.
-                            idsException = this.ParseErrorResponseAndPrepareException(errorString);
+                            idsException = ParseErrorResponseAndPrepareException(errorString);
                             idsException = new IdsException(statusCodeDescription, statusCode.ToString(CultureInfo.InvariantCulture), webException.Source, idsException);
                             break;
 
                         // Unauthorized: 401
                         case HttpStatusCode.Unauthorized:
                             // Create Invalid Token Exception.
-                            idsException = this.ParseErrorResponseAndPrepareException(errorString);
+                            idsException = ParseErrorResponseAndPrepareException(errorString);
                             InvalidTokenException invalidTokenException = new InvalidTokenException(string.Format(CultureInfo.InvariantCulture, "{0}-{1}", statusCodeDescription, statusCode), idsException);
                             idsException = invalidTokenException;
                             break;
@@ -216,10 +216,10 @@ namespace Intuit.Ipp.Core.Rest
 
             // Parse the xml to get the error.
             // Extract the Fault from the response.
-            Fault fault = this.ExtractFaultFromResponse(errorString);
+            Fault fault = ExtractFaultFromResponse(errorString);
 
             // Iterate the Fault and Prepare the exception.
-            idsException = this.IterateFaultAndPrepareException(fault);
+            idsException = IterateFaultAndPrepareException(fault);
 
             // return the exception.
             return idsException;
@@ -253,12 +253,12 @@ namespace Intuit.Ipp.Core.Rest
                 
                 if (errorString.Contains("EntitlementsResponse"))
                 {
-                    EntitlementsResponse entitlements = (EntitlementsResponse)CoreHelper.GetSerializer(this.context, false).Deserialize<EntitlementsResponse>(errorString);
+                    EntitlementsResponse entitlements = (EntitlementsResponse)CoreHelper.GetSerializer(context, false).Deserialize<EntitlementsResponse>(errorString);
                 }
                 // Deserialize to IntuitResponse using the Serializer of the context.
                 else
                 {
-                    IntuitResponse intuitResponse = (IntuitResponse)CoreHelper.GetSerializer(this.context, false).Deserialize<IntuitResponse>(errorString);
+                    IntuitResponse intuitResponse = (IntuitResponse)CoreHelper.GetSerializer(context, false).Deserialize<IntuitResponse>(errorString);
 
                     // Check whether the object is null or note. Also check for Items property since it has the fault.
                     if (intuitResponse != null && intuitResponse.AnyIntuitObject != null)
@@ -288,7 +288,7 @@ namespace Intuit.Ipp.Core.Rest
                 //Download might have Uri in body
                 try
                 {
-                    if (new System.Uri(errorString) != null)
+                    if (new Uri(errorString) != null)
                     {
                         return null;
                     }

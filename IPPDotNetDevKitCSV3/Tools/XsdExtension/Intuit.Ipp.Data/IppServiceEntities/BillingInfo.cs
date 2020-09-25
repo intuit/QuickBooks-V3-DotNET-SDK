@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Data
 {
     using System;
     using System.Xml;
-    using Intuit.Ipp.Utility;
+    using Utility;
 
     /// <summary>
     /// Encapsulates a billing info describing the billing state of an application.
@@ -49,19 +49,19 @@ namespace Intuit.Ipp.Data
             XmlNode node = billingNode.SelectSingleNode("//status");
             if (node != null)
             {
-                this.Status = node.InnerText;
+                Status = node.InnerText;
             }
 
             node = billingNode.SelectSingleNode("//lastPaymentDate");
             if (node != null)
             {
-                this.LastPaymentDate = DateHelper.ParseDateTimeField(node.InnerText);
+                LastPaymentDate = DateHelper.ParseDateTimeField(node.InnerText);
             }
 
             node = billingNode.SelectSingleNode("//dbid");
             if (node != null)
             {
-                this.DbId = node.InnerText;
+                DbId = node.InnerText;
             }
         }
 
@@ -88,7 +88,7 @@ namespace Intuit.Ipp.Data
         /// </returns>
         public bool HasStatusGrace()
         {
-            return this.Status == StatusGrace;
+            return Status == StatusGrace;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Intuit.Ipp.Data
         /// </returns>
         public bool HasStatusOk()
         {
-            return this.Status == StatusOk;
+            return Status == StatusOk;
         }
     }
 }

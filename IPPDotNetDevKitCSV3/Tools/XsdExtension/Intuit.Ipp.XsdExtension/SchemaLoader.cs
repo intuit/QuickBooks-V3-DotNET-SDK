@@ -12,7 +12,7 @@ namespace Intuit.Ipp.XsdExtension
     using System.IO;
     using System.Reflection;
     using System.Xml.Schema;
-    using Intuit.Ipp.Diagnostics;
+    using Diagnostics;
 
     /// <summary>
     /// Holds operations related to Schema loading
@@ -47,7 +47,7 @@ namespace Intuit.Ipp.XsdExtension
             }
             else
             {
-                string defaultXsdFilePath = this.GetXSDPath();
+                string defaultXsdFilePath = GetXSDPath();
                 target.Log(TraceLevel.Verbose, DataObjectConstants.FILESFROM + defaultXsdFilePath);
                 xsdFiles = Directory.GetFiles(defaultXsdFilePath, DataObjectConstants.FILESEXTENSIONS, SearchOption.AllDirectories);
             }
@@ -88,7 +88,7 @@ namespace Intuit.Ipp.XsdExtension
 
             if (!Directory.Exists(xsdPath))
             {
-                appPath = this.RemoveBinPath(xsdPath);
+                appPath = RemoveBinPath(xsdPath);
                 xsdPath = appPath + "\\" + DataObjectConstants.DEFAULTFOLDERNAME;
             }
 

@@ -48,8 +48,8 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public XmlCodeExporter CodeExporter
         {
-            get { return this.codeExporter; }
-            set { this.codeExporter = value; }
+            get { return codeExporter; }
+            set { codeExporter = value; }
         }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public List<XmlSchema> XmlSchemaList
         {
-            get { return this.xmlSchemaList; }
-            set { this.xmlSchemaList = value; }
+            get { return xmlSchemaList; }
+            set { xmlSchemaList = value; }
         }
 
         /// <summary>
@@ -66,8 +66,8 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         public XmlSchemas XmlSchemas
         {
-            get { return this.xmlSchemas; }
-            set { this.xmlSchemas = value; }
+            get { return xmlSchemas; }
+            set { xmlSchemas = value; }
         }
 
         #endregion

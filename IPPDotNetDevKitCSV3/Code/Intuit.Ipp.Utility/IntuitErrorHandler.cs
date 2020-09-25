@@ -23,8 +23,8 @@ namespace Intuit.Ipp.Utility
     using System;
     using System.Globalization;
     using System.Xml;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility.Properties;
+    using Exception;
+    using Properties;
 
     /// <summary>
     /// Intuit Error Handler class.
@@ -46,7 +46,7 @@ namespace Intuit.Ipp.Utility
 
             XmlDocument responseXml = new XmlDocument();
             responseXml.LoadXml(response);
-            IntuitErrorHandler.HandleErrors(responseXml);
+            HandleErrors(responseXml);
         }
 
         /// <summary>

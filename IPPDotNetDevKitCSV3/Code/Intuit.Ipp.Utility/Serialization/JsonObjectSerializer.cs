@@ -22,8 +22,8 @@ namespace Intuit.Ipp.Utility
 {
     using System;
     using System.Reflection;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
+    using Diagnostics;
+    using Exception;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using System.Linq;
@@ -38,7 +38,7 @@ namespace Intuit.Ipp.Utility
         /// </summary>
         public JsonObjectSerializer()
         {
-            this.IDSLogger = new TraceLogger();
+            IDSLogger = new TraceLogger();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Intuit.Ipp.Utility
         /// <param name="idsLogger">The ids logger.</param>
         public JsonObjectSerializer(ILogger idsLogger)
         {
-            this.IDSLogger = idsLogger;
+            IDSLogger = idsLogger;
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Intuit.Ipp.Utility
             catch (Exception ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
                 IdsExceptionManager.HandleException(serializationException);
             }
             data = data.Replace("T00:00:00Z", "");
@@ -120,7 +120,7 @@ namespace Intuit.Ipp.Utility
             catch (SystemException ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
                 IdsExceptionManager.HandleException(serializationException);
             }
 

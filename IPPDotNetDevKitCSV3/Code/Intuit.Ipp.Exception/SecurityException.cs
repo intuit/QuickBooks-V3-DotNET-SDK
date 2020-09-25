@@ -24,7 +24,7 @@ namespace Intuit.Ipp.Exception
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// TODO: Update summary.

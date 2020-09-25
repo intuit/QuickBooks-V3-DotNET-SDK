@@ -25,7 +25,7 @@ namespace Intuit.Ipp.Core
     /// Contains event handlers for call back events.
     /// </summary>
     /// <typeparam name="T">Generic Constraint </typeparam>
-    public static class GlobalTaxServiceCallback<T> where T : Intuit.Ipp.Data.TaxService
+    public static class GlobalTaxServiceCallback<T> where T : Data.TaxService
     {
         /// <summary>
         /// Generic Event handler to handle TaxService asynchronous call back.

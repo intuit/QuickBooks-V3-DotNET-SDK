@@ -7,8 +7,8 @@
 namespace Intuit.Ipp.DataService.Test
 {
     using System.Collections.Generic;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Data;
+    using Core;
+    using Data;
     using System.Collections.ObjectModel;
     using System.Collections;
     using System.IO;
@@ -23,107 +23,107 @@ namespace Intuit.Ipp.DataService.Test
 
         public ServiceContext GetContext()
         {
-            return this.serviceContext;
+            return serviceContext;
         }
 
         public DataServiceTestCases(ServiceContext serviceContext)
         {
             this.serviceContext = serviceContext;
-            this.dataService = new DataService(serviceContext);
+            dataService = new DataService(serviceContext);
         }
 
         internal IEntity AddEntity(IEntity entity, Core.Configuration.SerializationFormat serializationFormat = Core.Configuration.SerializationFormat.Xml)
         {
             if (serializationFormat == Core.Configuration.SerializationFormat.Json)
             {
-                this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Json;
+                serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Json;
             }
 
             IEntity addedEntity = null;
             try
             {
-                addedEntity = this.dataService.Add(entity);
+                addedEntity = dataService.Add(entity);
             }
-            catch (Intuit.Ipp.Exception.IdsException ex)
+            catch (Exception.IdsException ex)
             {
-                this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
+                serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
                 throw;
             }
 
-            this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
+            serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
             return addedEntity;
         }
 
         internal IEnumerable<IEntity> FindAllEntities(IEntity entity, int startPosition, int maxResults)
         {
-            return this.dataService.FindAll(entity, startPosition, maxResults);
+            return dataService.FindAll(entity, startPosition, maxResults);
         }
 
         internal IEnumerable<IEntity> FindAllEntities(IEntity entity)
         {
-            return this.dataService.FindAll(entity);
+            return dataService.FindAll(entity);
         }
 
         internal IEnumerable<IEntity> FindByLevelEntities(IEntity entity)
         {
-            return this.dataService.FindByLevel(entity);
+            return dataService.FindByLevel(entity);
         }
 
         internal IEnumerable<IEntity> FindByParentIdEntities(IEntity entity)
         {
-            return this.dataService.FindByParentId(entity);
+            return dataService.FindByParentId(entity);
         }
 
         internal IEntity FindByIdEntity(IEntity entity)
         {
-            return this.dataService.FindById(entity);
+            return dataService.FindById(entity);
         }
 
         internal IEntity UpdateEntity(IEntity entity, Core.Configuration.SerializationFormat serializationFormat = Core.Configuration.SerializationFormat.Xml)
         {
             if (serializationFormat == Core.Configuration.SerializationFormat.Json)
             {
-                this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Json;
+                serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Json;
             }
 
             IEntity updatedEntity = null;
             try
             {
-                updatedEntity = this.dataService.Update(entity);
+                updatedEntity = dataService.Update(entity);
             }
-            catch (Intuit.Ipp.Exception.IdsException)
+            catch (Exception.IdsException)
             {
-                this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
+                serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
                 throw;
             }
 
-            this.serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
+            serviceContext.IppConfiguration.Message.Request.SerializationFormat = Core.Configuration.SerializationFormat.Xml;
             return updatedEntity;
         }
 
         internal void VoidEntity(IEntity entity)
         {
-            this.dataService.Void(entity);
+            dataService.Void(entity);
         }
 
         internal void DeleteEntity(IEntity entity)
         {
-            this.dataService.Delete(entity);
+            dataService.Delete(entity);
         }
 
         internal IntuitCDCResponse CDCEntity(List<IEntity> entity, System.DateTime changedSince)
         {
-            return this.dataService.CDC(entity, changedSince);
+            return dataService.CDC(entity, changedSince);
         }
         
-        internal Attachable Upload(Attachable entity, System.IO.Stream stream)
+        internal Attachable Upload(Attachable entity, Stream stream)
         {
-            return this.dataService.Upload(entity, stream);
+            return dataService.Upload(entity, stream);
         }
 
         internal byte[] Download(Attachable entity)
         {
-            return this.dataService.Download(entity);
+            return dataService.Download(entity);
         }
     }
 }

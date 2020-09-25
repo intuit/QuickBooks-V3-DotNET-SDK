@@ -44,7 +44,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         {
             String guid = Helper.GetGuid();
             GlobalTaxService.GlobalTaxService taxSvc = new GlobalTaxService.GlobalTaxService(qboContextoAuth);
-            Intuit.Ipp.Data.TaxService taxCodetobeAdded = new Data.TaxService();
+            TaxService taxCodetobeAdded = new TaxService();
             taxCodetobeAdded.TaxCode = "taxC_"+guid;
 
             TaxAgency taxagency = Helper.FindOrAdd<TaxAgency>(qboContextoAuth, new TaxAgency());
@@ -77,7 +77,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
             taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-            Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
+            TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
             Assert.IsNotNull(taxCodeAdded.TaxCodeId);
         }
 

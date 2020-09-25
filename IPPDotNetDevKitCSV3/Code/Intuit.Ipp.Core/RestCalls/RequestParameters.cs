@@ -46,10 +46,10 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="apiName">Name of the API.</param>
         public RequestParameters(string resourceUri, HttpVerbType verb, string contentType, string apiName)
         {
-            this.ResourceUri = resourceUri;
-            this.Verb = verb;
-            this.ContentType = contentType;
-            this.ApiName = apiName;
+            ResourceUri = resourceUri;
+            Verb = verb;
+            ContentType = contentType;
+            ApiName = apiName;
         }
 
         /// <summary>

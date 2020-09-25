@@ -28,13 +28,13 @@ namespace Intuit.Ipp.DataService
     using System.Globalization;
     using System.Linq;
     using System.Net;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.DataService.Properties;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Core.Rest;
+    using Data;
+    using Properties;
+    using Diagnostics;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// This class contains code for Batch Processing.
@@ -80,10 +80,10 @@ namespace Intuit.Ipp.DataService
         {
             this.serviceContext = serviceContext;
             this.restHandler = restHandler;
-            this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
-            this.batchRequests = new List<BatchItemRequest>();
-            this.batchResponses = new List<BatchItemResponse>();
-            this.intuitBatchItemResponses = new List<IntuitBatchResponse>();
+            responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+            batchRequests = new List<BatchItemRequest>();
+            batchResponses = new List<BatchItemResponse>();
+            intuitBatchItemResponses = new List<IntuitBatchResponse>();
         }
 
         #region Execute Async handler
@@ -106,7 +106,7 @@ namespace Intuit.Ipp.DataService
         {
             get
             {
-                return this.batchRequests.Count;
+                return batchRequests.Count;
             }
         }
 
@@ -115,7 +115,7 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public ReadOnlyCollection<IntuitBatchResponse> IntuitBatchItemResponses
         {
-            get { return new ReadOnlyCollection<IntuitBatchResponse>(this.intuitBatchItemResponses); }
+            get { return new ReadOnlyCollection<IntuitBatchResponse>(intuitBatchItemResponses); }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Intuit.Ipp.DataService
         {
             get
             {
-                BatchItemResponse batchresponse = this.batchResponses.Find(item => item.bId == id);
+                BatchItemResponse batchresponse = batchResponses.Find(item => item.bId == id);
                 // if (batchresponse == null)
                 // {
                 //    throw new IdsException(string.Format("Could not find the batch item response with the specified id: {0}", id)); 
@@ -144,7 +144,7 @@ namespace Intuit.Ipp.DataService
         /// <returns>True if the item was found, otherwise false</returns>
         public bool TryGetValue(string id, out IntuitBatchResponse intuitBatchResponse)
         {
-            BatchItemResponse batchresponse = this.batchResponses.FirstOrDefault(item => item.bId == id);
+            BatchItemResponse batchresponse = batchResponses.FirstOrDefault(item => item.bId == id);
             if (batchresponse == null)
             {
                 intuitBatchResponse = null;
@@ -200,28 +200,28 @@ namespace Intuit.Ipp.DataService
             if (string.IsNullOrEmpty(query))
             {
                 IdsException exception = new IdsException(Resources.StringParameterNullOrEmpty, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             if (string.IsNullOrEmpty(id))
             {
                 IdsException exception = new IdsException(Resources.StringParameterNullOrEmpty, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (batchRequests.Count > 25)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 0 && this.batchRequests.Find(item => item.bId == id) != null)
+            if (batchRequests.Count > 0 && batchRequests.Find(item => item.bId == id) != null)
             {
                 IdsException exception = new IdsException(Resources.BatchIdAlreadyUsed, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -232,7 +232,7 @@ namespace Intuit.Ipp.DataService
             batchItem.operationSpecified = false;
             if (optionsData != null && optionsData.Count > 0) { batchItem.optionsData = string.Join(",", optionsData.ToArray()).ToLower(); }
             batchItem.ItemElementName = ItemChoiceType7.Query;
-            this.batchRequests.Add(batchItem);
+            batchRequests.Add(batchItem);
         }
 
         /// <summary>
@@ -276,28 +276,28 @@ namespace Intuit.Ipp.DataService
             if (query == null)
             {
                 IdsException exception = new IdsException(Resources.StringParameterNullOrEmpty, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             if (string.IsNullOrEmpty(id))
             {
                 IdsException exception = new IdsException(Resources.StringParameterNullOrEmpty, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (batchRequests.Count > 25)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 0 && this.batchRequests.Find(item => item.bId == id) != null)
+            if (batchRequests.Count > 0 && batchRequests.Find(item => item.bId == id) != null)
             {
                 IdsException exception = new IdsException(Resources.BatchIdAlreadyUsed, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -307,7 +307,7 @@ namespace Intuit.Ipp.DataService
             batchItem.bId = id;
             batchItem.operationSpecified = false;
             if (optionsData != null && optionsData.Count > 0) { batchItem.optionsData = string.Join(",", optionsData.ToArray()).ToLower(); }
-            this.batchRequests.Add(batchItem);
+            batchRequests.Add(batchItem);
         }
 
         /// <summary>
@@ -333,28 +333,28 @@ namespace Intuit.Ipp.DataService
             if (entity == null)
             {
                 IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
             if (string.IsNullOrEmpty(id))
             {
                 IdsException exception = new IdsException(Resources.StringParameterNullOrEmpty, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (batchRequests.Count > 25)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 0 && this.batchRequests.Find(item => item.bId == id) != null)
+            if (batchRequests.Count > 0 && batchRequests.Find(item => item.bId == id) != null)
             {
                 IdsException exception = new IdsException(Resources.BatchIdAlreadyUsed, new ArgumentException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
 
@@ -370,7 +370,7 @@ namespace Intuit.Ipp.DataService
                 batchItem.ItemElementName = result;
             }
 
-            this.batchRequests.Add(batchItem);
+            batchRequests.Add(batchItem);
         }
 
 
@@ -380,16 +380,16 @@ namespace Intuit.Ipp.DataService
         /// <param name="id"> unique batchitem id</param>
         public void Remove(string id)
         {
-            BatchItemRequest removeItem = this.batchRequests.FirstOrDefault(bid => bid.bId == id);
+            BatchItemRequest removeItem = batchRequests.FirstOrDefault(bid => bid.bId == id);
             if (removeItem == null)
             {
                 IdsException exception = new IdsException(string.Format(CultureInfo.InvariantCulture, Resources.BatchItemIdNotFound, id));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
                 IdsExceptionManager.HandleException(exception);
             }
             else
             {
-                this.batchRequests.Remove(removeItem);
+                batchRequests.Remove(removeItem);
             }
         }
 
@@ -398,7 +398,7 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public void RemoveAll()
         {
-            this.batchRequests.Clear();
+            batchRequests.Clear();
         }
 
         /// <summary>
@@ -406,32 +406,32 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public void Execute()
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Started Executing Method Execute for Batch");
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Started Executing Method Execute for Batch");
 
             // Create Intuit Batch Request
             IntuitBatchRequest intuitBatchRequest = new IntuitBatchRequest();
-            intuitBatchRequest.BatchItemRequest = this.batchRequests.ToArray<BatchItemRequest>();
+            intuitBatchRequest.BatchItemRequest = batchRequests.ToArray<BatchItemRequest>();
 
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", Utility.CoreConstants.VERSION, this.serviceContext.RealmId);
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", CoreConstants.VERSION, serviceContext.RealmId);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
             else
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             }
             // Prepares request
-            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, intuitBatchRequest);
+            HttpWebRequest request = restHandler.PrepareRequest(parameters, intuitBatchRequest);
 
             string response = string.Empty;
             try
             {
                 // gets response
-                response = this.restHandler.GetResponse(request);
+                response = restHandler.GetResponse(request);
             }
             catch (IdsException ex)
             {
@@ -441,15 +441,15 @@ namespace Intuit.Ipp.DataService
             CoreHelper.CheckNullResponseAndThrowException(response);
 
             // de serialize object
-            IntuitResponse restResponse = (IntuitResponse)this.responseSerializer.Deserialize<IntuitResponse>(response);
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Execute method for batch.");
+            IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(response);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Execute method for batch.");
             foreach (object obj in restResponse.AnyIntuitObjects)
             {
                 BatchItemResponse batchItemResponse = obj as BatchItemResponse;
-                this.batchResponses.Add(batchItemResponse);
+                batchResponses.Add(batchItemResponse);
 
                 // process batch item
-                this.intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
+                intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
             }
         }
 
@@ -458,25 +458,25 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public void ExecuteAsync()
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Started Executing Method ExecuteAsync for Batch");
-            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
-            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.BatchAsyncompleted);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Started Executing Method ExecuteAsync for Batch");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(BatchAsyncompleted);
             BatchExecutionCompletedEventArgs batchCompletedEventArgs = new BatchExecutionCompletedEventArgs();
 
             // Create Intuit Batch Request
             IntuitBatchRequest intuitBatchRequest = new IntuitBatchRequest();
-            intuitBatchRequest.BatchItemRequest = this.batchRequests.ToArray<BatchItemRequest>();
-            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", Utility.CoreConstants.VERSION, this.serviceContext.RealmId);
+            intuitBatchRequest.BatchItemRequest = batchRequests.ToArray<BatchItemRequest>();
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/batch", CoreConstants.VERSION, serviceContext.RealmId);
 
             // Creates request parameters
             RequestParameters parameters;
-            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
             }
             else
             {
-                parameters = new RequestParameters(uri, HttpVerbType.POST, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
             }
 
             // Prepares request
@@ -490,9 +490,9 @@ namespace Intuit.Ipp.DataService
             catch (SystemException systemException)
             {
                 IdsException idsException = new IdsException(systemException.Message);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                 batchCompletedEventArgs.Error = idsException;
-                this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
             }
         }
 
@@ -715,40 +715,40 @@ namespace Intuit.Ipp.DataService
                 {
                     try
                     {
-                        IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+                        IEntitySerializer responseSerializer = CoreHelper.GetSerializer(serviceContext, false);
                         IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
                         foreach (object obj in restResponse.AnyIntuitObjects)
                         {
                             BatchItemResponse batchItemResponse = obj as BatchItemResponse;
-                            this.batchResponses.Add(batchItemResponse);
+                            batchResponses.Add(batchItemResponse);
 
                             // process batch item
-                            this.intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
+                            intuitBatchItemResponses.Add(ProcessBatchItemResponse(batchItemResponse));
                         }
 
                         batchCompletedEventArgs.Batch = this;
-                        this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                        OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
                     }
                     catch (SystemException systemException)
                     {
                         IdsException idsException = new IdsException("Batch execution failed", systemException);
-                        this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                        serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                         batchCompletedEventArgs.Error = idsException;
-                        this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                        OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
                     }
                 }
                 else
                 {
                     batchCompletedEventArgs.Error = eventArgs.Error;
-                    this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                    OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
                 }
             }
             catch (Exception e)
             {
                 IdsException idsException = new IdsException("Batch execution failed", e);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                 batchCompletedEventArgs.Error = idsException;
-                this.OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
+                OnBatchExecuteAsyncCompleted(this, batchCompletedEventArgs);
             }
         }
 

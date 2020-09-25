@@ -22,14 +22,14 @@ namespace Intuit.Ipp.WebhooksService
 {
 
 
-    using Intuit.Ipp.Core;
+    using Core;
     using System;
-    using Intuit.Ipp.Core.Configuration;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Core.Configuration;
+    using Core.Rest;
+    using Data;
+    using Diagnostics;
+    using Exception;
+    using Utility;
     using System.Text;
     using System.Threading;
     using Newtonsoft.Json;
@@ -70,11 +70,11 @@ namespace Intuit.Ipp.WebhooksService
         {
             get
             {
-                return this.GetVerfierToken();
+                return GetVerfierToken();
             }
             set
             {
-                this.verifierToken = value;
+                verifierToken = value;
             }
 
         }
@@ -89,7 +89,7 @@ namespace Intuit.Ipp.WebhooksService
         public WebhooksService()
         {
 
-            this.verifierToken = this.GetVerfierToken();
+            verifierToken = GetVerfierToken();
         }
         #endregion
 
@@ -103,7 +103,7 @@ namespace Intuit.Ipp.WebhooksService
             string hmacHeaderSignature = intuitHeaderSignature;
 
             //Get Webhooks verifier token
-            this.verifier = this.VerifierToken;
+            verifier = VerifierToken;
 
 
             if (hmacHeaderSignature == null)
@@ -169,9 +169,9 @@ namespace Intuit.Ipp.WebhooksService
         /// <returns>Returns string verifier token object.</returns>
         private string GetVerfierToken()
         {
-            this.IppConfiguration = new JsonFileConfigurationProvider().GetConfiguration();
-            this.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetVerifierToken method.");
-            string verifierToken = this.IppConfiguration.VerifierToken.Value;
+            IppConfiguration = new JsonFileConfigurationProvider().GetConfiguration();
+            IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called GetVerifierToken method.");
+            string verifierToken = IppConfiguration.VerifierToken.Value;
 
             return verifierToken;
 

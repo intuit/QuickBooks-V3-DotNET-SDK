@@ -25,7 +25,7 @@ namespace Intuit.Ipp.Core
     /// Contains event handlers for call back events.
     /// </summary>
     /// <typeparam name="T">Generic Constraint </typeparam>
-    public static class DataServiceCallback<T> where T : Intuit.Ipp.Data.IEntity
+    public static class DataServiceCallback<T> where T : Data.IEntity
     {
         /// <summary>
         /// Generic event handler to handle multiple call backs.

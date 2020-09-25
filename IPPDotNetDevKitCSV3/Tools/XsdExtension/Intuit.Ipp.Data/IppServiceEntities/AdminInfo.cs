@@ -24,7 +24,7 @@ namespace Intuit.Ipp.Data
     using System.Collections.ObjectModel;
     using System.Reflection;
     using System.Xml;
-    using Intuit.Ipp.Utility;
+    using Utility;
 
     /// <summary>
     /// Encapsulates subscriber information as returned by API_GetAdminsForAllProducts.
@@ -40,43 +40,43 @@ namespace Intuit.Ipp.Data
             XmlNode n = singleUserNode.SelectSingleNode("./uid");
             if (n != null)
             {
-                this.Uid = n.InnerText;
+                Uid = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./firstName");
             if (n != null)
             {
-                this.FirstName = n.InnerText;
+                FirstName = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./lastName");
             if (n != null)
             {
-                this.LastName = n.InnerText;
+                LastName = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./email");
             if (n != null)
             {
-                this.Email = n.InnerText;
+                Email = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./productId");
             if (n != null)
             {
-                this.ProductID = n.InnerText;
+                ProductID = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./applicationName");
             if (n != null)
             {
-                this.ApplicationName = n.InnerText;
+                ApplicationName = n.InnerText;
             }
 
             n = singleUserNode.SelectSingleNode("./applicationId");
             if (n != null)
             {
-                this.ApplicationId = n.InnerText;
+                ApplicationId = n.InnerText;
             }
         }
 

@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Exception
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// Represents an exception raised by the Intuit Service.

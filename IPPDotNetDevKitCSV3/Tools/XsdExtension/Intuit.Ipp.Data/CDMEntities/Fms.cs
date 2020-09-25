@@ -28,20 +28,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public bool QboCompany {
             get {
-                return this.qboCompanyField;
+                return qboCompanyField;
             }
             set {
-                this.qboCompanyField = value;
+                qboCompanyField = value;
             }
         }
         
         /// <remarks/>
         public string PlanName {
             get {
-                return this.planNameField;
+                return planNameField;
             }
             set {
-                this.planNameField = value;
+                planNameField = value;
             }
         }
         
@@ -49,10 +49,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
         public string MaxUsers {
             get {
-                return this.maxUsersField;
+                return maxUsersField;
             }
             set {
-                this.maxUsersField = value;
+                maxUsersField = value;
             }
         }
         
@@ -60,10 +60,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
         public string CurrentUsers {
             get {
-                return this.currentUsersField;
+                return currentUsersField;
             }
             set {
-                this.currentUsersField = value;
+                currentUsersField = value;
             }
         }
         
@@ -71,10 +71,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
         public string DaysRemainingTrial {
             get {
-                return this.daysRemainingTrialField;
+                return daysRemainingTrialField;
             }
             set {
-                this.daysRemainingTrialField = value;
+                daysRemainingTrialField = value;
             }
         }
         
@@ -82,10 +82,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Entitlement")]
         public EntitlementsResponseEntitlement[] Entitlement {
             get {
-                return this.entitlementField;
+                return entitlementField;
             }
             set {
-                this.entitlementField = value;
+                entitlementField = value;
             }
         }
         
@@ -93,10 +93,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Thresholds")]
         public object[] Thresholds {
             get {
-                return this.thresholdsField;
+                return thresholdsField;
             }
             set {
-                this.thresholdsField = value;
+                thresholdsField = value;
             }
         }
     }
@@ -118,20 +118,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public string name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
         /// <remarks/>
         public EntitlementsResponseEntitlementTerm term {
             get {
-                return this.termField;
+                return termField;
             }
             set {
-                this.termField = value;
+                termField = value;
             }
         }
         
@@ -139,10 +139,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
     }
@@ -181,10 +181,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Cascade")]
         public Cascade[] Cascade {
             get {
-                return this.cascadeField;
+                return cascadeField;
             }
             set {
-                this.cascadeField = value;
+                cascadeField = value;
             }
         }
     }
@@ -213,10 +213,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EntityName {
             get {
-                return this.entityNameField;
+                return entityNameField;
             }
             set {
-                this.entityNameField = value;
+                entityNameField = value;
             }
         }
         
@@ -226,10 +226,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -240,10 +240,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("KeyValue")]
         public NameValue[] KeyValue {
             get {
-                return this.keyValueField;
+                return keyValueField;
             }
             set {
-                this.keyValueField = value;
+                keyValueField = value;
             }
         }
     }
@@ -276,10 +276,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -292,10 +292,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
     }
@@ -318,10 +318,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ColData")]
         public ColData[] ColData {
             get {
-                return this.colDataField;
+                return colDataField;
             }
             set {
-                this.colDataField = value;
+                colDataField = value;
             }
         }
     }
@@ -353,10 +353,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Attribute[] Attributes {
             get {
-                return this.attributesField;
+                return attributesField;
             }
             set {
-                this.attributesField = value;
+                attributesField = value;
             }
         }
         
@@ -364,10 +364,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
         
@@ -375,10 +375,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -389,10 +389,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string href {
             get {
-                return this.hrefField;
+                return hrefField;
             }
             set {
-                this.hrefField = value;
+                hrefField = value;
             }
         }
     }
@@ -416,10 +416,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -429,10 +429,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
     }
@@ -454,10 +454,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Row")]
         public Row[] Row {
             get {
-                return this.rowField;
+                return rowField;
             }
             set {
-                this.rowField = value;
+                rowField = value;
             }
         }
     }
@@ -491,20 +491,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public string id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
         /// <remarks/>
         public string parentId {
             get {
-                return this.parentIdField;
+                return parentIdField;
             }
             set {
-                this.parentIdField = value;
+                parentIdField = value;
             }
         }
         
@@ -516,10 +516,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -529,10 +529,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemsChoiceType1[] ItemsElementName {
             get {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set {
-                this.itemsElementNameField = value;
+                itemsElementNameField = value;
             }
         }
         
@@ -543,10 +543,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public RowTypeEnum type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -555,10 +555,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool typeSpecified {
             get {
-                return this.typeFieldSpecified;
+                return typeFieldSpecified;
             }
             set {
-                this.typeFieldSpecified = value;
+                typeFieldSpecified = value;
             }
         }
         
@@ -569,10 +569,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string group {
             get {
-                return this.groupField;
+                return groupField;
             }
             set {
-                this.groupField = value;
+                groupField = value;
             }
         }
     }
@@ -595,10 +595,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ColData")]
         public ColData[] ColData {
             get {
-                return this.colDataField;
+                return colDataField;
             }
             set {
-                this.colDataField = value;
+                colDataField = value;
             }
         }
     }
@@ -664,10 +664,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OLBAccount")]
         public OLBAccount[] OLBAccount {
             get {
-                return this.oLBAccountField;
+                return oLBAccountField;
             }
             set {
-                this.oLBAccountField = value;
+                oLBAccountField = value;
             }
         }
     }
@@ -707,10 +707,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountId {
             get {
-                return this.accountIdField;
+                return accountIdField;
             }
             set {
-                this.accountIdField = value;
+                accountIdField = value;
             }
         }
         
@@ -721,10 +721,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AccountDetails {
             get {
-                return this.accountDetailsField;
+                return accountDetailsField;
             }
             set {
-                this.accountDetailsField = value;
+                accountDetailsField = value;
             }
         }
         
@@ -736,10 +736,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SubscribedToApp {
             get {
-                return this.subscribedToAppField;
+                return subscribedToAppField;
             }
             set {
-                this.subscribedToAppField = value;
+                subscribedToAppField = value;
             }
         }
         
@@ -748,10 +748,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SubscribedToAppSpecified {
             get {
-                return this.subscribedToAppFieldSpecified;
+                return subscribedToAppFieldSpecified;
             }
             set {
-                this.subscribedToAppFieldSpecified = value;
+                subscribedToAppFieldSpecified = value;
             }
         }
         
@@ -762,10 +762,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AppVersion {
             get {
-                return this.appVersionField;
+                return appVersionField;
             }
             set {
-                this.appVersionField = value;
+                appVersionField = value;
             }
         }
         
@@ -776,10 +776,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal LastBankBalance {
             get {
-                return this.lastBankBalanceField;
+                return lastBankBalanceField;
             }
             set {
-                this.lastBankBalanceField = value;
+                lastBankBalanceField = value;
             }
         }
         
@@ -788,10 +788,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastBankBalanceSpecified {
             get {
-                return this.lastBankBalanceFieldSpecified;
+                return lastBankBalanceFieldSpecified;
             }
             set {
-                this.lastBankBalanceFieldSpecified = value;
+                lastBankBalanceFieldSpecified = value;
             }
         }
     }
@@ -821,10 +821,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -832,10 +832,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -843,10 +843,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
     }
@@ -877,10 +877,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Message {
             get {
-                return this.messageField;
+                return messageField;
             }
             set {
-                this.messageField = value;
+                messageField = value;
             }
         }
         
@@ -890,10 +890,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Detail {
             get {
-                return this.detailField;
+                return detailField;
             }
             set {
-                this.detailField = value;
+                detailField = value;
             }
         }
         
@@ -904,10 +904,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
+                codeField = value;
             }
         }
         
@@ -918,10 +918,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string element {
             get {
-                return this.elementField;
+                return elementField;
             }
             set {
-                this.elementField = value;
+                elementField = value;
             }
         }
     }
@@ -952,10 +952,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ColTitle {
             get {
-                return this.colTitleField;
+                return colTitleField;
             }
             set {
-                this.colTitleField = value;
+                colTitleField = value;
             }
         }
         
@@ -965,10 +965,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ColType {
             get {
-                return this.colTypeField;
+                return colTypeField;
             }
             set {
-                this.colTypeField = value;
+                colTypeField = value;
             }
         }
         
@@ -979,10 +979,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("MetaData")]
         public NameValue[] MetaData {
             get {
-                return this.metaDataField;
+                return metaDataField;
             }
             set {
-                this.metaDataField = value;
+                metaDataField = value;
             }
         }
         
@@ -993,10 +993,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Column[] Columns {
             get {
-                return this.columnsField;
+                return columnsField;
             }
             set {
-                this.columnsField = value;
+                columnsField = value;
             }
         }
     }
@@ -1016,10 +1016,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Threshold")]
         public ThresholdsThreshold[] Threshold {
             get {
-                return this.thresholdField;
+                return thresholdField;
             }
             set {
-                this.thresholdField = value;
+                thresholdField = value;
             }
         }
     }
@@ -1045,50 +1045,50 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public string name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
         /// <remarks/>
         public string limit {
             get {
-                return this.limitField;
+                return limitField;
             }
             set {
-                this.limitField = value;
+                limitField = value;
             }
         }
         
         /// <remarks/>
         public string enforced {
             get {
-                return this.enforcedField;
+                return enforcedField;
             }
             set {
-                this.enforcedField = value;
+                enforcedField = value;
             }
         }
         
         /// <remarks/>
         public string currentCount {
             get {
-                return this.currentCountField;
+                return currentCountField;
             }
             set {
-                this.currentCountField = value;
+                currentCountField = value;
             }
         }
         
         /// <remarks/>
         public string aboveThreshold {
             get {
-                return this.aboveThresholdField;
+                return aboveThresholdField;
             }
             set {
-                this.aboveThresholdField = value;
+                aboveThresholdField = value;
             }
         }
     }
@@ -4572,10 +4572,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnId {
             get {
-                return this.txnIdField;
+                return txnIdField;
             }
             set {
-                this.txnIdField = value;
+                txnIdField = value;
             }
         }
         
@@ -4588,10 +4588,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnType {
             get {
-                return this.txnTypeField;
+                return txnTypeField;
             }
             set {
-                this.txnTypeField = value;
+                txnTypeField = value;
             }
         }
         
@@ -4606,10 +4606,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnLineId {
             get {
-                return this.txnLineIdField;
+                return txnLineIdField;
             }
             set {
-                this.txnLineIdField = value;
+                txnLineIdField = value;
             }
         }
     }
@@ -4646,10 +4646,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ApprovalStatus {
             get {
-                return this.approvalStatusField;
+                return approvalStatusField;
             }
             set {
-                this.approvalStatusField = value;
+                approvalStatusField = value;
             }
         }
         
@@ -4678,10 +4678,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ApprovalStatusDetail {
             get {
-                return this.approvalStatusDetailField;
+                return approvalStatusDetailField;
             }
             set {
-                this.approvalStatusDetailField = value;
+                approvalStatusDetailField = value;
             }
         }
         
@@ -4695,10 +4695,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string LastChangedByUser {
             get {
-                return this.lastChangedByUserField;
+                return lastChangedByUserField;
             }
             set {
-                this.lastChangedByUserField = value;
+                lastChangedByUserField = value;
             }
         }
         
@@ -4712,10 +4712,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastChangedDate {
             get {
-                return this.lastChangedDateField;
+                return lastChangedDateField;
             }
             set {
-                this.lastChangedDateField = value;
+                lastChangedDateField = value;
             }
         }
         
@@ -4724,10 +4724,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastChangedDateSpecified {
             get {
-                return this.lastChangedDateFieldSpecified;
+                return lastChangedDateFieldSpecified;
             }
             set {
-                this.lastChangedDateFieldSpecified = value;
+                lastChangedDateFieldSpecified = value;
             }
         }
     }
@@ -4765,10 +4765,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QboEntityId {
             get {
-                return this.qboEntityIdField;
+                return qboEntityIdField;
             }
             set {
-                this.qboEntityIdField = value;
+                qboEntityIdField = value;
             }
         }
         
@@ -4782,10 +4782,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QbdtExportableId {
             get {
-                return this.qbdtExportableIdField;
+                return qbdtExportableIdField;
             }
             set {
-                this.qbdtExportableIdField = value;
+                qbdtExportableIdField = value;
             }
         }
         
@@ -4799,10 +4799,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QboEntityType {
             get {
-                return this.qboEntityTypeField;
+                return qboEntityTypeField;
             }
             set {
-                this.qboEntityTypeField = value;
+                qboEntityTypeField = value;
             }
         }
         
@@ -4816,10 +4816,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QbdtEntityType {
             get {
-                return this.qbdtEntityTypeField;
+                return qbdtEntityTypeField;
             }
             set {
-                this.qbdtEntityTypeField = value;
+                qbdtEntityTypeField = value;
             }
         }
     }
@@ -4949,10 +4949,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -4966,10 +4966,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SyncToken {
             get {
-                return this.syncTokenField;
+                return syncTokenField;
             }
             set {
-                this.syncTokenField = value;
+                syncTokenField = value;
             }
         }
         
@@ -4982,10 +4982,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ModificationMetaData MetaData {
             get {
-                return this.metaDataField;
+                return metaDataField;
             }
             set {
-                this.metaDataField = value;
+                metaDataField = value;
             }
         }
         
@@ -5000,10 +5000,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CustomField")]
         public CustomField[] CustomField {
             get {
-                return this.customFieldField;
+                return customFieldField;
             }
             set {
-                this.customFieldField = value;
+                customFieldField = value;
             }
         }
         
@@ -5015,10 +5015,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("AttachableRef")]
         public AttachableRef[] AttachableRef {
             get {
-                return this.attachableRefField;
+                return attachableRefField;
             }
             set {
-                this.attachableRefField = value;
+                attachableRefField = value;
             }
         }
         
@@ -5032,10 +5032,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string domain {
             get {
-                return this.domainField;
+                return domainField;
             }
             set {
-                this.domainField = value;
+                domainField = value;
             }
         }
         
@@ -5050,10 +5050,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public EntityStatusEnum status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -5062,10 +5062,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool statusSpecified {
             get {
-                return this.statusFieldSpecified;
+                return statusFieldSpecified;
             }
             set {
-                this.statusFieldSpecified = value;
+                statusFieldSpecified = value;
             }
         }
         
@@ -5079,10 +5079,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool sparse {
             get {
-                return this.sparseField;
+                return sparseField;
             }
             set {
-                this.sparseField = value;
+                sparseField = value;
             }
         }
         
@@ -5091,10 +5091,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool sparseSpecified {
             get {
-                return this.sparseFieldSpecified;
+                return sparseFieldSpecified;
             }
             set {
-                this.sparseFieldSpecified = value;
+                sparseFieldSpecified = value;
             }
         }
     }
@@ -5143,10 +5143,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CreatedByRef {
             get {
-                return this.createdByRefField;
+                return createdByRefField;
             }
             set {
-                this.createdByRefField = value;
+                createdByRefField = value;
             }
         }
         
@@ -5161,10 +5161,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime CreateTime {
             get {
-                return this.createTimeField;
+                return createTimeField;
             }
             set {
-                this.createTimeField = value;
+                createTimeField = value;
             }
         }
         
@@ -5173,10 +5173,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreateTimeSpecified {
             get {
-                return this.createTimeFieldSpecified;
+                return createTimeFieldSpecified;
             }
             set {
-                this.createTimeFieldSpecified = value;
+                createTimeFieldSpecified = value;
             }
         }
         
@@ -5189,10 +5189,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType LastModifiedByRef {
             get {
-                return this.lastModifiedByRefField;
+                return lastModifiedByRefField;
             }
             set {
-                this.lastModifiedByRefField = value;
+                lastModifiedByRefField = value;
             }
         }
         
@@ -5207,10 +5207,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastUpdatedTime {
             get {
-                return this.lastUpdatedTimeField;
+                return lastUpdatedTimeField;
             }
             set {
-                this.lastUpdatedTimeField = value;
+                lastUpdatedTimeField = value;
             }
         }
         
@@ -5219,10 +5219,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastUpdatedTimeSpecified {
             get {
-                return this.lastUpdatedTimeFieldSpecified;
+                return lastUpdatedTimeFieldSpecified;
             }
             set {
-                this.lastUpdatedTimeFieldSpecified = value;
+                lastUpdatedTimeFieldSpecified = value;
             }
         }
         
@@ -5235,10 +5235,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastChangedInQB {
             get {
-                return this.lastChangedInQBField;
+                return lastChangedInQBField;
             }
             set {
-                this.lastChangedInQBField = value;
+                lastChangedInQBField = value;
             }
         }
         
@@ -5247,10 +5247,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastChangedInQBSpecified {
             get {
-                return this.lastChangedInQBFieldSpecified;
+                return lastChangedInQBFieldSpecified;
             }
             set {
-                this.lastChangedInQBFieldSpecified = value;
+                lastChangedInQBFieldSpecified = value;
             }
         }
         
@@ -5264,10 +5264,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Synchronized {
             get {
-                return this.synchronizedField;
+                return synchronizedField;
             }
             set {
-                this.synchronizedField = value;
+                synchronizedField = value;
             }
         }
         
@@ -5276,10 +5276,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SynchronizedSpecified {
             get {
-                return this.synchronizedFieldSpecified;
+                return synchronizedFieldSpecified;
             }
             set {
-                this.synchronizedFieldSpecified = value;
+                synchronizedFieldSpecified = value;
             }
         }
     }
@@ -5316,10 +5316,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefinitionId {
             get {
-                return this.definitionIdField;
+                return definitionIdField;
             }
             set {
-                this.definitionIdField = value;
+                definitionIdField = value;
             }
         }
         
@@ -5332,10 +5332,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -5348,10 +5348,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CustomFieldTypeEnum Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -5362,10 +5362,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("StringValue", typeof(string))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -5432,10 +5432,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType EntityRef {
             get {
-                return this.entityRefField;
+                return entityRefField;
             }
             set {
-                this.entityRefField = value;
+                entityRefField = value;
             }
         }
         
@@ -5448,10 +5448,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string LineInfo {
             get {
-                return this.lineInfoField;
+                return lineInfoField;
             }
             set {
-                this.lineInfoField = value;
+                lineInfoField = value;
             }
         }
         
@@ -5464,10 +5464,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IncludeOnSend {
             get {
-                return this.includeOnSendField;
+                return includeOnSendField;
             }
             set {
-                this.includeOnSendField = value;
+                includeOnSendField = value;
             }
         }
         
@@ -5476,10 +5476,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IncludeOnSendSpecified {
             get {
-                return this.includeOnSendFieldSpecified;
+                return includeOnSendFieldSpecified;
             }
             set {
-                this.includeOnSendFieldSpecified = value;
+                includeOnSendFieldSpecified = value;
             }
         }
         
@@ -5494,10 +5494,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CustomField")]
         public CustomField[] CustomField {
             get {
-                return this.customFieldField;
+                return customFieldField;
             }
             set {
-                this.customFieldField = value;
+                customFieldField = value;
             }
         }
         
@@ -5508,10 +5508,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType AttachableRefEx {
             get {
-                return this.attachableRefExField;
+                return attachableRefExField;
             }
             set {
-                this.attachableRefExField = value;
+                attachableRefExField = value;
             }
         }
     }
@@ -5537,10 +5537,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any {
             get {
-                return this.anyField;
+                return anyField;
             }
             set {
-                this.anyField = value;
+                anyField = value;
             }
         }
     }
@@ -5679,10 +5679,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyName {
             get {
-                return this.companyNameField;
+                return companyNameField;
             }
             set {
-                this.companyNameField = value;
+                companyNameField = value;
             }
         }
         
@@ -5693,10 +5693,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string LegalName {
             get {
-                return this.legalNameField;
+                return legalNameField;
             }
             set {
-                this.legalNameField = value;
+                legalNameField = value;
             }
         }
         
@@ -5707,10 +5707,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress CompanyAddr {
             get {
-                return this.companyAddrField;
+                return companyAddrField;
             }
             set {
-                this.companyAddrField = value;
+                companyAddrField = value;
             }
         }
         
@@ -5722,10 +5722,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress CustomerCommunicationAddr {
             get {
-                return this.customerCommunicationAddrField;
+                return customerCommunicationAddrField;
             }
             set {
-                this.customerCommunicationAddrField = value;
+                customerCommunicationAddrField = value;
             }
         }
         
@@ -5736,10 +5736,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress LegalAddr {
             get {
-                return this.legalAddrField;
+                return legalAddrField;
             }
             set {
-                this.legalAddrField = value;
+                legalAddrField = value;
             }
         }
         
@@ -5749,10 +5749,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress CompanyEmailAddr {
             get {
-                return this.companyEmailAddrField;
+                return companyEmailAddrField;
             }
             set {
-                this.companyEmailAddrField = value;
+                companyEmailAddrField = value;
             }
         }
         
@@ -5764,10 +5764,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress CustomerCommunicationEmailAddr {
             get {
-                return this.customerCommunicationEmailAddrField;
+                return customerCommunicationEmailAddrField;
             }
             set {
-                this.customerCommunicationEmailAddrField = value;
+                customerCommunicationEmailAddrField = value;
             }
         }
         
@@ -5777,10 +5777,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WebSiteAddress CompanyURL {
             get {
-                return this.companyURLField;
+                return companyURLField;
             }
             set {
-                this.companyURLField = value;
+                companyURLField = value;
             }
         }
         
@@ -5790,10 +5790,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber PrimaryPhone {
             get {
-                return this.primaryPhoneField;
+                return primaryPhoneField;
             }
             set {
-                this.primaryPhoneField = value;
+                primaryPhoneField = value;
             }
         }
         
@@ -5809,10 +5809,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
         public ContactInfo[] OtherContactInfo {
             get {
-                return this.otherContactInfoField;
+                return otherContactInfoField;
             }
             set {
-                this.otherContactInfoField = value;
+                otherContactInfoField = value;
             }
         }
         
@@ -5826,10 +5826,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyFileName {
             get {
-                return this.companyFileNameField;
+                return companyFileNameField;
             }
             set {
-                this.companyFileNameField = value;
+                companyFileNameField = value;
             }
         }
         
@@ -5844,10 +5844,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FlavorStratum {
             get {
-                return this.flavorStratumField;
+                return flavorStratumField;
             }
             set {
-                this.flavorStratumField = value;
+                flavorStratumField = value;
             }
         }
         
@@ -5860,10 +5860,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SampleFile {
             get {
-                return this.sampleFileField;
+                return sampleFileField;
             }
             set {
-                this.sampleFileField = value;
+                sampleFileField = value;
             }
         }
         
@@ -5872,10 +5872,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SampleFileSpecified {
             get {
-                return this.sampleFileFieldSpecified;
+                return sampleFileFieldSpecified;
             }
             set {
-                this.sampleFileFieldSpecified = value;
+                sampleFileFieldSpecified = value;
             }
         }
         
@@ -5891,10 +5891,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyUserId {
             get {
-                return this.companyUserIdField;
+                return companyUserIdField;
             }
             set {
-                this.companyUserIdField = value;
+                companyUserIdField = value;
             }
         }
         
@@ -5908,10 +5908,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyUserAdminEmail {
             get {
-                return this.companyUserAdminEmailField;
+                return companyUserAdminEmailField;
             }
             set {
-                this.companyUserAdminEmailField = value;
+                companyUserAdminEmailField = value;
             }
         }
         
@@ -5925,10 +5925,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime CompanyStartDate {
             get {
-                return this.companyStartDateField;
+                return companyStartDateField;
             }
             set {
-                this.companyStartDateField = value;
+                companyStartDateField = value;
             }
         }
         
@@ -5937,10 +5937,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CompanyStartDateSpecified {
             get {
-                return this.companyStartDateFieldSpecified;
+                return companyStartDateFieldSpecified;
             }
             set {
-                this.companyStartDateFieldSpecified = value;
+                companyStartDateFieldSpecified = value;
             }
         }
         
@@ -5953,10 +5953,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EmployerId {
             get {
-                return this.employerIdField;
+                return employerIdField;
             }
             set {
-                this.employerIdField = value;
+                employerIdField = value;
             }
         }
         
@@ -5969,10 +5969,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum FiscalYearStartMonth {
             get {
-                return this.fiscalYearStartMonthField;
+                return fiscalYearStartMonthField;
             }
             set {
-                this.fiscalYearStartMonthField = value;
+                fiscalYearStartMonthField = value;
             }
         }
         
@@ -5981,10 +5981,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FiscalYearStartMonthSpecified {
             get {
-                return this.fiscalYearStartMonthFieldSpecified;
+                return fiscalYearStartMonthFieldSpecified;
             }
             set {
-                this.fiscalYearStartMonthFieldSpecified = value;
+                fiscalYearStartMonthFieldSpecified = value;
             }
         }
         
@@ -5997,10 +5997,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum TaxYearStartMonth {
             get {
-                return this.taxYearStartMonthField;
+                return taxYearStartMonthField;
             }
             set {
-                this.taxYearStartMonthField = value;
+                taxYearStartMonthField = value;
             }
         }
         
@@ -6009,10 +6009,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxYearStartMonthSpecified {
             get {
-                return this.taxYearStartMonthFieldSpecified;
+                return taxYearStartMonthFieldSpecified;
             }
             set {
-                this.taxYearStartMonthFieldSpecified = value;
+                taxYearStartMonthFieldSpecified = value;
             }
         }
         
@@ -6029,10 +6029,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QBVersion {
             get {
-                return this.qBVersionField;
+                return qBVersionField;
             }
             set {
-                this.qBVersionField = value;
+                qBVersionField = value;
             }
         }
         
@@ -6046,10 +6046,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Country {
             get {
-                return this.countryField;
+                return countryField;
             }
             set {
-                this.countryField = value;
+                countryField = value;
             }
         }
         
@@ -6062,10 +6062,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -6079,10 +6079,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -6095,10 +6095,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Mobile {
             get {
-                return this.mobileField;
+                return mobileField;
             }
             set {
-                this.mobileField = value;
+                mobileField = value;
             }
         }
         
@@ -6111,10 +6111,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Fax {
             get {
-                return this.faxField;
+                return faxField;
             }
             set {
-                this.faxField = value;
+                faxField = value;
             }
         }
         
@@ -6127,10 +6127,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress Email {
             get {
-                return this.emailField;
+                return emailField;
             }
             set {
-                this.emailField = value;
+                emailField = value;
             }
         }
         
@@ -6143,10 +6143,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WebSiteAddress WebSite {
             get {
-                return this.webSiteField;
+                return webSiteField;
             }
             set {
-                this.webSiteField = value;
+                webSiteField = value;
             }
         }
         
@@ -6159,10 +6159,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastImportedTime {
             get {
-                return this.lastImportedTimeField;
+                return lastImportedTimeField;
             }
             set {
-                this.lastImportedTimeField = value;
+                lastImportedTimeField = value;
             }
         }
         
@@ -6171,10 +6171,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastImportedTimeSpecified {
             get {
-                return this.lastImportedTimeFieldSpecified;
+                return lastImportedTimeFieldSpecified;
             }
             set {
-                this.lastImportedTimeFieldSpecified = value;
+                lastImportedTimeFieldSpecified = value;
             }
         }
         
@@ -6185,10 +6185,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SupportedLanguages {
             get {
-                return this.supportedLanguagesField;
+                return supportedLanguagesField;
             }
             set {
-                this.supportedLanguagesField = value;
+                supportedLanguagesField = value;
             }
         }
         
@@ -6199,10 +6199,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultTimeZone {
             get {
-                return this.defaultTimeZoneField;
+                return defaultTimeZoneField;
             }
             set {
-                this.defaultTimeZoneField = value;
+                defaultTimeZoneField = value;
             }
         }
         
@@ -6213,10 +6213,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MultiByteCharsSupported {
             get {
-                return this.multiByteCharsSupportedField;
+                return multiByteCharsSupportedField;
             }
             set {
-                this.multiByteCharsSupportedField = value;
+                multiByteCharsSupportedField = value;
             }
         }
         
@@ -6225,10 +6225,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MultiByteCharsSupportedSpecified {
             get {
-                return this.multiByteCharsSupportedFieldSpecified;
+                return multiByteCharsSupportedFieldSpecified;
             }
             set {
-                this.multiByteCharsSupportedFieldSpecified = value;
+                multiByteCharsSupportedFieldSpecified = value;
             }
         }
         
@@ -6241,10 +6241,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
         
@@ -6257,10 +6257,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CompanyInfoEx {
             get {
-                return this.companyInfoExField;
+                return companyInfoExField;
             }
             set {
-                this.companyInfoExField = value;
+                companyInfoExField = value;
             }
         }
     }
@@ -6323,10 +6323,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -6341,10 +6341,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Line1 {
             get {
-                return this.line1Field;
+                return line1Field;
             }
             set {
-                this.line1Field = value;
+                line1Field = value;
             }
         }
         
@@ -6359,10 +6359,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Line2 {
             get {
-                return this.line2Field;
+                return line2Field;
             }
             set {
-                this.line2Field = value;
+                line2Field = value;
             }
         }
         
@@ -6377,10 +6377,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Line3 {
             get {
-                return this.line3Field;
+                return line3Field;
             }
             set {
-                this.line3Field = value;
+                line3Field = value;
             }
         }
         
@@ -6395,10 +6395,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Line4 {
             get {
-                return this.line4Field;
+                return line4Field;
             }
             set {
-                this.line4Field = value;
+                line4Field = value;
             }
         }
         
@@ -6413,10 +6413,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Line5 {
             get {
-                return this.line5Field;
+                return line5Field;
             }
             set {
-                this.line5Field = value;
+                line5Field = value;
             }
         }
         
@@ -6431,10 +6431,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string City {
             get {
-                return this.cityField;
+                return cityField;
             }
             set {
-                this.cityField = value;
+                cityField = value;
             }
         }
         
@@ -6449,10 +6449,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Country {
             get {
-                return this.countryField;
+                return countryField;
             }
             set {
-                this.countryField = value;
+                countryField = value;
             }
         }
         
@@ -6465,10 +6465,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CountryCode {
             get {
-                return this.countryCodeField;
+                return countryCodeField;
             }
             set {
-                this.countryCodeField = value;
+                countryCodeField = value;
             }
         }
         
@@ -6481,10 +6481,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string County {
             get {
-                return this.countyField;
+                return countyField;
             }
             set {
-                this.countyField = value;
+                countyField = value;
             }
         }
         
@@ -6499,10 +6499,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CountrySubDivisionCode {
             get {
-                return this.countrySubDivisionCodeField;
+                return countrySubDivisionCodeField;
             }
             set {
-                this.countrySubDivisionCodeField = value;
+                countrySubDivisionCodeField = value;
             }
         }
         
@@ -6517,10 +6517,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PostalCode {
             get {
-                return this.postalCodeField;
+                return postalCodeField;
             }
             set {
-                this.postalCodeField = value;
+                postalCodeField = value;
             }
         }
         
@@ -6533,10 +6533,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PostalCodeSuffix {
             get {
-                return this.postalCodeSuffixField;
+                return postalCodeSuffixField;
             }
             set {
-                this.postalCodeSuffixField = value;
+                postalCodeSuffixField = value;
             }
         }
         
@@ -6549,10 +6549,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Lat {
             get {
-                return this.latField;
+                return latField;
             }
             set {
-                this.latField = value;
+                latField = value;
             }
         }
         
@@ -6565,10 +6565,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Long {
             get {
-                return this.longField;
+                return longField;
             }
             set {
-                this.longField = value;
+                longField = value;
             }
         }
         
@@ -6581,10 +6581,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
         
@@ -6597,10 +6597,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Note {
             get {
-                return this.noteField;
+                return noteField;
             }
             set {
-                this.noteField = value;
+                noteField = value;
             }
         }
     }
@@ -6639,10 +6639,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -6657,10 +6657,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Address {
             get {
-                return this.addressField;
+                return addressField;
             }
             set {
-                this.addressField = value;
+                addressField = value;
             }
         }
         
@@ -6673,10 +6673,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Default {
             get {
-                return this.defaultField;
+                return defaultField;
             }
             set {
-                this.defaultField = value;
+                defaultField = value;
             }
         }
         
@@ -6685,10 +6685,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultSpecified {
             get {
-                return this.defaultFieldSpecified;
+                return defaultFieldSpecified;
             }
             set {
-                this.defaultFieldSpecified = value;
+                defaultFieldSpecified = value;
             }
         }
         
@@ -6701,10 +6701,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
     }
@@ -6743,10 +6743,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -6760,10 +6760,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="anyURI")]
         public string URI {
             get {
-                return this.uRIField;
+                return uRIField;
             }
             set {
-                this.uRIField = value;
+                uRIField = value;
             }
         }
         
@@ -6776,10 +6776,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Default {
             get {
-                return this.defaultField;
+                return defaultField;
             }
             set {
-                this.defaultField = value;
+                defaultField = value;
             }
         }
         
@@ -6788,10 +6788,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultSpecified {
             get {
-                return this.defaultFieldSpecified;
+                return defaultFieldSpecified;
             }
             set {
-                this.defaultFieldSpecified = value;
+                defaultFieldSpecified = value;
             }
         }
         
@@ -6804,10 +6804,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
     }
@@ -6856,10 +6856,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -6872,10 +6872,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DeviceType {
             get {
-                return this.deviceTypeField;
+                return deviceTypeField;
             }
             set {
-                this.deviceTypeField = value;
+                deviceTypeField = value;
             }
         }
         
@@ -6888,10 +6888,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CountryCode {
             get {
-                return this.countryCodeField;
+                return countryCodeField;
             }
             set {
-                this.countryCodeField = value;
+                countryCodeField = value;
             }
         }
         
@@ -6904,10 +6904,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AreaCode {
             get {
-                return this.areaCodeField;
+                return areaCodeField;
             }
             set {
-                this.areaCodeField = value;
+                areaCodeField = value;
             }
         }
         
@@ -6920,10 +6920,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ExchangeCode {
             get {
-                return this.exchangeCodeField;
+                return exchangeCodeField;
             }
             set {
-                this.exchangeCodeField = value;
+                exchangeCodeField = value;
             }
         }
         
@@ -6936,10 +6936,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Extension {
             get {
-                return this.extensionField;
+                return extensionField;
             }
             set {
-                this.extensionField = value;
+                extensionField = value;
             }
         }
         
@@ -6952,10 +6952,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FreeFormNumber {
             get {
-                return this.freeFormNumberField;
+                return freeFormNumberField;
             }
             set {
-                this.freeFormNumberField = value;
+                freeFormNumberField = value;
             }
         }
         
@@ -6968,10 +6968,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Default {
             get {
-                return this.defaultField;
+                return defaultField;
             }
             set {
-                this.defaultField = value;
+                defaultField = value;
             }
         }
         
@@ -6980,10 +6980,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultSpecified {
             get {
-                return this.defaultFieldSpecified;
+                return defaultFieldSpecified;
             }
             set {
-                this.defaultFieldSpecified = value;
+                defaultFieldSpecified = value;
             }
         }
         
@@ -6996,10 +6996,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
     }
@@ -7034,10 +7034,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ContactTypeEnum Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -7046,10 +7046,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TypeSpecified {
             get {
-                return this.typeFieldSpecified;
+                return typeFieldSpecified;
             }
             set {
-                this.typeFieldSpecified = value;
+                typeFieldSpecified = value;
             }
         }
         
@@ -7060,10 +7060,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("WebSite", typeof(WebSiteAddress))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -7132,10 +7132,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -7147,10 +7147,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -7163,10 +7163,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
         
@@ -7179,10 +7179,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -7195,10 +7195,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Default {
             get {
-                return this.defaultField;
+                return defaultField;
             }
             set {
-                this.defaultField = value;
+                defaultField = value;
             }
         }
         
@@ -7207,10 +7207,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultSpecified {
             get {
-                return this.defaultFieldSpecified;
+                return defaultFieldSpecified;
             }
             set {
-                this.defaultFieldSpecified = value;
+                defaultFieldSpecified = value;
             }
         }
         
@@ -7223,10 +7223,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
     }
@@ -7338,10 +7338,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyName {
             get {
-                return this.companyNameField;
+                return companyNameField;
             }
             set {
-                this.companyNameField = value;
+                companyNameField = value;
             }
         }
         
@@ -7352,10 +7352,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string LegalName {
             get {
-                return this.legalNameField;
+                return legalNameField;
             }
             set {
-                this.legalNameField = value;
+                legalNameField = value;
             }
         }
         
@@ -7366,10 +7366,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress CompanyAddr {
             get {
-                return this.companyAddrField;
+                return companyAddrField;
             }
             set {
-                this.companyAddrField = value;
+                companyAddrField = value;
             }
         }
         
@@ -7381,10 +7381,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress CustomerCommunicationAddr {
             get {
-                return this.customerCommunicationAddrField;
+                return customerCommunicationAddrField;
             }
             set {
-                this.customerCommunicationAddrField = value;
+                customerCommunicationAddrField = value;
             }
         }
         
@@ -7395,10 +7395,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress LegalAddr {
             get {
-                return this.legalAddrField;
+                return legalAddrField;
             }
             set {
-                this.legalAddrField = value;
+                legalAddrField = value;
             }
         }
         
@@ -7408,10 +7408,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress CompanyEmailAddr {
             get {
-                return this.companyEmailAddrField;
+                return companyEmailAddrField;
             }
             set {
-                this.companyEmailAddrField = value;
+                companyEmailAddrField = value;
             }
         }
         
@@ -7423,10 +7423,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress CustomerCommunicationEmailAddr {
             get {
-                return this.customerCommunicationEmailAddrField;
+                return customerCommunicationEmailAddrField;
             }
             set {
-                this.customerCommunicationEmailAddrField = value;
+                customerCommunicationEmailAddrField = value;
             }
         }
         
@@ -7436,10 +7436,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WebSiteAddress CompanyURL {
             get {
-                return this.companyURLField;
+                return companyURLField;
             }
             set {
-                this.companyURLField = value;
+                companyURLField = value;
             }
         }
         
@@ -7449,10 +7449,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber PrimaryPhone {
             get {
-                return this.primaryPhoneField;
+                return primaryPhoneField;
             }
             set {
-                this.primaryPhoneField = value;
+                primaryPhoneField = value;
             }
         }
         
@@ -7468,10 +7468,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
         public ContactInfo[] OtherContactInfo {
             get {
-                return this.otherContactInfoField;
+                return otherContactInfoField;
             }
             set {
-                this.otherContactInfoField = value;
+                otherContactInfoField = value;
             }
         }
         
@@ -7485,10 +7485,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyFileName {
             get {
-                return this.companyFileNameField;
+                return companyFileNameField;
             }
             set {
-                this.companyFileNameField = value;
+                companyFileNameField = value;
             }
         }
         
@@ -7503,10 +7503,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FlavorStratum {
             get {
-                return this.flavorStratumField;
+                return flavorStratumField;
             }
             set {
-                this.flavorStratumField = value;
+                flavorStratumField = value;
             }
         }
         
@@ -7519,10 +7519,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SampleFile {
             get {
-                return this.sampleFileField;
+                return sampleFileField;
             }
             set {
-                this.sampleFileField = value;
+                sampleFileField = value;
             }
         }
         
@@ -7531,10 +7531,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SampleFileSpecified {
             get {
-                return this.sampleFileFieldSpecified;
+                return sampleFileFieldSpecified;
             }
             set {
-                this.sampleFileFieldSpecified = value;
+                sampleFileFieldSpecified = value;
             }
         }
         
@@ -7550,10 +7550,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyUserId {
             get {
-                return this.companyUserIdField;
+                return companyUserIdField;
             }
             set {
-                this.companyUserIdField = value;
+                companyUserIdField = value;
             }
         }
         
@@ -7567,10 +7567,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyUserAdminEmail {
             get {
-                return this.companyUserAdminEmailField;
+                return companyUserAdminEmailField;
             }
             set {
-                this.companyUserAdminEmailField = value;
+                companyUserAdminEmailField = value;
             }
         }
         
@@ -7584,10 +7584,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime CompanyStartDate {
             get {
-                return this.companyStartDateField;
+                return companyStartDateField;
             }
             set {
-                this.companyStartDateField = value;
+                companyStartDateField = value;
             }
         }
         
@@ -7596,10 +7596,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CompanyStartDateSpecified {
             get {
-                return this.companyStartDateFieldSpecified;
+                return companyStartDateFieldSpecified;
             }
             set {
-                this.companyStartDateFieldSpecified = value;
+                companyStartDateFieldSpecified = value;
             }
         }
         
@@ -7612,10 +7612,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EmployerId {
             get {
-                return this.employerIdField;
+                return employerIdField;
             }
             set {
-                this.employerIdField = value;
+                employerIdField = value;
             }
         }
         
@@ -7628,10 +7628,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum FiscalYearStartMonth {
             get {
-                return this.fiscalYearStartMonthField;
+                return fiscalYearStartMonthField;
             }
             set {
-                this.fiscalYearStartMonthField = value;
+                fiscalYearStartMonthField = value;
             }
         }
         
@@ -7640,10 +7640,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FiscalYearStartMonthSpecified {
             get {
-                return this.fiscalYearStartMonthFieldSpecified;
+                return fiscalYearStartMonthFieldSpecified;
             }
             set {
-                this.fiscalYearStartMonthFieldSpecified = value;
+                fiscalYearStartMonthFieldSpecified = value;
             }
         }
         
@@ -7656,10 +7656,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum TaxYearStartMonth {
             get {
-                return this.taxYearStartMonthField;
+                return taxYearStartMonthField;
             }
             set {
-                this.taxYearStartMonthField = value;
+                taxYearStartMonthField = value;
             }
         }
         
@@ -7668,10 +7668,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxYearStartMonthSpecified {
             get {
-                return this.taxYearStartMonthFieldSpecified;
+                return taxYearStartMonthFieldSpecified;
             }
             set {
-                this.taxYearStartMonthFieldSpecified = value;
+                taxYearStartMonthFieldSpecified = value;
             }
         }
         
@@ -7688,10 +7688,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string QBVersion {
             get {
-                return this.qBVersionField;
+                return qBVersionField;
             }
             set {
-                this.qBVersionField = value;
+                qBVersionField = value;
             }
         }
         
@@ -7705,10 +7705,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Country {
             get {
-                return this.countryField;
+                return countryField;
             }
             set {
-                this.countryField = value;
+                countryField = value;
             }
         }
         
@@ -7721,10 +7721,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -7738,10 +7738,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -7754,10 +7754,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Mobile {
             get {
-                return this.mobileField;
+                return mobileField;
             }
             set {
-                this.mobileField = value;
+                mobileField = value;
             }
         }
         
@@ -7770,10 +7770,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Fax {
             get {
-                return this.faxField;
+                return faxField;
             }
             set {
-                this.faxField = value;
+                faxField = value;
             }
         }
         
@@ -7786,10 +7786,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress Email {
             get {
-                return this.emailField;
+                return emailField;
             }
             set {
-                this.emailField = value;
+                emailField = value;
             }
         }
         
@@ -7802,10 +7802,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WebSiteAddress WebAddr {
             get {
-                return this.webAddrField;
+                return webAddrField;
             }
             set {
-                this.webAddrField = value;
+                webAddrField = value;
             }
         }
         
@@ -7818,10 +7818,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastImportedTime {
             get {
-                return this.lastImportedTimeField;
+                return lastImportedTimeField;
             }
             set {
-                this.lastImportedTimeField = value;
+                lastImportedTimeField = value;
             }
         }
         
@@ -7830,10 +7830,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastImportedTimeSpecified {
             get {
-                return this.lastImportedTimeFieldSpecified;
+                return lastImportedTimeFieldSpecified;
             }
             set {
-                this.lastImportedTimeFieldSpecified = value;
+                lastImportedTimeFieldSpecified = value;
             }
         }
         
@@ -7846,10 +7846,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LastSyncTime {
             get {
-                return this.lastSyncTimeField;
+                return lastSyncTimeField;
             }
             set {
-                this.lastSyncTimeField = value;
+                lastSyncTimeField = value;
             }
         }
         
@@ -7858,10 +7858,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastSyncTimeSpecified {
             get {
-                return this.lastSyncTimeFieldSpecified;
+                return lastSyncTimeFieldSpecified;
             }
             set {
-                this.lastSyncTimeFieldSpecified = value;
+                lastSyncTimeFieldSpecified = value;
             }
         }
         
@@ -7872,10 +7872,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SupportedLanguages {
             get {
-                return this.supportedLanguagesField;
+                return supportedLanguagesField;
             }
             set {
-                this.supportedLanguagesField = value;
+                supportedLanguagesField = value;
             }
         }
         
@@ -7886,10 +7886,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultTimeZone {
             get {
-                return this.defaultTimeZoneField;
+                return defaultTimeZoneField;
             }
             set {
-                this.defaultTimeZoneField = value;
+                defaultTimeZoneField = value;
             }
         }
         
@@ -7900,10 +7900,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MultiByteCharsSupported {
             get {
-                return this.multiByteCharsSupportedField;
+                return multiByteCharsSupportedField;
             }
             set {
-                this.multiByteCharsSupportedField = value;
+                multiByteCharsSupportedField = value;
             }
         }
         
@@ -7912,10 +7912,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MultiByteCharsSupportedSpecified {
             get {
-                return this.multiByteCharsSupportedFieldSpecified;
+                return multiByteCharsSupportedFieldSpecified;
             }
             set {
-                this.multiByteCharsSupportedFieldSpecified = value;
+                multiByteCharsSupportedFieldSpecified = value;
             }
         }
         
@@ -7928,10 +7928,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
         
@@ -7944,10 +7944,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public FifoCalculationStatus FifoCalculationStatus {
             get {
-                return this.fifoCalculationStatusField;
+                return fifoCalculationStatusField;
             }
             set {
-                this.fifoCalculationStatusField = value;
+                fifoCalculationStatusField = value;
             }
         }
         
@@ -7956,10 +7956,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FifoCalculationStatusSpecified {
             get {
-                return this.fifoCalculationStatusFieldSpecified;
+                return fifoCalculationStatusFieldSpecified;
             }
             set {
-                this.fifoCalculationStatusFieldSpecified = value;
+                fifoCalculationStatusFieldSpecified = value;
             }
         }
         
@@ -7972,10 +7972,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CompanyInfoEx {
             get {
-                return this.companyInfoExField;
+                return companyInfoExField;
             }
             set {
-                this.companyInfoExField = value;
+                companyInfoExField = value;
             }
         }
     }
@@ -8112,10 +8112,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DocNumber {
             get {
-                return this.docNumberField;
+                return docNumberField;
             }
             set {
-                this.docNumberField = value;
+                docNumberField = value;
             }
         }
         
@@ -8143,10 +8143,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime TxnDate {
             get {
-                return this.txnDateField;
+                return txnDateField;
             }
             set {
-                this.txnDateField = value;
+                txnDateField = value;
             }
         }
         
@@ -8155,10 +8155,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnDateSpecified {
             get {
-                return this.txnDateFieldSpecified;
+                return txnDateFieldSpecified;
             }
             set {
-                this.txnDateFieldSpecified = value;
+                txnDateFieldSpecified = value;
             }
         }
         
@@ -8173,10 +8173,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepartmentRef {
             get {
-                return this.departmentRefField;
+                return departmentRefField;
             }
             set {
-                this.departmentRefField = value;
+                departmentRefField = value;
             }
         }
         
@@ -8192,10 +8192,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CurrencyRef {
             get {
-                return this.currencyRefField;
+                return currencyRefField;
             }
             set {
-                this.currencyRefField = value;
+                currencyRefField = value;
             }
         }
         
@@ -8215,10 +8215,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal ExchangeRate {
             get {
-                return this.exchangeRateField;
+                return exchangeRateField;
             }
             set {
-                this.exchangeRateField = value;
+                exchangeRateField = value;
             }
         }
         
@@ -8227,10 +8227,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ExchangeRateSpecified {
             get {
-                return this.exchangeRateFieldSpecified;
+                return exchangeRateFieldSpecified;
             }
             set {
-                this.exchangeRateFieldSpecified = value;
+                exchangeRateFieldSpecified = value;
             }
         }
         
@@ -8246,10 +8246,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PrivateNote {
             get {
-                return this.privateNoteField;
+                return privateNoteField;
             }
             set {
-                this.privateNoteField = value;
+                privateNoteField = value;
             }
         }
         
@@ -8273,10 +8273,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnStatus {
             get {
-                return this.txnStatusField;
+                return txnStatusField;
             }
             set {
-                this.txnStatusField = value;
+                txnStatusField = value;
             }
         }
         
@@ -8291,10 +8291,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("LinkedTxn")]
         public LinkedTxn[] LinkedTxn {
             get {
-                return this.linkedTxnField;
+                return linkedTxnField;
             }
             set {
-                this.linkedTxnField = value;
+                linkedTxnField = value;
             }
         }
         
@@ -8313,10 +8313,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Line")]
         public Line[] Line {
             get {
-                return this.lineField;
+                return lineField;
             }
             set {
-                this.lineField = value;
+                lineField = value;
             }
         }
         
@@ -8343,10 +8343,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TxnTaxDetail TxnTaxDetail {
             get {
-                return this.txnTaxDetailField;
+                return txnTaxDetailField;
             }
             set {
-                this.txnTaxDetailField = value;
+                txnTaxDetailField = value;
             }
         }
         
@@ -8361,10 +8361,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnSource {
             get {
-                return this.txnSourceField;
+                return txnSourceField;
             }
             set {
-                this.txnSourceField = value;
+                txnSourceField = value;
             }
         }
         
@@ -8379,10 +8379,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxFormType {
             get {
-                return this.taxFormTypeField;
+                return taxFormTypeField;
             }
             set {
-                this.taxFormTypeField = value;
+                taxFormTypeField = value;
             }
         }
         
@@ -8396,10 +8396,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxFormNum {
             get {
-                return this.taxFormNumField;
+                return taxFormNumField;
             }
             set {
-                this.taxFormNumField = value;
+                taxFormNumField = value;
             }
         }
         
@@ -8415,10 +8415,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TransactionLocationType {
             get {
-                return this.transactionLocationTypeField;
+                return transactionLocationTypeField;
             }
             set {
-                this.transactionLocationTypeField = value;
+                transactionLocationTypeField = value;
             }
         }
         
@@ -8432,10 +8432,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Tag")]
         public Tag[] Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
         
@@ -8448,10 +8448,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TxnApprovalInfo TxnApprovalInfo {
             get {
-                return this.txnApprovalInfoField;
+                return txnApprovalInfoField;
             }
             set {
-                this.txnApprovalInfoField = value;
+                txnApprovalInfoField = value;
             }
         }
         
@@ -8466,10 +8466,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RecurDataRef {
             get {
-                return this.recurDataRefField;
+                return recurDataRefField;
             }
             set {
-                this.recurDataRefField = value;
+                recurDataRefField = value;
             }
         }
         
@@ -8482,10 +8482,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public RecurringInfo RecurringInfo {
             get {
-                return this.recurringInfoField;
+                return recurringInfoField;
             }
             set {
-                this.recurringInfoField = value;
+                recurringInfoField = value;
             }
         }
     }
@@ -8552,10 +8552,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -8571,10 +8571,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
         public string LineNum {
             get {
-                return this.lineNumField;
+                return lineNumField;
             }
             set {
-                this.lineNumField = value;
+                lineNumField = value;
             }
         }
         
@@ -8594,10 +8594,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -8620,10 +8620,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -8632,10 +8632,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
@@ -8652,10 +8652,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Received {
             get {
-                return this.receivedField;
+                return receivedField;
             }
             set {
-                this.receivedField = value;
+                receivedField = value;
             }
         }
         
@@ -8664,10 +8664,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReceivedSpecified {
             get {
-                return this.receivedFieldSpecified;
+                return receivedFieldSpecified;
             }
             set {
-                this.receivedFieldSpecified = value;
+                receivedFieldSpecified = value;
             }
         }
         
@@ -8683,10 +8683,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("LinkedTxn")]
         public LinkedTxn[] LinkedTxn {
             get {
-                return this.linkedTxnField;
+                return linkedTxnField;
             }
             set {
-                this.linkedTxnField = value;
+                linkedTxnField = value;
             }
         }
         
@@ -8701,10 +8701,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public LineDetailTypeEnum DetailType {
             get {
-                return this.detailTypeField;
+                return detailTypeField;
             }
             set {
-                this.detailTypeField = value;
+                detailTypeField = value;
             }
         }
         
@@ -8713,10 +8713,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DetailTypeSpecified {
             get {
-                return this.detailTypeFieldSpecified;
+                return detailTypeFieldSpecified;
             }
             set {
-                this.detailTypeFieldSpecified = value;
+                detailTypeFieldSpecified = value;
             }
         }
         
@@ -8738,10 +8738,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TaxLineDetail", typeof(TaxLineDetail))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -8756,10 +8756,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CustomField")]
         public CustomField[] CustomField {
             get {
-                return this.customFieldField;
+                return customFieldField;
             }
             set {
-                this.customFieldField = value;
+                customFieldField = value;
             }
         }
         
@@ -8773,10 +8773,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType LineEx {
             get {
-                return this.lineExField;
+                return lineExField;
             }
             set {
-                this.lineExField = value;
+                lineExField = value;
             }
         }
     }
@@ -8831,10 +8831,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -8848,10 +8848,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -8865,10 +8865,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -8882,10 +8882,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BillableStatusEnum BillableStatus {
             get {
-                return this.billableStatusField;
+                return billableStatusField;
             }
             set {
-                this.billableStatusField = value;
+                billableStatusField = value;
             }
         }
         
@@ -8894,10 +8894,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableStatusSpecified {
             get {
-                return this.billableStatusFieldSpecified;
+                return billableStatusFieldSpecified;
             }
             set {
-                this.billableStatusFieldSpecified = value;
+                billableStatusFieldSpecified = value;
             }
         }
         
@@ -8911,10 +8911,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MarkupInfo MarkupInfo {
             get {
-                return this.markupInfoField;
+                return markupInfoField;
             }
             set {
-                this.markupInfoField = value;
+                markupInfoField = value;
             }
         }
         
@@ -8928,10 +8928,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxAmount {
             get {
-                return this.taxAmountField;
+                return taxAmountField;
             }
             set {
-                this.taxAmountField = value;
+                taxAmountField = value;
             }
         }
         
@@ -8940,10 +8940,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxAmountSpecified {
             get {
-                return this.taxAmountFieldSpecified;
+                return taxAmountFieldSpecified;
             }
             set {
-                this.taxAmountFieldSpecified = value;
+                taxAmountFieldSpecified = value;
             }
         }
         
@@ -8957,10 +8957,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -8974,10 +8974,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxInclusiveAmt {
             get {
-                return this.taxInclusiveAmtField;
+                return taxInclusiveAmtField;
             }
             set {
-                this.taxInclusiveAmtField = value;
+                taxInclusiveAmtField = value;
             }
         }
         
@@ -8986,10 +8986,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxInclusiveAmtSpecified {
             get {
-                return this.taxInclusiveAmtFieldSpecified;
+                return taxInclusiveAmtFieldSpecified;
             }
             set {
-                this.taxInclusiveAmtFieldSpecified = value;
+                taxInclusiveAmtFieldSpecified = value;
             }
         }
         
@@ -9003,10 +9003,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ExpenseDetailLineDetailEx {
             get {
-                return this.expenseDetailLineDetailExField;
+                return expenseDetailLineDetailExField;
             }
             set {
-                this.expenseDetailLineDetailExField = value;
+                expenseDetailLineDetailExField = value;
             }
         }
     }
@@ -9052,10 +9052,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PercentBased {
             get {
-                return this.percentBasedField;
+                return percentBasedField;
             }
             set {
-                this.percentBasedField = value;
+                percentBasedField = value;
             }
         }
         
@@ -9064,10 +9064,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PercentBasedSpecified {
             get {
-                return this.percentBasedFieldSpecified;
+                return percentBasedFieldSpecified;
             }
             set {
-                this.percentBasedFieldSpecified = value;
+                percentBasedFieldSpecified = value;
             }
         }
         
@@ -9080,10 +9080,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
         
@@ -9092,10 +9092,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ValueSpecified {
             get {
-                return this.valueFieldSpecified;
+                return valueFieldSpecified;
             }
             set {
-                this.valueFieldSpecified = value;
+                valueFieldSpecified = value;
             }
         }
         
@@ -9110,10 +9110,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Percent {
             get {
-                return this.percentField;
+                return percentField;
             }
             set {
-                this.percentField = value;
+                percentField = value;
             }
         }
         
@@ -9122,10 +9122,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PercentSpecified {
             get {
-                return this.percentFieldSpecified;
+                return percentFieldSpecified;
             }
             set {
-                this.percentFieldSpecified = value;
+                percentFieldSpecified = value;
             }
         }
         
@@ -9139,10 +9139,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PriceLevelRef {
             get {
-                return this.priceLevelRefField;
+                return priceLevelRefField;
             }
             set {
-                this.priceLevelRefField = value;
+                priceLevelRefField = value;
             }
         }
         
@@ -9156,10 +9156,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType MarkUpIncomeAccountRef {
             get {
-                return this.markUpIncomeAccountRefField;
+                return markUpIncomeAccountRefField;
             }
             set {
-                this.markUpIncomeAccountRefField = value;
+                markUpIncomeAccountRefField = value;
             }
         }
     }
@@ -9212,10 +9212,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType Entity {
             get {
-                return this.entityField;
+                return entityField;
             }
             set {
-                this.entityField = value;
+                entityField = value;
             }
         }
         
@@ -9229,10 +9229,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -9246,10 +9246,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -9263,10 +9263,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -9280,10 +9280,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CheckNum {
             get {
-                return this.checkNumField;
+                return checkNumField;
             }
             set {
-                this.checkNumField = value;
+                checkNumField = value;
             }
         }
         
@@ -9297,10 +9297,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TxnTypeEnum TxnType {
             get {
-                return this.txnTypeField;
+                return txnTypeField;
             }
             set {
-                this.txnTypeField = value;
+                txnTypeField = value;
             }
         }
         
@@ -9309,10 +9309,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnTypeSpecified {
             get {
-                return this.txnTypeFieldSpecified;
+                return txnTypeFieldSpecified;
             }
             set {
-                this.txnTypeFieldSpecified = value;
+                txnTypeFieldSpecified = value;
             }
         }
         
@@ -9326,10 +9326,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -9343,10 +9343,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxApplicableOnEnum TaxApplicableOn {
             get {
-                return this.taxApplicableOnField;
+                return taxApplicableOnField;
             }
             set {
-                this.taxApplicableOnField = value;
+                taxApplicableOnField = value;
             }
         }
         
@@ -9355,10 +9355,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxApplicableOnSpecified {
             get {
-                return this.taxApplicableOnFieldSpecified;
+                return taxApplicableOnFieldSpecified;
             }
             set {
-                this.taxApplicableOnFieldSpecified = value;
+                taxApplicableOnFieldSpecified = value;
             }
         }
         
@@ -9372,10 +9372,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType DepositLineDetailEx {
             get {
-                return this.depositLineDetailExField;
+                return depositLineDetailExField;
             }
             set {
-                this.depositLineDetailExField = value;
+                depositLineDetailExField = value;
             }
         }
     }
@@ -9415,10 +9415,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -9427,10 +9427,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -9451,10 +9451,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -9468,10 +9468,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType DescriptionLineDetailEx {
             get {
-                return this.descriptionLineDetailExField;
+                return descriptionLineDetailExField;
             }
             set {
-                this.descriptionLineDetailExField = value;
+                descriptionLineDetailExField = value;
             }
         }
     }
@@ -9516,10 +9516,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -9528,10 +9528,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -9545,10 +9545,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -9562,10 +9562,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -9579,10 +9579,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType DiscountLineDetailEx {
             get {
-                return this.discountLineDetailExField;
+                return discountLineDetailExField;
             }
             set {
-                this.discountLineDetailExField = value;
+                discountLineDetailExField = value;
             }
         }
     }
@@ -9620,10 +9620,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DiscountRef {
             get {
-                return this.discountRefField;
+                return discountRefField;
             }
             set {
-                this.discountRefField = value;
+                discountRefField = value;
             }
         }
         
@@ -9637,10 +9637,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PercentBased {
             get {
-                return this.percentBasedField;
+                return percentBasedField;
             }
             set {
-                this.percentBasedField = value;
+                percentBasedField = value;
             }
         }
         
@@ -9649,10 +9649,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PercentBasedSpecified {
             get {
-                return this.percentBasedFieldSpecified;
+                return percentBasedFieldSpecified;
             }
             set {
-                this.percentBasedFieldSpecified = value;
+                percentBasedFieldSpecified = value;
             }
         }
         
@@ -9667,10 +9667,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountPercent {
             get {
-                return this.discountPercentField;
+                return discountPercentField;
             }
             set {
-                this.discountPercentField = value;
+                discountPercentField = value;
             }
         }
         
@@ -9679,10 +9679,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountPercentSpecified {
             get {
-                return this.discountPercentFieldSpecified;
+                return discountPercentFieldSpecified;
             }
             set {
-                this.discountPercentFieldSpecified = value;
+                discountPercentFieldSpecified = value;
             }
         }
         
@@ -9696,10 +9696,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DiscountAccountRef {
             get {
-                return this.discountAccountRefField;
+                return discountAccountRefField;
             }
             set {
-                this.discountAccountRefField = value;
+                discountAccountRefField = value;
             }
         }
     }
@@ -9746,10 +9746,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType GroupItemRef {
             get {
-                return this.groupItemRefField;
+                return groupItemRefField;
             }
             set {
-                this.groupItemRefField = value;
+                groupItemRefField = value;
             }
         }
         
@@ -9763,10 +9763,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Quantity {
             get {
-                return this.quantityField;
+                return quantityField;
             }
             set {
-                this.quantityField = value;
+                quantityField = value;
             }
         }
         
@@ -9775,10 +9775,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QuantitySpecified {
             get {
-                return this.quantityFieldSpecified;
+                return quantityFieldSpecified;
             }
             set {
-                this.quantityFieldSpecified = value;
+                quantityFieldSpecified = value;
             }
         }
         
@@ -9792,10 +9792,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public UOMRef UOMRef {
             get {
-                return this.uOMRefField;
+                return uOMRefField;
             }
             set {
-                this.uOMRefField = value;
+                uOMRefField = value;
             }
         }
         
@@ -9810,10 +9810,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -9822,10 +9822,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -9841,10 +9841,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Line")]
         public Line[] Line {
             get {
-                return this.lineField;
+                return lineField;
             }
             set {
-                this.lineField = value;
+                lineField = value;
             }
         }
         
@@ -9858,10 +9858,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType GroupLineDetailEx {
             get {
-                return this.groupLineDetailExField;
+                return groupLineDetailExField;
             }
             set {
-                this.groupLineDetailExField = value;
+                groupLineDetailExField = value;
             }
         }
     }
@@ -9892,10 +9892,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Unit {
             get {
-                return this.unitField;
+                return unitField;
             }
             set {
-                this.unitField = value;
+                unitField = value;
             }
         }
         
@@ -9907,10 +9907,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType UOMSetRef {
             get {
-                return this.uOMSetRefField;
+                return uOMSetRefField;
             }
             set {
-                this.uOMSetRefField = value;
+                uOMSetRefField = value;
             }
         }
     }
@@ -9953,10 +9953,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -9970,10 +9970,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BillableStatusEnum BillableStatus {
             get {
-                return this.billableStatusField;
+                return billableStatusField;
             }
             set {
-                this.billableStatusField = value;
+                billableStatusField = value;
             }
         }
         
@@ -9982,10 +9982,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableStatusSpecified {
             get {
-                return this.billableStatusFieldSpecified;
+                return billableStatusFieldSpecified;
             }
             set {
-                this.billableStatusFieldSpecified = value;
+                billableStatusFieldSpecified = value;
             }
         }
         
@@ -9999,10 +9999,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxInclusiveAmt {
             get {
-                return this.taxInclusiveAmtField;
+                return taxInclusiveAmtField;
             }
             set {
-                this.taxInclusiveAmtField = value;
+                taxInclusiveAmtField = value;
             }
         }
         
@@ -10011,10 +10011,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxInclusiveAmtSpecified {
             get {
-                return this.taxInclusiveAmtFieldSpecified;
+                return taxInclusiveAmtFieldSpecified;
             }
             set {
-                this.taxInclusiveAmtFieldSpecified = value;
+                taxInclusiveAmtFieldSpecified = value;
             }
         }
         
@@ -10028,10 +10028,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ItemBasedExpenseLineDetailEx {
             get {
-                return this.itemBasedExpenseLineDetailExField;
+                return itemBasedExpenseLineDetailExField;
             }
             set {
-                this.itemBasedExpenseLineDetailExField = value;
+                itemBasedExpenseLineDetailExField = value;
             }
         }
     }
@@ -10091,10 +10091,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
@@ -10108,10 +10108,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -10122,10 +10122,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -10134,10 +10134,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -10151,10 +10151,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MarkupInfo MarkupInfo {
             get {
-                return this.markupInfoField;
+                return markupInfoField;
             }
             set {
-                this.markupInfoField = value;
+                markupInfoField = value;
             }
         }
         
@@ -10168,10 +10168,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Qty {
             get {
-                return this.qtyField;
+                return qtyField;
             }
             set {
-                this.qtyField = value;
+                qtyField = value;
             }
         }
         
@@ -10180,10 +10180,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QtySpecified {
             get {
-                return this.qtyFieldSpecified;
+                return qtyFieldSpecified;
             }
             set {
-                this.qtyFieldSpecified = value;
+                qtyFieldSpecified = value;
             }
         }
         
@@ -10197,10 +10197,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public UOMRef UOMRef {
             get {
-                return this.uOMRefField;
+                return uOMRefField;
             }
             set {
-                this.uOMRefField = value;
+                uOMRefField = value;
             }
         }
         
@@ -10215,10 +10215,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemAccountRef {
             get {
-                return this.itemAccountRefField;
+                return itemAccountRefField;
             }
             set {
-                this.itemAccountRefField = value;
+                itemAccountRefField = value;
             }
         }
         
@@ -10232,10 +10232,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType InventorySiteRef {
             get {
-                return this.inventorySiteRefField;
+                return inventorySiteRefField;
             }
             set {
-                this.inventorySiteRefField = value;
+                inventorySiteRefField = value;
             }
         }
         
@@ -10249,10 +10249,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -10266,10 +10266,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxClassificationRef {
             get {
-                return this.taxClassificationRefField;
+                return taxClassificationRefField;
             }
             set {
-                this.taxClassificationRefField = value;
+                taxClassificationRefField = value;
             }
         }
     }
@@ -10318,10 +10318,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ItemReceiptLineDetailEx {
             get {
-                return this.itemReceiptLineDetailExField;
+                return itemReceiptLineDetailExField;
             }
             set {
-                this.itemReceiptLineDetailExField = value;
+                itemReceiptLineDetailExField = value;
             }
         }
     }
@@ -10388,10 +10388,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PostingTypeEnum PostingType {
             get {
-                return this.postingTypeField;
+                return postingTypeField;
             }
             set {
-                this.postingTypeField = value;
+                postingTypeField = value;
             }
         }
         
@@ -10400,10 +10400,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PostingTypeSpecified {
             get {
-                return this.postingTypeFieldSpecified;
+                return postingTypeFieldSpecified;
             }
             set {
-                this.postingTypeFieldSpecified = value;
+                postingTypeFieldSpecified = value;
             }
         }
         
@@ -10418,10 +10418,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EntityTypeRef Entity {
             get {
-                return this.entityField;
+                return entityField;
             }
             set {
-                this.entityField = value;
+                entityField = value;
             }
         }
         
@@ -10435,10 +10435,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -10452,10 +10452,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -10469,10 +10469,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepartmentRef {
             get {
-                return this.departmentRefField;
+                return departmentRefField;
             }
             set {
-                this.departmentRefField = value;
+                departmentRefField = value;
             }
         }
         
@@ -10486,10 +10486,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -10503,10 +10503,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxRateRef {
             get {
-                return this.taxRateRefField;
+                return taxRateRefField;
             }
             set {
-                this.taxRateRefField = value;
+                taxRateRefField = value;
             }
         }
         
@@ -10520,10 +10520,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxApplicableOnEnum TaxApplicableOn {
             get {
-                return this.taxApplicableOnField;
+                return taxApplicableOnField;
             }
             set {
-                this.taxApplicableOnField = value;
+                taxApplicableOnField = value;
             }
         }
         
@@ -10532,10 +10532,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxApplicableOnSpecified {
             get {
-                return this.taxApplicableOnFieldSpecified;
+                return taxApplicableOnFieldSpecified;
             }
             set {
-                this.taxApplicableOnFieldSpecified = value;
+                taxApplicableOnFieldSpecified = value;
             }
         }
         
@@ -10549,10 +10549,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxAmount {
             get {
-                return this.taxAmountField;
+                return taxAmountField;
             }
             set {
-                this.taxAmountField = value;
+                taxAmountField = value;
             }
         }
         
@@ -10561,10 +10561,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxAmountSpecified {
             get {
-                return this.taxAmountFieldSpecified;
+                return taxAmountFieldSpecified;
             }
             set {
-                this.taxAmountFieldSpecified = value;
+                taxAmountFieldSpecified = value;
             }
         }
         
@@ -10578,10 +10578,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxInclusiveAmt {
             get {
-                return this.taxInclusiveAmtField;
+                return taxInclusiveAmtField;
             }
             set {
-                this.taxInclusiveAmtField = value;
+                taxInclusiveAmtField = value;
             }
         }
         
@@ -10590,10 +10590,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxInclusiveAmtSpecified {
             get {
-                return this.taxInclusiveAmtFieldSpecified;
+                return taxInclusiveAmtFieldSpecified;
             }
             set {
-                this.taxInclusiveAmtFieldSpecified = value;
+                taxInclusiveAmtFieldSpecified = value;
             }
         }
         
@@ -10609,10 +10609,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BillableStatusEnum BillableStatus {
             get {
-                return this.billableStatusField;
+                return billableStatusField;
             }
             set {
-                this.billableStatusField = value;
+                billableStatusField = value;
             }
         }
         
@@ -10621,10 +10621,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableStatusSpecified {
             get {
-                return this.billableStatusFieldSpecified;
+                return billableStatusFieldSpecified;
             }
             set {
-                this.billableStatusFieldSpecified = value;
+                billableStatusFieldSpecified = value;
             }
         }
         
@@ -10638,10 +10638,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType JournalCodeRef {
             get {
-                return this.journalCodeRefField;
+                return journalCodeRefField;
             }
             set {
-                this.journalCodeRefField = value;
+                journalCodeRefField = value;
             }
         }
         
@@ -10655,10 +10655,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType JournalEntryLineDetailEx {
             get {
-                return this.journalEntryLineDetailExField;
+                return journalEntryLineDetailExField;
             }
             set {
-                this.journalEntryLineDetailExField = value;
+                journalEntryLineDetailExField = value;
             }
         }
     }
@@ -10694,10 +10694,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EntityTypeEnum Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -10706,10 +10706,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TypeSpecified {
             get {
-                return this.typeFieldSpecified;
+                return typeFieldSpecified;
             }
             set {
-                this.typeFieldSpecified = value;
+                typeFieldSpecified = value;
             }
         }
         
@@ -10722,10 +10722,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType EntityRef {
             get {
-                return this.entityRefField;
+                return entityRefField;
             }
             set {
-                this.entityRefField = value;
+                entityRefField = value;
             }
         }
     }
@@ -10777,10 +10777,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
@@ -10795,10 +10795,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -10807,10 +10807,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -10824,10 +10824,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -10842,10 +10842,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -10854,10 +10854,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -10873,10 +10873,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeBalance {
             get {
-                return this.homeBalanceField;
+                return homeBalanceField;
             }
             set {
-                this.homeBalanceField = value;
+                homeBalanceField = value;
             }
         }
         
@@ -10885,10 +10885,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeBalanceSpecified {
             get {
-                return this.homeBalanceFieldSpecified;
+                return homeBalanceFieldSpecified;
             }
             set {
-                this.homeBalanceFieldSpecified = value;
+                homeBalanceFieldSpecified = value;
             }
         }
         
@@ -10902,10 +10902,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public DiscountOverride Discount {
             get {
-                return this.discountField;
+                return discountField;
             }
             set {
-                this.discountField = value;
+                discountField = value;
             }
         }
         
@@ -10919,10 +10919,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PaymentLineEx {
             get {
-                return this.paymentLineExField;
+                return paymentLineExField;
             }
             set {
-                this.paymentLineExField = value;
+                paymentLineExField = value;
             }
         }
     }
@@ -10966,10 +10966,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ManPartNum {
             get {
-                return this.manPartNumField;
+                return manPartNumField;
             }
             set {
-                this.manPartNumField = value;
+                manPartNumField = value;
             }
         }
         
@@ -10984,10 +10984,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ManuallyClosed {
             get {
-                return this.manuallyClosedField;
+                return manuallyClosedField;
             }
             set {
-                this.manuallyClosedField = value;
+                manuallyClosedField = value;
             }
         }
         
@@ -10996,10 +10996,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ManuallyClosedSpecified {
             get {
-                return this.manuallyClosedFieldSpecified;
+                return manuallyClosedFieldSpecified;
             }
             set {
-                this.manuallyClosedFieldSpecified = value;
+                manuallyClosedFieldSpecified = value;
             }
         }
         
@@ -11014,10 +11014,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal OpenQty {
             get {
-                return this.openQtyField;
+                return openQtyField;
             }
             set {
-                this.openQtyField = value;
+                openQtyField = value;
             }
         }
         
@@ -11026,10 +11026,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OpenQtySpecified {
             get {
-                return this.openQtyFieldSpecified;
+                return openQtyFieldSpecified;
             }
             set {
-                this.openQtyFieldSpecified = value;
+                openQtyFieldSpecified = value;
             }
         }
         
@@ -11043,10 +11043,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PurchaseOrderItemLineDetailEx {
             get {
-                return this.purchaseOrderItemLineDetailExField;
+                return purchaseOrderItemLineDetailExField;
             }
             set {
-                this.purchaseOrderItemLineDetailExField = value;
+                purchaseOrderItemLineDetailExField = value;
             }
         }
     }
@@ -11098,10 +11098,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -11110,10 +11110,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -11127,10 +11127,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxInclusiveAmt {
             get {
-                return this.taxInclusiveAmtField;
+                return taxInclusiveAmtField;
             }
             set {
-                this.taxInclusiveAmtField = value;
+                taxInclusiveAmtField = value;
             }
         }
         
@@ -11139,10 +11139,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxInclusiveAmtSpecified {
             get {
-                return this.taxInclusiveAmtFieldSpecified;
+                return taxInclusiveAmtFieldSpecified;
             }
             set {
-                this.taxInclusiveAmtFieldSpecified = value;
+                taxInclusiveAmtFieldSpecified = value;
             }
         }
         
@@ -11155,10 +11155,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountRate {
             get {
-                return this.discountRateField;
+                return discountRateField;
             }
             set {
-                this.discountRateField = value;
+                discountRateField = value;
             }
         }
         
@@ -11167,10 +11167,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountRateSpecified {
             get {
-                return this.discountRateFieldSpecified;
+                return discountRateFieldSpecified;
             }
             set {
-                this.discountRateFieldSpecified = value;
+                discountRateFieldSpecified = value;
             }
         }
         
@@ -11183,10 +11183,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountAmt {
             get {
-                return this.discountAmtField;
+                return discountAmtField;
             }
             set {
-                this.discountAmtField = value;
+                discountAmtField = value;
             }
         }
         
@@ -11195,10 +11195,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountAmtSpecified {
             get {
-                return this.discountAmtFieldSpecified;
+                return discountAmtFieldSpecified;
             }
             set {
-                this.discountAmtFieldSpecified = value;
+                discountAmtFieldSpecified = value;
             }
         }
         
@@ -11212,10 +11212,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType SalesItemLineDetailEx {
             get {
-                return this.salesItemLineDetailExField;
+                return salesItemLineDetailExField;
             }
             set {
-                this.salesItemLineDetailExField = value;
+                salesItemLineDetailExField = value;
             }
         }
     }
@@ -11251,10 +11251,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ManuallyClosed {
             get {
-                return this.manuallyClosedField;
+                return manuallyClosedField;
             }
             set {
-                this.manuallyClosedField = value;
+                manuallyClosedField = value;
             }
         }
         
@@ -11263,10 +11263,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ManuallyClosedSpecified {
             get {
-                return this.manuallyClosedFieldSpecified;
+                return manuallyClosedFieldSpecified;
             }
             set {
-                this.manuallyClosedFieldSpecified = value;
+                manuallyClosedFieldSpecified = value;
             }
         }
     }
@@ -11303,10 +11303,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
@@ -11321,10 +11321,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -11333,10 +11333,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
     }
@@ -11375,10 +11375,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TDSAccountRef {
             get {
-                return this.tDSAccountRefField;
+                return tDSAccountRefField;
             }
             set {
-                this.tDSAccountRefField = value;
+                tDSAccountRefField = value;
             }
         }
         
@@ -11392,10 +11392,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TDSSectionTypeId {
             get {
-                return this.tDSSectionTypeIdField;
+                return tDSSectionTypeIdField;
             }
             set {
-                this.tDSSectionTypeIdField = value;
+                tDSSectionTypeIdField = value;
             }
         }
         
@@ -11404,10 +11404,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSSectionTypeIdSpecified {
             get {
-                return this.tDSSectionTypeIdFieldSpecified;
+                return tDSSectionTypeIdFieldSpecified;
             }
             set {
-                this.tDSSectionTypeIdFieldSpecified = value;
+                tDSSectionTypeIdFieldSpecified = value;
             }
         }
         
@@ -11421,10 +11421,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TDSLineDetailEx {
             get {
-                return this.tDSLineDetailExField;
+                return tDSLineDetailExField;
             }
             set {
-                this.tDSLineDetailExField = value;
+                tDSLineDetailExField = value;
             }
         }
     }
@@ -11512,10 +11512,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxRateRef {
             get {
-                return this.taxRateRefField;
+                return taxRateRefField;
             }
             set {
-                this.taxRateRefField = value;
+                taxRateRefField = value;
             }
         }
         
@@ -11529,10 +11529,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PercentBased {
             get {
-                return this.percentBasedField;
+                return percentBasedField;
             }
             set {
-                this.percentBasedField = value;
+                percentBasedField = value;
             }
         }
         
@@ -11541,10 +11541,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PercentBasedSpecified {
             get {
-                return this.percentBasedFieldSpecified;
+                return percentBasedFieldSpecified;
             }
             set {
-                this.percentBasedFieldSpecified = value;
+                percentBasedFieldSpecified = value;
             }
         }
         
@@ -11558,10 +11558,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxPercent {
             get {
-                return this.taxPercentField;
+                return taxPercentField;
             }
             set {
-                this.taxPercentField = value;
+                taxPercentField = value;
             }
         }
         
@@ -11570,10 +11570,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxPercentSpecified {
             get {
-                return this.taxPercentFieldSpecified;
+                return taxPercentFieldSpecified;
             }
             set {
-                this.taxPercentFieldSpecified = value;
+                taxPercentFieldSpecified = value;
             }
         }
         
@@ -11593,10 +11593,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal NetAmountTaxable {
             get {
-                return this.netAmountTaxableField;
+                return netAmountTaxableField;
             }
             set {
-                this.netAmountTaxableField = value;
+                netAmountTaxableField = value;
             }
         }
         
@@ -11605,10 +11605,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NetAmountTaxableSpecified {
             get {
-                return this.netAmountTaxableFieldSpecified;
+                return netAmountTaxableFieldSpecified;
             }
             set {
-                this.netAmountTaxableFieldSpecified = value;
+                netAmountTaxableFieldSpecified = value;
             }
         }
         
@@ -11622,10 +11622,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TaxInclusiveAmount {
             get {
-                return this.taxInclusiveAmountField;
+                return taxInclusiveAmountField;
             }
             set {
-                this.taxInclusiveAmountField = value;
+                taxInclusiveAmountField = value;
             }
         }
         
@@ -11634,10 +11634,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxInclusiveAmountSpecified {
             get {
-                return this.taxInclusiveAmountFieldSpecified;
+                return taxInclusiveAmountFieldSpecified;
             }
             set {
-                this.taxInclusiveAmountFieldSpecified = value;
+                taxInclusiveAmountFieldSpecified = value;
             }
         }
         
@@ -11652,10 +11652,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal OverrideDeltaAmount {
             get {
-                return this.overrideDeltaAmountField;
+                return overrideDeltaAmountField;
             }
             set {
-                this.overrideDeltaAmountField = value;
+                overrideDeltaAmountField = value;
             }
         }
         
@@ -11664,10 +11664,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OverrideDeltaAmountSpecified {
             get {
-                return this.overrideDeltaAmountFieldSpecified;
+                return overrideDeltaAmountFieldSpecified;
             }
             set {
-                this.overrideDeltaAmountFieldSpecified = value;
+                overrideDeltaAmountFieldSpecified = value;
             }
         }
         
@@ -11682,10 +11682,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ServiceDate {
             get {
-                return this.serviceDateField;
+                return serviceDateField;
             }
             set {
-                this.serviceDateField = value;
+                serviceDateField = value;
             }
         }
         
@@ -11694,10 +11694,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ServiceDateSpecified {
             get {
-                return this.serviceDateFieldSpecified;
+                return serviceDateFieldSpecified;
             }
             set {
-                this.serviceDateFieldSpecified = value;
+                serviceDateFieldSpecified = value;
             }
         }
         
@@ -11711,10 +11711,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TaxLineDetailEx {
             get {
-                return this.taxLineDetailExField;
+                return taxLineDetailExField;
             }
             set {
-                this.taxLineDetailExField = value;
+                taxLineDetailExField = value;
             }
         }
     }
@@ -11778,10 +11778,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultTaxCodeRef {
             get {
-                return this.defaultTaxCodeRefField;
+                return defaultTaxCodeRefField;
             }
             set {
-                this.defaultTaxCodeRefField = value;
+                defaultTaxCodeRefField = value;
             }
         }
         
@@ -11797,10 +11797,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TxnTaxCodeRef {
             get {
-                return this.txnTaxCodeRefField;
+                return txnTaxCodeRefField;
             }
             set {
-                this.txnTaxCodeRefField = value;
+                txnTaxCodeRefField = value;
             }
         }
         
@@ -11814,10 +11814,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalTax {
             get {
-                return this.totalTaxField;
+                return totalTaxField;
             }
             set {
-                this.totalTaxField = value;
+                totalTaxField = value;
             }
         }
         
@@ -11826,10 +11826,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalTaxSpecified {
             get {
-                return this.totalTaxFieldSpecified;
+                return totalTaxFieldSpecified;
             }
             set {
-                this.totalTaxFieldSpecified = value;
+                totalTaxFieldSpecified = value;
             }
         }
         
@@ -11842,10 +11842,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxReviewStatusEnum TaxReviewStatus {
             get {
-                return this.taxReviewStatusField;
+                return taxReviewStatusField;
             }
             set {
-                this.taxReviewStatusField = value;
+                taxReviewStatusField = value;
             }
         }
         
@@ -11854,10 +11854,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxReviewStatusSpecified {
             get {
-                return this.taxReviewStatusFieldSpecified;
+                return taxReviewStatusFieldSpecified;
             }
             set {
-                this.taxReviewStatusFieldSpecified = value;
+                taxReviewStatusFieldSpecified = value;
             }
         }
         
@@ -11871,10 +11871,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TaxLine")]
         public Line[] TaxLine {
             get {
-                return this.taxLineField;
+                return taxLineField;
             }
             set {
-                this.taxLineField = value;
+                taxLineField = value;
             }
         }
         
@@ -11894,10 +11894,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UseAutomatedSalesTax {
             get {
-                return this.useAutomatedSalesTaxField;
+                return useAutomatedSalesTaxField;
             }
             set {
-                this.useAutomatedSalesTaxField = value;
+                useAutomatedSalesTaxField = value;
             }
         }
         
@@ -11906,10 +11906,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UseAutomatedSalesTaxSpecified {
             get {
-                return this.useAutomatedSalesTaxFieldSpecified;
+                return useAutomatedSalesTaxFieldSpecified;
             }
             set {
-                this.useAutomatedSalesTaxFieldSpecified = value;
+                useAutomatedSalesTaxFieldSpecified = value;
             }
         }
     }
@@ -11940,10 +11940,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
     }
@@ -11981,10 +11981,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -11997,10 +11997,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string RecurType {
             get {
-                return this.recurTypeField;
+                return recurTypeField;
             }
             set {
-                this.recurTypeField = value;
+                recurTypeField = value;
             }
         }
         
@@ -12013,10 +12013,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -12025,10 +12025,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -12041,10 +12041,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public RecurringScheduleInfo ScheduleInfo {
             get {
-                return this.scheduleInfoField;
+                return scheduleInfoField;
             }
             set {
-                this.scheduleInfoField = value;
+                scheduleInfoField = value;
             }
         }
     }
@@ -12122,10 +12122,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string IntervalType {
             get {
-                return this.intervalTypeField;
+                return intervalTypeField;
             }
             set {
-                this.intervalTypeField = value;
+                intervalTypeField = value;
             }
         }
         
@@ -12138,10 +12138,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int NumInterval {
             get {
-                return this.numIntervalField;
+                return numIntervalField;
             }
             set {
-                this.numIntervalField = value;
+                numIntervalField = value;
             }
         }
         
@@ -12150,10 +12150,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NumIntervalSpecified {
             get {
-                return this.numIntervalFieldSpecified;
+                return numIntervalFieldSpecified;
             }
             set {
-                this.numIntervalFieldSpecified = value;
+                numIntervalFieldSpecified = value;
             }
         }
         
@@ -12166,10 +12166,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int DayOfMonth {
             get {
-                return this.dayOfMonthField;
+                return dayOfMonthField;
             }
             set {
-                this.dayOfMonthField = value;
+                dayOfMonthField = value;
             }
         }
         
@@ -12178,10 +12178,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DayOfMonthSpecified {
             get {
-                return this.dayOfMonthFieldSpecified;
+                return dayOfMonthFieldSpecified;
             }
             set {
-                this.dayOfMonthFieldSpecified = value;
+                dayOfMonthFieldSpecified = value;
             }
         }
         
@@ -12194,10 +12194,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WeekEnum DayOfWeek {
             get {
-                return this.dayOfWeekField;
+                return dayOfWeekField;
             }
             set {
-                this.dayOfWeekField = value;
+                dayOfWeekField = value;
             }
         }
         
@@ -12206,10 +12206,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DayOfWeekSpecified {
             get {
-                return this.dayOfWeekFieldSpecified;
+                return dayOfWeekFieldSpecified;
             }
             set {
-                this.dayOfWeekFieldSpecified = value;
+                dayOfWeekFieldSpecified = value;
             }
         }
         
@@ -12222,10 +12222,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int WeekOfMonth {
             get {
-                return this.weekOfMonthField;
+                return weekOfMonthField;
             }
             set {
-                this.weekOfMonthField = value;
+                weekOfMonthField = value;
             }
         }
         
@@ -12234,10 +12234,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool WeekOfMonthSpecified {
             get {
-                return this.weekOfMonthFieldSpecified;
+                return weekOfMonthFieldSpecified;
             }
             set {
-                this.weekOfMonthFieldSpecified = value;
+                weekOfMonthFieldSpecified = value;
             }
         }
         
@@ -12250,10 +12250,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum MonthOfYear {
             get {
-                return this.monthOfYearField;
+                return monthOfYearField;
             }
             set {
-                this.monthOfYearField = value;
+                monthOfYearField = value;
             }
         }
         
@@ -12262,10 +12262,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MonthOfYearSpecified {
             get {
-                return this.monthOfYearFieldSpecified;
+                return monthOfYearFieldSpecified;
             }
             set {
-                this.monthOfYearFieldSpecified = value;
+                monthOfYearFieldSpecified = value;
             }
         }
         
@@ -12278,10 +12278,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int RemindDays {
             get {
-                return this.remindDaysField;
+                return remindDaysField;
             }
             set {
-                this.remindDaysField = value;
+                remindDaysField = value;
             }
         }
         
@@ -12290,10 +12290,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RemindDaysSpecified {
             get {
-                return this.remindDaysFieldSpecified;
+                return remindDaysFieldSpecified;
             }
             set {
-                this.remindDaysFieldSpecified = value;
+                remindDaysFieldSpecified = value;
             }
         }
         
@@ -12306,10 +12306,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int DaysBefore {
             get {
-                return this.daysBeforeField;
+                return daysBeforeField;
             }
             set {
-                this.daysBeforeField = value;
+                daysBeforeField = value;
             }
         }
         
@@ -12318,10 +12318,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DaysBeforeSpecified {
             get {
-                return this.daysBeforeFieldSpecified;
+                return daysBeforeFieldSpecified;
             }
             set {
-                this.daysBeforeFieldSpecified = value;
+                daysBeforeFieldSpecified = value;
             }
         }
         
@@ -12334,10 +12334,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int MaxOccurrences {
             get {
-                return this.maxOccurrencesField;
+                return maxOccurrencesField;
             }
             set {
-                this.maxOccurrencesField = value;
+                maxOccurrencesField = value;
             }
         }
         
@@ -12346,10 +12346,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MaxOccurrencesSpecified {
             get {
-                return this.maxOccurrencesFieldSpecified;
+                return maxOccurrencesFieldSpecified;
             }
             set {
-                this.maxOccurrencesFieldSpecified = value;
+                maxOccurrencesFieldSpecified = value;
             }
         }
         
@@ -12363,10 +12363,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime StartDate {
             get {
-                return this.startDateField;
+                return startDateField;
             }
             set {
-                this.startDateField = value;
+                startDateField = value;
             }
         }
         
@@ -12375,10 +12375,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartDateSpecified {
             get {
-                return this.startDateFieldSpecified;
+                return startDateFieldSpecified;
             }
             set {
-                this.startDateFieldSpecified = value;
+                startDateFieldSpecified = value;
             }
         }
         
@@ -12392,10 +12392,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime EndDate {
             get {
-                return this.endDateField;
+                return endDateField;
             }
             set {
-                this.endDateField = value;
+                endDateField = value;
             }
         }
         
@@ -12404,10 +12404,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndDateSpecified {
             get {
-                return this.endDateFieldSpecified;
+                return endDateFieldSpecified;
             }
             set {
-                this.endDateFieldSpecified = value;
+                endDateFieldSpecified = value;
             }
         }
         
@@ -12421,10 +12421,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime NextDate {
             get {
-                return this.nextDateField;
+                return nextDateField;
             }
             set {
-                this.nextDateField = value;
+                nextDateField = value;
             }
         }
         
@@ -12433,10 +12433,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NextDateSpecified {
             get {
-                return this.nextDateFieldSpecified;
+                return nextDateFieldSpecified;
             }
             set {
-                this.nextDateFieldSpecified = value;
+                nextDateFieldSpecified = value;
             }
         }
         
@@ -12450,10 +12450,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime PreviousDate {
             get {
-                return this.previousDateField;
+                return previousDateField;
             }
             set {
-                this.previousDateField = value;
+                previousDateField = value;
             }
         }
         
@@ -12462,10 +12462,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PreviousDateSpecified {
             get {
-                return this.previousDateFieldSpecified;
+                return previousDateFieldSpecified;
             }
             set {
-                this.previousDateFieldSpecified = value;
+                previousDateFieldSpecified = value;
             }
         }
     }
@@ -12617,10 +12617,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AutoDocNumber {
             get {
-                return this.autoDocNumberField;
+                return autoDocNumberField;
             }
             set {
-                this.autoDocNumberField = value;
+                autoDocNumberField = value;
             }
         }
         
@@ -12629,10 +12629,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AutoDocNumberSpecified {
             get {
-                return this.autoDocNumberFieldSpecified;
+                return autoDocNumberFieldSpecified;
             }
             set {
-                this.autoDocNumberFieldSpecified = value;
+                autoDocNumberFieldSpecified = value;
             }
         }
         
@@ -12649,10 +12649,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -12676,10 +12676,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MemoRef CustomerMemo {
             get {
-                return this.customerMemoField;
+                return customerMemoField;
             }
             set {
-                this.customerMemoField = value;
+                customerMemoField = value;
             }
         }
         
@@ -12698,10 +12698,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress BillAddr {
             get {
-                return this.billAddrField;
+                return billAddrField;
             }
             set {
-                this.billAddrField = value;
+                billAddrField = value;
             }
         }
         
@@ -12722,10 +12722,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -12739,10 +12739,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool FreeFormAddress {
             get {
-                return this.freeFormAddressField;
+                return freeFormAddressField;
             }
             set {
-                this.freeFormAddressField = value;
+                freeFormAddressField = value;
             }
         }
         
@@ -12751,10 +12751,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FreeFormAddressSpecified {
             get {
-                return this.freeFormAddressFieldSpecified;
+                return freeFormAddressFieldSpecified;
             }
             set {
-                this.freeFormAddressFieldSpecified = value;
+                freeFormAddressFieldSpecified = value;
             }
         }
         
@@ -12771,10 +12771,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipFromAddr {
             get {
-                return this.shipFromAddrField;
+                return shipFromAddrField;
             }
             set {
-                this.shipFromAddrField = value;
+                shipFromAddrField = value;
             }
         }
         
@@ -12789,10 +12789,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RemitToRef {
             get {
-                return this.remitToRefField;
+                return remitToRefField;
             }
             set {
-                this.remitToRefField = value;
+                remitToRefField = value;
             }
         }
         
@@ -12807,10 +12807,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -12825,10 +12825,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesTermRef {
             get {
-                return this.salesTermRefField;
+                return salesTermRefField;
             }
             set {
-                this.salesTermRefField = value;
+                salesTermRefField = value;
             }
         }
         
@@ -12851,10 +12851,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -12863,10 +12863,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -12881,10 +12881,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesRepRef {
             get {
-                return this.salesRepRefField;
+                return salesRepRefField;
             }
             set {
-                this.salesRepRefField = value;
+                salesRepRefField = value;
             }
         }
         
@@ -12899,10 +12899,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PONumber {
             get {
-                return this.pONumberField;
+                return pONumberField;
             }
             set {
-                this.pONumberField = value;
+                pONumberField = value;
             }
         }
         
@@ -12923,10 +12923,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FOB {
             get {
-                return this.fOBField;
+                return fOBField;
             }
             set {
-                this.fOBField = value;
+                fOBField = value;
             }
         }
         
@@ -12940,10 +12940,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ShipMethodRef {
             get {
-                return this.shipMethodRefField;
+                return shipMethodRefField;
             }
             set {
-                this.shipMethodRefField = value;
+                shipMethodRefField = value;
             }
         }
         
@@ -12959,10 +12959,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ShipDate {
             get {
-                return this.shipDateField;
+                return shipDateField;
             }
             set {
-                this.shipDateField = value;
+                shipDateField = value;
             }
         }
         
@@ -12971,10 +12971,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ShipDateSpecified {
             get {
-                return this.shipDateFieldSpecified;
+                return shipDateFieldSpecified;
             }
             set {
-                this.shipDateFieldSpecified = value;
+                shipDateFieldSpecified = value;
             }
         }
         
@@ -12989,10 +12989,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TrackingNum {
             get {
-                return this.trackingNumField;
+                return trackingNumField;
             }
             set {
-                this.trackingNumField = value;
+                trackingNumField = value;
             }
         }
         
@@ -13007,10 +13007,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GlobalTaxCalculationEnum GlobalTaxCalculation {
             get {
-                return this.globalTaxCalculationField;
+                return globalTaxCalculationField;
             }
             set {
-                this.globalTaxCalculationField = value;
+                globalTaxCalculationField = value;
             }
         }
         
@@ -13019,10 +13019,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GlobalTaxCalculationSpecified {
             get {
-                return this.globalTaxCalculationFieldSpecified;
+                return globalTaxCalculationFieldSpecified;
             }
             set {
-                this.globalTaxCalculationFieldSpecified = value;
+                globalTaxCalculationFieldSpecified = value;
             }
         }
         
@@ -13045,10 +13045,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -13057,10 +13057,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -13079,10 +13079,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeTotalAmt {
             get {
-                return this.homeTotalAmtField;
+                return homeTotalAmtField;
             }
             set {
-                this.homeTotalAmtField = value;
+                homeTotalAmtField = value;
             }
         }
         
@@ -13091,10 +13091,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeTotalAmtSpecified {
             get {
-                return this.homeTotalAmtFieldSpecified;
+                return homeTotalAmtFieldSpecified;
             }
             set {
-                this.homeTotalAmtFieldSpecified = value;
+                homeTotalAmtFieldSpecified = value;
             }
         }
         
@@ -13110,10 +13110,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ApplyTaxAfterDiscount {
             get {
-                return this.applyTaxAfterDiscountField;
+                return applyTaxAfterDiscountField;
             }
             set {
-                this.applyTaxAfterDiscountField = value;
+                applyTaxAfterDiscountField = value;
             }
         }
         
@@ -13122,10 +13122,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ApplyTaxAfterDiscountSpecified {
             get {
-                return this.applyTaxAfterDiscountFieldSpecified;
+                return applyTaxAfterDiscountFieldSpecified;
             }
             set {
-                this.applyTaxAfterDiscountFieldSpecified = value;
+                applyTaxAfterDiscountFieldSpecified = value;
             }
         }
         
@@ -13140,10 +13140,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TemplateRef {
             get {
-                return this.templateRefField;
+                return templateRefField;
             }
             set {
-                this.templateRefField = value;
+                templateRefField = value;
             }
         }
         
@@ -13158,10 +13158,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -13170,10 +13170,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
         
@@ -13188,10 +13188,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailStatusEnum EmailStatus {
             get {
-                return this.emailStatusField;
+                return emailStatusField;
             }
             set {
-                this.emailStatusField = value;
+                emailStatusField = value;
             }
         }
         
@@ -13200,10 +13200,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EmailStatusSpecified {
             get {
-                return this.emailStatusFieldSpecified;
+                return emailStatusFieldSpecified;
             }
             set {
-                this.emailStatusFieldSpecified = value;
+                emailStatusFieldSpecified = value;
             }
         }
         
@@ -13229,10 +13229,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress BillEmail {
             get {
-                return this.billEmailField;
+                return billEmailField;
             }
             set {
-                this.billEmailField = value;
+                billEmailField = value;
             }
         }
         
@@ -13257,10 +13257,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress BillEmailCc {
             get {
-                return this.billEmailCcField;
+                return billEmailCcField;
             }
             set {
-                this.billEmailCcField = value;
+                billEmailCcField = value;
             }
         }
         
@@ -13285,10 +13285,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress BillEmailBcc {
             get {
-                return this.billEmailBccField;
+                return billEmailBccField;
             }
             set {
-                this.billEmailBccField = value;
+                billEmailBccField = value;
             }
         }
         
@@ -13304,10 +13304,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ARAccountRef {
             get {
-                return this.aRAccountRefField;
+                return aRAccountRefField;
             }
             set {
-                this.aRAccountRefField = value;
+                aRAccountRefField = value;
             }
         }
         
@@ -13328,10 +13328,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -13340,10 +13340,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -13365,10 +13365,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeBalance {
             get {
-                return this.homeBalanceField;
+                return homeBalanceField;
             }
             set {
-                this.homeBalanceField = value;
+                homeBalanceField = value;
             }
         }
         
@@ -13377,10 +13377,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeBalanceSpecified {
             get {
-                return this.homeBalanceFieldSpecified;
+                return homeBalanceFieldSpecified;
             }
             set {
-                this.homeBalanceFieldSpecified = value;
+                homeBalanceFieldSpecified = value;
             }
         }
         
@@ -13395,10 +13395,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool FinanceCharge {
             get {
-                return this.financeChargeField;
+                return financeChargeField;
             }
             set {
-                this.financeChargeField = value;
+                financeChargeField = value;
             }
         }
         
@@ -13407,10 +13407,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FinanceChargeSpecified {
             get {
-                return this.financeChargeFieldSpecified;
+                return financeChargeFieldSpecified;
             }
             set {
-                this.financeChargeFieldSpecified = value;
+                financeChargeFieldSpecified = value;
             }
         }
         
@@ -13425,10 +13425,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -13444,10 +13444,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PaymentRefNum {
             get {
-                return this.paymentRefNumField;
+                return paymentRefNumField;
             }
             set {
-                this.paymentRefNumField = value;
+                paymentRefNumField = value;
             }
         }
         
@@ -13463,10 +13463,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PaymentTypeEnum PaymentType {
             get {
-                return this.paymentTypeField;
+                return paymentTypeField;
             }
             set {
-                this.paymentTypeField = value;
+                paymentTypeField = value;
             }
         }
         
@@ -13475,10 +13475,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentTypeSpecified {
             get {
-                return this.paymentTypeFieldSpecified;
+                return paymentTypeFieldSpecified;
             }
             set {
-                this.paymentTypeFieldSpecified = value;
+                paymentTypeFieldSpecified = value;
             }
         }
         
@@ -13487,10 +13487,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CreditCardPayment", typeof(CreditCardPayment))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -13509,10 +13509,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepositToAccountRef {
             get {
-                return this.depositToAccountRefField;
+                return depositToAccountRefField;
             }
             set {
-                this.depositToAccountRefField = value;
+                depositToAccountRefField = value;
             }
         }
         
@@ -13525,10 +13525,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TransactionDeliveryInfo DeliveryInfo {
             get {
-                return this.deliveryInfoField;
+                return deliveryInfoField;
             }
             set {
-                this.deliveryInfoField = value;
+                deliveryInfoField = value;
             }
         }
         
@@ -13543,10 +13543,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountRate {
             get {
-                return this.discountRateField;
+                return discountRateField;
             }
             set {
-                this.discountRateField = value;
+                discountRateField = value;
             }
         }
         
@@ -13555,10 +13555,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountRateSpecified {
             get {
-                return this.discountRateFieldSpecified;
+                return discountRateFieldSpecified;
             }
             set {
-                this.discountRateFieldSpecified = value;
+                discountRateFieldSpecified = value;
             }
         }
         
@@ -13573,10 +13573,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountAmt {
             get {
-                return this.discountAmtField;
+                return discountAmtField;
             }
             set {
-                this.discountAmtField = value;
+                discountAmtField = value;
             }
         }
         
@@ -13585,10 +13585,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountAmtSpecified {
             get {
-                return this.discountAmtFieldSpecified;
+                return discountAmtFieldSpecified;
             }
             set {
-                this.discountAmtFieldSpecified = value;
+                discountAmtFieldSpecified = value;
             }
         }
         
@@ -13604,10 +13604,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GovtTxnRefIdentifier {
             get {
-                return this.govtTxnRefIdentifierField;
+                return govtTxnRefIdentifierField;
             }
             set {
-                this.govtTxnRefIdentifierField = value;
+                govtTxnRefIdentifierField = value;
             }
         }
         
@@ -13621,10 +13621,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxExemptionRef {
             get {
-                return this.taxExemptionRefField;
+                return taxExemptionRefField;
             }
             set {
-                this.taxExemptionRefField = value;
+                taxExemptionRefField = value;
             }
         }
     }
@@ -13654,10 +13654,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id {
             get {
-                return this.idField;
+                return idField;
             }
             set {
-                this.idField = value;
+                idField = value;
             }
         }
         
@@ -13665,10 +13665,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
+                valueField = value;
             }
         }
     }
@@ -13711,10 +13711,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CheckNum {
             get {
-                return this.checkNumField;
+                return checkNumField;
             }
             set {
-                this.checkNumField = value;
+                checkNumField = value;
             }
         }
         
@@ -13728,10 +13728,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -13745,10 +13745,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string NameOnAcct {
             get {
-                return this.nameOnAcctField;
+                return nameOnAcctField;
             }
             set {
-                this.nameOnAcctField = value;
+                nameOnAcctField = value;
             }
         }
         
@@ -13762,10 +13762,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNum {
             get {
-                return this.acctNumField;
+                return acctNumField;
             }
             set {
-                this.acctNumField = value;
+                acctNumField = value;
             }
         }
         
@@ -13779,10 +13779,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BankName {
             get {
-                return this.bankNameField;
+                return bankNameField;
             }
             set {
-                this.bankNameField = value;
+                bankNameField = value;
             }
         }
         
@@ -13796,10 +13796,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CheckPaymentEx {
             get {
-                return this.checkPaymentExField;
+                return checkPaymentExField;
             }
             set {
-                this.checkPaymentExField = value;
+                checkPaymentExField = value;
             }
         }
     }
@@ -13827,20 +13827,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public CreditChargeInfo CreditChargeInfo {
             get {
-                return this.creditChargeInfoField;
+                return creditChargeInfoField;
             }
             set {
-                this.creditChargeInfoField = value;
+                creditChargeInfoField = value;
             }
         }
         
         /// <remarks/>
         public CreditChargeResponse CreditChargeResponse {
             get {
-                return this.creditChargeResponseField;
+                return creditChargeResponseField;
             }
             set {
-                this.creditChargeResponseField = value;
+                creditChargeResponseField = value;
             }
         }
     }
@@ -13909,10 +13909,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Number {
             get {
-                return this.numberField;
+                return numberField;
             }
             set {
-                this.numberField = value;
+                numberField = value;
             }
         }
         
@@ -13925,10 +13925,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -13941,10 +13941,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string NameOnAcct {
             get {
-                return this.nameOnAcctField;
+                return nameOnAcctField;
             }
             set {
-                this.nameOnAcctField = value;
+                nameOnAcctField = value;
             }
         }
         
@@ -13957,10 +13957,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int CcExpiryMonth {
             get {
-                return this.ccExpiryMonthField;
+                return ccExpiryMonthField;
             }
             set {
-                this.ccExpiryMonthField = value;
+                ccExpiryMonthField = value;
             }
         }
         
@@ -13969,10 +13969,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CcExpiryMonthSpecified {
             get {
-                return this.ccExpiryMonthFieldSpecified;
+                return ccExpiryMonthFieldSpecified;
             }
             set {
-                this.ccExpiryMonthFieldSpecified = value;
+                ccExpiryMonthFieldSpecified = value;
             }
         }
         
@@ -13985,10 +13985,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int CcExpiryYear {
             get {
-                return this.ccExpiryYearField;
+                return ccExpiryYearField;
             }
             set {
-                this.ccExpiryYearField = value;
+                ccExpiryYearField = value;
             }
         }
         
@@ -13997,10 +13997,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CcExpiryYearSpecified {
             get {
-                return this.ccExpiryYearFieldSpecified;
+                return ccExpiryYearFieldSpecified;
             }
             set {
-                this.ccExpiryYearFieldSpecified = value;
+                ccExpiryYearFieldSpecified = value;
             }
         }
         
@@ -14013,10 +14013,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BillAddrStreet {
             get {
-                return this.billAddrStreetField;
+                return billAddrStreetField;
             }
             set {
-                this.billAddrStreetField = value;
+                billAddrStreetField = value;
             }
         }
         
@@ -14029,10 +14029,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PostalCode {
             get {
-                return this.postalCodeField;
+                return postalCodeField;
             }
             set {
-                this.postalCodeField = value;
+                postalCodeField = value;
             }
         }
         
@@ -14045,10 +14045,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CommercialCardCode {
             get {
-                return this.commercialCardCodeField;
+                return commercialCardCodeField;
             }
             set {
-                this.commercialCardCodeField = value;
+                commercialCardCodeField = value;
             }
         }
         
@@ -14061,10 +14061,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCTxnModeEnum CCTxnMode {
             get {
-                return this.cCTxnModeField;
+                return cCTxnModeField;
             }
             set {
-                this.cCTxnModeField = value;
+                cCTxnModeField = value;
             }
         }
         
@@ -14073,10 +14073,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CCTxnModeSpecified {
             get {
-                return this.cCTxnModeFieldSpecified;
+                return cCTxnModeFieldSpecified;
             }
             set {
-                this.cCTxnModeFieldSpecified = value;
+                cCTxnModeFieldSpecified = value;
             }
         }
         
@@ -14089,10 +14089,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCTxnTypeEnum CCTxnType {
             get {
-                return this.cCTxnTypeField;
+                return cCTxnTypeField;
             }
             set {
-                this.cCTxnTypeField = value;
+                cCTxnTypeField = value;
             }
         }
         
@@ -14101,10 +14101,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CCTxnTypeSpecified {
             get {
-                return this.cCTxnTypeFieldSpecified;
+                return cCTxnTypeFieldSpecified;
             }
             set {
-                this.cCTxnTypeFieldSpecified = value;
+                cCTxnTypeFieldSpecified = value;
             }
         }
         
@@ -14117,10 +14117,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PrevCCTransId {
             get {
-                return this.prevCCTransIdField;
+                return prevCCTransIdField;
             }
             set {
-                this.prevCCTransIdField = value;
+                prevCCTransIdField = value;
             }
         }
         
@@ -14133,10 +14133,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -14145,10 +14145,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
@@ -14161,10 +14161,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ProcessPayment {
             get {
-                return this.processPaymentField;
+                return processPaymentField;
             }
             set {
-                this.processPaymentField = value;
+                processPaymentField = value;
             }
         }
         
@@ -14173,10 +14173,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ProcessPaymentSpecified {
             get {
-                return this.processPaymentFieldSpecified;
+                return processPaymentFieldSpecified;
             }
             set {
-                this.processPaymentFieldSpecified = value;
+                processPaymentFieldSpecified = value;
             }
         }
         
@@ -14189,10 +14189,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CreditCardChargeInfoEx {
             get {
-                return this.creditCardChargeInfoExField;
+                return creditCardChargeInfoExField;
             }
             set {
-                this.creditCardChargeInfoExField = value;
+                creditCardChargeInfoExField = value;
             }
         }
     }
@@ -14320,10 +14320,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CCProcessor {
             get {
-                return this.cCProcessorField;
+                return cCProcessorField;
             }
             set {
-                this.cCProcessorField = value;
+                cCProcessorField = value;
             }
         }
         
@@ -14336,10 +14336,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CCTransId {
             get {
-                return this.cCTransIdField;
+                return cCTransIdField;
             }
             set {
-                this.cCTransIdField = value;
+                cCTransIdField = value;
             }
         }
         
@@ -14352,10 +14352,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCPaymentStatusEnum Status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -14364,10 +14364,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StatusSpecified {
             get {
-                return this.statusFieldSpecified;
+                return statusFieldSpecified;
             }
             set {
-                this.statusFieldSpecified = value;
+                statusFieldSpecified = value;
             }
         }
         
@@ -14380,10 +14380,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int ResultCode {
             get {
-                return this.resultCodeField;
+                return resultCodeField;
             }
             set {
-                this.resultCodeField = value;
+                resultCodeField = value;
             }
         }
         
@@ -14392,10 +14392,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ResultCodeSpecified {
             get {
-                return this.resultCodeFieldSpecified;
+                return resultCodeFieldSpecified;
             }
             set {
-                this.resultCodeFieldSpecified = value;
+                resultCodeFieldSpecified = value;
             }
         }
         
@@ -14408,10 +14408,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ResultMsg {
             get {
-                return this.resultMsgField;
+                return resultMsgField;
             }
             set {
-                this.resultMsgField = value;
+                resultMsgField = value;
             }
         }
         
@@ -14424,10 +14424,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MerchantAcctNum {
             get {
-                return this.merchantAcctNumField;
+                return merchantAcctNumField;
             }
             set {
-                this.merchantAcctNumField = value;
+                merchantAcctNumField = value;
             }
         }
         
@@ -14440,10 +14440,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCSecurityCodeMatchEnum CardSecurityCodeMatch {
             get {
-                return this.cardSecurityCodeMatchField;
+                return cardSecurityCodeMatchField;
             }
             set {
-                this.cardSecurityCodeMatchField = value;
+                cardSecurityCodeMatchField = value;
             }
         }
         
@@ -14452,10 +14452,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CardSecurityCodeMatchSpecified {
             get {
-                return this.cardSecurityCodeMatchFieldSpecified;
+                return cardSecurityCodeMatchFieldSpecified;
             }
             set {
-                this.cardSecurityCodeMatchFieldSpecified = value;
+                cardSecurityCodeMatchFieldSpecified = value;
             }
         }
         
@@ -14468,10 +14468,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AuthCode {
             get {
-                return this.authCodeField;
+                return authCodeField;
             }
             set {
-                this.authCodeField = value;
+                authCodeField = value;
             }
         }
         
@@ -14484,10 +14484,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCAVSMatchEnum AvsStreet {
             get {
-                return this.avsStreetField;
+                return avsStreetField;
             }
             set {
-                this.avsStreetField = value;
+                avsStreetField = value;
             }
         }
         
@@ -14496,10 +14496,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AvsStreetSpecified {
             get {
-                return this.avsStreetFieldSpecified;
+                return avsStreetFieldSpecified;
             }
             set {
-                this.avsStreetFieldSpecified = value;
+                avsStreetFieldSpecified = value;
             }
         }
         
@@ -14509,10 +14509,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CCAVSMatchEnum AvsZip {
             get {
-                return this.avsZipField;
+                return avsZipField;
             }
             set {
-                this.avsZipField = value;
+                avsZipField = value;
             }
         }
         
@@ -14521,10 +14521,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AvsZipSpecified {
             get {
-                return this.avsZipFieldSpecified;
+                return avsZipFieldSpecified;
             }
             set {
-                this.avsZipFieldSpecified = value;
+                avsZipFieldSpecified = value;
             }
         }
         
@@ -14537,10 +14537,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SecurityCode {
             get {
-                return this.securityCodeField;
+                return securityCodeField;
             }
             set {
-                this.securityCodeField = value;
+                securityCodeField = value;
             }
         }
         
@@ -14553,10 +14553,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ReconBatchId {
             get {
-                return this.reconBatchIdField;
+                return reconBatchIdField;
             }
             set {
-                this.reconBatchIdField = value;
+                reconBatchIdField = value;
             }
         }
         
@@ -14569,10 +14569,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int PaymentGroupingCode {
             get {
-                return this.paymentGroupingCodeField;
+                return paymentGroupingCodeField;
             }
             set {
-                this.paymentGroupingCodeField = value;
+                paymentGroupingCodeField = value;
             }
         }
         
@@ -14581,10 +14581,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentGroupingCodeSpecified {
             get {
-                return this.paymentGroupingCodeFieldSpecified;
+                return paymentGroupingCodeFieldSpecified;
             }
             set {
-                this.paymentGroupingCodeFieldSpecified = value;
+                paymentGroupingCodeFieldSpecified = value;
             }
         }
         
@@ -14597,10 +14597,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime TxnAuthorizationTime {
             get {
-                return this.txnAuthorizationTimeField;
+                return txnAuthorizationTimeField;
             }
             set {
-                this.txnAuthorizationTimeField = value;
+                txnAuthorizationTimeField = value;
             }
         }
         
@@ -14609,10 +14609,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnAuthorizationTimeSpecified {
             get {
-                return this.txnAuthorizationTimeFieldSpecified;
+                return txnAuthorizationTimeFieldSpecified;
             }
             set {
-                this.txnAuthorizationTimeFieldSpecified = value;
+                txnAuthorizationTimeFieldSpecified = value;
             }
         }
         
@@ -14625,10 +14625,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TxnAuthorizationStamp {
             get {
-                return this.txnAuthorizationStampField;
+                return txnAuthorizationStampField;
             }
             set {
-                this.txnAuthorizationStampField = value;
+                txnAuthorizationStampField = value;
             }
         }
         
@@ -14637,10 +14637,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnAuthorizationStampSpecified {
             get {
-                return this.txnAuthorizationStampFieldSpecified;
+                return txnAuthorizationStampFieldSpecified;
             }
             set {
-                this.txnAuthorizationStampFieldSpecified = value;
+                txnAuthorizationStampFieldSpecified = value;
             }
         }
         
@@ -14653,10 +14653,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ClientTransID {
             get {
-                return this.clientTransIDField;
+                return clientTransIDField;
             }
             set {
-                this.clientTransIDField = value;
+                clientTransIDField = value;
             }
         }
         
@@ -14669,10 +14669,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CreditChargeResponseEx {
             get {
-                return this.creditChargeResponseExField;
+                return creditChargeResponseExField;
             }
             set {
-                this.creditChargeResponseExField = value;
+                creditChargeResponseExField = value;
             }
         }
     }
@@ -14782,10 +14782,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public DeliveryTypeEnum DeliveryType {
             get {
-                return this.deliveryTypeField;
+                return deliveryTypeField;
             }
             set {
-                this.deliveryTypeField = value;
+                deliveryTypeField = value;
             }
         }
         
@@ -14794,10 +14794,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DeliveryTypeSpecified {
             get {
-                return this.deliveryTypeFieldSpecified;
+                return deliveryTypeFieldSpecified;
             }
             set {
-                this.deliveryTypeFieldSpecified = value;
+                deliveryTypeFieldSpecified = value;
             }
         }
         
@@ -14810,10 +14810,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime DeliveryTime {
             get {
-                return this.deliveryTimeField;
+                return deliveryTimeField;
             }
             set {
-                this.deliveryTimeField = value;
+                deliveryTimeField = value;
             }
         }
         
@@ -14822,10 +14822,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DeliveryTimeSpecified {
             get {
-                return this.deliveryTimeFieldSpecified;
+                return deliveryTimeFieldSpecified;
             }
             set {
-                this.deliveryTimeFieldSpecified = value;
+                deliveryTimeFieldSpecified = value;
             }
         }
         
@@ -14838,10 +14838,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public DeliveryErrorTypeEnum DeliveryErrorType {
             get {
-                return this.deliveryErrorTypeField;
+                return deliveryErrorTypeField;
             }
             set {
-                this.deliveryErrorTypeField = value;
+                deliveryErrorTypeField = value;
             }
         }
         
@@ -14850,10 +14850,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DeliveryErrorTypeSpecified {
             get {
-                return this.deliveryErrorTypeFieldSpecified;
+                return deliveryErrorTypeFieldSpecified;
             }
             set {
-                this.deliveryErrorTypeFieldSpecified = value;
+                deliveryErrorTypeFieldSpecified = value;
             }
         }
     }
@@ -15010,10 +15010,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Deposit {
             get {
-                return this.depositField;
+                return depositField;
             }
             set {
-                this.depositField = value;
+                depositField = value;
             }
         }
         
@@ -15022,10 +15022,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DepositSpecified {
             get {
-                return this.depositFieldSpecified;
+                return depositFieldSpecified;
             }
             set {
-                this.depositFieldSpecified = value;
+                depositFieldSpecified = value;
             }
         }
         
@@ -15039,10 +15039,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowIPNPayment {
             get {
-                return this.allowIPNPaymentField;
+                return allowIPNPaymentField;
             }
             set {
-                this.allowIPNPaymentField = value;
+                allowIPNPaymentField = value;
             }
         }
         
@@ -15051,10 +15051,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowIPNPaymentSpecified {
             get {
-                return this.allowIPNPaymentFieldSpecified;
+                return allowIPNPaymentFieldSpecified;
             }
             set {
-                this.allowIPNPaymentFieldSpecified = value;
+                allowIPNPaymentFieldSpecified = value;
             }
         }
         
@@ -15069,10 +15069,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlinePayment {
             get {
-                return this.allowOnlinePaymentField;
+                return allowOnlinePaymentField;
             }
             set {
-                this.allowOnlinePaymentField = value;
+                allowOnlinePaymentField = value;
             }
         }
         
@@ -15081,10 +15081,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlinePaymentSpecified {
             get {
-                return this.allowOnlinePaymentFieldSpecified;
+                return allowOnlinePaymentFieldSpecified;
             }
             set {
-                this.allowOnlinePaymentFieldSpecified = value;
+                allowOnlinePaymentFieldSpecified = value;
             }
         }
         
@@ -15099,10 +15099,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlineCreditCardPayment {
             get {
-                return this.allowOnlineCreditCardPaymentField;
+                return allowOnlineCreditCardPaymentField;
             }
             set {
-                this.allowOnlineCreditCardPaymentField = value;
+                allowOnlineCreditCardPaymentField = value;
             }
         }
         
@@ -15111,10 +15111,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlineCreditCardPaymentSpecified {
             get {
-                return this.allowOnlineCreditCardPaymentFieldSpecified;
+                return allowOnlineCreditCardPaymentFieldSpecified;
             }
             set {
-                this.allowOnlineCreditCardPaymentFieldSpecified = value;
+                allowOnlineCreditCardPaymentFieldSpecified = value;
             }
         }
         
@@ -15129,10 +15129,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlineACHPayment {
             get {
-                return this.allowOnlineACHPaymentField;
+                return allowOnlineACHPaymentField;
             }
             set {
-                this.allowOnlineACHPaymentField = value;
+                allowOnlineACHPaymentField = value;
             }
         }
         
@@ -15141,10 +15141,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlineACHPaymentSpecified {
             get {
-                return this.allowOnlineACHPaymentFieldSpecified;
+                return allowOnlineACHPaymentFieldSpecified;
             }
             set {
-                this.allowOnlineACHPaymentFieldSpecified = value;
+                allowOnlineACHPaymentFieldSpecified = value;
             }
         }
         
@@ -15158,10 +15158,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ETransactionStatusEnum EInvoiceStatus {
             get {
-                return this.eInvoiceStatusField;
+                return eInvoiceStatusField;
             }
             set {
-                this.eInvoiceStatusField = value;
+                eInvoiceStatusField = value;
             }
         }
         
@@ -15170,10 +15170,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EInvoiceStatusSpecified {
             get {
-                return this.eInvoiceStatusFieldSpecified;
+                return eInvoiceStatusFieldSpecified;
             }
             set {
-                this.eInvoiceStatusFieldSpecified = value;
+                eInvoiceStatusFieldSpecified = value;
             }
         }
         
@@ -15187,10 +15187,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime ECloudStatusTimeStamp {
             get {
-                return this.eCloudStatusTimeStampField;
+                return eCloudStatusTimeStampField;
             }
             set {
-                this.eCloudStatusTimeStampField = value;
+                eCloudStatusTimeStampField = value;
             }
         }
         
@@ -15199,10 +15199,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ECloudStatusTimeStampSpecified {
             get {
-                return this.eCloudStatusTimeStampFieldSpecified;
+                return eCloudStatusTimeStampFieldSpecified;
             }
             set {
-                this.eCloudStatusTimeStampFieldSpecified = value;
+                eCloudStatusTimeStampFieldSpecified = value;
             }
         }
         
@@ -15219,10 +15219,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string invoiceStatus {
             get {
-                return this.invoiceStatusField;
+                return invoiceStatusField;
             }
             set {
-                this.invoiceStatusField = value;
+                invoiceStatusField = value;
             }
         }
         
@@ -15235,10 +15235,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string callToAction {
             get {
-                return this.callToActionField;
+                return callToActionField;
             }
             set {
-                this.callToActionField = value;
+                callToActionField = value;
             }
         }
         
@@ -15252,10 +15252,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("invoiceStatusLog")]
         public StatusInfo[] invoiceStatusLog {
             get {
-                return this.invoiceStatusLogField;
+                return invoiceStatusLogField;
             }
             set {
-                this.invoiceStatusLogField = value;
+                invoiceStatusLogField = value;
             }
         }
         
@@ -15269,10 +15269,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType InvoiceEx {
             get {
-                return this.invoiceExField;
+                return invoiceExField;
             }
             set {
-                this.invoiceExField = value;
+                invoiceExField = value;
             }
         }
         
@@ -15286,10 +15286,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal LessCIS {
             get {
-                return this.lessCISField;
+                return lessCISField;
             }
             set {
-                this.lessCISField = value;
+                lessCISField = value;
             }
         }
         
@@ -15298,10 +15298,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LessCISSpecified {
             get {
-                return this.lessCISFieldSpecified;
+                return lessCISFieldSpecified;
             }
             set {
-                this.lessCISFieldSpecified = value;
+                lessCISFieldSpecified = value;
             }
         }
         
@@ -15314,10 +15314,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string InvoiceLink {
             get {
-                return this.invoiceLinkField;
+                return invoiceLinkField;
             }
             set {
-                this.invoiceLinkField = value;
+                invoiceLinkField = value;
             }
         }
         
@@ -15330,10 +15330,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PaymentDetailsMessage {
             get {
-                return this.paymentDetailsMessageField;
+                return paymentDetailsMessageField;
             }
             set {
-                this.paymentDetailsMessageField = value;
+                paymentDetailsMessageField = value;
             }
         }
         
@@ -15346,10 +15346,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ConvenienceFeeDetail ConvenienceFeeDetail {
             get {
-                return this.convenienceFeeDetailField;
+                return convenienceFeeDetailField;
             }
             set {
-                this.convenienceFeeDetailField = value;
+                convenienceFeeDetailField = value;
             }
         }
     }
@@ -15386,10 +15386,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -15403,10 +15403,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime statusDate {
             get {
-                return this.statusDateField;
+                return statusDateField;
             }
             set {
-                this.statusDateField = value;
+                statusDateField = value;
             }
         }
         
@@ -15415,10 +15415,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool statusDateSpecified {
             get {
-                return this.statusDateFieldSpecified;
+                return statusDateFieldSpecified;
             }
             set {
-                this.statusDateFieldSpecified = value;
+                statusDateFieldSpecified = value;
             }
         }
         
@@ -15431,10 +15431,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string callToAction {
             get {
-                return this.callToActionField;
+                return callToActionField;
             }
             set {
-                this.callToActionField = value;
+                callToActionField = value;
             }
         }
     }
@@ -15471,10 +15471,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ConvenienceFeeTypeEnum ConvenienceFeeType {
             get {
-                return this.convenienceFeeTypeField;
+                return convenienceFeeTypeField;
             }
             set {
-                this.convenienceFeeTypeField = value;
+                convenienceFeeTypeField = value;
             }
         }
         
@@ -15483,10 +15483,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ConvenienceFeeTypeSpecified {
             get {
-                return this.convenienceFeeTypeFieldSpecified;
+                return convenienceFeeTypeFieldSpecified;
             }
             set {
-                this.convenienceFeeTypeFieldSpecified = value;
+                convenienceFeeTypeFieldSpecified = value;
             }
         }
         
@@ -15499,10 +15499,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal ConvenienceFeePercent {
             get {
-                return this.convenienceFeePercentField;
+                return convenienceFeePercentField;
             }
             set {
-                this.convenienceFeePercentField = value;
+                convenienceFeePercentField = value;
             }
         }
         
@@ -15511,10 +15511,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ConvenienceFeePercentSpecified {
             get {
-                return this.convenienceFeePercentFieldSpecified;
+                return convenienceFeePercentFieldSpecified;
             }
             set {
-                this.convenienceFeePercentFieldSpecified = value;
+                convenienceFeePercentFieldSpecified = value;
             }
         }
     }
@@ -15544,10 +15544,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType SalesReceiptEx {
             get {
-                return this.salesReceiptExField;
+                return salesReceiptExField;
             }
             set {
-                this.salesReceiptExField = value;
+                salesReceiptExField = value;
             }
         }
         
@@ -15561,10 +15561,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal LessCIS {
             get {
-                return this.lessCISField;
+                return lessCISField;
             }
             set {
-                this.lessCISField = value;
+                lessCISField = value;
             }
         }
         
@@ -15573,10 +15573,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LessCISSpecified {
             get {
-                return this.lessCISFieldSpecified;
+                return lessCISFieldSpecified;
             }
             set {
-                this.lessCISFieldSpecified = value;
+                lessCISFieldSpecified = value;
             }
         }
     }
@@ -15616,10 +15616,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ExpirationDate {
             get {
-                return this.expirationDateField;
+                return expirationDateField;
             }
             set {
-                this.expirationDateField = value;
+                expirationDateField = value;
             }
         }
         
@@ -15628,10 +15628,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ExpirationDateSpecified {
             get {
-                return this.expirationDateFieldSpecified;
+                return expirationDateFieldSpecified;
             }
             set {
-                this.expirationDateFieldSpecified = value;
+                expirationDateFieldSpecified = value;
             }
         }
         
@@ -15644,10 +15644,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcceptedBy {
             get {
-                return this.acceptedByField;
+                return acceptedByField;
             }
             set {
-                this.acceptedByField = value;
+                acceptedByField = value;
             }
         }
         
@@ -15660,10 +15660,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime AcceptedDate {
             get {
-                return this.acceptedDateField;
+                return acceptedDateField;
             }
             set {
-                this.acceptedDateField = value;
+                acceptedDateField = value;
             }
         }
         
@@ -15672,10 +15672,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AcceptedDateSpecified {
             get {
-                return this.acceptedDateFieldSpecified;
+                return acceptedDateFieldSpecified;
             }
             set {
-                this.acceptedDateFieldSpecified = value;
+                acceptedDateFieldSpecified = value;
             }
         }
         
@@ -15686,10 +15686,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType EstimateEx {
             get {
-                return this.estimateExField;
+                return estimateExField;
             }
             set {
-                this.estimateExField = value;
+                estimateExField = value;
             }
         }
     }
@@ -15746,10 +15746,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress DeliveryAddress {
             get {
-                return this.deliveryAddressField;
+                return deliveryAddressField;
             }
             set {
-                this.deliveryAddressField = value;
+                deliveryAddressField = value;
             }
         }
         
@@ -15763,10 +15763,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress DeliveryAddressCc {
             get {
-                return this.deliveryAddressCcField;
+                return deliveryAddressCcField;
             }
             set {
-                this.deliveryAddressCcField = value;
+                deliveryAddressCcField = value;
             }
         }
         
@@ -15780,10 +15780,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress DeliveryAddressBcc {
             get {
-                return this.deliveryAddressBccField;
+                return deliveryAddressBccField;
             }
             set {
-                this.deliveryAddressBccField = value;
+                deliveryAddressBccField = value;
             }
         }
         
@@ -15797,10 +15797,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessage EmailMessage {
             get {
-                return this.emailMessageField;
+                return emailMessageField;
             }
             set {
-                this.emailMessageField = value;
+                emailMessageField = value;
             }
         }
         
@@ -15814,10 +15814,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlinePayment {
             get {
-                return this.allowOnlinePaymentField;
+                return allowOnlinePaymentField;
             }
             set {
-                this.allowOnlinePaymentField = value;
+                allowOnlinePaymentField = value;
             }
         }
         
@@ -15826,10 +15826,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlinePaymentSpecified {
             get {
-                return this.allowOnlinePaymentFieldSpecified;
+                return allowOnlinePaymentFieldSpecified;
             }
             set {
-                this.allowOnlinePaymentFieldSpecified = value;
+                allowOnlinePaymentFieldSpecified = value;
             }
         }
         
@@ -15844,10 +15844,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlineCreditCardPayment {
             get {
-                return this.allowOnlineCreditCardPaymentField;
+                return allowOnlineCreditCardPaymentField;
             }
             set {
-                this.allowOnlineCreditCardPaymentField = value;
+                allowOnlineCreditCardPaymentField = value;
             }
         }
         
@@ -15856,10 +15856,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlineCreditCardPaymentSpecified {
             get {
-                return this.allowOnlineCreditCardPaymentFieldSpecified;
+                return allowOnlineCreditCardPaymentFieldSpecified;
             }
             set {
-                this.allowOnlineCreditCardPaymentFieldSpecified = value;
+                allowOnlineCreditCardPaymentFieldSpecified = value;
             }
         }
         
@@ -15874,10 +15874,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowOnlineACHPayment {
             get {
-                return this.allowOnlineACHPaymentField;
+                return allowOnlineACHPaymentField;
             }
             set {
-                this.allowOnlineACHPaymentField = value;
+                allowOnlineACHPaymentField = value;
             }
         }
         
@@ -15886,10 +15886,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowOnlineACHPaymentSpecified {
             get {
-                return this.allowOnlineACHPaymentFieldSpecified;
+                return allowOnlineACHPaymentFieldSpecified;
             }
             set {
-                this.allowOnlineACHPaymentFieldSpecified = value;
+                allowOnlineACHPaymentFieldSpecified = value;
             }
         }
         
@@ -15904,10 +15904,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TransactionDeliveryInfo DeliveryInfo {
             get {
-                return this.deliveryInfoField;
+                return deliveryInfoField;
             }
             set {
-                this.deliveryInfoField = value;
+                deliveryInfoField = value;
             }
         }
         
@@ -15922,10 +15922,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ETransactionStatusEnum ETransactionStatus {
             get {
-                return this.eTransactionStatusField;
+                return eTransactionStatusField;
             }
             set {
-                this.eTransactionStatusField = value;
+                eTransactionStatusField = value;
             }
         }
         
@@ -15934,10 +15934,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ETransactionStatusSpecified {
             get {
-                return this.eTransactionStatusFieldSpecified;
+                return eTransactionStatusFieldSpecified;
             }
             set {
-                this.eTransactionStatusFieldSpecified = value;
+                eTransactionStatusFieldSpecified = value;
             }
         }
     }
@@ -15970,10 +15970,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Subject {
             get {
-                return this.subjectField;
+                return subjectField;
             }
             set {
-                this.subjectField = value;
+                subjectField = value;
             }
         }
         
@@ -15986,10 +15986,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Message {
             get {
-                return this.messageField;
+                return messageField;
             }
             set {
-                this.messageField = value;
+                messageField = value;
             }
         }
     }
@@ -16092,10 +16092,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -16107,10 +16107,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -16119,10 +16119,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -16138,10 +16138,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public AcquiredAsEnum AcquiredAs {
             get {
-                return this.acquiredAsField;
+                return acquiredAsField;
             }
             set {
-                this.acquiredAsField = value;
+                acquiredAsField = value;
             }
         }
         
@@ -16150,10 +16150,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AcquiredAsSpecified {
             get {
-                return this.acquiredAsFieldSpecified;
+                return acquiredAsFieldSpecified;
             }
             set {
-                this.acquiredAsFieldSpecified = value;
+                acquiredAsFieldSpecified = value;
             }
         }
         
@@ -16165,10 +16165,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PurchaseDesc {
             get {
-                return this.purchaseDescField;
+                return purchaseDescField;
             }
             set {
-                this.purchaseDescField = value;
+                purchaseDescField = value;
             }
         }
         
@@ -16184,10 +16184,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime PurchaseDate {
             get {
-                return this.purchaseDateField;
+                return purchaseDateField;
             }
             set {
-                this.purchaseDateField = value;
+                purchaseDateField = value;
             }
         }
         
@@ -16196,10 +16196,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PurchaseDateSpecified {
             get {
-                return this.purchaseDateFieldSpecified;
+                return purchaseDateFieldSpecified;
             }
             set {
-                this.purchaseDateFieldSpecified = value;
+                purchaseDateFieldSpecified = value;
             }
         }
         
@@ -16210,10 +16210,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal PurchaseCost {
             get {
-                return this.purchaseCostField;
+                return purchaseCostField;
             }
             set {
-                this.purchaseCostField = value;
+                purchaseCostField = value;
             }
         }
         
@@ -16222,10 +16222,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PurchaseCostSpecified {
             get {
-                return this.purchaseCostFieldSpecified;
+                return purchaseCostFieldSpecified;
             }
             set {
-                this.purchaseCostFieldSpecified = value;
+                purchaseCostFieldSpecified = value;
             }
         }
         
@@ -16236,10 +16236,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Vendor {
             get {
-                return this.vendorField;
+                return vendorField;
             }
             set {
-                this.vendorField = value;
+                vendorField = value;
             }
         }
         
@@ -16255,10 +16255,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AssetAccountRef {
             get {
-                return this.assetAccountRefField;
+                return assetAccountRefField;
             }
             set {
-                this.assetAccountRefField = value;
+                assetAccountRefField = value;
             }
         }
         
@@ -16270,10 +16270,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SalesDesc {
             get {
-                return this.salesDescField;
+                return salesDescField;
             }
             set {
-                this.salesDescField = value;
+                salesDescField = value;
             }
         }
         
@@ -16285,10 +16285,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime SalesDate {
             get {
-                return this.salesDateField;
+                return salesDateField;
             }
             set {
-                this.salesDateField = value;
+                salesDateField = value;
             }
         }
         
@@ -16297,10 +16297,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SalesDateSpecified {
             get {
-                return this.salesDateFieldSpecified;
+                return salesDateFieldSpecified;
             }
             set {
-                this.salesDateFieldSpecified = value;
+                salesDateFieldSpecified = value;
             }
         }
         
@@ -16311,10 +16311,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal SalesPrice {
             get {
-                return this.salesPriceField;
+                return salesPriceField;
             }
             set {
-                this.salesPriceField = value;
+                salesPriceField = value;
             }
         }
         
@@ -16323,10 +16323,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SalesPriceSpecified {
             get {
-                return this.salesPriceFieldSpecified;
+                return salesPriceFieldSpecified;
             }
             set {
-                this.salesPriceFieldSpecified = value;
+                salesPriceFieldSpecified = value;
             }
         }
         
@@ -16337,10 +16337,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal SalesExpense {
             get {
-                return this.salesExpenseField;
+                return salesExpenseField;
             }
             set {
-                this.salesExpenseField = value;
+                salesExpenseField = value;
             }
         }
         
@@ -16349,10 +16349,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SalesExpenseSpecified {
             get {
-                return this.salesExpenseFieldSpecified;
+                return salesExpenseFieldSpecified;
             }
             set {
-                this.salesExpenseFieldSpecified = value;
+                salesExpenseFieldSpecified = value;
             }
         }
         
@@ -16363,10 +16363,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Location {
             get {
-                return this.locationField;
+                return locationField;
             }
             set {
-                this.locationField = value;
+                locationField = value;
             }
         }
         
@@ -16377,10 +16377,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PONumber {
             get {
-                return this.pONumberField;
+                return pONumberField;
             }
             set {
-                this.pONumberField = value;
+                pONumberField = value;
             }
         }
         
@@ -16391,10 +16391,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SerialNumber {
             get {
-                return this.serialNumberField;
+                return serialNumberField;
             }
             set {
-                this.serialNumberField = value;
+                serialNumberField = value;
             }
         }
         
@@ -16406,10 +16406,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime WarrantyExpDate {
             get {
-                return this.warrantyExpDateField;
+                return warrantyExpDateField;
             }
             set {
-                this.warrantyExpDateField = value;
+                warrantyExpDateField = value;
             }
         }
         
@@ -16418,10 +16418,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool WarrantyExpDateSpecified {
             get {
-                return this.warrantyExpDateFieldSpecified;
+                return warrantyExpDateFieldSpecified;
             }
             set {
-                this.warrantyExpDateFieldSpecified = value;
+                warrantyExpDateFieldSpecified = value;
             }
         }
         
@@ -16432,10 +16432,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -16447,10 +16447,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Notes {
             get {
-                return this.notesField;
+                return notesField;
             }
             set {
-                this.notesField = value;
+                notesField = value;
             }
         }
         
@@ -16461,10 +16461,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int AssetNum {
             get {
-                return this.assetNumField;
+                return assetNumField;
             }
             set {
-                this.assetNumField = value;
+                assetNumField = value;
             }
         }
         
@@ -16473,10 +16473,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AssetNumSpecified {
             get {
-                return this.assetNumFieldSpecified;
+                return assetNumFieldSpecified;
             }
             set {
-                this.assetNumFieldSpecified = value;
+                assetNumFieldSpecified = value;
             }
         }
         
@@ -16489,10 +16489,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal CostBasis {
             get {
-                return this.costBasisField;
+                return costBasisField;
             }
             set {
-                this.costBasisField = value;
+                costBasisField = value;
             }
         }
         
@@ -16501,10 +16501,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CostBasisSpecified {
             get {
-                return this.costBasisFieldSpecified;
+                return costBasisFieldSpecified;
             }
             set {
-                this.costBasisFieldSpecified = value;
+                costBasisFieldSpecified = value;
             }
         }
         
@@ -16517,10 +16517,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Depreciation {
             get {
-                return this.depreciationField;
+                return depreciationField;
             }
             set {
-                this.depreciationField = value;
+                depreciationField = value;
             }
         }
         
@@ -16529,10 +16529,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DepreciationSpecified {
             get {
-                return this.depreciationFieldSpecified;
+                return depreciationFieldSpecified;
             }
             set {
-                this.depreciationFieldSpecified = value;
+                depreciationFieldSpecified = value;
             }
         }
         
@@ -16544,10 +16544,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal BookValue {
             get {
-                return this.bookValueField;
+                return bookValueField;
             }
             set {
-                this.bookValueField = value;
+                bookValueField = value;
             }
         }
         
@@ -16556,10 +16556,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BookValueSpecified {
             get {
-                return this.bookValueFieldSpecified;
+                return bookValueFieldSpecified;
             }
             set {
-                this.bookValueFieldSpecified = value;
+                bookValueFieldSpecified = value;
             }
         }
         
@@ -16570,10 +16570,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType FixedAssetEx {
             get {
-                return this.fixedAssetExField;
+                return fixedAssetExField;
             }
             set {
-                this.fixedAssetExField = value;
+                fixedAssetExField = value;
             }
         }
     }
@@ -16651,10 +16651,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -16669,10 +16669,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -16688,10 +16688,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -16700,10 +16700,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -16717,10 +16717,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Hidden {
             get {
-                return this.hiddenField;
+                return hiddenField;
             }
             set {
-                this.hiddenField = value;
+                hiddenField = value;
             }
         }
         
@@ -16729,10 +16729,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HiddenSpecified {
             get {
-                return this.hiddenFieldSpecified;
+                return hiddenFieldSpecified;
             }
             set {
-                this.hiddenFieldSpecified = value;
+                hiddenFieldSpecified = value;
             }
         }
         
@@ -16746,10 +16746,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Taxable {
             get {
-                return this.taxableField;
+                return taxableField;
             }
             set {
-                this.taxableField = value;
+                taxableField = value;
             }
         }
         
@@ -16758,10 +16758,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxableSpecified {
             get {
-                return this.taxableFieldSpecified;
+                return taxableFieldSpecified;
             }
             set {
-                this.taxableFieldSpecified = value;
+                taxableFieldSpecified = value;
             }
         }
         
@@ -16776,10 +16776,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TaxGroup {
             get {
-                return this.taxGroupField;
+                return taxGroupField;
             }
             set {
-                this.taxGroupField = value;
+                taxGroupField = value;
             }
         }
         
@@ -16788,10 +16788,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxGroupSpecified {
             get {
-                return this.taxGroupFieldSpecified;
+                return taxGroupFieldSpecified;
             }
             set {
-                this.taxGroupFieldSpecified = value;
+                taxGroupFieldSpecified = value;
             }
         }
         
@@ -16806,10 +16806,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxRateList SalesTaxRateList {
             get {
-                return this.salesTaxRateListField;
+                return salesTaxRateListField;
             }
             set {
-                this.salesTaxRateListField = value;
+                salesTaxRateListField = value;
             }
         }
         
@@ -16824,10 +16824,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxRateList PurchaseTaxRateList {
             get {
-                return this.purchaseTaxRateListField;
+                return purchaseTaxRateListField;
             }
             set {
-                this.purchaseTaxRateListField = value;
+                purchaseTaxRateListField = value;
             }
         }
         
@@ -16841,10 +16841,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxRateList AdjustmentTaxRateList {
             get {
-                return this.adjustmentTaxRateListField;
+                return adjustmentTaxRateListField;
             }
             set {
-                this.adjustmentTaxRateListField = value;
+                adjustmentTaxRateListField = value;
             }
         }
         
@@ -16858,10 +16858,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TaxCodeEx {
             get {
-                return this.taxCodeExField;
+                return taxCodeExField;
             }
             set {
-                this.taxCodeExField = value;
+                taxCodeExField = value;
             }
         }
         
@@ -16875,10 +16875,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GTMConfigTypeEnum TaxCodeConfigType {
             get {
-                return this.taxCodeConfigTypeField;
+                return taxCodeConfigTypeField;
             }
             set {
-                this.taxCodeConfigTypeField = value;
+                taxCodeConfigTypeField = value;
             }
         }
         
@@ -16887,10 +16887,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxCodeConfigTypeSpecified {
             get {
-                return this.taxCodeConfigTypeFieldSpecified;
+                return taxCodeConfigTypeFieldSpecified;
             }
             set {
-                this.taxCodeConfigTypeFieldSpecified = value;
+                taxCodeConfigTypeFieldSpecified = value;
             }
         }
     }
@@ -16919,10 +16919,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TaxRateDetail")]
         public TaxRateDetail[] TaxRateDetail {
             get {
-                return this.taxRateDetailField;
+                return taxRateDetailField;
             }
             set {
-                this.taxRateDetailField = value;
+                taxRateDetailField = value;
             }
         }
         
@@ -16938,10 +16938,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string originatingGroupId {
             get {
-                return this.originatingGroupIdField;
+                return originatingGroupIdField;
             }
             set {
-                this.originatingGroupIdField = value;
+                originatingGroupIdField = value;
             }
         }
     }
@@ -16978,10 +16978,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxRateRef {
             get {
-                return this.taxRateRefField;
+                return taxRateRefField;
             }
             set {
-                this.taxRateRefField = value;
+                taxRateRefField = value;
             }
         }
         
@@ -16994,10 +16994,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxTypeApplicablityEnum TaxTypeApplicable {
             get {
-                return this.taxTypeApplicableField;
+                return taxTypeApplicableField;
             }
             set {
-                this.taxTypeApplicableField = value;
+                taxTypeApplicableField = value;
             }
         }
         
@@ -17006,10 +17006,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxTypeApplicableSpecified {
             get {
-                return this.taxTypeApplicableFieldSpecified;
+                return taxTypeApplicableFieldSpecified;
             }
             set {
-                this.taxTypeApplicableFieldSpecified = value;
+                taxTypeApplicableFieldSpecified = value;
             }
         }
         
@@ -17022,10 +17022,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TaxOrder {
             get {
-                return this.taxOrderField;
+                return taxOrderField;
             }
             set {
-                this.taxOrderField = value;
+                taxOrderField = value;
             }
         }
         
@@ -17034,10 +17034,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxOrderSpecified {
             get {
-                return this.taxOrderFieldSpecified;
+                return taxOrderFieldSpecified;
             }
             set {
-                this.taxOrderFieldSpecified = value;
+                taxOrderFieldSpecified = value;
             }
         }
         
@@ -17050,10 +17050,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TaxOnTaxOrder {
             get {
-                return this.taxOnTaxOrderField;
+                return taxOnTaxOrderField;
             }
             set {
-                this.taxOnTaxOrderField = value;
+                taxOnTaxOrderField = value;
             }
         }
         
@@ -17062,10 +17062,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxOnTaxOrderSpecified {
             get {
-                return this.taxOnTaxOrderFieldSpecified;
+                return taxOnTaxOrderFieldSpecified;
             }
             set {
-                this.taxOnTaxOrderFieldSpecified = value;
+                taxOnTaxOrderFieldSpecified = value;
             }
         }
     }
@@ -17187,10 +17187,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -17205,10 +17205,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -17224,10 +17224,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -17236,10 +17236,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -17253,10 +17253,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RateValue {
             get {
-                return this.rateValueField;
+                return rateValueField;
             }
             set {
-                this.rateValueField = value;
+                rateValueField = value;
             }
         }
         
@@ -17265,10 +17265,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RateValueSpecified {
             get {
-                return this.rateValueFieldSpecified;
+                return rateValueFieldSpecified;
             }
             set {
-                this.rateValueFieldSpecified = value;
+                rateValueFieldSpecified = value;
             }
         }
         
@@ -17283,10 +17283,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AgencyRef {
             get {
-                return this.agencyRefField;
+                return agencyRefField;
             }
             set {
-                this.agencyRefField = value;
+                agencyRefField = value;
             }
         }
         
@@ -17300,10 +17300,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxReturnLineRef {
             get {
-                return this.taxReturnLineRefField;
+                return taxReturnLineRefField;
             }
             set {
-                this.taxReturnLineRefField = value;
+                taxReturnLineRefField = value;
             }
         }
         
@@ -17318,10 +17318,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("EffectiveTaxRate")]
         public EffectiveTaxRate[] EffectiveTaxRate {
             get {
-                return this.effectiveTaxRateField;
+                return effectiveTaxRateField;
             }
             set {
-                this.effectiveTaxRateField = value;
+                effectiveTaxRateField = value;
             }
         }
         
@@ -17340,10 +17340,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SpecialTaxTypeEnum SpecialTaxType {
             get {
-                return this.specialTaxTypeField;
+                return specialTaxTypeField;
             }
             set {
-                this.specialTaxTypeField = value;
+                specialTaxTypeField = value;
             }
         }
         
@@ -17352,10 +17352,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SpecialTaxTypeSpecified {
             get {
-                return this.specialTaxTypeFieldSpecified;
+                return specialTaxTypeFieldSpecified;
             }
             set {
-                this.specialTaxTypeFieldSpecified = value;
+                specialTaxTypeFieldSpecified = value;
             }
         }
         
@@ -17369,10 +17369,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxRateDisplayTypeEnum DisplayType {
             get {
-                return this.displayTypeField;
+                return displayTypeField;
             }
             set {
-                this.displayTypeField = value;
+                displayTypeField = value;
             }
         }
         
@@ -17381,10 +17381,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DisplayTypeSpecified {
             get {
-                return this.displayTypeFieldSpecified;
+                return displayTypeFieldSpecified;
             }
             set {
-                this.displayTypeFieldSpecified = value;
+                displayTypeFieldSpecified = value;
             }
         }
         
@@ -17398,10 +17398,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TaxRateEx {
             get {
-                return this.taxRateExField;
+                return taxRateExField;
             }
             set {
-                this.taxRateExField = value;
+                taxRateExField = value;
             }
         }
     }
@@ -17444,10 +17444,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RateValue {
             get {
-                return this.rateValueField;
+                return rateValueField;
             }
             set {
-                this.rateValueField = value;
+                rateValueField = value;
             }
         }
         
@@ -17456,10 +17456,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RateValueSpecified {
             get {
-                return this.rateValueFieldSpecified;
+                return rateValueFieldSpecified;
             }
             set {
-                this.rateValueFieldSpecified = value;
+                rateValueFieldSpecified = value;
             }
         }
         
@@ -17473,10 +17473,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime EffectiveDate {
             get {
-                return this.effectiveDateField;
+                return effectiveDateField;
             }
             set {
-                this.effectiveDateField = value;
+                effectiveDateField = value;
             }
         }
         
@@ -17485,10 +17485,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EffectiveDateSpecified {
             get {
-                return this.effectiveDateFieldSpecified;
+                return effectiveDateFieldSpecified;
             }
             set {
-                this.effectiveDateFieldSpecified = value;
+                effectiveDateFieldSpecified = value;
             }
         }
         
@@ -17502,10 +17502,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime EndDate {
             get {
-                return this.endDateField;
+                return endDateField;
             }
             set {
-                this.endDateField = value;
+                endDateField = value;
             }
         }
         
@@ -17514,10 +17514,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndDateSpecified {
             get {
-                return this.endDateFieldSpecified;
+                return endDateFieldSpecified;
             }
             set {
-                this.endDateFieldSpecified = value;
+                endDateFieldSpecified = value;
             }
         }
         
@@ -17531,10 +17531,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType EffectiveTaxRateEx {
             get {
-                return this.effectiveTaxRateExField;
+                return effectiveTaxRateExField;
             }
             set {
-                this.effectiveTaxRateExField = value;
+                effectiveTaxRateExField = value;
             }
         }
     }
@@ -17641,10 +17641,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -17658,10 +17658,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SubAccount {
             get {
-                return this.subAccountField;
+                return subAccountField;
             }
             set {
-                this.subAccountField = value;
+                subAccountField = value;
             }
         }
         
@@ -17670,10 +17670,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SubAccountSpecified {
             get {
-                return this.subAccountFieldSpecified;
+                return subAccountFieldSpecified;
             }
             set {
-                this.subAccountFieldSpecified = value;
+                subAccountFieldSpecified = value;
             }
         }
         
@@ -17687,10 +17687,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -17708,10 +17708,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -17728,10 +17728,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -17747,10 +17747,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AccountAlias {
             get {
-                return this.accountAliasField;
+                return accountAliasField;
             }
             set {
-                this.accountAliasField = value;
+                accountAliasField = value;
             }
         }
         
@@ -17765,10 +17765,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnLocationType {
             get {
-                return this.txnLocationTypeField;
+                return txnLocationTypeField;
             }
             set {
-                this.txnLocationTypeField = value;
+                txnLocationTypeField = value;
             }
         }
         
@@ -17784,10 +17784,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -17796,10 +17796,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -17815,10 +17815,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public AccountClassificationEnum Classification {
             get {
-                return this.classificationField;
+                return classificationField;
             }
             set {
-                this.classificationField = value;
+                classificationField = value;
             }
         }
         
@@ -17827,10 +17827,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ClassificationSpecified {
             get {
-                return this.classificationFieldSpecified;
+                return classificationFieldSpecified;
             }
             set {
-                this.classificationFieldSpecified = value;
+                classificationFieldSpecified = value;
             }
         }
         
@@ -17847,10 +17847,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public AccountTypeEnum AccountType {
             get {
-                return this.accountTypeField;
+                return accountTypeField;
             }
             set {
-                this.accountTypeField = value;
+                accountTypeField = value;
             }
         }
         
@@ -17859,10 +17859,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AccountTypeSpecified {
             get {
-                return this.accountTypeFieldSpecified;
+                return accountTypeFieldSpecified;
             }
             set {
-                this.accountTypeFieldSpecified = value;
+                accountTypeFieldSpecified = value;
             }
         }
         
@@ -17877,10 +17877,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AccountSubType {
             get {
-                return this.accountSubTypeField;
+                return accountSubTypeField;
             }
             set {
-                this.accountSubTypeField = value;
+                accountSubTypeField = value;
             }
         }
         
@@ -17896,10 +17896,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("AccountPurposes")]
         public ReferenceType[] AccountPurposes {
             get {
-                return this.accountPurposesField;
+                return accountPurposesField;
             }
             set {
-                this.accountPurposesField = value;
+                accountPurposesField = value;
             }
         }
         
@@ -17915,10 +17915,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNum {
             get {
-                return this.acctNumField;
+                return acctNumField;
             }
             set {
-                this.acctNumField = value;
+                acctNumField = value;
             }
         }
         
@@ -17932,10 +17932,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNumExtn {
             get {
-                return this.acctNumExtnField;
+                return acctNumExtnField;
             }
             set {
-                this.acctNumExtnField = value;
+                acctNumExtnField = value;
             }
         }
         
@@ -17952,10 +17952,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BankNum {
             get {
-                return this.bankNumField;
+                return bankNumField;
             }
             set {
-                this.bankNumField = value;
+                bankNumField = value;
             }
         }
         
@@ -17969,10 +17969,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal OpeningBalance {
             get {
-                return this.openingBalanceField;
+                return openingBalanceField;
             }
             set {
-                this.openingBalanceField = value;
+                openingBalanceField = value;
             }
         }
         
@@ -17981,10 +17981,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OpeningBalanceSpecified {
             get {
-                return this.openingBalanceFieldSpecified;
+                return openingBalanceFieldSpecified;
             }
             set {
-                this.openingBalanceFieldSpecified = value;
+                openingBalanceFieldSpecified = value;
             }
         }
         
@@ -18000,10 +18000,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime OpeningBalanceDate {
             get {
-                return this.openingBalanceDateField;
+                return openingBalanceDateField;
             }
             set {
-                this.openingBalanceDateField = value;
+                openingBalanceDateField = value;
             }
         }
         
@@ -18012,10 +18012,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OpeningBalanceDateSpecified {
             get {
-                return this.openingBalanceDateFieldSpecified;
+                return openingBalanceDateFieldSpecified;
             }
             set {
-                this.openingBalanceDateFieldSpecified = value;
+                openingBalanceDateFieldSpecified = value;
             }
         }
         
@@ -18031,10 +18031,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal CurrentBalance {
             get {
-                return this.currentBalanceField;
+                return currentBalanceField;
             }
             set {
-                this.currentBalanceField = value;
+                currentBalanceField = value;
             }
         }
         
@@ -18043,10 +18043,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CurrentBalanceSpecified {
             get {
-                return this.currentBalanceFieldSpecified;
+                return currentBalanceFieldSpecified;
             }
             set {
-                this.currentBalanceFieldSpecified = value;
+                currentBalanceFieldSpecified = value;
             }
         }
         
@@ -18062,10 +18062,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal CurrentBalanceWithSubAccounts {
             get {
-                return this.currentBalanceWithSubAccountsField;
+                return currentBalanceWithSubAccountsField;
             }
             set {
-                this.currentBalanceWithSubAccountsField = value;
+                currentBalanceWithSubAccountsField = value;
             }
         }
         
@@ -18074,10 +18074,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CurrentBalanceWithSubAccountsSpecified {
             get {
-                return this.currentBalanceWithSubAccountsFieldSpecified;
+                return currentBalanceWithSubAccountsFieldSpecified;
             }
             set {
-                this.currentBalanceWithSubAccountsFieldSpecified = value;
+                currentBalanceWithSubAccountsFieldSpecified = value;
             }
         }
         
@@ -18091,10 +18091,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CurrencyRef {
             get {
-                return this.currencyRefField;
+                return currencyRefField;
             }
             set {
-                this.currencyRefField = value;
+                currencyRefField = value;
             }
         }
         
@@ -18108,10 +18108,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TaxAccount {
             get {
-                return this.taxAccountField;
+                return taxAccountField;
             }
             set {
-                this.taxAccountField = value;
+                taxAccountField = value;
             }
         }
         
@@ -18120,10 +18120,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxAccountSpecified {
             get {
-                return this.taxAccountFieldSpecified;
+                return taxAccountFieldSpecified;
             }
             set {
-                this.taxAccountFieldSpecified = value;
+                taxAccountFieldSpecified = value;
             }
         }
         
@@ -18139,10 +18139,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
@@ -18161,10 +18161,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool OnlineBankingEnabled {
             get {
-                return this.onlineBankingEnabledField;
+                return onlineBankingEnabledField;
             }
             set {
-                this.onlineBankingEnabledField = value;
+                onlineBankingEnabledField = value;
             }
         }
         
@@ -18173,10 +18173,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OnlineBankingEnabledSpecified {
             get {
-                return this.onlineBankingEnabledFieldSpecified;
+                return onlineBankingEnabledFieldSpecified;
             }
             set {
-                this.onlineBankingEnabledFieldSpecified = value;
+                onlineBankingEnabledFieldSpecified = value;
             }
         }
         
@@ -18193,10 +18193,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FIName {
             get {
-                return this.fINameField;
+                return fINameField;
             }
             set {
-                this.fINameField = value;
+                fINameField = value;
             }
         }
         
@@ -18211,10 +18211,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType JournalCodeRef {
             get {
-                return this.journalCodeRefField;
+                return journalCodeRefField;
             }
             set {
-                this.journalCodeRefField = value;
+                journalCodeRefField = value;
             }
         }
         
@@ -18228,10 +18228,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType AccountEx {
             get {
-                return this.accountExField;
+                return accountExField;
             }
             set {
-                this.accountExField = value;
+                accountExField = value;
             }
         }
     }
@@ -18265,10 +18265,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AccountExistsInCompany {
             get {
-                return this.accountExistsInCompanyField;
+                return accountExistsInCompanyField;
             }
             set {
-                this.accountExistsInCompanyField = value;
+                accountExistsInCompanyField = value;
             }
         }
         
@@ -18277,10 +18277,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AccountExistsInCompanySpecified {
             get {
-                return this.accountExistsInCompanyFieldSpecified;
+                return accountExistsInCompanyFieldSpecified;
             }
             set {
-                this.accountExistsInCompanyFieldSpecified = value;
+                accountExistsInCompanyFieldSpecified = value;
             }
         }
     }
@@ -18303,10 +18303,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
     }
@@ -18333,10 +18333,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -18348,10 +18348,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Credit {
             get {
-                return this.creditField;
+                return creditField;
             }
             set {
-                this.creditField = value;
+                creditField = value;
             }
         }
         
@@ -18360,10 +18360,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditSpecified {
             get {
-                return this.creditFieldSpecified;
+                return creditFieldSpecified;
             }
             set {
-                this.creditFieldSpecified = value;
+                creditFieldSpecified = value;
             }
         }
     }
@@ -18394,10 +18394,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -18408,10 +18408,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress PayeeAddr {
             get {
-                return this.payeeAddrField;
+                return payeeAddrField;
             }
             set {
-                this.payeeAddrField = value;
+                payeeAddrField = value;
             }
         }
         
@@ -18424,10 +18424,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MemoOnCheck {
             get {
-                return this.memoOnCheckField;
+                return memoOnCheckField;
             }
             set {
-                this.memoOnCheckField = value;
+                memoOnCheckField = value;
             }
         }
         
@@ -18439,10 +18439,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -18451,10 +18451,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
     }
@@ -18528,10 +18528,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -18545,10 +18545,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -18564,10 +18564,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PaymentRefNum {
             get {
-                return this.paymentRefNumField;
+                return paymentRefNumField;
             }
             set {
-                this.paymentRefNumField = value;
+                paymentRefNumField = value;
             }
         }
         
@@ -18582,10 +18582,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PaymentTypeEnum PaymentType {
             get {
-                return this.paymentTypeField;
+                return paymentTypeField;
             }
             set {
-                this.paymentTypeField = value;
+                paymentTypeField = value;
             }
         }
         
@@ -18594,10 +18594,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentTypeSpecified {
             get {
-                return this.paymentTypeFieldSpecified;
+                return paymentTypeFieldSpecified;
             }
             set {
-                this.paymentTypeFieldSpecified = value;
+                paymentTypeFieldSpecified = value;
             }
         }
         
@@ -18606,10 +18606,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CreditCardPayment", typeof(CreditCardPayment))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -18622,10 +18622,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType EntityRef {
             get {
-                return this.entityRefField;
+                return entityRefField;
             }
             set {
-                this.entityRefField = value;
+                entityRefField = value;
             }
         }
         
@@ -18639,10 +18639,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Credit {
             get {
-                return this.creditField;
+                return creditField;
             }
             set {
-                this.creditField = value;
+                creditField = value;
             }
         }
         
@@ -18651,10 +18651,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditSpecified {
             get {
-                return this.creditFieldSpecified;
+                return creditFieldSpecified;
             }
             set {
-                this.creditFieldSpecified = value;
+                creditFieldSpecified = value;
             }
         }
         
@@ -18666,10 +18666,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress RemitToAddr {
             get {
-                return this.remitToAddrField;
+                return remitToAddrField;
             }
             set {
-                this.remitToAddrField = value;
+                remitToAddrField = value;
             }
         }
         
@@ -18689,10 +18689,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -18701,30 +18701,30 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public string TxnId {
             get {
-                return this.txnIdField;
+                return txnIdField;
             }
             set {
-                this.txnIdField = value;
+                txnIdField = value;
             }
         }
         
         /// <remarks/>
         public string TxnNum {
             get {
-                return this.txnNumField;
+                return txnNumField;
             }
             set {
-                this.txnNumField = value;
+                txnNumField = value;
             }
         }
         
@@ -18737,10 +18737,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Memo {
             get {
-                return this.memoField;
+                return memoField;
             }
             set {
-                this.memoField = value;
+                memoField = value;
             }
         }
         
@@ -18752,10 +18752,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -18764,10 +18764,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
         
@@ -18782,10 +18782,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GlobalTaxCalculationEnum GlobalTaxCalculation {
             get {
-                return this.globalTaxCalculationField;
+                return globalTaxCalculationField;
             }
             set {
-                this.globalTaxCalculationField = value;
+                globalTaxCalculationField = value;
             }
         }
         
@@ -18794,10 +18794,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GlobalTaxCalculationSpecified {
             get {
-                return this.globalTaxCalculationFieldSpecified;
+                return globalTaxCalculationFieldSpecified;
             }
             set {
-                this.globalTaxCalculationFieldSpecified = value;
+                globalTaxCalculationFieldSpecified = value;
             }
         }
         
@@ -18808,10 +18808,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PurchaseEx {
             get {
-                return this.purchaseExField;
+                return purchaseExField;
             }
             set {
-                this.purchaseExField = value;
+                purchaseExField = value;
             }
         }
         
@@ -18825,10 +18825,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal LessCIS {
             get {
-                return this.lessCISField;
+                return lessCISField;
             }
             set {
-                this.lessCISField = value;
+                lessCISField = value;
             }
         }
         
@@ -18837,10 +18837,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LessCISSpecified {
             get {
-                return this.lessCISFieldSpecified;
+                return lessCISFieldSpecified;
             }
             set {
-                this.lessCISFieldSpecified = value;
+                lessCISFieldSpecified = value;
             }
         }
         
@@ -18853,10 +18853,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IncludeInAnnualTPAR {
             get {
-                return this.includeInAnnualTPARField;
+                return includeInAnnualTPARField;
             }
             set {
-                this.includeInAnnualTPARField = value;
+                includeInAnnualTPARField = value;
             }
         }
         
@@ -18865,10 +18865,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IncludeInAnnualTPARSpecified {
             get {
-                return this.includeInAnnualTPARFieldSpecified;
+                return includeInAnnualTPARFieldSpecified;
             }
             set {
-                this.includeInAnnualTPARFieldSpecified = value;
+                includeInAnnualTPARFieldSpecified = value;
             }
         }
     }
@@ -18917,10 +18917,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType VendorRef {
             get {
-                return this.vendorRefField;
+                return vendorRefField;
             }
             set {
-                this.vendorRefField = value;
+                vendorRefField = value;
             }
         }
         
@@ -18938,10 +18938,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType APAccountRef {
             get {
-                return this.aPAccountRefField;
+                return aPAccountRefField;
             }
             set {
-                this.aPAccountRefField = value;
+                aPAccountRefField = value;
             }
         }
         
@@ -18961,10 +18961,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -18973,10 +18973,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -18990,10 +18990,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress BillEmail {
             get {
-                return this.billEmailField;
+                return billEmailField;
             }
             set {
-                this.billEmailField = value;
+                billEmailField = value;
             }
         }
         
@@ -19008,10 +19008,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress ReplyEmail {
             get {
-                return this.replyEmailField;
+                return replyEmailField;
             }
             set {
-                this.replyEmailField = value;
+                replyEmailField = value;
             }
         }
         
@@ -19022,10 +19022,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Memo {
             get {
-                return this.memoField;
+                return memoField;
             }
             set {
-                this.memoField = value;
+                memoField = value;
             }
         }
         
@@ -19040,10 +19040,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GlobalTaxCalculationEnum GlobalTaxCalculation {
             get {
-                return this.globalTaxCalculationField;
+                return globalTaxCalculationField;
             }
             set {
-                this.globalTaxCalculationField = value;
+                globalTaxCalculationField = value;
             }
         }
         
@@ -19052,10 +19052,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GlobalTaxCalculationSpecified {
             get {
-                return this.globalTaxCalculationFieldSpecified;
+                return globalTaxCalculationFieldSpecified;
             }
             set {
-                this.globalTaxCalculationFieldSpecified = value;
+                globalTaxCalculationFieldSpecified = value;
             }
         }
     }
@@ -19115,10 +19115,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PayerRef {
             get {
-                return this.payerRefField;
+                return payerRefField;
             }
             set {
-                this.payerRefField = value;
+                payerRefField = value;
             }
         }
         
@@ -19129,10 +19129,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesTermRef {
             get {
-                return this.salesTermRefField;
+                return salesTermRefField;
             }
             set {
-                this.salesTermRefField = value;
+                salesTermRefField = value;
             }
         }
         
@@ -19145,10 +19145,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -19157,10 +19157,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -19173,10 +19173,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress RemitToAddr {
             get {
-                return this.remitToAddrField;
+                return remitToAddrField;
             }
             set {
-                this.remitToAddrField = value;
+                remitToAddrField = value;
             }
         }
         
@@ -19187,10 +19187,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -19203,10 +19203,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress VendorAddr {
             get {
-                return this.vendorAddrField;
+                return vendorAddrField;
             }
             set {
-                this.vendorAddrField = value;
+                vendorAddrField = value;
             }
         }
         
@@ -19224,10 +19224,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -19236,10 +19236,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -19259,10 +19259,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeBalance {
             get {
-                return this.homeBalanceField;
+                return homeBalanceField;
             }
             set {
-                this.homeBalanceField = value;
+                homeBalanceField = value;
             }
         }
         
@@ -19271,10 +19271,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeBalanceSpecified {
             get {
-                return this.homeBalanceFieldSpecified;
+                return homeBalanceFieldSpecified;
             }
             set {
-                this.homeBalanceFieldSpecified = value;
+                homeBalanceFieldSpecified = value;
             }
         }
         
@@ -19285,10 +19285,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType BillEx {
             get {
-                return this.billExField;
+                return billExField;
             }
             set {
-                this.billExField = value;
+                billExField = value;
             }
         }
         
@@ -19302,10 +19302,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal LessCIS {
             get {
-                return this.lessCISField;
+                return lessCISField;
             }
             set {
-                this.lessCISField = value;
+                lessCISField = value;
             }
         }
         
@@ -19314,10 +19314,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LessCISSpecified {
             get {
-                return this.lessCISFieldSpecified;
+                return lessCISFieldSpecified;
             }
             set {
-                this.lessCISFieldSpecified = value;
+                lessCISFieldSpecified = value;
             }
         }
         
@@ -19330,10 +19330,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IncludeInAnnualTPAR {
             get {
-                return this.includeInAnnualTPARField;
+                return includeInAnnualTPARField;
             }
             set {
-                this.includeInAnnualTPARField = value;
+                includeInAnnualTPARField = value;
             }
         }
         
@@ -19342,10 +19342,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IncludeInAnnualTPARSpecified {
             get {
-                return this.includeInAnnualTPARFieldSpecified;
+                return includeInAnnualTPARFieldSpecified;
             }
             set {
-                this.includeInAnnualTPARFieldSpecified = value;
+                includeInAnnualTPARFieldSpecified = value;
             }
         }
     }
@@ -19385,10 +19385,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress VendorAddr {
             get {
-                return this.vendorAddrField;
+                return vendorAddrField;
             }
             set {
-                this.vendorAddrField = value;
+                vendorAddrField = value;
             }
         }
         
@@ -19399,10 +19399,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType VendorCreditEx {
             get {
-                return this.vendorCreditExField;
+                return vendorCreditExField;
             }
             set {
-                this.vendorCreditExField = value;
+                vendorCreditExField = value;
             }
         }
         
@@ -19420,10 +19420,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -19432,10 +19432,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -19448,10 +19448,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IncludeInAnnualTPAR {
             get {
-                return this.includeInAnnualTPARField;
+                return includeInAnnualTPARField;
             }
             set {
-                this.includeInAnnualTPARField = value;
+                includeInAnnualTPARField = value;
             }
         }
         
@@ -19460,10 +19460,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IncludeInAnnualTPARSpecified {
             get {
-                return this.includeInAnnualTPARFieldSpecified;
+                return includeInAnnualTPARFieldSpecified;
             }
             set {
-                this.includeInAnnualTPARFieldSpecified = value;
+                includeInAnnualTPARFieldSpecified = value;
             }
         }
     }
@@ -19516,10 +19516,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Credit {
             get {
-                return this.creditField;
+                return creditField;
             }
             set {
-                this.creditField = value;
+                creditField = value;
             }
         }
         
@@ -19528,10 +19528,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditSpecified {
             get {
-                return this.creditFieldSpecified;
+                return creditFieldSpecified;
             }
             set {
-                this.creditFieldSpecified = value;
+                creditFieldSpecified = value;
             }
         }
         
@@ -19542,10 +19542,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -19560,10 +19560,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RemitToRef {
             get {
-                return this.remitToRefField;
+                return remitToRefField;
             }
             set {
-                this.remitToRefField = value;
+                remitToRefField = value;
             }
         }
         
@@ -19579,20 +19579,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ARAccountRef {
             get {
-                return this.aRAccountRefField;
+                return aRAccountRefField;
             }
             set {
-                this.aRAccountRefField = value;
+                aRAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -19604,10 +19604,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -19616,10 +19616,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -19631,10 +19631,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime BilledDate {
             get {
-                return this.billedDateField;
+                return billedDateField;
             }
             set {
-                this.billedDateField = value;
+                billedDateField = value;
             }
         }
         
@@ -19643,10 +19643,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BilledDateSpecified {
             get {
-                return this.billedDateFieldSpecified;
+                return billedDateFieldSpecified;
             }
             set {
-                this.billedDateFieldSpecified = value;
+                billedDateFieldSpecified = value;
             }
         }
         
@@ -19662,10 +19662,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -19674,10 +19674,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -19688,10 +19688,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType StatementChargeEx {
             get {
-                return this.statementChargeExField;
+                return statementChargeExField;
             }
             set {
-                this.statementChargeExField = value;
+                statementChargeExField = value;
             }
         }
     }
@@ -19738,10 +19738,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -19753,10 +19753,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SubClass {
             get {
-                return this.subClassField;
+                return subClassField;
             }
             set {
-                this.subClassField = value;
+                subClassField = value;
             }
         }
         
@@ -19765,10 +19765,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SubClassSpecified {
             get {
-                return this.subClassFieldSpecified;
+                return subClassFieldSpecified;
             }
             set {
-                this.subClassFieldSpecified = value;
+                subClassFieldSpecified = value;
             }
         }
         
@@ -19779,10 +19779,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -19799,10 +19799,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -19816,10 +19816,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -19828,10 +19828,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -19842,10 +19842,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ClassEx {
             get {
-                return this.classExField;
+                return classExField;
             }
             set {
-                this.classExField = value;
+                classExField = value;
             }
         }
     }
@@ -19883,10 +19883,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -19898,10 +19898,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -19912,10 +19912,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -19926,10 +19926,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -19938,10 +19938,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -19952,10 +19952,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType JournalCodeEx {
             get {
-                return this.journalCodeExField;
+                return journalCodeExField;
             }
             set {
-                this.journalCodeExField = value;
+                journalCodeExField = value;
             }
         }
     }
@@ -20017,10 +20017,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -20035,10 +20035,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RemitToRef {
             get {
-                return this.remitToRefField;
+                return remitToRefField;
             }
             set {
-                this.remitToRefField = value;
+                remitToRefField = value;
             }
         }
         
@@ -20054,10 +20054,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ARAccountRef {
             get {
-                return this.aRAccountRefField;
+                return aRAccountRefField;
             }
             set {
-                this.aRAccountRefField = value;
+                aRAccountRefField = value;
             }
         }
         
@@ -20073,10 +20073,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepositToAccountRef {
             get {
-                return this.depositToAccountRefField;
+                return depositToAccountRefField;
             }
             set {
-                this.depositToAccountRefField = value;
+                depositToAccountRefField = value;
             }
         }
         
@@ -20090,10 +20090,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -20109,10 +20109,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PaymentRefNum {
             get {
-                return this.paymentRefNumField;
+                return paymentRefNumField;
             }
             set {
-                this.paymentRefNumField = value;
+                paymentRefNumField = value;
             }
         }
         
@@ -20128,10 +20128,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PaymentTypeEnum PaymentType {
             get {
-                return this.paymentTypeField;
+                return paymentTypeField;
             }
             set {
-                this.paymentTypeField = value;
+                paymentTypeField = value;
             }
         }
         
@@ -20140,10 +20140,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentTypeSpecified {
             get {
-                return this.paymentTypeFieldSpecified;
+                return paymentTypeFieldSpecified;
             }
             set {
-                this.paymentTypeFieldSpecified = value;
+                paymentTypeFieldSpecified = value;
             }
         }
         
@@ -20152,10 +20152,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CreditCardPayment", typeof(CreditCardPayment))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -20175,10 +20175,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -20187,10 +20187,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -20205,10 +20205,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal UnappliedAmt {
             get {
-                return this.unappliedAmtField;
+                return unappliedAmtField;
             }
             set {
-                this.unappliedAmtField = value;
+                unappliedAmtField = value;
             }
         }
         
@@ -20217,10 +20217,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UnappliedAmtSpecified {
             get {
-                return this.unappliedAmtFieldSpecified;
+                return unappliedAmtFieldSpecified;
             }
             set {
-                this.unappliedAmtFieldSpecified = value;
+                unappliedAmtFieldSpecified = value;
             }
         }
         
@@ -20234,10 +20234,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ProcessPayment {
             get {
-                return this.processPaymentField;
+                return processPaymentField;
             }
             set {
-                this.processPaymentField = value;
+                processPaymentField = value;
             }
         }
         
@@ -20246,10 +20246,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ProcessPaymentSpecified {
             get {
-                return this.processPaymentFieldSpecified;
+                return processPaymentFieldSpecified;
             }
             set {
-                this.processPaymentFieldSpecified = value;
+                processPaymentFieldSpecified = value;
             }
         }
         
@@ -20260,10 +20260,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PaymentEx {
             get {
-                return this.paymentExField;
+                return paymentExField;
             }
             set {
-                this.paymentExField = value;
+                paymentExField = value;
             }
         }
     }
@@ -20302,10 +20302,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -20319,10 +20319,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -20331,10 +20331,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -20347,10 +20347,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -20361,10 +20361,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PaymentMethodEx {
             get {
-                return this.paymentMethodExField;
+                return paymentMethodExField;
             }
             set {
-                this.paymentMethodExField = value;
+                paymentMethodExField = value;
             }
         }
     }
@@ -20403,10 +20403,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
@@ -20419,10 +20419,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Qty {
             get {
-                return this.qtyField;
+                return qtyField;
             }
             set {
-                this.qtyField = value;
+                qtyField = value;
             }
         }
         
@@ -20431,10 +20431,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QtySpecified {
             get {
-                return this.qtyFieldSpecified;
+                return qtyFieldSpecified;
             }
             set {
-                this.qtyFieldSpecified = value;
+                qtyFieldSpecified = value;
             }
         }
         
@@ -20448,10 +20448,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public UOMRef UOMRef {
             get {
-                return this.uOMRefField;
+                return uOMRefField;
             }
             set {
-                this.uOMRefField = value;
+                uOMRefField = value;
             }
         }
     }
@@ -20484,10 +20484,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ItemGroupLine")]
         public ItemComponentLine[] ItemGroupLine {
             get {
-                return this.itemGroupLineField;
+                return itemGroupLineField;
             }
             set {
-                this.itemGroupLineField = value;
+                itemGroupLineField = value;
             }
         }
     }
@@ -20536,10 +20536,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -20552,10 +20552,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SubDepartment {
             get {
-                return this.subDepartmentField;
+                return subDepartmentField;
             }
             set {
-                this.subDepartmentField = value;
+                subDepartmentField = value;
             }
         }
         
@@ -20564,10 +20564,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SubDepartmentSpecified {
             get {
-                return this.subDepartmentFieldSpecified;
+                return subDepartmentFieldSpecified;
             }
             set {
-                this.subDepartmentFieldSpecified = value;
+                subDepartmentFieldSpecified = value;
             }
         }
         
@@ -20578,10 +20578,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -20598,10 +20598,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -20613,10 +20613,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -20625,10 +20625,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -20639,10 +20639,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType DepartmentEx {
             get {
-                return this.departmentExField;
+                return departmentExField;
             }
             set {
-                this.departmentExField = value;
+                departmentExField = value;
             }
         }
         
@@ -20652,10 +20652,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress Address {
             get {
-                return this.addressField;
+                return addressField;
             }
             set {
-                this.addressField = value;
+                addressField = value;
             }
         }
     }
@@ -20688,10 +20688,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ItemAssemblyLine")]
         public ItemComponentLine[] ItemAssemblyLine {
             get {
-                return this.itemAssemblyLineField;
+                return itemAssemblyLineField;
             }
             set {
-                this.itemAssemblyLineField = value;
+                itemAssemblyLineField = value;
             }
         }
     }
@@ -20928,10 +20928,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -20948,10 +20948,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Sku {
             get {
-                return this.skuField;
+                return skuField;
             }
             set {
-                this.skuField = value;
+                skuField = value;
             }
         }
         
@@ -20973,10 +20973,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -20992,10 +20992,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -21004,10 +21004,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -21021,10 +21021,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SubItem {
             get {
-                return this.subItemField;
+                return subItemField;
             }
             set {
-                this.subItemField = value;
+                subItemField = value;
             }
         }
         
@@ -21033,10 +21033,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SubItemSpecified {
             get {
-                return this.subItemFieldSpecified;
+                return subItemFieldSpecified;
             }
             set {
-                this.subItemFieldSpecified = value;
+                subItemFieldSpecified = value;
             }
         }
         
@@ -21050,10 +21050,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -21068,10 +21068,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int Level {
             get {
-                return this.levelField;
+                return levelField;
             }
             set {
-                this.levelField = value;
+                levelField = value;
             }
         }
         
@@ -21080,10 +21080,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LevelSpecified {
             get {
-                return this.levelFieldSpecified;
+                return levelFieldSpecified;
             }
             set {
-                this.levelFieldSpecified = value;
+                levelFieldSpecified = value;
             }
         }
         
@@ -21101,10 +21101,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -21118,10 +21118,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Taxable {
             get {
-                return this.taxableField;
+                return taxableField;
             }
             set {
-                this.taxableField = value;
+                taxableField = value;
             }
         }
         
@@ -21130,10 +21130,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxableSpecified {
             get {
-                return this.taxableFieldSpecified;
+                return taxableFieldSpecified;
             }
             set {
-                this.taxableFieldSpecified = value;
+                taxableFieldSpecified = value;
             }
         }
         
@@ -21148,10 +21148,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SalesTaxIncluded {
             get {
-                return this.salesTaxIncludedField;
+                return salesTaxIncludedField;
             }
             set {
-                this.salesTaxIncludedField = value;
+                salesTaxIncludedField = value;
             }
         }
         
@@ -21160,10 +21160,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SalesTaxIncludedSpecified {
             get {
-                return this.salesTaxIncludedFieldSpecified;
+                return salesTaxIncludedFieldSpecified;
             }
             set {
-                this.salesTaxIncludedFieldSpecified = value;
+                salesTaxIncludedFieldSpecified = value;
             }
         }
         
@@ -21177,10 +21177,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PercentBased {
             get {
-                return this.percentBasedField;
+                return percentBasedField;
             }
             set {
-                this.percentBasedField = value;
+                percentBasedField = value;
             }
         }
         
@@ -21189,10 +21189,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PercentBasedSpecified {
             get {
-                return this.percentBasedFieldSpecified;
+                return percentBasedFieldSpecified;
             }
             set {
-                this.percentBasedFieldSpecified = value;
+                percentBasedFieldSpecified = value;
             }
         }
         
@@ -21208,10 +21208,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal UnitPrice {
             get {
-                return this.unitPriceField;
+                return unitPriceField;
             }
             set {
-                this.unitPriceField = value;
+                unitPriceField = value;
             }
         }
         
@@ -21220,10 +21220,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UnitPriceSpecified {
             get {
-                return this.unitPriceFieldSpecified;
+                return unitPriceFieldSpecified;
             }
             set {
-                this.unitPriceFieldSpecified = value;
+                unitPriceFieldSpecified = value;
             }
         }
         
@@ -21242,10 +21242,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RatePercent {
             get {
-                return this.ratePercentField;
+                return ratePercentField;
             }
             set {
-                this.ratePercentField = value;
+                ratePercentField = value;
             }
         }
         
@@ -21254,10 +21254,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RatePercentSpecified {
             get {
-                return this.ratePercentFieldSpecified;
+                return ratePercentFieldSpecified;
             }
             set {
-                this.ratePercentFieldSpecified = value;
+                ratePercentFieldSpecified = value;
             }
         }
         
@@ -21273,10 +21273,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ItemTypeEnum Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -21285,10 +21285,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TypeSpecified {
             get {
-                return this.typeFieldSpecified;
+                return typeFieldSpecified;
             }
             set {
-                this.typeFieldSpecified = value;
+                typeFieldSpecified = value;
             }
         }
         
@@ -21302,10 +21302,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -21319,10 +21319,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType UOMSetRef {
             get {
-                return this.uOMSetRefField;
+                return uOMSetRefField;
             }
             set {
-                this.uOMSetRefField = value;
+                uOMSetRefField = value;
             }
         }
         
@@ -21339,10 +21339,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType IncomeAccountRef {
             get {
-                return this.incomeAccountRefField;
+                return incomeAccountRefField;
             }
             set {
-                this.incomeAccountRefField = value;
+                incomeAccountRefField = value;
             }
         }
         
@@ -21356,10 +21356,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PurchaseDesc {
             get {
-                return this.purchaseDescField;
+                return purchaseDescField;
             }
             set {
-                this.purchaseDescField = value;
+                purchaseDescField = value;
             }
         }
         
@@ -21374,10 +21374,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PurchaseTaxIncluded {
             get {
-                return this.purchaseTaxIncludedField;
+                return purchaseTaxIncludedField;
             }
             set {
-                this.purchaseTaxIncludedField = value;
+                purchaseTaxIncludedField = value;
             }
         }
         
@@ -21386,10 +21386,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PurchaseTaxIncludedSpecified {
             get {
-                return this.purchaseTaxIncludedFieldSpecified;
+                return purchaseTaxIncludedFieldSpecified;
             }
             set {
-                this.purchaseTaxIncludedFieldSpecified = value;
+                purchaseTaxIncludedFieldSpecified = value;
             }
         }
         
@@ -21403,10 +21403,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal PurchaseCost {
             get {
-                return this.purchaseCostField;
+                return purchaseCostField;
             }
             set {
-                this.purchaseCostField = value;
+                purchaseCostField = value;
             }
         }
         
@@ -21415,10 +21415,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PurchaseCostSpecified {
             get {
-                return this.purchaseCostFieldSpecified;
+                return purchaseCostFieldSpecified;
             }
             set {
-                this.purchaseCostFieldSpecified = value;
+                purchaseCostFieldSpecified = value;
             }
         }
         
@@ -21439,10 +21439,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ExpenseAccountRef {
             get {
-                return this.expenseAccountRefField;
+                return expenseAccountRefField;
             }
             set {
-                this.expenseAccountRefField = value;
+                expenseAccountRefField = value;
             }
         }
         
@@ -21458,10 +21458,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType COGSAccountRef {
             get {
-                return this.cOGSAccountRefField;
+                return cOGSAccountRefField;
             }
             set {
-                this.cOGSAccountRefField = value;
+                cOGSAccountRefField = value;
             }
         }
         
@@ -21480,10 +21480,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AssetAccountRef {
             get {
-                return this.assetAccountRefField;
+                return assetAccountRefField;
             }
             set {
-                this.assetAccountRefField = value;
+                assetAccountRefField = value;
             }
         }
         
@@ -21497,10 +21497,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PrefVendorRef {
             get {
-                return this.prefVendorRefField;
+                return prefVendorRefField;
             }
             set {
-                this.prefVendorRefField = value;
+                prefVendorRefField = value;
             }
         }
         
@@ -21514,10 +21514,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal AvgCost {
             get {
-                return this.avgCostField;
+                return avgCostField;
             }
             set {
-                this.avgCostField = value;
+                avgCostField = value;
             }
         }
         
@@ -21526,10 +21526,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AvgCostSpecified {
             get {
-                return this.avgCostFieldSpecified;
+                return avgCostFieldSpecified;
             }
             set {
-                this.avgCostFieldSpecified = value;
+                avgCostFieldSpecified = value;
             }
         }
         
@@ -21543,10 +21543,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackQtyOnHand {
             get {
-                return this.trackQtyOnHandField;
+                return trackQtyOnHandField;
             }
             set {
-                this.trackQtyOnHandField = value;
+                trackQtyOnHandField = value;
             }
         }
         
@@ -21555,10 +21555,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackQtyOnHandSpecified {
             get {
-                return this.trackQtyOnHandFieldSpecified;
+                return trackQtyOnHandFieldSpecified;
             }
             set {
-                this.trackQtyOnHandFieldSpecified = value;
+                trackQtyOnHandFieldSpecified = value;
             }
         }
         
@@ -21573,10 +21573,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal QtyOnHand {
             get {
-                return this.qtyOnHandField;
+                return qtyOnHandField;
             }
             set {
-                this.qtyOnHandField = value;
+                qtyOnHandField = value;
             }
         }
         
@@ -21585,10 +21585,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QtyOnHandSpecified {
             get {
-                return this.qtyOnHandFieldSpecified;
+                return qtyOnHandFieldSpecified;
             }
             set {
-                this.qtyOnHandFieldSpecified = value;
+                qtyOnHandFieldSpecified = value;
             }
         }
         
@@ -21603,10 +21603,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal QtyOnPurchaseOrder {
             get {
-                return this.qtyOnPurchaseOrderField;
+                return qtyOnPurchaseOrderField;
             }
             set {
-                this.qtyOnPurchaseOrderField = value;
+                qtyOnPurchaseOrderField = value;
             }
         }
         
@@ -21615,10 +21615,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QtyOnPurchaseOrderSpecified {
             get {
-                return this.qtyOnPurchaseOrderFieldSpecified;
+                return qtyOnPurchaseOrderFieldSpecified;
             }
             set {
-                this.qtyOnPurchaseOrderFieldSpecified = value;
+                qtyOnPurchaseOrderFieldSpecified = value;
             }
         }
         
@@ -21632,10 +21632,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal QtyOnSalesOrder {
             get {
-                return this.qtyOnSalesOrderField;
+                return qtyOnSalesOrderField;
             }
             set {
-                this.qtyOnSalesOrderField = value;
+                qtyOnSalesOrderField = value;
             }
         }
         
@@ -21644,10 +21644,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QtyOnSalesOrderSpecified {
             get {
-                return this.qtyOnSalesOrderFieldSpecified;
+                return qtyOnSalesOrderFieldSpecified;
             }
             set {
-                this.qtyOnSalesOrderFieldSpecified = value;
+                qtyOnSalesOrderFieldSpecified = value;
             }
         }
         
@@ -21664,10 +21664,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal ReorderPoint {
             get {
-                return this.reorderPointField;
+                return reorderPointField;
             }
             set {
-                this.reorderPointField = value;
+                reorderPointField = value;
             }
         }
         
@@ -21676,10 +21676,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReorderPointSpecified {
             get {
-                return this.reorderPointFieldSpecified;
+                return reorderPointFieldSpecified;
             }
             set {
-                this.reorderPointFieldSpecified = value;
+                reorderPointFieldSpecified = value;
             }
         }
         
@@ -21695,10 +21695,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ManPartNum {
             get {
-                return this.manPartNumField;
+                return manPartNumField;
             }
             set {
-                this.manPartNumField = value;
+                manPartNumField = value;
             }
         }
         
@@ -21714,10 +21714,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepositToAccountRef {
             get {
-                return this.depositToAccountRefField;
+                return depositToAccountRefField;
             }
             set {
-                this.depositToAccountRefField = value;
+                depositToAccountRefField = value;
             }
         }
         
@@ -21732,10 +21732,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesTaxCodeRef {
             get {
-                return this.salesTaxCodeRefField;
+                return salesTaxCodeRefField;
             }
             set {
-                this.salesTaxCodeRefField = value;
+                salesTaxCodeRefField = value;
             }
         }
         
@@ -21750,10 +21750,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PurchaseTaxCodeRef {
             get {
-                return this.purchaseTaxCodeRefField;
+                return purchaseTaxCodeRefField;
             }
             set {
-                this.purchaseTaxCodeRefField = value;
+                purchaseTaxCodeRefField = value;
             }
         }
         
@@ -21773,10 +21773,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime InvStartDate {
             get {
-                return this.invStartDateField;
+                return invStartDateField;
             }
             set {
-                this.invStartDateField = value;
+                invStartDateField = value;
             }
         }
         
@@ -21785,10 +21785,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool InvStartDateSpecified {
             get {
-                return this.invStartDateFieldSpecified;
+                return invStartDateFieldSpecified;
             }
             set {
-                this.invStartDateFieldSpecified = value;
+                invStartDateFieldSpecified = value;
             }
         }
         
@@ -21805,10 +21805,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal BuildPoint {
             get {
-                return this.buildPointField;
+                return buildPointField;
             }
             set {
-                this.buildPointField = value;
+                buildPointField = value;
             }
         }
         
@@ -21817,10 +21817,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BuildPointSpecified {
             get {
-                return this.buildPointFieldSpecified;
+                return buildPointFieldSpecified;
             }
             set {
-                this.buildPointFieldSpecified = value;
+                buildPointFieldSpecified = value;
             }
         }
         
@@ -21835,10 +21835,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PrintGroupedItems {
             get {
-                return this.printGroupedItemsField;
+                return printGroupedItemsField;
             }
             set {
-                this.printGroupedItemsField = value;
+                printGroupedItemsField = value;
             }
         }
         
@@ -21847,10 +21847,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintGroupedItemsSpecified {
             get {
-                return this.printGroupedItemsFieldSpecified;
+                return printGroupedItemsFieldSpecified;
             }
             set {
-                this.printGroupedItemsFieldSpecified = value;
+                printGroupedItemsFieldSpecified = value;
             }
         }
         
@@ -21867,10 +21867,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool SpecialItem {
             get {
-                return this.specialItemField;
+                return specialItemField;
             }
             set {
-                this.specialItemField = value;
+                specialItemField = value;
             }
         }
         
@@ -21879,10 +21879,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SpecialItemSpecified {
             get {
-                return this.specialItemFieldSpecified;
+                return specialItemFieldSpecified;
             }
             set {
-                this.specialItemFieldSpecified = value;
+                specialItemFieldSpecified = value;
             }
         }
         
@@ -21896,10 +21896,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SpecialItemTypeEnum SpecialItemType {
             get {
-                return this.specialItemTypeField;
+                return specialItemTypeField;
             }
             set {
-                this.specialItemTypeField = value;
+                specialItemTypeField = value;
             }
         }
         
@@ -21908,10 +21908,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SpecialItemTypeSpecified {
             get {
-                return this.specialItemTypeFieldSpecified;
+                return specialItemTypeFieldSpecified;
             }
             set {
-                this.specialItemTypeFieldSpecified = value;
+                specialItemTypeFieldSpecified = value;
             }
         }
         
@@ -21926,10 +21926,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute("ItemGroupLine", IsNullable=false)]
         public ItemComponentLine[] ItemGroupDetail {
             get {
-                return this.itemGroupDetailField;
+                return itemGroupDetailField;
             }
             set {
-                this.itemGroupDetailField = value;
+                itemGroupDetailField = value;
             }
         }
         
@@ -21945,10 +21945,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute("ItemAssemblyLine", IsNullable=false)]
         public ItemComponentLine[] ItemAssemblyDetail {
             get {
-                return this.itemAssemblyDetailField;
+                return itemAssemblyDetailField;
             }
             set {
-                this.itemAssemblyDetailField = value;
+                itemAssemblyDetailField = value;
             }
         }
         
@@ -21962,10 +21962,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal AbatementRate {
             get {
-                return this.abatementRateField;
+                return abatementRateField;
             }
             set {
-                this.abatementRateField = value;
+                abatementRateField = value;
             }
         }
         
@@ -21974,10 +21974,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AbatementRateSpecified {
             get {
-                return this.abatementRateFieldSpecified;
+                return abatementRateFieldSpecified;
             }
             set {
-                this.abatementRateFieldSpecified = value;
+                abatementRateFieldSpecified = value;
             }
         }
         
@@ -21991,10 +21991,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal ReverseChargeRate {
             get {
-                return this.reverseChargeRateField;
+                return reverseChargeRateField;
             }
             set {
-                this.reverseChargeRateField = value;
+                reverseChargeRateField = value;
             }
         }
         
@@ -22003,10 +22003,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReverseChargeRateSpecified {
             get {
-                return this.reverseChargeRateFieldSpecified;
+                return reverseChargeRateFieldSpecified;
             }
             set {
-                this.reverseChargeRateFieldSpecified = value;
+                reverseChargeRateFieldSpecified = value;
             }
         }
         
@@ -22020,10 +22020,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ServiceType {
             get {
-                return this.serviceTypeField;
+                return serviceTypeField;
             }
             set {
-                this.serviceTypeField = value;
+                serviceTypeField = value;
             }
         }
         
@@ -22039,10 +22039,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ItemCategoryType {
             get {
-                return this.itemCategoryTypeField;
+                return itemCategoryTypeField;
             }
             set {
-                this.itemCategoryTypeField = value;
+                itemCategoryTypeField = value;
             }
         }
         
@@ -22053,10 +22053,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ItemEx {
             get {
-                return this.itemExField;
+                return itemExField;
             }
             set {
-                this.itemExField = value;
+                itemExField = value;
             }
         }
         
@@ -22070,10 +22070,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxClassificationRef {
             get {
-                return this.taxClassificationRefField;
+                return taxClassificationRefField;
             }
             set {
-                this.taxClassificationRefField = value;
+                taxClassificationRefField = value;
             }
         }
         
@@ -22087,10 +22087,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string UQCDisplayText {
             get {
-                return this.uQCDisplayTextField;
+                return uQCDisplayTextField;
             }
             set {
-                this.uQCDisplayTextField = value;
+                uQCDisplayTextField = value;
             }
         }
         
@@ -22104,10 +22104,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string UQCId {
             get {
-                return this.uQCIdField;
+                return uQCIdField;
             }
             set {
-                this.uQCIdField = value;
+                uQCIdField = value;
             }
         }
         
@@ -22121,10 +22121,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
     }
@@ -22186,10 +22186,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -22205,10 +22205,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -22217,10 +22217,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -22237,10 +22237,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -22256,10 +22256,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DiscountPercent {
             get {
-                return this.discountPercentField;
+                return discountPercentField;
             }
             set {
-                this.discountPercentField = value;
+                discountPercentField = value;
             }
         }
         
@@ -22268,10 +22268,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DiscountPercentSpecified {
             get {
-                return this.discountPercentFieldSpecified;
+                return discountPercentFieldSpecified;
             }
             set {
-                this.discountPercentFieldSpecified = value;
+                discountPercentFieldSpecified = value;
             }
         }
         
@@ -22284,10 +22284,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -22297,10 +22297,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemsChoiceType[] ItemsElementName {
             get {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set {
-                this.itemsElementNameField = value;
+                itemsElementNameField = value;
             }
         }
         
@@ -22314,10 +22314,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType SalesTermEx {
             get {
-                return this.salesTermExField;
+                return salesTermExField;
             }
             set {
-                this.salesTermExField = value;
+                salesTermExField = value;
             }
         }
     }
@@ -22368,20 +22368,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType BankAccountRef {
             get {
-                return this.bankAccountRefField;
+                return bankAccountRefField;
             }
             set {
-                this.bankAccountRefField = value;
+                bankAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -22390,10 +22390,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
         
@@ -22407,10 +22407,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CheckPayment CheckDetail {
             get {
-                return this.checkDetailField;
+                return checkDetailField;
             }
             set {
-                this.checkDetailField = value;
+                checkDetailField = value;
             }
         }
         
@@ -22421,10 +22421,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress PayeeAddr {
             get {
-                return this.payeeAddrField;
+                return payeeAddrField;
             }
             set {
-                this.payeeAddrField = value;
+                payeeAddrField = value;
             }
         }
         
@@ -22435,10 +22435,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType BillPaymentCheckEx {
             get {
-                return this.billPaymentCheckExField;
+                return billPaymentCheckExField;
             }
             set {
-                this.billPaymentCheckExField = value;
+                billPaymentCheckExField = value;
             }
         }
     }
@@ -22461,20 +22461,20 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType CCAccountRef {
             get {
-                return this.cCAccountRefField;
+                return cCAccountRefField;
             }
             set {
-                this.cCAccountRefField = value;
+                cCAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public CreditCardPayment CCDetail {
             get {
-                return this.cCDetailField;
+                return cCDetailField;
             }
             set {
-                this.cCDetailField = value;
+                cCDetailField = value;
             }
         }
         
@@ -22485,10 +22485,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType BillPaymentCreditCardEx {
             get {
-                return this.billPaymentCreditCardExField;
+                return billPaymentCreditCardExField;
             }
             set {
-                this.billPaymentCreditCardExField = value;
+                billPaymentCreditCardExField = value;
             }
         }
     }
@@ -22537,10 +22537,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType VendorRef {
             get {
-                return this.vendorRefField;
+                return vendorRefField;
             }
             set {
-                this.vendorRefField = value;
+                vendorRefField = value;
             }
         }
         
@@ -22553,10 +22553,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress VendorAddr {
             get {
-                return this.vendorAddrField;
+                return vendorAddrField;
             }
             set {
-                this.vendorAddrField = value;
+                vendorAddrField = value;
             }
         }
         
@@ -22574,10 +22574,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType APAccountRef {
             get {
-                return this.aPAccountRefField;
+                return aPAccountRefField;
             }
             set {
-                this.aPAccountRefField = value;
+                aPAccountRefField = value;
             }
         }
         
@@ -22589,10 +22589,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BillPaymentTypeEnum PayType {
             get {
-                return this.payTypeField;
+                return payTypeField;
             }
             set {
-                this.payTypeField = value;
+                payTypeField = value;
             }
         }
         
@@ -22601,10 +22601,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PayTypeSpecified {
             get {
-                return this.payTypeFieldSpecified;
+                return payTypeFieldSpecified;
             }
             set {
-                this.payTypeFieldSpecified = value;
+                payTypeFieldSpecified = value;
             }
         }
         
@@ -22613,10 +22613,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CreditCardPayment", typeof(BillPaymentCreditCard))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -22634,10 +22634,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -22646,10 +22646,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -22660,10 +22660,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType BillPaymentEx {
             get {
-                return this.billPaymentExField;
+                return billPaymentExField;
             }
             set {
-                this.billPaymentExField = value;
+                billPaymentExField = value;
             }
         }
     }
@@ -22696,20 +22696,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
         /// <remarks/>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -22718,20 +22718,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public string Memo {
             get {
-                return this.memoField;
+                return memoField;
             }
             set {
-                this.memoField = value;
+                memoField = value;
             }
         }
     }
@@ -22779,20 +22779,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepositToAccountRef {
             get {
-                return this.depositToAccountRefField;
+                return depositToAccountRefField;
             }
             set {
-                this.depositToAccountRefField = value;
+                depositToAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public CashBackInfo CashBack {
             get {
-                return this.cashBackField;
+                return cashBackField;
             }
             set {
-                this.cashBackField = value;
+                cashBackField = value;
             }
         }
         
@@ -22807,10 +22807,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GlobalTaxCalculationEnum GlobalTaxCalculation {
             get {
-                return this.globalTaxCalculationField;
+                return globalTaxCalculationField;
             }
             set {
-                this.globalTaxCalculationField = value;
+                globalTaxCalculationField = value;
             }
         }
         
@@ -22819,10 +22819,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GlobalTaxCalculationSpecified {
             get {
-                return this.globalTaxCalculationFieldSpecified;
+                return globalTaxCalculationFieldSpecified;
             }
             set {
-                this.globalTaxCalculationFieldSpecified = value;
+                globalTaxCalculationFieldSpecified = value;
             }
         }
         
@@ -22836,10 +22836,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -22848,10 +22848,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -22869,10 +22869,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeTotalAmt {
             get {
-                return this.homeTotalAmtField;
+                return homeTotalAmtField;
             }
             set {
-                this.homeTotalAmtField = value;
+                homeTotalAmtField = value;
             }
         }
         
@@ -22881,10 +22881,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeTotalAmtSpecified {
             get {
-                return this.homeTotalAmtFieldSpecified;
+                return homeTotalAmtFieldSpecified;
             }
             set {
-                this.homeTotalAmtFieldSpecified = value;
+                homeTotalAmtFieldSpecified = value;
             }
         }
         
@@ -22895,10 +22895,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType DepositEx {
             get {
-                return this.depositExField;
+                return depositExField;
             }
             set {
-                this.depositExField = value;
+                depositExField = value;
             }
         }
     }
@@ -22937,10 +22937,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType FromAccountRef {
             get {
-                return this.fromAccountRefField;
+                return fromAccountRefField;
             }
             set {
-                this.fromAccountRefField = value;
+                fromAccountRefField = value;
             }
         }
         
@@ -22951,10 +22951,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ToAccountRef {
             get {
-                return this.toAccountRefField;
+                return toAccountRefField;
             }
             set {
-                this.toAccountRefField = value;
+                toAccountRefField = value;
             }
         }
         
@@ -22965,10 +22965,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -22977,20 +22977,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -23001,10 +23001,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TransferEx {
             get {
-                return this.transferExField;
+                return transferExField;
             }
             set {
-                this.transferExField = value;
+                transferExField = value;
             }
         }
     }
@@ -23083,20 +23083,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxCodeRef {
             get {
-                return this.taxCodeRefField;
+                return taxCodeRefField;
             }
             set {
-                this.taxCodeRefField = value;
+                taxCodeRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -23108,20 +23108,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ReimbursableInfoRef {
             get {
-                return this.reimbursableInfoRefField;
+                return reimbursableInfoRefField;
             }
             set {
-                this.reimbursableInfoRefField = value;
+                reimbursableInfoRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType SalesTermRef {
             get {
-                return this.salesTermRefField;
+                return salesTermRefField;
             }
             set {
-                this.salesTermRefField = value;
+                salesTermRefField = value;
             }
         }
         
@@ -23134,10 +23134,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -23146,10 +23146,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -23161,10 +23161,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ExpectedDate {
             get {
-                return this.expectedDateField;
+                return expectedDateField;
             }
             set {
-                this.expectedDateField = value;
+                expectedDateField = value;
             }
         }
         
@@ -23173,10 +23173,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ExpectedDateSpecified {
             get {
-                return this.expectedDateFieldSpecified;
+                return expectedDateFieldSpecified;
             }
             set {
-                this.expectedDateFieldSpecified = value;
+                expectedDateFieldSpecified = value;
             }
         }
         
@@ -23189,10 +23189,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress VendorAddr {
             get {
-                return this.vendorAddrField;
+                return vendorAddrField;
             }
             set {
-                this.vendorAddrField = value;
+                vendorAddrField = value;
             }
         }
         
@@ -23205,10 +23205,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ShipTo {
             get {
-                return this.shipToField;
+                return shipToField;
             }
             set {
-                this.shipToField = value;
+                shipToField = value;
             }
         }
         
@@ -23218,10 +23218,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public ReferenceType AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -23230,10 +23230,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType2 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -23244,20 +23244,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ShipMethodRef {
             get {
-                return this.shipMethodRefField;
+                return shipMethodRefField;
             }
             set {
-                this.shipMethodRefField = value;
+                shipMethodRefField = value;
             }
         }
         
@@ -23273,10 +23273,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FOB {
             get {
-                return this.fOBField;
+                return fOBField;
             }
             set {
-                this.fOBField = value;
+                fOBField = value;
             }
         }
         
@@ -23291,30 +23291,30 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress POEmail {
             get {
-                return this.pOEmailField;
+                return pOEmailField;
             }
             set {
-                this.pOEmailField = value;
+                pOEmailField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType TemplateRef {
             get {
-                return this.templateRefField;
+                return templateRefField;
             }
             set {
-                this.templateRefField = value;
+                templateRefField = value;
             }
         }
         
         /// <remarks/>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -23323,20 +23323,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public EmailStatusEnum EmailStatus {
             get {
-                return this.emailStatusField;
+                return emailStatusField;
             }
             set {
-                this.emailStatusField = value;
+                emailStatusField = value;
             }
         }
         
@@ -23345,10 +23345,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EmailStatusSpecified {
             get {
-                return this.emailStatusFieldSpecified;
+                return emailStatusFieldSpecified;
             }
             set {
-                this.emailStatusFieldSpecified = value;
+                emailStatusFieldSpecified = value;
             }
         }
         
@@ -23360,10 +23360,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ManuallyClosed {
             get {
-                return this.manuallyClosedField;
+                return manuallyClosedField;
             }
             set {
-                this.manuallyClosedField = value;
+                manuallyClosedField = value;
             }
         }
         
@@ -23372,20 +23372,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ManuallyClosedSpecified {
             get {
-                return this.manuallyClosedFieldSpecified;
+                return manuallyClosedFieldSpecified;
             }
             set {
-                this.manuallyClosedFieldSpecified = value;
+                manuallyClosedFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public PurchaseOrderStatusEnum POStatus {
             get {
-                return this.pOStatusField;
+                return pOStatusField;
             }
             set {
-                this.pOStatusField = value;
+                pOStatusField = value;
             }
         }
         
@@ -23394,10 +23394,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool POStatusSpecified {
             get {
-                return this.pOStatusFieldSpecified;
+                return pOStatusFieldSpecified;
             }
             set {
-                this.pOStatusFieldSpecified = value;
+                pOStatusFieldSpecified = value;
             }
         }
         
@@ -23408,10 +23408,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PurchaseOrderEx {
             get {
-                return this.purchaseOrderExField;
+                return purchaseOrderExField;
             }
             set {
-                this.purchaseOrderExField = value;
+                purchaseOrderExField = value;
             }
         }
     }
@@ -23477,10 +23477,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ManuallyClosed {
             get {
-                return this.manuallyClosedField;
+                return manuallyClosedField;
             }
             set {
-                this.manuallyClosedField = value;
+                manuallyClosedField = value;
             }
         }
         
@@ -23489,10 +23489,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ManuallyClosedSpecified {
             get {
-                return this.manuallyClosedFieldSpecified;
+                return manuallyClosedFieldSpecified;
             }
             set {
-                this.manuallyClosedFieldSpecified = value;
+                manuallyClosedFieldSpecified = value;
             }
         }
         
@@ -23503,10 +23503,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType SalesOrderEx {
             get {
-                return this.salesOrderExField;
+                return salesOrderExField;
             }
             set {
-                this.salesOrderExField = value;
+                salesOrderExField = value;
             }
         }
     }
@@ -23544,10 +23544,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RemainingCredit {
             get {
-                return this.remainingCreditField;
+                return remainingCreditField;
             }
             set {
-                this.remainingCreditField = value;
+                remainingCreditField = value;
             }
         }
         
@@ -23556,10 +23556,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RemainingCreditSpecified {
             get {
-                return this.remainingCreditFieldSpecified;
+                return remainingCreditFieldSpecified;
             }
             set {
-                this.remainingCreditFieldSpecified = value;
+                remainingCreditFieldSpecified = value;
             }
         }
         
@@ -23573,10 +23573,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType InvoiceRef {
             get {
-                return this.invoiceRefField;
+                return invoiceRefField;
             }
             set {
-                this.invoiceRefField = value;
+                invoiceRefField = value;
             }
         }
         
@@ -23587,10 +23587,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CreditMemoEx {
             get {
-                return this.creditMemoExField;
+                return creditMemoExField;
             }
             set {
-                this.creditMemoExField = value;
+                creditMemoExField = value;
             }
         }
     }
@@ -23626,10 +23626,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RemainingCredit {
             get {
-                return this.remainingCreditField;
+                return remainingCreditField;
             }
             set {
-                this.remainingCreditField = value;
+                remainingCreditField = value;
             }
         }
         
@@ -23638,10 +23638,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RemainingCreditSpecified {
             get {
-                return this.remainingCreditFieldSpecified;
+                return remainingCreditFieldSpecified;
             }
             set {
-                this.remainingCreditFieldSpecified = value;
+                remainingCreditFieldSpecified = value;
             }
         }
         
@@ -23652,10 +23652,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType RefundReceiptEx {
             get {
-                return this.refundReceiptExField;
+                return refundReceiptExField;
             }
             set {
-                this.refundReceiptExField = value;
+                refundReceiptExField = value;
             }
         }
     }
@@ -23701,10 +23701,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CreditCardAccountRef {
             get {
-                return this.creditCardAccountRefField;
+                return creditCardAccountRefField;
             }
             set {
-                this.creditCardAccountRefField = value;
+                creditCardAccountRefField = value;
             }
         }
         
@@ -23716,10 +23716,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType BankAccountRef {
             get {
-                return this.bankAccountRefField;
+                return bankAccountRefField;
             }
             set {
-                this.bankAccountRefField = value;
+                bankAccountRefField = value;
             }
         }
         
@@ -23730,10 +23730,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -23742,10 +23742,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
@@ -23758,10 +23758,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType VendorRef {
             get {
-                return this.vendorRefField;
+                return vendorRefField;
             }
             set {
-                this.vendorRefField = value;
+                vendorRefField = value;
             }
         }
         
@@ -23774,10 +23774,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CheckNum {
             get {
-                return this.checkNumField;
+                return checkNumField;
             }
             set {
-                this.checkNumField = value;
+                checkNumField = value;
             }
         }
         
@@ -23788,10 +23788,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PrintStatusEnum PrintStatus {
             get {
-                return this.printStatusField;
+                return printStatusField;
             }
             set {
-                this.printStatusField = value;
+                printStatusField = value;
             }
         }
         
@@ -23800,10 +23800,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintStatusSpecified {
             get {
-                return this.printStatusFieldSpecified;
+                return printStatusFieldSpecified;
             }
             set {
-                this.printStatusFieldSpecified = value;
+                printStatusFieldSpecified = value;
             }
         }
         
@@ -23814,10 +23814,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Memo {
             get {
-                return this.memoField;
+                return memoField;
             }
             set {
-                this.memoField = value;
+                memoField = value;
             }
         }
         
@@ -23828,10 +23828,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CreditCardPaymentEx {
             get {
-                return this.creditCardPaymentExField;
+                return creditCardPaymentExField;
             }
             set {
-                this.creditCardPaymentExField = value;
+                creditCardPaymentExField = value;
             }
         }
     }
@@ -23899,10 +23899,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -23918,10 +23918,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -23930,10 +23930,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -23949,10 +23949,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public currencyCode Code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
+                codeField = value;
             }
         }
         
@@ -23961,10 +23961,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CodeSpecified {
             get {
-                return this.codeFieldSpecified;
+                return codeFieldSpecified;
             }
             set {
-                this.codeFieldSpecified = value;
+                codeFieldSpecified = value;
             }
         }
         
@@ -23979,10 +23979,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Separator {
             get {
-                return this.separatorField;
+                return separatorField;
             }
             set {
-                this.separatorField = value;
+                separatorField = value;
             }
         }
         
@@ -23996,10 +23996,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Format {
             get {
-                return this.formatField;
+                return formatField;
             }
             set {
-                this.formatField = value;
+                formatField = value;
             }
         }
         
@@ -24014,10 +24014,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
         public string DecimalPlaces {
             get {
-                return this.decimalPlacesField;
+                return decimalPlacesField;
             }
             set {
-                this.decimalPlacesField = value;
+                decimalPlacesField = value;
             }
         }
         
@@ -24029,20 +24029,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DecimalSeparator {
             get {
-                return this.decimalSeparatorField;
+                return decimalSeparatorField;
             }
             set {
-                this.decimalSeparatorField = value;
+                decimalSeparatorField = value;
             }
         }
         
         /// <remarks/>
         public string Symbol {
             get {
-                return this.symbolField;
+                return symbolField;
             }
             set {
-                this.symbolField = value;
+                symbolField = value;
             }
         }
         
@@ -24053,10 +24053,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SymbolPositionEnum SymbolPosition {
             get {
-                return this.symbolPositionField;
+                return symbolPositionField;
             }
             set {
-                this.symbolPositionField = value;
+                symbolPositionField = value;
             }
         }
         
@@ -24065,10 +24065,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SymbolPositionSpecified {
             get {
-                return this.symbolPositionFieldSpecified;
+                return symbolPositionFieldSpecified;
             }
             set {
-                this.symbolPositionFieldSpecified = value;
+                symbolPositionFieldSpecified = value;
             }
         }
         
@@ -24084,10 +24084,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UserDefined {
             get {
-                return this.userDefinedField;
+                return userDefinedField;
             }
             set {
-                this.userDefinedField = value;
+                userDefinedField = value;
             }
         }
         
@@ -24096,20 +24096,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UserDefinedSpecified {
             get {
-                return this.userDefinedFieldSpecified;
+                return userDefinedFieldSpecified;
             }
             set {
-                this.userDefinedFieldSpecified = value;
+                userDefinedFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public decimal ExchangeRate {
             get {
-                return this.exchangeRateField;
+                return exchangeRateField;
             }
             set {
-                this.exchangeRateField = value;
+                exchangeRateField = value;
             }
         }
         
@@ -24118,10 +24118,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ExchangeRateSpecified {
             get {
-                return this.exchangeRateFieldSpecified;
+                return exchangeRateFieldSpecified;
             }
             set {
-                this.exchangeRateFieldSpecified = value;
+                exchangeRateFieldSpecified = value;
             }
         }
         
@@ -24129,10 +24129,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime AsOfDate {
             get {
-                return this.asOfDateField;
+                return asOfDateField;
             }
             set {
-                this.asOfDateField = value;
+                asOfDateField = value;
             }
         }
         
@@ -24141,10 +24141,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AsOfDateSpecified {
             get {
-                return this.asOfDateFieldSpecified;
+                return asOfDateFieldSpecified;
             }
             set {
-                this.asOfDateFieldSpecified = value;
+                asOfDateFieldSpecified = value;
             }
         }
         
@@ -24155,10 +24155,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CurrencyEx {
             get {
-                return this.currencyExField;
+                return currencyExField;
             }
             set {
-                this.currencyExField = value;
+                currencyExField = value;
             }
         }
     }
@@ -24780,10 +24780,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
+                codeField = value;
             }
         }
         
@@ -24797,10 +24797,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -24816,10 +24816,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -24828,10 +24828,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -24842,10 +24842,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CompanyCurrencyEx {
             get {
-                return this.companyCurrencyExField;
+                return companyCurrencyExField;
             }
             set {
-                this.companyCurrencyExField = value;
+                companyCurrencyExField = value;
             }
         }
     }
@@ -24890,10 +24890,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SourceCurrencyCode {
             get {
-                return this.sourceCurrencyCodeField;
+                return sourceCurrencyCodeField;
             }
             set {
-                this.sourceCurrencyCodeField = value;
+                sourceCurrencyCodeField = value;
             }
         }
         
@@ -24910,10 +24910,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TargetCurrencyCode {
             get {
-                return this.targetCurrencyCodeField;
+                return targetCurrencyCodeField;
             }
             set {
-                this.targetCurrencyCodeField = value;
+                targetCurrencyCodeField = value;
             }
         }
         
@@ -24927,10 +24927,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Rate {
             get {
-                return this.rateField;
+                return rateField;
             }
             set {
-                this.rateField = value;
+                rateField = value;
             }
         }
         
@@ -24939,10 +24939,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RateSpecified {
             get {
-                return this.rateFieldSpecified;
+                return rateFieldSpecified;
             }
             set {
-                this.rateFieldSpecified = value;
+                rateFieldSpecified = value;
             }
         }
         
@@ -24957,10 +24957,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime AsOfDate {
             get {
-                return this.asOfDateField;
+                return asOfDateField;
             }
             set {
-                this.asOfDateField = value;
+                asOfDateField = value;
             }
         }
         
@@ -24969,10 +24969,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AsOfDateSpecified {
             get {
-                return this.asOfDateFieldSpecified;
+                return asOfDateFieldSpecified;
             }
             set {
-                this.asOfDateFieldSpecified = value;
+                asOfDateFieldSpecified = value;
             }
         }
         
@@ -24983,10 +24983,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ExchangeRateEx {
             get {
-                return this.exchangeRateExField;
+                return exchangeRateExField;
             }
             set {
-                this.exchangeRateExField = value;
+                exchangeRateExField = value;
             }
         }
     }
@@ -25039,10 +25039,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SalesRepTypeEnum NameOf {
             get {
-                return this.nameOfField;
+                return nameOfField;
             }
             set {
-                this.nameOfField = value;
+                nameOfField = value;
             }
         }
         
@@ -25051,10 +25051,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NameOfSpecified {
             get {
-                return this.nameOfFieldSpecified;
+                return nameOfFieldSpecified;
             }
             set {
-                this.nameOfFieldSpecified = value;
+                nameOfFieldSpecified = value;
             }
         }
         
@@ -25070,10 +25070,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -25082,10 +25082,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -25096,10 +25096,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public ReferenceType AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -25108,10 +25108,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType3 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -25126,10 +25126,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Initials {
             get {
-                return this.initialsField;
+                return initialsField;
             }
             set {
-                this.initialsField = value;
+                initialsField = value;
             }
         }
         
@@ -25143,10 +25143,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType SalesRepEx {
             get {
-                return this.salesRepExField;
+                return salesRepExField;
             }
             set {
-                this.salesRepExField = value;
+                salesRepExField = value;
             }
         }
     }
@@ -25215,30 +25215,30 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public object Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
         /// <remarks/>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
         /// <remarks/>
         public PriceLevelTypeEnum PriceLevelType {
             get {
-                return this.priceLevelTypeField;
+                return priceLevelTypeField;
             }
             set {
-                this.priceLevelTypeField = value;
+                priceLevelTypeField = value;
             }
         }
         
@@ -25247,10 +25247,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("PriceLevelPerItem", typeof(PriceLevelPerItem))]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -25264,10 +25264,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CurrencyRef {
             get {
-                return this.currencyRefField;
+                return currencyRefField;
             }
             set {
-                this.currencyRefField = value;
+                currencyRefField = value;
             }
         }
         
@@ -25278,10 +25278,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PriceLevelEx {
             get {
-                return this.priceLevelExField;
+                return priceLevelExField;
             }
             set {
-                this.priceLevelExField = value;
+                priceLevelExField = value;
             }
         }
     }
@@ -25314,10 +25314,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
@@ -25327,10 +25327,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public decimal AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -25339,10 +25339,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType4 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -25353,10 +25353,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType PriceLevelPerItemEx {
             get {
-                return this.priceLevelPerItemExField;
+                return priceLevelPerItemExField;
             }
             set {
-                this.priceLevelPerItemExField = value;
+                priceLevelPerItemExField = value;
             }
         }
     }
@@ -25406,10 +25406,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -25421,10 +25421,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -25433,10 +25433,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -25447,10 +25447,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CustomerMsgEx {
             get {
-                return this.customerMsgExField;
+                return customerMsgExField;
             }
             set {
-                this.customerMsgExField = value;
+                customerMsgExField = value;
             }
         }
     }
@@ -25503,10 +25503,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Adjustment {
             get {
-                return this.adjustmentField;
+                return adjustmentField;
             }
             set {
-                this.adjustmentField = value;
+                adjustmentField = value;
             }
         }
         
@@ -25515,10 +25515,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AdjustmentSpecified {
             get {
-                return this.adjustmentFieldSpecified;
+                return adjustmentFieldSpecified;
             }
             set {
-                this.adjustmentFieldSpecified = value;
+                adjustmentFieldSpecified = value;
             }
         }
         
@@ -25539,10 +25539,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool HomeCurrencyAdjustment {
             get {
-                return this.homeCurrencyAdjustmentField;
+                return homeCurrencyAdjustmentField;
             }
             set {
-                this.homeCurrencyAdjustmentField = value;
+                homeCurrencyAdjustmentField = value;
             }
         }
         
@@ -25551,10 +25551,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeCurrencyAdjustmentSpecified {
             get {
-                return this.homeCurrencyAdjustmentFieldSpecified;
+                return homeCurrencyAdjustmentFieldSpecified;
             }
             set {
-                this.homeCurrencyAdjustmentFieldSpecified = value;
+                homeCurrencyAdjustmentFieldSpecified = value;
             }
         }
         
@@ -25570,10 +25570,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool EnteredInHomeCurrency {
             get {
-                return this.enteredInHomeCurrencyField;
+                return enteredInHomeCurrencyField;
             }
             set {
-                this.enteredInHomeCurrencyField = value;
+                enteredInHomeCurrencyField = value;
             }
         }
         
@@ -25582,10 +25582,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EnteredInHomeCurrencySpecified {
             get {
-                return this.enteredInHomeCurrencyFieldSpecified;
+                return enteredInHomeCurrencyFieldSpecified;
             }
             set {
-                this.enteredInHomeCurrencyFieldSpecified = value;
+                enteredInHomeCurrencyFieldSpecified = value;
             }
         }
         
@@ -25600,10 +25600,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public GlobalTaxCalculationEnum GlobalTaxCalculation {
             get {
-                return this.globalTaxCalculationField;
+                return globalTaxCalculationField;
             }
             set {
-                this.globalTaxCalculationField = value;
+                globalTaxCalculationField = value;
             }
         }
         
@@ -25612,10 +25612,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GlobalTaxCalculationSpecified {
             get {
-                return this.globalTaxCalculationFieldSpecified;
+                return globalTaxCalculationFieldSpecified;
             }
             set {
-                this.globalTaxCalculationFieldSpecified = value;
+                globalTaxCalculationFieldSpecified = value;
             }
         }
         
@@ -25638,10 +25638,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -25650,10 +25650,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -25671,10 +25671,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HomeTotalAmt {
             get {
-                return this.homeTotalAmtField;
+                return homeTotalAmtField;
             }
             set {
-                this.homeTotalAmtField = value;
+                homeTotalAmtField = value;
             }
         }
         
@@ -25683,10 +25683,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HomeTotalAmtSpecified {
             get {
-                return this.homeTotalAmtFieldSpecified;
+                return homeTotalAmtFieldSpecified;
             }
             set {
-                this.homeTotalAmtFieldSpecified = value;
+                homeTotalAmtFieldSpecified = value;
             }
         }
         
@@ -25697,10 +25697,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType JournalEntryEx {
             get {
-                return this.journalEntryExField;
+                return journalEntryExField;
             }
             set {
-                this.journalEntryExField = value;
+                journalEntryExField = value;
             }
         }
     }
@@ -25793,10 +25793,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TimeZone {
             get {
-                return this.timeZoneField;
+                return timeZoneField;
             }
             set {
-                this.timeZoneField = value;
+                timeZoneField = value;
             }
         }
         
@@ -25808,10 +25808,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime TxnDate {
             get {
-                return this.txnDateField;
+                return txnDateField;
             }
             set {
-                this.txnDateField = value;
+                txnDateField = value;
             }
         }
         
@@ -25820,20 +25820,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnDateSpecified {
             get {
-                return this.txnDateFieldSpecified;
+                return txnDateFieldSpecified;
             }
             set {
-                this.txnDateFieldSpecified = value;
+                txnDateFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public TimeActivityTypeEnum NameOf {
             get {
-                return this.nameOfField;
+                return nameOfField;
             }
             set {
-                this.nameOfField = value;
+                nameOfField = value;
             }
         }
         
@@ -25842,10 +25842,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NameOfSpecified {
             get {
-                return this.nameOfFieldSpecified;
+                return nameOfFieldSpecified;
             }
             set {
-                this.nameOfFieldSpecified = value;
+                nameOfFieldSpecified = value;
             }
         }
         
@@ -25856,10 +25856,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public ReferenceType AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -25868,10 +25868,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType5 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -25882,10 +25882,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -25896,10 +25896,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepartmentRef {
             get {
-                return this.departmentRefField;
+                return departmentRefField;
             }
             set {
-                this.departmentRefField = value;
+                departmentRefField = value;
             }
         }
         
@@ -25912,20 +25912,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ItemRef {
             get {
-                return this.itemRefField;
+                return itemRefField;
             }
             set {
-                this.itemRefField = value;
+                itemRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -25941,10 +25941,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PayrollItemRef {
             get {
-                return this.payrollItemRefField;
+                return payrollItemRefField;
             }
             set {
-                this.payrollItemRefField = value;
+                payrollItemRefField = value;
             }
         }
         
@@ -25955,10 +25955,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BillableStatusEnum BillableStatus {
             get {
-                return this.billableStatusField;
+                return billableStatusField;
             }
             set {
-                this.billableStatusField = value;
+                billableStatusField = value;
             }
         }
         
@@ -25967,10 +25967,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableStatusSpecified {
             get {
-                return this.billableStatusFieldSpecified;
+                return billableStatusFieldSpecified;
             }
             set {
-                this.billableStatusFieldSpecified = value;
+                billableStatusFieldSpecified = value;
             }
         }
         
@@ -25981,10 +25981,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Taxable {
             get {
-                return this.taxableField;
+                return taxableField;
             }
             set {
-                this.taxableField = value;
+                taxableField = value;
             }
         }
         
@@ -25993,10 +25993,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxableSpecified {
             get {
-                return this.taxableFieldSpecified;
+                return taxableFieldSpecified;
             }
             set {
-                this.taxableFieldSpecified = value;
+                taxableFieldSpecified = value;
             }
         }
         
@@ -26011,10 +26011,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal HourlyRate {
             get {
-                return this.hourlyRateField;
+                return hourlyRateField;
             }
             set {
-                this.hourlyRateField = value;
+                hourlyRateField = value;
             }
         }
         
@@ -26023,10 +26023,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HourlyRateSpecified {
             get {
-                return this.hourlyRateFieldSpecified;
+                return hourlyRateFieldSpecified;
             }
             set {
-                this.hourlyRateFieldSpecified = value;
+                hourlyRateFieldSpecified = value;
             }
         }
         
@@ -26036,10 +26036,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int Hours {
             get {
-                return this.hoursField;
+                return hoursField;
             }
             set {
-                this.hoursField = value;
+                hoursField = value;
             }
         }
         
@@ -26048,10 +26048,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HoursSpecified {
             get {
-                return this.hoursFieldSpecified;
+                return hoursFieldSpecified;
             }
             set {
-                this.hoursFieldSpecified = value;
+                hoursFieldSpecified = value;
             }
         }
         
@@ -26062,10 +26062,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int Minutes {
             get {
-                return this.minutesField;
+                return minutesField;
             }
             set {
-                this.minutesField = value;
+                minutesField = value;
             }
         }
         
@@ -26074,10 +26074,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MinutesSpecified {
             get {
-                return this.minutesFieldSpecified;
+                return minutesFieldSpecified;
             }
             set {
-                this.minutesFieldSpecified = value;
+                minutesFieldSpecified = value;
             }
         }
         
@@ -26091,10 +26091,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int BreakHours {
             get {
-                return this.breakHoursField;
+                return breakHoursField;
             }
             set {
-                this.breakHoursField = value;
+                breakHoursField = value;
             }
         }
         
@@ -26103,10 +26103,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BreakHoursSpecified {
             get {
-                return this.breakHoursFieldSpecified;
+                return breakHoursFieldSpecified;
             }
             set {
-                this.breakHoursFieldSpecified = value;
+                breakHoursFieldSpecified = value;
             }
         }
         
@@ -26120,10 +26120,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int BreakMinutes {
             get {
-                return this.breakMinutesField;
+                return breakMinutesField;
             }
             set {
-                this.breakMinutesField = value;
+                breakMinutesField = value;
             }
         }
         
@@ -26132,10 +26132,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BreakMinutesSpecified {
             get {
-                return this.breakMinutesFieldSpecified;
+                return breakMinutesFieldSpecified;
             }
             set {
-                this.breakMinutesFieldSpecified = value;
+                breakMinutesFieldSpecified = value;
             }
         }
         
@@ -26148,10 +26148,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime StartTime {
             get {
-                return this.startTimeField;
+                return startTimeField;
             }
             set {
-                this.startTimeField = value;
+                startTimeField = value;
             }
         }
         
@@ -26160,10 +26160,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartTimeSpecified {
             get {
-                return this.startTimeFieldSpecified;
+                return startTimeFieldSpecified;
             }
             set {
-                this.startTimeFieldSpecified = value;
+                startTimeFieldSpecified = value;
             }
         }
         
@@ -26176,10 +26176,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime EndTime {
             get {
-                return this.endTimeField;
+                return endTimeField;
             }
             set {
-                this.endTimeField = value;
+                endTimeField = value;
             }
         }
         
@@ -26188,10 +26188,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndTimeSpecified {
             get {
-                return this.endTimeFieldSpecified;
+                return endTimeFieldSpecified;
             }
             set {
-                this.endTimeFieldSpecified = value;
+                endTimeFieldSpecified = value;
             }
         }
         
@@ -26202,10 +26202,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -26216,10 +26216,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TimeActivityEx {
             get {
-                return this.timeActivityExField;
+                return timeActivityExField;
             }
             set {
-                this.timeActivityExField = value;
+                timeActivityExField = value;
             }
         }
         
@@ -26232,10 +26232,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool HoursInEmployeeTimeZone {
             get {
-                return this.hoursInEmployeeTimeZoneField;
+                return hoursInEmployeeTimeZoneField;
             }
             set {
-                this.hoursInEmployeeTimeZoneField = value;
+                hoursInEmployeeTimeZoneField = value;
             }
         }
         
@@ -26244,10 +26244,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HoursInEmployeeTimeZoneSpecified {
             get {
-                return this.hoursInEmployeeTimeZoneFieldSpecified;
+                return hoursInEmployeeTimeZoneFieldSpecified;
             }
             set {
-                this.hoursInEmployeeTimeZoneFieldSpecified = value;
+                hoursInEmployeeTimeZoneFieldSpecified = value;
             }
         }
     }
@@ -26318,10 +26318,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -26336,10 +26336,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -26348,10 +26348,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -26365,10 +26365,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool DefaultSite {
             get {
-                return this.defaultSiteField;
+                return defaultSiteField;
             }
             set {
-                this.defaultSiteField = value;
+                defaultSiteField = value;
             }
         }
         
@@ -26377,10 +26377,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultSiteSpecified {
             get {
-                return this.defaultSiteFieldSpecified;
+                return defaultSiteFieldSpecified;
             }
             set {
-                this.defaultSiteFieldSpecified = value;
+                defaultSiteFieldSpecified = value;
             }
         }
         
@@ -26393,10 +26393,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -26410,10 +26410,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Contact {
             get {
-                return this.contactField;
+                return contactField;
             }
             set {
-                this.contactField = value;
+                contactField = value;
             }
         }
         
@@ -26427,10 +26427,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Addr")]
         public PhysicalAddress[] Addr {
             get {
-                return this.addrField;
+                return addrField;
             }
             set {
-                this.addrField = value;
+                addrField = value;
             }
         }
         
@@ -26444,10 +26444,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ContactInfo")]
         public ContactInfo[] ContactInfo {
             get {
-                return this.contactInfoField;
+                return contactInfoField;
             }
             set {
-                this.contactInfoField = value;
+                contactInfoField = value;
             }
         }
         
@@ -26458,10 +26458,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType InventorySiteEx {
             get {
-                return this.inventorySiteExField;
+                return inventorySiteExField;
             }
             set {
-                this.inventorySiteExField = value;
+                inventorySiteExField = value;
             }
         }
     }
@@ -26498,10 +26498,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -26515,10 +26515,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -26529,10 +26529,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ShipMethodEx {
             get {
-                return this.shipMethodExField;
+                return shipMethodExField;
             }
             set {
-                this.shipMethodExField = value;
+                shipMethodExField = value;
             }
         }
     }
@@ -26581,10 +26581,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Notes {
             get {
-                return this.notesField;
+                return notesField;
             }
             set {
-                this.notesField = value;
+                notesField = value;
             }
         }
         
@@ -26597,10 +26597,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string From {
             get {
-                return this.fromField;
+                return fromField;
             }
             set {
-                this.fromField = value;
+                fromField = value;
             }
         }
         
@@ -26613,10 +26613,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -26625,10 +26625,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -26642,10 +26642,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Done {
             get {
-                return this.doneField;
+                return doneField;
             }
             set {
-                this.doneField = value;
+                doneField = value;
             }
         }
         
@@ -26654,10 +26654,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DoneSpecified {
             get {
-                return this.doneFieldSpecified;
+                return doneFieldSpecified;
             }
             set {
-                this.doneFieldSpecified = value;
+                doneFieldSpecified = value;
             }
         }
         
@@ -26672,10 +26672,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ReminderDate {
             get {
-                return this.reminderDateField;
+                return reminderDateField;
             }
             set {
-                this.reminderDateField = value;
+                reminderDateField = value;
             }
         }
         
@@ -26684,10 +26684,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReminderDateSpecified {
             get {
-                return this.reminderDateFieldSpecified;
+                return reminderDateFieldSpecified;
             }
             set {
-                this.reminderDateFieldSpecified = value;
+                reminderDateFieldSpecified = value;
             }
         }
         
@@ -26698,10 +26698,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType TaskEx {
             get {
-                return this.taskExField;
+                return taskExField;
             }
             set {
-                this.taskExField = value;
+                taskExField = value;
             }
         }
     }
@@ -26764,10 +26764,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Notes {
             get {
-                return this.notesField;
+                return notesField;
             }
             set {
-                this.notesField = value;
+                notesField = value;
             }
         }
         
@@ -26780,10 +26780,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -26792,10 +26792,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -26809,10 +26809,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Done {
             get {
-                return this.doneField;
+                return doneField;
             }
             set {
-                this.doneField = value;
+                doneField = value;
             }
         }
         
@@ -26821,10 +26821,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DoneSpecified {
             get {
-                return this.doneFieldSpecified;
+                return doneFieldSpecified;
             }
             set {
-                this.doneFieldSpecified = value;
+                doneFieldSpecified = value;
             }
         }
         
@@ -26838,10 +26838,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -26855,10 +26855,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime ReminderDate {
             get {
-                return this.reminderDateField;
+                return reminderDateField;
             }
             set {
-                this.reminderDateField = value;
+                reminderDateField = value;
             }
         }
         
@@ -26867,10 +26867,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReminderDateSpecified {
             get {
-                return this.reminderDateFieldSpecified;
+                return reminderDateFieldSpecified;
             }
             set {
-                this.reminderDateFieldSpecified = value;
+                reminderDateFieldSpecified = value;
             }
         }
         
@@ -26884,10 +26884,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime ExpireDate {
             get {
-                return this.expireDateField;
+                return expireDateField;
             }
             set {
-                this.expireDateField = value;
+                expireDateField = value;
             }
         }
         
@@ -26896,10 +26896,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ExpireDateSpecified {
             get {
-                return this.expireDateFieldSpecified;
+                return expireDateFieldSpecified;
             }
             set {
-                this.expireDateFieldSpecified = value;
+                expireDateFieldSpecified = value;
             }
         }
         
@@ -26914,10 +26914,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -26926,10 +26926,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -26943,10 +26943,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string URL {
             get {
-                return this.uRLField;
+                return uRLField;
             }
             set {
-                this.uRLField = value;
+                uRLField = value;
             }
         }
         
@@ -26960,10 +26960,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Filter {
             get {
-                return this.filterField;
+                return filterField;
             }
             set {
-                this.filterField = value;
+                filterField = value;
             }
         }
         
@@ -26976,10 +26976,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
         
@@ -26990,10 +26990,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType UserAlertEx {
             get {
-                return this.userAlertExField;
+                return userAlertExField;
             }
             set {
-                this.userAlertExField = value;
+                userAlertExField = value;
             }
         }
     }
@@ -27023,10 +27023,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MultiCurrencyEnabled {
             get {
-                return this.multiCurrencyEnabledField;
+                return multiCurrencyEnabledField;
             }
             set {
-                this.multiCurrencyEnabledField = value;
+                multiCurrencyEnabledField = value;
             }
         }
         
@@ -27035,10 +27035,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MultiCurrencyEnabledSpecified {
             get {
-                return this.multiCurrencyEnabledFieldSpecified;
+                return multiCurrencyEnabledFieldSpecified;
             }
             set {
-                this.multiCurrencyEnabledFieldSpecified = value;
+                multiCurrencyEnabledFieldSpecified = value;
             }
         }
         
@@ -27052,10 +27052,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType HomeCurrency {
             get {
-                return this.homeCurrencyField;
+                return homeCurrencyField;
             }
             set {
-                this.homeCurrencyField = value;
+                homeCurrencyField = value;
             }
         }
     }
@@ -27096,10 +27096,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public bool UsingSalesTax {
             get {
-                return this.usingSalesTaxField;
+                return usingSalesTaxField;
             }
             set {
-                this.usingSalesTaxField = value;
+                usingSalesTaxField = value;
             }
         }
         
@@ -27108,20 +27108,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingSalesTaxSpecified {
             get {
-                return this.usingSalesTaxFieldSpecified;
+                return usingSalesTaxFieldSpecified;
             }
             set {
-                this.usingSalesTaxFieldSpecified = value;
+                usingSalesTaxFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public bool PartnerTaxEnabled {
             get {
-                return this.partnerTaxEnabledField;
+                return partnerTaxEnabledField;
             }
             set {
-                this.partnerTaxEnabledField = value;
+                partnerTaxEnabledField = value;
             }
         }
         
@@ -27130,20 +27130,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PartnerTaxEnabledSpecified {
             get {
-                return this.partnerTaxEnabledFieldSpecified;
+                return partnerTaxEnabledFieldSpecified;
             }
             set {
-                this.partnerTaxEnabledFieldSpecified = value;
+                partnerTaxEnabledFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public bool HideTaxManagement {
             get {
-                return this.hideTaxManagementField;
+                return hideTaxManagementField;
             }
             set {
-                this.hideTaxManagementField = value;
+                hideTaxManagementField = value;
             }
         }
         
@@ -27152,10 +27152,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HideTaxManagementSpecified {
             get {
-                return this.hideTaxManagementFieldSpecified;
+                return hideTaxManagementFieldSpecified;
             }
             set {
-                this.hideTaxManagementFieldSpecified = value;
+                hideTaxManagementFieldSpecified = value;
             }
         }
         
@@ -27165,10 +27165,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public ReferenceType AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -27177,10 +27177,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType1 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -27193,10 +27193,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PaySalesTaxEnum PaySalesTax {
             get {
-                return this.paySalesTaxField;
+                return paySalesTaxField;
             }
             set {
-                this.paySalesTaxField = value;
+                paySalesTaxField = value;
             }
         }
         
@@ -27205,10 +27205,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaySalesTaxSpecified {
             get {
-                return this.paySalesTaxFieldSpecified;
+                return paySalesTaxFieldSpecified;
             }
             set {
-                this.paySalesTaxFieldSpecified = value;
+                paySalesTaxFieldSpecified = value;
             }
         }
         
@@ -27223,10 +27223,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType NonTaxableSalesTaxCodeRef {
             get {
-                return this.nonTaxableSalesTaxCodeRefField;
+                return nonTaxableSalesTaxCodeRefField;
             }
             set {
-                this.nonTaxableSalesTaxCodeRefField = value;
+                nonTaxableSalesTaxCodeRefField = value;
             }
         }
         
@@ -27241,10 +27241,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType TaxableSalesTaxCodeRef {
             get {
-                return this.taxableSalesTaxCodeRefField;
+                return taxableSalesTaxCodeRefField;
             }
             set {
-                this.taxableSalesTaxCodeRefField = value;
+                taxableSalesTaxCodeRefField = value;
             }
         }
     }
@@ -27300,10 +27300,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal AnnualInterestRate {
             get {
-                return this.annualInterestRateField;
+                return annualInterestRateField;
             }
             set {
-                this.annualInterestRateField = value;
+                annualInterestRateField = value;
             }
         }
         
@@ -27312,10 +27312,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AnnualInterestRateSpecified {
             get {
-                return this.annualInterestRateFieldSpecified;
+                return annualInterestRateFieldSpecified;
             }
             set {
-                this.annualInterestRateFieldSpecified = value;
+                annualInterestRateFieldSpecified = value;
             }
         }
         
@@ -27327,10 +27327,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal MinFinChrg {
             get {
-                return this.minFinChrgField;
+                return minFinChrgField;
             }
             set {
-                this.minFinChrgField = value;
+                minFinChrgField = value;
             }
         }
         
@@ -27339,10 +27339,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MinFinChrgSpecified {
             get {
-                return this.minFinChrgFieldSpecified;
+                return minFinChrgFieldSpecified;
             }
             set {
-                this.minFinChrgFieldSpecified = value;
+                minFinChrgFieldSpecified = value;
             }
         }
         
@@ -27355,10 +27355,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
         public string GracePeriod {
             get {
-                return this.gracePeriodField;
+                return gracePeriodField;
             }
             set {
-                this.gracePeriodField = value;
+                gracePeriodField = value;
             }
         }
         
@@ -27374,10 +27374,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool CalcFinChrgFromTxnDate {
             get {
-                return this.calcFinChrgFromTxnDateField;
+                return calcFinChrgFromTxnDateField;
             }
             set {
-                this.calcFinChrgFromTxnDateField = value;
+                calcFinChrgFromTxnDateField = value;
             }
         }
         
@@ -27386,10 +27386,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CalcFinChrgFromTxnDateSpecified {
             get {
-                return this.calcFinChrgFromTxnDateFieldSpecified;
+                return calcFinChrgFromTxnDateFieldSpecified;
             }
             set {
-                this.calcFinChrgFromTxnDateFieldSpecified = value;
+                calcFinChrgFromTxnDateFieldSpecified = value;
             }
         }
         
@@ -27404,10 +27404,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AssessFinChrgForOverdueCharges {
             get {
-                return this.assessFinChrgForOverdueChargesField;
+                return assessFinChrgForOverdueChargesField;
             }
             set {
-                this.assessFinChrgForOverdueChargesField = value;
+                assessFinChrgForOverdueChargesField = value;
             }
         }
         
@@ -27416,10 +27416,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AssessFinChrgForOverdueChargesSpecified {
             get {
-                return this.assessFinChrgForOverdueChargesFieldSpecified;
+                return assessFinChrgForOverdueChargesFieldSpecified;
             }
             set {
-                this.assessFinChrgForOverdueChargesFieldSpecified = value;
+                assessFinChrgForOverdueChargesFieldSpecified = value;
             }
         }
         
@@ -27434,10 +27434,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType FinChrgAccountRef {
             get {
-                return this.finChrgAccountRefField;
+                return finChrgAccountRefField;
             }
             set {
-                this.finChrgAccountRefField = value;
+                finChrgAccountRefField = value;
             }
         }
     }
@@ -27509,10 +27509,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UseAccountNumbers {
             get {
-                return this.useAccountNumbersField;
+                return useAccountNumbersField;
             }
             set {
-                this.useAccountNumbersField = value;
+                useAccountNumbersField = value;
             }
         }
         
@@ -27521,10 +27521,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UseAccountNumbersSpecified {
             get {
-                return this.useAccountNumbersFieldSpecified;
+                return useAccountNumbersFieldSpecified;
             }
             set {
-                this.useAccountNumbersFieldSpecified = value;
+                useAccountNumbersFieldSpecified = value;
             }
         }
         
@@ -27534,10 +27534,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultARAccount {
             get {
-                return this.defaultARAccountField;
+                return defaultARAccountField;
             }
             set {
-                this.defaultARAccountField = value;
+                defaultARAccountField = value;
             }
         }
         
@@ -27547,10 +27547,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultAPAccount {
             get {
-                return this.defaultAPAccountField;
+                return defaultAPAccountField;
             }
             set {
-                this.defaultAPAccountField = value;
+                defaultAPAccountField = value;
             }
         }
         
@@ -27563,10 +27563,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool RequiresAccounts {
             get {
-                return this.requiresAccountsField;
+                return requiresAccountsField;
             }
             set {
-                this.requiresAccountsField = value;
+                requiresAccountsField = value;
             }
         }
         
@@ -27575,10 +27575,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RequiresAccountsSpecified {
             get {
-                return this.requiresAccountsFieldSpecified;
+                return requiresAccountsFieldSpecified;
             }
             set {
-                this.requiresAccountsFieldSpecified = value;
+                requiresAccountsFieldSpecified = value;
             }
         }
         
@@ -27592,10 +27592,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackDepartments {
             get {
-                return this.trackDepartmentsField;
+                return trackDepartmentsField;
             }
             set {
-                this.trackDepartmentsField = value;
+                trackDepartmentsField = value;
             }
         }
         
@@ -27604,10 +27604,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackDepartmentsSpecified {
             get {
-                return this.trackDepartmentsFieldSpecified;
+                return trackDepartmentsFieldSpecified;
             }
             set {
-                this.trackDepartmentsFieldSpecified = value;
+                trackDepartmentsFieldSpecified = value;
             }
         }
         
@@ -27620,10 +27620,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DepartmentTerminology {
             get {
-                return this.departmentTerminologyField;
+                return departmentTerminologyField;
             }
             set {
-                this.departmentTerminologyField = value;
+                departmentTerminologyField = value;
             }
         }
         
@@ -27636,10 +27636,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ClassTrackingPerTxn {
             get {
-                return this.classTrackingPerTxnField;
+                return classTrackingPerTxnField;
             }
             set {
-                this.classTrackingPerTxnField = value;
+                classTrackingPerTxnField = value;
             }
         }
         
@@ -27648,10 +27648,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ClassTrackingPerTxnSpecified {
             get {
-                return this.classTrackingPerTxnFieldSpecified;
+                return classTrackingPerTxnFieldSpecified;
             }
             set {
-                this.classTrackingPerTxnFieldSpecified = value;
+                classTrackingPerTxnFieldSpecified = value;
             }
         }
         
@@ -27665,10 +27665,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ClassTrackingPerTxnLine {
             get {
-                return this.classTrackingPerTxnLineField;
+                return classTrackingPerTxnLineField;
             }
             set {
-                this.classTrackingPerTxnLineField = value;
+                classTrackingPerTxnLineField = value;
             }
         }
         
@@ -27677,10 +27677,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ClassTrackingPerTxnLineSpecified {
             get {
-                return this.classTrackingPerTxnLineFieldSpecified;
+                return classTrackingPerTxnLineFieldSpecified;
             }
             set {
-                this.classTrackingPerTxnLineFieldSpecified = value;
+                classTrackingPerTxnLineFieldSpecified = value;
             }
         }
         
@@ -27691,10 +27691,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AutoJournalEntryNumber {
             get {
-                return this.autoJournalEntryNumberField;
+                return autoJournalEntryNumberField;
             }
             set {
-                this.autoJournalEntryNumberField = value;
+                autoJournalEntryNumberField = value;
             }
         }
         
@@ -27703,10 +27703,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AutoJournalEntryNumberSpecified {
             get {
-                return this.autoJournalEntryNumberFieldSpecified;
+                return autoJournalEntryNumberFieldSpecified;
             }
             set {
-                this.autoJournalEntryNumberFieldSpecified = value;
+                autoJournalEntryNumberFieldSpecified = value;
             }
         }
         
@@ -27719,10 +27719,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum FirstMonthOfFiscalYear {
             get {
-                return this.firstMonthOfFiscalYearField;
+                return firstMonthOfFiscalYearField;
             }
             set {
-                this.firstMonthOfFiscalYearField = value;
+                firstMonthOfFiscalYearField = value;
             }
         }
         
@@ -27731,10 +27731,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FirstMonthOfFiscalYearSpecified {
             get {
-                return this.firstMonthOfFiscalYearFieldSpecified;
+                return firstMonthOfFiscalYearFieldSpecified;
             }
             set {
-                this.firstMonthOfFiscalYearFieldSpecified = value;
+                firstMonthOfFiscalYearFieldSpecified = value;
             }
         }
         
@@ -27747,10 +27747,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public MonthEnum TaxYearMonth {
             get {
-                return this.taxYearMonthField;
+                return taxYearMonthField;
             }
             set {
-                this.taxYearMonthField = value;
+                taxYearMonthField = value;
             }
         }
         
@@ -27759,10 +27759,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxYearMonthSpecified {
             get {
-                return this.taxYearMonthFieldSpecified;
+                return taxYearMonthFieldSpecified;
             }
             set {
-                this.taxYearMonthFieldSpecified = value;
+                taxYearMonthFieldSpecified = value;
             }
         }
         
@@ -27772,10 +27772,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxForm {
             get {
-                return this.taxFormField;
+                return taxFormField;
             }
             set {
-                this.taxFormField = value;
+                taxFormField = value;
             }
         }
         
@@ -27790,10 +27790,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime BookCloseDate {
             get {
-                return this.bookCloseDateField;
+                return bookCloseDateField;
             }
             set {
-                this.bookCloseDateField = value;
+                bookCloseDateField = value;
             }
         }
         
@@ -27802,10 +27802,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BookCloseDateSpecified {
             get {
-                return this.bookCloseDateFieldSpecified;
+                return bookCloseDateFieldSpecified;
             }
             set {
-                this.bookCloseDateFieldSpecified = value;
+                bookCloseDateFieldSpecified = value;
             }
         }
         
@@ -27819,10 +27819,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
         public ContactInfo[] OtherContactInfo {
             get {
-                return this.otherContactInfoField;
+                return otherContactInfoField;
             }
             set {
-                this.otherContactInfoField = value;
+                otherContactInfoField = value;
             }
         }
         
@@ -27835,10 +27835,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CustomerTerminology {
             get {
-                return this.customerTerminologyField;
+                return customerTerminologyField;
             }
             set {
-                this.customerTerminologyField = value;
+                customerTerminologyField = value;
             }
         }
     }
@@ -27910,10 +27910,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MLIAvailable {
             get {
-                return this.mLIAvailableField;
+                return mLIAvailableField;
             }
             set {
-                this.mLIAvailableField = value;
+                mLIAvailableField = value;
             }
         }
         
@@ -27922,10 +27922,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MLIAvailableSpecified {
             get {
-                return this.mLIAvailableFieldSpecified;
+                return mLIAvailableFieldSpecified;
             }
             set {
-                this.mLIAvailableFieldSpecified = value;
+                mLIAvailableFieldSpecified = value;
             }
         }
         
@@ -27935,10 +27935,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MLIEnabled {
             get {
-                return this.mLIEnabledField;
+                return mLIEnabledField;
             }
             set {
-                this.mLIEnabledField = value;
+                mLIEnabledField = value;
             }
         }
         
@@ -27947,10 +27947,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MLIEnabledSpecified {
             get {
-                return this.mLIEnabledFieldSpecified;
+                return mLIEnabledFieldSpecified;
             }
             set {
-                this.mLIEnabledFieldSpecified = value;
+                mLIEnabledFieldSpecified = value;
             }
         }
         
@@ -27960,10 +27960,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool EnhancedInventoryReceivingEnabled {
             get {
-                return this.enhancedInventoryReceivingEnabledField;
+                return enhancedInventoryReceivingEnabledField;
             }
             set {
-                this.enhancedInventoryReceivingEnabledField = value;
+                enhancedInventoryReceivingEnabledField = value;
             }
         }
         
@@ -27972,10 +27972,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EnhancedInventoryReceivingEnabledSpecified {
             get {
-                return this.enhancedInventoryReceivingEnabledFieldSpecified;
+                return enhancedInventoryReceivingEnabledFieldSpecified;
             }
             set {
-                this.enhancedInventoryReceivingEnabledFieldSpecified = value;
+                enhancedInventoryReceivingEnabledFieldSpecified = value;
             }
         }
         
@@ -27985,10 +27985,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingSerialOrLotNumber {
             get {
-                return this.trackingSerialOrLotNumberField;
+                return trackingSerialOrLotNumberField;
             }
             set {
-                this.trackingSerialOrLotNumberField = value;
+                trackingSerialOrLotNumberField = value;
             }
         }
         
@@ -27997,10 +27997,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingSerialOrLotNumberSpecified {
             get {
-                return this.trackingSerialOrLotNumberFieldSpecified;
+                return trackingSerialOrLotNumberFieldSpecified;
             }
             set {
-                this.trackingSerialOrLotNumberFieldSpecified = value;
+                trackingSerialOrLotNumberFieldSpecified = value;
             }
         }
         
@@ -28010,10 +28010,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingOnSalesTransactionsEnabled {
             get {
-                return this.trackingOnSalesTransactionsEnabledField;
+                return trackingOnSalesTransactionsEnabledField;
             }
             set {
-                this.trackingOnSalesTransactionsEnabledField = value;
+                trackingOnSalesTransactionsEnabledField = value;
             }
         }
         
@@ -28022,10 +28022,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingOnSalesTransactionsEnabledSpecified {
             get {
-                return this.trackingOnSalesTransactionsEnabledFieldSpecified;
+                return trackingOnSalesTransactionsEnabledFieldSpecified;
             }
             set {
-                this.trackingOnSalesTransactionsEnabledFieldSpecified = value;
+                trackingOnSalesTransactionsEnabledFieldSpecified = value;
             }
         }
         
@@ -28035,10 +28035,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingOnPurchaseTransactionsEnabled {
             get {
-                return this.trackingOnPurchaseTransactionsEnabledField;
+                return trackingOnPurchaseTransactionsEnabledField;
             }
             set {
-                this.trackingOnPurchaseTransactionsEnabledField = value;
+                trackingOnPurchaseTransactionsEnabledField = value;
             }
         }
         
@@ -28047,10 +28047,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingOnPurchaseTransactionsEnabledSpecified {
             get {
-                return this.trackingOnPurchaseTransactionsEnabledFieldSpecified;
+                return trackingOnPurchaseTransactionsEnabledFieldSpecified;
             }
             set {
-                this.trackingOnPurchaseTransactionsEnabledFieldSpecified = value;
+                trackingOnPurchaseTransactionsEnabledFieldSpecified = value;
             }
         }
         
@@ -28060,10 +28060,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingOnInventoryAdjustmentEnabled {
             get {
-                return this.trackingOnInventoryAdjustmentEnabledField;
+                return trackingOnInventoryAdjustmentEnabledField;
             }
             set {
-                this.trackingOnInventoryAdjustmentEnabledField = value;
+                trackingOnInventoryAdjustmentEnabledField = value;
             }
         }
         
@@ -28072,10 +28072,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingOnInventoryAdjustmentEnabledSpecified {
             get {
-                return this.trackingOnInventoryAdjustmentEnabledFieldSpecified;
+                return trackingOnInventoryAdjustmentEnabledFieldSpecified;
             }
             set {
-                this.trackingOnInventoryAdjustmentEnabledFieldSpecified = value;
+                trackingOnInventoryAdjustmentEnabledFieldSpecified = value;
             }
         }
         
@@ -28085,10 +28085,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingOnBuildAssemblyEnabled {
             get {
-                return this.trackingOnBuildAssemblyEnabledField;
+                return trackingOnBuildAssemblyEnabledField;
             }
             set {
-                this.trackingOnBuildAssemblyEnabledField = value;
+                trackingOnBuildAssemblyEnabledField = value;
             }
         }
         
@@ -28097,10 +28097,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingOnBuildAssemblyEnabledSpecified {
             get {
-                return this.trackingOnBuildAssemblyEnabledFieldSpecified;
+                return trackingOnBuildAssemblyEnabledFieldSpecified;
             }
             set {
-                this.trackingOnBuildAssemblyEnabledFieldSpecified = value;
+                trackingOnBuildAssemblyEnabledFieldSpecified = value;
             }
         }
         
@@ -28110,10 +28110,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool FIFOEnabled {
             get {
-                return this.fIFOEnabledField;
+                return fIFOEnabledField;
             }
             set {
-                this.fIFOEnabledField = value;
+                fIFOEnabledField = value;
             }
         }
         
@@ -28122,10 +28122,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FIFOEnabledSpecified {
             get {
-                return this.fIFOEnabledFieldSpecified;
+                return fIFOEnabledFieldSpecified;
             }
             set {
-                this.fIFOEnabledFieldSpecified = value;
+                fIFOEnabledFieldSpecified = value;
             }
         }
         
@@ -28136,10 +28136,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime FIFOEffectiveDate {
             get {
-                return this.fIFOEffectiveDateField;
+                return fIFOEffectiveDateField;
             }
             set {
-                this.fIFOEffectiveDateField = value;
+                fIFOEffectiveDateField = value;
             }
         }
         
@@ -28148,10 +28148,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FIFOEffectiveDateSpecified {
             get {
-                return this.fIFOEffectiveDateFieldSpecified;
+                return fIFOEffectiveDateFieldSpecified;
             }
             set {
-                this.fIFOEffectiveDateFieldSpecified = value;
+                fIFOEffectiveDateFieldSpecified = value;
             }
         }
         
@@ -28165,10 +28165,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool RowShelfBinEnabled {
             get {
-                return this.rowShelfBinEnabledField;
+                return rowShelfBinEnabledField;
             }
             set {
-                this.rowShelfBinEnabledField = value;
+                rowShelfBinEnabledField = value;
             }
         }
         
@@ -28177,10 +28177,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RowShelfBinEnabledSpecified {
             get {
-                return this.rowShelfBinEnabledFieldSpecified;
+                return rowShelfBinEnabledFieldSpecified;
             }
             set {
-                this.rowShelfBinEnabledFieldSpecified = value;
+                rowShelfBinEnabledFieldSpecified = value;
             }
         }
         
@@ -28194,10 +28194,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool BarcodeEnabled {
             get {
-                return this.barcodeEnabledField;
+                return barcodeEnabledField;
             }
             set {
-                this.barcodeEnabledField = value;
+                barcodeEnabledField = value;
             }
         }
         
@@ -28206,10 +28206,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BarcodeEnabledSpecified {
             get {
-                return this.barcodeEnabledFieldSpecified;
+                return barcodeEnabledFieldSpecified;
             }
             set {
-                this.barcodeEnabledFieldSpecified = value;
+                barcodeEnabledFieldSpecified = value;
             }
         }
     }
@@ -28260,10 +28260,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ForSales {
             get {
-                return this.forSalesField;
+                return forSalesField;
             }
             set {
-                this.forSalesField = value;
+                forSalesField = value;
             }
         }
         
@@ -28272,10 +28272,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ForSalesSpecified {
             get {
-                return this.forSalesFieldSpecified;
+                return forSalesFieldSpecified;
             }
             set {
-                this.forSalesFieldSpecified = value;
+                forSalesFieldSpecified = value;
             }
         }
         
@@ -28289,10 +28289,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ForPurchase {
             get {
-                return this.forPurchaseField;
+                return forPurchaseField;
             }
             set {
-                this.forPurchaseField = value;
+                forPurchaseField = value;
             }
         }
         
@@ -28301,10 +28301,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ForPurchaseSpecified {
             get {
-                return this.forPurchaseFieldSpecified;
+                return forPurchaseFieldSpecified;
             }
             set {
-                this.forPurchaseFieldSpecified = value;
+                forPurchaseFieldSpecified = value;
             }
         }
         
@@ -28317,10 +28317,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool InventoryAndPurchaseOrder {
             get {
-                return this.inventoryAndPurchaseOrderField;
+                return inventoryAndPurchaseOrderField;
             }
             set {
-                this.inventoryAndPurchaseOrderField = value;
+                inventoryAndPurchaseOrderField = value;
             }
         }
         
@@ -28329,10 +28329,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool InventoryAndPurchaseOrderSpecified {
             get {
-                return this.inventoryAndPurchaseOrderFieldSpecified;
+                return inventoryAndPurchaseOrderFieldSpecified;
             }
             set {
-                this.inventoryAndPurchaseOrderFieldSpecified = value;
+                inventoryAndPurchaseOrderFieldSpecified = value;
             }
         }
         
@@ -28346,10 +28346,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool QuantityWithPriceAndRate {
             get {
-                return this.quantityWithPriceAndRateField;
+                return quantityWithPriceAndRateField;
             }
             set {
-                this.quantityWithPriceAndRateField = value;
+                quantityWithPriceAndRateField = value;
             }
         }
         
@@ -28358,10 +28358,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QuantityWithPriceAndRateSpecified {
             get {
-                return this.quantityWithPriceAndRateFieldSpecified;
+                return quantityWithPriceAndRateFieldSpecified;
             }
             set {
-                this.quantityWithPriceAndRateFieldSpecified = value;
+                quantityWithPriceAndRateFieldSpecified = value;
             }
         }
         
@@ -28374,10 +28374,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool QuantityOnHand {
             get {
-                return this.quantityOnHandField;
+                return quantityOnHandField;
             }
             set {
-                this.quantityOnHandField = value;
+                quantityOnHandField = value;
             }
         }
         
@@ -28386,10 +28386,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool QuantityOnHandSpecified {
             get {
-                return this.quantityOnHandFieldSpecified;
+                return quantityOnHandFieldSpecified;
             }
             set {
-                this.quantityOnHandFieldSpecified = value;
+                quantityOnHandFieldSpecified = value;
             }
         }
         
@@ -28400,10 +28400,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public UOMFeatureTypeEnum UOM {
             get {
-                return this.uOMField;
+                return uOMField;
             }
             set {
-                this.uOMField = value;
+                uOMField = value;
             }
         }
         
@@ -28412,10 +28412,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UOMSpecified {
             get {
-                return this.uOMFieldSpecified;
+                return uOMFieldSpecified;
             }
             set {
-                this.uOMFieldSpecified = value;
+                uOMFieldSpecified = value;
             }
         }
     }
@@ -28546,10 +28546,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UsingProgressInvoicing {
             get {
-                return this.usingProgressInvoicingField;
+                return usingProgressInvoicingField;
             }
             set {
-                this.usingProgressInvoicingField = value;
+                usingProgressInvoicingField = value;
             }
         }
         
@@ -28558,10 +28558,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingProgressInvoicingSpecified {
             get {
-                return this.usingProgressInvoicingFieldSpecified;
+                return usingProgressInvoicingFieldSpecified;
             }
             set {
-                this.usingProgressInvoicingFieldSpecified = value;
+                usingProgressInvoicingFieldSpecified = value;
             }
         }
         
@@ -28575,10 +28575,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("CustomField")]
         public CustomFieldDefinition[] CustomField {
             get {
-                return this.customFieldField;
+                return customFieldField;
             }
             set {
-                this.customFieldField = value;
+                customFieldField = value;
             }
         }
         
@@ -28591,10 +28591,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool CustomTxnNumbers {
             get {
-                return this.customTxnNumbersField;
+                return customTxnNumbersField;
             }
             set {
-                this.customTxnNumbersField = value;
+                customTxnNumbersField = value;
             }
         }
         
@@ -28603,10 +28603,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CustomTxnNumbersSpecified {
             get {
-                return this.customTxnNumbersFieldSpecified;
+                return customTxnNumbersFieldSpecified;
             }
             set {
-                this.customTxnNumbersFieldSpecified = value;
+                customTxnNumbersFieldSpecified = value;
             }
         }
         
@@ -28619,10 +28619,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool DelayedCharges {
             get {
-                return this.delayedChargesField;
+                return delayedChargesField;
             }
             set {
-                this.delayedChargesField = value;
+                delayedChargesField = value;
             }
         }
         
@@ -28631,10 +28631,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DelayedChargesSpecified {
             get {
-                return this.delayedChargesFieldSpecified;
+                return delayedChargesFieldSpecified;
             }
             set {
-                this.delayedChargesFieldSpecified = value;
+                delayedChargesFieldSpecified = value;
             }
         }
         
@@ -28647,10 +28647,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress SalesEmailCc {
             get {
-                return this.salesEmailCcField;
+                return salesEmailCcField;
             }
             set {
-                this.salesEmailCcField = value;
+                salesEmailCcField = value;
             }
         }
         
@@ -28663,10 +28663,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress SalesEmailBcc {
             get {
-                return this.salesEmailBccField;
+                return salesEmailBccField;
             }
             set {
-                this.salesEmailBccField = value;
+                salesEmailBccField = value;
             }
         }
         
@@ -28678,10 +28678,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool EmailCopyToCompany {
             get {
-                return this.emailCopyToCompanyField;
+                return emailCopyToCompanyField;
             }
             set {
-                this.emailCopyToCompanyField = value;
+                emailCopyToCompanyField = value;
             }
         }
         
@@ -28690,10 +28690,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EmailCopyToCompanySpecified {
             get {
-                return this.emailCopyToCompanyFieldSpecified;
+                return emailCopyToCompanyFieldSpecified;
             }
             set {
-                this.emailCopyToCompanyFieldSpecified = value;
+                emailCopyToCompanyFieldSpecified = value;
             }
         }
         
@@ -28706,10 +28706,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowDeposit {
             get {
-                return this.allowDepositField;
+                return allowDepositField;
             }
             set {
-                this.allowDepositField = value;
+                allowDepositField = value;
             }
         }
         
@@ -28718,10 +28718,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowDepositSpecified {
             get {
-                return this.allowDepositFieldSpecified;
+                return allowDepositFieldSpecified;
             }
             set {
-                this.allowDepositFieldSpecified = value;
+                allowDepositFieldSpecified = value;
             }
         }
         
@@ -28731,10 +28731,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowDiscount {
             get {
-                return this.allowDiscountField;
+                return allowDiscountField;
             }
             set {
-                this.allowDiscountField = value;
+                allowDiscountField = value;
             }
         }
         
@@ -28743,10 +28743,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowDiscountSpecified {
             get {
-                return this.allowDiscountFieldSpecified;
+                return allowDiscountFieldSpecified;
             }
             set {
-                this.allowDiscountFieldSpecified = value;
+                allowDiscountFieldSpecified = value;
             }
         }
         
@@ -28756,10 +28756,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultDiscountAccount {
             get {
-                return this.defaultDiscountAccountField;
+                return defaultDiscountAccountField;
             }
             set {
-                this.defaultDiscountAccountField = value;
+                defaultDiscountAccountField = value;
             }
         }
         
@@ -28772,10 +28772,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowEstimates {
             get {
-                return this.allowEstimatesField;
+                return allowEstimatesField;
             }
             set {
-                this.allowEstimatesField = value;
+                allowEstimatesField = value;
             }
         }
         
@@ -28784,10 +28784,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowEstimatesSpecified {
             get {
-                return this.allowEstimatesFieldSpecified;
+                return allowEstimatesFieldSpecified;
             }
             set {
-                this.allowEstimatesFieldSpecified = value;
+                allowEstimatesFieldSpecified = value;
             }
         }
         
@@ -28800,10 +28800,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EstimateMessage {
             get {
-                return this.estimateMessageField;
+                return estimateMessageField;
             }
             set {
-                this.estimateMessageField = value;
+                estimateMessageField = value;
             }
         }
         
@@ -28816,10 +28816,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ETransactionEnabledStatusEnum ETransactionEnabledStatus {
             get {
-                return this.eTransactionEnabledStatusField;
+                return eTransactionEnabledStatusField;
             }
             set {
-                this.eTransactionEnabledStatusField = value;
+                eTransactionEnabledStatusField = value;
             }
         }
         
@@ -28828,10 +28828,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ETransactionEnabledStatusSpecified {
             get {
-                return this.eTransactionEnabledStatusFieldSpecified;
+                return eTransactionEnabledStatusFieldSpecified;
             }
             set {
-                this.eTransactionEnabledStatusFieldSpecified = value;
+                eTransactionEnabledStatusFieldSpecified = value;
             }
         }
         
@@ -28845,10 +28845,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ETransactionAttachPDF {
             get {
-                return this.eTransactionAttachPDFField;
+                return eTransactionAttachPDFField;
             }
             set {
-                this.eTransactionAttachPDFField = value;
+                eTransactionAttachPDFField = value;
             }
         }
         
@@ -28857,10 +28857,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ETransactionAttachPDFSpecified {
             get {
-                return this.eTransactionAttachPDFFieldSpecified;
+                return eTransactionAttachPDFFieldSpecified;
             }
             set {
-                this.eTransactionAttachPDFFieldSpecified = value;
+                eTransactionAttachPDFFieldSpecified = value;
             }
         }
         
@@ -28873,10 +28873,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ETransactionPaymentEnabled {
             get {
-                return this.eTransactionPaymentEnabledField;
+                return eTransactionPaymentEnabledField;
             }
             set {
-                this.eTransactionPaymentEnabledField = value;
+                eTransactionPaymentEnabledField = value;
             }
         }
         
@@ -28885,10 +28885,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ETransactionPaymentEnabledSpecified {
             get {
-                return this.eTransactionPaymentEnabledFieldSpecified;
+                return eTransactionPaymentEnabledFieldSpecified;
             }
             set {
-                this.eTransactionPaymentEnabledFieldSpecified = value;
+                eTransactionPaymentEnabledFieldSpecified = value;
             }
         }
         
@@ -28902,10 +28902,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IPNSupportEnabled {
             get {
-                return this.iPNSupportEnabledField;
+                return iPNSupportEnabledField;
             }
             set {
-                this.iPNSupportEnabledField = value;
+                iPNSupportEnabledField = value;
             }
         }
         
@@ -28914,10 +28914,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IPNSupportEnabledSpecified {
             get {
-                return this.iPNSupportEnabledFieldSpecified;
+                return iPNSupportEnabledFieldSpecified;
             }
             set {
-                this.iPNSupportEnabledFieldSpecified = value;
+                iPNSupportEnabledFieldSpecified = value;
             }
         }
         
@@ -28930,10 +28930,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string InvoiceMessage {
             get {
-                return this.invoiceMessageField;
+                return invoiceMessageField;
             }
             set {
-                this.invoiceMessageField = value;
+                invoiceMessageField = value;
             }
         }
         
@@ -28946,10 +28946,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowServiceDate {
             get {
-                return this.allowServiceDateField;
+                return allowServiceDateField;
             }
             set {
-                this.allowServiceDateField = value;
+                allowServiceDateField = value;
             }
         }
         
@@ -28958,10 +28958,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowServiceDateSpecified {
             get {
-                return this.allowServiceDateFieldSpecified;
+                return allowServiceDateFieldSpecified;
             }
             set {
-                this.allowServiceDateFieldSpecified = value;
+                allowServiceDateFieldSpecified = value;
             }
         }
         
@@ -28974,10 +28974,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AllowShipping {
             get {
-                return this.allowShippingField;
+                return allowShippingField;
             }
             set {
-                this.allowShippingField = value;
+                allowShippingField = value;
             }
         }
         
@@ -28986,10 +28986,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AllowShippingSpecified {
             get {
-                return this.allowShippingFieldSpecified;
+                return allowShippingFieldSpecified;
             }
             set {
-                this.allowShippingFieldSpecified = value;
+                allowShippingFieldSpecified = value;
             }
         }
         
@@ -29002,10 +29002,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultShippingAccount {
             get {
-                return this.defaultShippingAccountField;
+                return defaultShippingAccountField;
             }
             set {
-                this.defaultShippingAccountField = value;
+                defaultShippingAccountField = value;
             }
         }
         
@@ -29019,10 +29019,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultItem {
             get {
-                return this.defaultItemField;
+                return defaultItemField;
             }
             set {
-                this.defaultItemField = value;
+                defaultItemField = value;
             }
         }
         
@@ -29035,10 +29035,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultTerms {
             get {
-                return this.defaultTermsField;
+                return defaultTermsField;
             }
             set {
-                this.defaultTermsField = value;
+                defaultTermsField = value;
             }
         }
         
@@ -29050,10 +29050,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultDeliveryMethod {
             get {
-                return this.defaultDeliveryMethodField;
+                return defaultDeliveryMethodField;
             }
             set {
-                this.defaultDeliveryMethodField = value;
+                defaultDeliveryMethodField = value;
             }
         }
         
@@ -29066,10 +29066,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AutoApplyCredit {
             get {
-                return this.autoApplyCreditField;
+                return autoApplyCreditField;
             }
             set {
-                this.autoApplyCreditField = value;
+                autoApplyCreditField = value;
             }
         }
         
@@ -29078,10 +29078,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AutoApplyCreditSpecified {
             get {
-                return this.autoApplyCreditFieldSpecified;
+                return autoApplyCreditFieldSpecified;
             }
             set {
-                this.autoApplyCreditFieldSpecified = value;
+                autoApplyCreditFieldSpecified = value;
             }
         }
         
@@ -29094,10 +29094,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AutoApplyPayments {
             get {
-                return this.autoApplyPaymentsField;
+                return autoApplyPaymentsField;
             }
             set {
-                this.autoApplyPaymentsField = value;
+                autoApplyPaymentsField = value;
             }
         }
         
@@ -29106,10 +29106,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AutoApplyPaymentsSpecified {
             get {
-                return this.autoApplyPaymentsFieldSpecified;
+                return autoApplyPaymentsFieldSpecified;
             }
             set {
-                this.autoApplyPaymentsFieldSpecified = value;
+                autoApplyPaymentsFieldSpecified = value;
             }
         }
         
@@ -29122,10 +29122,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool PrintItemWithZeroAmount {
             get {
-                return this.printItemWithZeroAmountField;
+                return printItemWithZeroAmountField;
             }
             set {
-                this.printItemWithZeroAmountField = value;
+                printItemWithZeroAmountField = value;
             }
         }
         
@@ -29134,10 +29134,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PrintItemWithZeroAmountSpecified {
             get {
-                return this.printItemWithZeroAmountFieldSpecified;
+                return printItemWithZeroAmountFieldSpecified;
             }
             set {
-                this.printItemWithZeroAmountFieldSpecified = value;
+                printItemWithZeroAmountFieldSpecified = value;
             }
         }
         
@@ -29153,10 +29153,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultShipMethodRef {
             get {
-                return this.defaultShipMethodRefField;
+                return defaultShipMethodRefField;
             }
             set {
-                this.defaultShipMethodRefField = value;
+                defaultShipMethodRefField = value;
             }
         }
         
@@ -29170,10 +29170,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DefaultMarkup {
             get {
-                return this.defaultMarkupField;
+                return defaultMarkupField;
             }
             set {
-                this.defaultMarkupField = value;
+                defaultMarkupField = value;
             }
         }
         
@@ -29182,10 +29182,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultMarkupSpecified {
             get {
-                return this.defaultMarkupFieldSpecified;
+                return defaultMarkupFieldSpecified;
             }
             set {
-                this.defaultMarkupFieldSpecified = value;
+                defaultMarkupFieldSpecified = value;
             }
         }
         
@@ -29197,10 +29197,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackReimbursableExpensesAsIncome {
             get {
-                return this.trackReimbursableExpensesAsIncomeField;
+                return trackReimbursableExpensesAsIncomeField;
             }
             set {
-                this.trackReimbursableExpensesAsIncomeField = value;
+                trackReimbursableExpensesAsIncomeField = value;
             }
         }
         
@@ -29209,10 +29209,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackReimbursableExpensesAsIncomeSpecified {
             get {
-                return this.trackReimbursableExpensesAsIncomeFieldSpecified;
+                return trackReimbursableExpensesAsIncomeFieldSpecified;
             }
             set {
-                this.trackReimbursableExpensesAsIncomeFieldSpecified = value;
+                trackReimbursableExpensesAsIncomeFieldSpecified = value;
             }
         }
         
@@ -29223,10 +29223,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UsingSalesOrders {
             get {
-                return this.usingSalesOrdersField;
+                return usingSalesOrdersField;
             }
             set {
-                this.usingSalesOrdersField = value;
+                usingSalesOrdersField = value;
             }
         }
         
@@ -29235,10 +29235,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingSalesOrdersSpecified {
             get {
-                return this.usingSalesOrdersFieldSpecified;
+                return usingSalesOrdersFieldSpecified;
             }
             set {
-                this.usingSalesOrdersFieldSpecified = value;
+                usingSalesOrdersFieldSpecified = value;
             }
         }
         
@@ -29249,10 +29249,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UsingPriceLevels {
             get {
-                return this.usingPriceLevelsField;
+                return usingPriceLevelsField;
             }
             set {
-                this.usingPriceLevelsField = value;
+                usingPriceLevelsField = value;
             }
         }
         
@@ -29261,10 +29261,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingPriceLevelsSpecified {
             get {
-                return this.usingPriceLevelsFieldSpecified;
+                return usingPriceLevelsFieldSpecified;
             }
             set {
-                this.usingPriceLevelsFieldSpecified = value;
+                usingPriceLevelsFieldSpecified = value;
             }
         }
         
@@ -29275,10 +29275,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultFOB {
             get {
-                return this.defaultFOBField;
+                return defaultFOBField;
             }
             set {
-                this.defaultFOBField = value;
+                defaultFOBField = value;
             }
         }
         
@@ -29291,10 +29291,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultCustomerMessage {
             get {
-                return this.defaultCustomerMessageField;
+                return defaultCustomerMessageField;
             }
             set {
-                this.defaultCustomerMessageField = value;
+                defaultCustomerMessageField = value;
             }
         }
     }
@@ -29329,8 +29329,8 @@ namespace Intuit.Ipp.Data {
         private string appIdField;
         
         public CustomFieldDefinition() {
-            this.hiddenField = false;
-            this.requiredField = false;
+            hiddenField = false;
+            requiredField = false;
         }
         
         /// <remarks/>
@@ -29343,10 +29343,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EntityType {
             get {
-                return this.entityTypeField;
+                return entityTypeField;
             }
             set {
-                this.entityTypeField = value;
+                entityTypeField = value;
             }
         }
         
@@ -29360,10 +29360,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -29377,10 +29377,10 @@ namespace Intuit.Ipp.Data {
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Hidden {
             get {
-                return this.hiddenField;
+                return hiddenField;
             }
             set {
-                this.hiddenField = value;
+                hiddenField = value;
             }
         }
         
@@ -29394,10 +29394,10 @@ namespace Intuit.Ipp.Data {
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Required {
             get {
-                return this.requiredField;
+                return requiredField;
             }
             set {
-                this.requiredField = value;
+                requiredField = value;
             }
         }
         
@@ -29410,10 +29410,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AppId {
             get {
-                return this.appIdField;
+                return appIdField;
             }
             set {
-                this.appIdField = value;
+                appIdField = value;
             }
         }
     }
@@ -29486,10 +29486,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool EnableBills {
             get {
-                return this.enableBillsField;
+                return enableBillsField;
             }
             set {
-                this.enableBillsField = value;
+                enableBillsField = value;
             }
         }
         
@@ -29498,10 +29498,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EnableBillsSpecified {
             get {
-                return this.enableBillsFieldSpecified;
+                return enableBillsFieldSpecified;
             }
             set {
-                this.enableBillsFieldSpecified = value;
+                enableBillsFieldSpecified = value;
             }
         }
         
@@ -29514,10 +29514,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TrackingByCustomer {
             get {
-                return this.trackingByCustomerField;
+                return trackingByCustomerField;
             }
             set {
-                this.trackingByCustomerField = value;
+                trackingByCustomerField = value;
             }
         }
         
@@ -29526,10 +29526,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TrackingByCustomerSpecified {
             get {
-                return this.trackingByCustomerFieldSpecified;
+                return trackingByCustomerFieldSpecified;
             }
             set {
-                this.trackingByCustomerFieldSpecified = value;
+                trackingByCustomerFieldSpecified = value;
             }
         }
         
@@ -29542,10 +29542,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool BillableExpenseTracking {
             get {
-                return this.billableExpenseTrackingField;
+                return billableExpenseTrackingField;
             }
             set {
-                this.billableExpenseTrackingField = value;
+                billableExpenseTrackingField = value;
             }
         }
         
@@ -29554,10 +29554,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableExpenseTrackingSpecified {
             get {
-                return this.billableExpenseTrackingFieldSpecified;
+                return billableExpenseTrackingFieldSpecified;
             }
             set {
-                this.billableExpenseTrackingFieldSpecified = value;
+                billableExpenseTrackingFieldSpecified = value;
             }
         }
         
@@ -29570,10 +29570,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultTerms {
             get {
-                return this.defaultTermsField;
+                return defaultTermsField;
             }
             set {
-                this.defaultTermsField = value;
+                defaultTermsField = value;
             }
         }
         
@@ -29587,10 +29587,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DefaultMarkup {
             get {
-                return this.defaultMarkupField;
+                return defaultMarkupField;
             }
             set {
-                this.defaultMarkupField = value;
+                defaultMarkupField = value;
             }
         }
         
@@ -29599,10 +29599,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultMarkupSpecified {
             get {
-                return this.defaultMarkupFieldSpecified;
+                return defaultMarkupFieldSpecified;
             }
             set {
-                this.defaultMarkupFieldSpecified = value;
+                defaultMarkupFieldSpecified = value;
             }
         }
         
@@ -29616,10 +29616,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultMarkupAccount {
             get {
-                return this.defaultMarkupAccountField;
+                return defaultMarkupAccountField;
             }
             set {
-                this.defaultMarkupAccountField = value;
+                defaultMarkupAccountField = value;
             }
         }
         
@@ -29632,10 +29632,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool AutomaticBillPayment {
             get {
-                return this.automaticBillPaymentField;
+                return automaticBillPaymentField;
             }
             set {
-                this.automaticBillPaymentField = value;
+                automaticBillPaymentField = value;
             }
         }
         
@@ -29644,10 +29644,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AutomaticBillPaymentSpecified {
             get {
-                return this.automaticBillPaymentFieldSpecified;
+                return automaticBillPaymentFieldSpecified;
             }
             set {
-                this.automaticBillPaymentFieldSpecified = value;
+                automaticBillPaymentFieldSpecified = value;
             }
         }
         
@@ -29660,10 +29660,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TPAREnabled {
             get {
-                return this.tPAREnabledField;
+                return tPAREnabledField;
             }
             set {
-                this.tPAREnabledField = value;
+                tPAREnabledField = value;
             }
         }
         
@@ -29672,10 +29672,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TPAREnabledSpecified {
             get {
-                return this.tPAREnabledFieldSpecified;
+                return tPAREnabledFieldSpecified;
             }
             set {
-                this.tPAREnabledFieldSpecified = value;
+                tPAREnabledFieldSpecified = value;
             }
         }
         
@@ -29689,10 +29689,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("POCustomField")]
         public CustomFieldDefinition[] POCustomField {
             get {
-                return this.pOCustomFieldField;
+                return pOCustomFieldField;
             }
             set {
-                this.pOCustomFieldField = value;
+                pOCustomFieldField = value;
             }
         }
         
@@ -29705,10 +29705,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MsgToVendors {
             get {
-                return this.msgToVendorsField;
+                return msgToVendorsField;
             }
             set {
-                this.msgToVendorsField = value;
+                msgToVendorsField = value;
             }
         }
         
@@ -29720,10 +29720,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UsingInventory {
             get {
-                return this.usingInventoryField;
+                return usingInventoryField;
             }
             set {
-                this.usingInventoryField = value;
+                usingInventoryField = value;
             }
         }
         
@@ -29732,10 +29732,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingInventorySpecified {
             get {
-                return this.usingInventoryFieldSpecified;
+                return usingInventoryFieldSpecified;
             }
             set {
-                this.usingInventoryFieldSpecified = value;
+                usingInventoryFieldSpecified = value;
             }
         }
         
@@ -29747,10 +29747,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UsingMultiLocationInventory {
             get {
-                return this.usingMultiLocationInventoryField;
+                return usingMultiLocationInventoryField;
             }
             set {
-                this.usingMultiLocationInventoryField = value;
+                usingMultiLocationInventoryField = value;
             }
         }
         
@@ -29759,10 +29759,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UsingMultiLocationInventorySpecified {
             get {
-                return this.usingMultiLocationInventoryFieldSpecified;
+                return usingMultiLocationInventoryFieldSpecified;
             }
             set {
-                this.usingMultiLocationInventoryFieldSpecified = value;
+                usingMultiLocationInventoryFieldSpecified = value;
             }
         }
         
@@ -29774,10 +29774,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int DaysBillsAreDue {
             get {
-                return this.daysBillsAreDueField;
+                return daysBillsAreDueField;
             }
             set {
-                this.daysBillsAreDueField = value;
+                daysBillsAreDueField = value;
             }
         }
         
@@ -29786,10 +29786,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DaysBillsAreDueSpecified {
             get {
-                return this.daysBillsAreDueFieldSpecified;
+                return daysBillsAreDueFieldSpecified;
             }
             set {
-                this.daysBillsAreDueFieldSpecified = value;
+                daysBillsAreDueFieldSpecified = value;
             }
         }
         
@@ -29804,10 +29804,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DiscountAccountRef {
             get {
-                return this.discountAccountRefField;
+                return discountAccountRefField;
             }
             set {
-                this.discountAccountRefField = value;
+                discountAccountRefField = value;
             }
         }
     }
@@ -29864,10 +29864,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UseServices {
             get {
-                return this.useServicesField;
+                return useServicesField;
             }
             set {
-                this.useServicesField = value;
+                useServicesField = value;
             }
         }
         
@@ -29876,10 +29876,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UseServicesSpecified {
             get {
-                return this.useServicesFieldSpecified;
+                return useServicesFieldSpecified;
             }
             set {
-                this.useServicesFieldSpecified = value;
+                useServicesFieldSpecified = value;
             }
         }
         
@@ -29890,10 +29890,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultTimeItem {
             get {
-                return this.defaultTimeItemField;
+                return defaultTimeItemField;
             }
             set {
-                this.defaultTimeItemField = value;
+                defaultTimeItemField = value;
             }
         }
         
@@ -29906,10 +29906,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool BillCustomers {
             get {
-                return this.billCustomersField;
+                return billCustomersField;
             }
             set {
-                this.billCustomersField = value;
+                billCustomersField = value;
             }
         }
         
@@ -29918,10 +29918,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillCustomersSpecified {
             get {
-                return this.billCustomersFieldSpecified;
+                return billCustomersFieldSpecified;
             }
             set {
-                this.billCustomersFieldSpecified = value;
+                billCustomersFieldSpecified = value;
             }
         }
         
@@ -29934,10 +29934,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool ShowBillRateToAll {
             get {
-                return this.showBillRateToAllField;
+                return showBillRateToAllField;
             }
             set {
-                this.showBillRateToAllField = value;
+                showBillRateToAllField = value;
             }
         }
         
@@ -29946,10 +29946,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ShowBillRateToAllSpecified {
             get {
-                return this.showBillRateToAllFieldSpecified;
+                return showBillRateToAllFieldSpecified;
             }
             set {
-                this.showBillRateToAllFieldSpecified = value;
+                showBillRateToAllFieldSpecified = value;
             }
         }
         
@@ -29962,10 +29962,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WeekEnum WorkWeekStartDate {
             get {
-                return this.workWeekStartDateField;
+                return workWeekStartDateField;
             }
             set {
-                this.workWeekStartDateField = value;
+                workWeekStartDateField = value;
             }
         }
         
@@ -29974,10 +29974,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool WorkWeekStartDateSpecified {
             get {
-                return this.workWeekStartDateFieldSpecified;
+                return workWeekStartDateFieldSpecified;
             }
             set {
-                this.workWeekStartDateFieldSpecified = value;
+                workWeekStartDateFieldSpecified = value;
             }
         }
         
@@ -29991,10 +29991,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TimeTrackingEnabled {
             get {
-                return this.timeTrackingEnabledField;
+                return timeTrackingEnabledField;
             }
             set {
-                this.timeTrackingEnabledField = value;
+                timeTrackingEnabledField = value;
             }
         }
         
@@ -30003,10 +30003,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TimeTrackingEnabledSpecified {
             get {
-                return this.timeTrackingEnabledFieldSpecified;
+                return timeTrackingEnabledFieldSpecified;
             }
             set {
-                this.timeTrackingEnabledFieldSpecified = value;
+                timeTrackingEnabledFieldSpecified = value;
             }
         }
         
@@ -30020,10 +30020,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MarkTimeEntriesBillable {
             get {
-                return this.markTimeEntriesBillableField;
+                return markTimeEntriesBillableField;
             }
             set {
-                this.markTimeEntriesBillableField = value;
+                markTimeEntriesBillableField = value;
             }
         }
         
@@ -30032,10 +30032,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MarkTimeEntriesBillableSpecified {
             get {
-                return this.markTimeEntriesBillableFieldSpecified;
+                return markTimeEntriesBillableFieldSpecified;
             }
             set {
-                this.markTimeEntriesBillableFieldSpecified = value;
+                markTimeEntriesBillableFieldSpecified = value;
             }
         }
         
@@ -30049,10 +30049,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool MarkExpensesAsBillable {
             get {
-                return this.markExpensesAsBillableField;
+                return markExpensesAsBillableField;
             }
             set {
-                this.markExpensesAsBillableField = value;
+                markExpensesAsBillableField = value;
             }
         }
         
@@ -30061,10 +30061,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MarkExpensesAsBillableSpecified {
             get {
-                return this.markExpensesAsBillableFieldSpecified;
+                return markExpensesAsBillableFieldSpecified;
             }
             set {
-                this.markExpensesAsBillableFieldSpecified = value;
+                markExpensesAsBillableFieldSpecified = value;
             }
         }
     }
@@ -30100,10 +30100,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
         
@@ -30117,10 +30117,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessage InvoiceMessage {
             get {
-                return this.invoiceMessageField;
+                return invoiceMessageField;
             }
             set {
-                this.invoiceMessageField = value;
+                invoiceMessageField = value;
             }
         }
         
@@ -30134,10 +30134,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessage EstimateMessage {
             get {
-                return this.estimateMessageField;
+                return estimateMessageField;
             }
             set {
-                this.estimateMessageField = value;
+                estimateMessageField = value;
             }
         }
         
@@ -30151,10 +30151,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessage SalesReceiptMessage {
             get {
-                return this.salesReceiptMessageField;
+                return salesReceiptMessageField;
             }
             set {
-                this.salesReceiptMessageField = value;
+                salesReceiptMessageField = value;
             }
         }
         
@@ -30168,10 +30168,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessage StatementMessage {
             get {
-                return this.statementMessageField;
+                return statementMessageField;
             }
             set {
-                this.statementMessageField = value;
+                statementMessageField = value;
             }
         }
     }
@@ -30199,10 +30199,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
     }
@@ -30236,10 +30236,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReportBasisEnum ReportBasis {
             get {
-                return this.reportBasisField;
+                return reportBasisField;
             }
             set {
-                this.reportBasisField = value;
+                reportBasisField = value;
             }
         }
         
@@ -30248,10 +30248,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReportBasisSpecified {
             get {
-                return this.reportBasisFieldSpecified;
+                return reportBasisFieldSpecified;
             }
             set {
-                this.reportBasisFieldSpecified = value;
+                reportBasisFieldSpecified = value;
             }
         }
         
@@ -30267,10 +30267,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool CalcAgingReportFromTxnDate {
             get {
-                return this.calcAgingReportFromTxnDateField;
+                return calcAgingReportFromTxnDateField;
             }
             set {
-                this.calcAgingReportFromTxnDateField = value;
+                calcAgingReportFromTxnDateField = value;
             }
         }
         
@@ -30279,10 +30279,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CalcAgingReportFromTxnDateSpecified {
             get {
-                return this.calcAgingReportFromTxnDateFieldSpecified;
+                return calcAgingReportFromTxnDateFieldSpecified;
             }
             set {
-                this.calcAgingReportFromTxnDateFieldSpecified = value;
+                calcAgingReportFromTxnDateFieldSpecified = value;
             }
         }
     }
@@ -30333,10 +30333,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValue")]
         public NameValue[] NameValue {
             get {
-                return this.nameValueField;
+                return nameValueField;
             }
             set {
-                this.nameValueField = value;
+                nameValueField = value;
             }
         }
     }
@@ -30386,10 +30386,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CompanyAccountingPrefs AccountingInfoPrefs {
             get {
-                return this.accountingInfoPrefsField;
+                return accountingInfoPrefsField;
             }
             set {
-                this.accountingInfoPrefsField = value;
+                accountingInfoPrefsField = value;
             }
         }
         
@@ -30399,10 +30399,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public AdvancedInventoryPrefs AdvancedInventoryPrefs {
             get {
-                return this.advancedInventoryPrefsField;
+                return advancedInventoryPrefsField;
             }
             set {
-                this.advancedInventoryPrefsField = value;
+                advancedInventoryPrefsField = value;
             }
         }
         
@@ -30413,10 +30413,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ProductAndServicesPrefs ProductAndServicesPrefs {
             get {
-                return this.productAndServicesPrefsField;
+                return productAndServicesPrefsField;
             }
             set {
-                this.productAndServicesPrefsField = value;
+                productAndServicesPrefsField = value;
             }
         }
         
@@ -30426,10 +30426,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SalesFormsPrefs SalesFormsPrefs {
             get {
-                return this.salesFormsPrefsField;
+                return salesFormsPrefsField;
             }
             set {
-                this.salesFormsPrefsField = value;
+                salesFormsPrefsField = value;
             }
         }
         
@@ -30439,10 +30439,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailMessagesPrefs EmailMessagesPrefs {
             get {
-                return this.emailMessagesPrefsField;
+                return emailMessagesPrefsField;
             }
             set {
-                this.emailMessagesPrefsField = value;
+                emailMessagesPrefsField = value;
             }
         }
         
@@ -30454,10 +30454,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public NameValue[] PrintDocumentPrefs {
             get {
-                return this.printDocumentPrefsField;
+                return printDocumentPrefsField;
             }
             set {
-                this.printDocumentPrefsField = value;
+                printDocumentPrefsField = value;
             }
         }
         
@@ -30468,10 +30468,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public VendorAndPurchasesPrefs VendorAndPurchasesPrefs {
             get {
-                return this.vendorAndPurchasesPrefsField;
+                return vendorAndPurchasesPrefsField;
             }
             set {
-                this.vendorAndPurchasesPrefsField = value;
+                vendorAndPurchasesPrefsField = value;
             }
         }
         
@@ -30482,10 +30482,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TimeTrackingPrefs TimeTrackingPrefs {
             get {
-                return this.timeTrackingPrefsField;
+                return timeTrackingPrefsField;
             }
             set {
-                this.timeTrackingPrefsField = value;
+                timeTrackingPrefsField = value;
             }
         }
         
@@ -30495,10 +30495,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxPrefs TaxPrefs {
             get {
-                return this.taxPrefsField;
+                return taxPrefsField;
             }
             set {
-                this.taxPrefsField = value;
+                taxPrefsField = value;
             }
         }
         
@@ -30508,10 +30508,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public FinanceChargePrefs FinanceChargesPrefs {
             get {
-                return this.financeChargesPrefsField;
+                return financeChargesPrefsField;
             }
             set {
-                this.financeChargesPrefsField = value;
+                financeChargesPrefsField = value;
             }
         }
         
@@ -30521,10 +30521,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CurrencyPrefs CurrencyPrefs {
             get {
-                return this.currencyPrefsField;
+                return currencyPrefsField;
             }
             set {
-                this.currencyPrefsField = value;
+                currencyPrefsField = value;
             }
         }
         
@@ -30534,10 +30534,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReportPrefs ReportPrefs {
             get {
-                return this.reportPrefsField;
+                return reportPrefsField;
             }
             set {
-                this.reportPrefsField = value;
+                reportPrefsField = value;
             }
         }
         
@@ -30551,10 +30551,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public NameValue[] OtherPrefs {
             get {
-                return this.otherPrefsField;
+                return otherPrefsField;
             }
             set {
-                this.otherPrefsField = value;
+                otherPrefsField = value;
             }
         }
     }
@@ -30595,10 +30595,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -30612,10 +30612,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Abbrv {
             get {
-                return this.abbrvField;
+                return abbrvField;
             }
             set {
-                this.abbrvField = value;
+                abbrvField = value;
             }
         }
         
@@ -30628,10 +30628,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public UOMBaseTypeEnum BaseType {
             get {
-                return this.baseTypeField;
+                return baseTypeField;
             }
             set {
-                this.baseTypeField = value;
+                baseTypeField = value;
             }
         }
         
@@ -30640,10 +30640,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BaseTypeSpecified {
             get {
-                return this.baseTypeFieldSpecified;
+                return baseTypeFieldSpecified;
             }
             set {
-                this.baseTypeFieldSpecified = value;
+                baseTypeFieldSpecified = value;
             }
         }
         
@@ -30651,10 +30651,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ConvUnit")]
         public UOMConvUnit[] ConvUnit {
             get {
-                return this.convUnitField;
+                return convUnitField;
             }
             set {
-                this.convUnitField = value;
+                convUnitField = value;
             }
         }
     }
@@ -30690,10 +30690,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -30707,20 +30707,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Abbrv {
             get {
-                return this.abbrvField;
+                return abbrvField;
             }
             set {
-                this.abbrvField = value;
+                abbrvField = value;
             }
         }
         
         /// <remarks/>
         public decimal ConvRatio {
             get {
-                return this.convRatioField;
+                return convRatioField;
             }
             set {
-                this.convRatioField = value;
+                convRatioField = value;
             }
         }
         
@@ -30729,10 +30729,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ConvRatioSpecified {
             get {
-                return this.convRatioFieldSpecified;
+                return convRatioFieldSpecified;
             }
             set {
-                this.convRatioFieldSpecified = value;
+                convRatioFieldSpecified = value;
             }
         }
     }
@@ -30771,10 +30771,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -30786,10 +30786,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -30798,20 +30798,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public TemplateTypeEnum Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -30820,10 +30820,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TypeSpecified {
             get {
-                return this.typeFieldSpecified;
+                return typeFieldSpecified;
             }
             set {
-                this.typeFieldSpecified = value;
+                typeFieldSpecified = value;
             }
         }
     }
@@ -30919,10 +30919,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FileName {
             get {
-                return this.fileNameField;
+                return fileNameField;
             }
             set {
-                this.fileNameField = value;
+                fileNameField = value;
             }
         }
         
@@ -30934,10 +30934,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FileAccessUri {
             get {
-                return this.fileAccessUriField;
+                return fileAccessUriField;
             }
             set {
-                this.fileAccessUriField = value;
+                fileAccessUriField = value;
             }
         }
         
@@ -30949,10 +30949,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TempDownloadUri {
             get {
-                return this.tempDownloadUriField;
+                return tempDownloadUriField;
             }
             set {
-                this.tempDownloadUriField = value;
+                tempDownloadUriField = value;
             }
         }
         
@@ -30963,10 +30963,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public long Size {
             get {
-                return this.sizeField;
+                return sizeField;
             }
             set {
-                this.sizeField = value;
+                sizeField = value;
             }
         }
         
@@ -30975,10 +30975,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SizeSpecified {
             get {
-                return this.sizeFieldSpecified;
+                return sizeFieldSpecified;
             }
             set {
-                this.sizeFieldSpecified = value;
+                sizeFieldSpecified = value;
             }
         }
         
@@ -30989,10 +30989,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ContentType {
             get {
-                return this.contentTypeField;
+                return contentTypeField;
             }
             set {
-                this.contentTypeField = value;
+                contentTypeField = value;
             }
         }
         
@@ -31003,10 +31003,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Category {
             get {
-                return this.categoryField;
+                return categoryField;
             }
             set {
-                this.categoryField = value;
+                categoryField = value;
             }
         }
         
@@ -31018,10 +31018,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Lat {
             get {
-                return this.latField;
+                return latField;
             }
             set {
-                this.latField = value;
+                latField = value;
             }
         }
         
@@ -31033,10 +31033,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Long {
             get {
-                return this.longField;
+                return longField;
             }
             set {
-                this.longField = value;
+                longField = value;
             }
         }
         
@@ -31048,10 +31048,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PlaceName {
             get {
-                return this.placeNameField;
+                return placeNameField;
             }
             set {
-                this.placeNameField = value;
+                placeNameField = value;
             }
         }
         
@@ -31062,10 +31062,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Note {
             get {
-                return this.noteField;
+                return noteField;
             }
             set {
-                this.noteField = value;
+                noteField = value;
             }
         }
         
@@ -31076,10 +31076,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
+                tagField = value;
             }
         }
         
@@ -31092,10 +31092,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ThumbnailFileAccessUri {
             get {
-                return this.thumbnailFileAccessUriField;
+                return thumbnailFileAccessUriField;
             }
             set {
-                this.thumbnailFileAccessUriField = value;
+                thumbnailFileAccessUriField = value;
             }
         }
         
@@ -31108,10 +31108,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ThumbnailTempDownloadUri {
             get {
-                return this.thumbnailTempDownloadUriField;
+                return thumbnailTempDownloadUriField;
             }
             set {
-                this.thumbnailTempDownloadUriField = value;
+                thumbnailTempDownloadUriField = value;
             }
         }
         
@@ -31122,10 +31122,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType AttachableEx {
             get {
-                return this.attachableExField;
+                return attachableExField;
             }
             set {
-                this.attachableExField = value;
+                attachableExField = value;
             }
         }
     }
@@ -31189,10 +31189,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime PostDate {
             get {
-                return this.postDateField;
+                return postDateField;
             }
             set {
-                this.postDateField = value;
+                postDateField = value;
             }
         }
         
@@ -31201,10 +31201,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PostDateSpecified {
             get {
-                return this.postDateFieldSpecified;
+                return postDateFieldSpecified;
             }
             set {
-                this.postDateFieldSpecified = value;
+                postDateFieldSpecified = value;
             }
         }
         
@@ -31215,10 +31215,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime TxnDate {
             get {
-                return this.txnDateField;
+                return txnDateField;
             }
             set {
-                this.txnDateField = value;
+                txnDateField = value;
             }
         }
         
@@ -31227,10 +31227,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnDateSpecified {
             get {
-                return this.txnDateFieldSpecified;
+                return txnDateFieldSpecified;
             }
             set {
-                this.txnDateFieldSpecified = value;
+                txnDateFieldSpecified = value;
             }
         }
         
@@ -31240,10 +31240,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -31252,10 +31252,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
@@ -31266,10 +31266,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ReferenceNumber {
             get {
-                return this.referenceNumberField;
+                return referenceNumberField;
             }
             set {
-                this.referenceNumberField = value;
+                referenceNumberField = value;
             }
         }
         
@@ -31281,10 +31281,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TxnStatus {
             get {
-                return this.txnStatusField;
+                return txnStatusField;
             }
             set {
-                this.txnStatusField = value;
+                txnStatusField = value;
             }
         }
     }
@@ -31335,10 +31335,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountId {
             get {
-                return this.accountIdField;
+                return accountIdField;
             }
             set {
-                this.accountIdField = value;
+                accountIdField = value;
             }
         }
         
@@ -31353,10 +31353,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime LastPostingDate {
             get {
-                return this.lastPostingDateField;
+                return lastPostingDateField;
             }
             set {
-                this.lastPostingDateField = value;
+                lastPostingDateField = value;
             }
         }
         
@@ -31365,10 +31365,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastPostingDateSpecified {
             get {
-                return this.lastPostingDateFieldSpecified;
+                return lastPostingDateFieldSpecified;
             }
             set {
-                this.lastPostingDateFieldSpecified = value;
+                lastPostingDateFieldSpecified = value;
             }
         }
         
@@ -31381,10 +31381,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime TxnsDownloadTime {
             get {
-                return this.txnsDownloadTimeField;
+                return txnsDownloadTimeField;
             }
             set {
-                this.txnsDownloadTimeField = value;
+                txnsDownloadTimeField = value;
             }
         }
         
@@ -31393,10 +31393,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TxnsDownloadTimeSpecified {
             get {
-                return this.txnsDownloadTimeFieldSpecified;
+                return txnsDownloadTimeFieldSpecified;
             }
             set {
-                this.txnsDownloadTimeFieldSpecified = value;
+                txnsDownloadTimeFieldSpecified = value;
             }
         }
         
@@ -31407,10 +31407,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OLBTxnDetail")]
         public OLBTxnDetail[] OLBTxnDetail {
             get {
-                return this.oLBTxnDetailField;
+                return oLBTxnDetailField;
             }
             set {
-                this.oLBTxnDetailField = value;
+                oLBTxnDetailField = value;
             }
         }
         
@@ -31422,10 +31422,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int startPosition {
             get {
-                return this.startPositionField;
+                return startPositionField;
             }
             set {
-                this.startPositionField = value;
+                startPositionField = value;
             }
         }
         
@@ -31434,10 +31434,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool startPositionSpecified {
             get {
-                return this.startPositionFieldSpecified;
+                return startPositionFieldSpecified;
             }
             set {
-                this.startPositionFieldSpecified = value;
+                startPositionFieldSpecified = value;
             }
         }
         
@@ -31449,10 +31449,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int maxResults {
             get {
-                return this.maxResultsField;
+                return maxResultsField;
             }
             set {
-                this.maxResultsField = value;
+                maxResultsField = value;
             }
         }
         
@@ -31461,10 +31461,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool maxResultsSpecified {
             get {
-                return this.maxResultsFieldSpecified;
+                return maxResultsFieldSpecified;
             }
             set {
-                this.maxResultsFieldSpecified = value;
+                maxResultsFieldSpecified = value;
             }
         }
         
@@ -31476,10 +31476,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int totalCount {
             get {
-                return this.totalCountField;
+                return totalCountField;
             }
             set {
-                this.totalCountField = value;
+                totalCountField = value;
             }
         }
         
@@ -31488,10 +31488,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool totalCountSpecified {
             get {
-                return this.totalCountFieldSpecified;
+                return totalCountFieldSpecified;
             }
             set {
-                this.totalCountFieldSpecified = value;
+                totalCountFieldSpecified = value;
             }
         }
     }
@@ -31524,10 +31524,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime OLBDownloadTime {
             get {
-                return this.oLBDownloadTimeField;
+                return oLBDownloadTimeField;
             }
             set {
-                this.oLBDownloadTimeField = value;
+                oLBDownloadTimeField = value;
             }
         }
         
@@ -31536,10 +31536,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OLBDownloadTimeSpecified {
             get {
-                return this.oLBDownloadTimeFieldSpecified;
+                return oLBDownloadTimeFieldSpecified;
             }
             set {
-                this.oLBDownloadTimeFieldSpecified = value;
+                oLBDownloadTimeFieldSpecified = value;
             }
         }
         
@@ -31550,10 +31550,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OLBTxn")]
         public OLBTxn[] OLBTxn {
             get {
-                return this.oLBTxnField;
+                return oLBTxnField;
             }
             set {
-                this.oLBTxnField = value;
+                oLBTxnField = value;
             }
         }
     }
@@ -31603,10 +31603,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -31620,10 +31620,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime StartDate {
             get {
-                return this.startDateField;
+                return startDateField;
             }
             set {
-                this.startDateField = value;
+                startDateField = value;
             }
         }
         
@@ -31632,10 +31632,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartDateSpecified {
             get {
-                return this.startDateFieldSpecified;
+                return startDateFieldSpecified;
             }
             set {
-                this.startDateFieldSpecified = value;
+                startDateFieldSpecified = value;
             }
         }
         
@@ -31649,10 +31649,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime EndDate {
             get {
-                return this.endDateField;
+                return endDateField;
             }
             set {
-                this.endDateField = value;
+                endDateField = value;
             }
         }
         
@@ -31661,10 +31661,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndDateSpecified {
             get {
-                return this.endDateFieldSpecified;
+                return endDateFieldSpecified;
             }
             set {
-                this.endDateFieldSpecified = value;
+                endDateFieldSpecified = value;
             }
         }
         
@@ -31677,10 +31677,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BudgetTypeEnum BudgetType {
             get {
-                return this.budgetTypeField;
+                return budgetTypeField;
             }
             set {
-                this.budgetTypeField = value;
+                budgetTypeField = value;
             }
         }
         
@@ -31689,10 +31689,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BudgetTypeSpecified {
             get {
-                return this.budgetTypeFieldSpecified;
+                return budgetTypeFieldSpecified;
             }
             set {
-                this.budgetTypeFieldSpecified = value;
+                budgetTypeFieldSpecified = value;
             }
         }
         
@@ -31705,10 +31705,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public BudgetEntryTypeEnum BudgetEntryType {
             get {
-                return this.budgetEntryTypeField;
+                return budgetEntryTypeField;
             }
             set {
-                this.budgetEntryTypeField = value;
+                budgetEntryTypeField = value;
             }
         }
         
@@ -31717,10 +31717,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BudgetEntryTypeSpecified {
             get {
-                return this.budgetEntryTypeFieldSpecified;
+                return budgetEntryTypeFieldSpecified;
             }
             set {
-                this.budgetEntryTypeFieldSpecified = value;
+                budgetEntryTypeFieldSpecified = value;
             }
         }
         
@@ -31733,10 +31733,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -31745,10 +31745,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -31762,10 +31762,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("BudgetDetail")]
         public BudgetDetail[] BudgetDetail {
             get {
-                return this.budgetDetailField;
+                return budgetDetailField;
             }
             set {
-                this.budgetDetailField = value;
+                budgetDetailField = value;
             }
         }
     }
@@ -31809,10 +31809,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime BudgetDate {
             get {
-                return this.budgetDateField;
+                return budgetDateField;
             }
             set {
-                this.budgetDateField = value;
+                budgetDateField = value;
             }
         }
         
@@ -31821,10 +31821,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BudgetDateSpecified {
             get {
-                return this.budgetDateFieldSpecified;
+                return budgetDateFieldSpecified;
             }
             set {
-                this.budgetDateFieldSpecified = value;
+                budgetDateFieldSpecified = value;
             }
         }
         
@@ -31838,10 +31838,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -31850,10 +31850,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
         
@@ -31866,10 +31866,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AccountRef {
             get {
-                return this.accountRefField;
+                return accountRefField;
             }
             set {
-                this.accountRefField = value;
+                accountRefField = value;
             }
         }
         
@@ -31882,10 +31882,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -31898,10 +31898,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -31914,10 +31914,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DepartmentRef {
             get {
-                return this.departmentRefField;
+                return departmentRefField;
             }
             set {
-                this.departmentRefField = value;
+                departmentRefField = value;
             }
         }
     }
@@ -31952,10 +31952,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TDSEntityTypes")]
         public NameValue[] TDSEntityTypes {
             get {
-                return this.tDSEntityTypesField;
+                return tDSEntityTypesField;
             }
             set {
-                this.tDSEntityTypesField = value;
+                tDSEntityTypesField = value;
             }
         }
         
@@ -31969,10 +31969,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TDSSectionTypes")]
         public NameValue[] TDSSectionTypes {
             get {
-                return this.tDSSectionTypesField;
+                return tDSSectionTypesField;
             }
             set {
-                this.tDSSectionTypesField = value;
+                tDSSectionTypesField = value;
             }
         }
     }
@@ -32004,10 +32004,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -32018,10 +32018,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -32030,10 +32030,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
     }
@@ -32087,10 +32087,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Credit {
             get {
-                return this.creditField;
+                return creditField;
             }
             set {
-                this.creditField = value;
+                creditField = value;
             }
         }
         
@@ -32099,10 +32099,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditSpecified {
             get {
-                return this.creditFieldSpecified;
+                return creditFieldSpecified;
             }
             set {
-                this.creditFieldSpecified = value;
+                creditFieldSpecified = value;
             }
         }
         
@@ -32113,10 +32113,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerRef {
             get {
-                return this.customerRefField;
+                return customerRefField;
             }
             set {
-                this.customerRefField = value;
+                customerRefField = value;
             }
         }
         
@@ -32131,10 +32131,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RemitToRef {
             get {
-                return this.remitToRefField;
+                return remitToRefField;
             }
             set {
-                this.remitToRefField = value;
+                remitToRefField = value;
             }
         }
         
@@ -32150,20 +32150,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ARAccountRef {
             get {
-                return this.aRAccountRefField;
+                return aRAccountRefField;
             }
             set {
-                this.aRAccountRefField = value;
+                aRAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ClassRef {
             get {
-                return this.classRefField;
+                return classRefField;
             }
             set {
-                this.classRefField = value;
+                classRefField = value;
             }
         }
         
@@ -32175,10 +32175,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DueDate {
             get {
-                return this.dueDateField;
+                return dueDateField;
             }
             set {
-                this.dueDateField = value;
+                dueDateField = value;
             }
         }
         
@@ -32187,10 +32187,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DueDateSpecified {
             get {
-                return this.dueDateFieldSpecified;
+                return dueDateFieldSpecified;
             }
             set {
-                this.dueDateFieldSpecified = value;
+                dueDateFieldSpecified = value;
             }
         }
         
@@ -32202,10 +32202,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime BilledDate {
             get {
-                return this.billedDateField;
+                return billedDateField;
             }
             set {
-                this.billedDateField = value;
+                billedDateField = value;
             }
         }
         
@@ -32214,10 +32214,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BilledDateSpecified {
             get {
-                return this.billedDateFieldSpecified;
+                return billedDateFieldSpecified;
             }
             set {
-                this.billedDateFieldSpecified = value;
+                billedDateFieldSpecified = value;
             }
         }
         
@@ -32233,10 +32233,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalAmt {
             get {
-                return this.totalAmtField;
+                return totalAmtField;
             }
             set {
-                this.totalAmtField = value;
+                totalAmtField = value;
             }
         }
         
@@ -32245,10 +32245,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalAmtSpecified {
             get {
-                return this.totalAmtFieldSpecified;
+                return totalAmtFieldSpecified;
             }
             set {
-                this.totalAmtFieldSpecified = value;
+                totalAmtFieldSpecified = value;
             }
         }
         
@@ -32260,10 +32260,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType ChargeCreditEx {
             get {
-                return this.chargeCreditExField;
+                return chargeCreditExField;
             }
             set {
-                this.chargeCreditExField = value;
+                chargeCreditExField = value;
             }
         }
     }
@@ -32349,10 +32349,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool UpcomingFiling {
             get {
-                return this.upcomingFilingField;
+                return upcomingFilingField;
             }
             set {
-                this.upcomingFilingField = value;
+                upcomingFilingField = value;
             }
         }
         
@@ -32361,10 +32361,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UpcomingFilingSpecified {
             get {
-                return this.upcomingFilingFieldSpecified;
+                return upcomingFilingFieldSpecified;
             }
             set {
-                this.upcomingFilingFieldSpecified = value;
+                upcomingFilingFieldSpecified = value;
             }
         }
         
@@ -32379,10 +32379,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime StartDate {
             get {
-                return this.startDateField;
+                return startDateField;
             }
             set {
-                this.startDateField = value;
+                startDateField = value;
             }
         }
         
@@ -32391,10 +32391,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartDateSpecified {
             get {
-                return this.startDateFieldSpecified;
+                return startDateFieldSpecified;
             }
             set {
-                this.startDateFieldSpecified = value;
+                startDateFieldSpecified = value;
             }
         }
         
@@ -32409,10 +32409,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime EndDate {
             get {
-                return this.endDateField;
+                return endDateField;
             }
             set {
-                this.endDateField = value;
+                endDateField = value;
             }
         }
         
@@ -32421,10 +32421,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndDateSpecified {
             get {
-                return this.endDateFieldSpecified;
+                return endDateFieldSpecified;
             }
             set {
-                this.endDateFieldSpecified = value;
+                endDateFieldSpecified = value;
             }
         }
         
@@ -32438,10 +32438,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime FileDate {
             get {
-                return this.fileDateField;
+                return fileDateField;
             }
             set {
-                this.fileDateField = value;
+                fileDateField = value;
             }
         }
         
@@ -32450,10 +32450,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FileDateSpecified {
             get {
-                return this.fileDateFieldSpecified;
+                return fileDateFieldSpecified;
             }
             set {
-                this.fileDateFieldSpecified = value;
+                fileDateFieldSpecified = value;
             }
         }
         
@@ -32467,10 +32467,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime AgencyPaymentDate {
             get {
-                return this.agencyPaymentDateField;
+                return agencyPaymentDateField;
             }
             set {
-                this.agencyPaymentDateField = value;
+                agencyPaymentDateField = value;
             }
         }
         
@@ -32479,10 +32479,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AgencyPaymentDateSpecified {
             get {
-                return this.agencyPaymentDateFieldSpecified;
+                return agencyPaymentDateFieldSpecified;
             }
             set {
-                this.agencyPaymentDateFieldSpecified = value;
+                agencyPaymentDateFieldSpecified = value;
             }
         }
         
@@ -32493,10 +32493,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal AgencyPaymentAmount {
             get {
-                return this.agencyPaymentAmountField;
+                return agencyPaymentAmountField;
             }
             set {
-                this.agencyPaymentAmountField = value;
+                agencyPaymentAmountField = value;
             }
         }
         
@@ -32505,10 +32505,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AgencyPaymentAmountSpecified {
             get {
-                return this.agencyPaymentAmountFieldSpecified;
+                return agencyPaymentAmountFieldSpecified;
             }
             set {
-                this.agencyPaymentAmountFieldSpecified = value;
+                agencyPaymentAmountFieldSpecified = value;
             }
         }
         
@@ -32519,10 +32519,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal NetTaxAmountDue {
             get {
-                return this.netTaxAmountDueField;
+                return netTaxAmountDueField;
             }
             set {
-                this.netTaxAmountDueField = value;
+                netTaxAmountDueField = value;
             }
         }
         
@@ -32531,10 +32531,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool NetTaxAmountDueSpecified {
             get {
-                return this.netTaxAmountDueFieldSpecified;
+                return netTaxAmountDueFieldSpecified;
             }
             set {
-                this.netTaxAmountDueFieldSpecified = value;
+                netTaxAmountDueFieldSpecified = value;
             }
         }
         
@@ -32545,10 +32545,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal FlatRateSavingsAmountDue {
             get {
-                return this.flatRateSavingsAmountDueField;
+                return flatRateSavingsAmountDueField;
             }
             set {
-                this.flatRateSavingsAmountDueField = value;
+                flatRateSavingsAmountDueField = value;
             }
         }
         
@@ -32557,10 +32557,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool FlatRateSavingsAmountDueSpecified {
             get {
-                return this.flatRateSavingsAmountDueFieldSpecified;
+                return flatRateSavingsAmountDueFieldSpecified;
             }
             set {
-                this.flatRateSavingsAmountDueFieldSpecified = value;
+                flatRateSavingsAmountDueFieldSpecified = value;
             }
         }
         
@@ -32572,10 +32572,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal PayGWithheldAmount {
             get {
-                return this.payGWithheldAmountField;
+                return payGWithheldAmountField;
             }
             set {
-                this.payGWithheldAmountField = value;
+                payGWithheldAmountField = value;
             }
         }
         
@@ -32584,10 +32584,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PayGWithheldAmountSpecified {
             get {
-                return this.payGWithheldAmountFieldSpecified;
+                return payGWithheldAmountFieldSpecified;
             }
             set {
-                this.payGWithheldAmountFieldSpecified = value;
+                payGWithheldAmountFieldSpecified = value;
             }
         }
         
@@ -32601,10 +32601,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType AgencyRef {
             get {
-                return this.agencyRefField;
+                return agencyRefField;
             }
             set {
-                this.agencyRefField = value;
+                agencyRefField = value;
             }
         }
         
@@ -32617,10 +32617,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxReturnStatusEnum TaxReturnStatus {
             get {
-                return this.taxReturnStatusField;
+                return taxReturnStatusField;
             }
             set {
-                this.taxReturnStatusField = value;
+                taxReturnStatusField = value;
             }
         }
         
@@ -32629,10 +32629,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxReturnStatusSpecified {
             get {
-                return this.taxReturnStatusFieldSpecified;
+                return taxReturnStatusFieldSpecified;
             }
             set {
-                this.taxReturnStatusFieldSpecified = value;
+                taxReturnStatusFieldSpecified = value;
             }
         }
         
@@ -32645,10 +32645,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxReturnEFilingFailureReason {
             get {
-                return this.taxReturnEFilingFailureReasonField;
+                return taxReturnEFilingFailureReasonField;
             }
             set {
-                this.taxReturnEFilingFailureReasonField = value;
+                taxReturnEFilingFailureReasonField = value;
             }
         }
         
@@ -32662,10 +32662,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime EFileErrorFixByDate {
             get {
-                return this.eFileErrorFixByDateField;
+                return eFileErrorFixByDateField;
             }
             set {
-                this.eFileErrorFixByDateField = value;
+                eFileErrorFixByDateField = value;
             }
         }
         
@@ -32674,10 +32674,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EFileErrorFixByDateSpecified {
             get {
-                return this.eFileErrorFixByDateFieldSpecified;
+                return eFileErrorFixByDateFieldSpecified;
             }
             set {
-                this.eFileErrorFixByDateFieldSpecified = value;
+                eFileErrorFixByDateFieldSpecified = value;
             }
         }
         
@@ -32690,10 +32690,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public AgencyPaymentMethodEnum AgencyPaymentMethod {
             get {
-                return this.agencyPaymentMethodField;
+                return agencyPaymentMethodField;
             }
             set {
-                this.agencyPaymentMethodField = value;
+                agencyPaymentMethodField = value;
             }
         }
         
@@ -32702,10 +32702,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AgencyPaymentMethodSpecified {
             get {
-                return this.agencyPaymentMethodFieldSpecified;
+                return agencyPaymentMethodFieldSpecified;
             }
             set {
-                this.agencyPaymentMethodFieldSpecified = value;
+                agencyPaymentMethodFieldSpecified = value;
             }
         }
         
@@ -32718,10 +32718,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxReturnCode {
             get {
-                return this.taxReturnCodeField;
+                return taxReturnCodeField;
             }
             set {
-                this.taxReturnCodeField = value;
+                taxReturnCodeField = value;
             }
         }
     }
@@ -32760,50 +32760,50 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public string Code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
+                codeField = value;
             }
         }
         
         /// <remarks/>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
         /// <remarks/>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
         /// <remarks/>
         public string Level {
             get {
-                return this.levelField;
+                return levelField;
             }
             set {
-                this.levelField = value;
+                levelField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -32811,10 +32811,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ApplicableTo")]
         public ItemTypeEnum[] ApplicableTo {
             get {
-                return this.applicableToField;
+                return applicableToField;
             }
             set {
-                this.applicableToField = value;
+                applicableToField = value;
             }
         }
     }
@@ -32860,10 +32860,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime PaymentDate {
             get {
-                return this.paymentDateField;
+                return paymentDateField;
             }
             set {
-                this.paymentDateField = value;
+                paymentDateField = value;
             }
         }
         
@@ -32872,10 +32872,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentDateSpecified {
             get {
-                return this.paymentDateFieldSpecified;
+                return paymentDateFieldSpecified;
             }
             set {
-                this.paymentDateFieldSpecified = value;
+                paymentDateFieldSpecified = value;
             }
         }
         
@@ -32888,10 +32888,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentAccountRef {
             get {
-                return this.paymentAccountRefField;
+                return paymentAccountRefField;
             }
             set {
-                this.paymentAccountRefField = value;
+                paymentAccountRefField = value;
             }
         }
         
@@ -32904,10 +32904,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal PaymentAmount {
             get {
-                return this.paymentAmountField;
+                return paymentAmountField;
             }
             set {
-                this.paymentAmountField = value;
+                paymentAmountField = value;
             }
         }
         
@@ -32916,10 +32916,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool PaymentAmountSpecified {
             get {
-                return this.paymentAmountFieldSpecified;
+                return paymentAmountFieldSpecified;
             }
             set {
-                this.paymentAmountFieldSpecified = value;
+                paymentAmountFieldSpecified = value;
             }
         }
         
@@ -32932,10 +32932,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -32948,10 +32948,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Refund {
             get {
-                return this.refundField;
+                return refundField;
             }
             set {
-                this.refundField = value;
+                refundField = value;
             }
         }
         
@@ -32960,10 +32960,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RefundSpecified {
             get {
-                return this.refundFieldSpecified;
+                return refundFieldSpecified;
             }
             set {
-                this.refundFieldSpecified = value;
+                refundFieldSpecified = value;
             }
         }
     }
@@ -33000,10 +33000,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DefaultString {
             get {
-                return this.defaultStringField;
+                return defaultStringField;
             }
             set {
-                this.defaultStringField = value;
+                defaultStringField = value;
             }
         }
         
@@ -33016,10 +33016,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string RegularExpression {
             get {
-                return this.regularExpressionField;
+                return regularExpressionField;
             }
             set {
-                this.regularExpressionField = value;
+                regularExpressionField = value;
             }
         }
         
@@ -33032,10 +33032,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int MaxLength {
             get {
-                return this.maxLengthField;
+                return maxLengthField;
             }
             set {
-                this.maxLengthField = value;
+                maxLengthField = value;
             }
         }
         
@@ -33044,10 +33044,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MaxLengthSpecified {
             get {
-                return this.maxLengthFieldSpecified;
+                return maxLengthFieldSpecified;
             }
             set {
-                this.maxLengthFieldSpecified = value;
+                maxLengthFieldSpecified = value;
             }
         }
     }
@@ -33088,10 +33088,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal DefaultValue {
             get {
-                return this.defaultValueField;
+                return defaultValueField;
             }
             set {
-                this.defaultValueField = value;
+                defaultValueField = value;
             }
         }
         
@@ -33100,10 +33100,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultValueSpecified {
             get {
-                return this.defaultValueFieldSpecified;
+                return defaultValueFieldSpecified;
             }
             set {
-                this.defaultValueFieldSpecified = value;
+                defaultValueFieldSpecified = value;
             }
         }
         
@@ -33116,10 +33116,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal MinValue {
             get {
-                return this.minValueField;
+                return minValueField;
             }
             set {
-                this.minValueField = value;
+                minValueField = value;
             }
         }
         
@@ -33128,10 +33128,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MinValueSpecified {
             get {
-                return this.minValueFieldSpecified;
+                return minValueFieldSpecified;
             }
             set {
-                this.minValueFieldSpecified = value;
+                minValueFieldSpecified = value;
             }
         }
         
@@ -33144,10 +33144,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal MaxValue {
             get {
-                return this.maxValueField;
+                return maxValueField;
             }
             set {
-                this.maxValueField = value;
+                maxValueField = value;
             }
         }
         
@@ -33156,10 +33156,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MaxValueSpecified {
             get {
-                return this.maxValueFieldSpecified;
+                return maxValueFieldSpecified;
             }
             set {
-                this.maxValueFieldSpecified = value;
+                maxValueFieldSpecified = value;
             }
         }
     }
@@ -33201,10 +33201,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime DefaultDate {
             get {
-                return this.defaultDateField;
+                return defaultDateField;
             }
             set {
-                this.defaultDateField = value;
+                defaultDateField = value;
             }
         }
         
@@ -33213,10 +33213,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultDateSpecified {
             get {
-                return this.defaultDateFieldSpecified;
+                return defaultDateFieldSpecified;
             }
             set {
-                this.defaultDateFieldSpecified = value;
+                defaultDateFieldSpecified = value;
             }
         }
         
@@ -33230,10 +33230,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime MinDate {
             get {
-                return this.minDateField;
+                return minDateField;
             }
             set {
-                this.minDateField = value;
+                minDateField = value;
             }
         }
         
@@ -33242,10 +33242,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MinDateSpecified {
             get {
-                return this.minDateFieldSpecified;
+                return minDateFieldSpecified;
             }
             set {
-                this.minDateFieldSpecified = value;
+                minDateFieldSpecified = value;
             }
         }
         
@@ -33259,10 +33259,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime MaxDate {
             get {
-                return this.maxDateField;
+                return maxDateField;
             }
             set {
-                this.maxDateField = value;
+                maxDateField = value;
             }
         }
         
@@ -33271,10 +33271,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool MaxDateSpecified {
             get {
-                return this.maxDateFieldSpecified;
+                return maxDateFieldSpecified;
             }
             set {
-                this.maxDateFieldSpecified = value;
+                maxDateFieldSpecified = value;
             }
         }
     }
@@ -33307,10 +33307,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool DefaultValue {
             get {
-                return this.defaultValueField;
+                return defaultValueField;
             }
             set {
-                this.defaultValueField = value;
+                defaultValueField = value;
             }
         }
         
@@ -33319,10 +33319,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool DefaultValueSpecified {
             get {
-                return this.defaultValueFieldSpecified;
+                return defaultValueFieldSpecified;
             }
             set {
-                this.defaultValueFieldSpecified = value;
+                defaultValueFieldSpecified = value;
             }
         }
     }
@@ -33357,10 +33357,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CurCode {
             get {
-                return this.curCodeField;
+                return curCodeField;
             }
             set {
-                this.curCodeField = value;
+                curCodeField = value;
             }
         }
         
@@ -33373,10 +33373,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Amount {
             get {
-                return this.amountField;
+                return amountField;
             }
             set {
-                this.amountField = value;
+                amountField = value;
             }
         }
         
@@ -33385,10 +33385,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool AmountSpecified {
             get {
-                return this.amountFieldSpecified;
+                return amountFieldSpecified;
             }
             set {
-                this.amountFieldSpecified = value;
+                amountFieldSpecified = value;
             }
         }
     }
@@ -34003,10 +34003,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string IntuitId {
             get {
-                return this.intuitIdField;
+                return intuitIdField;
             }
             set {
-                this.intuitIdField = value;
+                intuitIdField = value;
             }
         }
         
@@ -34019,10 +34019,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Organization {
             get {
-                return this.organizationField;
+                return organizationField;
             }
             set {
-                this.organizationField = value;
+                organizationField = value;
             }
         }
         
@@ -34031,10 +34031,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OrganizationSpecified {
             get {
-                return this.organizationFieldSpecified;
+                return organizationFieldSpecified;
             }
             set {
-                this.organizationFieldSpecified = value;
+                organizationFieldSpecified = value;
             }
         }
         
@@ -34053,10 +34053,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Title {
             get {
-                return this.titleField;
+                return titleField;
             }
             set {
-                this.titleField = value;
+                titleField = value;
             }
         }
         
@@ -34073,10 +34073,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GivenName {
             get {
-                return this.givenNameField;
+                return givenNameField;
             }
             set {
-                this.givenNameField = value;
+                givenNameField = value;
             }
         }
         
@@ -34093,10 +34093,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MiddleName {
             get {
-                return this.middleNameField;
+                return middleNameField;
             }
             set {
-                this.middleNameField = value;
+                middleNameField = value;
             }
         }
         
@@ -34113,10 +34113,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FamilyName {
             get {
-                return this.familyNameField;
+                return familyNameField;
             }
             set {
-                this.familyNameField = value;
+                familyNameField = value;
             }
         }
         
@@ -34129,10 +34129,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Suffix {
             get {
-                return this.suffixField;
+                return suffixField;
             }
             set {
-                this.suffixField = value;
+                suffixField = value;
             }
         }
         
@@ -34145,10 +34145,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -34161,10 +34161,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CompanyName {
             get {
-                return this.companyNameField;
+                return companyNameField;
             }
             set {
-                this.companyNameField = value;
+                companyNameField = value;
             }
         }
         
@@ -34181,10 +34181,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DisplayName {
             get {
-                return this.displayNameField;
+                return displayNameField;
             }
             set {
-                this.displayNameField = value;
+                displayNameField = value;
             }
         }
         
@@ -34197,10 +34197,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PrintOnCheckName {
             get {
-                return this.printOnCheckNameField;
+                return printOnCheckNameField;
             }
             set {
-                this.printOnCheckNameField = value;
+                printOnCheckNameField = value;
             }
         }
         
@@ -34213,10 +34213,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string UserId {
             get {
-                return this.userIdField;
+                return userIdField;
             }
             set {
-                this.userIdField = value;
+                userIdField = value;
             }
         }
         
@@ -34230,10 +34230,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -34242,10 +34242,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
         
@@ -34258,10 +34258,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber PrimaryPhone {
             get {
-                return this.primaryPhoneField;
+                return primaryPhoneField;
             }
             set {
-                this.primaryPhoneField = value;
+                primaryPhoneField = value;
             }
         }
         
@@ -34274,10 +34274,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber AlternatePhone {
             get {
-                return this.alternatePhoneField;
+                return alternatePhoneField;
             }
             set {
-                this.alternatePhoneField = value;
+                alternatePhoneField = value;
             }
         }
         
@@ -34290,10 +34290,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Mobile {
             get {
-                return this.mobileField;
+                return mobileField;
             }
             set {
-                this.mobileField = value;
+                mobileField = value;
             }
         }
         
@@ -34306,10 +34306,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TelephoneNumber Fax {
             get {
-                return this.faxField;
+                return faxField;
             }
             set {
-                this.faxField = value;
+                faxField = value;
             }
         }
         
@@ -34322,10 +34322,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public EmailAddress PrimaryEmailAddr {
             get {
-                return this.primaryEmailAddrField;
+                return primaryEmailAddrField;
             }
             set {
-                this.primaryEmailAddrField = value;
+                primaryEmailAddrField = value;
             }
         }
         
@@ -34338,10 +34338,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public WebSiteAddress WebAddr {
             get {
-                return this.webAddrField;
+                return webAddrField;
             }
             set {
-                this.webAddrField = value;
+                webAddrField = value;
             }
         }
         
@@ -34355,10 +34355,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherContactInfo")]
         public ContactInfo[] OtherContactInfo {
             get {
-                return this.otherContactInfoField;
+                return otherContactInfoField;
             }
             set {
-                this.otherContactInfoField = value;
+                otherContactInfoField = value;
             }
         }
         
@@ -34371,10 +34371,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType DefaultTaxCodeRef {
             get {
-                return this.defaultTaxCodeRefField;
+                return defaultTaxCodeRefField;
             }
             set {
-                this.defaultTaxCodeRefField = value;
+                defaultTaxCodeRefField = value;
             }
         }
     }
@@ -34523,10 +34523,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Taxable {
             get {
-                return this.taxableField;
+                return taxableField;
             }
             set {
-                this.taxableField = value;
+                taxableField = value;
             }
         }
         
@@ -34535,10 +34535,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxableSpecified {
             get {
-                return this.taxableFieldSpecified;
+                return taxableFieldSpecified;
             }
             set {
-                this.taxableFieldSpecified = value;
+                taxableFieldSpecified = value;
             }
         }
         
@@ -34551,10 +34551,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress BillAddr {
             get {
-                return this.billAddrField;
+                return billAddrField;
             }
             set {
-                this.billAddrField = value;
+                billAddrField = value;
             }
         }
         
@@ -34567,10 +34567,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -34584,10 +34584,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -34600,10 +34600,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ContactName {
             get {
-                return this.contactNameField;
+                return contactNameField;
             }
             set {
-                this.contactNameField = value;
+                contactNameField = value;
             }
         }
         
@@ -34616,10 +34616,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AltContactName {
             get {
-                return this.altContactNameField;
+                return altContactNameField;
             }
             set {
-                this.altContactNameField = value;
+                altContactNameField = value;
             }
         }
         
@@ -34632,10 +34632,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Notes {
             get {
-                return this.notesField;
+                return notesField;
             }
             set {
-                this.notesField = value;
+                notesField = value;
             }
         }
         
@@ -34648,10 +34648,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Job {
             get {
-                return this.jobField;
+                return jobField;
             }
             set {
-                this.jobField = value;
+                jobField = value;
             }
         }
         
@@ -34660,10 +34660,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool JobSpecified {
             get {
-                return this.jobFieldSpecified;
+                return jobFieldSpecified;
             }
             set {
-                this.jobFieldSpecified = value;
+                jobFieldSpecified = value;
             }
         }
         
@@ -34676,10 +34676,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool BillWithParent {
             get {
-                return this.billWithParentField;
+                return billWithParentField;
             }
             set {
-                this.billWithParentField = value;
+                billWithParentField = value;
             }
         }
         
@@ -34688,10 +34688,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillWithParentSpecified {
             get {
-                return this.billWithParentFieldSpecified;
+                return billWithParentFieldSpecified;
             }
             set {
-                this.billWithParentFieldSpecified = value;
+                billWithParentFieldSpecified = value;
             }
         }
         
@@ -34704,10 +34704,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType RootCustomerRef {
             get {
-                return this.rootCustomerRefField;
+                return rootCustomerRefField;
             }
             set {
-                this.rootCustomerRefField = value;
+                rootCustomerRefField = value;
             }
         }
         
@@ -34720,10 +34720,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -34736,10 +34736,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int Level {
             get {
-                return this.levelField;
+                return levelField;
             }
             set {
-                this.levelField = value;
+                levelField = value;
             }
         }
         
@@ -34748,10 +34748,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LevelSpecified {
             get {
-                return this.levelFieldSpecified;
+                return levelFieldSpecified;
             }
             set {
-                this.levelFieldSpecified = value;
+                levelFieldSpecified = value;
             }
         }
         
@@ -34764,10 +34764,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CustomerTypeRef {
             get {
-                return this.customerTypeRefField;
+                return customerTypeRefField;
             }
             set {
-                this.customerTypeRefField = value;
+                customerTypeRefField = value;
             }
         }
         
@@ -34780,10 +34780,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesTermRef {
             get {
-                return this.salesTermRefField;
+                return salesTermRefField;
             }
             set {
-                this.salesTermRefField = value;
+                salesTermRefField = value;
             }
         }
         
@@ -34796,10 +34796,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType SalesRepRef {
             get {
-                return this.salesRepRefField;
+                return salesRepRefField;
             }
             set {
-                this.salesRepRefField = value;
+                salesRepRefField = value;
             }
         }
         
@@ -34809,10 +34809,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public ReferenceType AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -34821,10 +34821,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType6 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -34837,10 +34837,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PaymentMethodRef {
             get {
-                return this.paymentMethodRefField;
+                return paymentMethodRefField;
             }
             set {
-                this.paymentMethodRefField = value;
+                paymentMethodRefField = value;
             }
         }
         
@@ -34853,10 +34853,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public CreditChargeInfo CCDetail {
             get {
-                return this.cCDetailField;
+                return cCDetailField;
             }
             set {
-                this.cCDetailField = value;
+                cCDetailField = value;
             }
         }
         
@@ -34869,10 +34869,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PriceLevelRef {
             get {
-                return this.priceLevelRefField;
+                return priceLevelRefField;
             }
             set {
-                this.priceLevelRefField = value;
+                priceLevelRefField = value;
             }
         }
         
@@ -34887,10 +34887,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -34899,10 +34899,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -34916,10 +34916,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime OpenBalanceDate {
             get {
-                return this.openBalanceDateField;
+                return openBalanceDateField;
             }
             set {
-                this.openBalanceDateField = value;
+                openBalanceDateField = value;
             }
         }
         
@@ -34928,10 +34928,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OpenBalanceDateSpecified {
             get {
-                return this.openBalanceDateFieldSpecified;
+                return openBalanceDateFieldSpecified;
             }
             set {
-                this.openBalanceDateFieldSpecified = value;
+                openBalanceDateFieldSpecified = value;
             }
         }
         
@@ -34948,10 +34948,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal BalanceWithJobs {
             get {
-                return this.balanceWithJobsField;
+                return balanceWithJobsField;
             }
             set {
-                this.balanceWithJobsField = value;
+                balanceWithJobsField = value;
             }
         }
         
@@ -34960,10 +34960,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceWithJobsSpecified {
             get {
-                return this.balanceWithJobsFieldSpecified;
+                return balanceWithJobsFieldSpecified;
             }
             set {
-                this.balanceWithJobsFieldSpecified = value;
+                balanceWithJobsFieldSpecified = value;
             }
         }
         
@@ -34976,10 +34976,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal CreditLimit {
             get {
-                return this.creditLimitField;
+                return creditLimitField;
             }
             set {
-                this.creditLimitField = value;
+                creditLimitField = value;
             }
         }
         
@@ -34988,10 +34988,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditLimitSpecified {
             get {
-                return this.creditLimitFieldSpecified;
+                return creditLimitFieldSpecified;
             }
             set {
-                this.creditLimitFieldSpecified = value;
+                creditLimitFieldSpecified = value;
             }
         }
         
@@ -35004,10 +35004,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNum {
             get {
-                return this.acctNumField;
+                return acctNumField;
             }
             set {
-                this.acctNumField = value;
+                acctNumField = value;
             }
         }
         
@@ -35020,10 +35020,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CurrencyRef {
             get {
-                return this.currencyRefField;
+                return currencyRefField;
             }
             set {
-                this.currencyRefField = value;
+                currencyRefField = value;
             }
         }
         
@@ -35036,10 +35036,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal OverDueBalance {
             get {
-                return this.overDueBalanceField;
+                return overDueBalanceField;
             }
             set {
-                this.overDueBalanceField = value;
+                overDueBalanceField = value;
             }
         }
         
@@ -35048,10 +35048,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OverDueBalanceSpecified {
             get {
-                return this.overDueBalanceFieldSpecified;
+                return overDueBalanceFieldSpecified;
             }
             set {
-                this.overDueBalanceFieldSpecified = value;
+                overDueBalanceFieldSpecified = value;
             }
         }
         
@@ -35064,10 +35064,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalRevenue {
             get {
-                return this.totalRevenueField;
+                return totalRevenueField;
             }
             set {
-                this.totalRevenueField = value;
+                totalRevenueField = value;
             }
         }
         
@@ -35076,10 +35076,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalRevenueSpecified {
             get {
-                return this.totalRevenueFieldSpecified;
+                return totalRevenueFieldSpecified;
             }
             set {
-                this.totalRevenueFieldSpecified = value;
+                totalRevenueFieldSpecified = value;
             }
         }
         
@@ -35092,10 +35092,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal TotalExpense {
             get {
-                return this.totalExpenseField;
+                return totalExpenseField;
             }
             set {
-                this.totalExpenseField = value;
+                totalExpenseField = value;
             }
         }
         
@@ -35104,10 +35104,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TotalExpenseSpecified {
             get {
-                return this.totalExpenseFieldSpecified;
+                return totalExpenseFieldSpecified;
             }
             set {
-                this.totalExpenseFieldSpecified = value;
+                totalExpenseFieldSpecified = value;
             }
         }
         
@@ -35120,10 +35120,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PreferredDeliveryMethod {
             get {
-                return this.preferredDeliveryMethodField;
+                return preferredDeliveryMethodField;
             }
             set {
-                this.preferredDeliveryMethodField = value;
+                preferredDeliveryMethodField = value;
             }
         }
         
@@ -35136,10 +35136,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ResaleNum {
             get {
-                return this.resaleNumField;
+                return resaleNumField;
             }
             set {
-                this.resaleNumField = value;
+                resaleNumField = value;
             }
         }
         
@@ -35152,10 +35152,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public JobInfo JobInfo {
             get {
-                return this.jobInfoField;
+                return jobInfoField;
             }
             set {
-                this.jobInfoField = value;
+                jobInfoField = value;
             }
         }
         
@@ -35168,10 +35168,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TDSEnabled {
             get {
-                return this.tDSEnabledField;
+                return tDSEnabledField;
             }
             set {
-                this.tDSEnabledField = value;
+                tDSEnabledField = value;
             }
         }
         
@@ -35180,10 +35180,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSEnabledSpecified {
             get {
-                return this.tDSEnabledFieldSpecified;
+                return tDSEnabledFieldSpecified;
             }
             set {
-                this.tDSEnabledFieldSpecified = value;
+                tDSEnabledFieldSpecified = value;
             }
         }
         
@@ -35196,10 +35196,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType CustomerEx {
             get {
-                return this.customerExField;
+                return customerExField;
             }
             set {
-                this.customerExField = value;
+                customerExField = value;
             }
         }
         
@@ -35212,10 +35212,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SecondaryTaxIdentifier {
             get {
-                return this.secondaryTaxIdentifierField;
+                return secondaryTaxIdentifierField;
             }
             set {
-                this.secondaryTaxIdentifierField = value;
+                secondaryTaxIdentifierField = value;
             }
         }
         
@@ -35228,10 +35228,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ARAccountRef {
             get {
-                return this.aRAccountRefField;
+                return aRAccountRefField;
             }
             set {
-                this.aRAccountRefField = value;
+                aRAccountRefField = value;
             }
         }
         
@@ -35244,10 +35244,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string PrimaryTaxIdentifier {
             get {
-                return this.primaryTaxIdentifierField;
+                return primaryTaxIdentifierField;
             }
             set {
-                this.primaryTaxIdentifierField = value;
+                primaryTaxIdentifierField = value;
             }
         }
         
@@ -35260,10 +35260,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxExemptionReasonId {
             get {
-                return this.taxExemptionReasonIdField;
+                return taxExemptionReasonIdField;
             }
             set {
-                this.taxExemptionReasonIdField = value;
+                taxExemptionReasonIdField = value;
             }
         }
         
@@ -35276,10 +35276,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IsProject {
             get {
-                return this.isProjectField;
+                return isProjectField;
             }
             set {
-                this.isProjectField = value;
+                isProjectField = value;
             }
         }
         
@@ -35288,10 +35288,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IsProjectSpecified {
             get {
-                return this.isProjectFieldSpecified;
+                return isProjectFieldSpecified;
             }
             set {
-                this.isProjectFieldSpecified = value;
+                isProjectFieldSpecified = value;
             }
         }
         
@@ -35304,10 +35304,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BusinessNumber {
             get {
-                return this.businessNumberField;
+                return businessNumberField;
             }
             set {
-                this.businessNumberField = value;
+                businessNumberField = value;
             }
         }
         
@@ -35320,10 +35320,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GSTIN {
             get {
-                return this.gSTINField;
+                return gSTINField;
             }
             set {
-                this.gSTINField = value;
+                gSTINField = value;
             }
         }
         
@@ -35336,10 +35336,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GSTRegistrationType {
             get {
-                return this.gSTRegistrationTypeField;
+                return gSTRegistrationTypeField;
             }
             set {
-                this.gSTRegistrationTypeField = value;
+                gSTRegistrationTypeField = value;
             }
         }
         
@@ -35352,10 +35352,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IsCISContractor {
             get {
-                return this.isCISContractorField;
+                return isCISContractorField;
             }
             set {
-                this.isCISContractorField = value;
+                isCISContractorField = value;
             }
         }
         
@@ -35364,10 +35364,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IsCISContractorSpecified {
             get {
-                return this.isCISContractorFieldSpecified;
+                return isCISContractorFieldSpecified;
             }
             set {
-                this.isCISContractorFieldSpecified = value;
+                isCISContractorFieldSpecified = value;
             }
         }
         
@@ -35379,10 +35379,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ClientCompanyId {
             get {
-                return this.clientCompanyIdField;
+                return clientCompanyIdField;
             }
             set {
-                this.clientCompanyIdField = value;
+                clientCompanyIdField = value;
             }
         }
         
@@ -35394,10 +35394,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ClientEntityId {
             get {
-                return this.clientEntityIdField;
+                return clientEntityIdField;
             }
             set {
-                this.clientEntityIdField = value;
+                clientEntityIdField = value;
             }
         }
     }
@@ -35459,10 +35459,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public JobStatusEnum Status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -35471,10 +35471,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StatusSpecified {
             get {
-                return this.statusFieldSpecified;
+                return statusFieldSpecified;
             }
             set {
-                this.statusFieldSpecified = value;
+                statusFieldSpecified = value;
             }
         }
         
@@ -35488,10 +35488,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime StartDate {
             get {
-                return this.startDateField;
+                return startDateField;
             }
             set {
-                this.startDateField = value;
+                startDateField = value;
             }
         }
         
@@ -35500,10 +35500,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartDateSpecified {
             get {
-                return this.startDateFieldSpecified;
+                return startDateFieldSpecified;
             }
             set {
-                this.startDateFieldSpecified = value;
+                startDateFieldSpecified = value;
             }
         }
         
@@ -35517,10 +35517,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ProjectedEndDate {
             get {
-                return this.projectedEndDateField;
+                return projectedEndDateField;
             }
             set {
-                this.projectedEndDateField = value;
+                projectedEndDateField = value;
             }
         }
         
@@ -35529,10 +35529,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ProjectedEndDateSpecified {
             get {
-                return this.projectedEndDateFieldSpecified;
+                return projectedEndDateFieldSpecified;
             }
             set {
-                this.projectedEndDateFieldSpecified = value;
+                projectedEndDateFieldSpecified = value;
             }
         }
         
@@ -35546,10 +35546,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime EndDate {
             get {
-                return this.endDateField;
+                return endDateField;
             }
             set {
-                this.endDateField = value;
+                endDateField = value;
             }
         }
         
@@ -35558,10 +35558,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndDateSpecified {
             get {
-                return this.endDateFieldSpecified;
+                return endDateFieldSpecified;
             }
             set {
-                this.endDateFieldSpecified = value;
+                endDateFieldSpecified = value;
             }
         }
         
@@ -35574,10 +35574,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Description {
             get {
-                return this.descriptionField;
+                return descriptionField;
             }
             set {
-                this.descriptionField = value;
+                descriptionField = value;
             }
         }
         
@@ -35590,10 +35590,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType JobTypeRef {
             get {
-                return this.jobTypeRefField;
+                return jobTypeRefField;
             }
             set {
-                this.jobTypeRefField = value;
+                jobTypeRefField = value;
             }
         }
     }
@@ -35644,60 +35644,60 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public string DisplayName {
             get {
-                return this.displayNameField;
+                return displayNameField;
             }
             set {
-                this.displayNameField = value;
+                displayNameField = value;
             }
         }
         
         /// <remarks/>
         public string Title {
             get {
-                return this.titleField;
+                return titleField;
             }
             set {
-                this.titleField = value;
+                titleField = value;
             }
         }
         
         /// <remarks/>
         public string GivenName {
             get {
-                return this.givenNameField;
+                return givenNameField;
             }
             set {
-                this.givenNameField = value;
+                givenNameField = value;
             }
         }
         
         /// <remarks/>
         public string MiddleName {
             get {
-                return this.middleNameField;
+                return middleNameField;
             }
             set {
-                this.middleNameField = value;
+                middleNameField = value;
             }
         }
         
         /// <remarks/>
         public string FamilyName {
             get {
-                return this.familyNameField;
+                return familyNameField;
             }
             set {
-                this.familyNameField = value;
+                familyNameField = value;
             }
         }
         
         /// <remarks/>
         public string Suffix {
             get {
-                return this.suffixField;
+                return suffixField;
             }
             set {
-                this.suffixField = value;
+                suffixField = value;
             }
         }
         
@@ -35708,10 +35708,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("EmailAddr")]
         public EmailAddress[] EmailAddr {
             get {
-                return this.emailAddrField;
+                return emailAddrField;
             }
             set {
-                this.emailAddrField = value;
+                emailAddrField = value;
             }
         }
         
@@ -35719,10 +35719,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Addr")]
         public PhysicalAddress[] Addr {
             get {
-                return this.addrField;
+                return addrField;
             }
             set {
-                this.addrField = value;
+                addrField = value;
             }
         }
         
@@ -35730,50 +35730,50 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("PhoneNumber")]
         public TelephoneNumber[] PhoneNumber {
             get {
-                return this.phoneNumberField;
+                return phoneNumberField;
             }
             set {
-                this.phoneNumberField = value;
+                phoneNumberField = value;
             }
         }
         
         /// <remarks/>
         public string LocaleCountry {
             get {
-                return this.localeCountryField;
+                return localeCountryField;
             }
             set {
-                this.localeCountryField = value;
+                localeCountryField = value;
             }
         }
         
         /// <remarks/>
         public string LocaleLanguage {
             get {
-                return this.localeLanguageField;
+                return localeLanguageField;
             }
             set {
-                this.localeLanguageField = value;
+                localeLanguageField = value;
             }
         }
         
         /// <remarks/>
         public string LocalePostalCode {
             get {
-                return this.localePostalCodeField;
+                return localePostalCodeField;
             }
             set {
-                this.localePostalCodeField = value;
+                localePostalCodeField = value;
             }
         }
         
         /// <remarks/>
         public string LocaleTimeZone {
             get {
-                return this.localeTimeZoneField;
+                return localeTimeZoneField;
             }
             set {
-                this.localeTimeZoneField = value;
+                localeTimeZoneField = value;
             }
         }
         
@@ -35784,10 +35784,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("NameValueAttr")]
         public NameValue[] NameValueAttr {
             get {
-                return this.nameValueAttrField;
+                return nameValueAttrField;
             }
             set {
-                this.nameValueAttrField = value;
+                nameValueAttrField = value;
             }
         }
     }
@@ -35914,10 +35914,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ContactName {
             get {
-                return this.contactNameField;
+                return contactNameField;
             }
             set {
-                this.contactNameField = value;
+                contactNameField = value;
             }
         }
         
@@ -35928,10 +35928,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AltContactName {
             get {
-                return this.altContactNameField;
+                return altContactNameField;
             }
             set {
-                this.altContactNameField = value;
+                altContactNameField = value;
             }
         }
         
@@ -35944,10 +35944,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Notes {
             get {
-                return this.notesField;
+                return notesField;
             }
             set {
-                this.notesField = value;
+                notesField = value;
             }
         }
         
@@ -35960,10 +35960,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress BillAddr {
             get {
-                return this.billAddrField;
+                return billAddrField;
             }
             set {
-                this.billAddrField = value;
+                billAddrField = value;
             }
         }
         
@@ -35976,10 +35976,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress ShipAddr {
             get {
-                return this.shipAddrField;
+                return shipAddrField;
             }
             set {
-                this.shipAddrField = value;
+                shipAddrField = value;
             }
         }
         
@@ -35993,10 +35993,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -36009,10 +36009,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxCountry {
             get {
-                return this.taxCountryField;
+                return taxCountryField;
             }
             set {
-                this.taxCountryField = value;
+                taxCountryField = value;
             }
         }
         
@@ -36022,10 +36022,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxIdentifier {
             get {
-                return this.taxIdentifierField;
+                return taxIdentifierField;
             }
             set {
-                this.taxIdentifierField = value;
+                taxIdentifierField = value;
             }
         }
         
@@ -36039,10 +36039,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime TaxIdEffectiveDate {
             get {
-                return this.taxIdEffectiveDateField;
+                return taxIdEffectiveDateField;
             }
             set {
-                this.taxIdEffectiveDateField = value;
+                taxIdEffectiveDateField = value;
             }
         }
         
@@ -36051,10 +36051,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxIdEffectiveDateSpecified {
             get {
-                return this.taxIdEffectiveDateFieldSpecified;
+                return taxIdEffectiveDateFieldSpecified;
             }
             set {
-                this.taxIdEffectiveDateFieldSpecified = value;
+                taxIdEffectiveDateFieldSpecified = value;
             }
         }
         
@@ -36067,20 +36067,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BusinessNumber {
             get {
-                return this.businessNumberField;
+                return businessNumberField;
             }
             set {
-                this.businessNumberField = value;
+                businessNumberField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -36093,20 +36093,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType VendorTypeRef {
             get {
-                return this.vendorTypeRefField;
+                return vendorTypeRefField;
             }
             set {
-                this.vendorTypeRefField = value;
+                vendorTypeRefField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType TermRef {
             get {
-                return this.termRefField;
+                return termRefField;
             }
             set {
-                this.termRefField = value;
+                termRefField = value;
             }
         }
         
@@ -36119,10 +36119,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType PrefillAccountRef {
             get {
-                return this.prefillAccountRefField;
+                return prefillAccountRefField;
             }
             set {
-                this.prefillAccountRefField = value;
+                prefillAccountRefField = value;
             }
         }
         
@@ -36137,10 +36137,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal Balance {
             get {
-                return this.balanceField;
+                return balanceField;
             }
             set {
-                this.balanceField = value;
+                balanceField = value;
             }
         }
         
@@ -36149,10 +36149,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BalanceSpecified {
             get {
-                return this.balanceFieldSpecified;
+                return balanceFieldSpecified;
             }
             set {
-                this.balanceFieldSpecified = value;
+                balanceFieldSpecified = value;
             }
         }
         
@@ -36164,10 +36164,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal BillRate {
             get {
-                return this.billRateField;
+                return billRateField;
             }
             set {
-                this.billRateField = value;
+                billRateField = value;
             }
         }
         
@@ -36176,10 +36176,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillRateSpecified {
             get {
-                return this.billRateFieldSpecified;
+                return billRateFieldSpecified;
             }
             set {
-                this.billRateFieldSpecified = value;
+                billRateFieldSpecified = value;
             }
         }
         
@@ -36192,10 +36192,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime OpenBalanceDate {
             get {
-                return this.openBalanceDateField;
+                return openBalanceDateField;
             }
             set {
-                this.openBalanceDateField = value;
+                openBalanceDateField = value;
             }
         }
         
@@ -36204,10 +36204,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool OpenBalanceDateSpecified {
             get {
-                return this.openBalanceDateFieldSpecified;
+                return openBalanceDateFieldSpecified;
             }
             set {
-                this.openBalanceDateFieldSpecified = value;
+                openBalanceDateFieldSpecified = value;
             }
         }
         
@@ -36217,10 +36217,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal CreditLimit {
             get {
-                return this.creditLimitField;
+                return creditLimitField;
             }
             set {
-                this.creditLimitField = value;
+                creditLimitField = value;
             }
         }
         
@@ -36229,10 +36229,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool CreditLimitSpecified {
             get {
-                return this.creditLimitFieldSpecified;
+                return creditLimitFieldSpecified;
             }
             set {
-                this.creditLimitFieldSpecified = value;
+                creditLimitFieldSpecified = value;
             }
         }
         
@@ -36246,10 +36246,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNum {
             get {
-                return this.acctNumField;
+                return acctNumField;
             }
             set {
-                this.acctNumField = value;
+                acctNumField = value;
             }
         }
         
@@ -36260,10 +36260,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Vendor1099 {
             get {
-                return this.vendor1099Field;
+                return vendor1099Field;
             }
             set {
-                this.vendor1099Field = value;
+                vendor1099Field = value;
             }
         }
         
@@ -36272,10 +36272,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool Vendor1099Specified {
             get {
-                return this.vendor1099FieldSpecified;
+                return vendor1099FieldSpecified;
             }
             set {
-                this.vendor1099FieldSpecified = value;
+                vendor1099FieldSpecified = value;
             }
         }
         
@@ -36288,10 +36288,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool T4AEligible {
             get {
-                return this.t4AEligibleField;
+                return t4AEligibleField;
             }
             set {
-                this.t4AEligibleField = value;
+                t4AEligibleField = value;
             }
         }
         
@@ -36300,10 +36300,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool T4AEligibleSpecified {
             get {
-                return this.t4AEligibleFieldSpecified;
+                return t4AEligibleFieldSpecified;
             }
             set {
-                this.t4AEligibleFieldSpecified = value;
+                t4AEligibleFieldSpecified = value;
             }
         }
         
@@ -36316,10 +36316,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool T5018Eligible {
             get {
-                return this.t5018EligibleField;
+                return t5018EligibleField;
             }
             set {
-                this.t5018EligibleField = value;
+                t5018EligibleField = value;
             }
         }
         
@@ -36328,10 +36328,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool T5018EligibleSpecified {
             get {
-                return this.t5018EligibleFieldSpecified;
+                return t5018EligibleFieldSpecified;
             }
             set {
-                this.t5018EligibleFieldSpecified = value;
+                t5018EligibleFieldSpecified = value;
             }
         }
         
@@ -36341,10 +36341,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType CurrencyRef {
             get {
-                return this.currencyRefField;
+                return currencyRefField;
             }
             set {
-                this.currencyRefField = value;
+                currencyRefField = value;
             }
         }
         
@@ -36358,10 +36358,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TDSEnabled {
             get {
-                return this.tDSEnabledField;
+                return tDSEnabledField;
             }
             set {
-                this.tDSEnabledField = value;
+                tDSEnabledField = value;
             }
         }
         
@@ -36370,10 +36370,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSEnabledSpecified {
             get {
-                return this.tDSEnabledFieldSpecified;
+                return tDSEnabledFieldSpecified;
             }
             set {
-                this.tDSEnabledFieldSpecified = value;
+                tDSEnabledFieldSpecified = value;
             }
         }
         
@@ -36386,10 +36386,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TDSEntityTypeId {
             get {
-                return this.tDSEntityTypeIdField;
+                return tDSEntityTypeIdField;
             }
             set {
-                this.tDSEntityTypeIdField = value;
+                tDSEntityTypeIdField = value;
             }
         }
         
@@ -36398,10 +36398,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSEntityTypeIdSpecified {
             get {
-                return this.tDSEntityTypeIdFieldSpecified;
+                return tDSEntityTypeIdFieldSpecified;
             }
             set {
-                this.tDSEntityTypeIdFieldSpecified = value;
+                tDSEntityTypeIdFieldSpecified = value;
             }
         }
         
@@ -36414,10 +36414,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int TDSSectionTypeId {
             get {
-                return this.tDSSectionTypeIdField;
+                return tDSSectionTypeIdField;
             }
             set {
-                this.tDSSectionTypeIdField = value;
+                tDSSectionTypeIdField = value;
             }
         }
         
@@ -36426,10 +36426,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSSectionTypeIdSpecified {
             get {
-                return this.tDSSectionTypeIdFieldSpecified;
+                return tDSSectionTypeIdFieldSpecified;
             }
             set {
-                this.tDSSectionTypeIdFieldSpecified = value;
+                tDSSectionTypeIdFieldSpecified = value;
             }
         }
         
@@ -36442,10 +36442,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool TDSOverrideThreshold {
             get {
-                return this.tDSOverrideThresholdField;
+                return tDSOverrideThresholdField;
             }
             set {
-                this.tDSOverrideThresholdField = value;
+                tDSOverrideThresholdField = value;
             }
         }
         
@@ -36454,10 +36454,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TDSOverrideThresholdSpecified {
             get {
-                return this.tDSOverrideThresholdFieldSpecified;
+                return tDSOverrideThresholdFieldSpecified;
             }
             set {
-                this.tDSOverrideThresholdFieldSpecified = value;
+                tDSOverrideThresholdFieldSpecified = value;
             }
         }
         
@@ -36470,10 +36470,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxReportingBasis {
             get {
-                return this.taxReportingBasisField;
+                return taxReportingBasisField;
             }
             set {
-                this.taxReportingBasisField = value;
+                taxReportingBasisField = value;
             }
         }
         
@@ -36486,10 +36486,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType APAccountRef {
             get {
-                return this.aPAccountRefField;
+                return aPAccountRefField;
             }
             set {
-                this.aPAccountRefField = value;
+                aPAccountRefField = value;
             }
         }
         
@@ -36499,10 +36499,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType VendorEx {
             get {
-                return this.vendorExField;
+                return vendorExField;
             }
             set {
-                this.vendorExField = value;
+                vendorExField = value;
             }
         }
         
@@ -36515,10 +36515,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GSTIN {
             get {
-                return this.gSTINField;
+                return gSTINField;
             }
             set {
-                this.gSTINField = value;
+                gSTINField = value;
             }
         }
         
@@ -36531,10 +36531,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string GSTRegistrationType {
             get {
-                return this.gSTRegistrationTypeField;
+                return gSTRegistrationTypeField;
             }
             set {
-                this.gSTRegistrationTypeField = value;
+                gSTRegistrationTypeField = value;
             }
         }
         
@@ -36547,10 +36547,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool IsSubContractor {
             get {
-                return this.isSubContractorField;
+                return isSubContractorField;
             }
             set {
-                this.isSubContractorField = value;
+                isSubContractorField = value;
             }
         }
         
@@ -36559,10 +36559,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool IsSubContractorSpecified {
             get {
-                return this.isSubContractorFieldSpecified;
+                return isSubContractorFieldSpecified;
             }
             set {
-                this.isSubContractorFieldSpecified = value;
+                isSubContractorFieldSpecified = value;
             }
         }
         
@@ -36572,10 +36572,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SubcontractorType {
             get {
-                return this.subcontractorTypeField;
+                return subcontractorTypeField;
             }
             set {
-                this.subcontractorTypeField = value;
+                subcontractorTypeField = value;
             }
         }
         
@@ -36585,10 +36585,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string CISRate {
             get {
-                return this.cISRateField;
+                return cISRateField;
             }
             set {
-                this.cISRateField = value;
+                cISRateField = value;
             }
         }
         
@@ -36601,10 +36601,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool HasTPAR {
             get {
-                return this.hasTPARField;
+                return hasTPARField;
             }
             set {
-                this.hasTPARField = value;
+                hasTPARField = value;
             }
         }
         
@@ -36613,10 +36613,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HasTPARSpecified {
             get {
-                return this.hasTPARFieldSpecified;
+                return hasTPARFieldSpecified;
             }
             set {
-                this.hasTPARFieldSpecified = value;
+                hasTPARFieldSpecified = value;
             }
         }
         
@@ -36629,10 +36629,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public VendorBankAccountDetail VendorPaymentBankDetail {
             get {
-                return this.vendorPaymentBankDetailField;
+                return vendorPaymentBankDetailField;
             }
             set {
-                this.vendorPaymentBankDetailField = value;
+                vendorPaymentBankDetailField = value;
             }
         }
     }
@@ -36669,10 +36669,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BankBranchIdentifier {
             get {
-                return this.bankBranchIdentifierField;
+                return bankBranchIdentifierField;
             }
             set {
-                this.bankBranchIdentifierField = value;
+                bankBranchIdentifierField = value;
             }
         }
         
@@ -36685,10 +36685,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BankAccountNumber {
             get {
-                return this.bankAccountNumberField;
+                return bankAccountNumberField;
             }
             set {
-                this.bankAccountNumberField = value;
+                bankAccountNumberField = value;
             }
         }
         
@@ -36701,10 +36701,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BankAccountName {
             get {
-                return this.bankAccountNameField;
+                return bankAccountNameField;
             }
             set {
-                this.bankAccountNameField = value;
+                bankAccountNameField = value;
             }
         }
         
@@ -36717,10 +36717,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string StatementText {
             get {
-                return this.statementTextField;
+                return statementTextField;
             }
             set {
-                this.statementTextField = value;
+                statementTextField = value;
             }
         }
     }
@@ -36761,10 +36761,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -36777,10 +36777,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -36793,10 +36793,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -36810,10 +36810,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -36822,10 +36822,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
     }
@@ -36890,10 +36890,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EmployeeType {
             get {
-                return this.employeeTypeField;
+                return employeeTypeField;
             }
             set {
-                this.employeeTypeField = value;
+                employeeTypeField = value;
             }
         }
         
@@ -36907,10 +36907,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EmployeeNumber {
             get {
-                return this.employeeNumberField;
+                return employeeNumberField;
             }
             set {
-                this.employeeNumberField = value;
+                employeeNumberField = value;
             }
         }
         
@@ -36924,10 +36924,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SSN {
             get {
-                return this.sSNField;
+                return sSNField;
             }
             set {
-                this.sSNField = value;
+                sSNField = value;
             }
         }
         
@@ -36938,10 +36938,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress PrimaryAddr {
             get {
-                return this.primaryAddrField;
+                return primaryAddrField;
             }
             set {
-                this.primaryAddrField = value;
+                primaryAddrField = value;
             }
         }
         
@@ -36953,10 +36953,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -36968,10 +36968,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool BillableTime {
             get {
-                return this.billableTimeField;
+                return billableTimeField;
             }
             set {
-                this.billableTimeField = value;
+                billableTimeField = value;
             }
         }
         
@@ -36980,10 +36980,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillableTimeSpecified {
             get {
-                return this.billableTimeFieldSpecified;
+                return billableTimeFieldSpecified;
             }
             set {
-                this.billableTimeFieldSpecified = value;
+                billableTimeFieldSpecified = value;
             }
         }
         
@@ -36995,10 +36995,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal BillRate {
             get {
-                return this.billRateField;
+                return billRateField;
             }
             set {
-                this.billRateField = value;
+                billRateField = value;
             }
         }
         
@@ -37007,10 +37007,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BillRateSpecified {
             get {
-                return this.billRateFieldSpecified;
+                return billRateFieldSpecified;
             }
             set {
-                this.billRateFieldSpecified = value;
+                billRateFieldSpecified = value;
             }
         }
         
@@ -37021,10 +37021,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime BirthDate {
             get {
-                return this.birthDateField;
+                return birthDateField;
             }
             set {
-                this.birthDateField = value;
+                birthDateField = value;
             }
         }
         
@@ -37033,10 +37033,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool BirthDateSpecified {
             get {
-                return this.birthDateFieldSpecified;
+                return birthDateFieldSpecified;
             }
             set {
-                this.birthDateFieldSpecified = value;
+                birthDateFieldSpecified = value;
             }
         }
         
@@ -37046,10 +37046,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public gender Gender {
             get {
-                return this.genderField;
+                return genderField;
             }
             set {
-                this.genderField = value;
+                genderField = value;
             }
         }
         
@@ -37058,10 +37058,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool GenderSpecified {
             get {
-                return this.genderFieldSpecified;
+                return genderFieldSpecified;
             }
             set {
-                this.genderFieldSpecified = value;
+                genderFieldSpecified = value;
             }
         }
         
@@ -37072,10 +37072,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime HiredDate {
             get {
-                return this.hiredDateField;
+                return hiredDateField;
             }
             set {
-                this.hiredDateField = value;
+                hiredDateField = value;
             }
         }
         
@@ -37084,10 +37084,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool HiredDateSpecified {
             get {
-                return this.hiredDateFieldSpecified;
+                return hiredDateFieldSpecified;
             }
             set {
-                this.hiredDateFieldSpecified = value;
+                hiredDateFieldSpecified = value;
             }
         }
         
@@ -37098,10 +37098,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime ReleasedDate {
             get {
-                return this.releasedDateField;
+                return releasedDateField;
             }
             set {
-                this.releasedDateField = value;
+                releasedDateField = value;
             }
         }
         
@@ -37110,10 +37110,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReleasedDateSpecified {
             get {
-                return this.releasedDateFieldSpecified;
+                return releasedDateFieldSpecified;
             }
             set {
-                this.releasedDateFieldSpecified = value;
+                releasedDateFieldSpecified = value;
             }
         }
         
@@ -37123,10 +37123,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TimeEntryUsedForPaychecksEnum UseTimeEntry {
             get {
-                return this.useTimeEntryField;
+                return useTimeEntryField;
             }
             set {
-                this.useTimeEntryField = value;
+                useTimeEntryField = value;
             }
         }
         
@@ -37135,10 +37135,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool UseTimeEntrySpecified {
             get {
-                return this.useTimeEntryFieldSpecified;
+                return useTimeEntryFieldSpecified;
             }
             set {
-                this.useTimeEntryFieldSpecified = value;
+                useTimeEntryFieldSpecified = value;
             }
         }
         
@@ -37148,10 +37148,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType EmployeeEx {
             get {
-                return this.employeeExField;
+                return employeeExField;
             }
             set {
-                this.employeeExField = value;
+                employeeExField = value;
             }
         }
         
@@ -37162,10 +37162,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string V4IDPseudonym {
             get {
-                return this.v4IDPseudonymField;
+                return v4IDPseudonymField;
             }
             set {
-                this.v4IDPseudonymField = value;
+                v4IDPseudonymField = value;
             }
         }
     }
@@ -37206,10 +37206,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -37221,10 +37221,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -37237,10 +37237,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -37254,10 +37254,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -37266,10 +37266,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
     }
@@ -37304,10 +37304,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AcctNum {
             get {
-                return this.acctNumField;
+                return acctNumField;
             }
             set {
-                this.acctNumField = value;
+                acctNumField = value;
             }
         }
         
@@ -37318,10 +37318,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public PhysicalAddress PrimaryAddr {
             get {
-                return this.primaryAddrField;
+                return primaryAddrField;
             }
             set {
-                this.primaryAddrField = value;
+                primaryAddrField = value;
             }
         }
         
@@ -37333,10 +37333,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OtherAddr")]
         public PhysicalAddress[] OtherAddr {
             get {
-                return this.otherAddrField;
+                return otherAddrField;
             }
             set {
-                this.otherAddrField = value;
+                otherAddrField = value;
             }
         }
         
@@ -37346,10 +37346,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public IntuitAnyType OtherNameEx {
             get {
-                return this.otherNameExField;
+                return otherNameExField;
             }
             set {
-                this.otherNameExField = value;
+                otherNameExField = value;
             }
         }
     }
@@ -37385,10 +37385,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
+                nameField = value;
             }
         }
         
@@ -37398,10 +37398,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReferenceType ParentRef {
             get {
-                return this.parentRefField;
+                return parentRefField;
             }
             set {
-                this.parentRefField = value;
+                parentRefField = value;
             }
         }
         
@@ -37414,10 +37414,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string FullyQualifiedName {
             get {
-                return this.fullyQualifiedNameField;
+                return fullyQualifiedNameField;
             }
             set {
-                this.fullyQualifiedNameField = value;
+                fullyQualifiedNameField = value;
             }
         }
         
@@ -37427,10 +37427,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public bool Active {
             get {
-                return this.activeField;
+                return activeField;
             }
             set {
-                this.activeField = value;
+                activeField = value;
             }
         }
         
@@ -37439,10 +37439,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ActiveSpecified {
             get {
-                return this.activeFieldSpecified;
+                return activeFieldSpecified;
             }
             set {
-                this.activeFieldSpecified = value;
+                activeFieldSpecified = value;
             }
         }
     }
@@ -37499,10 +37499,10 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         public ReferenceType SalesTaxCodeRef {
             get {
-                return this.salesTaxCodeRefField;
+                return salesTaxCodeRefField;
             }
             set {
-                this.salesTaxCodeRefField = value;
+                salesTaxCodeRefField = value;
             }
         }
         
@@ -37512,30 +37512,30 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SalesTaxCountry {
             get {
-                return this.salesTaxCountryField;
+                return salesTaxCountryField;
             }
             set {
-                this.salesTaxCountryField = value;
+                salesTaxCountryField = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType SalesTaxReturnRef {
             get {
-                return this.salesTaxReturnRefField;
+                return salesTaxReturnRefField;
             }
             set {
-                this.salesTaxReturnRefField = value;
+                salesTaxReturnRefField = value;
             }
         }
         
         /// <remarks/>
         public string TaxRegistrationNumber {
             get {
-                return this.taxRegistrationNumberField;
+                return taxRegistrationNumberField;
             }
             set {
-                this.taxRegistrationNumberField = value;
+                taxRegistrationNumberField = value;
             }
         }
         
@@ -37545,20 +37545,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ReportingPeriod {
             get {
-                return this.reportingPeriodField;
+                return reportingPeriodField;
             }
             set {
-                this.reportingPeriodField = value;
+                reportingPeriodField = value;
             }
         }
         
         /// <remarks/>
         public bool TaxTrackedOnPurchases {
             get {
-                return this.taxTrackedOnPurchasesField;
+                return taxTrackedOnPurchasesField;
             }
             set {
-                this.taxTrackedOnPurchasesField = value;
+                taxTrackedOnPurchasesField = value;
             }
         }
         
@@ -37567,30 +37567,30 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxTrackedOnPurchasesSpecified {
             get {
-                return this.taxTrackedOnPurchasesFieldSpecified;
+                return taxTrackedOnPurchasesFieldSpecified;
             }
             set {
-                this.taxTrackedOnPurchasesFieldSpecified = value;
+                taxTrackedOnPurchasesFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType TaxOnPurchasesAccountRef {
             get {
-                return this.taxOnPurchasesAccountRefField;
+                return taxOnPurchasesAccountRefField;
             }
             set {
-                this.taxOnPurchasesAccountRefField = value;
+                taxOnPurchasesAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public bool TaxTrackedOnSales {
             get {
-                return this.taxTrackedOnSalesField;
+                return taxTrackedOnSalesField;
             }
             set {
-                this.taxTrackedOnSalesField = value;
+                taxTrackedOnSalesField = value;
             }
         }
         
@@ -37599,30 +37599,30 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxTrackedOnSalesSpecified {
             get {
-                return this.taxTrackedOnSalesFieldSpecified;
+                return taxTrackedOnSalesFieldSpecified;
             }
             set {
-                this.taxTrackedOnSalesFieldSpecified = value;
+                taxTrackedOnSalesFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public ReferenceType TaxTrackedOnSalesAccountRef {
             get {
-                return this.taxTrackedOnSalesAccountRefField;
+                return taxTrackedOnSalesAccountRefField;
             }
             set {
-                this.taxTrackedOnSalesAccountRefField = value;
+                taxTrackedOnSalesAccountRefField = value;
             }
         }
         
         /// <remarks/>
         public bool TaxOnTax {
             get {
-                return this.taxOnTaxField;
+                return taxOnTaxField;
             }
             set {
-                this.taxOnTaxField = value;
+                taxOnTaxField = value;
             }
         }
         
@@ -37631,10 +37631,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxOnTaxSpecified {
             get {
-                return this.taxOnTaxFieldSpecified;
+                return taxOnTaxFieldSpecified;
             }
             set {
-                this.taxOnTaxFieldSpecified = value;
+                taxOnTaxFieldSpecified = value;
             }
         }
         
@@ -37649,10 +37649,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
         public System.DateTime LastFileDate {
             get {
-                return this.lastFileDateField;
+                return lastFileDateField;
             }
             set {
-                this.lastFileDateField = value;
+                lastFileDateField = value;
             }
         }
         
@@ -37661,20 +37661,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LastFileDateSpecified {
             get {
-                return this.lastFileDateFieldSpecified;
+                return lastFileDateFieldSpecified;
             }
             set {
-                this.lastFileDateFieldSpecified = value;
+                lastFileDateFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         public IntuitAnyType TaxAgencyExt {
             get {
-                return this.taxAgencyExtField;
+                return taxAgencyExtField;
             }
             set {
-                this.taxAgencyExtField = value;
+                taxAgencyExtField = value;
             }
         }
         
@@ -37687,10 +37687,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxAgencyConfig {
             get {
-                return this.taxAgencyConfigField;
+                return taxAgencyConfigField;
             }
             set {
-                this.taxAgencyConfigField = value;
+                taxAgencyConfigField = value;
             }
         }
     }
@@ -37739,10 +37739,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Warning")]
         public Warning[] Warning {
             get {
-                return this.warningField;
+                return warningField;
             }
             set {
-                this.warningField = value;
+                warningField = value;
             }
         }
     }
@@ -37775,10 +37775,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Message {
             get {
-                return this.messageField;
+                return messageField;
             }
             set {
-                this.messageField = value;
+                messageField = value;
             }
         }
         
@@ -37788,10 +37788,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Detail {
             get {
-                return this.detailField;
+                return detailField;
             }
             set {
-                this.detailField = value;
+                detailField = value;
             }
         }
         
@@ -37801,10 +37801,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DetailLink {
             get {
-                return this.detailLinkField;
+                return detailLinkField;
             }
             set {
-                this.detailLinkField = value;
+                detailLinkField = value;
             }
         }
         
@@ -37815,10 +37815,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
+                codeField = value;
             }
         }
         
@@ -37829,10 +37829,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string element {
             get {
-                return this.elementField;
+                return elementField;
             }
             set {
-                this.elementField = value;
+                elementField = value;
             }
         }
     }
@@ -37860,10 +37860,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Error")]
         public Error[] Error {
             get {
-                return this.errorField;
+                return errorField;
             }
             set {
-                this.errorField = value;
+                errorField = value;
             }
         }
         
@@ -37874,10 +37874,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
     }
@@ -37915,10 +37915,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Warning[] Warnings {
             get {
-                return this.warningsField;
+                return warningsField;
             }
             set {
-                this.warningsField = value;
+                warningsField = value;
             }
         }
         
@@ -37930,10 +37930,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TaxService", typeof(TaxService))]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -37944,10 +37944,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string requestId {
             get {
-                return this.requestIdField;
+                return requestIdField;
             }
             set {
-                this.requestIdField = value;
+                requestIdField = value;
             }
         }
         
@@ -37958,10 +37958,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime time {
             get {
-                return this.timeField;
+                return timeField;
             }
             set {
-                this.timeField = value;
+                timeField = value;
             }
         }
         
@@ -37970,10 +37970,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool timeSpecified {
             get {
-                return this.timeFieldSpecified;
+                return timeFieldSpecified;
             }
             set {
-                this.timeFieldSpecified = value;
+                timeFieldSpecified = value;
             }
         }
         
@@ -37984,10 +37984,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string status {
             get {
-                return this.statusField;
+                return statusField;
             }
             set {
-                this.statusField = value;
+                statusField = value;
             }
         }
         
@@ -38064,10 +38064,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("OLBStatus", typeof(OLBStatus))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -38091,10 +38091,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -38124,10 +38124,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Warning[] Warnings {
             get {
-                return this.warningsField;
+                return warningsField;
             }
             set {
-                this.warningsField = value;
+                warningsField = value;
             }
         }
         
@@ -38206,10 +38206,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -38220,10 +38220,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string bId {
             get {
-                return this.bIdField;
+                return bIdField;
             }
             set {
-                this.bIdField = value;
+                bIdField = value;
             }
         }
     }
@@ -38252,10 +38252,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("QueryResponse", typeof(QueryResponse))]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -38266,10 +38266,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int size {
             get {
-                return this.sizeField;
+                return sizeField;
             }
             set {
-                this.sizeField = value;
+                sizeField = value;
             }
         }
         
@@ -38278,20 +38278,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool sizeSpecified {
             get {
-                return this.sizeFieldSpecified;
+                return sizeFieldSpecified;
             }
             set {
-                this.sizeFieldSpecified = value;
+                sizeFieldSpecified = value;
             }
         }
         
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -38333,10 +38333,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Warning[] Warnings {
             get {
-                return this.warningsField;
+                return warningsField;
             }
             set {
-                this.warningsField = value;
+                warningsField = value;
             }
         }
         
@@ -38410,10 +38410,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
         public object[] AnyIntuitObjects {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
+                itemsField = value;
             }
         }
         
@@ -38424,10 +38424,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int startPosition {
             get {
-                return this.startPositionField;
+                return startPositionField;
             }
             set {
-                this.startPositionField = value;
+                startPositionField = value;
             }
         }
         
@@ -38436,10 +38436,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool startPositionSpecified {
             get {
-                return this.startPositionFieldSpecified;
+                return startPositionFieldSpecified;
             }
             set {
-                this.startPositionFieldSpecified = value;
+                startPositionFieldSpecified = value;
             }
         }
         
@@ -38450,10 +38450,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int maxResults {
             get {
-                return this.maxResultsField;
+                return maxResultsField;
             }
             set {
-                this.maxResultsField = value;
+                maxResultsField = value;
             }
         }
         
@@ -38462,10 +38462,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool maxResultsSpecified {
             get {
-                return this.maxResultsFieldSpecified;
+                return maxResultsFieldSpecified;
             }
             set {
-                this.maxResultsFieldSpecified = value;
+                maxResultsFieldSpecified = value;
             }
         }
         
@@ -38476,10 +38476,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int totalCount {
             get {
-                return this.totalCountField;
+                return totalCountField;
             }
             set {
-                this.totalCountField = value;
+                totalCountField = value;
             }
         }
         
@@ -38488,20 +38488,20 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool totalCountSpecified {
             get {
-                return this.totalCountFieldSpecified;
+                return totalCountFieldSpecified;
             }
             set {
-                this.totalCountFieldSpecified = value;
+                totalCountFieldSpecified = value;
             }
         }
         
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -38589,10 +38589,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
         public IntuitEntity AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -38636,10 +38636,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string RequestId {
             get {
-                return this.requestIdField;
+                return requestIdField;
             }
             set {
-                this.requestIdField = value;
+                requestIdField = value;
             }
         }
         
@@ -38653,20 +38653,20 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string BatchId {
             get {
-                return this.batchIdField;
+                return batchIdField;
             }
             set {
-                this.batchIdField = value;
+                batchIdField = value;
             }
         }
         
         /// <remarks/>
         public string ObjectType {
             get {
-                return this.objectTypeField;
+                return objectTypeField;
             }
             set {
-                this.objectTypeField = value;
+                objectTypeField = value;
             }
         }
         
@@ -38680,10 +38680,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string StateCode {
             get {
-                return this.stateCodeField;
+                return stateCodeField;
             }
             set {
-                this.stateCodeField = value;
+                stateCodeField = value;
             }
         }
         
@@ -38696,10 +38696,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string StateDesc {
             get {
-                return this.stateDescField;
+                return stateDescField;
             }
             set {
-                this.stateDescField = value;
+                stateDescField = value;
             }
         }
         
@@ -38712,10 +38712,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MessageCode {
             get {
-                return this.messageCodeField;
+                return messageCodeField;
             }
             set {
-                this.messageCodeField = value;
+                messageCodeField = value;
             }
         }
         
@@ -38728,10 +38728,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string MessageDesc {
             get {
-                return this.messageDescField;
+                return messageDescField;
             }
             set {
-                this.messageDescField = value;
+                messageDescField = value;
             }
         }
     }
@@ -38787,10 +38787,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LatestUploadDateTime {
             get {
-                return this.latestUploadDateTimeField;
+                return latestUploadDateTimeField;
             }
             set {
-                this.latestUploadDateTimeField = value;
+                latestUploadDateTimeField = value;
             }
         }
         
@@ -38799,10 +38799,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LatestUploadDateTimeSpecified {
             get {
-                return this.latestUploadDateTimeFieldSpecified;
+                return latestUploadDateTimeFieldSpecified;
             }
             set {
-                this.latestUploadDateTimeFieldSpecified = value;
+                latestUploadDateTimeFieldSpecified = value;
             }
         }
         
@@ -38815,10 +38815,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime LatestWriteBackDateTime {
             get {
-                return this.latestWriteBackDateTimeField;
+                return latestWriteBackDateTimeField;
             }
             set {
-                this.latestWriteBackDateTimeField = value;
+                latestWriteBackDateTimeField = value;
             }
         }
         
@@ -38827,10 +38827,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool LatestWriteBackDateTimeSpecified {
             get {
-                return this.latestWriteBackDateTimeFieldSpecified;
+                return latestWriteBackDateTimeFieldSpecified;
             }
             set {
-                this.latestWriteBackDateTimeFieldSpecified = value;
+                latestWriteBackDateTimeFieldSpecified = value;
             }
         }
         
@@ -38843,10 +38843,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SyncType SyncType {
             get {
-                return this.syncTypeField;
+                return syncTypeField;
             }
             set {
-                this.syncTypeField = value;
+                syncTypeField = value;
             }
         }
         
@@ -38855,10 +38855,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool SyncTypeSpecified {
             get {
-                return this.syncTypeFieldSpecified;
+                return syncTypeFieldSpecified;
             }
             set {
-                this.syncTypeFieldSpecified = value;
+                syncTypeFieldSpecified = value;
             }
         }
         
@@ -38872,10 +38872,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime StartSyncTMS {
             get {
-                return this.startSyncTMSField;
+                return startSyncTMSField;
             }
             set {
-                this.startSyncTMSField = value;
+                startSyncTMSField = value;
             }
         }
         
@@ -38884,10 +38884,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool StartSyncTMSSpecified {
             get {
-                return this.startSyncTMSFieldSpecified;
+                return startSyncTMSFieldSpecified;
             }
             set {
-                this.startSyncTMSFieldSpecified = value;
+                startSyncTMSFieldSpecified = value;
             }
         }
         
@@ -38901,10 +38901,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime EndSyncTMS {
             get {
-                return this.endSyncTMSField;
+                return endSyncTMSField;
             }
             set {
-                this.endSyncTMSField = value;
+                endSyncTMSField = value;
             }
         }
         
@@ -38913,10 +38913,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EndSyncTMSSpecified {
             get {
-                return this.endSyncTMSFieldSpecified;
+                return endSyncTMSFieldSpecified;
             }
             set {
-                this.endSyncTMSFieldSpecified = value;
+                endSyncTMSFieldSpecified = value;
             }
         }
         
@@ -38929,10 +38929,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EntityName {
             get {
-                return this.entityNameField;
+                return entityNameField;
             }
             set {
-                this.entityNameField = value;
+                entityNameField = value;
             }
         }
         
@@ -38945,10 +38945,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public int EntityRowCount {
             get {
-                return this.entityRowCountField;
+                return entityRowCountField;
             }
             set {
-                this.entityRowCountField = value;
+                entityRowCountField = value;
             }
         }
         
@@ -38957,10 +38957,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool EntityRowCountSpecified {
             get {
-                return this.entityRowCountFieldSpecified;
+                return entityRowCountFieldSpecified;
             }
             set {
-                this.entityRowCountFieldSpecified = value;
+                entityRowCountFieldSpecified = value;
             }
         }
     }
@@ -39014,10 +39014,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxCode {
             get {
-                return this.taxCodeField;
+                return taxCodeField;
             }
             set {
-                this.taxCodeField = value;
+                taxCodeField = value;
             }
         }
         
@@ -39030,10 +39030,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxCodeId {
             get {
-                return this.taxCodeIdField;
+                return taxCodeIdField;
             }
             set {
-                this.taxCodeIdField = value;
+                taxCodeIdField = value;
             }
         }
         
@@ -39047,10 +39047,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("TaxRateDetails")]
         public TaxRateDetails[] TaxRateDetails {
             get {
-                return this.taxRateDetailsField;
+                return taxRateDetailsField;
             }
             set {
-                this.taxRateDetailsField = value;
+                taxRateDetailsField = value;
             }
         }
         
@@ -39060,10 +39060,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public Fault Fault {
             get {
-                return this.faultField;
+                return faultField;
             }
             set {
-                this.faultField = value;
+                faultField = value;
             }
         }
     }
@@ -39106,10 +39106,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxRateName {
             get {
-                return this.taxRateNameField;
+                return taxRateNameField;
             }
             set {
-                this.taxRateNameField = value;
+                taxRateNameField = value;
             }
         }
         
@@ -39122,10 +39122,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxRateId {
             get {
-                return this.taxRateIdField;
+                return taxRateIdField;
             }
             set {
-                this.taxRateIdField = value;
+                taxRateIdField = value;
             }
         }
         
@@ -39138,10 +39138,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public decimal RateValue {
             get {
-                return this.rateValueField;
+                return rateValueField;
             }
             set {
-                this.rateValueField = value;
+                rateValueField = value;
             }
         }
         
@@ -39150,10 +39150,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool RateValueSpecified {
             get {
-                return this.rateValueFieldSpecified;
+                return rateValueFieldSpecified;
             }
             set {
-                this.rateValueFieldSpecified = value;
+                rateValueFieldSpecified = value;
             }
         }
         
@@ -39166,10 +39166,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string TaxAgencyId {
             get {
-                return this.taxAgencyIdField;
+                return taxAgencyIdField;
             }
             set {
-                this.taxAgencyIdField = value;
+                taxAgencyIdField = value;
             }
         }
         
@@ -39182,10 +39182,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public TaxRateApplicableOnEnum TaxApplicableOn {
             get {
-                return this.taxApplicableOnField;
+                return taxApplicableOnField;
             }
             set {
-                this.taxApplicableOnField = value;
+                taxApplicableOnField = value;
             }
         }
         
@@ -39194,10 +39194,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TaxApplicableOnSpecified {
             get {
-                return this.taxApplicableOnFieldSpecified;
+                return taxApplicableOnFieldSpecified;
             }
             set {
-                this.taxApplicableOnFieldSpecified = value;
+                taxApplicableOnFieldSpecified = value;
             }
         }
     }
@@ -39252,10 +39252,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReportHeader Header {
             get {
-                return this.headerField;
+                return headerField;
             }
             set {
-                this.headerField = value;
+                headerField = value;
             }
         }
         
@@ -39263,10 +39263,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Column[] Columns {
             get {
-                return this.columnsField;
+                return columnsField;
             }
             set {
-                this.columnsField = value;
+                columnsField = value;
             }
         }
         
@@ -39274,10 +39274,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public Row[] Rows {
             get {
-                return this.rowsField;
+                return rowsField;
             }
             set {
-                this.rowsField = value;
+                rowsField = value;
             }
         }
     }
@@ -39334,10 +39334,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime Time {
             get {
-                return this.timeField;
+                return timeField;
             }
             set {
-                this.timeField = value;
+                timeField = value;
             }
         }
         
@@ -39346,10 +39346,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool TimeSpecified {
             get {
-                return this.timeFieldSpecified;
+                return timeFieldSpecified;
             }
             set {
-                this.timeFieldSpecified = value;
+                timeFieldSpecified = value;
             }
         }
         
@@ -39359,10 +39359,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string ReportName {
             get {
-                return this.reportNameField;
+                return reportNameField;
             }
             set {
-                this.reportNameField = value;
+                reportNameField = value;
             }
         }
         
@@ -39372,10 +39372,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string DateMacro {
             get {
-                return this.dateMacroField;
+                return dateMacroField;
             }
             set {
-                this.dateMacroField = value;
+                dateMacroField = value;
             }
         }
         
@@ -39385,10 +39385,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public ReportBasisEnum ReportBasis {
             get {
-                return this.reportBasisField;
+                return reportBasisField;
             }
             set {
-                this.reportBasisField = value;
+                reportBasisField = value;
             }
         }
         
@@ -39397,10 +39397,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ReportBasisSpecified {
             get {
-                return this.reportBasisFieldSpecified;
+                return reportBasisFieldSpecified;
             }
             set {
-                this.reportBasisFieldSpecified = value;
+                reportBasisFieldSpecified = value;
             }
         }
         
@@ -39410,10 +39410,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string StartPeriod {
             get {
-                return this.startPeriodField;
+                return startPeriodField;
             }
             set {
-                this.startPeriodField = value;
+                startPeriodField = value;
             }
         }
         
@@ -39423,10 +39423,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string EndPeriod {
             get {
-                return this.endPeriodField;
+                return endPeriodField;
             }
             set {
-                this.endPeriodField = value;
+                endPeriodField = value;
             }
         }
         
@@ -39436,10 +39436,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string SummarizeColumnsBy {
             get {
-                return this.summarizeColumnsByField;
+                return summarizeColumnsByField;
             }
             set {
-                this.summarizeColumnsByField = value;
+                summarizeColumnsByField = value;
             }
         }
         
@@ -39449,10 +39449,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Currency {
             get {
-                return this.currencyField;
+                return currencyField;
             }
             set {
-                this.currencyField = value;
+                currencyField = value;
             }
         }
         
@@ -39462,10 +39462,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Customer {
             get {
-                return this.customerField;
+                return customerField;
             }
             set {
-                this.customerField = value;
+                customerField = value;
             }
         }
         
@@ -39475,10 +39475,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Vendor {
             get {
-                return this.vendorField;
+                return vendorField;
             }
             set {
-                this.vendorField = value;
+                vendorField = value;
             }
         }
         
@@ -39488,10 +39488,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Employee {
             get {
-                return this.employeeField;
+                return employeeField;
             }
             set {
-                this.employeeField = value;
+                employeeField = value;
             }
         }
         
@@ -39501,10 +39501,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -39514,10 +39514,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Class {
             get {
-                return this.classField;
+                return classField;
             }
             set {
-                this.classField = value;
+                classField = value;
             }
         }
         
@@ -39527,10 +39527,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Department {
             get {
-                return this.departmentField;
+                return departmentField;
             }
             set {
-                this.departmentField = value;
+                departmentField = value;
             }
         }
         
@@ -39541,10 +39541,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Option")]
         public NameValue[] Option {
             get {
-                return this.optionField;
+                return optionField;
             }
             set {
-                this.optionField = value;
+                optionField = value;
             }
         }
     }
@@ -39594,10 +39594,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("SyncError")]
         public SyncError[] SyncError {
             get {
-                return this.syncErrorField;
+                return syncErrorField;
             }
             set {
-                this.syncErrorField = value;
+                syncErrorField = value;
             }
         }
         
@@ -39611,10 +39611,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime latestUploadTime {
             get {
-                return this.latestUploadTimeField;
+                return latestUploadTimeField;
             }
             set {
-                this.latestUploadTimeField = value;
+                latestUploadTimeField = value;
             }
         }
         
@@ -39623,10 +39623,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool latestUploadTimeSpecified {
             get {
-                return this.latestUploadTimeFieldSpecified;
+                return latestUploadTimeFieldSpecified;
             }
             set {
-                this.latestUploadTimeFieldSpecified = value;
+                latestUploadTimeFieldSpecified = value;
             }
         }
         
@@ -39637,10 +39637,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int startPosition {
             get {
-                return this.startPositionField;
+                return startPositionField;
             }
             set {
-                this.startPositionField = value;
+                startPositionField = value;
             }
         }
         
@@ -39649,10 +39649,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool startPositionSpecified {
             get {
-                return this.startPositionFieldSpecified;
+                return startPositionFieldSpecified;
             }
             set {
-                this.startPositionFieldSpecified = value;
+                startPositionFieldSpecified = value;
             }
         }
         
@@ -39663,10 +39663,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int maxResults {
             get {
-                return this.maxResultsField;
+                return maxResultsField;
             }
             set {
-                this.maxResultsField = value;
+                maxResultsField = value;
             }
         }
         
@@ -39675,10 +39675,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool maxResultsSpecified {
             get {
-                return this.maxResultsFieldSpecified;
+                return maxResultsFieldSpecified;
             }
             set {
-                this.maxResultsFieldSpecified = value;
+                maxResultsFieldSpecified = value;
             }
         }
         
@@ -39689,10 +39689,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int totalCount {
             get {
-                return this.totalCountField;
+                return totalCountField;
             }
             set {
-                this.totalCountField = value;
+                totalCountField = value;
             }
         }
         
@@ -39701,10 +39701,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool totalCountSpecified {
             get {
-                return this.totalCountFieldSpecified;
+                return totalCountFieldSpecified;
             }
             set {
-                this.totalCountFieldSpecified = value;
+                totalCountFieldSpecified = value;
             }
         }
     }
@@ -39742,10 +39742,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public Error Error {
             get {
-                return this.errorField;
+                return errorField;
             }
             set {
-                this.errorField = value;
+                errorField = value;
             }
         }
         
@@ -39758,10 +39758,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SyncObject CloudVersion {
             get {
-                return this.cloudVersionField;
+                return cloudVersionField;
             }
             set {
-                this.cloudVersionField = value;
+                cloudVersionField = value;
             }
         }
         
@@ -39774,10 +39774,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public SyncObject QBVersion {
             get {
-                return this.qBVersionField;
+                return qBVersionField;
             }
             set {
-                this.qBVersionField = value;
+                qBVersionField = value;
             }
         }
         
@@ -39791,10 +39791,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Type {
             get {
-                return this.typeField;
+                return typeField;
             }
             set {
-                this.typeField = value;
+                typeField = value;
             }
         }
         
@@ -39808,10 +39808,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string AppToken {
             get {
-                return this.appTokenField;
+                return appTokenField;
             }
             set {
-                this.appTokenField = value;
+                appTokenField = value;
             }
         }
     }
@@ -39904,10 +39904,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("VendorType", typeof(VendorType))]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
     }
@@ -40010,10 +40010,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public object AnyIntuitObject {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
+                itemField = value;
             }
         }
         
@@ -40022,10 +40022,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public ItemChoiceType7 ItemElementName {
             get {
-                return this.itemElementNameField;
+                return itemElementNameField;
             }
             set {
-                this.itemElementNameField = value;
+                itemElementNameField = value;
             }
         }
         
@@ -40036,10 +40036,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string bId {
             get {
-                return this.bIdField;
+                return bIdField;
             }
             set {
-                this.bIdField = value;
+                bIdField = value;
             }
         }
         
@@ -40050,10 +40050,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public OperationEnum operation {
             get {
-                return this.operationField;
+                return operationField;
             }
             set {
-                this.operationField = value;
+                operationField = value;
             }
         }
         
@@ -40062,10 +40062,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool operationSpecified {
             get {
-                return this.operationFieldSpecified;
+                return operationFieldSpecified;
             }
             set {
-                this.operationFieldSpecified = value;
+                operationFieldSpecified = value;
             }
         }
         
@@ -40076,10 +40076,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string optionsData {
             get {
-                return this.optionsDataField;
+                return optionsDataField;
             }
             set {
-                this.optionsDataField = value;
+                optionsDataField = value;
             }
         }
     }
@@ -40108,10 +40108,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public string Entities {
             get {
-                return this.entitiesField;
+                return entitiesField;
             }
             set {
-                this.entitiesField = value;
+                entitiesField = value;
             }
         }
         
@@ -40121,10 +40121,10 @@ namespace Intuit.Ipp.Data {
         /// </summary>
         public System.DateTime ChangedSince {
             get {
-                return this.changedSinceField;
+                return changedSinceField;
             }
             set {
-                this.changedSinceField = value;
+                changedSinceField = value;
             }
         }
         
@@ -40133,10 +40133,10 @@ namespace Intuit.Ipp.Data {
         [JsonIgnore()]
         public bool ChangedSinceSpecified {
             get {
-                return this.changedSinceFieldSpecified;
+                return changedSinceFieldSpecified;
             }
             set {
-                this.changedSinceFieldSpecified = value;
+                changedSinceFieldSpecified = value;
             }
         }
     }
@@ -40418,10 +40418,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("BatchItemRequest")]
         public BatchItemRequest[] BatchItemRequest {
             get {
-                return this.batchItemRequestField;
+                return batchItemRequestField;
             }
             set {
-                this.batchItemRequestField = value;
+                batchItemRequestField = value;
             }
         }
     }
@@ -40702,10 +40702,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Attribute")]
         public Attribute[] Attribute {
             get {
-                return this.attributeField;
+                return attributeField;
             }
             set {
-                this.attributeField = value;
+                attributeField = value;
             }
         }
     }
@@ -40725,10 +40725,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Column")]
         public Column[] Column {
             get {
-                return this.columnField;
+                return columnField;
             }
             set {
-                this.columnField = value;
+                columnField = value;
             }
         }
     }
@@ -40748,10 +40748,10 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Row")]
         public Row[] Row {
             get {
-                return this.rowField;
+                return rowField;
             }
             set {
-                this.rowField = value;
+                rowField = value;
             }
         }
     }

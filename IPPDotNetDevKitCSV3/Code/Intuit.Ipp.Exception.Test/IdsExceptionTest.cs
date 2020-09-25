@@ -90,7 +90,7 @@ namespace Intuit.Ipp.Exception.Test
             Assert.AreEqual(target.Message, errorMessage);
             Assert.AreEqual(target.ErrorCode, errorCode);
             Assert.AreEqual(target.Source, source);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Intuit.Ipp.Exception.Test
             Assert.AreEqual(newTarget.Message, errorMessage);
             Assert.AreEqual(newTarget.ErrorCode, errorCode);
             Assert.AreEqual(newTarget.Source, source);
-            Assert.ReferenceEquals(newTarget.InnerException, innerException);
+            ReferenceEquals(newTarget.InnerException, innerException);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Intuit.Ipp.Exception.Test
             System.Exception innerException = new ArgumentNullException();
             IdsException target = new IdsException(errorMessage, innerException);
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Intuit.Ipp.Exception.Test
             IdsException target = new IdsException(errorMessage);
             target.ErrorCode = "401";
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.ErrorCode, "401");
+            ReferenceEquals(target.ErrorCode, "401");
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Intuit.Ipp.Exception.Test
 
             IdsError idsError = innerExceptions[0];
             Assert.AreEqual(target.Message, errorMessage+"Details:.");
-            Assert.ReferenceEquals(target.InnerExceptions, innerExceptions);
+            ReferenceEquals(target.InnerExceptions, innerExceptions);
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Intuit.Ipp.Exception.Test
             string errorMessage = "This is an error message.";
             IdsException target = new IdsException(errorMessage: errorMessage, innerExceptions: null);
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.InnerExceptions, null);
+            ReferenceEquals(target.InnerExceptions, null);
         }
     }
 }

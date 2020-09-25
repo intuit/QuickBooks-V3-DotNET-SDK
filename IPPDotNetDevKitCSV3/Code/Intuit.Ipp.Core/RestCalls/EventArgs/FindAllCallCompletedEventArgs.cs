@@ -23,8 +23,8 @@ namespace Intuit.Ipp.Core
 {
     using System;
     using System.Collections.Generic;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Exception;
+    using Data;
+    using Exception;
 
     /// <summary>
     /// Event argument is class used to communicate after FindAll operation completed.
@@ -36,7 +36,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public FindAllCallCompletedEventArgs()
         {
-            this.Entities = new List<IEntity>();
+            Entities = new List<IEntity>();
         }
 
         /// <summary>

@@ -21,7 +21,7 @@
 namespace Intuit.Ipp.Exception
 {
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// Represents an exception raised when the Ids server is busy and cannot process user requests.

@@ -18,7 +18,7 @@ namespace Intuit.Ipp.Core.Test
 		/// <param name="strMethod"></param>
 		/// <param name="aobjParams"></param>
 		/// <returns>The return value of the called method.</returns>
-		public static object RunStaticMethod(System.Type t, string strMethod, object [] aobjParams) 
+		public static object RunStaticMethod(Type t, string strMethod, object [] aobjParams) 
 		{
 			BindingFlags eFlags = BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
 			return RunMethod(t, strMethod, null, aobjParams, eFlags);

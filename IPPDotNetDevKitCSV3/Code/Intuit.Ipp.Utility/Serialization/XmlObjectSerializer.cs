@@ -26,8 +26,8 @@ namespace Intuit.Ipp.Utility
     using System.Text;
     using System.Xml;
     using System.Xml.Serialization;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
+    using Diagnostics;
+    using Exception;
 
     /// <summary>
     /// Xml Serialize(r) to serialize and de serialize.
@@ -39,7 +39,7 @@ namespace Intuit.Ipp.Utility
         /// </summary>
         public XmlObjectSerializer()
         {
-            this.IDSLogger = new TraceLogger(); 
+            IDSLogger = new TraceLogger(); 
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Intuit.Ipp.Utility
         /// <param name="idsLogger">The ids logger.</param>
         public XmlObjectSerializer(ILogger idsLogger)
         {
-            this.IDSLogger = idsLogger;
+            IDSLogger = idsLogger;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Intuit.Ipp.Utility
             catch (SystemException ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
                 IdsExceptionManager.HandleException(serializationException);
             }
             data = data.Replace("T00:00:00Z", "");
@@ -113,7 +113,7 @@ namespace Intuit.Ipp.Utility
             catch (SystemException ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
 
                 IdsExceptionManager.HandleException(serializationException);
             }

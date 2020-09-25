@@ -90,7 +90,7 @@ namespace Intuit.Ipp.Exception.Test
             Assert.AreEqual(target.Message, errorMessage);
             Assert.AreEqual(target.ErrorCode, errorCode);
             Assert.AreEqual(target.Source, source);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Intuit.Ipp.Exception.Test
             Assert.AreEqual(newTarget.Message, errorMessage);
             Assert.AreEqual(newTarget.ErrorCode, errorCode);
             Assert.AreEqual(newTarget.Source, source);
-            Assert.ReferenceEquals(newTarget.InnerException, innerException);
+            ReferenceEquals(newTarget.InnerException, innerException);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Intuit.Ipp.Exception.Test
             System.Exception innerException = new ArgumentNullException();
             ServiceException target = new ServiceException(errorMessage, innerException);
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.InnerException, innerException);
+            ReferenceEquals(target.InnerException, innerException);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Intuit.Ipp.Exception.Test
         {
             List<IdsError> innerExceptions = new List<IdsError> { new IdsError() };
             ServiceException target = new ServiceException(innerExceptions);
-            Assert.ReferenceEquals(target.InnerExceptions, innerExceptions);
+            ReferenceEquals(target.InnerExceptions, innerExceptions);
         }
     }
 }

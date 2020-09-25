@@ -20,7 +20,7 @@
 namespace Intuit.Ipp.Exception
 {
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// TODO: Update summary.
@@ -53,7 +53,7 @@ namespace Intuit.Ipp.Exception
         /// </summary>
         public IdsError()
         {
-            this.errorMessage = Resources.IdsErrorDefaultMessage;
+            errorMessage = Resources.IdsErrorDefaultMessage;
         }
 
         /// <summary>
@@ -92,10 +92,10 @@ namespace Intuit.Ipp.Exception
         {
             if (info != null)
             {
-                this.errorCode = info.GetString("errorCode");
-                this.errorMessage = info.GetString("errorMessage");
-                this.element = info.GetString("element");
-                this.detail = info.GetString("detail");
+                errorCode = info.GetString("errorCode");
+                errorMessage = info.GetString("errorMessage");
+                element = info.GetString("element");
+                detail = info.GetString("detail");
             }
         }
 
@@ -106,12 +106,12 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.errorCode;
+                return errorCode;
             }
 
             set
             {
-                this.errorCode = value;
+                errorCode = value;
             }
         }
 
@@ -122,7 +122,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.element;
+                return element;
             }
         }
 
@@ -133,7 +133,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.errorMessage;
+                return errorMessage;
             }
         }
 
@@ -144,7 +144,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.detail;
+                return detail;
             }
         }
 
@@ -159,10 +159,10 @@ namespace Intuit.Ipp.Exception
 
             if (info != null)
             {
-                info.AddValue("errorCode", this.errorCode);
-                info.AddValue("errorMessage", this.errorMessage);
-                info.AddValue("element", this.element);
-                info.AddValue("detail", this.detail);
+                info.AddValue("errorCode", errorCode);
+                info.AddValue("errorMessage", errorMessage);
+                info.AddValue("element", element);
+                info.AddValue("detail", detail);
             }
         }
     }

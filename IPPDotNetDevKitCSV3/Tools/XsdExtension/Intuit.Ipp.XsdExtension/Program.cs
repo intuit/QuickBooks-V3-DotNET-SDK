@@ -10,7 +10,7 @@ namespace Intuit.Ipp.XsdExtension
 {
     using System;
     using System.Collections.Generic;
-    using Intuit.Ipp.Diagnostics;
+    using Diagnostics;
 
     /// <summary>
     /// Entry class for POCO class generation process

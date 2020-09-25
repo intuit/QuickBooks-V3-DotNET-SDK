@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Test.QBO
             ServiceContext context = Initializer.InitializeQBOServiceContextUsingoAuth();
             DataService.DataService service = new DataService.DataService(context);
 
-            DataService.Batch batch = service.CreateNewBatch();
+            Batch batch = service.CreateNewBatch();
             List<String> optionsData = new List<string>();
             optionsData.Add("firsttxndate");
 
@@ -65,7 +65,7 @@ namespace Intuit.Ipp.Test.QBO
 
             QueryService<Invoice> invoiceContext = new QueryService<Invoice>(context);
 
-            DataService.Batch batch = service.CreateNewBatch();
+            Batch batch = service.CreateNewBatch();
 
             int count = 1;
             foreach (Invoice invoice in newInvoiceList)
@@ -137,7 +137,7 @@ namespace Intuit.Ipp.Test.QBO
             QueryService<TaxCode> taxCodeContext = new QueryService<TaxCode>(context);
             QueryService<Item> itemContext = new QueryService<Item>(context);
 
-            DataService.Batch batch = service.CreateNewBatch();
+            Batch batch = service.CreateNewBatch();
             batch.Add(addedCustomer, "UpdateCustomer", OperationEnum.update);
             batch.Add(invoice, "AddInvoice", OperationEnum.create);
             batch.Add(termContext.ExecuteIdsQuery("Select * from term").ToString(), "QueryTerm");

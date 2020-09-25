@@ -214,7 +214,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     }
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 return new TokenResponse(ex);
             }

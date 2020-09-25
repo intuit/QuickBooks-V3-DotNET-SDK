@@ -26,9 +26,9 @@ namespace Intuit.Ipp.Core.Rest
     using System;
     using System.IO;
     using System.Net;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility; 
+    using Diagnostics;
+    using Exception;
+    using Utility; 
 
     /// <summary>
     /// SyncRestHandler contains the logic for preparing the REST request, calls REST services and returns the response.
@@ -84,7 +84,7 @@ namespace Intuit.Ipp.Core.Rest
         {
             HttpWebRequest request = base.PrepareRequest(requestParameters, requestBody, oauthRequestUri, includeRequestId);
             // set the timeout for the request if it has a value.
-            Nullable<int> timeout = this.context.Timeout;
+            Nullable<int> timeout = context.Timeout;
             if ( timeout.HasValue)
             {
                 request.Timeout = timeout.Value;
@@ -99,29 +99,29 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>Response from REST service.</returns>
         public override string GetResponse(HttpWebRequest request)
         {
-            FaultHandler handler = new FaultHandler(this.context);
+            FaultHandler handler = new FaultHandler(context);
 
             // Create a variable for storing the response.
             string response = string.Empty;
             try
             {
                 // Check whether the retryPolicy is null.
-                if (this.context.IppConfiguration.RetryPolicy == null)
+                if (context.IppConfiguration.RetryPolicy == null)
                 {
                     // If yes then call the rest service without retry framework enabled.
-                    response = this.CallRestService(request);
+                    response = CallRestService(request);
                 }
                 else
                 {
                     // If no then call the rest service using the execute action of retry framework.
-                    this.context.IppConfiguration.RetryPolicy.ExecuteAction(() =>
+                    context.IppConfiguration.RetryPolicy.ExecuteAction(() =>
                     {
-                        response = this.CallRestService(request);
+                        response = CallRestService(request);
                     });
                 }
                 if (request != null && request.RequestUri != null && request.RequestUri.Segments != null)
                 {
-                    if (System.Array.IndexOf(request.RequestUri.Segments, "reports/") >= 0)
+                    if (Array.IndexOf(request.RequestUri.Segments, "reports/") >= 0)
                     {
                         if (!response.StartsWith("{\"Report\":")) { response = "{\"Report\":" + response + "}"; }
                     }
@@ -129,7 +129,7 @@ namespace Intuit.Ipp.Core.Rest
          
                 if (request != null && request.RequestUri != null && request.RequestUri.Segments != null)
                 {
-                    if (System.Array.IndexOf(request.RequestUri.Segments, "taxservice/") >= 0)
+                    if (Array.IndexOf(request.RequestUri.Segments, "taxservice/") >= 0)
                     {
                         //This if condition was added as Json serialization was failing for the FaultResponse bcoz of missing TaxService seriliazation tag on AnyIntuitObject in Fms.cs class
 
@@ -148,13 +148,13 @@ namespace Intuit.Ipp.Core.Rest
                 // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
                 // period for the request expired.-or- An error occurred while processing the request.
                 bool isIps = false;
-                if (this.context.ServiceType == IntuitServicesType.IPS)
+                if (context.ServiceType == IntuitServicesType.IPS)
                 {
                     isIps = true;
                 }
 
 
-                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
+                context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, retryExceededException.ToString());
                 CoreHelper.AdvancedLogging.Log(retryExceededException.ToString());
 
                 throw;
@@ -165,7 +165,7 @@ namespace Intuit.Ipp.Core.Rest
                 // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
                 // period for the request expired.-or- An error occurred while processing the request.
                 bool isIps = false;
-                if (this.context.ServiceType == IntuitServicesType.IPS)
+                if (context.ServiceType == IntuitServicesType.IPS)
                 {
                     isIps = true;
                 }
@@ -173,20 +173,20 @@ namespace Intuit.Ipp.Core.Rest
                 IdsException idsException = handler.ParseResponseAndThrowException(webException, isIps);
                 if (idsException != null)
                 {
-                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     throw idsException;
                 }
             }
             finally
             {
-                this.context.RequestId = null;
+                context.RequestId = null;
             }
 
-            if (this.context.ServiceType == IntuitServicesType.IPS)
+            if (context.ServiceType == IntuitServicesType.IPS)
             {
                 // Handle errors here
-                Utility.IntuitErrorHandler.HandleErrors(response);
+                IntuitErrorHandler.HandleErrors(response);
             }
             else
             {
@@ -209,13 +209,13 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>Response from REST service.</returns>
         public override byte[] GetResponseStream(HttpWebRequest request)
         {
-            FaultHandler handler = new FaultHandler(this.context);
+            FaultHandler handler = new FaultHandler(context);
             byte[] receivedBytes = new byte[0];
             
             try
             {
                 // Check whether the retryPolicy is null.
-                if (this.context.IppConfiguration.RetryPolicy == null)
+                if (context.IppConfiguration.RetryPolicy == null)
                 {
                     // If yes then call the rest service without retry framework enabled.
                     receivedBytes = GetRestServiceCallResponseStream(request);
@@ -223,7 +223,7 @@ namespace Intuit.Ipp.Core.Rest
                 else
                 {
                     // If no then call the rest service using the execute action of retry framework.
-                    this.context.IppConfiguration.RetryPolicy.ExecuteAction(() =>
+                    context.IppConfiguration.RetryPolicy.ExecuteAction(() =>
                     {
                        receivedBytes = GetRestServiceCallResponseStream(request);
                     });
@@ -234,7 +234,7 @@ namespace Intuit.Ipp.Core.Rest
                 // System.Net.HttpWebRequest.Abort() was previously called.-or- The time-out
                 // period for the request expired.-or- An error occurred while processing the request.
                 bool isIps = false;
-                if (this.context.ServiceType == IntuitServicesType.IPS)
+                if (context.ServiceType == IntuitServicesType.IPS)
                 {
                     isIps = true;
                 }
@@ -242,14 +242,14 @@ namespace Intuit.Ipp.Core.Rest
                 IdsException idsException = handler.ParseResponseAndThrowException(webException, isIps);
                 if (idsException != null)
                 {
-                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     throw idsException;
                 }
             }
             finally
             {
-                this.context.RequestId = null;
+                context.RequestId = null;
             }
 
             return receivedBytes;
@@ -262,15 +262,15 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>Returns the response.</returns>
         private string CallRestService(HttpWebRequest request)
         {
-            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service.");
+            context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service.");
             //if (ServicePointManager.SecurityProtocol != 0)
             //    ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
             // Call the service and get response.
             using (HttpWebResponse httpWebResponse = request.GetResponse() as HttpWebResponse)
             {
-                string parsedResponse = this.ParseResponse(httpWebResponse);
+                string parsedResponse = ParseResponse(httpWebResponse);
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start dump: \n " + parsedResponse : "Got the response from service.");
+                context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start dump: \n " + parsedResponse : "Got the response from service.");
                 CoreHelper.AdvancedLogging.Log("Got the response from service.\n Start dump: \n " + parsedResponse );
 
                 // Parse the response from the call and return.
@@ -285,7 +285,7 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>Returns the response.</returns>
         private byte[] GetRestServiceCallResponseStream(HttpWebRequest request)
         {
-            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service as response stream.");
+            context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Getting the response from service as response stream.");
             CoreHelper.AdvancedLogging.Log("Getting the response from service as response stream.");
             Stream receiveStream = new MemoryStream();
             byte[] receiveBytes = new byte[0];
@@ -295,11 +295,11 @@ namespace Intuit.Ipp.Core.Rest
             using (HttpWebResponse httpWebResponse = request.GetResponse() as HttpWebResponse)
             {
 
-                if (!string.IsNullOrWhiteSpace(httpWebResponse.ContentEncoding) && this.ResponseCompressor != null)
+                if (!string.IsNullOrWhiteSpace(httpWebResponse.ContentEncoding) && ResponseCompressor != null)
                 {
                     using (var responseStream = httpWebResponse.GetResponseStream())
                     {
-                        using (var decompressedStream = this.ResponseCompressor.Decompress(responseStream))
+                        using (var decompressedStream = ResponseCompressor.Decompress(responseStream))
                         {
                             decompressedStream.CopyTo(mem);
                             receiveBytes = mem.ToArray();
@@ -317,7 +317,7 @@ namespace Intuit.Ipp.Core.Rest
                 }
                 
                 TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Got the response from service.");
+                context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Got the response from service.");
                 CoreHelper.AdvancedLogging.Log("Got the response from service.");
             }
 
@@ -340,11 +340,11 @@ namespace Intuit.Ipp.Core.Rest
             // TODO: This check might be rhetorical since any response from Ids will be 200OK with error response.
             if (httpWebResponse.StatusCode == HttpStatusCode.OK)
             {
-                if (!string.IsNullOrWhiteSpace(httpWebResponse.ContentEncoding) && this.ResponseCompressor != null)
+                if (!string.IsNullOrWhiteSpace(httpWebResponse.ContentEncoding) && ResponseCompressor != null)
                 {
                     using (var responseStream = httpWebResponse.GetResponseStream())
                     {
-                        using (var decompressedStream = this.ResponseCompressor.Decompress(responseStream))
+                        using (var decompressedStream = ResponseCompressor.Decompress(responseStream))
                         {
                             StreamReader reader = new StreamReader(decompressedStream);
 
@@ -379,7 +379,7 @@ namespace Intuit.Ipp.Core.Rest
                         response_intuit_tid_header = httpWebResponse.Headers[i];
                     }
                 }
-                this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
+                RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
                 //Log to Serilog
                 CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response);
 

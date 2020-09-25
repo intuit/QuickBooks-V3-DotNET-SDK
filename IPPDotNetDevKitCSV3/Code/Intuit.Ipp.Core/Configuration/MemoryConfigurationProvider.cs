@@ -23,7 +23,7 @@
 
 namespace Intuit.Ipp.Core.Configuration
 {
-    using Intuit.Ipp.Diagnostics;
+    using Diagnostics;
 
 
     /// <summary>

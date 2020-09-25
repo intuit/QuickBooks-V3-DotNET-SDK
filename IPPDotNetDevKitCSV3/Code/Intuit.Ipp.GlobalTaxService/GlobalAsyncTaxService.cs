@@ -25,13 +25,13 @@ namespace Intuit.Ipp.GlobalTaxService
     using System.Linq;
     using System.Net;
     using System.Reflection;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.GlobalTaxService.Properties;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Core.Rest;
+    using Data;
+    using Properties;
+    using Diagnostics;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// Async Global TaxService for QBO.
@@ -73,7 +73,7 @@ namespace Intuit.Ipp.GlobalTaxService
         /// <summary>
         /// call back event for find all
         /// </summary>
-        public event GlobalTaxServiceCallback<Intuit.Ipp.Data.TaxService>.GlobalTaxServiceCallCompletedEventHandler OnAddTaxCodeAsyncCompleted;
+        public event GlobalTaxServiceCallback<TaxService>.GlobalTaxServiceCallCompletedEventHandler OnAddTaxCodeAsyncCompleted;
 
         #region add
 
@@ -81,12 +81,12 @@ namespace Intuit.Ipp.GlobalTaxService
         /// Adds an entity (asynchronously) under the specified realm in an asynchronous manner. The realm must be set in the context.
         /// </summary>
         /// <param name="taxCode">Entity to Add</param>
-        public void AddTaxCodeAsync(Intuit.Ipp.Data.TaxService taxCode)
+        public void AddTaxCodeAsync(TaxService taxCode)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add Asynchronously.");
-            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
-            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.AddTaxCodeAsyncCompleted);
-            GlobalTaxServiceCallCompletedEventArgs<Intuit.Ipp.Data.TaxService> taxServiceCallCompletedEventArgs = new GlobalTaxServiceCallCompletedEventArgs<Intuit.Ipp.Data.TaxService>();
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method Add Asynchronously.");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(AddTaxCodeAsyncCompleted);
+            GlobalTaxServiceCallCompletedEventArgs<TaxService> taxServiceCallCompletedEventArgs = new GlobalTaxServiceCallCompletedEventArgs<TaxService>();
             string resourceString = taxCode.GetType().Name.ToLower(CultureInfo.InvariantCulture);
           
 
@@ -94,11 +94,11 @@ namespace Intuit.Ipp.GlobalTaxService
             try
             {
                 // Builds resource Uri
-                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/taxcode", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}/taxcode", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
 
                 // Create request parameters
                 RequestParameters parameters;
-                if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+                if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
                 {
                     parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
@@ -115,10 +115,10 @@ namespace Intuit.Ipp.GlobalTaxService
             }
             catch (SystemException systemException)
             {
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                 IdsException idsException = new IdsException(systemException.Message);
                 taxServiceCallCompletedEventArgs.Error = idsException;
-                this.OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
+                OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
             }
         }
 
@@ -147,29 +147,29 @@ namespace Intuit.Ipp.GlobalTaxService
         /// <param name="eventArgs">The <see cref="Intuit.Ipp.Core.AsyncCallCompletedEventArgs"/> instance containing the event data.</param>
         private void AddTaxCodeAsyncCompleted(object sender, AsyncCallCompletedEventArgs eventArgs)
         {
-            GlobalTaxServiceCallCompletedEventArgs<Intuit.Ipp.Data.TaxService> taxServiceCallCompletedEventArgs = new GlobalTaxServiceCallCompletedEventArgs<Intuit.Ipp.Data.TaxService>();
+            GlobalTaxServiceCallCompletedEventArgs<TaxService> taxServiceCallCompletedEventArgs = new GlobalTaxServiceCallCompletedEventArgs<TaxService>();
             if (eventArgs.Error == null)
             {
                 try
                 {
-                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(serviceContext, false);
                     IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
-                    taxServiceCallCompletedEventArgs.TaxService = restResponse.AnyIntuitObject as Intuit.Ipp.Data.TaxService;
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event AddTaxCodeAsyncCompleted in AyncService object.");
-                    this.OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
+                    taxServiceCallCompletedEventArgs.TaxService = restResponse.AnyIntuitObject as TaxService;
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing event AddTaxCodeAsyncCompleted in AyncService object.");
+                    OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
                 }
                 catch (SystemException systemException)
                 {
                     IdsException idsException = CreateIdsException(systemException);
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     taxServiceCallCompletedEventArgs.Error = idsException;
-                    this.OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
+                    OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
                 }
             }
             else
             {
                 taxServiceCallCompletedEventArgs.Error = eventArgs.Error;
-                this.OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
+                OnAddTaxCodeAsyncCompleted(this, taxServiceCallCompletedEventArgs);
             }
         }
 

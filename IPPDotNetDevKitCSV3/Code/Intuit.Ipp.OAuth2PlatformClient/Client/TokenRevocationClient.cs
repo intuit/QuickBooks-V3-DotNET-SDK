@@ -118,7 +118,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             JsonToken jobject = new JsonToken();
             jobject.token = request.Token;//Refresh token or bearer access token
             var json = JsonConvert.SerializeObject(jobject);
-            var stringContent = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
+            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             msgRequest.Content = stringContent;
 
@@ -217,7 +217,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     }
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 return new TokenRevocationResponse(ex);
             }

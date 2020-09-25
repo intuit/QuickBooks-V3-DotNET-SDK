@@ -13,10 +13,10 @@ namespace Intuit.Ipp.Security.Test
     using System.IO;
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Security;
-    using Intuit.Ipp.Security.Test.Common;
+    using Core;
+    using Exception;
+    using Security;
+    using Common;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     
     /// <summary>
@@ -37,12 +37,12 @@ namespace Intuit.Ipp.Security.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 

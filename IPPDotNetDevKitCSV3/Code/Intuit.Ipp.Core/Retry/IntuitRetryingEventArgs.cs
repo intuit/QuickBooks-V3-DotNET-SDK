@@ -34,13 +34,13 @@ namespace Intuit.Ipp.Core
         /// <param name="currentRetryCount">The current retry attempt count.</param>
         /// <param name="delay">The delay indicating how long the current thread will be suspended for before the next iteration will be invoked.</param>
         /// <param name="lastException">The exception which caused the retry conditions to occur.</param>
-        public IntuitRetryingEventArgs(int currentRetryCount, TimeSpan delay, System.Exception lastException)
+        public IntuitRetryingEventArgs(int currentRetryCount, TimeSpan delay, Exception lastException)
         {
             IntuitRetryHelper.IsArgumentNull(lastException, "lastException");
 
-            this.CurrentRetryCount = currentRetryCount;
-            this.Delay = delay;
-            this.LastException = lastException;
+            CurrentRetryCount = currentRetryCount;
+            Delay = delay;
+            LastException = lastException;
         }
 
         /// <summary>
@@ -56,6 +56,6 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// Gets the exception which caused the retry conditions to occur.
         /// </summary>
-        public System.Exception LastException { get; private set; }
+        public Exception LastException { get; private set; }
     }
 }

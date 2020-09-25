@@ -20,7 +20,7 @@ namespace Intuit.Ipp.XsdExtension
         /// </summary>
         /// <param name="memberProperty">Member of particualr class in which AppInfo is available</param>
         /// <param name="appInfoValue">value of AppInfo tag</param>
-        public void HandleAppInfo(System.CodeDom.CodeMemberProperty memberProperty, string appInfoValue)
+        public void HandleAppInfo(CodeMemberProperty memberProperty, string appInfoValue)
         {
             if (string.Equals(appInfoValue.Trim(), "IGNORE", System.StringComparison.OrdinalIgnoreCase))                
             {

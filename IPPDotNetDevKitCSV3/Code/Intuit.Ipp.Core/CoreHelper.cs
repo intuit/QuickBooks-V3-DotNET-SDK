@@ -25,10 +25,10 @@ namespace Intuit.Ipp.Core
     using System.Text;
     using System.Xml;
     //using Intuit.Ipp.Core.Compression; 
-    using Intuit.Ipp.Core.Properties;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Properties;
+    using Rest;
+    using Exception;
+    using Utility;
    
 
     /// <summary>
@@ -158,20 +158,20 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        public static Rest.LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)
+        public static LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)
         {
-            Rest.LogRequestsToDisk requestLogger;
+            LogRequestsToDisk requestLogger;
             if (serviceContext.IppConfiguration != null &&
                 serviceContext.IppConfiguration.Logger != null &&
                 serviceContext.IppConfiguration.Logger.RequestLog != null)
             {
-                requestLogger = new Rest.LogRequestsToDisk(
+                requestLogger = new LogRequestsToDisk(
                     serviceContext.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging,
                     serviceContext.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation);
             }
             else
             {
-                requestLogger = new Rest.LogRequestsToDisk(false, null);
+                requestLogger = new LogRequestsToDisk(false, null);
             }
 
             return requestLogger;
@@ -183,14 +183,14 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        public static Rest.AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
+        public static AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
         {
-            Rest.AdvancedLogging requestLogger;
+            AdvancedLogging requestLogger;
             if (serviceContext.IppConfiguration != null &&
                 serviceContext.IppConfiguration.AdvancedLogger != null &&
                 serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog != null)
             {
-                requestLogger = new Rest.AdvancedLogging(
+                requestLogger = new AdvancedLogging(
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole,
@@ -201,7 +201,7 @@ namespace Intuit.Ipp.Core
             }
             else
             {
-                requestLogger = new Rest.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: null);
+                requestLogger = new AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: null);
             }
 
             return requestLogger;

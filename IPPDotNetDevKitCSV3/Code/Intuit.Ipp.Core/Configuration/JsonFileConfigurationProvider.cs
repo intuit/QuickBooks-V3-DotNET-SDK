@@ -26,11 +26,11 @@ namespace Intuit.Ipp.Core.Configuration
     using System;
     using System.Globalization;
     using System.IO;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
+    using Diagnostics;
+    using Exception;
     //using Intuit.Ipp.Retry;
-    using Intuit.Ipp.Security;
-    using Intuit.Ipp.Utility;
+    using Security;
+    using Utility;
 
     using System.Configuration;
 #if NETSTANDARD2_0
@@ -351,7 +351,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForConsole = false,
                     EnableSerilogRequestResponseLoggingForRollingFile = false,
                    // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
-                    ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
+                    ServiceRequestLoggingLocationForFile = Path.GetTempPath()
                 }
             };
 
@@ -362,7 +362,7 @@ namespace Intuit.Ipp.Core.Configuration
                 RequestLog = new RequestLog
                 {
                     EnableRequestResponseLogging = false,
-                    ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
+                    ServiceRequestLoggingLocation = Path.GetTempPath()
                 }
             };
 

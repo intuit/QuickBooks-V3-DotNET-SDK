@@ -13,7 +13,7 @@ namespace Intuit.Ipp.XsdExtension
     using System.Collections.Generic;
     using System.Globalization;
     using System.Xml.Schema;
-    using Intuit.Ipp.Diagnostics;
+    using Diagnostics;
 
     /// <summary>
     /// Parses annotation section of XSD and adds to the CodeDOM 
@@ -287,21 +287,21 @@ namespace Intuit.Ipp.XsdExtension
                 {
                     if (choiceChildElement.QualifiedName.Name == "IntuitObject" && string.IsNullOrEmpty(choiceChildElement.Name))
                     {
-                        foreach (string intuitEntityName in this.intuitEntities)
+                        foreach (string intuitEntityName in intuitEntities)
                         {
                             // Create Item property if not available and add
-                            this.HandleChoiceElement(codeDomType, intuitEntityName);
+                            HandleChoiceElement(codeDomType, intuitEntityName);
                             // Remove this class type from Items property
-                            this.RemoveXmlAttributeFromItems(codeDomType, intuitEntityName);
+                            RemoveXmlAttributeFromItems(codeDomType, intuitEntityName);
                         }
 
                     }
                     else
                     {
                         // Create Item property if not available and add
-                        this.HandleChoiceElement(codeDomType, choiceChildElement.Name);
+                        HandleChoiceElement(codeDomType, choiceChildElement.Name);
                         // Remove this class type from Items property
-                        this.RemoveXmlAttributeFromItems(codeDomType, choiceChildElement.Name);
+                        RemoveXmlAttributeFromItems(codeDomType, choiceChildElement.Name);
                     }
                 }
             }
@@ -315,9 +315,9 @@ namespace Intuit.Ipp.XsdExtension
         private void GetIntuitEntities(XmlSchemaElement element)
         {
             if (string.Equals(element.SubstitutionGroup.Name.ToUpper(CultureInfo.InvariantCulture), DataObjectConstants.INTUITOBJECT)
-                && !this.intuitEntities.Contains(element.Name))
+                && !intuitEntities.Contains(element.Name))
             {
-                this.intuitEntities.Add(element.Name);
+                intuitEntities.Add(element.Name);
             }
         }
 
@@ -383,7 +383,7 @@ namespace Intuit.Ipp.XsdExtension
             // Add Item proerpty if not exists already
             if (!itemPropertyFound && !string.IsNullOrEmpty(XmlAttributeName))
             {
-                this.AddItemProperty(classToAddItem, XmlAttributeName);
+                AddItemProperty(classToAddItem, XmlAttributeName);
             }
 
         }

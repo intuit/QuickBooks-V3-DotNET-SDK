@@ -21,7 +21,7 @@
 
 namespace Intuit.Ipp.Core
 {
-    using Intuit.Ipp.Exception;
+    using Exception;
 
     /// <summary>
     /// Asynchronous call completed event arguments
@@ -51,7 +51,7 @@ namespace Intuit.Ipp.Core
         public AsyncCallCompletedEventArgs(string result, IdsException error, byte[] byteResults = null)
             : base(error, false, null)
         {
-            this.results = result;
+            results = result;
             this.error = error;
             this.byteResults = byteResults;
         }
@@ -63,9 +63,9 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                if (this.results != null)
+                if (results != null)
                 {
-                    return this.results;
+                    return results;
                 }
                 else
                 {
@@ -81,9 +81,9 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                if (this.byteResults != null)
+                if (byteResults != null)
                 {
-                    return this.byteResults;
+                    return byteResults;
                 }
                 else
                 {
@@ -99,7 +99,7 @@ namespace Intuit.Ipp.Core
         {
             get
             {
-                return this.error;
+                return error;
             }
         }
     }

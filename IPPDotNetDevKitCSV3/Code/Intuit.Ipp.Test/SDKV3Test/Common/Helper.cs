@@ -103,7 +103,7 @@ namespace Intuit.Ipp.Test
                     //    File.WriteAllText(AuthorizationKeysQBO.tokenFilePath, output);
                     //    //tokenDict.Clear();
                     //    var serviceContext = Initializer.InitializeQBOServiceContextUsingoAuth();
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Add(serviceContext, entity);
                     return entityResponse;
 
@@ -132,7 +132,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindAll<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -160,7 +160,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindByLevel<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -188,7 +188,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindByParentId<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -215,7 +215,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindById<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -245,7 +245,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Update<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -277,7 +277,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = UpdateAccountOnTxnsFrance<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -322,7 +322,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = SparseUpdate<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -352,7 +352,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Delete<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -387,7 +387,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Delete<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -427,7 +427,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = CDC<T>(serviceContext, entity, changedSince);
                     return entityResponse;
 
@@ -440,7 +440,7 @@ namespace Intuit.Ipp.Test
             }
         }
 
-        internal static Attachable Upload(ServiceContext context, Attachable attachable, System.IO.Stream stream)
+        internal static Attachable Upload(ServiceContext context, Attachable attachable, Stream stream)
         {
             try
             {
@@ -455,7 +455,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Upload(serviceContext, attachable, stream);
                     return entityResponse;
 
@@ -482,7 +482,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = Download(serviceContext, entity);
                     return entityResponse;
 
@@ -506,7 +506,7 @@ namespace Intuit.Ipp.Test
 
                 QueryService<T> entityContext = new QueryService<T>(context);
 
-                DataService.Batch batch = service.CreateNewBatch();
+                Batch batch = service.CreateNewBatch();
 
                 foreach (KeyValuePair<OperationEnum, object> entry in operationDictionary)
                 {
@@ -526,7 +526,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     ReadOnlyCollection<IntuitBatchResponse> entityResponse = BatchTest<T>(serviceContext, operationDictionary);
                     return entityResponse;
 
@@ -613,7 +613,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = GetReportAsync(serviceContext, reportName);
                     return entityResponse;
 
@@ -687,7 +687,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = AddAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -770,7 +770,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindAllAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -852,7 +852,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindByLevelAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -934,7 +934,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     List<T> entityResponse = FindByParentIdAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -998,7 +998,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindByIdAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1074,7 +1074,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = UpdateAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1153,7 +1153,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = UpdateAccountOnTxnsAsyncFrance<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1231,7 +1231,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = DonotUpdateAccountOnTxnsAsyncFrance<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1303,7 +1303,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = DeleteAsync<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1366,7 +1366,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     VoidAsync<T>(serviceContext, entity);
                   
 
@@ -1407,14 +1407,14 @@ namespace Intuit.Ipp.Test
                         return returnEntity;
                     }
                 }
-                throw new System.ApplicationException("Could not find QBOHelper");
+                throw new ApplicationException("Could not find QBOHelper");
             }
             catch (IdsException ex)
             {
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindOrAdd<T>(serviceContext, entity);
                     return entityResponse;
 
@@ -1466,7 +1466,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindOrAddAccount(serviceContext, accountType, classification);
                     return entityResponse;
 
@@ -1523,7 +1523,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindOrAddPurchase(serviceContext, paymentType);
                     return entityResponse;
 
@@ -1577,7 +1577,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindOrAddPaymentMethod(serviceContext, paymentType);
                     return entityResponse;
 
@@ -1628,7 +1628,7 @@ namespace Intuit.Ipp.Test
                 if (ex.Message == "Unauthorized-401")
                 {
 
-                    var serviceContext = Helper.GetNewTokens_ServiceContext();
+                    var serviceContext = GetNewTokens_ServiceContext();
                     var entityResponse = FindOrAddItem(serviceContext, type);
                     return entityResponse;
 

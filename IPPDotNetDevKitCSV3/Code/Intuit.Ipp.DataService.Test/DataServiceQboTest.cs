@@ -523,7 +523,7 @@ namespace Intuit.Ipp.DataService.Test
 
             List<IEntity> entityList = new List<IEntity>() { new Customer(), new Vendor() };
 
-            IntuitCDCResponse cdcResponse = dataServiceTestCases.CDCEntity(entityList, System.DateTime.Today.AddDays(-2));
+            IntuitCDCResponse cdcResponse = dataServiceTestCases.CDCEntity(entityList, DateTime.Today.AddDays(-2));
             try
             {
                 List<Customer> customerList = cdcResponse.getEntity("Customer").Cast<Customer>().ToList();
@@ -818,7 +818,7 @@ namespace Intuit.Ipp.DataService.Test
 
             Assert.IsTrue(salesReceipts.Count > 0);
 
-            Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+            DataService service = new DataService(dataServiceTestCases.GetContext());
 
             byte[] response = service.GetPdf<SalesReceipt>(salesReceipts[0]);
 
@@ -827,7 +827,7 @@ namespace Intuit.Ipp.DataService.Test
 
             string fileName = string.Format(@"C:\salesreceipt_{0}.pdf", Guid.NewGuid());
 
-            System.IO.File.WriteAllBytes(fileName, response);
+            File.WriteAllBytes(fileName, response);
 
             //check if file exists
             Assert.IsTrue(File.Exists(fileName));
@@ -858,7 +858,7 @@ namespace Intuit.Ipp.DataService.Test
 
                 Assert.IsTrue(salesReceipts.Count > 0);
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
                 byte[] response = service.GetPdf<SalesReceipt>(null);
 
@@ -878,7 +878,7 @@ namespace Intuit.Ipp.DataService.Test
 
                 Assert.IsTrue(salesReceipts.Count > 0);
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
                 salesReceipts[0].Id = null;
                 byte[] response = service.GetPdf<SalesReceipt>(salesReceipts[0]);
@@ -899,7 +899,7 @@ namespace Intuit.Ipp.DataService.Test
 
                 Assert.IsTrue(customers.Count > 0);
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
                 byte[] response = service.GetPdf<Customer>(customers[0]);
 
@@ -924,7 +924,7 @@ namespace Intuit.Ipp.DataService.Test
 
             Assert.IsTrue(salesReceipts.Count > 0);
 
-            Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+            DataService service = new DataService(dataServiceTestCases.GetContext());
 
             SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(salesReceipts[0], "mycompany@intuit.com");
 
@@ -945,7 +945,7 @@ namespace Intuit.Ipp.DataService.Test
                 SalesReceipt updatedSalesReceipt = Helper.Update<SalesReceipt>(dataServiceTestCases.GetContext(), salesReceipts[0]);
 
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
 
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(updatedSalesReceipt);
@@ -970,7 +970,7 @@ namespace Intuit.Ipp.DataService.Test
                 SalesReceipt updatedSalesReceipt = Helper.Update<SalesReceipt>(dataServiceTestCases.GetContext(), salesReceipts[0]);
 
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
 
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(updatedSalesReceipt, "mycompany@@intuit.com");
@@ -996,7 +996,7 @@ namespace Intuit.Ipp.DataService.Test
                 SalesReceipt updatedSalesReceipt = Helper.Update<SalesReceipt>(dataServiceTestCases.GetContext(), salesReceipts[0]);
 
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
 
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(updatedSalesReceipt);
@@ -1013,7 +1013,7 @@ namespace Intuit.Ipp.DataService.Test
         {
             try
             {
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(null, "mycompany@intuit.com");
             }
             catch (IdsException idsEx)
@@ -1033,7 +1033,7 @@ namespace Intuit.Ipp.DataService.Test
 
                 updatedSalesReceipt.Id = null;
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
 
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(updatedSalesReceipt);
@@ -1060,7 +1060,7 @@ namespace Intuit.Ipp.DataService.Test
 
                 Assert.IsTrue(salesReceipts.Count > 0);
 
-                Ipp.DataService.DataService service = new Ipp.DataService.DataService(dataServiceTestCases.GetContext());
+                DataService service = new DataService(dataServiceTestCases.GetContext());
 
                 SalesTransaction returnedEntity = service.SendEmail<SalesReceipt>(salesReceipts[0], "mycompany@intuit.com");
 

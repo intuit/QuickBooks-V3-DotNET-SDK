@@ -22,8 +22,8 @@ namespace Intuit.Ipp.DataService
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Exception;
+    using Data;
+    using Exception;
 
     /// <summary>
     /// This class processes the batch request.
@@ -72,7 +72,7 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public IntuitBatchResponse()
      {
-        this.entities = new List<IEntity>();
+        entities = new List<IEntity>();
      }
         #endregion
 
@@ -85,8 +85,8 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public IEntity Entity
      {
-       get { return this.entity; }
-       set { this.entity = value; }
+       get { return entity; }
+       set { entity = value; }
      }
    
      /// <summary>
@@ -94,7 +94,7 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public ReadOnlyCollection<IEntity> Entities
      {
-         get { return new ReadOnlyCollection<IEntity>(this.entities); }
+         get { return new ReadOnlyCollection<IEntity>(entities); }
      }
 
      /// <summary>
@@ -102,8 +102,8 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public IdsException Exception
      {
-         get { return this.exception; }
-         set { this.exception = value; }
+         get { return exception; }
+         set { exception = value; }
      }
 
      /// <summary>
@@ -111,8 +111,8 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public ResponseType ResponseType
      {
-         get { return this.responseType; }
-         set { this.responseType = value; }
+         get { return responseType; }
+         set { responseType = value; }
      }
 
      /// <summary>
@@ -120,8 +120,8 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public string Id
      {
-         get { return this.batchItemId; }
-         set { this.batchItemId = value; }
+         get { return batchItemId; }
+         set { batchItemId = value; }
      }
 
      /// <summary>
@@ -129,8 +129,8 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public IntuitCDCResponse CDCResponse
      {
-         get { return this.cdcResponse; }
-         set { this.cdcResponse = value; }
+         get { return cdcResponse; }
+         set { cdcResponse = value; }
      }
 
     
@@ -139,8 +139,8 @@ namespace Intuit.Ipp.DataService
      /// </summary>
      public QueryResponse QueryResponse
      {
-         get { return this.queryResponse; }
-         set { this.queryResponse = value; }
+         get { return queryResponse; }
+         set { queryResponse = value; }
      }
 
 
@@ -154,7 +154,7 @@ namespace Intuit.Ipp.DataService
      /// <param name="entity">The entity.</param>
      internal void AddEntities(IEntity entity)
      {
-         this.entities.Add(entity);
+         entities.Add(entity);
      }
     }
 }

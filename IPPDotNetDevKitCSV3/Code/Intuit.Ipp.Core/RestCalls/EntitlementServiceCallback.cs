@@ -25,7 +25,7 @@ namespace Intuit.Ipp.Core
     /// Contains event handlers for call back events.
     /// </summary>
     /// <typeparam name="T">Generic Constraint </typeparam>
-    public static class EntitlementServiceCallback<T> where T : Intuit.Ipp.Data.EntitlementsResponse
+    public static class EntitlementServiceCallback<T> where T : Data.EntitlementsResponse
     {
         /// <summary>
         /// Generic Event handler to handle Entitlements asynchronous call back.

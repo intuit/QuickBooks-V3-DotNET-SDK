@@ -21,7 +21,7 @@
 namespace Intuit.Ipp.ReportService
 {
     using System.Collections.ObjectModel;
-    using Intuit.Ipp.Data;
+    using Data;
 
     /// <summary>
     /// This interface specifies the ReportService Read operation

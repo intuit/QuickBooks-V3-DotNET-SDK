@@ -29,10 +29,10 @@ namespace Intuit.Ipp.Core.Rest
     using System.Net;
     using System.Text;
     using System.Xml;
-    using Intuit.Ipp.Core.Properties;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Properties;
+    using Diagnostics;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// RestRequestHandler contains the logic for preparing the REST request, calls REST services and returns the response.
@@ -114,7 +114,7 @@ namespace Intuit.Ipp.Core.Rest
                     else
                     {
                         // If not, then serialize the requestBody using the Serializer and append to builder.
-                        requestXML.Append(this.RequestSerializer.Serialize(requestBody));
+                        requestXML.Append(RequestSerializer.Serialize(requestBody));
                     }
 
                     this.requestBody = requestXML.ToString();
@@ -134,22 +134,22 @@ namespace Intuit.Ipp.Core.Rest
             try
             {
                 // Check whether the retryPolicy is null.
-                if (this.context.IppConfiguration.RetryPolicy == null)
+                if (context.IppConfiguration.RetryPolicy == null)
                 {
                     // If yes then call the rest service without retry framework enabled.
-                    this.ExecAsyncRequest(request);
+                    ExecAsyncRequest(request);
                 }
                 else
                 {
                     // If no then call the rest service using the execute action of retry framework.
-                    this.ExecAsyncRequestWithRetryPolicy(request);
+                    ExecAsyncRequestWithRetryPolicy(request);
                 }
 
                 return null;
             }
             finally
             {
-                this.context.RequestId = null;
+                context.RequestId = null;
             }
         }
 
@@ -163,15 +163,15 @@ namespace Intuit.Ipp.Core.Rest
             try
             {
                 // Check whether the retryPolicy is null.
-                if (this.context.IppConfiguration.RetryPolicy == null)
+                if (context.IppConfiguration.RetryPolicy == null)
                 {
                     // If yes then call the rest service without retry framework enabled.
-                    this.ExecAsyncRequest(request);
+                    ExecAsyncRequest(request);
                 }
                 else
                 {
                     // If no then call the rest service using the execute action of retry framework.
-                    this.ExecAsyncRequestWithRetryPolicy(request);
+                    ExecAsyncRequestWithRetryPolicy(request);
                 }
 
                 //return null;
@@ -199,7 +199,7 @@ namespace Intuit.Ipp.Core.Rest
             if (asyncRequest.Method == "POST")
             {
                 // If true then ExecuteAction which calls the service using retry framework.
-                this.context.IppConfiguration.RetryPolicy.ExecuteAction(
+                context.IppConfiguration.RetryPolicy.ExecuteAction(
                            ac =>
                            {
                                // Invoke the begin method of the asynchronous call.
@@ -222,33 +222,33 @@ namespace Intuit.Ipp.Core.Rest
                                }
 
                                // Log Request Body to a file
-                               this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+                               RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + requestBody, true);
                                // Log Request Body to Serilog
-                               CoreHelper.AdvancedLogging.Log(" Request Payload: " + this.requestBody);
+                               CoreHelper.AdvancedLogging.Log(" Request Payload: " + requestBody);
 
 
 
                                // Using encoding get the byte value of the requestBody.
                                UTF8Encoding encoding = new UTF8Encoding();
-                               byte[] content = encoding.GetBytes(this.requestBody);
+                               byte[] content = encoding.GetBytes(requestBody);
 
                                TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-                               this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request. \n Start dump: " + this.requestBody : "Adding the payload to request.");
+                               context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request. \n Start dump: " + requestBody : "Adding the payload to request.");
 
                                
                                // Check whether compression is enabled and compress the stream accordingly.
-                               if (this.RequestCompressor != null)
+                               if (RequestCompressor != null)
                                {
                                    // get the request stream.
                                    using (var requeststream = request.EndGetRequestStream(ar))
                                    {
-                                       this.RequestCompressor.Compress(content, requeststream);
+                                       RequestCompressor.Compress(content, requeststream);
                                    }
                                }
                                else
                                {
                                    // Get the Request stream.
-                                   using (System.IO.Stream postStream = request.EndGetRequestStream(ar))
+                                   using (Stream postStream = request.EndGetRequestStream(ar))
                                    {
                                        // Write the byte content to the stream.
                                        postStream.Write(content, 0, content.Length);
@@ -259,7 +259,7 @@ namespace Intuit.Ipp.Core.Rest
                            {
                                // Action to perform if the asynchronous operation
                                // succeeded.
-                               this.ExecuteServiceCallAsync(asyncRequest);
+                               ExecuteServiceCallAsync(asyncRequest);
                            },
                            e =>
                            {
@@ -275,13 +275,13 @@ namespace Intuit.Ipp.Core.Rest
                                    resultArguments = new AsyncCallCompletedEventArgs(null, new IdsException("Exception has been generated.", e));
                                }
 
-                               this.OnCallCompleted(this, resultArguments);
+                               OnCallCompleted(this, resultArguments);
                            });
             }
             else
             {
                 // Call the service without writing the request body to request stream.
-                this.ExecuteServiceCallAsync(asyncRequest);
+                ExecuteServiceCallAsync(asyncRequest);
             }
         }
 
@@ -294,7 +294,7 @@ namespace Intuit.Ipp.Core.Rest
             AsyncCallCompletedEventArgs resultArguments = null;
 
             // ExecuteAction which calls the service using retry framework.
-            this.context.IppConfiguration.RetryPolicy.ExecuteAction(
+            context.IppConfiguration.RetryPolicy.ExecuteAction(
                       ac =>
                       {
                           // Invoke the begin method of the asynchronous call.
@@ -308,9 +308,9 @@ namespace Intuit.Ipp.Core.Rest
                       {
                           // Action to perform if the asynchronous operation
                           // succeeded.
-                          if (this.OnCallCompleted != null)
+                          if (OnCallCompleted != null)
                           {
-                              this.OnCallCompleted(this, resultArguments);
+                              OnCallCompleted(this, resultArguments);
                           }
                       },
                       e =>
@@ -318,7 +318,7 @@ namespace Intuit.Ipp.Core.Rest
                           // Action to perform if the asynchronous operation
                           // failed after all the retries.
                           resultArguments = CreateEventArgsForException(e);
-                          this.OnCallCompleted(this, resultArguments);
+                          OnCallCompleted(this, resultArguments);
                       });
         }
 
@@ -334,16 +334,16 @@ namespace Intuit.Ipp.Core.Rest
             if (webException != null)
             {
                 bool isIps = false;
-                if (this.context.ServiceType == IntuitServicesType.IPS)
+                if (context.ServiceType == IntuitServicesType.IPS)
                 {
                     isIps = true;
                 }
 
-                FaultHandler handler = new FaultHandler(this.context);
+                FaultHandler handler = new FaultHandler(context);
                 IdsException idsException = handler.ParseResponseAndThrowException(webException, isIps);
                 if (idsException != null)
                 {
-                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
@@ -353,13 +353,13 @@ namespace Intuit.Ipp.Core.Rest
                 IdsException idsException = exception as IdsException;
                 if (idsException != null)
                 {
-                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
                 else
                 {
-                    this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     CoreHelper.AdvancedLogging.Log(idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, new IdsException("Exception has been generated.", exception));
                 }
@@ -388,11 +388,11 @@ namespace Intuit.Ipp.Core.Rest
             HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(asyncResult);
             string resultString = string.Empty;
 
-            if (!string.IsNullOrWhiteSpace(response.ContentEncoding) && this.ResponseCompressor != null)
+            if (!string.IsNullOrWhiteSpace(response.ContentEncoding) && ResponseCompressor != null)
             {
                 using (var responseStream = response.GetResponseStream())
                 {
-                    using (var decompressedStream = this.ResponseCompressor.Decompress(responseStream))
+                    using (var decompressedStream = ResponseCompressor.Decompress(responseStream))
                     {
 
                         if (response.ContentType.ToLower().Contains(CoreConstants.CONTENTTYPE_APPLICATIONPDF.ToLower()))
@@ -449,13 +449,13 @@ namespace Intuit.Ipp.Core.Rest
                 }
             }
             // Log the response to Disk.
-            this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
+            RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
             // Log response to Serilog
             CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString);
 
             //log response to logs
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
+            context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
 
 
             CoreHelper.AdvancedLogging.Log("Got the response from service.\n Start Dump: \n" + resultString);
@@ -470,18 +470,18 @@ namespace Intuit.Ipp.Core.Rest
                 }
                 else
                 {
-                    if (this.context.ServiceType == IntuitServicesType.IPS)
+                    if (context.ServiceType == IntuitServicesType.IPS)
                     {
                         // Handle errors here
-                        resultArguments = this.HandleErrors(resultString);
+                        resultArguments = HandleErrors(resultString);
                     }
                     else
                     {
-                        FaultHandler handler = new FaultHandler(this.context);
+                        FaultHandler handler = new FaultHandler(context);
                         IdsException idsException = handler.ParseErrorResponseAndPrepareException(resultString);
                         if (idsException != null)
                         {
-                            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                            context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                             CoreHelper.AdvancedLogging.Log(idsException.ToString());
                             resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                         }
@@ -538,12 +538,12 @@ namespace Intuit.Ipp.Core.Rest
             if (asyncRequest.Method == "POST")
             {
                 // If true then get the request steam to write the content.
-                asyncRequest.BeginGetRequestStream(new AsyncCallback(this.GetRequestStreamCallback), asyncRequest);
+                asyncRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), asyncRequest);
             }
             else
             {
                 // else execute the service call.
-                asyncRequest.BeginGetResponse(new AsyncCallback(this.AsyncExecutionCompleted), asyncRequest);
+                asyncRequest.BeginGetResponse(new AsyncCallback(AsyncExecutionCompleted), asyncRequest);
             }
         }
 
@@ -556,16 +556,16 @@ namespace Intuit.Ipp.Core.Rest
             AsyncCallCompletedEventArgs resultArguments = null;
             try
             {
-                resultArguments = this.CreateEventArgsForRequest(result);
-                if (this.OnCallCompleted != null)
+                resultArguments = CreateEventArgsForRequest(result);
+                if (OnCallCompleted != null)
                 {
-                    this.OnCallCompleted(this, resultArguments);
+                    OnCallCompleted(this, resultArguments);
                 }
             }
             catch (WebException webException)
             {
-                resultArguments = this.CreateEventArgsForException(webException);
-                this.OnCallCompleted(this, resultArguments);
+                resultArguments = CreateEventArgsForException(webException);
+                OnCallCompleted(this, resultArguments);
             }
         }
 
@@ -578,36 +578,36 @@ namespace Intuit.Ipp.Core.Rest
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
 
             // Log Request Body to a file
-            this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+            RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + requestBody, true);
             // Log Request Body to Serilog
-            CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody);
+            CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + requestBody);
             UTF8Encoding encoding = new UTF8Encoding();
-            byte[] content = encoding.GetBytes(this.requestBody);
+            byte[] content = encoding.GetBytes(requestBody);
 
 
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
-            this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request.\n Start dump of request: \n" + this.requestBody : "Adding the payload to request.");
-            CoreHelper.AdvancedLogging.Log("Adding the payload to request.\n Start dump of request: \n" + this.requestBody);
+            context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request.\n Start dump of request: \n" + requestBody : "Adding the payload to request.");
+            CoreHelper.AdvancedLogging.Log("Adding the payload to request.\n Start dump of request: \n" + requestBody);
             // Check whether compression is enabled and compress the stream accordingly.
-            if (this.RequestCompressor != null)
+            if (RequestCompressor != null)
             {
                 // get the request stream.
                 using (var requeststream = request.EndGetRequestStream(asynchronousResult))
                 {
-                    this.RequestCompressor.Compress(content, requeststream);
+                    RequestCompressor.Compress(content, requeststream);
                 }
             }
             else
             {
                 // get the request stream.
-                using (System.IO.Stream postStream = request.EndGetRequestStream(asynchronousResult))
+                using (Stream postStream = request.EndGetRequestStream(asynchronousResult))
                 {
                     postStream.Write(content, 0, content.Length);
                 }
             }
 
             // Start the asynchronous operation to get the response
-            request.BeginGetResponse(new AsyncCallback(this.AsyncExecutionCompleted), request);
+            request.BeginGetResponse(new AsyncCallback(AsyncExecutionCompleted), request);
         }
 
         /// <summary>
@@ -618,10 +618,10 @@ namespace Intuit.Ipp.Core.Rest
         /// <returns>Asyn Call Completed Arguments.</returns>
         private AsyncCallCompletedEventArgs HandleErrors(string responseXml)
         {
-            XmlDocument document = new System.Xml.XmlDocument();
+            XmlDocument document = new XmlDocument();
             document.LoadXml(responseXml);
             AsyncCallCompletedEventArgs resultArguments = null;
-            XmlNode errCodeNode = document.SelectSingleNode(Utility.UtilityConstants.ERRCODEXPATH);
+            XmlNode errCodeNode = document.SelectSingleNode(UtilityConstants.ERRCODEXPATH);
             IdsException exception = null;
             if (errCodeNode == null)
             {
@@ -643,7 +643,7 @@ namespace Intuit.Ipp.Core.Rest
                 return resultArguments;
             }
 
-            XmlNode errTextNode = document.SelectSingleNode(Utility.UtilityConstants.ERRTEXTXPATH);
+            XmlNode errTextNode = document.SelectSingleNode(UtilityConstants.ERRTEXTXPATH);
             if (errTextNode == null)
             {
                 exception = new IdsException(string.Format(CultureInfo.InvariantCulture, Resources.ErrorWithNoText, errorCode));
@@ -651,7 +651,7 @@ namespace Intuit.Ipp.Core.Rest
             }
 
             string errorText = errTextNode.InnerText;
-            XmlNode errDetailNode = document.SelectSingleNode(Utility.UtilityConstants.ERRDETAILXPATH);
+            XmlNode errDetailNode = document.SelectSingleNode(UtilityConstants.ERRDETAILXPATH);
             string errorDetail = errDetailNode != null ? errDetailNode.InnerText : null;
 
             if (!string.IsNullOrEmpty(errorDetail))

@@ -26,7 +26,7 @@ namespace Intuit.Ipp.GlobalTaxService.Interface
 
 
     using System.Collections.ObjectModel;
-    using Intuit.Ipp.Data;
+    using Data;
 
 
     /// <summary>

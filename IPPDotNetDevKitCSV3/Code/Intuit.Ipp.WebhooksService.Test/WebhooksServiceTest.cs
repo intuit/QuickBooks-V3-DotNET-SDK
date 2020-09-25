@@ -6,8 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Intuit.Ipp.WebhooksService.Test
 {
 
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Utility;
 
     [TestClass]
     public class WebhooksServiceTest

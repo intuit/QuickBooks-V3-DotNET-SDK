@@ -136,7 +136,7 @@ namespace Intuit.Ipp.Utility
                     {
                         if ((propertyInfo.GetValue(value, null) != null) && (serializer.NullValueHandling == NullValueHandling.Ignore))
                         {
-                            if (propertyInfo.GetCustomAttributes(false).Contains(new Newtonsoft.Json.JsonIgnoreAttribute()) != true)
+                            if (propertyInfo.GetCustomAttributes(false).Contains(new JsonIgnoreAttribute()) != true)
                             {
                                 if (propertyInfo.GetCustomAttributes(false).Contains(new System.Xml.Serialization.XmlTextAttribute()) && propertyInfo.Name == "Value")
                                 {
@@ -468,16 +468,16 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// ResizeArray
         /// </summary>  
-        public static System.Array ResizeArray(System.Array oldArray, int newSize)
+        public static Array ResizeArray(Array oldArray, int newSize)
         {
             int oldSize = oldArray.Length;
-            System.Type elementType = oldArray.GetType().GetElementType();
-            System.Array newArray = System.Array.CreateInstance(elementType, newSize);
+            Type elementType = oldArray.GetType().GetElementType();
+            Array newArray = Array.CreateInstance(elementType, newSize);
 
-            int preserveLength = System.Math.Min(oldSize, newSize);
+            int preserveLength = Math.Min(oldSize, newSize);
 
             if (preserveLength > 0)
-                System.Array.Copy(oldArray, newArray, preserveLength);
+                Array.Copy(oldArray, newArray, preserveLength);
 
             return newArray;
         }

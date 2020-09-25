@@ -26,7 +26,7 @@ namespace Intuit.Ipp.Data
     using System.Collections.ObjectModel;
     using System.Text;
     using System.Xml;
-    using Intuit.Ipp.Utility;
+    using Utility;
 
     /// <summary>
     /// Wraps user information returned by the platform. Depending on your access levels and which user you're querying, many of the fields might not be filled.
@@ -49,58 +49,58 @@ namespace Intuit.Ipp.Data
         /// <param name="singleUserNode">The single user node.</param>
         public UserInfo(XmlNode singleUserNode)
         {
-            this.LastAccess = DateTime.MinValue;
-            this.Id = singleUserNode.Attributes.GetNamedItem("id").InnerText;
+            LastAccess = DateTime.MinValue;
+            Id = singleUserNode.Attributes.GetNamedItem("id").InnerText;
             XmlNode xmlNode = singleUserNode.SelectSingleNode("./firstName");
             if (xmlNode != null)
             {
-                this.FirstName = xmlNode.InnerText;
+                FirstName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./name");
             if (xmlNode != null)
             {
-                this.Name = xmlNode.InnerText;
+                Name = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./lastName");
             if (xmlNode != null)
             {
-                this.LastName = xmlNode.InnerText;
+                LastName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./login");
             if (xmlNode != null)
             {
-                this.Login = xmlNode.InnerText;
+                Login = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./email");
             if (xmlNode != null)
             {
-                this.Email = xmlNode.InnerText;
+                Email = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./screenName");
             if (xmlNode != null)
             {
-                this.ScreenName = xmlNode.InnerText;
+                ScreenName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./lastAccess");
             if (xmlNode != null)
             {
-                this.LastAccess = DateHelper.ParseDateTimeField(xmlNode.InnerText);
+                LastAccess = DateHelper.ParseDateTimeField(xmlNode.InnerText);
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./developerAccount/aid");
             if (xmlNode != null)
             {
-                this.AccountId = xmlNode.InnerText;
+                AccountId = xmlNode.InnerText;
             }
 
             XmlNodeList roleNodes = singleUserNode.SelectNodes("./roles/role");
-            this.Roles = RoleInfo.ParseRoles(roleNodes);
+            Roles = RoleInfo.ParseRoles(roleNodes);
         }
 
         /// <summary>
@@ -155,15 +155,15 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.roles;
+                return roles;
             }
 
             private set
             {
-                if (value != this.roles)
+                if (value != roles)
                 {
-                    this.roles = value;
-                    this.roleNames = null;
+                    roles = value;
+                    roleNames = null;
                 }
             }
         }
@@ -175,7 +175,7 @@ namespace Intuit.Ipp.Data
         {
             get
             {
-                return this.roleNames ?? (this.roleNames = this.BuildRoleNamesString());
+                return roleNames ?? (roleNames = BuildRoleNamesString());
             }
         }
 
@@ -261,7 +261,7 @@ namespace Intuit.Ipp.Data
         private string BuildRoleNamesString()
         {
             var roleNames = new StringBuilder();
-            foreach (RoleInfo roleInfo in this.Roles)
+            foreach (RoleInfo roleInfo in Roles)
             {
                 if (roleNames.Length > 0)
                 {

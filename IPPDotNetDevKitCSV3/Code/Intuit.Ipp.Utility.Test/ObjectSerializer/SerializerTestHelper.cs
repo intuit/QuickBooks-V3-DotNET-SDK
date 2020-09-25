@@ -9,7 +9,7 @@ namespace Intuit.Ipp.Utility.Test
 {
     using System;
     using System.Xml;
-    using Intuit.Ipp.Data;
+    using Data;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     internal class SerializerTestHelper
@@ -78,42 +78,42 @@ namespace Intuit.Ipp.Utility.Test
         internal static void CompareAcconutObjects(Account deserializedEntity, Account serializableEntity)
         {
             //Assert.ReferenceEquals(deserializedEntity.AccountEx, serializableEntity.AccountEx);
-            Assert.ReferenceEquals(deserializedEntity.AcctNum, serializableEntity.AcctNum);
-            Assert.ReferenceEquals(deserializedEntity.Active, serializableEntity.Active);
-            Assert.ReferenceEquals(deserializedEntity.ActiveSpecified, serializableEntity.ActiveSpecified);
-            Assert.ReferenceEquals(deserializedEntity.BankNum, serializableEntity.BankNum);
-            Assert.ReferenceEquals(deserializedEntity.CurrencyRef, serializableEntity.CurrencyRef);
-            Assert.ReferenceEquals(deserializedEntity.CurrentBalance, serializableEntity.CurrentBalance);
-            Assert.ReferenceEquals(deserializedEntity.CurrentBalanceSpecified, serializableEntity.CurrentBalanceSpecified);
-            Assert.ReferenceEquals(deserializedEntity.CurrentBalanceWithSubAccounts, serializableEntity.CurrentBalanceWithSubAccounts);
-            Assert.ReferenceEquals(deserializedEntity.CurrentBalanceWithSubAccountsSpecified, serializableEntity.CurrentBalanceWithSubAccountsSpecified);
-            Assert.ReferenceEquals(deserializedEntity.Description, serializableEntity.Description);
+            ReferenceEquals(deserializedEntity.AcctNum, serializableEntity.AcctNum);
+            ReferenceEquals(deserializedEntity.Active, serializableEntity.Active);
+            ReferenceEquals(deserializedEntity.ActiveSpecified, serializableEntity.ActiveSpecified);
+            ReferenceEquals(deserializedEntity.BankNum, serializableEntity.BankNum);
+            ReferenceEquals(deserializedEntity.CurrencyRef, serializableEntity.CurrencyRef);
+            ReferenceEquals(deserializedEntity.CurrentBalance, serializableEntity.CurrentBalance);
+            ReferenceEquals(deserializedEntity.CurrentBalanceSpecified, serializableEntity.CurrentBalanceSpecified);
+            ReferenceEquals(deserializedEntity.CurrentBalanceWithSubAccounts, serializableEntity.CurrentBalanceWithSubAccounts);
+            ReferenceEquals(deserializedEntity.CurrentBalanceWithSubAccountsSpecified, serializableEntity.CurrentBalanceWithSubAccountsSpecified);
+            ReferenceEquals(deserializedEntity.Description, serializableEntity.Description);
             //Assert.ReferenceEquals(deserializedEntity.DetailedType, serializableEntity.DetailedType);
-            Assert.ReferenceEquals(deserializedEntity.domain, serializableEntity.domain);
+            ReferenceEquals(deserializedEntity.domain, serializableEntity.domain);
             //Assert.ReferenceEquals(deserializedEntity.ExternalKey, serializableEntity.ExternalKey);
-            Assert.ReferenceEquals(deserializedEntity.FullyQualifiedName, serializableEntity.FullyQualifiedName);
+            ReferenceEquals(deserializedEntity.FullyQualifiedName, serializableEntity.FullyQualifiedName);
             //Assert.ReferenceEquals(deserializedEntity.HasAttachment, serializableEntity.HasAttachment);
             //Assert.ReferenceEquals(deserializedEntity.HasAttachmentSpecified, serializableEntity.HasAttachmentSpecified);
-            Assert.ReferenceEquals(deserializedEntity.Id, serializableEntity.Id);
-            Assert.ReferenceEquals(deserializedEntity.MetaData, serializableEntity.MetaData);
-            Assert.ReferenceEquals(deserializedEntity.Name, serializableEntity.Name);
-            Assert.ReferenceEquals(deserializedEntity.OpeningBalance, serializableEntity.OpeningBalance);
-            Assert.ReferenceEquals(deserializedEntity.OpeningBalanceDateSpecified, serializableEntity.OpeningBalanceDateSpecified);
-            Assert.ReferenceEquals(deserializedEntity.OpeningBalanceSpecified, serializableEntity.OpeningBalanceSpecified);
-            Assert.ReferenceEquals(deserializedEntity.OpeningBalanceDate, serializableEntity.OpeningBalanceDate);
-            Assert.ReferenceEquals(deserializedEntity.ParentRef, serializableEntity.ParentRef);
-            Assert.ReferenceEquals(deserializedEntity.sparse, serializableEntity.sparse);
-            Assert.ReferenceEquals(deserializedEntity.sparseSpecified, serializableEntity.sparseSpecified);
-            Assert.ReferenceEquals(deserializedEntity.status, serializableEntity.status);
-            Assert.ReferenceEquals(deserializedEntity.statusSpecified, serializableEntity.statusSpecified);
-            Assert.ReferenceEquals(deserializedEntity.SubAccount, serializableEntity.SubAccount);
-            Assert.ReferenceEquals(deserializedEntity.SubAccountSpecified, serializableEntity.SubAccountSpecified);
+            ReferenceEquals(deserializedEntity.Id, serializableEntity.Id);
+            ReferenceEquals(deserializedEntity.MetaData, serializableEntity.MetaData);
+            ReferenceEquals(deserializedEntity.Name, serializableEntity.Name);
+            ReferenceEquals(deserializedEntity.OpeningBalance, serializableEntity.OpeningBalance);
+            ReferenceEquals(deserializedEntity.OpeningBalanceDateSpecified, serializableEntity.OpeningBalanceDateSpecified);
+            ReferenceEquals(deserializedEntity.OpeningBalanceSpecified, serializableEntity.OpeningBalanceSpecified);
+            ReferenceEquals(deserializedEntity.OpeningBalanceDate, serializableEntity.OpeningBalanceDate);
+            ReferenceEquals(deserializedEntity.ParentRef, serializableEntity.ParentRef);
+            ReferenceEquals(deserializedEntity.sparse, serializableEntity.sparse);
+            ReferenceEquals(deserializedEntity.sparseSpecified, serializableEntity.sparseSpecified);
+            ReferenceEquals(deserializedEntity.status, serializableEntity.status);
+            ReferenceEquals(deserializedEntity.statusSpecified, serializableEntity.statusSpecified);
+            ReferenceEquals(deserializedEntity.SubAccount, serializableEntity.SubAccount);
+            ReferenceEquals(deserializedEntity.SubAccountSpecified, serializableEntity.SubAccountSpecified);
             //Assert.ReferenceEquals(deserializedEntity.Subtype, serializableEntity.Subtype);
             //Assert.ReferenceEquals(deserializedEntity.SubtypeSpecified, serializableEntity.SubtypeSpecified);
-            Assert.ReferenceEquals(deserializedEntity.SyncToken, serializableEntity.SyncToken);
-            Assert.ReferenceEquals(deserializedEntity.TaxAccount, serializableEntity.TaxAccount);
-            Assert.ReferenceEquals(deserializedEntity.TaxAccountSpecified, serializableEntity.TaxAccountSpecified);
-            Assert.ReferenceEquals(deserializedEntity.TaxCodeRef, serializableEntity.TaxCodeRef);
+            ReferenceEquals(deserializedEntity.SyncToken, serializableEntity.SyncToken);
+            ReferenceEquals(deserializedEntity.TaxAccount, serializableEntity.TaxAccount);
+            ReferenceEquals(deserializedEntity.TaxAccountSpecified, serializableEntity.TaxAccountSpecified);
+            ReferenceEquals(deserializedEntity.TaxCodeRef, serializableEntity.TaxCodeRef);
             //Assert.ReferenceEquals(deserializedEntity.Type, serializableEntity.Type);
             //Assert.ReferenceEquals(deserializedEntity.TypeSpecified, serializableEntity.TypeSpecified);
         }

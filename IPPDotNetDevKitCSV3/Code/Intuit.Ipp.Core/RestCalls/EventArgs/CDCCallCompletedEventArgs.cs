@@ -24,8 +24,8 @@ namespace Intuit.Ipp.Core
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Exception;
+    using Data;
+    using Exception;
 
     /// <summary>
     /// Event argument is class used to communicate after FindAll operation completed.
@@ -37,7 +37,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         public CDCCallCompletedEventArgs()
         {
-            this.Entities = new Dictionary<string, List<IEntity>>();
+            Entities = new Dictionary<string, List<IEntity>>();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Intuit.Ipp.Core
         /// <param name="key">key.</param>
         public List<IEntity> getEntity(string key)
         {
-            return this.Entities.FirstOrDefault(x => x.Key == key).Value;
+            return Entities.FirstOrDefault(x => x.Key == key).Value;
         }
     }
 }

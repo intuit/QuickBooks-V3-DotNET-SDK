@@ -23,7 +23,7 @@
 namespace Intuit.Ipp.GlobalTaxService
 {
     using System;
-    using Intuit.Ipp.Data;
+    using Data;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -45,7 +45,7 @@ namespace Intuit.Ipp.GlobalTaxService
         /// </summary>
         /// <param name="entity">CDM Entity.</param>
         /// <returns>True if the type exists or else false.</returns>
-        internal static bool IsTypeNull(Intuit.Ipp.Data.TaxService taxCodeName)
+        internal static bool IsTypeNull(TaxService taxCodeName)
         {
             if (taxCodeName == null || taxCodeName.GetType() == null || string.IsNullOrWhiteSpace(taxCodeName.GetType().Name))
             {

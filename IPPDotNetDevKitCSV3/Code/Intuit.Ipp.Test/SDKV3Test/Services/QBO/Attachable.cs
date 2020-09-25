@@ -53,9 +53,9 @@ namespace Intuit.Ipp.Test.Services.QBO
             //Creating the Bill for Add
 
             string imagePath = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", "Services\\Resource\\image.jpg");
-            System.IO.FileInfo file = new System.IO.FileInfo(imagePath);
+            FileInfo file = new FileInfo(imagePath);
             Attachable attachable = QBOHelper.CreateAttachableUpload(qboContextoAuth);
-            using (System.IO.FileStream fs = file.OpenRead())
+            using (FileStream fs = file.OpenRead())
                 {
                     attachable.ContentType = "image/jpeg";
                     attachable.FileName = file.Name;
@@ -63,7 +63,7 @@ namespace Intuit.Ipp.Test.Services.QBO
                 }
 
             byte[] uploadedByte = null;
-            using (System.IO.FileStream fs = file.OpenRead())
+            using (FileStream fs = file.OpenRead())
             {
                 using (BinaryReader binaryReader = new BinaryReader(fs))
                 {

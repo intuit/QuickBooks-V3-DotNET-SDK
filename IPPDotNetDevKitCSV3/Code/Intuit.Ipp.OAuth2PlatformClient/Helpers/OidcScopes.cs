@@ -35,7 +35,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="value"></param>
         public StringValueAttribute(string value)
         {
-            this.StringValue = value;
+            StringValue = value;
         }
 
         #endregion

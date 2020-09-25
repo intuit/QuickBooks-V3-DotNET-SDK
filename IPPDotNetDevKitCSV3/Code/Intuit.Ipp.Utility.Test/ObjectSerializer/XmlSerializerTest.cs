@@ -9,10 +9,10 @@ namespace Intuit.Ipp.Utility.Test
 {
     using System;
     using System.Xml;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Data;
+    using Diagnostics;
+    using Exception;
+    using Utility;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
@@ -37,12 +37,12 @@ namespace Intuit.Ipp.Utility.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace Intuit.Ipp.Utility.Test
         /// <value>
         /// The IDS logger.
         /// </value>
-        internal Intuit.Ipp.Diagnostics.ILogger IDSLogger { get; set; }
+        internal ILogger IDSLogger { get; set; }
 
         /// <summary>
         /// Serialize constructor test.
@@ -69,7 +69,7 @@ namespace Intuit.Ipp.Utility.Test
         [TestMethod]
         public void SerializerConstructorWithArgsTest()
         {
-            XmlObjectSerializer serializer = new XmlObjectSerializer(this.IDSLogger);
+            XmlObjectSerializer serializer = new XmlObjectSerializer(IDSLogger);
         }
         
 

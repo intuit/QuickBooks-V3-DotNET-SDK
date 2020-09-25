@@ -23,9 +23,9 @@ namespace Intuit.Ipp.Core
     using System;
     using System.Net;
     using System.Threading;
-    using Intuit.Ipp.Exception;
+    using Exception;
     using System.IO;
-    using Intuit.Ipp.Utility; 
+    using Utility; 
 
     /// <summary>
     /// Defines a delegate that will be invoked whenever a retry condition is encountered.
@@ -108,7 +108,7 @@ namespace Intuit.Ipp.Core
 
             this.retryCount = retryCount;
             this.retryInterval = retryInterval;
-            this.shouldRetry = this.GetShouldFixedRetry();
+            shouldRetry = GetShouldFixedRetry();
             this.context = context;
         }
   
@@ -125,7 +125,7 @@ namespace Intuit.Ipp.Core
 
             this.retryCount = retryCount;
             this.retryInterval = retryInterval;
-            this.shouldRetry = this.GetShouldFixedRetry();
+            shouldRetry = GetShouldFixedRetry();
         }
 
        
@@ -145,7 +145,7 @@ namespace Intuit.Ipp.Core
             this.retryCount = retryCount;
             this.initialInterval = initialInterval;
             this.increment = increment;
-            this.shouldRetry = this.GetShouldIncrementalRetry();
+            shouldRetry = GetShouldIncrementalRetry();
             this.context = context;
         }
 
@@ -166,7 +166,7 @@ namespace Intuit.Ipp.Core
             this.retryCount = retryCount;
             this.initialInterval = initialInterval;
             this.increment = increment;
-            this.shouldRetry = this.GetShouldIncrementalRetry();
+            shouldRetry = GetShouldIncrementalRetry();
         }
 
 
@@ -187,10 +187,10 @@ namespace Intuit.Ipp.Core
             IntuitRetryHelper.ArgumentNotGreaterThan(minBackoff.TotalMilliseconds, maxBackoff.TotalMilliseconds, "minBackoff");
 
             this.retryCount = retryCount;
-            this.minBackOff = minBackoff;
-            this.maxBackOff = maxBackoff;
-            this.deltaBackOff = deltaBackoff;
-            this.shouldRetry = this.GetShouldExponentialBackOffRetry();
+            minBackOff = minBackoff;
+            maxBackOff = maxBackoff;
+            deltaBackOff = deltaBackoff;
+            shouldRetry = GetShouldExponentialBackOffRetry();
             this.context = context;
         }
 
@@ -213,10 +213,10 @@ namespace Intuit.Ipp.Core
             IntuitRetryHelper.ArgumentNotGreaterThan(minBackoff.TotalMilliseconds, maxBackoff.TotalMilliseconds, "minBackoff");
 
             this.retryCount = retryCount;
-            this.minBackOff = minBackoff;
-            this.maxBackOff = maxBackoff;
-            this.deltaBackOff = deltaBackoff;
-            this.shouldRetry = this.GetShouldExponentialBackOffRetry();
+            minBackOff = minBackoff;
+            maxBackOff = maxBackoff;
+            deltaBackOff = deltaBackoff;
+            shouldRetry = GetShouldExponentialBackOffRetry();
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Intuit.Ipp.Core
         {
             IntuitRetryHelper.IsArgumentNull(action, "action");
 
-            this.ExecuteAction(() => { action(); return default(object); });
+            ExecuteAction(() => { action(); return default(object); });
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Intuit.Ipp.Core
             IntuitRetryHelper.IsArgumentNull(successHandler, "successHandler");
             IntuitRetryHelper.IsArgumentNull(faultHandler, "faultHandler");
 
-            this.ExecuteAction<object>(
+            ExecuteAction<object>(
                 beginAction,
                 ar => { endAction(ar); return null; },
                 _ => successHandler(),
@@ -332,7 +332,7 @@ namespace Intuit.Ipp.Core
                             var delay = TimeSpan.Zero;
 
                             // Check if we should continue retrying on this exception. If not, invoke the fault handler so that user code can take control.
-                            if (!IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex)))
+                            if (!IsTransient(lastError) || ((ExtendedRetryException != null) && ExtendedRetryException.IsRetryException(ex)))
                             {
                                 faultHandler(lastError);
                                 return false;
@@ -345,7 +345,7 @@ namespace Intuit.Ipp.Core
                                 }
 
                                 retryCount = retryCount + 1;
-                                if (!this.shouldRetry(retryCount, lastError, out delay))
+                                if (!shouldRetry(retryCount, lastError, out delay))
                                 {
                                     WebException webException = ex as WebException;
 
@@ -368,7 +368,7 @@ namespace Intuit.Ipp.Core
                                         int statusCode = (int)errorResponse.StatusCode;
 
 
-                                        ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
+                                        ICompressor responseCompressor = CoreHelper.GetCompressor(context, false);
                                         if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
                                         {
                                             using (var responseStream = errorResponse.GetResponseStream()) //Check for decompressing
@@ -411,14 +411,14 @@ namespace Intuit.Ipp.Core
 
 
                                             // Log the error string to disk.
-                                            CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
+                                            CoreHelper.GetRequestLogging(context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
                                             //Log to Serilog
                                             CoreHelper.AdvancedLogging.Log("Response Intuit_Tid header: " + response_intuit_tid_header + ",Response Payload: " + errorString);
                                         }
 
                                     }
 
-                                    Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
+                                    Rest.FaultHandler fault = new Rest.FaultHandler(context);
                                     IdsException idsException = fault.ParseErrorResponseAndPrepareException(errorString);
 
 
@@ -439,7 +439,7 @@ namespace Intuit.Ipp.Core
                                 }
 
                                 // Notify the respective subscribers about this exception.
-                                this.OnRetrying(retryCount, lastError, delay);
+                                OnRetrying(retryCount, lastError, delay);
 
                                 // Sleep for the defined interval before repetitively executing the main async operation.
                                 if (retryCount > 2 && delay > TimeSpan.Zero)
@@ -465,11 +465,11 @@ namespace Intuit.Ipp.Core
         /// <param name="retryCount">The current retry attempt count.</param>
         /// <param name="lastError">The exception which caused the retry conditions to occur.</param>
         /// <param name="delay">The delay indicating how long the current thread will be suspended for before the next iteration will be invoked.</param>
-        protected virtual void OnRetrying(int retryCount, System.Exception lastError, TimeSpan delay)
+        protected virtual void OnRetrying(int retryCount, Exception lastError, TimeSpan delay)
         {
-            if (this.Retrying != null)
+            if (Retrying != null)
             {
-                this.Retrying(this, new IntuitRetryingEventArgs(retryCount, delay, lastError));
+                Retrying(this, new IntuitRetryingEventArgs(retryCount, delay, lastError));
             }
         }
 
@@ -478,7 +478,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="ex">The exception.</param>
         /// <returns>Returns whether transient exception or not.</returns>
-        private static bool CheckIsTransient(System.Exception ex)
+        private static bool CheckIsTransient(Exception ex)
         {
             var webException = ex as WebException;
 
@@ -512,7 +512,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="ex">The exception object to be verified.</param>
         /// <returns>True if the specified exception is considered as transient, otherwise false.</returns>
-        private static bool IsTransient(System.Exception ex)
+        private static bool IsTransient(Exception ex)
         {
             return ex != null && (CheckIsTransient(ex) || (ex.InnerException != null && CheckIsTransient(ex.InnerException)));
         }
@@ -557,12 +557,12 @@ namespace Intuit.Ipp.Core
                 {
                     lastError = ex;
 
-                    if (!IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex)))
+                    if (!IsTransient(lastError) || ((ExtendedRetryException != null) && ExtendedRetryException.IsRetryException(ex)))
                     {
                         throw;
                     }
 
-                    if (!this.shouldRetry(retryCount++, lastError, out delay))
+                    if (!shouldRetry(retryCount++, lastError, out delay))
                     {
                         WebException webException = ex as WebException;
 
@@ -584,7 +584,7 @@ namespace Intuit.Ipp.Core
                             int statusCode = (int)errorResponse.StatusCode;
 
 
-                            ICompressor responseCompressor = CoreHelper.GetCompressor(this.context, false);
+                            ICompressor responseCompressor = CoreHelper.GetCompressor(context, false);
                             if (!string.IsNullOrWhiteSpace(errorResponse.ContentEncoding) && responseCompressor != null)
                             {
                                 using (var responseStream = errorResponse.GetResponseStream()) //Check for decompressing
@@ -628,7 +628,7 @@ namespace Intuit.Ipp.Core
                                 }
 
                                 // Log the error string to disk.
-                                CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + " Response Payload: " + errorString, false);
+                                CoreHelper.GetRequestLogging(context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + " Response Payload: " + errorString, false);
                                 //Log to Serilog
                                 CoreHelper.AdvancedLogging.Log("Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 
@@ -636,7 +636,7 @@ namespace Intuit.Ipp.Core
                             }
                         }
 
-                        Core.Rest.FaultHandler fault = new Core.Rest.FaultHandler(this.context);
+                        Rest.FaultHandler fault = new Rest.FaultHandler(context);
                         IdsException idsException = fault.ParseErrorResponseAndPrepareException(errorString);
 
 
@@ -661,7 +661,7 @@ namespace Intuit.Ipp.Core
                     delay = TimeSpan.Zero;
                 }
 
-                this.OnRetrying(retryCount - 1, lastError, delay);
+                OnRetrying(retryCount - 1, lastError, delay);
 
                 if (retryCount > 2 && delay > TimeSpan.Zero)
                 {
@@ -676,7 +676,7 @@ namespace Intuit.Ipp.Core
         /// <returns>The ShouldRetry delegate.</returns>
         private ShouldRetry GetShouldFixedRetry()
         {
-            if (this.retryCount == 0)
+            if (retryCount == 0)
             {
                 return delegate(int currentRetryCount, Exception lastException, out TimeSpan interval)
                 {
@@ -687,9 +687,9 @@ namespace Intuit.Ipp.Core
 
             return delegate(int currentRetryCount, Exception lastException, out TimeSpan interval)
             {
-                if (currentRetryCount < this.retryCount)
+                if (currentRetryCount < retryCount)
                 {
-                    interval = this.retryInterval;
+                    interval = retryInterval;
                     return true;
                 }
 
@@ -706,9 +706,9 @@ namespace Intuit.Ipp.Core
         {
             return delegate(int currentRetryCount, Exception lastException, out TimeSpan retryInterval)
             {
-                if (currentRetryCount < this.retryCount)
+                if (currentRetryCount < retryCount)
                 {
-                    retryInterval = TimeSpan.FromMilliseconds(this.initialInterval.TotalMilliseconds + (this.increment.TotalMilliseconds * currentRetryCount));
+                    retryInterval = TimeSpan.FromMilliseconds(initialInterval.TotalMilliseconds + (increment.TotalMilliseconds * currentRetryCount));
 
                     return true;
                 }
@@ -727,12 +727,12 @@ namespace Intuit.Ipp.Core
         {
             return delegate(int currentRetryCount, Exception lastException, out TimeSpan retryInterval)
             {
-                if (currentRetryCount < this.retryCount)
+                if (currentRetryCount < retryCount)
                 {
                     var random = new Random();
 
-                    var delta = (int)((Math.Pow(2.0, currentRetryCount) - 1.0) * random.Next((int)(this.deltaBackOff.TotalMilliseconds * 0.8), (int)(this.deltaBackOff.TotalMilliseconds * 1.2)));
-                    var interval = (int)Math.Min(checked(this.minBackOff.TotalMilliseconds + delta), this.maxBackOff.TotalMilliseconds);
+                    var delta = (int)((Math.Pow(2.0, currentRetryCount) - 1.0) * random.Next((int)(deltaBackOff.TotalMilliseconds * 0.8), (int)(deltaBackOff.TotalMilliseconds * 1.2)));
+                    var interval = (int)Math.Min(checked(minBackOff.TotalMilliseconds + delta), maxBackOff.TotalMilliseconds);
 
                     retryInterval = TimeSpan.FromMilliseconds(interval);
 

@@ -60,7 +60,7 @@ namespace Intuit.Ipp.Utility
                     return compressionFormat;
                 }
 
-                return Utility.CompressionFormat.None;
+                return CompressionFormat.None;
             }
         }
     }

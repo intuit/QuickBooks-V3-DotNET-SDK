@@ -36,9 +36,9 @@ namespace Intuit.Ipp.Data
         /// <param name="entitlementAndRoleNode">The entitlement node.</param>
         public EntitlementAndUserRoleInfo(XmlNode entitlementAndRoleNode)
         {
-            this.EntitlementInformation = new EntitlementInfo(entitlementAndRoleNode);
+            EntitlementInformation = new EntitlementInfo(entitlementAndRoleNode);
             XmlNodeList roleNodes = entitlementAndRoleNode.SelectNodes("//roles/role");
-            this.RoleInformation = RoleInfo.ParseRoles(roleNodes);
+            RoleInformation = RoleInfo.ParseRoles(roleNodes);
         }
 
         #endregion

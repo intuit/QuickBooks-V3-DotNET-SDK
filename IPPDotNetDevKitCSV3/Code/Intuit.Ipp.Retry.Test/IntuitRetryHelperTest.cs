@@ -7,7 +7,7 @@
 namespace Intuit.Ipp.Retry.Test
 {
     using System;
-    using Intuit.Ipp.Retry;
+    using Retry;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
@@ -29,12 +29,12 @@ namespace Intuit.Ipp.Retry.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 

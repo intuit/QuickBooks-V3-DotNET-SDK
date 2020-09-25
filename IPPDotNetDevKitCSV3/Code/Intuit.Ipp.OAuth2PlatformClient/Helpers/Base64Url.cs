@@ -41,7 +41,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 case 0: break; // No pad chars in this case
                 case 2: s += "=="; break; // Two pad chars
                 case 3: s += "="; break; // One pad char
-                default: throw new System.Exception("Illegal base64url string!");
+                default: throw new Exception("Illegal base64url string!");
             }
             
             return Convert.FromBase64String(s); // Standard base64 decoder

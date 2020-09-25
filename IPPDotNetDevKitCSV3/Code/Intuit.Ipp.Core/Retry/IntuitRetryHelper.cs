@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Core
     using System;
     using System.Globalization;
     //using Intuit.Ipp.Retry.Properties; 
-    using Intuit.Ipp.Core.Properties;
+    using Properties;
 
     /// <summary>
     /// Class contains Helper Methods for Services.

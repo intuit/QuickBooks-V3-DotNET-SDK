@@ -69,7 +69,7 @@ namespace Intuit.Ipp.Diagnostics.Test
             {
                 TraceLogger target = new TraceLogger();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Assert.Fail(ex.Message);
             }

@@ -21,7 +21,7 @@
 
 namespace Intuit.Ipp.Core
 {
-    using Intuit.Ipp.Core.Configuration;
+    using Configuration;
 
     /// <summary>
     /// Interface, that can provide <see cref="IppConfiguration"/> from file for example.

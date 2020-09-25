@@ -23,7 +23,7 @@ namespace Intuit.Ipp.Exception
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Runtime.Serialization;
-    using Intuit.Ipp.Exception.Properties;
+    using Properties;
 
     /// <summary>
     /// Represents an IdsException.
@@ -61,7 +61,7 @@ namespace Intuit.Ipp.Exception
         /// </summary>
         public IdsException()
         {
-            this.errorMessage = Resources.IdsExceptionDefaultMessage;
+            errorMessage = Resources.IdsExceptionDefaultMessage;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Intuit.Ipp.Exception
                             errorDetail += tempException.innerExceptions[i].Detail + " , ";
                         }
 
-                        this.innerExceptions = tempException.InnerExceptions;
+                        innerExceptions = tempException.InnerExceptions;
                     }
 
                 }
@@ -204,12 +204,12 @@ namespace Intuit.Ipp.Exception
         {
             if (info != null)
             {
-                this.errorCode = info.GetString("errorCode");
-                this.errorMessage = info.GetString("errorMessage");
-                this.source = info.GetString("source");
+                errorCode = info.GetString("errorCode");
+                errorMessage = info.GetString("errorMessage");
+                source = info.GetString("source");
                 try
                 {
-                    this.innerException = (System.Exception)info.GetValue("innerException", typeof(System.Exception));
+                    innerException = (System.Exception)info.GetValue("innerException", typeof(System.Exception));
                 }
                 catch (System.InvalidCastException)
                 {
@@ -224,12 +224,12 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.errorCode;
+                return errorCode;
             }
 
             set
             {
-                this.errorCode = value;
+                errorCode = value;
             }
         }
 
@@ -240,7 +240,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.errorMessage;
+                return errorMessage;
             }
           
         }
@@ -252,7 +252,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.source;
+                return source;
             }
         }
 
@@ -263,7 +263,7 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                return this.innerException;
+                return innerException;
             }
         }
 
@@ -274,9 +274,9 @@ namespace Intuit.Ipp.Exception
         {
             get
             {
-                if (this.innerExceptions != null)
+                if (innerExceptions != null)
                 {
-                    return new ReadOnlyCollection<IdsError>(this.innerExceptions);
+                    return new ReadOnlyCollection<IdsError>(innerExceptions);
                 }
 
                 return null;
@@ -294,11 +294,11 @@ namespace Intuit.Ipp.Exception
 
             if (info != null)
             {
-                info.AddValue("errorCode", this.errorCode);
-                info.AddValue("errorMessage", this.errorMessage);
-                info.AddValue("source", this.source);
-                info.AddValue("innerException", this.innerException);
-                info.AddValue("innerExceptions", this.innerExceptions);
+                info.AddValue("errorCode", errorCode);
+                info.AddValue("errorMessage", errorMessage);
+                info.AddValue("source", source);
+                info.AddValue("innerException", innerException);
+                info.AddValue("innerExceptions", innerExceptions);
             }
         }
     }

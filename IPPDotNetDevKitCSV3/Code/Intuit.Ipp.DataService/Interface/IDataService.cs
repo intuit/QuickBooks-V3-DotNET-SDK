@@ -23,7 +23,7 @@
 namespace Intuit.Ipp.DataService
 {
     using System.Collections.ObjectModel;
-    using Intuit.Ipp.Data;
+    using Data;
 
     /// <summary>
     /// This interface specifies the Sync CRUD operations for IDS. 

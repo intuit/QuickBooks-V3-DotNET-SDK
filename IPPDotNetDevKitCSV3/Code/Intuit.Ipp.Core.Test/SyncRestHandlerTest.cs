@@ -66,7 +66,7 @@ namespace Intuit.Ipp.Core.Test
             string resourceUri = string.Format("v3/company/{0}/customer", serviceContext.RealmId);
             serviceContext.IppConfiguration.BaseUrl.Qbo = "http://www.intuit.com/";
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
-            HttpWebRequest request = handler.PrepareRequest(parameters, new Intuit.Ipp.Data.Customer());
+            HttpWebRequest request = handler.PrepareRequest(parameters, new Customer());
             string endpointUri = string.Format("{0}{1}", "http://www.intuit.com/", resourceUri);
 
             Assert.AreEqual(endpointUri.Trim(), request.RequestUri.ToString().Replace(request.RequestUri.Query, "").Trim());
@@ -119,7 +119,7 @@ namespace Intuit.Ipp.Core.Test
             IRestHandler handler = new SyncRestHandler(serviceContext);
             string resourceUri = string.Format("v3/company/{0}/customer", AuthorizationKeysQBO.realmIdIAQBO);
             RequestParameters parameters = new RequestParameters(resourceUri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
-            Intuit.Ipp.Data.Customer customer = new Data.Customer();
+            Customer customer = new Customer();
             HttpWebRequest request = handler.PrepareRequest(parameters, customer);
             string response = handler.GetResponse(request);
         }
@@ -181,7 +181,7 @@ namespace Intuit.Ipp.Core.Test
         public void GetResponseStreamCompressedSuccessTest()
         {
             ServiceContext serviceContext = Initializer.InitializeServiceContextQbo();
-            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Intuit.Ipp.Core.Configuration.CompressionFormat.GZip;
+            serviceContext.IppConfiguration.Message.Response.CompressionFormat = Configuration.CompressionFormat.GZip;
             IRestHandler handler = new SyncRestHandler(serviceContext);
             List<SalesReceipt> salesReceipts = Helper.FindAll<SalesReceipt>(serviceContext, new SalesReceipt());
             Assert.IsTrue(salesReceipts.Count > 0);

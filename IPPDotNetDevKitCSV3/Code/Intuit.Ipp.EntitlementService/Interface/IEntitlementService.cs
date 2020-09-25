@@ -20,7 +20,7 @@
 
 namespace Intuit.Ipp.EntitlementService
 {
-    using Intuit.Ipp.Data;
+    using Data;
 
     /// <summary>
     /// This interface specifies the EntitlementService Read operation

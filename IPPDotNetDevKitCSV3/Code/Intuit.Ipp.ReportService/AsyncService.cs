@@ -25,13 +25,13 @@ namespace Intuit.Ipp.ReportService
     using System.Linq;
     using System.Net;
     using System.Reflection;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Core.Rest;
-    using Intuit.Ipp.Data;
-    using Intuit.Ipp.ReportService.Properties;
-    using Intuit.Ipp.Diagnostics;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Core;
+    using Core.Rest;
+    using Data;
+    using Properties;
+    using Diagnostics;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// Intuit Partner Platform Services for QBO.
@@ -84,9 +84,9 @@ namespace Intuit.Ipp.ReportService
         /// <param name="reportsQueryParameters">Report Parameters for query string</param>
         public void ExecuteReportAsync(string reportName, string reportsQueryParameters)
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method ExecuteReport Asynchronously.");
-            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(this.serviceContext);
-            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(this.ExecuteReportAsynCompleted);
+            serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Called Method ExecuteReport Asynchronously.");
+            AsyncRestHandler asyncRestHandler = new AsyncRestHandler(serviceContext);
+            asyncRestHandler.OnCallCompleted += new EventHandler<AsyncCallCompletedEventArgs>(ExecuteReportAsynCompleted);
             ReportCallCompletedEventArgs<Report> reportCallCompletedEventArgs = new ReportCallCompletedEventArgs<Report>();
             string resourceString = reportName;
             try
@@ -95,22 +95,22 @@ namespace Intuit.Ipp.ReportService
                 string uri = "";
                 if (!string.IsNullOrEmpty(reportsQueryParameters))
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}?{3}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, reportsQueryParameters);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}?{3}", CoreConstants.VERSION, serviceContext.RealmId, resourceString, reportsQueryParameters);
                 }
                 else
                 {
-                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}", Utility.CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+                    uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/reports/{2}", CoreConstants.VERSION, serviceContext.RealmId, resourceString);
                 }
 
                 // Create request parameters
                 RequestParameters parameters;
-                if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+                if (serviceContext.IppConfiguration.Message.Request.SerializationFormat == Core.Configuration.SerializationFormat.Json)
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
                 }
                 else
                 {
-                    parameters = new RequestParameters(uri, HttpVerbType.GET, Utility.CoreConstants.CONTENTTYPE_APPLICATIONXML);
+                    parameters = new RequestParameters(uri, HttpVerbType.GET, CoreConstants.CONTENTTYPE_APPLICATIONXML);
                 }
 
                 // Prepare request
@@ -121,10 +121,10 @@ namespace Intuit.Ipp.ReportService
             }
             catch (SystemException systemException)
             {
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
+                serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, systemException.Message);
                 IdsException idsException = new IdsException(systemException.Message);
                 reportCallCompletedEventArgs.Error = idsException;
-                this.OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
+                OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
             }
         }
 
@@ -158,26 +158,26 @@ namespace Intuit.Ipp.ReportService
             {
                 try
                 {
-                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+                    IEntitySerializer responseSerializer = CoreHelper.GetSerializer(serviceContext, false);
                     string response = eventArgs.Result;
                     if (!response.StartsWith("{\"Report\":")) { response = "{\"Report\":" + response + "}"; }
                     IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(response);
                     reportCallCompletedEventArgs.Report = restResponse.AnyIntuitObject as Report;
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing event Execute ReportAsynCompleted in AsyncService object.");
-                    this.OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Finished Executing event Execute ReportAsynCompleted in AsyncService object.");
+                    OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
                 }
                 catch (SystemException systemException)
                 {
                     IdsException idsException = CreateIdsException(systemException);
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
+                    serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     reportCallCompletedEventArgs.Error = idsException;
-                    this.OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
+                    OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
                 }
             }
             else
             {
                 reportCallCompletedEventArgs.Error = eventArgs.Error;
-                this.OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
+                OnExecuteReportAsyncCompleted(this, reportCallCompletedEventArgs);
             }
         }
 

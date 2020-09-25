@@ -7,7 +7,7 @@
 namespace Intuit.Ipp.Utility.Test
 {
     using System;
-    using Intuit.Ipp.Utility;
+    using Utility;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
@@ -29,12 +29,12 @@ namespace Intuit.Ipp.Utility.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 

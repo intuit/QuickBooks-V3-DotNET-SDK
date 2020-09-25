@@ -22,7 +22,7 @@ namespace Intuit.Ipp.Utility
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Xml;
-    using Intuit.Ipp.Utility.Properties;
+    using Properties;
 
     /// <summary>
     /// A helper class to build API requests.
@@ -57,15 +57,15 @@ namespace Intuit.Ipp.Utility
         {
             get
             {
-                if (this.qdbapiElement == null)
+                if (qdbapiElement == null)
                 {
-                    this.qdbapiElement = this.CreateElement(UtilityConstants.QDBAPI);
-                    this.AppendChild(this.QdbapiElement);
-                    this.AddTextParameter(UtilityConstants.ENCODINGATTR, UtilityConstants.ENCODINGATTRVALUE);
-                    this.AddTextParameter(UtilityConstants.UDATA, this.requestId);
+                    qdbapiElement = CreateElement(UtilityConstants.QDBAPI);
+                    AppendChild(QdbapiElement);
+                    AddTextParameter(UtilityConstants.ENCODINGATTR, UtilityConstants.ENCODINGATTRVALUE);
+                    AddTextParameter(UtilityConstants.UDATA, requestId);
                 }
 
-                return this.qdbapiElement;
+                return qdbapiElement;
             }
         }
        
@@ -76,7 +76,7 @@ namespace Intuit.Ipp.Utility
         /// <param name="value">The value of parameter.</param>
         public void AddTextParameter(string name, string value)
         {
-            this.AddNode(this.QdbapiElement, name, this.CreateTextNode(value));
+            AddNode(QdbapiElement, name, CreateTextNode(value));
         }
 
         /// <summary>

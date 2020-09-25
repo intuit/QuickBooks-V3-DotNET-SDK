@@ -26,7 +26,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             qboContextoAuth = Initializer.InitializeQBOServiceContextUsingoAuth();
             //qboContextoAuth.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
             //qboContextoAuth.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\IdsLogs";
-            qboContextoAuth.IppConfiguration.Message.Response.SerializationFormat = Intuit.Ipp.Core.Configuration.SerializationFormat.Json;
+            qboContextoAuth.IppConfiguration.Message.Response.SerializationFormat = Core.Configuration.SerializationFormat.Json;
         }
 
         #region " Sync Methods "

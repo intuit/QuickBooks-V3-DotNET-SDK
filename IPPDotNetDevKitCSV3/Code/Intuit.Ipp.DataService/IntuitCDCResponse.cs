@@ -50,8 +50,8 @@ namespace Intuit.Ipp.DataService
         /// </summary>
         public IntuitCDCResponse()
         {
-            this.entities = new Dictionary<string, List<IEntity>>();
-            this.exceptions = new Dictionary<string, IdsException>();
+            entities = new Dictionary<string, List<IEntity>>();
+            exceptions = new Dictionary<string, IdsException>();
         }
 
         #endregion

@@ -26,8 +26,8 @@ namespace Intuit.Ipp.Core.Rest
     using System.IO;
     using System.Text;
     //using Intuit.Ipp.Core; 
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Utility;
+    using Exception;
+    using Utility;
 
     /// <summary>
     /// Logs API Requests/Responses To Disk
@@ -49,8 +49,8 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="serviceRequestLoggingLocation">Request Response logging locationl</param>
         public LogRequestsToDisk(bool enableServiceRequestLogging, string serviceRequestLoggingLocation)
         {
-            this.EnableServiceRequestsLogging = enableServiceRequestLogging;
-            this.ServiceRequestLoggingLocation = serviceRequestLoggingLocation;
+            EnableServiceRequestsLogging = enableServiceRequestLogging;
+            ServiceRequestLoggingLocation = serviceRequestLoggingLocation;
         }
 
         /// <summary>
@@ -70,35 +70,35 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="isRequest">Specifies whether the xml is request or response.</param>
         public void LogPlatformRequests(string xml, bool isRequest)
         {
-            if (this.EnableServiceRequestsLogging)
+            if (EnableServiceRequestsLogging)
             {
-                if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocation))
+                if (string.IsNullOrWhiteSpace(ServiceRequestLoggingLocation))
                 {
-                    this.ServiceRequestLoggingLocation = Path.GetTempPath();
+                    ServiceRequestLoggingLocation = Path.GetTempPath();
                 }
 
                 string filePath = string.Empty;
-                if (this.ServiceRequestLoggingLocation.Contains("\\"))
+                if (ServiceRequestLoggingLocation.Contains("\\"))
                 {
                     if (isRequest)
                     {
-                        filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.REQUESTFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                        filePath = string.Format(CultureInfo.InvariantCulture, CoreConstants.REQUESTFILENAME_FORMAT, ServiceRequestLoggingLocation, CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
                     }
                     else
                     {
-                        filePath = string.Format(CultureInfo.InvariantCulture, Utility.CoreConstants.RESPONSEFILENAME_FORMAT, this.ServiceRequestLoggingLocation, Utility.CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
+                        filePath = string.Format(CultureInfo.InvariantCulture, CoreConstants.RESPONSEFILENAME_FORMAT, ServiceRequestLoggingLocation, CoreConstants.SLASH_CHAR, DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture));
                     }
                 }
                 else
                 {
                     if (isRequest)
                     {
-                        filePath = Path.Combine(this.ServiceRequestLoggingLocation,"Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+                        filePath = Path.Combine(ServiceRequestLoggingLocation,"Request-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
                         
                     }
                     else
                     {
-                        filePath = Path.Combine(this.ServiceRequestLoggingLocation, "Response-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+                        filePath = Path.Combine(ServiceRequestLoggingLocation, "Response-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
                     }
 
                 }
@@ -112,7 +112,7 @@ namespace Intuit.Ipp.Core.Rest
                         fs.Write(data, 0, data.Length);
                     }
                 }
-                catch (System.Exception exception)
+                catch (Exception exception)
                 {
                     IdsException idsException = new IdsException("Exception has been generated. Check inner exception for details.", exception);
                     IdsExceptionManager.HandleException(idsException);

@@ -30,27 +30,27 @@ namespace Intuit.Ipp.XsdExtension
                 if (codedomElement.IsClass)
                 {
                     // Implement IEntity
-                    this.ImplementIEntity(codedomElement, xsdContext);
+                    ImplementIEntity(codedomElement, xsdContext);
 
                     // Replace DataType="date" with DataType="dateTime" in System.Xml.Serialization.XmlElementAttribute
-                    this.ReplaceDateTime(codedomElement);
+                    ReplaceDateTime(codedomElement);
 
                     // Replace Item and Items property names to AnyIntuitObject and AnyIntuitObjects
-                    this.ReplaceItem(codedomElement);
+                    ReplaceItem(codedomElement);
 
                     // It adds [JsonPropertyAttribute] to Section1 property of Section class
-                    this.ModifySectionClass(codedomElement);
+                    ModifySectionClass(codedomElement);
 
                     // adds [JsonIgnore] attribute if [XmlIgnore] presents
-                    this.AddJsonIgnore(codedomElement);
+                    AddJsonIgnore(codedomElement);
                 }
                 else if (codedomElement.IsEnum)
                 {
                     // Adds Query and Report enums
-                    this.AddOperationEnums(codedomElement);
+                    AddOperationEnums(codedomElement);
 
                     //This adds [JsonPropertyAttribute] attribute to the members of AccountTypeEnum 
-                    this.ModifyAccountTypeEnumeration(codedomElement);
+                    ModifyAccountTypeEnumeration(codedomElement);
                 }
             }
         }

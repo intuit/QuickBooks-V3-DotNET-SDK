@@ -24,7 +24,7 @@ namespace Intuit.Ipp.Data
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Xml;
-    using Intuit.Ipp.Utility;
+    using Utility;
 
     /// <summary>
     /// Encapsulates the information about a given role.
@@ -37,11 +37,11 @@ namespace Intuit.Ipp.Data
         /// <param name="singleRoleNode">The single role node.</param>
         private RoleInfo(XmlNode singleRoleNode)
         {
-            this.Id = singleRoleNode.Attributes.GetNamedItem("id").InnerText;
+            Id = singleRoleNode.Attributes.GetNamedItem("id").InnerText;
             XmlNode n = singleRoleNode.SelectSingleNode("./name");
             if (n != null)
             {
-                this.Name = n.InnerText;
+                Name = n.InnerText;
             }
 
             n = singleRoleNode.SelectSingleNode("./access");
@@ -50,10 +50,10 @@ namespace Intuit.Ipp.Data
                 XmlNode idAttr = n.Attributes.GetNamedItem("id");
                 if (idAttr != null)
                 {
-                    this.AccessId = idAttr.InnerText;
+                    AccessId = idAttr.InnerText;
                 }
 
-                this.Access = n.InnerText;
+                Access = n.InnerText;
             }
         }
 

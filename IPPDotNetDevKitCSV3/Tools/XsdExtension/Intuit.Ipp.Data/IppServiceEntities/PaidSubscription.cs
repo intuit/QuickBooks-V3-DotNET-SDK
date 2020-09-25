@@ -38,61 +38,61 @@ namespace Intuit.Ipp.Data
             XmlNode xmlNode = singleUserNode.SelectSingleNode("./startDate");
             if (xmlNode != null)
             {
-                this.StartDate = xmlNode.InnerText;
+                StartDate = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./customerName");
             if (xmlNode != null)
             {
-                this.CustomerName = xmlNode.InnerText;
+                CustomerName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./customerEmail");
             if (xmlNode != null)
             {
-                this.CustomerEmail = xmlNode.InnerText;
+                CustomerEmail = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./customerPhone");
             if (xmlNode != null)
             {
-                this.CustomerPhone = xmlNode.InnerText;
+                CustomerPhone = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./realm");
             if (xmlNode != null)
             {
-                this.Realm = xmlNode.InnerText;
+                Realm = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./applicationName");
             if (xmlNode != null)
             {
-                this.ApplicationName = xmlNode.InnerText;
+                ApplicationName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./planName");
             if (xmlNode != null)
             {
-                this.PlanName = xmlNode.InnerText;
+                PlanName = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./monthlyFee");
             if (xmlNode != null)
             {
-                this.MonthlyFee = xmlNode.InnerText;
+                MonthlyFee = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./mbHours");
             if (xmlNode != null)
             {
-                this.MbHours = xmlNode.InnerText;
+                MbHours = xmlNode.InnerText;
             }
 
             xmlNode = singleUserNode.SelectSingleNode("./lastSyncTime");
             if (xmlNode != null)
             {
-                this.LastSyncTime = xmlNode.InnerText;
+                LastSyncTime = xmlNode.InnerText;
             }
         }
 

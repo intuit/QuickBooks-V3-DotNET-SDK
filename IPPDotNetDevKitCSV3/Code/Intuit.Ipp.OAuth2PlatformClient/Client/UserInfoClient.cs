@@ -165,7 +165,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 }
                 return new UserInfoResponse(content);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 return new UserInfoResponse(ex);
             }

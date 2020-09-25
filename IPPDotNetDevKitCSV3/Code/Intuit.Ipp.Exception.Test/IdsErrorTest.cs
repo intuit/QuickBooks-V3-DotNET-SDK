@@ -151,10 +151,10 @@ namespace Intuit.Ipp.Exception.Test
         public void IdsErrorConstructorTest5()
         {
             IdsError target = new IdsError("errorMessage", "errorCode", "element", "detail");
-            Assert.ReferenceEquals(target.Message, "errorMessage");
-            Assert.ReferenceEquals(target.ErrorCode, "errorCode");
-            Assert.ReferenceEquals(target.Element, "element");
-            Assert.ReferenceEquals(target.Detail, "detail");
+            ReferenceEquals(target.Message, "errorMessage");
+            ReferenceEquals(target.ErrorCode, "errorCode");
+            ReferenceEquals(target.Element, "element");
+            ReferenceEquals(target.Detail, "detail");
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Intuit.Ipp.Exception.Test
             IdsError target = new IdsError(errorMessage);
             target.ErrorCode = "401";
             Assert.AreEqual(target.Message, errorMessage);
-            Assert.ReferenceEquals(target.ErrorCode, "401");
+            ReferenceEquals(target.ErrorCode, "401");
         }
 
     }

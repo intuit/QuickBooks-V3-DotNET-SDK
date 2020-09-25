@@ -114,7 +114,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
 
                 GlobalTaxService taxSvc = new GlobalTaxService(context);
-                Intuit.Ipp.Data.TaxService taxCodetobeAdded = new Data.TaxService();
+                TaxService taxCodetobeAdded = new TaxService();
                 taxCodetobeAdded.TaxCode = "taxC_" + Guid.NewGuid().ToString("N");
 
                 QueryService<TaxAgency> taxagency = new QueryService<TaxAgency>(context);
@@ -149,7 +149,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
                 taxCodetobeAdded.TaxRateDetails = lstTaxRate.ToArray();
 
-                Intuit.Ipp.Data.TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
+                TaxService taxCodeAdded = taxSvc.AddTaxCode(taxCodetobeAdded);
                 Assert.IsNotNull(taxCodeAdded.TaxCodeId);
             }
             catch (System.Exception ex)
@@ -195,7 +195,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
 
 
             GlobalTaxService taxSvc = new GlobalTaxService(context);
-            Intuit.Ipp.Data.TaxService taxCodetobeAdded = new Data.TaxService();
+            TaxService taxCodetobeAdded = new TaxService();
             taxCodetobeAdded.TaxCode = "taxC_" + Guid.NewGuid().ToString("N");
 
             QueryService<TaxAgency> taxagency = new QueryService<TaxAgency>(context);
@@ -238,7 +238,7 @@ namespace Intuit.Ipp.GlobalTaxService.Test
                 taxSvc.OnAddTaxCodeAsyncCompleted = (sender, e) =>
                 {
                     Assert.IsNotNull(e);
-                    Intuit.Ipp.Data.TaxService addedTaxCode = e.TaxService;
+                    TaxService addedTaxCode = e.TaxService;
                     Assert.IsTrue(!string.IsNullOrEmpty(addedTaxCode.TaxCodeId));
                     manualEvent.Set();
                 };

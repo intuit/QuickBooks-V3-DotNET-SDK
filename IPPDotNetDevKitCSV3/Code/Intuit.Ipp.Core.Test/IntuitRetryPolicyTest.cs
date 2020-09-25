@@ -8,9 +8,9 @@ namespace Intuit.Ipp.Retry.Test
 {
     using System;
     using System.Net;
-    using Intuit.Ipp.Core;
-    using Intuit.Ipp.Exception;
-    using Intuit.Ipp.Retry;
+    using Core;
+    using Exception;
+    using Retry;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
@@ -41,12 +41,12 @@ namespace Intuit.Ipp.Retry.Test
         {
             get
             {
-                return this.testContextInstance;
+                return testContextInstance;
             }
 
             set
             {
-                this.testContextInstance = value;
+                testContextInstance = value;
             }
         }
 
@@ -61,7 +61,7 @@ namespace Intuit.Ipp.Retry.Test
             retryCount = 1;
 
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
             try
             {
                 target.ExecuteAction(action);
@@ -85,13 +85,13 @@ namespace Intuit.Ipp.Retry.Test
         {
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1));
             target.ExtendedRetryException = new ExtendedRetryUnauthorizedAccessException();
-            Action action = this.ThrowUnauthorizedAccessException;
+            Action action = ThrowUnauthorizedAccessException;
             try
             {
                 target.ExecuteAction(action);
                 Assert.Fail();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(@"Message: {0}", ex.Message);
             }
@@ -106,7 +106,7 @@ namespace Intuit.Ipp.Retry.Test
             retryCount = 1;
 
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1));
-            Action action = this.ThrowArgumentException;
+            Action action = ThrowArgumentException;
             try
             {
                 target.ExecuteAction(action);
@@ -116,7 +116,7 @@ namespace Intuit.Ipp.Retry.Test
             {
                 Assert.Fail();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 if (!(ex is ArgumentException))
                 {
@@ -133,7 +133,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(3, TimeSpan.FromSeconds(1));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
 
             try
             {
@@ -152,7 +152,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(3, TimeSpan.FromSeconds(1));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
 
             try
             {
@@ -171,7 +171,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
             try
             {
                 target.ExecuteAction(action);
@@ -190,7 +190,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
-            Action action = this.ThrowUnauthorizedAccessException;
+            Action action = ThrowUnauthorizedAccessException;
             try
             {
                 target.ExecuteAction(action);
@@ -210,7 +210,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(3, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
             try
             {
                 target.ExecuteAction(action);
@@ -228,7 +228,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(1));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
             try
             {
                 target.ExecuteAction(action);
@@ -247,7 +247,7 @@ namespace Intuit.Ipp.Retry.Test
         {
             retryCount = 1;
             IntuitRetryPolicy target = new IntuitRetryPolicy(3, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(1));
-            Action action = this.ThrowProtocolException;
+            Action action = ThrowProtocolException;
 
             try
             {
@@ -264,19 +264,19 @@ namespace Intuit.Ipp.Retry.Test
 
         private IAsyncResult BeginRequestForProtocolException(AsyncCallback callback)
         {
-            this.ThrowProtocolException();
+            ThrowProtocolException();
             return null;
         }
 
         private IAsyncResult BeginRequestForArgumentException(AsyncCallback callback)
         {
-            this.ThrowArgumentException();
+            ThrowArgumentException();
             return null;
         }
 
         private IAsyncResult BeginRequestForUnauthorizedException(AsyncCallback callback)
         {
-            this.ThrowUnauthorizedAccessException();
+            ThrowUnauthorizedAccessException();
             return null;
         }
 
@@ -520,7 +520,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -565,7 +565,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForUnauthorizedException(ac);
+                            BeginRequestForUnauthorizedException(ac);
                         },
                         ar =>
                         {
@@ -585,7 +585,7 @@ namespace Intuit.Ipp.Retry.Test
 
                 throw exception;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(@"Message: {0}", ex.Message);
                 Assert.Fail();
@@ -608,7 +608,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForArgumentException(ac);
+                            BeginRequestForArgumentException(ac);
                         },
                         ar =>
                         {
@@ -632,7 +632,7 @@ namespace Intuit.Ipp.Retry.Test
             {
                 Assert.Fail();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 if (!(ex is ArgumentException))
                 {
@@ -656,7 +656,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -696,7 +696,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -736,7 +736,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -778,7 +778,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForUnauthorizedException(ac);
+                            BeginRequestForUnauthorizedException(ac);
                         },
                         ar =>
                         {
@@ -820,7 +820,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -860,7 +860,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
@@ -902,7 +902,7 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
-                            this.BeginRequestForProtocolException(ac);
+                            BeginRequestForProtocolException(ac);
                         },
                         ar =>
                         {
