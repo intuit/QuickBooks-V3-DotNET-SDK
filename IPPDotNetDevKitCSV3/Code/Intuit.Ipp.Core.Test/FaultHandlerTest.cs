@@ -1,11 +1,4 @@
-﻿using Intuit.Ipp.Core.Rest;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Intuit.Ipp.Core;
-using Intuit.Ipp.Data;
-using Intuit.Ipp.Exception;
-using System.Net;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.Core.Test
 {

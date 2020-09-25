@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.Exception;
 //using Intuit.Ipp.LinqExtender;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.ObjectModel;
-using Intuit.Ipp.DataService;
-using Intuit.Ipp.Security;
 using System.Threading;
 using Intuit.Ipp.QueryFilter;
-using System.Collections.Specialized;
-using System.Text;
-using System.Net;
 using Intuit.Ipp.GlobalTaxService.Test.Common;
 
 namespace Intuit.Ipp.GlobalTaxService.Test

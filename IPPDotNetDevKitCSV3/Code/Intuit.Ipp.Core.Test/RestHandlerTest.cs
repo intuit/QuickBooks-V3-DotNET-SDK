@@ -1,12 +1,7 @@
-﻿using System.Configuration;
-using System.Net;
+﻿using System.Net;
 using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.Ipp.Core.Test;
-using Intuit.Ipp.Core.Compression;
-using System;
 using Intuit.Ipp.Utility;
 using Intuit.Ipp.Core.Test.Common;
 

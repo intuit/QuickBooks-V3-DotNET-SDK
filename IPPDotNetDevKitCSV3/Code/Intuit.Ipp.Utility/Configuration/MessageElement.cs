@@ -20,7 +20,6 @@
 
 namespace Intuit.Ipp.Utility
 {
-    using System;
     using System.Configuration;
 
     /// <summary>

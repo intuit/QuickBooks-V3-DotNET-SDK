@@ -20,19 +20,16 @@
 ////*********************************************************
 
 
+using Intuit.Ipp.Utility;
 
 namespace Intuit.Ipp.Core.Configuration
 {
     using System;
-    using System.Globalization;
     using System.IO;
     using Diagnostics;
     using Exception;
     //using Intuit.Ipp.Retry;
     using Security;
-    using Utility;
-
-    using System.Configuration;
 #if NETSTANDARD2_0
     using Microsoft.Extensions.Configuration;
 #endif
@@ -91,7 +88,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForConsole = false,
                     EnableSerilogRequestResponseLoggingForRollingFile = false,
                    // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
-                    ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
+                    ServiceRequestLoggingLocationForFile = Path.GetTempPath()
                 }
             };
 
@@ -106,7 +103,7 @@ namespace Intuit.Ipp.Core.Configuration
                     RequestLog = new RequestLog
                     {
                         EnableRequestResponseLogging = false,
-                        ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
+                        ServiceRequestLoggingLocation = Path.GetTempPath()
                     }
                 };
 
@@ -217,14 +214,14 @@ namespace Intuit.Ipp.Core.Configuration
 
             switch (ippConfigurationSection.Message.Request.CompressionFormat)
             {
-                case Intuit.Ipp.Utility.CompressionFormat.None:
+                case Utility.CompressionFormat.None:
                     ippConfig.Message.Request.CompressionFormat = CompressionFormat.None;
                     break;
-                case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
-                case Intuit.Ipp.Utility.CompressionFormat.GZip:
+                case Utility.CompressionFormat.DEFAULT:
+                case Utility.CompressionFormat.GZip:
                     ippConfig.Message.Request.CompressionFormat = CompressionFormat.GZip;
                     break;
-                case Intuit.Ipp.Utility.CompressionFormat.Deflate:
+                case Utility.CompressionFormat.Deflate:
                     ippConfig.Message.Request.CompressionFormat = CompressionFormat.Deflate;
                     break;
                 default:
@@ -235,42 +232,42 @@ namespace Intuit.Ipp.Core.Configuration
 
             switch (ippConfigurationSection.Message.Response.CompressionFormat)
             {
-                case Intuit.Ipp.Utility.CompressionFormat.None:
+                case Utility.CompressionFormat.None:
                     ippConfig.Message.Response.CompressionFormat = CompressionFormat.None;
                     break;
-                case Intuit.Ipp.Utility.CompressionFormat.DEFAULT:
-                case Intuit.Ipp.Utility.CompressionFormat.GZip:
+                case Utility.CompressionFormat.DEFAULT:
+                case Utility.CompressionFormat.GZip:
                     ippConfig.Message.Response.CompressionFormat = CompressionFormat.GZip;
                     break;
-                case Intuit.Ipp.Utility.CompressionFormat.Deflate:
+                case Utility.CompressionFormat.Deflate:
                     ippConfig.Message.Response.CompressionFormat = CompressionFormat.Deflate;
                     break;
             }
 
             switch (ippConfigurationSection.Message.Request.SerializationFormat)
             {
-                case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
-                case Intuit.Ipp.Utility.SerializationFormat.Xml:
+                case Utility.SerializationFormat.DEFAULT:
+                case Utility.SerializationFormat.Xml:
                     ippConfig.Message.Request.SerializationFormat = SerializationFormat.Xml;//do not change this as it will break code for devs
                     break;
-                case Intuit.Ipp.Utility.SerializationFormat.Json:
+                case Utility.SerializationFormat.Json:
                     ippConfig.Message.Request.SerializationFormat = SerializationFormat.Json;
                     break;
-                case Intuit.Ipp.Utility.SerializationFormat.Custom:
+                case Utility.SerializationFormat.Custom:
                     ippConfig.Message.Request.SerializationFormat = SerializationFormat.Custom;
                     break;
             }
 
             switch (ippConfigurationSection.Message.Response.SerializationFormat)
             {
-                case Intuit.Ipp.Utility.SerializationFormat.Xml:
+                case Utility.SerializationFormat.Xml:
                     ippConfig.Message.Response.SerializationFormat = SerializationFormat.Xml;
                     break;
-                case Intuit.Ipp.Utility.SerializationFormat.DEFAULT:
-                case Intuit.Ipp.Utility.SerializationFormat.Json:
+                case Utility.SerializationFormat.DEFAULT:
+                case Utility.SerializationFormat.Json:
                     ippConfig.Message.Response.SerializationFormat = SerializationFormat.Json;
                     break;
-                case Intuit.Ipp.Utility.SerializationFormat.Custom:
+                case Utility.SerializationFormat.Custom:
                     ippConfig.Message.Response.SerializationFormat = SerializationFormat.Custom;
                     break;
             }
@@ -429,7 +426,7 @@ namespace Intuit.Ipp.Core.Configuration
             //var serilogLoggerSettingsAzureDocumentDB = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("AzureDocumentDB");
 
 
-            if (!string.IsNullOrEmpty(serilogLoggerSettingsRollingFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsRollingFile["EnableLogs"]) == true)
+            if (!string.IsNullOrEmpty(serilogLoggerSettingsRollingFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsRollingFile["EnableLogs"]))
             {
              
 
@@ -490,7 +487,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             #endregion
 
-            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)
+            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]))
             {
 
                 ippConfig.Logger.RequestLog.EnableRequestResponseLogging = Convert.ToBoolean(loggerSettings["EnableLogs"]);
@@ -507,7 +504,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             }
 
-            if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]) == true)
+            if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]))
             {
                 Type customerLoggerType = Type.GetType(customLoggerSettings["Type"]);
                 ippConfig.Logger.CustomLogger = Activator.CreateInstance(customerLoggerType) as ILogger;
@@ -519,7 +516,7 @@ namespace Intuit.Ipp.Core.Configuration
 
 
 
-            if (!string.IsNullOrEmpty(securityOauthSettings["AccessToken"]) && Convert.ToBoolean(securityOauthSettings["Enable"]) == true)
+            if (!string.IsNullOrEmpty(securityOauthSettings["AccessToken"]) && Convert.ToBoolean(securityOauthSettings["Enable"]))
             {
                 OAuth2RequestValidator validator = new OAuth2RequestValidator(
                        securityOauthSettings["AccessToken"]);
@@ -616,7 +613,7 @@ namespace Intuit.Ipp.Core.Configuration
             }
 
 
-            if ((!string.IsNullOrEmpty(retrySettingsLinear["Enable"])) && Convert.ToBoolean(retrySettingsLinear["Enable"]) == true)
+            if ((!string.IsNullOrEmpty(retrySettingsLinear["Enable"])) && Convert.ToBoolean(retrySettingsLinear["Enable"]))
             {
                 if (!string.IsNullOrEmpty(retrySettingsLinear["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsLinear["RetryInterval"]))
                 {
@@ -630,7 +627,7 @@ namespace Intuit.Ipp.Core.Configuration
                     }
                 }
             }
-            else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]) == true)
+            else if ((!string.IsNullOrEmpty(retrySettingsIncremental["Enable"])) && Convert.ToBoolean(retrySettingsIncremental["Enable"]))
             {
                 if (!string.IsNullOrEmpty(retrySettingsIncremental["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsIncremental["InitialInterval"]) && !string.IsNullOrEmpty(retrySettingsIncremental["Increment"]))
                 {
@@ -646,7 +643,7 @@ namespace Intuit.Ipp.Core.Configuration
                     }
                 }
             }
-            else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]) == true)
+            else if ((!string.IsNullOrEmpty(retrySettingsExponential["Enable"])) && Convert.ToBoolean(retrySettingsExponential["Enable"]))
             {
                 if (!string.IsNullOrEmpty(retrySettingsExponential["RetryCount"]) && !string.IsNullOrEmpty(retrySettingsExponential["MinBackoff"]) && !string.IsNullOrEmpty(retrySettingsExponential["MaxBackoff"]) && !string.IsNullOrEmpty(retrySettingsExponential["DeltaBackoff"]))
                 {

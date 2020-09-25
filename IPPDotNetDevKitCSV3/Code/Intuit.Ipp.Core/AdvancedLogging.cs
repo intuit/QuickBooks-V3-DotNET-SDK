@@ -19,15 +19,11 @@
 // <summary>This file contains Request Log configuration.</summary>
 // -----------------------------------------------------------------------
 
-using System;
-
 namespace Intuit.Ipp.Core.Rest
 {
     using System.IO;
-    using Exception;
     using System;
     using Serilog;
-    using Serilog.Sinks;
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
@@ -234,27 +230,27 @@ namespace Intuit.Ipp.Core.Rest
                  
 
             //Enabling console log
-            if (EnableSerilogRequestResponseLoggingForConsole == true)
+            if (EnableSerilogRequestResponseLoggingForConsole)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
                 loggerConfig = loggerConfig.WriteTo.LiterateConsole();
             }
 
             //Enabling Trace log
-            if (EnableSerilogRequestResponseLoggingForTrace == true)
+            if (EnableSerilogRequestResponseLoggingForTrace)
             {
                 loggerConfig = loggerConfig.WriteTo.Trace();
             }
 
             //Enabling Debug log
-            if (EnableSerilogRequestResponseLoggingForDebug == true)
+            if (EnableSerilogRequestResponseLoggingForDebug)
             {
                 loggerConfig = loggerConfig.WriteTo.Debug();
 
             }
 
             //Enabling Rolling file log
-            if (!string.IsNullOrEmpty(ServiceRequestLoggingLocationForFile) && EnableSerilogRequestResponseLoggingForRollingFile == true)
+            if (!string.IsNullOrEmpty(ServiceRequestLoggingLocationForFile) && EnableSerilogRequestResponseLoggingForRollingFile)
             {
                 loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
             }

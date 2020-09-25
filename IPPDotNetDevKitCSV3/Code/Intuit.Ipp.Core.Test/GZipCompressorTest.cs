@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.Ipp.Core.Compression;
 using System.IO.Compression;
 using Intuit.Ipp.Utility;
 

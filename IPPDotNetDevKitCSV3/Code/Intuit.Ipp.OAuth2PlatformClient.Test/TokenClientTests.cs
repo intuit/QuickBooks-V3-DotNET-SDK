@@ -5,11 +5,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Intuit.Ipp.OAuth2PlatformClient;
 
 
 namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests

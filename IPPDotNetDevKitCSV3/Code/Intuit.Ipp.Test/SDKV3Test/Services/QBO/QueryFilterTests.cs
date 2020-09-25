@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -261,7 +260,7 @@ namespace Intuit.Ipp.Test.QBO
         public void CustomerQueryWhereActiveTests()
         {
             IEnumerable<Customer> filterCustomer = from customer in customers
-                                                   where customer.Active == true
+                                                   where customer.Active
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();
@@ -1202,7 +1201,7 @@ namespace Intuit.Ipp.Test.QBO
         public void CustomerQueryWhereCountActiveTests()
         {
             IEnumerable<Customer> filterCustomer = from customer in customers
-                                                   where customer.Active == true
+                                                   where customer.Active
                                                    select customer;
 
             int expectedCustomers = filterCustomer.Count();
@@ -1627,7 +1626,7 @@ namespace Intuit.Ipp.Test.QBO
         public void CustomerQueryWhereNOTGivenNameEQTests()
         {
             IEnumerable<Customer> filterCustomer = from customer in customers
-                                                   where customer.Active == true && customer.MetaData.CreateTime > DateTime.Today.AddDays(-5)
+                                                   where customer.Active && customer.MetaData.CreateTime > DateTime.Today.AddDays(-5)
                                                    select customer;
 
             List<Customer> expectedCustomers = filterCustomer.ToList<Customer>();

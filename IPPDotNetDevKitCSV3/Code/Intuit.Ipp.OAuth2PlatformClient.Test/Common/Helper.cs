@@ -1,21 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using System.Collections.ObjectModel;
-using System.Reflection;
-using System.Threading;
-
+﻿using System.IO;
 using Newtonsoft.Json;
-using Intuit.Ipp.OAuth2PlatformClient;
 using Newtonsoft.Json.Linq;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.DataService;
 
 namespace Intuit.Ipp.OAuth2PlatformClient.Test.Common
 {

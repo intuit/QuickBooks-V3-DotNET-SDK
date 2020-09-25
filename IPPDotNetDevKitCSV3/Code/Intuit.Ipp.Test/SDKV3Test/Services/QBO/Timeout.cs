@@ -1,17 +1,8 @@
-using System;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
-using System.Threading;
-using Intuit.Ipp.QueryFilter;
- 
-using Intuit.Ipp.DataService;
-using System.Collections.ObjectModel;
 
 namespace Intuit.Ipp.Test.Services.QBO
 {

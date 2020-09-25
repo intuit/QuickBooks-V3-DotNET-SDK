@@ -1,5 +1,4 @@
-﻿using Intuit.Ipp.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Intuit.Ipp.Diagnostics.Test

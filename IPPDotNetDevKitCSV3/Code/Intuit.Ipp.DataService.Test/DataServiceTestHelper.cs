@@ -9,21 +9,8 @@ namespace Intuit.Ipp.DataService.Test
     using System;
     using Data;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.Runtime.InteropServices;
-    using System.Text;
-    using Intuit.Ipp.DataService;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Core;
-    using System.Collections.ObjectModel;
-    using System.Configuration;
-    using Security;
-    using System.Net;
-    using System.Globalization;
-    using System.IO;
-    using Exception;
-    using QueryFilter;
+
     //using Intuit.Ipp.LinqExtender;
 
 

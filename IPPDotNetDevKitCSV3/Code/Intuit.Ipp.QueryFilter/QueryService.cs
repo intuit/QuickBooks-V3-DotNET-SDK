@@ -19,7 +19,6 @@
 // query generated and return the result.</summary>
 ////********************************************************************
 
-using System.ComponentModel;
 using System.Xml.Serialization;
 
 namespace Intuit.Ipp.QueryFilter
@@ -27,7 +26,6 @@ namespace Intuit.Ipp.QueryFilter
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.Linq;
     using System.Net;
     using System.Reflection;
     using System.Text;
@@ -35,7 +33,6 @@ namespace Intuit.Ipp.QueryFilter
     using Core.Rest;
     using Data;
     using Exception;
-    using Properties;
     using Utility;
    // using Intuit.Ipp.LinqExtender;
 
@@ -339,7 +336,7 @@ namespace Intuit.Ipp.QueryFilter
 
                 foreach (PropertyInfo propertyInfo in propertyInfoArray)
                 {
-                    if (true == propertyInfo.PropertyType.IsArray)
+                    if (propertyInfo.PropertyType.IsArray)
                     {
                         object tempEntities = propertyInfo.GetValue(queryResponse, null);
                         if (tempEntities != null)

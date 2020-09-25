@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Intuit.Ipp.OAuth2PlatformClient;
 
 
 namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests

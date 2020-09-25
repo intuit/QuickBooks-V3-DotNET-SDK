@@ -10,11 +10,6 @@
 
 namespace Intuit.Ipp.XsdExtension
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
     /// <summary>
     /// Defines methods to generate Classes from Schema
     /// </summary>

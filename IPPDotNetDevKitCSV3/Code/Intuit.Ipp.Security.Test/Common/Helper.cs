@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Exception;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Data;
 using System.Collections.ObjectModel;
-using System.Reflection;
 using System.Threading;
 using Newtonsoft.Json;
 using Intuit.Ipp.OAuth2PlatformClient;

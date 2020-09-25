@@ -21,12 +21,9 @@
 namespace Intuit.Ipp.Utility
 {
     using System;
-    using System.Reflection;
     using Diagnostics;
     using Exception;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
-    using System.Linq;
 
     /// <summary>
     /// JSON Serialize(r) to serialize and de serialize.

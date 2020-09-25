@@ -4,7 +4,6 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.Ipp.OAuth2PlatformClient;
 
 
 namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests

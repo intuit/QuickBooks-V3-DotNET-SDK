@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Net;
 using Intuit.Ipp.Core.Rest;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.Ipp.Core.Test;
 using Intuit.Ipp.Exception;
 //using Intuit.Ipp.Retry;
 using Intuit.Ipp.Core.Test.Common;

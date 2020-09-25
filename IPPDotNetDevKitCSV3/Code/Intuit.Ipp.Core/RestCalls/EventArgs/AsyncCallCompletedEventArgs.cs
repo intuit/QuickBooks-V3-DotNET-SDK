@@ -26,7 +26,7 @@ namespace Intuit.Ipp.Core
     /// <summary>
     /// Asynchronous call completed event arguments
     /// </summary>
-    public partial class AsyncCallCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public class AsyncCallCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
         /// <summary>
         /// The result of the asynchronous operation.

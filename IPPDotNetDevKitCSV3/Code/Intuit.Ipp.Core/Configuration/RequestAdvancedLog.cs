@@ -19,8 +19,6 @@
 // <summary>This file contains Request Log configuration.</summary>
 // -----------------------------------------------------------------------
 
-using System;
-
 namespace Intuit.Ipp.Core.Configuration
 {
     using System.IO;

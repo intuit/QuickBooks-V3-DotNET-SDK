@@ -1,20 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.InteropServices;
-using System.Text;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.DataService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core;
-using System.Collections.ObjectModel;
-using System.Configuration;
-using Intuit.Ipp.Security;
-using System.Net;
-using System.Globalization;
-using System.IO;
-using Intuit.Ipp.Exception;
 using Intuit.Ipp.QueryFilter;
 
 

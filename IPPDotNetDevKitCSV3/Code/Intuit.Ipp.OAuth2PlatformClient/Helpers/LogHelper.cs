@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-
-namespace Intuit.Ipp.OAuth2PlatformClient
+﻿namespace Intuit.Ipp.OAuth2PlatformClient
 { 
     /// <summary>
     /// Helper class for advanced logger/serilogger

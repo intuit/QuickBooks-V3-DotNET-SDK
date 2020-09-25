@@ -1,14 +1,7 @@
-﻿using System;
-using Intuit.Ipp.WebhooksService;
-using Intuit.Ipp.Exception;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.WebhooksService.Test
 {
-
-    using Core;
-    using Utility;
-
     [TestClass]
     public class WebhooksServiceTest
     {

@@ -19,10 +19,8 @@
 ////********************************************************************
 namespace Intuit.Ipp.Utility
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Xml;
-    using Properties;
 
     /// <summary>
     /// A helper class to build API requests.

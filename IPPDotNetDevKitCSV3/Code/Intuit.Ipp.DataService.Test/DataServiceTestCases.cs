@@ -9,8 +9,6 @@ namespace Intuit.Ipp.DataService.Test
     using System.Collections.Generic;
     using Core;
     using Data;
-    using System.Collections.ObjectModel;
-    using System.Collections;
     using System.IO;
 
     /// <summary>

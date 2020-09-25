@@ -20,7 +20,6 @@
 
 namespace Intuit.Ipp.ReportService
 {
-    using System.Collections.ObjectModel;
     using Data;
 
     /// <summary>

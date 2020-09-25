@@ -7,8 +7,6 @@
 
 namespace Intuit.Ipp.Utility.Test
 {
-    using System;
-    using System.Xml;
     using Data;
     using Diagnostics;
     using Exception;

@@ -7,9 +7,7 @@
 
 namespace Intuit.Ipp.Security
 {
-    using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Configuration;
     using System.Net;
     using System.Security.Cryptography;
     using System.Text.RegularExpressions;

@@ -29,7 +29,7 @@ namespace Intuit.Ipp.Core
     /// <summary>
     /// Event argument is class used to communicate after FindAll operation completed.
     /// </summary>
-    public partial class FindAllCallCompletedEventArgs : EventArgs
+    public class FindAllCallCompletedEventArgs : EventArgs
     {
         /// <summary>
         /// Initializes a new instance of the FindAllCallCompletedEventArgs class.

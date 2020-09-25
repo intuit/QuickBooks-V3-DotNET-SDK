@@ -141,7 +141,6 @@ namespace Intuit.Ipp.DataService
         /// <returns></returns>
         internal static ReferenceType PrepareByParentId(IEntity entity, ServiceContext serviceContext)
         {
-            string parentId = string.Empty;
             PropertyInfo parentRefProp = entity.GetType().GetProperty("ParentRef");
             ReferenceType parentRef = (ReferenceType)parentRefProp.GetValue(entity);
             return parentRef;

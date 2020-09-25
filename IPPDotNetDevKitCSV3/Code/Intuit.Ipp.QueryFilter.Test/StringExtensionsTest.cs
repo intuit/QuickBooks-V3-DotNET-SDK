@@ -1,5 +1,4 @@
-﻿using Intuit.Ipp.QueryFilter;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Intuit.Ipp.QueryFilter.Test

@@ -177,20 +177,20 @@ namespace Intuit.Ipp.EntitlementService
                     // change Response Serialization Format back to Config value
                     serviceContext.IppConfiguration.Message.Response.SerializationFormat = orginialSerializationFormat;
 
-                    OnGetEntilementAsyncCompleted(this, entitlementCallCompletedEventArgs);
+                    OnGetEntilementAsyncCompleted?.Invoke(this, entitlementCallCompletedEventArgs);
                 }
                 catch (SystemException systemException)
                 {
                     IdsException idsException = new IdsException(systemException.Message);
                     serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     entitlementCallCompletedEventArgs.Error = idsException;
-                    OnGetEntilementAsyncCompleted(this, entitlementCallCompletedEventArgs);
+                    OnGetEntilementAsyncCompleted?.Invoke(this, entitlementCallCompletedEventArgs);
                 }
             }
             else
             {
                 entitlementCallCompletedEventArgs.Error = eventArgs.Error;
-                OnGetEntilementAsyncCompleted(this, entitlementCallCompletedEventArgs);
+                OnGetEntilementAsyncCompleted?.Invoke(this, entitlementCallCompletedEventArgs);
             }
         }
 

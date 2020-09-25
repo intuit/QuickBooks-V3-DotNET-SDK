@@ -19,8 +19,6 @@
 // <summary>This file contains interface for REST request handler.</summary>
 ////********************************************************************
 
-using System.IO;
-
 namespace Intuit.Ipp.Core.Rest
 {
     using System.Net;

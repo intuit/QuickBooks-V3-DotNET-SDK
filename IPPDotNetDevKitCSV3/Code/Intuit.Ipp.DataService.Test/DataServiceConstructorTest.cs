@@ -1,7 +1,5 @@
-﻿using System.Configuration;
-using Intuit.Ipp.Core;
+﻿using Intuit.Ipp.Core;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.DataService.Test

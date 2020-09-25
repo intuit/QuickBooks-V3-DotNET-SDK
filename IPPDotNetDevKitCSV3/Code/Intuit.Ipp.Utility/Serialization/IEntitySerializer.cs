@@ -20,10 +20,6 @@
 
 namespace Intuit.Ipp.Utility
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     /// <summary>
     /// Entity serialize contract.
     /// </summary>

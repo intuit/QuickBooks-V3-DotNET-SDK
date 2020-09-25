@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Intuit.Ipp.Security;
 using Intuit.Ipp.Core;
-using Intuit.Ipp.DataService;
-
 using System.Net;
-using System.Globalization;
 using System.IO;
 using Intuit.Ipp.Exception;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.OAuth2PlatformClient;
 using Microsoft.Extensions.Configuration;
-using Intuit.Ipp.Core.Configuration;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 

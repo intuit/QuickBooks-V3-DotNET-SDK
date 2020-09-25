@@ -22,8 +22,6 @@
 
 namespace Intuit.Ipp.Core.Configuration
 {
-    using System.Configuration;
-
     /// <summary>
     /// VerifierToken for Webhooks 
     /// </summary>

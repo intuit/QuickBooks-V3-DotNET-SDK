@@ -1,6 +1,4 @@
-﻿using Intuit.Ipp.Exception;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.Exception.Test
 {

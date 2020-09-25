@@ -1209,7 +1209,7 @@ namespace Intuit.Ipp.DataService
 
                     foreach (PropertyInfo propertyInfo in propertyInfoArray)
                     {
-                        if (true == propertyInfo.PropertyType.IsArray)
+                        if (propertyInfo.PropertyType.IsArray)
                         {
                             object tempEntities = propertyInfo.GetValue(queryResponse, null);
                             if (tempEntities != null)
@@ -1504,7 +1504,6 @@ namespace Intuit.Ipp.DataService
                     // Deserialize object
                     IntuitResponse restResponse = (IntuitResponse)responseSerializer.Deserialize<IntuitResponse>(eventArgs.Result);
                     object[] cdcResponses = restResponse.AnyIntuitObjects;
-                    int count = 1;
 
                     Dictionary<string, List<IEntity>> returnValue = new Dictionary<string, List<IEntity>>();
 
@@ -1521,7 +1520,7 @@ namespace Intuit.Ipp.DataService
 
                             foreach (PropertyInfo propertyInfo in propertyInfoArray)
                             {
-                                if (true == propertyInfo.PropertyType.IsArray)
+                                if (propertyInfo.PropertyType.IsArray)
                                 {
                                     object tempEntities = propertyInfo.GetValue(queryResponse, null);
                                     if (tempEntities != null)
@@ -1535,7 +1534,6 @@ namespace Intuit.Ipp.DataService
                                             {
                                                 entities.Add((IEntity)item);
                                                 entityName = item.GetType().Name;
-                                                count++;
                                             }
                                             returnValue.Add(entityName, entities);
                                         }

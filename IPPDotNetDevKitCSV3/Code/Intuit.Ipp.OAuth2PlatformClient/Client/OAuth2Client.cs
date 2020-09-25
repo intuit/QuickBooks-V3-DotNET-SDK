@@ -6,17 +6,12 @@ using Intuit.Ipp.OAuth2PlatformClient.Helpers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
-using System.Reflection;
-using System.Linq;
 using System.IO;
-using System.Globalization;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -271,7 +266,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     discoveryClient = new DiscoveryClient(ApplicationEnvironment);
                 }
                 DiscoveryResponse discoveryResponse =  discoveryClient.Get();
-             if(discoveryResponse.IsError==true)
+             if(discoveryResponse.IsError)
             {
                 throw new Exception(discoveryResponse.Error);
             }
@@ -294,7 +289,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -339,7 +334,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -383,7 +378,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -552,7 +547,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -583,7 +578,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -613,7 +608,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -643,7 +638,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -671,7 +666,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -704,7 +699,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -736,7 +731,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }
@@ -766,7 +761,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             AdvancedLoggerEnabled = true;
             //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
+            if (EnableAdvancedLoggerInfoMode)
             {
                 ShowInfoLogs = true;
             }

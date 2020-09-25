@@ -21,11 +21,8 @@ namespace Intuit.Ipp.ReportService
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Globalization;
-    using System.Linq;
     using System.Net;
-    using System.Reflection;
     using Core;
     using Core.Rest;
     using Data;
@@ -34,7 +31,6 @@ namespace Intuit.Ipp.ReportService
     using Exception;
     using Utility;
     using System.Text;
-    using System.IO;
 
     /// <summary>
     /// This class file contains ReportService which performs Read operation for Reports

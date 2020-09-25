@@ -20,11 +20,9 @@
 ////*********************************************************
 namespace Intuit.Ipp.Data
 {
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Reflection;
     using System.Xml;
-    using Utility;
 
     /// <summary>
     /// Encapsulates subscriber information as returned by API_GetAdminsForAllProducts.

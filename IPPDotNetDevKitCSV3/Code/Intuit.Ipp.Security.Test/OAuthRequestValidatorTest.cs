@@ -4,15 +4,11 @@
 // </copyright>
 // <summary>This file contains test cases for OAuthRequestValidatorTest .</summary>
 ////*********************************************************
-using System.Reflection;
+
 namespace Intuit.Ipp.Security.Test
 {
-    using System;
-    using System.Collections.Specialized;
     using System.Configuration;
-    using System.IO;
     using System.Net;
-    using System.Security.Cryptography.X509Certificates;
     using Core;
     using Exception;
     using Security;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Intuit.Ipp.QueryFilter.Test.Common
+﻿namespace Intuit.Ipp.QueryFilter.Test.Common
 {
     class AuthorizationKeysQBO
     {

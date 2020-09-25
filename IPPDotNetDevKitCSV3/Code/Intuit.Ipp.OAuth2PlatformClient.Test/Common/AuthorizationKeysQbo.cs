@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Intuit.Ipp.OAuth2PlatformClient.Test.Common
+﻿namespace Intuit.Ipp.OAuth2PlatformClient.Test.Common
 {
     class AuthorizationKeysQBO
     {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Exception;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,12 +10,7 @@ using System.Reflection;
 using System.Threading;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;
-
-using Intuit.Ipp.ReportService;
-using Intuit.Ipp.Security;
-using System.Configuration;
 using Intuit.Ipp.OAuth2PlatformClient;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;

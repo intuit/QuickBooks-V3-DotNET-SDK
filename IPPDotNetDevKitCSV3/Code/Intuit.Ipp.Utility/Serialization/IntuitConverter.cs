@@ -23,15 +23,11 @@ namespace Intuit.Ipp.Utility
 
 
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using Newtonsoft.Json;
     using System.Reflection;
     using Newtonsoft.Json.Linq;
     //using Intuit.Ipp.Data;
-    using System.Collections;
-    using System.Diagnostics;
 
     /// <summary>
     /// JSON.Net extention for handling Json serialization/deserialization of POCO classes generated for Intuit XSD.
@@ -71,7 +67,7 @@ namespace Intuit.Ipp.Utility
                         {
                             string propName = propertyInfo.Name + "Specified";
                             PropertyInfo specifiedProp = value.GetType().GetProperty(propName);
-                            if (specifiedProp != null && ((bool)specifiedProp.GetValue(value, null) == true))
+                            if (specifiedProp != null && (bool)specifiedProp.GetValue(value, null))
                             {
                                 writer.WritePropertyName(val.GetType().Name);
                                 serializer.Serialize(writer, propertyInfo.GetValue(value, null));
@@ -147,7 +143,7 @@ namespace Intuit.Ipp.Utility
                                 {
                                     string propName = propertyInfo.Name + "Specified";
                                     PropertyInfo specifiedProp = value.GetType().GetProperty(propName);
-                                    if (specifiedProp != null && (bool)specifiedProp.GetValue(value, null) == true)
+                                    if (specifiedProp != null && (bool)specifiedProp.GetValue(value, null))
                                     {
                                         writer.WritePropertyName(propertyInfo.Name);
                                         serializer.Serialize(writer, propertyInfo.GetValue(value, null));

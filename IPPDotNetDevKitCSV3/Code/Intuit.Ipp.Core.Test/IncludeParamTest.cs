@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Xml;
-using Intuit.Ipp.Utility;
-using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.QueryFilter;
-using Intuit.Ipp.Exception;
-using Intuit.Ipp.DataService;
 using Intuit.Ipp.Core.Test.Common;
 
 /// <summary>

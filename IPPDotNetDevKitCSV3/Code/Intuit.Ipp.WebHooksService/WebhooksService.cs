@@ -20,24 +20,13 @@
 
 namespace Intuit.Ipp.WebhooksService
 {
-
-
-    using Core;
     using System;
     using Core.Configuration;
-    using Core.Rest;
-    using Data;
     using Diagnostics;
     using Exception;
-    using Utility;
     using System.Text;
-    using System.Threading;
     using Newtonsoft.Json;
     using System.Security.Cryptography;
-    using System.Configuration;
-    using System.Collections.Specialized;
-    using System.Runtime.Serialization;
-    using System.IO;
 
 
     /// <summary>

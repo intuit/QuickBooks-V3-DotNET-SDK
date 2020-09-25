@@ -14,7 +14,6 @@ namespace Intuit.Ipp.Utility.Test
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Diagnostics;
     using System.Collections.Generic;
-    using Core;
 
 
     /// <summary>

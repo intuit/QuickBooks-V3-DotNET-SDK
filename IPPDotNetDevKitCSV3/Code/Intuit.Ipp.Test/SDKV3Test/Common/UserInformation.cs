@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Intuit.Ipp.Test
+﻿namespace Intuit.Ipp.Test
 {
     /// <summary>
     /// User Information

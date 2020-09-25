@@ -23,16 +23,12 @@ namespace Intuit.Ipp.Core
 {
     using System;
     using System.Globalization;
-    using System.Net;
-    using System.Xml;
     using Configuration;
-    using Rest;
     using Diagnostics;
     using Exception;
     using Security;
     using System.Collections.Generic;
 
-    using System.Configuration;
 #if NETCORE
     using Microsoft.Extensions.Configuration;
 #endif

@@ -10,7 +10,6 @@ namespace Intuit.Ipp.Retry.Test
     using System.Net;
     using Core;
     using Exception;
-    using Retry;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>

@@ -8,9 +8,7 @@
 
 namespace Intuit.Ipp.XsdExtension
 {
-    using System;
     using System.CodeDom;
-    using System.Collections.Generic;
     using System.Globalization;
 
     /// <summary>

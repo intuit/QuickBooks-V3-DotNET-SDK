@@ -24,7 +24,6 @@ namespace Intuit.Ipp.Utility
 {
     using System.IO;
     using System.IO.Compression;
-    using System.Net;
 
     /// <summary>
     /// GZip compressor.

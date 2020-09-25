@@ -6,10 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;
-using System.Runtime;
 using System.Threading.Tasks;
-using Intuit.Ipp.OAuth2PlatformClient;
-using System.Configuration;
 using Intuit.Ipp.OAuth2PlatformClient.Helpers;
 
 namespace Intuit.Ipp.OAuth2PlatformClient.UnitTests

@@ -629,7 +629,7 @@ namespace Intuit.Ipp.DataService
 
                             foreach (PropertyInfo propertyInfo in propertyInfoArray)
                             {
-                                if (true == propertyInfo.PropertyType.IsArray)
+                                if (propertyInfo.PropertyType.IsArray)
                                 {
                                     object tempEntities = propertyInfo.GetValue(queryResponse, null);
                                     if (tempEntities != null)

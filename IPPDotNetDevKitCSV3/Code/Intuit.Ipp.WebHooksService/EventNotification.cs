@@ -20,7 +20,6 @@
 
 namespace Intuit.Ipp.WebhooksService
 {
-    using System;
     using Newtonsoft.Json;
 
     /// <summary>

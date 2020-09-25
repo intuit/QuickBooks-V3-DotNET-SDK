@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Intuit.Ipp.GlobalTaxService.Test.Common
+﻿namespace Intuit.Ipp.GlobalTaxService.Test.Common
 {
     class AuthorizationKeysQBO
     {

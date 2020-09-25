@@ -23,22 +23,15 @@ namespace Intuit.Ipp.GlobalTaxService
 {
 
     using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Globalization;
-    using System.Linq;
     using System.Net;
-    using System.Reflection;
     using Core;
     using Core.Rest;
     using Data; 
     using Diagnostics;
     using Exception;
     using Utility;
-    using System.Text;
-    using System.IO;
     using Properties;
-    using Intuit.Ipp.GlobalTaxService;
 
 
     /// <summary>

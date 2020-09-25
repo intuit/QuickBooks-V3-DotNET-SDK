@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.Reflection;
-using System.Threading;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Core.Configuration;
 using Intuit.Ipp.Data;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Security;
-
-using Intuit.Ipp.DataService.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.ObjectModel;
-using System.Collections;
 using System.IO;
-using System.Diagnostics;
 using Intuit.Ipp.DataService.Test.Common;
 
 namespace Intuit.Ipp.DataService.Test

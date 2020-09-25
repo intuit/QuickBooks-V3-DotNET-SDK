@@ -1,10 +1,4 @@
-﻿using System.Configuration;
-using System.IO;
-using System.Linq;
-using Intuit.Ipp.Core.Rest;
-using Intuit.Ipp.Exception;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Intuit.Ipp.Core.Test
 {

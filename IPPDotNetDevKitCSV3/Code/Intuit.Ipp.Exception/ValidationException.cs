@@ -22,7 +22,6 @@
 namespace Intuit.Ipp.Exception
 {
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Runtime.Serialization;
     using Properties;
 

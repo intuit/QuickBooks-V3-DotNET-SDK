@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Intuit.Ipp.Utility.Test.Common
+﻿namespace Intuit.Ipp.Utility.Test.Common
 {
     class AuthorizationKeysQBO
     {

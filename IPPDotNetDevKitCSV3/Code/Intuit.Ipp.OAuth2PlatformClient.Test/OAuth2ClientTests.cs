@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intuit.Ipp.OAuth2PlatformClient;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Configuration;
-using Intuit.Ipp.OAuth2PlatformClient.UnitTests;
-using System.Net;
 using Intuit.Ipp.OAuth2PlatformClient.Test.Common;
 using Intuit.Ipp.Core;
 

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intuit.Ipp.Core;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.Security;
 using Intuit.Ipp.Exception;
-using System.Threading;
 using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.QueryFilter;

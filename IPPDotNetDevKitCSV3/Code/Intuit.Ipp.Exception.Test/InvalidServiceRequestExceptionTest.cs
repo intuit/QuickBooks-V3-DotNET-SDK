@@ -1,9 +1,7 @@
-﻿using Intuit.Ipp.Exception;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
 
 namespace Intuit.Ipp.Exception.Test
 {

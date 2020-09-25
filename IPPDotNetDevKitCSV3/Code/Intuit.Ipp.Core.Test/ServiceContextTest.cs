@@ -1,13 +1,9 @@
 ﻿using System;
-using Intuit.Ipp.Core;
-using Intuit.Ipp.Diagnostics;
 //using Intuit.Ipp.Retry;
 using Intuit.Ipp.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;
 using Intuit.Ipp.Exception;
-using Intuit.Ipp.Utility;
-using System.IO;
 using Intuit.Ipp.Core.Test.Common;
 
 namespace Intuit.Ipp.Core.Test

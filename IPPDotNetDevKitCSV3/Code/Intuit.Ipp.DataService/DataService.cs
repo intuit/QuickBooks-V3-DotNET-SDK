@@ -375,9 +375,7 @@ namespace Intuit.Ipp.DataService
 
             if (restResponse.AnyIntuitObjects != null)
             {
-                IntuitEntity intuitEntity = restResponse.AnyIntuitObject as IntuitEntity;
-
-                if (restResponse != null && restResponse.status != IntuitResponseStatus.Deleted.ToString())
+                if (restResponse.status != IntuitResponseStatus.Deleted.ToString())
                 {
                     IdsException exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.StatusNotVoided));
                     serviceContext.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
@@ -1173,7 +1171,7 @@ namespace Intuit.Ipp.DataService
 
                         foreach (PropertyInfo propertyInfo in propertyInfoArray)
                         {
-                            if (true == propertyInfo.PropertyType.IsArray)
+                            if (propertyInfo.PropertyType.IsArray)
                             {
                                 object tempEntities = propertyInfo.GetValue(queryResponse, null);
                                 if (tempEntities != null)
@@ -1182,7 +1180,6 @@ namespace Intuit.Ipp.DataService
 
                                     if (tempEntityArray.Length > 0)
                                     {
-                                        List<IEntity> arr = new List<IEntity>();
                                         string entityName = string.Empty;
                                         foreach (object item in tempEntityArray)
                                         {

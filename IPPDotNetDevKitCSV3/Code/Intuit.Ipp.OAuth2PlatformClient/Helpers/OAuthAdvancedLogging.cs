@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Intuit.Ipp.OAuth2PlatformClient
+﻿namespace Intuit.Ipp.OAuth2PlatformClient
 {
     using System.IO;
     using System;
     using Serilog;
-    using Serilog.Sinks;
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
@@ -214,27 +209,27 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
             //Enabling console log
-            if (EnableSerilogRequestResponseLoggingForConsole == true)
+            if (EnableSerilogRequestResponseLoggingForConsole)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
                 loggerConfig = loggerConfig.WriteTo.LiterateConsole();
             }
 
             //Enabling Trace log
-            if (EnableSerilogRequestResponseLoggingForTrace == true)
+            if (EnableSerilogRequestResponseLoggingForTrace)
             {
                 loggerConfig = loggerConfig.WriteTo.Trace();
             }
 
             //Enabling Debug log
-            if (EnableSerilogRequestResponseLoggingForDebug == true)
+            if (EnableSerilogRequestResponseLoggingForDebug)
             {
                 loggerConfig = loggerConfig.WriteTo.Debug();
 
             }
 
             //Enabling Rolling file log
-            if (!string.IsNullOrEmpty(ServiceRequestLoggingLocationForFile) && EnableSerilogRequestResponseLoggingForRollingFile == true)
+            if (!string.IsNullOrEmpty(ServiceRequestLoggingLocationForFile) && EnableSerilogRequestResponseLoggingForRollingFile)
             {
                 loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
             }

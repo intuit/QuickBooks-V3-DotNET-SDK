@@ -32,154 +32,154 @@ namespace Intuit.Ipp.Data
     /// <summary>
     /// Customer Balance
     /// </summary>
-    public partial class CustomerBalance : ReportQueryBase
+    public class CustomerBalance : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Customer Balance Detail
     /// </summary>
-    public partial class CustomerBalanceDetail : ReportQueryBase
+    public class CustomerBalanceDetail : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Aged Receivables
     /// </summary>
-    public partial class AgedReceivables : ReportQueryBase
+    public class AgedReceivables : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Aged Receivable Detail
     /// </summary>
-    public partial class AgedReceivableDetail : ReportQueryBase
+    public class AgedReceivableDetail : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Vendor Balance
     /// </summary>
-    public partial class VendorBalance : ReportQueryBase
+    public class VendorBalance : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Vendor Balance detail.
     /// </summary>
-    public partial class VendorBalanceDetail : ReportQueryBase
+    public class VendorBalanceDetail : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Aged Payables
     /// </summary>
-    public partial class AgedPayables : ReportQueryBase
+    public class AgedPayables : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Aged Payable detail.
     /// </summary>
-    public partial class AgedPayableDetail : ReportQueryBase
+    public class AgedPayableDetail : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Vendor Expenses
     /// </summary>
-    public partial class VendorExpenses : ReportQueryBase
+    public class VendorExpenses : ReportQueryBase
     {
     }
 
     /// <summary>
     /// General Ledger
     /// </summary>
-    public partial class GeneralLedger : ReportQueryBase
+    public class GeneralLedger : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Item Sales
     /// </summary>
-    public partial class ItemSales : ReportQueryBase
+    public class ItemSales : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Customer Sales
     /// </summary>
-    public partial class CustomerSales : ReportQueryBase
+    public class CustomerSales : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Department Sales
     /// </summary>
-    public partial class DepartmentSales : ReportQueryBase
+    public class DepartmentSales : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Class Sales
     /// </summary>
-    public partial class ClassSales : ReportQueryBase
+    public class ClassSales : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Customer Income
     /// </summary>
-    public partial class CustomerIncome : ReportQueryBase
+    public class CustomerIncome : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Balance sheet
     /// </summary>
-    public partial class BalanceSheet : ReportQueryBase
+    public class BalanceSheet : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Profit and loss.
     /// </summary>
-    public partial class ProfitAndLoss : ReportQueryBase
+    public class ProfitAndLoss : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Profit and loss detail.
     /// </summary>
-    public partial class ProfitAndLossDetail : ReportQueryBase
+    public class ProfitAndLossDetail : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Trial Balance
     /// </summary>
-    public partial class TrialBalance : ReportQueryBase
+    public class TrialBalance : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Cash Flow
     /// </summary>
-    public partial class CashFlow : ReportQueryBase
+    public class CashFlow : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Inventory Valuation Summary
     /// </summary>
-    public partial class InventoryValuationSummary : ReportQueryBase
+    public class InventoryValuationSummary : ReportQueryBase
     {
     }
 
     /// <summary>
     /// Account List
     /// </summary>
-    public partial class AccountList : ReportQueryBase
+    public class AccountList : ReportQueryBase
     {
     }
 
@@ -187,7 +187,7 @@ namespace Intuit.Ipp.Data
     /// <summary>
     /// Transaction List
     /// </summary>
-    public partial class TransactionList : ReportQueryBase
+    public class TransactionList : ReportQueryBase
     {
     }   
 
@@ -200,7 +200,7 @@ namespace Intuit.Ipp.Data
     /// <summary>
     /// Report Query Base. Base class for all reports.
     /// </summary>
-    public abstract partial class ReportQueryBase
+    public abstract class ReportQueryBase
     {
         
 

@@ -35,7 +35,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>boolean value</returns>
         public static bool IsSecureScheme(Uri url, DiscoveryPolicy policy)
         {
-            if (policy.RequireHttps == true)
+            if (policy.RequireHttps)
             {
           
                 return string.Equals(url.Scheme, "https", StringComparison.OrdinalIgnoreCase);
