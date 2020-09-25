@@ -15,7 +15,6 @@
     <Version>$(MainVersion)</Version>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <NoBuild>true</NoBuild>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
     <Description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs. This is the .Net Standard 2.0 version of the .Net SDK</Description>
