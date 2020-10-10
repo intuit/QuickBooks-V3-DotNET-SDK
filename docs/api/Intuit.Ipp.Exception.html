@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Intuit.Ipp.Exception
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Intuit.Ipp.Exception
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Intuit.Ipp.Exception">
+  
+  <h1 id="Intuit_Ipp_Exception" data-uid="Intuit.Ipp.Exception" class="text-break">Namespace Intuit.Ipp.Exception
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.BatchItemsExceededException.html">BatchItemsExceededException</a></h4>
+      <section><p>Represents an Exception raised when an batch collection exceeds 25 items.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ChannelTerminatedException.html">ChannelTerminatedException</a></h4>
+      <section><p>Represents an Exception raised when the communicating channel was terminated due to an unknown error.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.CommunicationException.html">CommunicationException</a></h4>
+      <section><p>Represents an exception raised while communicating with IDS services.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.EndpointNotFoundException.html">EndpointNotFoundException</a></h4>
+      <section><p>Represents an exception raised when an endpoint address was not found on IDS.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.FaultException.html">FaultException</a></h4>
+      <section><p>Represents a Fault Exception.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.IdsError.html">IdsError</a></h4>
+      <section><p>TODO: Update summary.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.IdsException.html">IdsException</a></h4>
+      <section><p>Represents an IdsException.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.IdsExceptionManager.html">IdsExceptionManager</a></h4>
+      <section><p>Manages all the exceptions thrown to the user.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.InvalidParameterException.html">InvalidParameterException</a></h4>
+      <section><p>Represents an Exception raised when an invalid realm id is encountered.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.InvalidRealmException.html">InvalidRealmException</a></h4>
+      <section><p>Represents an Exception raised when an invalid realm id is encountered.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.InvalidServiceRequestException.html">InvalidServiceRequestException</a></h4>
+      <section><p>Represents an Exception raised when an invalid service request was made.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.InvalidTokenException.html">InvalidTokenException</a></h4>
+      <section><p>Represents an Exception raised when an invalid token was generated.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.NamespaceDoc.html">NamespaceDoc</a></h4>
+      <section><p>Intuit.IPP.Exception stores IPP exceptions categorized as SDK Exception and Service Exception.
+SDK Exceptions are exceptions that occur within the SDK, for example, SerializationException, De-SerializationException,
+and so forth.
+Service Exceptions are exceptions returned from REST service or network related exceptions, for example,
+CommunicationException, RetryException, and so forth.
+The Intuit.IPP.Exception assembly has IdsExceptionManager class that manages all IDS exceptions.
+Error messages or error codes can be used to call the HandleException methods, if there are no IPP exceptions.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ProtocolException.html">ProtocolException</a></h4>
+      <section><p>Represents a Protocol exception.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.RetryExceededException.html">RetryExceededException</a></h4>
+      <section><p>Represents a Retry Exception.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.RetryException.html">RetryException</a></h4>
+      <section><p>Represents an exception raised when applying the retry policy for the Ids service calls.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.SdkException.html">SdkException</a></h4>
+      <section><p>Represents an exception raised by the Intuit SDK.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.SecurityException.html">SecurityException</a></h4>
+      <section><p>TODO: Update summary.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.SerializationException.html">SerializationException</a></h4>
+      <section><p>Represents a Exception raised during Serialization/Deserialization of entities.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ServerTooBusyException.html">ServerTooBusyException</a></h4>
+      <section><p>Represents an exception raised when the Ids server is busy and cannot process user requests.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ServiceException.html">ServiceException</a></h4>
+      <section><p>Represents an exception raised by the Intuit Service.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ServiceReturnedNoInformationException.html">ServiceReturnedNoInformationException</a></h4>
+      <section><p>Represents an Exception raised when ServiceContext is Null.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ThrottleExceededException.html">ThrottleExceededException</a></h4>
+      <section><p>Represents an exception raised when the Throttle is Exceeded and cannot process user requests.</p>
+</section>
+      <h4><a class="xref" href="Intuit.Ipp.Exception.ValidationException.html">ValidationException</a></h4>
+      <section><p>TODO: Update summary.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

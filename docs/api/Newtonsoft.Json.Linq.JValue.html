@@ -1,0 +1,1501 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JValue
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JValue
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.Linq.JValue">
+  
+  
+  <h1 id="Newtonsoft_Json_Linq_JValue" data-uid="Newtonsoft.Json.Linq.JValue" class="text-break">Class JValue
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a value in JSON (string, integer, date, etc).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></div>
+    <div class="level2"><span class="xref">JValue</span></div>
+      <div class="level3"><a class="xref" href="Newtonsoft.Json.Linq.JRaw.html">JRaw</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Newtonsoft.Json.Linq.IJEnumerable-1.html">IJEnumerable</a>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a></div>
+    <div><span class="xref">System.ICloneable</span></div>
+    <div><span class="xref">System.Dynamic.IDynamicMetaObjectProvider</span></div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a>&gt;</div>
+    <div><span class="xref">System.IFormattable</span></div>
+    <div><span class="xref">System.IComparable</span></div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_EqualityComparer">JToken.EqualityComparer</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Parent">JToken.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Root">JToken.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_DeepEquals_Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_Linq_JToken_">JToken.DeepEquals(JToken, JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Next">JToken.Next</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Previous">JToken.Previous</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AddAfterSelf_System_Object_">JToken.AddAfterSelf(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AddBeforeSelf_System_Object_">JToken.AddBeforeSelf(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Ancestors">JToken.Ancestors()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AfterSelf">JToken.AfterSelf()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_BeforeSelf">JToken.BeforeSelf()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Item_System_Object_">JToken.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Value__1_System_Object_">JToken.Value&lt;T&gt;(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_First">JToken.First</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Last">JToken.Last</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Children">JToken.Children()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Children__1">JToken.Children&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Values__1">JToken.Values&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Remove">JToken.Remove()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Replace_Newtonsoft_Json_Linq_JToken_">JToken.Replace(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToString_Newtonsoft_Json_Formatting_Newtonsoft_Json_JsonConverter___">JToken.ToString(Formatting, JsonConverter[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Collections_IEnumerable_GetEnumerator">JToken.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__GetEnumerator">JToken.IEnumerable&lt;JToken&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_Linq_IJEnumerable_Newtonsoft_Json_Linq_JToken__Item_System_Object_">JToken.IJEnumerable&lt;JToken&gt;.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_CreateReader">JToken.CreateReader()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_FromObject_System_Object_">JToken.FromObject(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_FromObject_System_Object_Newtonsoft_Json_JsonSerializer_">JToken.FromObject(Object, JsonSerializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToObject__1">JToken.ToObject&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToObject__1_Newtonsoft_Json_JsonSerializer_">JToken.ToObject&lt;T&gt;(JsonSerializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ReadFrom_Newtonsoft_Json_JsonReader_">JToken.ReadFrom(JsonReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Parse_System_String_">JToken.Parse(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Load_Newtonsoft_Json_JsonReader_">JToken.Load(JsonReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_HasLineInfo">JToken.IJsonLineInfo.HasLineInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_LineNumber">JToken.IJsonLineInfo.LineNumber</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_LinePosition">JToken.IJsonLineInfo.LinePosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_SelectToken_System_String_">JToken.SelectToken(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_SelectToken_System_String_System_Boolean_">JToken.SelectToken(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Dynamic_IDynamicMetaObjectProvider_GetMetaObject_System_Linq_Expressions_Expression_">JToken.IDynamicMetaObjectProvider.GetMetaObject(Expression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_ICloneable_Clone">JToken.ICloneable.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_DeepClone">JToken.DeepClone()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.Linq.html">Newtonsoft.Json.Linq</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_Linq_JValue_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JValue : JToken, IJEnumerable&lt;JToken&gt;, IEnumerable&lt;JToken&gt;, IEnumerable, IJsonLineInfo, ICloneable, IDynamicMetaObjectProvider, IEquatable&lt;JValue&gt;, IFormattable, IComparable, IComparable&lt;JValue&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_Newtonsoft_Json_Linq_JValue_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(Newtonsoft.Json.Linq.JValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L58">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_Newtonsoft_Json_Linq_JValue_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(Newtonsoft.Json.Linq.JValue)">JValue(JValue)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class from another <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(JValue other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> object to copy from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L104">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Boolean_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Boolean)">JValue(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_DateTime_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L95">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_DateTime_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.DateTime)">JValue(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(DateTime value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Double_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L86">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Double_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Double)">JValue(Double)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Guid_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L122">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Guid_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Guid)">JValue(Guid)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(Guid value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Int64_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L67">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Int64_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Int64)">JValue(Int64)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L149">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Object_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Object)">JValue(Object)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L113">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_String_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.String)">JValue(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_TimeSpan_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L140">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_TimeSpan_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.TimeSpan)">JValue(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(TimeSpan value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_UInt64_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L76">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_UInt64_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.UInt64)">JValue(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public JValue(ulong value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue__ctor_System_Uri_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.%23ctor(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L131">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue__ctor_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue__ctor_System_Uri_" data-uid="Newtonsoft.Json.Linq.JValue.#ctor(System.Uri)">JValue(Uri)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> class with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JValue(Uri value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_HasValues.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.HasValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L169">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_HasValues_" data-uid="Newtonsoft.Json.Linq.JValue.HasValues*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_HasValues" data-uid="Newtonsoft.Json.Linq.JValue.HasValues">HasValues</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this token has childen tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool HasValues { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this token has child values; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_HasValues">JToken.HasValues</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_Type.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L473">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_Type_" data-uid="Newtonsoft.Json.Linq.JValue.Type*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_Type" data-uid="Newtonsoft.Json.Linq.JValue.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Gets the node type for this <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JTokenType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JTokenType.html">JTokenType</a></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Type">JToken.Type</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_Value.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L482">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_Value_" data-uid="Newtonsoft.Json.Linq.JValue.Value*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_Value" data-uid="Newtonsoft.Json.Linq.JValue.Value">Value</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the underlying token value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Value { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The underlying token value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_CompareTo_Newtonsoft_Json_Linq_JValue_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.CompareTo(Newtonsoft.Json.Linq.JValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L792">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_CompareTo_" data-uid="Newtonsoft.Json.Linq.JValue.CompareTo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_CompareTo_Newtonsoft_Json_Linq_JValue_" data-uid="Newtonsoft.Json.Linq.JValue.CompareTo(Newtonsoft.Json.Linq.JValue)">CompareTo(JValue)</h4>
+  <div class="markdown level1 summary"><p>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(JValue obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>An object to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+Value
+Meaning
+Less than zero
+This instance is less than <code data-dev-comment-type="paramref" class="paramref">obj</code>.
+Zero
+This instance is equal to <code data-dev-comment-type="paramref" class="paramref">obj</code>.
+Greater than zero
+This instance is greater than <code data-dev-comment-type="paramref" class="paramref">obj</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">obj</code> is not the same type as this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_CreateComment_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.CreateComment(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L403">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_CreateComment_" data-uid="Newtonsoft.Json.Linq.JValue.CreateComment*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_CreateComment_System_String_" data-uid="Newtonsoft.Json.Linq.JValue.CreateComment(System.String)">CreateComment(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> comment with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JValue CreateComment(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> comment with the given value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_CreateString_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.CreateString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L413">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_CreateString_" data-uid="Newtonsoft.Json.Linq.JValue.CreateString*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_CreateString_System_String_" data-uid="Newtonsoft.Json.Linq.JValue.CreateString(System.String)">CreateString(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> string with the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JValue CreateString(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a> string with the given value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_Equals_Newtonsoft_Json_Linq_JValue_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.Equals(Newtonsoft.Json.Linq.JValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L581">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_Equals_" data-uid="Newtonsoft.Json.Linq.JValue.Equals*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_Equals_Newtonsoft_Json_Linq_JValue_" data-uid="Newtonsoft.Json.Linq.JValue.Equals(Newtonsoft.Json.Linq.JValue)">Equals(JValue)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(JValue other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JValue.html">JValue</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L599">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_Equals_" data-uid="Newtonsoft.Json.Linq.JValue.Equals*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_Equals_System_Object_" data-uid="Newtonsoft.Json.Linq.JValue.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <span class="xref">System.Object</span> is equal to the current <span class="xref">System.Object</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <span class="xref">System.Object</span> to compare with the current <span class="xref">System.Object</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the specified <span class="xref">System.Object</span> is equal to the current <span class="xref">System.Object</span>; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NullReferenceException</span></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">obj</code> parameter is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_GetHashCode.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L617">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_GetHashCode_" data-uid="Newtonsoft.Json.Linq.JValue.GetHashCode*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_GetHashCode" data-uid="Newtonsoft.Json.Linq.JValue.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Serves as a hash function for a particular type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>A hash code for the current <span class="xref">System.Object</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_GetMetaObject_System_Linq_Expressions_Expression_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.GetMetaObject(System.Linq.Expressions.Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L691">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_GetMetaObject_" data-uid="Newtonsoft.Json.Linq.JValue.GetMetaObject*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_GetMetaObject_System_Linq_Expressions_Expression_" data-uid="Newtonsoft.Json.Linq.JValue.GetMetaObject(System.Linq.Expressions.Expression)">GetMetaObject(Expression)</h4>
+  <div class="markdown level1 summary"><p>Returns the <span class="xref">System.Dynamic.DynamicMetaObject</span> responsible for binding operations performed on this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override DynamicMetaObject GetMetaObject(Expression parameter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span></td>
+        <td><span class="parametername">parameter</span></td>
+        <td><p>The expression tree representation of the runtime value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Dynamic.DynamicMetaObject</span></td>
+        <td><p>The <span class="xref">System.Dynamic.DynamicMetaObject</span> to bind this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_GetMetaObject_System_Linq_Expressions_Expression_">JToken.GetMetaObject(Expression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_ToString.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L631">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_ToString_" data-uid="Newtonsoft.Json.Linq.JValue.ToString*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_ToString" data-uid="Newtonsoft.Json.Linq.JValue.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">System.String</span> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A <span class="xref">System.String</span> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToString">JToken.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_ToString_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.ToString(System.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L658">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_ToString_" data-uid="Newtonsoft.Json.Linq.JValue.ToString*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_ToString_System_IFormatProvider_" data-uid="Newtonsoft.Json.Linq.JValue.ToString(System.IFormatProvider)">ToString(IFormatProvider)</h4>
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">System.String</span> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(IFormatProvider formatProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">formatProvider</span></td>
+        <td><p>The format provider.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A <span class="xref">System.String</span> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_ToString_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.ToString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L646">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_ToString_" data-uid="Newtonsoft.Json.Linq.JValue.ToString*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_ToString_System_String_" data-uid="Newtonsoft.Json.Linq.JValue.ToString(System.String)">ToString(String)</h4>
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">System.String</span> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string format)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">format</span></td>
+        <td><p>The format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A <span class="xref">System.String</span> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_ToString_System_String_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.ToString(System.String%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L671">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_ToString_" data-uid="Newtonsoft.Json.Linq.JValue.ToString*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_ToString_System_String_System_IFormatProvider_" data-uid="Newtonsoft.Json.Linq.JValue.ToString(System.String,System.IFormatProvider)">ToString(String, IFormatProvider)</h4>
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">System.String</span> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string format, IFormatProvider formatProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">format</span></td>
+        <td><p>The format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">formatProvider</span></td>
+        <td><p>The format provider.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A <span class="xref">System.String</span> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.WriteTo(Newtonsoft.Json.JsonWriter%2CNewtonsoft.Json.JsonConverter%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L502">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_WriteTo_" data-uid="Newtonsoft.Json.Linq.JValue.WriteTo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___" data-uid="Newtonsoft.Json.Linq.JValue.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])">WriteTo(JsonWriter, JsonConverter[])</h4>
+  <div class="markdown level1 summary"><p>Writes this token to a <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteTo(JsonWriter writer, params JsonConverter[] converters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a> into which this method will write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a>[]</td>
+        <td><span class="parametername">converters</span></td>
+        <td><p>A collection of <a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a> which will be used when writing the token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___">JToken.WriteTo(JsonWriter, JsonConverter[])</a></div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue_System_IComparable_CompareTo_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue.System%23IComparable%23CompareTo(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L764">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JValue_System_IComparable_CompareTo_" data-uid="Newtonsoft.Json.Linq.JValue.System#IComparable#CompareTo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JValue_System_IComparable_CompareTo_System_Object_" data-uid="Newtonsoft.Json.Linq.JValue.System#IComparable#CompareTo(System.Object)">IComparable.CompareTo(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IComparable.CompareTo(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.IJEnumerable-1.html">IJEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a>
+  </div>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <div>
+      <span class="xref">System.Dynamic.IDynamicMetaObjectProvider</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IFormattable</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Ancestors__1_System_Collections_Generic_IEnumerable___0__">Extensions.Ancestors&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__System_Object_">Extensions.Values(IEnumerable&lt;JToken&gt;, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Values(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__System_Object_">Extensions.Values&lt;U&gt;(IEnumerable&lt;JToken&gt;, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Values&lt;U&gt;(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Value__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Value&lt;U&gt;(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Value__2_System_Collections_Generic_IEnumerable___0__">Extensions.Value&lt;T, U&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Children__1_System_Collections_Generic_IEnumerable___0__">Extensions.Children&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Children__2_System_Collections_Generic_IEnumerable___0__">Extensions.Children&lt;T, U&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_AsJEnumerable_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.AsJEnumerable(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_AsJEnumerable__1_System_Collections_Generic_IEnumerable___0__">Extensions.AsJEnumerable&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema, System.Collections.Generic.IList&lt;System.String&gt;)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema, Newtonsoft.Json.Schema.ValidationEventHandler)</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JValue.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JValue.cs/#L43" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

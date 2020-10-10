@@ -1,0 +1,2324 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JObject
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JObject
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.Linq.JObject">
+  
+  
+  <h1 id="Newtonsoft_Json_Linq_JObject" data-uid="Newtonsoft.Json.Linq.JObject" class="text-break">Class JObject
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a JSON object.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></div>
+    <div class="level2"><a class="xref" href="Newtonsoft.Json.Linq.JContainer.html">JContainer</a></div>
+    <div class="level3"><span class="xref">JObject</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Newtonsoft.Json.Linq.IJEnumerable-1.html">IJEnumerable</a>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a></div>
+    <div><span class="xref">System.ICloneable</span></div>
+    <div><span class="xref">System.Dynamic.IDynamicMetaObjectProvider</span></div>
+    <div><span class="xref">System.Collections.Generic.IList</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.ComponentModel.ITypedList</span></div>
+    <div><span class="xref">System.ComponentModel.IBindingList</span></div>
+    <div><span class="xref">System.Collections.IList</span></div>
+    <div><span class="xref">System.Collections.ICollection</span></div>
+    <div><span class="xref">System.Collections.Specialized.INotifyCollectionChanged</span></div>
+    <div><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">System.ComponentModel.ICustomTypeDescriptor</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanging</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_ListChanged">JContainer.ListChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_AddingNew">JContainer.AddingNew</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_CollectionChanged">JContainer.CollectionChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_OnAddingNew_System_ComponentModel_AddingNewEventArgs_">JContainer.OnAddingNew(AddingNewEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_OnListChanged_System_ComponentModel_ListChangedEventArgs_">JContainer.OnListChanged(ListChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_">JContainer.OnCollectionChanged(NotifyCollectionChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_HasValues">JContainer.HasValues</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_First">JContainer.First</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Last">JContainer.Last</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Children">JContainer.Children()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Values__1">JContainer.Values&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Descendants">JContainer.Descendants()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Add_System_Object_">JContainer.Add(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_AddFirst_System_Object_">JContainer.AddFirst(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_CreateWriter">JContainer.CreateWriter()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_ReplaceAll_System_Object_">JContainer.ReplaceAll(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_RemoveAll">JContainer.RemoveAll()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_ITypedList_GetListName_System_ComponentModel_PropertyDescriptor___">JContainer.ITypedList.GetListName(PropertyDescriptor[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_ITypedList_GetItemProperties_System_ComponentModel_PropertyDescriptor___">JContainer.ITypedList.GetItemProperties(PropertyDescriptor[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_IList_Newtonsoft_Json_Linq_JToken__IndexOf_Newtonsoft_Json_Linq_JToken_">JContainer.IList&lt;JToken&gt;.IndexOf(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_IList_Newtonsoft_Json_Linq_JToken__Insert_System_Int32_Newtonsoft_Json_Linq_JToken_">JContainer.IList&lt;JToken&gt;.Insert(Int32, JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_IList_Newtonsoft_Json_Linq_JToken__RemoveAt_System_Int32_">JContainer.IList&lt;JToken&gt;.RemoveAt(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_IList_Newtonsoft_Json_Linq_JToken__Item_System_Int32_">JContainer.IList&lt;JToken&gt;.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__Add_Newtonsoft_Json_Linq_JToken_">JContainer.ICollection&lt;JToken&gt;.Add(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__Clear">JContainer.ICollection&lt;JToken&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__Contains_Newtonsoft_Json_Linq_JToken_">JContainer.ICollection&lt;JToken&gt;.Contains(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__CopyTo_Newtonsoft_Json_Linq_JToken___System_Int32_">JContainer.ICollection&lt;JToken&gt;.CopyTo(JToken[], Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__IsReadOnly">JContainer.ICollection&lt;JToken&gt;.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_Generic_ICollection_Newtonsoft_Json_Linq_JToken__Remove_Newtonsoft_Json_Linq_JToken_">JContainer.ICollection&lt;JToken&gt;.Remove(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Add_System_Object_">JContainer.IList.Add(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Clear">JContainer.IList.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Contains_System_Object_">JContainer.IList.Contains(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_IndexOf_System_Object_">JContainer.IList.IndexOf(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Insert_System_Int32_System_Object_">JContainer.IList.Insert(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_IsFixedSize">JContainer.IList.IsFixedSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_IsReadOnly">JContainer.IList.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Remove_System_Object_">JContainer.IList.Remove(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_RemoveAt_System_Int32_">JContainer.IList.RemoveAt(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_IList_Item_System_Int32_">JContainer.IList.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_ICollection_CopyTo_System_Array_System_Int32_">JContainer.ICollection.CopyTo(Array, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_Count">JContainer.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_ICollection_IsSynchronized">JContainer.ICollection.IsSynchronized</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_Collections_ICollection_SyncRoot">JContainer.ICollection.SyncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_AddIndex_System_ComponentModel_PropertyDescriptor_">JContainer.IBindingList.AddIndex(PropertyDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_AddNew">JContainer.IBindingList.AddNew()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_AllowEdit">JContainer.IBindingList.AllowEdit</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_AllowNew">JContainer.IBindingList.AllowNew</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_AllowRemove">JContainer.IBindingList.AllowRemove</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_ApplySort_System_ComponentModel_PropertyDescriptor_System_ComponentModel_ListSortDirection_">JContainer.IBindingList.ApplySort(PropertyDescriptor, ListSortDirection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_Find_System_ComponentModel_PropertyDescriptor_System_Object_">JContainer.IBindingList.Find(PropertyDescriptor, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_IsSorted">JContainer.IBindingList.IsSorted</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_RemoveIndex_System_ComponentModel_PropertyDescriptor_">JContainer.IBindingList.RemoveIndex(PropertyDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_RemoveSort">JContainer.IBindingList.RemoveSort()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_SortDirection">JContainer.IBindingList.SortDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_SortProperty">JContainer.IBindingList.SortProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_SupportsChangeNotification">JContainer.IBindingList.SupportsChangeNotification</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_SupportsSearching">JContainer.IBindingList.SupportsSearching</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_System_ComponentModel_IBindingList_SupportsSorting">JContainer.IBindingList.SupportsSorting</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_EqualityComparer">JToken.EqualityComparer</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Parent">JToken.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Root">JToken.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_DeepEquals_Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_Linq_JToken_">JToken.DeepEquals(JToken, JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Next">JToken.Next</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Previous">JToken.Previous</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AddAfterSelf_System_Object_">JToken.AddAfterSelf(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AddBeforeSelf_System_Object_">JToken.AddBeforeSelf(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Ancestors">JToken.Ancestors()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_AfterSelf">JToken.AfterSelf()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_BeforeSelf">JToken.BeforeSelf()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Value__1_System_Object_">JToken.Value&lt;T&gt;(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Children__1">JToken.Children&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Remove">JToken.Remove()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Replace_Newtonsoft_Json_Linq_JToken_">JToken.Replace(JToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToString">JToken.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToString_Newtonsoft_Json_Formatting_Newtonsoft_Json_JsonConverter___">JToken.ToString(Formatting, JsonConverter[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Collections_IEnumerable_GetEnumerator">JToken.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__GetEnumerator">JToken.IEnumerable&lt;JToken&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_Linq_IJEnumerable_Newtonsoft_Json_Linq_JToken__Item_System_Object_">JToken.IJEnumerable&lt;JToken&gt;.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_CreateReader">JToken.CreateReader()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToObject__1">JToken.ToObject&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ToObject__1_Newtonsoft_Json_JsonSerializer_">JToken.ToObject&lt;T&gt;(JsonSerializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_ReadFrom_Newtonsoft_Json_JsonReader_">JToken.ReadFrom(JsonReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_HasLineInfo">JToken.IJsonLineInfo.HasLineInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_LineNumber">JToken.IJsonLineInfo.LineNumber</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Newtonsoft_Json_IJsonLineInfo_LinePosition">JToken.IJsonLineInfo.LinePosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_SelectToken_System_String_">JToken.SelectToken(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_SelectToken_System_String_System_Boolean_">JToken.SelectToken(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_Dynamic_IDynamicMetaObjectProvider_GetMetaObject_System_Linq_Expressions_Expression_">JToken.IDynamicMetaObjectProvider.GetMetaObject(Expression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_System_ICloneable_Clone">JToken.ICloneable.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_DeepClone">JToken.DeepClone()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.Linq.html">Newtonsoft.Json.Linq</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_Linq_JObject_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JObject : JContainer, IJEnumerable&lt;JToken&gt;, IJsonLineInfo, ICloneable, IDynamicMetaObjectProvider, IList&lt;JToken&gt;, ICollection&lt;JToken&gt;, IEnumerable&lt;JToken&gt;, ITypedList, IBindingList, IList, ICollection, INotifyCollectionChanged, IDictionary&lt;string, JToken&gt;, ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;string, JToken&gt;&gt;, IEnumerable, INotifyPropertyChanged, ICustomTypeDescriptor, INotifyPropertyChanging</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject__ctor.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L112">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject__ctor_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject__ctor" data-uid="Newtonsoft.Json.Linq.JObject.#ctor">JObject()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject__ctor_Newtonsoft_Json_Linq_JObject_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.%23ctor(Newtonsoft.Json.Linq.JObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L120">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject__ctor_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject__ctor_Newtonsoft_Json_Linq_JObject_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor(Newtonsoft.Json.Linq.JObject)">JObject(JObject)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> class from another <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject(JObject other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> object to copy from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject__ctor_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.%23ctor(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L138">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject__ctor_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject__ctor_System_Object_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor(System.Object)">JObject(Object)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> class with the specified content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject(object content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>The contents of the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject__ctor_System_Object___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.%23ctor(System.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L129">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject__ctor_" data-uid="Newtonsoft.Json.Linq.JObject.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject__ctor_System_Object___" data-uid="Newtonsoft.Json.Linq.JObject.#ctor(System.Object[])">JObject(Object[])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> class with the specified content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject(params object[] content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">content</span></td>
+        <td><p>The contents of the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_ChildrenTokens.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.ChildrenTokens%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L92">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_ChildrenTokens_" data-uid="Newtonsoft.Json.Linq.JObject.ChildrenTokens*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_ChildrenTokens" data-uid="Newtonsoft.Json.Linq.JObject.ChildrenTokens">ChildrenTokens</h4>
+  <div class="markdown level1 summary"><p>Gets the container's children tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IList&lt;JToken&gt; ChildrenTokens { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td><p>The container's children tokens.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JContainer.html#Newtonsoft_Json_Linq_JContainer_ChildrenTokens">JContainer.ChildrenTokens</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Item_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Item(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L250">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Item_" data-uid="Newtonsoft.Json.Linq.JObject.Item*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Item_System_Object_" data-uid="Newtonsoft.Json.Linq.JObject.Item(System.Object)">Item[Object]</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a> with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JToken this[object key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a> with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Item_System_Object_">JToken.Item[Object]</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Item_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L278">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Item_" data-uid="Newtonsoft.Json.Linq.JObject.Item*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Item_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a> with the specified property name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JToken this[string propertyName] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Type.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L206">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Type_" data-uid="Newtonsoft.Json.Linq.JObject.Type*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Type" data-uid="Newtonsoft.Json.Linq.JObject.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Gets the node type for this <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JTokenType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JTokenType.html">JTokenType</a></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_Type">JToken.Type</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Add_System_String_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Add(System.String%2CNewtonsoft.Json.Linq.JToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L402">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Add_" data-uid="Newtonsoft.Json.Linq.JObject.Add*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Add_System_String_Newtonsoft_Json_Linq_JToken_" data-uid="Newtonsoft.Json.Linq.JObject.Add(System.String,Newtonsoft.Json.Linq.JToken)">Add(String, JToken)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified property name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string propertyName, JToken value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_FromObject_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.FromObject(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L358">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_FromObject_" data-uid="Newtonsoft.Json.Linq.JObject.FromObject*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_FromObject_System_Object_" data-uid="Newtonsoft.Json.Linq.JObject.FromObject(System.Object)">FromObject(Object)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> from an object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JObject FromObject(object o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The object that will be used to create <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> with the values of the specified object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_FromObject_System_Object_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.FromObject(System.Object%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L369">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_FromObject_" data-uid="Newtonsoft.Json.Linq.JObject.FromObject*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_FromObject_System_Object_Newtonsoft_Json_JsonSerializer_" data-uid="Newtonsoft.Json.Linq.JObject.FromObject(System.Object,Newtonsoft.Json.JsonSerializer)">FromObject(Object, JsonSerializer)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="Newtonsoft.Json.Linq.JArray.html">JArray</a> from an object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JObject FromObject(object o, JsonSerializer jsonSerializer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The object that will be used to create <a class="xref" href="Newtonsoft.Json.Linq.JArray.html">JArray</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a></td>
+        <td><span class="parametername">jsonSerializer</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> that will be used to read the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JArray.html">JArray</a> with the values of the specified object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_GetEnumerator.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L528">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_GetEnumerator_" data-uid="Newtonsoft.Json.Linq.JObject.GetEnumerator*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_GetEnumerator" data-uid="Newtonsoft.Json.Linq.JObject.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;KeyValuePair&lt;string, JToken&gt;&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;&gt;</td>
+        <td><p>A <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span> that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_GetMetaObject_System_Linq_Expressions_Expression_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.GetMetaObject(System.Linq.Expressions.Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L725">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_GetMetaObject_" data-uid="Newtonsoft.Json.Linq.JObject.GetMetaObject*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_GetMetaObject_System_Linq_Expressions_Expression_" data-uid="Newtonsoft.Json.Linq.JObject.GetMetaObject(System.Linq.Expressions.Expression)">GetMetaObject(Expression)</h4>
+  <div class="markdown level1 summary"><p>Returns the <span class="xref">System.Dynamic.DynamicMetaObject</span> responsible for binding operations performed on this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override DynamicMetaObject GetMetaObject(Expression parameter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span></td>
+        <td><span class="parametername">parameter</span></td>
+        <td><p>The expression tree representation of the runtime value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Dynamic.DynamicMetaObject</span></td>
+        <td><p>The <span class="xref">System.Dynamic.DynamicMetaObject</span> to bind this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_GetMetaObject_System_Linq_Expressions_Expression_">JToken.GetMetaObject(Expression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Load_Newtonsoft_Json_JsonReader_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Load(Newtonsoft.Json.JsonReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L311">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Load_" data-uid="Newtonsoft.Json.Linq.JObject.Load*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Load_Newtonsoft_Json_JsonReader_" data-uid="Newtonsoft.Json.Linq.JObject.Load(Newtonsoft.Json.JsonReader)">Load(JsonReader)</h4>
+  <div class="markdown level1 summary"><p>Loads an <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> from a <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JObject Load(JsonReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> that will be read for the content of the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> that contains the JSON that was read from the specified <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_OnPropertyChanged_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.OnPropertyChanged(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L540">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_OnPropertyChanged_" data-uid="Newtonsoft.Json.Linq.JObject.OnPropertyChanged*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_OnPropertyChanged_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.OnPropertyChanged(System.String)">OnPropertyChanged(String)</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html#Newtonsoft_Json_Linq_JObject_PropertyChanged">PropertyChanged</a> event with the provided arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPropertyChanged(string propertyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_OnPropertyChanging_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.OnPropertyChanging(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L551">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_OnPropertyChanging_" data-uid="Newtonsoft.Json.Linq.JObject.OnPropertyChanging*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_OnPropertyChanging_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.OnPropertyChanging(System.String)">OnPropertyChanging(String)</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Newtonsoft.Json.Linq.JObject.html#Newtonsoft_Json_Linq_JObject_PropertyChanging">PropertyChanging</a> event with the provided arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPropertyChanging(string propertyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Parse_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Parse(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L341">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Parse_" data-uid="Newtonsoft.Json.Linq.JObject.Parse*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Parse_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.Parse(System.String)">Parse(String)</h4>
+  <div class="markdown level1 summary"><p>Load a <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> from a string that contains JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JObject Parse(string json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>A <span class="xref">System.String</span> that contains JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JObject.html">JObject</a> populated from the string that contains JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Properties.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Properties%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L215">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Properties_" data-uid="Newtonsoft.Json.Linq.JObject.Properties*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Properties" data-uid="Newtonsoft.Json.Linq.JObject.Properties">Properties()</h4>
+  <div class="markdown level1 summary"><p>Gets an <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of this object's properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;JProperty&gt; Properties()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JProperty.html">JProperty</a>&gt;</td>
+        <td><p>An <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of this object's properties.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Property_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Property(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L225">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Property_" data-uid="Newtonsoft.Json.Linq.JObject.Property*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Property_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.Property(System.String)">Property(String)</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="Newtonsoft.Json.Linq.JProperty.html">JProperty</a> the specified name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JProperty Property(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The property name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JProperty.html">JProperty</a></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.Linq.JProperty.html">JProperty</a> with the specified name or null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_PropertyValues.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.PropertyValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L241">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_PropertyValues_" data-uid="Newtonsoft.Json.Linq.JObject.PropertyValues*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_PropertyValues" data-uid="Newtonsoft.Json.Linq.JObject.PropertyValues">PropertyValues()</h4>
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Newtonsoft.Json.Linq.JEnumerable-1.html">JEnumerable&lt;T&gt;</a> of this object's property values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JEnumerable&lt;JToken&gt; PropertyValues()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JEnumerable-1.html">JEnumerable</a>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td><p>An <a class="xref" href="Newtonsoft.Json.Linq.JEnumerable-1.html">JEnumerable&lt;T&gt;</a> of this object's property values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_Remove_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.Remove(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L425">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_Remove_" data-uid="Newtonsoft.Json.Linq.JObject.Remove*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_Remove_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.Remove(System.String)">Remove(String)</h4>
+  <div class="markdown level1 summary"><p>Removes the property with the specified name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(string propertyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if item was successfully removed; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_TryGetValue_System_String_Newtonsoft_Json_Linq_JToken__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.TryGetValue(System.String%2CNewtonsoft.Json.Linq.JToken%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L441">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_TryGetValue_" data-uid="Newtonsoft.Json.Linq.JObject.TryGetValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_TryGetValue_System_String_Newtonsoft_Json_Linq_JToken__" data-uid="Newtonsoft.Json.Linq.JObject.TryGetValue(System.String,Newtonsoft.Json.Linq.JToken@)">TryGetValue(String, out JToken)</h4>
+  <div class="markdown level1 summary"><p>Tries the get value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(string propertyName, out JToken value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a value was successfully retrieved; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.WriteTo(Newtonsoft.Json.JsonWriter%2CNewtonsoft.Json.JsonConverter%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L384">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_WriteTo_" data-uid="Newtonsoft.Json.Linq.JObject.WriteTo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___" data-uid="Newtonsoft.Json.Linq.JObject.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])">WriteTo(JsonWriter, JsonConverter[])</h4>
+  <div class="markdown level1 summary"><p>Writes this token to a <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteTo(JsonWriter writer, params JsonConverter[] converters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>A <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a> into which this method will write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a>[]</td>
+        <td><span class="parametername">converters</span></td>
+        <td><p>A collection of <a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a> which will be used when writing the token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.Linq.JToken.html#Newtonsoft_Json_Linq_JToken_WriteTo_Newtonsoft_Json_JsonWriter_Newtonsoft_Json_JsonConverter___">JToken.WriteTo(JsonWriter, JsonConverter[])</a></div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_PropertyChanged.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.PropertyChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L100">View Source</a>
+  </span>
+  <h4 id="Newtonsoft_Json_Linq_JObject_PropertyChanged" data-uid="Newtonsoft.Json.Linq.JObject.PropertyChanged">PropertyChanged</h4>
+  <div class="markdown level1 summary"><p>Occurs when a property value changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event PropertyChangedEventHandler PropertyChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyChangedEventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_PropertyChanging.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.PropertyChanging%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L106">View Source</a>
+  </span>
+  <h4 id="Newtonsoft_Json_Linq_JObject_PropertyChanging" data-uid="Newtonsoft.Json.Linq.JObject.PropertyChanging">PropertyChanging</h4>
+  <div class="markdown level1 summary"><p>Occurs when a property value is changing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event PropertyChangingEventHandler PropertyChanging</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyChangingEventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Add_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23Add(System.Collections.Generic.KeyValuePair%7BSystem.String%2CNewtonsoft.Json.Linq.JToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L463">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Add_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Add*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Add_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Add(System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken})">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.Add(KeyValuePair&lt;String, JToken&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.Add(KeyValuePair&lt;string, JToken&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Clear.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L468">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Clear_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Clear*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Clear" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Clear">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Contains_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23Contains(System.Collections.Generic.KeyValuePair%7BSystem.String%2CNewtonsoft.Json.Linq.JToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L473">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Contains_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Contains*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Contains_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Contains(System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken})">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.Contains(KeyValuePair&lt;String, JToken&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.Contains(KeyValuePair&lt;string, JToken&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken____System_Int32_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23CopyTo(System.Collections.Generic.KeyValuePair%7BSystem.String%2CNewtonsoft.Json.Linq.JToken%7D%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L482">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#CopyTo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___CopyTo_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken____System_Int32_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}[],System.Int32)">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.CopyTo(KeyValuePair&lt;String, JToken&gt;[], Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.CopyTo(KeyValuePair&lt;string, JToken&gt;[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___IsReadOnly.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L501">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___IsReadOnly_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#IsReadOnly*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___IsReadOnly" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#IsReadOnly">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Remove_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%7D%23Remove(System.Collections.Generic.KeyValuePair%7BSystem.String%2CNewtonsoft.Json.Linq.JToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L506">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Remove_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Remove*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken___Remove_System_Collections_Generic_KeyValuePair_System_String_Newtonsoft_Json_Linq_JToken__" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,Newtonsoft#Json#Linq#JToken}}#Remove(System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken})">ICollection&lt;KeyValuePair&lt;String, JToken&gt;&gt;.Remove(KeyValuePair&lt;String, JToken&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;string, JToken&gt;&gt;.Remove(KeyValuePair&lt;string, JToken&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__ContainsKey_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23IDictionary%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%23ContainsKey(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L407">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__ContainsKey_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#ContainsKey*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__ContainsKey_System_String_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#ContainsKey(System.String)">IDictionary&lt;String, JToken&gt;.ContainsKey(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;string, JToken&gt;.ContainsKey(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Keys.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23IDictionary%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%23Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L415">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Keys_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#Keys*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Keys" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#Keys">IDictionary&lt;String, JToken&gt;.Keys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;string&gt; IDictionary&lt;string, JToken&gt;.Keys { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Values.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23Collections%23Generic%23IDictionary%7BSystem%23String%2CNewtonsoft%23Json%23Linq%23JToken%7D%23Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L454">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Values_" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#Values*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_Collections_Generic_IDictionary_System_String_Newtonsoft_Json_Linq_JToken__Values" data-uid="Newtonsoft.Json.Linq.JObject.System#Collections#Generic#IDictionary{System#String,Newtonsoft#Json#Linq#JToken}#Values">IDictionary&lt;String, JToken&gt;.Values</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;JToken&gt; IDictionary&lt;string, JToken&gt;.Values { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetAttributes.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L608">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetAttributes_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetAttributes*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetAttributes" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetAttributes">ICustomTypeDescriptor.GetAttributes()</h4>
+  <div class="markdown level1 summary"><p>Returns a collection of custom attributes for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AttributeCollection ICustomTypeDescriptor.GetAttributes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.AttributeCollection</span></td>
+        <td><p>An <span class="xref">System.ComponentModel.AttributeCollection</span> containing the attributes for this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetClassName.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetClassName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L619">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetClassName_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetClassName*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetClassName" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetClassName">ICustomTypeDescriptor.GetClassName()</h4>
+  <div class="markdown level1 summary"><p>Returns the class name of this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ICustomTypeDescriptor.GetClassName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The class name of the object, or null if the class does not have a name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetComponentName.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetComponentName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L630">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetComponentName_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetComponentName*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetComponentName" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetComponentName">ICustomTypeDescriptor.GetComponentName()</h4>
+  <div class="markdown level1 summary"><p>Returns the name of this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ICustomTypeDescriptor.GetComponentName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The name of the object, or null if the object does not have a name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetConverter.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L641">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetConverter_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetConverter*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetConverter" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetConverter">ICustomTypeDescriptor.GetConverter()</h4>
+  <div class="markdown level1 summary"><p>Returns a type converter for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TypeConverter ICustomTypeDescriptor.GetConverter()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.TypeConverter</span></td>
+        <td><p>A <span class="xref">System.ComponentModel.TypeConverter</span> that is the converter for this object, or null if there is no <span class="xref">System.ComponentModel.TypeConverter</span> for this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultEvent.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetDefaultEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L652">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultEvent_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetDefaultEvent*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultEvent" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetDefaultEvent">ICustomTypeDescriptor.GetDefaultEvent()</h4>
+  <div class="markdown level1 summary"><p>Returns the default event for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">EventDescriptor ICustomTypeDescriptor.GetDefaultEvent()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.EventDescriptor</span></td>
+        <td><p>An <span class="xref">System.ComponentModel.EventDescriptor</span> that represents the default event for this object, or null if this object does not have events.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultProperty.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetDefaultProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L663">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultProperty_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetDefaultProperty*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetDefaultProperty" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetDefaultProperty">ICustomTypeDescriptor.GetDefaultProperty()</h4>
+  <div class="markdown level1 summary"><p>Returns the default property for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyDescriptor</span></td>
+        <td><p>A <span class="xref">System.ComponentModel.PropertyDescriptor</span> that represents the default property for this object, or null if this object does not have properties.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEditor_System_Type_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetEditor(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L675">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEditor_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEditor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEditor_System_Type_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEditor(System.Type)">ICustomTypeDescriptor.GetEditor(Type)</h4>
+  <div class="markdown level1 summary"><p>Returns an editor of the specified type for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ICustomTypeDescriptor.GetEditor(Type editorBaseType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">editorBaseType</span></td>
+        <td><p>A <span class="xref">System.Type</span> that represents the editor for this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>An <span class="xref">System.Object</span> of the specified type that is the editor for this object, or null if the editor cannot be found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetEvents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L698">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEvents*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEvents">ICustomTypeDescriptor.GetEvents()</h4>
+  <div class="markdown level1 summary"><p>Returns the events for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">EventDescriptorCollection ICustomTypeDescriptor.GetEvents()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.EventDescriptorCollection</span></td>
+        <td><p>An <span class="xref">System.ComponentModel.EventDescriptorCollection</span> that represents the events for this component instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents_System_Attribute___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetEvents(System.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L687">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEvents*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetEvents_System_Attribute___" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetEvents(System.Attribute[])">ICustomTypeDescriptor.GetEvents(Attribute[])</h4>
+  <div class="markdown level1 summary"><p>Returns the events for this instance of a component using the specified attribute array as a filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">EventDescriptorCollection ICustomTypeDescriptor.GetEvents(Attribute[] attributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Attribute</span>[]</td>
+        <td><span class="parametername">attributes</span></td>
+        <td><p>An array of type <span class="xref">System.Attribute</span> that is used as a filter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.EventDescriptorCollection</span></td>
+        <td><p>An <span class="xref">System.ComponentModel.EventDescriptorCollection</span> that represents the filtered events for this component instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetProperties%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L567">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetProperties*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetProperties">ICustomTypeDescriptor.GetProperties()</h4>
+  <div class="markdown level1 summary"><p>Returns the properties for this instance of a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyDescriptorCollection</span></td>
+        <td><p>A <span class="xref">System.ComponentModel.PropertyDescriptorCollection</span> that represents the properties for this component instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties_System_Attribute___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetProperties(System.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L590">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetProperties*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetProperties_System_Attribute___" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetProperties(System.Attribute[])">ICustomTypeDescriptor.GetProperties(Attribute[])</h4>
+  <div class="markdown level1 summary"><p>Returns the properties for this instance of a component using the attribute array as a filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties(Attribute[] attributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Attribute</span>[]</td>
+        <td><span class="parametername">attributes</span></td>
+        <td><p>An array of type <span class="xref">System.Attribute</span> that is used as a filter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyDescriptorCollection</span></td>
+        <td><p>A <span class="xref">System.ComponentModel.PropertyDescriptorCollection</span> that represents the filtered properties for this component instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetPropertyOwner_System_ComponentModel_PropertyDescriptor_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject.System%23ComponentModel%23ICustomTypeDescriptor%23GetPropertyOwner(System.ComponentModel.PropertyDescriptor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L710">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetPropertyOwner_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetPropertyOwner*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JObject_System_ComponentModel_ICustomTypeDescriptor_GetPropertyOwner_System_ComponentModel_PropertyDescriptor_" data-uid="Newtonsoft.Json.Linq.JObject.System#ComponentModel#ICustomTypeDescriptor#GetPropertyOwner(System.ComponentModel.PropertyDescriptor)">ICustomTypeDescriptor.GetPropertyOwner(PropertyDescriptor)</h4>
+  <div class="markdown level1 summary"><p>Returns an object that contains the property described by the specified property descriptor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ICustomTypeDescriptor.GetPropertyOwner(PropertyDescriptor pd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ComponentModel.PropertyDescriptor</span></td>
+        <td><span class="parametername">pd</span></td>
+        <td><p>A <span class="xref">System.ComponentModel.PropertyDescriptor</span> that represents the property whose owner is to be found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>An <span class="xref">System.Object</span> that represents the owner of the specified property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.IJEnumerable-1.html">IJEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a>
+  </div>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <div>
+      <span class="xref">System.Dynamic.IDynamicMetaObjectProvider</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IList&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.ITypedList</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.IBindingList</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IList</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.ICollection</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Specialized.INotifyCollectionChanged</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.ICustomTypeDescriptor</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanging</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__System_Object_">Extensions.Values(IEnumerable&lt;JToken&gt;, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Values(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__System_Object_">Extensions.Values&lt;U&gt;(IEnumerable&lt;JToken&gt;, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Values__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Values&lt;U&gt;(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_Value__1_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.Value&lt;U&gt;(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.Linq.Extensions.html#Newtonsoft_Json_Linq_Extensions_AsJEnumerable_System_Collections_Generic_IEnumerable_Newtonsoft_Json_Linq_JToken__">Extensions.AsJEnumerable(IEnumerable&lt;JToken&gt;)</a>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema, System.Collections.Generic.IList&lt;System.String&gt;)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema)</span>
+  </div>
+  <div>
+      <span class="xref">Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken, Newtonsoft.Json.Schema.JsonSchema, Newtonsoft.Json.Schema.ValidationEventHandler)</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JObject.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JObject.cs/#L45" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
