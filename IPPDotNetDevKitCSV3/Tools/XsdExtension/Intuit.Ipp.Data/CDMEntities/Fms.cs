@@ -1515,6 +1515,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         TDSLineDetail,
+        
+        /// <remarks/>
+        ReimburseLineDetail,
     }
     
     /// <remarks/>
@@ -3105,6 +3108,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         RefundCheck,
+        
+        /// <remarks/>
+        ReimburseCharge,
         
         /// <remarks/>
         SalesOrder,
@@ -8731,6 +8737,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("JournalEntryLineDetail", typeof(JournalEntryLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("PaymentLineDetail", typeof(PaymentLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("PurchaseOrderItemLineDetail", typeof(PurchaseOrderItemLineDetail))]
+        [System.Xml.Serialization.XmlElementAttribute("ReimburseLineDetail", typeof(ReimburseLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("SalesItemLineDetail", typeof(SalesItemLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("SalesOrderItemLineDetail", typeof(SalesOrderItemLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("SubTotalLineDetail", typeof(SubTotalLineDetail))]
@@ -10044,6 +10051,7 @@ namespace Intuit.Ipp.Data {
     /// goods sold: what is sold, how much/many and for what price.
     /// 
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReimburseLineDetail))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemBasedExpenseLineDetail))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesItemLineDetail))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SalesOrderItemLineDetail))]
@@ -11218,6 +11226,23 @@ namespace Intuit.Ipp.Data {
                 this.salesItemLineDetailExField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
+    /// Description: Reimburse Charge Line Detail
+    /// for a transaction line.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ReimburseLineDetail : ItemLineDetail {
     }
     
     /// <remarks/>
@@ -31993,9 +32018,17 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType customerRefField;
         
+        private bool hasBeenInvoicedField;
+        
+        private bool hasBeenInvoicedFieldSpecified;
+        
         private decimal amountField;
         
         private bool amountFieldSpecified;
+        
+        private decimal homeTotalAmtField;
+        
+        private bool homeTotalAmtFieldSpecified;
         
         /// <remarks/>
         /// <summary>
@@ -32008,6 +32041,33 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.customerRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Product: QBO Description: Indicates whether the Charge
+        /// has been invoiced
+        /// 
+        /// </summary>
+        public bool HasBeenInvoiced {
+            get {
+                return this.hasBeenInvoicedField;
+            }
+            set {
+                this.hasBeenInvoicedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HasBeenInvoicedSpecified {
+            get {
+                return this.hasBeenInvoicedFieldSpecified;
+            }
+            set {
+                this.hasBeenInvoicedFieldSpecified = value;
             }
         }
         
@@ -32034,6 +32094,40 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.amountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: QBW: Total amount of
+        /// the transaction in the home currency for multi-currency enabled
+        /// companies. Single currency companies will not have this field.
+        /// Includes the total of all the charges, allowances and taxes.
+        /// Calculated by QuickBooks business logic. Cannot be written to
+        /// QuickBooks.
+        /// InputType: QBW: ReadOnly
+        /// 
+        /// </summary>
+        public decimal HomeTotalAmt {
+            get {
+                return this.homeTotalAmtField;
+            }
+            set {
+                this.homeTotalAmtField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HomeTotalAmtSpecified {
+            get {
+                return this.homeTotalAmtFieldSpecified;
+            }
+            set {
+                this.homeTotalAmtFieldSpecified = value;
             }
         }
     }
