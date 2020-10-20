@@ -74,19 +74,64 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             HttpErrorReason = reason;
         }
 
+        /// <summary>
+        /// Raw
+        /// </summary> 
         public string Raw { get; }
+
+        /// <summary>
+        /// Json
+        /// </summary> 
         public JObject Json { get; }
+
+        /// <summary>
+        /// Exception
+        /// </summary> 
         public System.Exception Exception { get; set; }
 
+        /// <summary>
+        /// Is error
+        /// </summary> 
         public bool IsError { get; }
+
+        /// <summary>
+        /// Error Type
+        /// </summary> 
         public ResponseErrorType ErrorType { get; } = ResponseErrorType.None;
+
+        /// <summary>
+        /// Http status code
+        /// </summary> 
         public HttpStatusCode HttpStatusCode { get; }
+
+        /// <summary>
+        /// Http error reason
+        /// </summary> 
         public string HttpErrorReason { get; }
 
+        /// <summary>
+        /// Access Token
+        /// </summary> 
         public string AccessToken => TryGet(OidcConstants.TokenResponse.AccessToken);
+
+        /// <summary>
+        /// Identity Token
+        /// </summary> 
         public string IdentityToken => TryGet(OidcConstants.TokenResponse.IdentityToken);
+
+        /// <summary>
+        /// Token Type
+        /// </summary> 
         public string TokenType => TryGet(OidcConstants.TokenResponse.TokenType);
+
+        /// <summary>
+        /// Refresh Token
+        /// </summary> 
         public string RefreshToken => TryGet(OidcConstants.TokenResponse.RefreshToken);
+
+        /// <summary>
+        /// Error Description
+        /// </summary> 
         public string ErrorDescription => TryGet(OidcConstants.TokenResponse.ErrorDescription);
 
         /// <summary>

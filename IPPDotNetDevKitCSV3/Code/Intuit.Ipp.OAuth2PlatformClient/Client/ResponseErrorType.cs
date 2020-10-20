@@ -9,10 +9,29 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public enum ResponseErrorType
     {
+        /// <summary>
+        /// No Error
+        /// </summary>
         None,
+        
+        /// <summary>
+        /// Protocol Error
+        /// </summary>
         Protocol,
+        
+        /// <summary>
+        /// Http Error
+        /// </summary>
         Http,
+        
+        /// <summary>
+        /// Exception Error
+        /// </summary>
         Exception,
+        
+        /// <summary>
+        /// PolicyViolation Error
+        /// </summary>
         PolicyViolation
     }
 }

@@ -151,6 +151,7 @@ namespace Intuit.Ipp.ReportService
         #region Async methods
 
         #region Async ExecuteReport
+
         /// <summary>
         /// Executes a Report
         /// </summary>
@@ -195,6 +196,9 @@ namespace Intuit.Ipp.ReportService
 
         #region Private Methods
 
+        /// <summary>
+        /// Get and map Report query parameters
+        /// </summary>
         private string GetReportQueryParameters()
         {
             List<string[]> uriParametersList = new List<string[]>();
@@ -392,7 +396,6 @@ namespace Intuit.Ipp.ReportService
 
         #region new query params reports
 
-
         /// <summary>
         /// Gets or sets the report_date
         /// </summary>
@@ -402,7 +405,6 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the report_date
         /// </summary>
         public string start_createdate { get; set; }
-
 
         /// <summary>
         /// Gets or sets the report_date
@@ -504,7 +506,6 @@ namespace Intuit.Ipp.ReportService
         /// </summary>
         public string duedate_macro { get; set; }
 
-
         /// <summary>
         /// Gets or sets the appaid
         /// </summary>
@@ -524,7 +525,6 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the start_createddate
         /// </summary>
         public string start_createddate { get; set; }
-
 
         /// <summary>
         /// Gets or sets the moddate_macro
@@ -667,15 +667,10 @@ namespace Intuit.Ipp.ReportService
         /// </summary>
         public string custom_pp { get; set; }
 
-       
-
 
         #endregion
 
 
-
         #endregion
-
-
     }
 }

@@ -58,8 +58,6 @@ namespace Intuit.Ipp.Utility
             }
         }
 
-
-
         /// <summary>
         /// Gets the custom security element.
         /// </summary>

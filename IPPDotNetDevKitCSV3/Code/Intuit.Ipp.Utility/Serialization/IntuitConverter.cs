@@ -20,8 +20,6 @@
 
 namespace Intuit.Ipp.Utility
 {
-
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -29,7 +27,6 @@ namespace Intuit.Ipp.Utility
     using Newtonsoft.Json;
     using System.Reflection;
     using Newtonsoft.Json.Linq;
-    //using Intuit.Ipp.Data;
     using System.Collections;
     using System.Diagnostics;
 
@@ -38,7 +35,6 @@ namespace Intuit.Ipp.Utility
     /// </summary>
     public class IntuitConverter : JsonConverter
     {
-
         /// <summary>
         /// WriteJson
         /// </summary>  
@@ -507,5 +503,4 @@ namespace Intuit.Ipp.Utility
             return new Object();
         }
     }
-
 }

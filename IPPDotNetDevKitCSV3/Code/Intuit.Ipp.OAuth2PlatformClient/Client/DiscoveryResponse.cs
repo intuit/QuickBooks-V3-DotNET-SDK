@@ -16,15 +16,44 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class DiscoveryResponse
     {
+        /// <summary>
+        /// Raw
+        /// </summary>
         public string Raw { get; }
-        public JObject Json { get; }
 
+        /// <summary>
+        /// Json
+        /// </summary>
+        public JObject Json { get; }
+        
+         /// <summary>
+        /// Is error
+        /// </summary> 
         public bool IsError { get; } = false;
+
+         /// <summary>
+        /// Http status code
+        /// </summary> 
         public HttpStatusCode StatusCode { get; }
+
+        /// <summary>
+        /// Error
+        /// </summary> 
         public string Error { get; }
+
+        /// <summary>
+        /// Error Type
+        /// </summary>
         public ResponseErrorType ErrorType { get; set; } = ResponseErrorType.None;
+        
+        /// <summary>
+        /// Exception
+        /// </summary> 
         public System.Exception Exception { get; }
 
+        /// <summary>
+        /// Key Set
+        /// </summary> 
         public JsonWebKeySet KeySet { get; set; }
 
 
@@ -94,6 +123,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Exception = exception;
             Error = $"{errorMessage}: {exception.Message}";
         }
+        
         /// <summary>
         /// Strongly typed getters
         /// </summary>

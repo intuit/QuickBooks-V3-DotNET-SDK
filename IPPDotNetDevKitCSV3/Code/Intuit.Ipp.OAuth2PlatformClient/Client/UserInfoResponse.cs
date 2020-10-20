@@ -15,15 +15,45 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class UserInfoResponse
     {
+        
+        /// <summary>
+        /// Raw
+        /// </summary>
         public string Raw { get; }
+
+        /// <summary>
+        /// Json
+        /// </summary>
         public JObject Json { get; }
+        
+        /// <summary>
+        /// Claims
+        /// </summary>
         public IEnumerable<Claim> Claims { get; }
 
+        /// <summary>
+        /// is Error
+        /// </summary>
         public bool IsError { get; }
+
+        /// <summary>
+        /// Error
+        /// </summary>
         public string Error { get; }
 
+        /// <summary>
+        /// Http status Code
+        /// </summary>
         public HttpStatusCode HttpStatusCode { get; }
+
+        /// <summary>
+        /// Exception
+        /// </summary>
         public System.Exception Exception { get; }
+
+        /// <summary>
+        /// Error Type
+        /// </summary>
         public ResponseErrorType ErrorType { get; set; }
         
         /// <summary>

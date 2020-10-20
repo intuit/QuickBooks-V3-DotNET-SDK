@@ -23,9 +23,6 @@
 namespace Intuit.Ipp.Utility
 {
     using System.IO;
-    //using Intuit.Ipp.Core.Compression; 
-    
-
 
     /// <summary>
     /// Interface for compression methods.

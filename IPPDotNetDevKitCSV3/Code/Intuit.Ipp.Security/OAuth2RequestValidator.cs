@@ -13,8 +13,6 @@ namespace Intuit.Ipp.Security
     using System.Net;
     using System.Security.Cryptography;
     using System.Text.RegularExpressions;
-    //using DevDefined.OAuth.Consumer;
-    //using DevDefined.OAuth.Framework;
     using Intuit.Ipp.Exception;
 
     /// <summary>
@@ -84,7 +82,7 @@ namespace Intuit.Ipp.Security
         {
             //IOAuthConsumerContext consumerContext = this.CreateConsumerContext(true);
             //IOAuthSession oauthSession = CreateOAuthSessionWithConsumerContext(consumerContext);
-            //oauthSession.AccessToken = this.CreateAccessToken();
+            //oauthSession.AccessToken = this.CreateAccessToken(); 
             //string oauthHeader = this.GetOAuthHeaderForRequest(oauthSession, webRequest);
             string oauthHeader = string.Format("Bearer {0}", this.AccessToken);
             webRequest.Headers.Add(AuthorizationHeader, oauthHeader);

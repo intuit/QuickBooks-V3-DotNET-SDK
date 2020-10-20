@@ -60,21 +60,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public bool EnableSerilogRequestResponseLoggingForRollingFile { get; set; }
 
-
-
         ///// <summary>
         ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
         ///// </summary>
         //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
-
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
         /// </summary>
         public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
-
-
-
 
         /// <summary>
         /// Gets or sets the service request logging location for File, Rolling File.
@@ -158,12 +152,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
 
-
-
         /// <summary>
         /// Initializes a new instance of AdvanceLogging
         /// </summary>
-
         public OAuthAdvancedLogging()
             : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: null)
         {

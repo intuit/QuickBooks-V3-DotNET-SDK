@@ -19,7 +19,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class TokenClient : IDisposable
     {
+        /// <summary>
+        /// Http client
+        /// </summary>
         protected HttpClient Client;
+
+        /// <summary>
+        /// disposed
+        /// </summary>
         private bool _disposed;
 
 
@@ -179,9 +186,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 else
                 {
                     string errorDetail = "";
-
-
-
 
                     if (headers.WwwAuthenticate != null)
                     {

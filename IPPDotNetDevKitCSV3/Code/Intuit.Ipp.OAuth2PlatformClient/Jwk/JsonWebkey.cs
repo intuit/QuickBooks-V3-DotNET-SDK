@@ -62,21 +62,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Copy(key);
         }
 
+        /// <summary>
+        /// Initializes instances from JsonWebKey.
+        /// </summary>
+        /// <param name="key">a JsonWebKey object</param>
         private void Copy(JsonWebKey key)
         {
-            
-           
-            
             this.Kty = key.Kty;
             this.E = key.E;
             this.Use = key.Use;
             this.Kid = key.Kid;
             this.Alg = key.Alg;
             this.N = key.N;
-
         }
-            
-
 
         /// <summary>
         /// Gets or sets the 'kty' (Key Type)..
@@ -119,10 +117,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, PropertyName = JsonWebKeyParameterNames.N, Required = Required.Default)]
         public string N { get; set; }
 
-      
-
-        
-
         /// <summary>
         /// Returns KeySize
         /// </summary>
@@ -140,6 +134,5 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     return 0;
             }
         }
-
     }
 }
