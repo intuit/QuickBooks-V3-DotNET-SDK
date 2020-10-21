@@ -160,7 +160,6 @@ namespace Intuit.Ipp.Security
         /// </summary>
         public string ErrorDescription => TryGet("error_description");
 
-
         /// <summary>
         /// Returns Access Token expiry value
         /// </summary>
@@ -183,7 +182,6 @@ namespace Intuit.Ipp.Security
             }
         }
 
-
         /// <summary>
         /// Returns RefreshToken Expiry Value
         /// </summary>   
@@ -205,7 +203,6 @@ namespace Intuit.Ipp.Security
                 return 0;
             }
         }
-
 
         /// <summary>
         /// Handles error
@@ -231,8 +228,6 @@ namespace Intuit.Ipp.Security
         /// Helper to get Name
         /// </summary>
         public string TryGet(string name) => Json.TryGetString(name);
-
-
     }
 
     /// <summary>
@@ -240,7 +235,6 @@ namespace Intuit.Ipp.Security
     /// </summary>
     public static class MigrationJObjectExtensions
     {
-        
 
         /// <summary>
         /// Helper for Json object 
@@ -277,10 +271,29 @@ namespace Intuit.Ipp.Security
     /// </summary>
     public enum MigrationResponseErrorType
     {
+        /// <summary>
+        /// No Error
+        /// </summary>
         None,
+        
+        /// <summary>
+        /// Protocol Error
+        /// </summary>
         Protocol,
+        
+        /// <summary>
+        /// Http Error
+        /// </summary>
         Http,
+        
+        /// <summary>
+        /// Exception Error
+        /// </summary>
         Exception,
+        
+        /// <summary>
+        /// PolicyViolation Error
+        /// </summary>
         PolicyViolation
     }
 }

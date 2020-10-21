@@ -11,8 +11,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public static class LogHelper
     {
-        
-
         /// <summary>
         /// Gets the Request Response Logging mechanism for advanced logging using serilog.
         /// </summary>

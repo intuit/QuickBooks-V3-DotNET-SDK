@@ -29,8 +29,6 @@ namespace Intuit.Ipp.Security
     /// </summary>
     public static class SecurityConstants
     {
-        
-
         /// <summary>
         /// Semi Colon(;) string value.
         /// </summary>

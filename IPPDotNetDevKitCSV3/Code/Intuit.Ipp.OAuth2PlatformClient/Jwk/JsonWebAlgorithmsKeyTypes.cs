@@ -34,12 +34,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public static class JsonWebAlgorithmsKeyTypes
     {
-#pragma warning disable 1591
+        #pragma warning disable 1591
         /// <summary>
         /// RSA const
         /// </summary>
         public const string RSA = "RSA"; //RS256
         
-#pragma warning restore 1591
+        #pragma warning restore 1591
     }
 }

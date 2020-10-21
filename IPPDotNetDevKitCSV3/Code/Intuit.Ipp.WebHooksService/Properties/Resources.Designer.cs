@@ -24,8 +24,14 @@ namespace Intuit.Ipp.WebHooksService.Properties {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
         
+        /// <summary>
+        ///  ResourceManager instance used by this class.
+        /// </summary>
         private static global::System.Resources.ResourceManager resourceMan;
         
+        /// <summary>
+        ///   Culture instance used by this class to overrides the current thread's CurrentUICulture property
+        /// </summary>
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]

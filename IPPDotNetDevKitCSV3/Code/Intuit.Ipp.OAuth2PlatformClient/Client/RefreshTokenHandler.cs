@@ -16,13 +16,34 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class RefreshTokenHandler : DelegatingHandler
     {
+        /// <summary>
+        /// Lock time out
+        /// </summary>
         private static readonly TimeSpan _lockTimeout = TimeSpan.FromSeconds(2);
 
+        /// <summary>
+        /// Lock
+        /// </summary>
         private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
+
+        /// <summary>
+        /// Token Client
+        /// </summary>
         private readonly TokenClient _tokenClient;
 
+        /// <summary>
+        /// Access Token
+        /// </summary>
         private string _accessToken;
+
+        /// <summary>
+        /// Refresh Token
+        /// </summary>
         private string _refreshToken;
+
+        /// <summary>
+        /// Dispose
+        /// </summary>
         private bool _disposed;
 
         /// <summary>
@@ -83,11 +104,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public RefreshTokenHandler(string tokenEndpoint, string clientId, string clientSecret, string refreshToken, string accessToken = null, HttpMessageHandler innerHandler = null)
             : this(new TokenClient(tokenEndpoint, clientId, clientSecret), refreshToken, accessToken, innerHandler)
         {
-
             ClientId = clientId;
             ClientSecret = clientSecret;
-
-
         }
 
         /// <summary>
@@ -140,18 +158,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 return new HttpResponseMessage(HttpStatusCode.Unauthorized);
             }
-
-
-           
            
             request.Headers.Authorization = new BasicAuthenticationHeaderValue(ClientId, ClientSecret);
             request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-
             var response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
                        
-
             return response;
         }
 

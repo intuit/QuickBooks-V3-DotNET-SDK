@@ -37,8 +37,6 @@ namespace Intuit.Ipp.Utility
             {
                 return (WebhooksVerifierElement)this["verfierToken"];
             }
-        }
-
-        
+        } 
     }
 }

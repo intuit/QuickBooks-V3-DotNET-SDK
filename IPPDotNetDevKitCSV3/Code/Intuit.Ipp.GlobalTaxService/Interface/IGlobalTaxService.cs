@@ -22,12 +22,8 @@
 
 namespace Intuit.Ipp.GlobalTaxService.Interface
 {
-
-
-
     using System.Collections.ObjectModel;
     using Intuit.Ipp.Data;
-
 
     /// <summary>
     /// This interface specifies the Sync CRUD operations for IDS. 

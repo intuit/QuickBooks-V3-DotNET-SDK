@@ -45,8 +45,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return url;
         }
 
-
-
         /// <summary>
         /// Will get the string value for a given enums value, this will
         /// only work if you assign the StringValue attribute to

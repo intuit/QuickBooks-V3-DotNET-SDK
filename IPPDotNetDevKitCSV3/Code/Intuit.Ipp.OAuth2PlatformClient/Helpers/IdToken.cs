@@ -18,7 +18,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         [JsonProperty("kid")]
         public string Kid { get; set; }
 
-
         /// <summary>
         /// alg
         /// </summary>
@@ -72,7 +71,5 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         [JsonProperty("iat")]
         public string Iat { get; set; }
-    }
-
-    
+    }  
 }

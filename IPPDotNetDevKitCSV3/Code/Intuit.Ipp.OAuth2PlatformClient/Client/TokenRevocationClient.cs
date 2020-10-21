@@ -223,12 +223,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        /// <param name="disposing">disposing</param>
         protected virtual void Dispose(bool disposing)
         {
             if (disposing && !_disposed)

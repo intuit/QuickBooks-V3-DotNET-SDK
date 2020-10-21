@@ -755,12 +755,16 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        /// <summary>
+        /// Checks if email address is valid
+        /// </summary>
+        /// <param name="sendToEmail">email address</param>
         private void ProcessSendToEmail(String sendToEmail)
         {
             //if email address is null return no need to check
             if (String.IsNullOrWhiteSpace(sendToEmail)) return;
 
-            //check if the eamil address is empty or null
+            //check if the email address is empty or null
             if (IsValidEmailAddress(sendToEmail)) return;
 
             IdsException exception = new IdsException(Resources.EmailAddressNotValid,
@@ -773,6 +777,10 @@ namespace Intuit.Ipp.DataService
             IdsExceptionManager.HandleException(exception);
         }
 
+        /// <summary>
+        /// Validates email address through Regex 
+        /// </summary>
+        /// <param name="sendToEmail">email address</param>
         private bool IsValidEmailAddress(String emailAddress)
         {
             return !String.IsNullOrWhiteSpace(emailAddress) && Regex.IsMatch(emailAddress,
@@ -1443,6 +1451,10 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        /// <summary>
+        /// Checks for PDF allowed entities
+        /// </summary>
+        /// <param name="entity">Entity to check</param>
         private void CheckForPdfAllowedEntities(IEntity entity)
         {
             Type givenType = entity.GetType();
@@ -1456,6 +1468,10 @@ namespace Intuit.Ipp.DataService
             }
         }
 
+        /// <summary>
+        /// Checks for void allowed entities
+        /// </summary>
+        /// <param name="entity">Entity to check</param>
         private void CheckForVoidAllowedEntities(IEntity entity)
         {
             Type givenType = entity.GetType();

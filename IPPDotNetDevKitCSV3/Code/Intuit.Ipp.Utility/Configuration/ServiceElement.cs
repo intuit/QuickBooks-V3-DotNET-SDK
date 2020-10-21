@@ -50,8 +50,5 @@ namespace Intuit.Ipp.Utility
                 return (MinorVersionElement)this["minorVersion"];
             }
         }
-
-
-        
     }
 }

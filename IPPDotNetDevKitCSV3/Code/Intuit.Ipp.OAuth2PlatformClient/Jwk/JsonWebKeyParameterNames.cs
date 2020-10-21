@@ -43,7 +43,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public const string Alg     = "alg";
         public const string N       = "n";
               
-
 #pragma warning restore 1591
+
     }
 }

@@ -21,6 +21,11 @@ namespace System.Net.Http
             : base("Basic", EncodeCredential(clientId, clientSecret))
         { }
 
+        /// <summary>
+        /// Encode Credential
+        /// </summary>
+        /// <param name="clientId">clientId</param>
+        /// <param name="clientSecret">clientSecret</param>
         private static string EncodeCredential(string clientId, string clientSecret)
         {
             if (string.IsNullOrWhiteSpace(clientId)) throw new ArgumentNullException(nameof(clientId));

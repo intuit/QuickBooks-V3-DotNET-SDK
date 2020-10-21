@@ -47,18 +47,31 @@ namespace Intuit.Ipp.Core.Configuration
     {
 
 #if NETSTANDARD2_0
+        /// <summary>
+        /// logPath
+        /// </summary>
         public string logPath { get; set; }
+
+        /// <summary>
+        /// Instance of IConfigurationRoot
+        /// </summary>
         IConfigurationRoot builder;
+
+        /// <summary>
+        /// Constructor JsonFileConfigurationProvider
+        /// </summary>
+        /// <param name="path">path</param>
         public JsonFileConfigurationProvider(string path)
         {
             builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(path, optional: true)
                 .Build();
-           
-
-
         }
+
+        /// <summary>
+        /// Constructor JsonFileConfigurationProvider
+        /// </summary>
         public JsonFileConfigurationProvider() : this("appsettings.json")
         {
         }

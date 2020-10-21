@@ -319,6 +319,9 @@ namespace Intuit.Ipp.Core.Rest
             return httpWebRequest;
         }
 
+        /// <summary>
+        /// Strip first slash
+        /// </summary>
         private string StripFirstSlash(string uri)
         {
             if (string.Compare(uri, 0, "/", 0, 1) == 0)
@@ -328,6 +331,9 @@ namespace Intuit.Ipp.Core.Rest
             return uri;
         }
 
+        /// <summary>
+        /// Append Query Parameters
+        /// </summary>
         private string AppendQueryParameters(string requestEndpoint, string name, string value)
         {
             System.Text.StringBuilder requestEndpointBuilder = new System.Text.StringBuilder(requestEndpoint);

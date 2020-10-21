@@ -78,7 +78,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string RefreshToken        = "refresh_token";
             
         }
-
         
 
         /// <summary>
@@ -129,11 +128,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         public static class GrantTypes
         {
-
             public const string AuthorizationCode = "authorization_code";
             public const string RefreshToken = "refresh_token";
-            //public const string Implicit          = "implicit";
-
         }
 
 
@@ -151,16 +147,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string IntrospectionEndpoint                       = "introspection_endpoint";
             public const string RevocationEndpoint                          = "revocation_endpoint";
             public const string ProdDiscoveryEndpoint                       = ".well-known/openid_configuration";
-            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration";
-
-
-            
-          
+            public const string SandboxDiscoveryEndpoint                    = ".well-known/openid_sandbox_configuration";           
             public const string ProdAuthority                               = "https://developer.api.intuit.com/";
- 
-
             public const string JwksUri                                     = "jwks_uri";
-            
             public const string ResponseTypesSupported                      = "response_types_supported";
             public const string SubjectTypesSupported                       = "subject_types_supported";
             public const string ScopesSupported                             = "scopes_supported";
@@ -171,11 +160,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string DiscoveryUrlProduction                      = "https://developer.api.intuit.com/.well-known/openid_configuration";
             public const string IssuerUrl                                   = "https://oauth.platform.intuit.com/op/v1";
            
-
-
-
-
-
         }
     }
 }

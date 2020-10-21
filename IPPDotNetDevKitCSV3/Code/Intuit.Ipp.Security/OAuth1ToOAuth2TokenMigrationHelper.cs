@@ -27,7 +27,6 @@ namespace Intuit.Ipp.Security
     using System.Net;
     using System.Text;
     using System.Threading.Tasks;
-    //using Intuit.Ipp.Core; 
     using Intuit.Ipp.Utility;
     using System.IO;
     using Newtonsoft.Json.Linq;
@@ -57,7 +56,6 @@ namespace Intuit.Ipp.Security
         public OAuth1ToOAuth2TokenMigrationHelper()
         {
             Environment = EnvironmentForMigration.Production;
-
         }
 
         /// <summary>
@@ -115,7 +113,6 @@ namespace Intuit.Ipp.Security
                 //Get response for the migrate tokens call
                 httpWebResponse = httpWebRequest.GetResponse() as HttpWebResponse;
 
-
             }
             catch (Exception ex)
             {
@@ -135,7 +132,6 @@ namespace Intuit.Ipp.Security
             }
             else
             {
-
                 string errorDetail = "";
 
                 WebHeaderCollection headers = httpWebResponse.Headers;
@@ -154,11 +150,7 @@ namespace Intuit.Ipp.Security
                 {
                     return new MigratedTokenResponse(httpWebResponse.StatusCode, httpWebResponse.StatusDescription);
                 }
-
             }
-
-
         }
-
     }
 }

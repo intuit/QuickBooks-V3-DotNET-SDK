@@ -23,19 +23,55 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             ParseRaw();
         }
 
+        /// <summary>
+        /// Raw
+        /// </summary>
         public string Raw { get; }
+
+        /// <summary>
+        /// Values
+        /// </summary>
         public Dictionary<string, string> Values { get; } = new Dictionary<string, string>();
         
+        /// <summary>
+        /// Code
+        /// </summary>
         public string Code             => TryGet(OidcConstants.AuthorizeResponse.Code);
+
+        /// <summary>
+        /// RealmId
+        /// </summary>
         public string RealmId          => TryGet(OidcConstants.AuthorizeResponse.RealmId);
-        public string Error            => TryGet(OidcConstants.AuthorizeResponse.Error);   
+
+        /// <summary>
+        /// Error
+        /// </summary>
+        public string Error            => TryGet(OidcConstants.AuthorizeResponse.Error); 
+
+        /// <summary>
+        /// State
+        /// </summary>  
         public string State            => TryGet(OidcConstants.AuthorizeResponse.State);
+
+        /// <summary>
+        /// Url
+        /// </summary>
         public string Url              => TryGet(OidcConstants.AuthorizeResponse.Url);
+
+        /// <summary>
+        /// Error Description
+        /// </summary>
         public string ErrorDescription => TryGet(OidcConstants.AuthorizeResponse.ErrorDescription);
+
+        /// <summary>
+        /// Is Error
+        /// </summary>
         public bool IsError            => !string.IsNullOrEmpty(Error);
 
      
-
+        /// <summary>
+        /// Parse Raw input
+        /// </summary>
         private void ParseRaw()
         {
             string[] fragments;

@@ -37,8 +37,6 @@ namespace Intuit.Ipp.QueryFilter
     using Intuit.Ipp.Exception;
     using Intuit.Ipp.QueryFilter.Properties;
     using Intuit.Ipp.Utility;
-   // using Intuit.Ipp.LinqExtender;
-
     
     /// <summary>
     /// Contains methods used to parse the expression tree and execute the query generated and return the result.
@@ -192,7 +190,6 @@ namespace Intuit.Ipp.QueryFilter
 
             List<T> entities = new List<T>();
 
-        
             if(queryResponse.maxResults > 0 )
             
             {

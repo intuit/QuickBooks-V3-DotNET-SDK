@@ -8,9 +8,19 @@ using System.Threading.Tasks;
 
 namespace Intuit.Ipp.Client
 {
+    /// <summary>
+    /// Data Client class.
+    /// </summary>
     public class DataClient
     {
+        /// <summary>
+        /// Client 
+        /// </summary>
         private readonly Func<HttpMessageInvoker> _client;
+        
+        /// <summary>
+        /// Token Client options
+        /// </summary>
         private readonly TokenClientOptions _options;
 
         /// <summary>

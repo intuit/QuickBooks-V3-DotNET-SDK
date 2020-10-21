@@ -13,6 +13,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class DiscoveryPolicy
     {
+        /// <summary>
+        /// Authority
+        /// </summary>
         internal string Authority = OidcConstants.Discovery.IssuerUrl;
 
         /// <summary>
@@ -22,8 +25,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
 
         }
-
-
 
         /// <summary>
         /// Sets the discovery authority if not present in application configuration

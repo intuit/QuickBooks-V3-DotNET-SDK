@@ -98,7 +98,6 @@ namespace Intuit.Ipp.Utility
             }
         }
 
-
         /// <summary>
         /// Gets the WebhooksService element.
         /// </summary>

@@ -53,6 +53,9 @@ namespace Intuit.Ipp.WebhooksService
 
 
         #region Private Members
+        /// <summary>
+        /// Gets or sets the Verifier Token configuration.
+        /// </summary>
         private string verifierToken;
         #endregion
 
