@@ -315,7 +315,7 @@ namespace OAuth2_Dotnet_UsingSDK
             ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
             context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             //        //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";//prod
-            context.IppConfiguration.MinorVersion.Qbo = "53";
+            context.IppConfiguration.MinorVersion.Qbo = "54";
             //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
             //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
@@ -324,7 +324,12 @@ namespace OAuth2_Dotnet_UsingSDK
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
 
+            QueryService<ReimburseCharge> rb1 = new QueryService<ReimburseCharge>(context);
+            ReimburseCharge rbb1 = rb1.ExecuteIdsQuery("Select * From ReimburseCharge StartPosition 1 MaxResults 1").First();
 
+
+            QueryService<Invoice> in1 = new QueryService<Invoice>(context);
+            Invoice inn1 = in1.ExecuteIdsQuery("Select * From Invoice where Id='27' StartPosition 1 MaxResults 1").First();
 
             QueryService<RecurringTransaction> re1 = new QueryService<RecurringTransaction>(context);
             RecurringTransaction r1 = re1.ExecuteIdsQuery("Select * From RecurringTransaction StartPosition 1 MaxResults 1").First();
@@ -348,12 +353,12 @@ namespace OAuth2_Dotnet_UsingSDK
             //batch.Add("select * from Customer", "CustomerQuery");
             //batch.Execute();
 
-            RecurringTransaction recur1 = new RecurringTransaction();
-            Invoice inv1 = new Invoice();
-            inv1.Id = r1.AnyIntuitObject.Id;
-            inv1.SyncToken = r1.AnyIntuitObject.SyncToken;
-            recur1.AnyIntuitObject = inv1;
-            var s = dataService.Delete(recur1);
+            //RecurringTransaction recur1 = new RecurringTransaction();
+            //Invoice inv1 = new Invoice();
+            //inv1.Id = r1.AnyIntuitObject.Id;
+            //inv1.SyncToken = r1.AnyIntuitObject.SyncToken;
+            //recur1.AnyIntuitObject = inv1;
+            //var s = dataService.Delete(recur1);
 
             RecurringTransaction recur = new RecurringTransaction();
             //Find Customer
@@ -428,6 +433,45 @@ namespace OAuth2_Dotnet_UsingSDK
             invoiceLine.AnyIntuitObject = lineSalesItemLineDetail;
             //Assign Line Item to Invoice
             invoice.Line = new Line[] { invoiceLine };
+
+            //Line
+            Line invoiceReimburseLine = new Line();
+            //Line Description
+            invoiceReimburseLine.Description = "Invoice line description.";
+            //Line Amount
+            invoiceReimburseLine.Amount = 330m;
+            invoiceReimburseLine.AmountSpecified = true;
+            //Line Detail Type
+            invoiceReimburseLine.DetailType = LineDetailTypeEnum.ReimburseLineDetail;
+            invoiceReimburseLine.DetailTypeSpecified = true;
+            //Line Sales Item Line Detail
+            ReimburseLineDetail lineReimburseLineDetail = new ReimburseLineDetail();
+            //Line Sales Item Line Detail - ItemRef
+            lineReimburseLineDetail.ItemRef = new ReferenceType()
+            {
+                name = item.Name,
+
+                Value = item.Id
+            };
+            //Line Sales Item Line Detail - UnitPrice
+            lineReimburseLineDetail.AnyIntuitObject = 33m;
+            lineReimburseLineDetail.ItemElementName = ItemChoiceType.UnitPrice;
+            //Line Sales Item Line Detail - Qty
+            lineReimburseLineDetail.Qty = 10;
+            lineReimburseLineDetail.QtySpecified = true;
+            //Line Sales Item Line Detail - TaxCodeRef
+            //For US companies, this can be 'TAX' or 'NON'
+            lineReimburseLineDetail.TaxCodeRef = new ReferenceType()
+            {
+                Value = "NON"
+            };
+            //Line Sales Item Line Detail - ServiceDate 
+            //lineSalesItemLineDetail.ServiceDate = DateTime.Now.Date;
+            //lineSalesItemLineDetail.ServiceDateSpecified = true;
+            //Assign Sales Item Line Detail to Line Item
+            invoiceReimburseLine.AnyIntuitObject = lineReimburseLineDetail;
+            //Assign Line Item to Invoice
+            invoice.Line.Append(invoiceReimburseLine);
 
             //TxnTaxDetail
             TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
@@ -506,14 +550,11 @@ namespace OAuth2_Dotnet_UsingSDK
                     MaxOccurrences = 2,
                     MaxOccurrencesSpecified = true,
                     NumInterval = 1,
-                    NumIntervalSpecified=true
+                    NumIntervalSpecified = true
                 }
 
             };
 
-           // List<IEntity> n = new List<IEntity>();
-           // n.Add(invoice) ;
-            
             recur.AnyIntuitObject = invoice;
             
             
