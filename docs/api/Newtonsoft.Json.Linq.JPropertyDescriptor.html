@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JPropertyDescriptor
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JPropertyDescriptor
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor">
+  
+  
+  <h1 id="Newtonsoft_Json_Linq_JPropertyDescriptor" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor" class="text-break">Class JPropertyDescriptor
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a view of a <a class="xref" href="Newtonsoft.Json.Linq.JProperty.html">JProperty</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.ComponentModel.MemberDescriptor</span></div>
+    <div class="level2"><span class="xref">System.ComponentModel.PropertyDescriptor</span></div>
+    <div class="level3"><span class="xref">JPropertyDescriptor</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.AddValueChanged(System.Object, System.EventHandler)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.CreateInstance(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.FillAttributes(System.Collections.IList)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetChildProperties()</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Attribute[])</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Object, System.Attribute[])</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetEditor(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetInvocationTarget(System.Type, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetTypeFromName(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.OnValueChanged(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.RemoveValueChanged(System.Object, System.EventHandler)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.GetValueChangedHandler(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.Converter</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.IsLocalizable</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.SerializationVisibility</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.PropertyDescriptor.SupportsChangeEvents</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.CreateAttributeCollection()</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.FindMethod(System.Type, System.String, System.Type[], System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.FindMethod(System.Type, System.String, System.Type[], System.Type, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.GetSite(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.GetInvokee(System.Type, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.AttributeArray</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.Category</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.Description</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.IsBrowsable</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.Name</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.DesignTimeOnly</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.MemberDescriptor.DisplayName</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.Linq.html">Newtonsoft.Json.Linq</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_Linq_JPropertyDescriptor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JPropertyDescriptor : PropertyDescriptor</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor__ctor_System_String_System_Type_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.%23ctor(System.String%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L45">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor__ctor_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor__ctor_System_String_System_Type_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.#ctor(System.String,System.Type)">JPropertyDescriptor(String, Type)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JPropertyDescriptor.html">JPropertyDescriptor</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JPropertyDescriptor(string name, Type propertyType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">propertyType</span></td>
+        <td><p>Type of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_ComponentType.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.ComponentType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L128">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_ComponentType_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ComponentType*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_ComponentType" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ComponentType">ComponentType</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the type of the component this property is bound to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type ComponentType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><p>A <span class="xref">System.Type</span> that represents the type of component this property is bound to. When the <span class="xref">System.ComponentModel.PropertyDescriptor.GetValue(System.Object)</span> or <span class="xref">System.ComponentModel.PropertyDescriptor.SetValue(System.Object, System.Object)</span> methods are invoked, the object specified might be an instance of this type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.ComponentType</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_IsReadOnly.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L139">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_IsReadOnly_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.IsReadOnly*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_IsReadOnly" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets a value indicating whether this property is read-only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the property is read-only; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.IsReadOnly</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_NameHashCode.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.NameHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L162">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_NameHashCode_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.NameHashCode*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_NameHashCode" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.NameHashCode">NameHashCode</h4>
+  <div class="markdown level1 summary"><p>Gets the hash code for the name of the member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override int NameHashCode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.MemberDescriptor.NameHashCode</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_PropertyType.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.PropertyType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L150">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_PropertyType_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.PropertyType*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_PropertyType" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.PropertyType">PropertyType</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the type of the property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type PropertyType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><p>A <span class="xref">System.Type</span> that represents the type of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.PropertyType</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_CanResetValue_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.CanResetValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L67">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_CanResetValue_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.CanResetValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_CanResetValue_System_Object_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.CanResetValue(System.Object)">CanResetValue(Object)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, returns whether resetting an object changes its value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanResetValue(object component)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>The component to test for reset capability.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if resetting the component changes its value; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.CanResetValue(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_GetValue_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.GetValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L80">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_GetValue_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.GetValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_GetValue_System_Object_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.GetValue(System.Object)">GetValue(Object)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the current value of the property on a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetValue(object component)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>The component with the property for which to retrieve the value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The value of a property for a given component.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.GetValue(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_ResetValue_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.ResetValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L92">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_ResetValue_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ResetValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_ResetValue_System_Object_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ResetValue(System.Object)">ResetValue(Object)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, resets the value for this property of the component to the default value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ResetValue(object component)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>The component with the property value that is to be reset to the default value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.ResetValue(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_SetValue_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.SetValue(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L102">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_SetValue_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.SetValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_SetValue_System_Object_System_Object_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.SetValue(System.Object,System.Object)">SetValue(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, sets the value of the component to a different value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetValue(object component, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>The component with the property value that is to be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.SetValue(System.Object, System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor_ShouldSerializeValue_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor.ShouldSerializeValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L117">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JPropertyDescriptor_ShouldSerializeValue_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ShouldSerializeValue*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JPropertyDescriptor_ShouldSerializeValue_System_Object_" data-uid="Newtonsoft.Json.Linq.JPropertyDescriptor.ShouldSerializeValue(System.Object)">ShouldSerializeValue(Object)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, determines a value indicating whether the value of this property needs to be persisted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ShouldSerializeValue(object component)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">component</span></td>
+        <td><p>The component with the property to be examined for persistence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the property should be persisted; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ComponentModel.PropertyDescriptor.ShouldSerializeValue(System.Object)</span></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JPropertyDescriptor.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JPropertyDescriptor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JPropertyDescriptor.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

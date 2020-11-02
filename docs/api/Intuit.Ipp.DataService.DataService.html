@@ -1,0 +1,2330 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DataService
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DataService
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Intuit.Ipp.DataService.DataService">
+  
+  
+  <h1 id="Intuit_Ipp_DataService_DataService" data-uid="Intuit.Ipp.DataService.DataService" class="text-break">Class DataService
+  </h1>
+  <div class="markdown level0 summary"><p>This class file contains DataService performs CRUD operations on V3 QuickBooks APIs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DataService</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Intuit.Ipp.DataService.IDataService.html">IDataService</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Intuit.Ipp.DataService.html">Intuit.Ipp.DataService</a></h6>
+  <h6><strong>Assembly</strong>: Intuit.Ipp.DataService.dll</h6>
+  <h5 id="Intuit_Ipp_DataService_DataService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DataService : object, IDataService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService__ctor_Intuit_Ipp_Core_ServiceContext_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.%23ctor(Intuit.Ipp.Core.ServiceContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L64">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService__ctor_" data-uid="Intuit.Ipp.DataService.DataService.#ctor*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService__ctor_Intuit_Ipp_Core_ServiceContext_" data-uid="Intuit.Ipp.DataService.DataService.#ctor(Intuit.Ipp.Core.ServiceContext)">DataService(ServiceContext)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Intuit.Ipp.DataService.DataService.html">DataService</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataService(ServiceContext serviceContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.ServiceContext.html">ServiceContext</a></td>
+        <td><span class="parametername">serviceContext</span></td>
+        <td><p>IPP Service Context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnAddAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnAddAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L89">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnAddAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnAddAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnAddAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnAddAsyncCompleted">OnAddAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Add method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnAddAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnAddAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnCDCAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnCDCAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L185">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnCDCAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnCDCAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnCDCAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnCDCAsyncCompleted">OnCDCAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for CDC method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CDCCallCompletedEventHandler OnCDCAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CDCCallCompletedEventHandler.html">DataServiceCallback.CDCCallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnCDCCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnDeleteAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnDeleteAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L161">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnDeleteAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnDeleteAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnDeleteAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnDeleteAsyncCompleted">OnDeleteAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Delete method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnDeleteAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnDeleteAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnDoNotUpdateAccAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnDoNotUpdateAccAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L153">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnDoNotUpdateAccAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnDoNotUpdateAccAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnDoNotUpdateAccAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnDoNotUpdateAccAsyncCompleted">OnDoNotUpdateAccAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Update account method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnDoNotUpdateAccAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnDoNotUpdateAccAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnFindAllAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnFindAllAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L81">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnFindAllAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnFindAllAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnFindAllAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnFindAllAsyncCompleted">OnFindAllAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for find all method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.FindAllCallCompletedEventHandler OnFindAllAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.FindAllCallCompletedEventHandler.html">DataServiceCallback.FindAllCallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnFindAllCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnFindByIdAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnFindByIdAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L97">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnFindByIdAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnFindByIdAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnFindByIdAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnFindByIdAsyncCompleted">OnFindByIdAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for FindByid method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnFindByIdAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnFindByIdAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnFindByLevelAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnFindByLevelAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L105">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnFindByLevelAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnFindByLevelAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnFindByLevelAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnFindByLevelAsyncCompleted">OnFindByLevelAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for FindByLevel method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.FindAllCallCompletedEventHandler OnFindByLevelAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.FindAllCallCompletedEventHandler.html">DataServiceCallback.FindAllCallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnFindByLevelAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnFindByParentIdAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnFindByParentIdAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L113">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnFindByParentIdAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnFindByParentIdAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnFindByParentIdAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnFindByParentIdAsyncCompleted">OnFindByParentIdAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for FindByParentId method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.FindAllCallCompletedEventHandler OnFindByParentIdAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.FindAllCallCompletedEventHandler.html">DataServiceCallback.FindAllCallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnFindByParentIdAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnGetPdfAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnGetPdfAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L121">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnGetPdfAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnGetPdfAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnGetPdfAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnGetPdfAsyncCompleted">OnGetPdfAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for GetPdf method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.PdfCallCompletedEventHandler OnGetPdfAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.PdfCallCompletedEventHandler.html">DataServiceCallback.PdfCallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnGetPdfAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnRevertAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnRevertAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L177">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnRevertAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnRevertAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnRevertAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnRevertAsyncCompleted">OnRevertAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Revert method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnRevertAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnRevertAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnSendEmailAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnSendEmailAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L129">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnSendEmailAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnSendEmailAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnSendEmailAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnSendEmailAsyncCompleted">OnSendEmailAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for SendEmail method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnSendEmailAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnSendEmailAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnUpdateAccAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnUpdateAccAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L145">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnUpdateAccAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnUpdateAccAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnUpdateAccAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnUpdateAccAsyncCompleted">OnUpdateAccAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Update account method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnUpdateAccAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnUpdateAccAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnUpdateAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnUpdateAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L137">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnUpdateAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnUpdateAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnUpdateAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnUpdateAsyncCompleted">OnUpdateAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Update method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnUpdateAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnUpdateAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_OnVoidAsyncCompleted.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.OnVoidAsyncCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L169">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_OnVoidAsyncCompleted_" data-uid="Intuit.Ipp.DataService.DataService.OnVoidAsyncCompleted*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_OnVoidAsyncCompleted" data-uid="Intuit.Ipp.DataService.DataService.OnVoidAsyncCompleted">OnVoidAsyncCompleted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the call back event for Delete method in asynchronous call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataServiceCallback&lt;IEntity&gt;.CallCompletedEventHandler OnVoidAsyncCompleted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.Core.DataServiceCallback-1.CallCompletedEventHandler.html">DataServiceCallback.CallCompletedEventHandler</a>&lt;&gt;</td>
+        <td><p>The OnDeleteAsyncCompleted call back.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Add__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Add%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L198">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Add_" data-uid="Intuit.Ipp.DataService.DataService.Add*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Add__1___0_" data-uid="Intuit.Ipp.DataService.DataService.Add``1(``0)">Add&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Adds an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Add&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_AddAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.AddAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1514">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_AddAsync_" data-uid="Intuit.Ipp.DataService.DataService.AddAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_AddAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.AddAsync``1(``0)">AddAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Adds specified new entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to be added</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Entity to be added</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_CDC_List_Intuit_Ipp_Data_IEntity__DateTime_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.CDC(List%7BIntuit.Ipp.Data.IEntity%7D%2CDateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1105">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_CDC_" data-uid="Intuit.Ipp.DataService.DataService.CDC*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_CDC_List_Intuit_Ipp_Data_IEntity__DateTime_" data-uid="Intuit.Ipp.DataService.DataService.CDC(List{Intuit.Ipp.Data.IEntity},DateTime)">CDC(List&lt;IEntity&gt;, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns List of entities changed after certain time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntuitCDCResponse CDC(List&lt;IEntity&gt; entityList, DateTime changedSince)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Intuit.Ipp.Data.IEntity</span>&gt;</td>
+        <td><span class="parametername">entityList</span></td>
+        <td><p>List of entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">changedSince</span></td>
+        <td><p>DateTime of timespan after which entities were changed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.DataService.IntuitCDCResponse.html">IntuitCDCResponse</a></td>
+        <td><p>Returns an IntuitCDCResponse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_CDCAsync_List_Intuit_Ipp_Data_IEntity__DateTime_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.CDCAsync(List%7BIntuit.Ipp.Data.IEntity%7D%2CDateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1477">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_CDCAsync_" data-uid="Intuit.Ipp.DataService.DataService.CDCAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_CDCAsync_List_Intuit_Ipp_Data_IEntity__DateTime_" data-uid="Intuit.Ipp.DataService.DataService.CDCAsync(List{Intuit.Ipp.Data.IEntity},DateTime)">CDCAsync(List&lt;IEntity&gt;, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Retrieves entities changed since particular Date</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CDCAsync(List&lt;IEntity&gt; entityList, DateTime changedSince)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Intuit.Ipp.Data.IEntity</span>&gt;</td>
+        <td><span class="parametername">entityList</span></td>
+        <td><p>List of entities to be retrieved</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">changedSince</span></td>
+        <td><p>date after which entities changed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_CreateNewBatch.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.CreateNewBatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1089">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_CreateNewBatch_" data-uid="Intuit.Ipp.DataService.DataService.CreateNewBatch*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_CreateNewBatch" data-uid="Intuit.Ipp.DataService.DataService.CreateNewBatch">CreateNewBatch()</h4>
+  <div class="markdown level1 summary"><p>Creates new batch</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Batch CreateNewBatch()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.DataService.Batch.html">Batch</a></td>
+        <td><p>returns the batch object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Delete__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Delete%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L260">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Delete_" data-uid="Intuit.Ipp.DataService.DataService.Delete*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Delete__1___0_" data-uid="Intuit.Ipp.DataService.DataService.Delete``1(``0)">Delete&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Deletes an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Delete&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_DeleteAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.DeleteAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1554">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_DeleteAsync_" data-uid="Intuit.Ipp.DataService.DataService.DeleteAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_DeleteAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.DeleteAsync``1(``0)">DeleteAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Deletes an entity under the specified realm. The realm must be set in the context</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to Delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_DoNotUpdateAccAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.DoNotUpdateAccAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1703">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_DoNotUpdateAccAsync_" data-uid="Intuit.Ipp.DataService.DataService.DoNotUpdateAccAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_DoNotUpdateAccAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.DoNotUpdateAccAsync``1(``0)">DoNotUpdateAccAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Updates an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DoNotUpdateAccAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_DoNotUpdateAccountOnTxns__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.DoNotUpdateAccountOnTxns%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L524">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_DoNotUpdateAccountOnTxns_" data-uid="Intuit.Ipp.DataService.DataService.DoNotUpdateAccountOnTxns*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_DoNotUpdateAccountOnTxns__1___0_" data-uid="Intuit.Ipp.DataService.DataService.DoNotUpdateAccountOnTxns``1(``0)">DoNotUpdateAccountOnTxns&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>donotupdateaccountontxns an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T DoNotUpdateAccountOnTxns&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Download_Intuit_Ipp_Data_Attachable_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Download(Intuit.Ipp.Data.Attachable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L2023">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Download_" data-uid="Intuit.Ipp.DataService.DataService.Download*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Download_Intuit_Ipp_Data_Attachable_" data-uid="Intuit.Ipp.DataService.DataService.Download(Intuit.Ipp.Data.Attachable)">Download(Attachable)</h4>
+  <div class="markdown level1 summary"><p>Returns an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Download(Attachable entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Intuit.Ipp.Data.Attachable</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity type to Find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><p>Returns an entity of specified Id.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindAll__1___0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindAll%60%601(%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L967">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindAll_" data-uid="Intuit.Ipp.DataService.DataService.FindAll*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindAll__1___0_System_Int32_System_Int32_" data-uid="Intuit.Ipp.DataService.DataService.FindAll``1(``0,System.Int32,System.Int32)">FindAll&lt;T&gt;(T, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a list of all entities of type T under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlyCollection&lt;T&gt; FindAll&lt;T&gt;(T entity, int startPosition = 1, int maxResults = 500)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>The entity for which the data is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startPosition</span></td>
+        <td><p>The start position to retrieve.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxResults</span></td>
+        <td><p>Maximum no. of results to retrieve</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyCollection</span>&lt;T&gt;</td>
+        <td><p>Returns the list of entities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindAllAsync__1___0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindAllAsync%60%601(%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1218">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindAllAsync_" data-uid="Intuit.Ipp.DataService.DataService.FindAllAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindAllAsync__1___0_System_Int32_System_Int32_" data-uid="Intuit.Ipp.DataService.DataService.FindAllAsync``1(``0,System.Int32,System.Int32)">FindAllAsync&lt;T&gt;(T, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Retrieves specified entity based passed page number and page size</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindAllAsync&lt;T&gt;(T entity, int startPosition = 1, int maxResults = 500)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to be retrieved</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startPosition</span></td>
+        <td><p>The start position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxResults</span></td>
+        <td><p>The max results.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Entity to be retrieved</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindById__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindById%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L792">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindById_" data-uid="Intuit.Ipp.DataService.DataService.FindById*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindById__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindById``1(``0)">FindById&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Returns an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T FindById&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity type to Find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns an entity of specified Id.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindByIdAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindByIdAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1339">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindByIdAsync_" data-uid="Intuit.Ipp.DataService.DataService.FindByIdAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindByIdAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindByIdAsync``1(``0)">FindByIdAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Call the Asynchronous methods to get a particular entity details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindByIdAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to find</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindByLevel__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindByLevel%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L928">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindByLevel_" data-uid="Intuit.Ipp.DataService.DataService.FindByLevel*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindByLevel__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindByLevel``1(``0)">FindByLevel&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Returns entities by the Level specified, supported for TaxClassification only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlyCollection&lt;T&gt; FindByLevel&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyCollection</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindByLevelAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindByLevelAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1289">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindByLevelAsync_" data-uid="Intuit.Ipp.DataService.DataService.FindByLevelAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindByLevelAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindByLevelAsync``1(``0)">FindByLevelAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Retrieves specified entities based on passed Level, supported for TaxClassification only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindByLevelAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindByParentId__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindByParentId%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L890">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindByParentId_" data-uid="Intuit.Ipp.DataService.DataService.FindByParentId*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindByParentId__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindByParentId``1(``0)">FindByParentId&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Returns entities by the Parent Id specified, supported for TaxClassification only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlyCollection&lt;T&gt; FindByParentId&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyCollection</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_FindByParentIdAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.FindByParentIdAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1314">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_FindByParentIdAsync_" data-uid="Intuit.Ipp.DataService.DataService.FindByParentIdAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_FindByParentIdAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.FindByParentIdAsync``1(``0)">FindByParentIdAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Retrieves specified entities based on passed ParentId, supported for TaxClassification only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindByParentIdAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_GetPdf__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.GetPdf%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L586">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_GetPdf_" data-uid="Intuit.Ipp.DataService.DataService.GetPdf*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_GetPdf__1___0_" data-uid="Intuit.Ipp.DataService.DataService.GetPdf``1(``0)">GetPdf&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Returns an entity as pdf bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] GetPdf&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to be returned as pdf bytes (entities of type Sales Receipt, Invoice and Estimate are supported to be returned as pdf).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><p>Returns pdf as bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_GetPdfAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.GetPdfAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1373">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_GetPdfAsync_" data-uid="Intuit.Ipp.DataService.DataService.GetPdfAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_GetPdfAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.GetPdfAsync``1(``0)">GetPdfAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Call the Asynchronous methods to get a particular entity as pdf.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetPdfAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to be returned as pdf bytes (entities of type Sales Receipt, Invoice and Estimate are supported to be returned as pdf).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_SendEmail__1___0_System_String_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.SendEmail%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L670">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_SendEmail_" data-uid="Intuit.Ipp.DataService.DataService.SendEmail*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_SendEmail__1___0_System_String_" data-uid="Intuit.Ipp.DataService.DataService.SendEmail``1(``0,System.String)">SendEmail&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"><p>Call the synchronous methods to send entity of type T in an email.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SendEmail&lt;T&gt;(T entity, string sendToEmail = null)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to be  sent in an email. This is not the actual entity that will be emailed. This entity needs to be present on server and the entity on the server will be sent in an email.Any changes in the passed in entity must be committed to the server in order for it to reflect in the email. Entities of type Sales Receipt, Invoice and Estimate are supported to be sent in an email as pdf</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sendToEmail</span></td>
+        <td><p>Optional parameter to specify an email address</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Retruns the entity sent in email</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_SendEmailAsync__1___0_String_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.SendEmailAsync%60%601(%60%600%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1411">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_SendEmailAsync_" data-uid="Intuit.Ipp.DataService.DataService.SendEmailAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_SendEmailAsync__1___0_String_" data-uid="Intuit.Ipp.DataService.DataService.SendEmailAsync``1(``0,String)">SendEmailAsync&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"><p>Call the Asynchronous methods to send entity of type T in an email.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendEmailAsync&lt;T&gt;(T entity, String sendToEmail = null)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Instance of entity to be  sent in an email. This is not the actual entity that will be emailed. This entity needs to be present on server and the entity on the server will be sent in an email.Any changes in the passed in entity must be committed to the server in order for it to reflect in the email. Entities of type Sales Receipt, Invoice and Estimate are supported to be sent in an email as pdf</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">sendToEmail</span></td>
+        <td><p>Optional parameter to specify an email address</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Update__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Update%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L401">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Update_" data-uid="Intuit.Ipp.DataService.DataService.Update*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Update__1___0_" data-uid="Intuit.Ipp.DataService.DataService.Update``1(``0)">Update&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Updates an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Update&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_UpdateAccAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.UpdateAccAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1663">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_UpdateAccAsync_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAccAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_UpdateAccAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAccAsync``1(``0)">UpdateAccAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Updates an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAccAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_UpdateAccountOnTxns__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.UpdateAccountOnTxns%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L464">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_UpdateAccountOnTxns_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAccountOnTxns*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_UpdateAccountOnTxns__1___0_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAccountOnTxns``1(``0)">UpdateAccountOnTxns&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>updateaccountontxns an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T UpdateAccountOnTxns&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_UpdateAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.UpdateAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1626">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_UpdateAsync_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_UpdateAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.UpdateAsync``1(``0)">UpdateAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Updates an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Returns an updated version of the entity with updated identifier and sync token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Upload_Intuit_Ipp_Data_Attachable_System_IO_Stream_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Upload(Intuit.Ipp.Data.Attachable%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1910">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Upload_" data-uid="Intuit.Ipp.DataService.DataService.Upload*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Upload_Intuit_Ipp_Data_Attachable_System_IO_Stream_" data-uid="Intuit.Ipp.DataService.DataService.Upload(Intuit.Ipp.Data.Attachable,System.IO.Stream)">Upload(Attachable, System.IO.Stream)</h4>
+  <div class="markdown level1 summary"><p>Upload a stream with metadata defined in Attachable under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Attachable Upload(Attachable entity, System.IO.Stream stream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Intuit.Ipp.Data.Attachable</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Attachment Metadata of Stream to be Uploaded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream to be uploaded</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Intuit.Ipp.Data.Attachable</span></td>
+        <td><p>Returns an uploaded attachment with updated identifier and sync token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_Void__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.Void%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L328">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_Void_" data-uid="Intuit.Ipp.DataService.DataService.Void*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_Void__1___0_" data-uid="Intuit.Ipp.DataService.DataService.Void``1(``0)">Void&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Voids an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Void&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Void (only entities of type Sales Receipt and Payment are supported to be voided)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns the voided entity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService_VoidAsync__1___0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService.VoidAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L1588">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_DataService_DataService_VoidAsync_" data-uid="Intuit.Ipp.DataService.DataService.VoidAsync*"></a>
+  <h4 id="Intuit_Ipp_DataService_DataService_VoidAsync__1___0_" data-uid="Intuit.Ipp.DataService.DataService.VoidAsync``1(``0)">VoidAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Async function that Voids an entity under the specified realm. The realm must be set in the context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void VoidAsync&lt;T&gt;(T entity)
+
+    where T : IEntity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>Entity to Void (only entities of type Sales Receipt and Payment are supported to be voided)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic Type T.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.DataService.IDataService.html">IDataService</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_DataService_DataService.md&amp;value=---%0Auid%3A%20Intuit.Ipp.DataService.DataService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService/DataService.cs/#L48" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

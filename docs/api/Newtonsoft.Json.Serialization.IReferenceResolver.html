@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IReferenceResolver
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IReferenceResolver
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver">
+  
+  
+  <h1 id="Newtonsoft_Json_Serialization_IReferenceResolver" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver" class="text-break">Interface IReferenceResolver
+  </h1>
+  <div class="markdown level0 summary"><p>Used to resolve references when serializing and deserializing JSON by the <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.Serialization.html">Newtonsoft.Json.Serialization</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_Serialization_IReferenceResolver_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IReferenceResolver</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Serialization_IReferenceResolver_AddReference_System_Object_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Serialization.IReferenceResolver.AddReference(System.Object%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Serialization/IReferenceResolver.cs/#L62">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Serialization_IReferenceResolver_AddReference_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.AddReference*"></a>
+  <h4 id="Newtonsoft_Json_Serialization_IReferenceResolver_AddReference_System_Object_System_String_System_Object_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.AddReference(System.Object,System.String,System.Object)">AddReference(Object, String, Object)</h4>
+  <div class="markdown level1 summary"><p>Adds a reference to the specified object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddReference(object context, string reference, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">reference</span></td>
+        <td><p>The reference.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The object to reference.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Serialization_IReferenceResolver_GetReference_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Serialization.IReferenceResolver.GetReference(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Serialization/IReferenceResolver.cs/#L46">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Serialization_IReferenceResolver_GetReference_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.GetReference*"></a>
+  <h4 id="Newtonsoft_Json_Serialization_IReferenceResolver_GetReference_System_Object_System_Object_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.GetReference(System.Object,System.Object)">GetReference(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Gets the reference for the sepecified object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string GetReference(object context, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The object to get a reference for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The reference to the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Serialization_IReferenceResolver_IsReferenced_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Serialization.IReferenceResolver.IsReferenced(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Serialization/IReferenceResolver.cs/#L55">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Serialization_IReferenceResolver_IsReferenced_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.IsReferenced*"></a>
+  <h4 id="Newtonsoft_Json_Serialization_IReferenceResolver_IsReferenced_System_Object_System_Object_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.IsReferenced(System.Object,System.Object)">IsReferenced(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified object is referenced.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsReferenced(object context, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The object to test for a reference.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified object is referenced; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Serialization_IReferenceResolver_ResolveReference_System_Object_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Serialization.IReferenceResolver.ResolveReference(System.Object%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Serialization/IReferenceResolver.cs/#L39">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Serialization_IReferenceResolver_ResolveReference_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.ResolveReference*"></a>
+  <h4 id="Newtonsoft_Json_Serialization_IReferenceResolver_ResolveReference_System_Object_System_String_" data-uid="Newtonsoft.Json.Serialization.IReferenceResolver.ResolveReference(System.Object,System.String)">ResolveReference(Object, String)</h4>
+  <div class="markdown level1 summary"><p>Resolves a reference to its object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ResolveReference(object context, string reference)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">reference</span></td>
+        <td><p>The reference to resolve.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The object that</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Serialization_IReferenceResolver.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Serialization.IReferenceResolver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Serialization/IReferenceResolver.cs/#L31" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

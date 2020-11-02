@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>V3-DotNet-SDK </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="V3-DotNet-SDK ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p><a href="https://help.developer.intuit.com/s/SDKFeedback?cid=1155"><img src="views/SDK.png" alt="SDK Banner"></a></p>
+<h1 id="v3-dotnet-sdk">V3-DotNet-SDK</h1>
+<p align="center">
+    <img src="./os-project-logo.svg" width="150" alt="Logo">
+</p>
+IDG .NET SDK for QuickBooks V3
+(Class lib Project written in .NET Standard 2.0- Supports .Net Full Framework 4.6.1, 4.7.2 and .Net Core 2.1,.Net Core 2.2)
+<p><strong>Support:</strong> <a href="https://help.developer.intuit.com/s/"><img src="https://img.shields.io/badge/Support-Intuit%20Developer-blue.svg" alt="Help"></a> <br>
+<strong>Documentation:</strong> <a href="https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net"><img src="https://img.shields.io/badge/User%20Guide-SDK%20docs-blue.svg" alt="User Guide"></a> <a href="https://developer-static.intuit.com/SDKDocs/QBV3Doc/IPPDotNetDevKitV3/html/5ca993d2-af77-d050-e246-681e5983b440.htm"><img src="https://img.shields.io/badge/Class%20Lib%20Docs-.Net%20SDK-blue.svg" alt="Refer SDK class lib docs"></a><br>
+<strong>License:</strong> <a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="http://img.shields.io/badge/license-Apache%202-brightgreen.svg" alt="Apache 2"></a> <br>
+<strong>Binaries:</strong> <a href="https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3"><img src="https://img.shields.io/badge/Nuget-14.4.0.0-blue.svg" alt="Nuget"></a><br>
+<strong>Binaries for OAuth2 only:</strong> <a href="https://www.nuget.org/packages/IppOAuth2PlatformSdk"><img src="https://img.shields.io/badge/Nuget-14.0.0.0-blue.svg" alt="Nuget"></a><br></p>
+<p>The QuickBooks Online .NET SDK provides a set of .NET class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. It supports .Net Core 2.1, .Net Core 2.2, .Net Full Framework 4.6.1 and 4.7.2. Some of the features included in this SDK are:</p>
+<ul>
+<li>Ability to perform single and batch processing of CRUD operations on all QuickBooks Online entities.</li>
+<li>A common interface to the Request and Response Handler with two implemented classes to handle both synchronous and asynchronous requests.</li>
+<li>Support for both XML and JSON Request and Response formats.</li>
+<li>Ability to configure app settings in the configuration file requiring no additional code change.</li>
+<li>Support for Gzip and Deflate compression formats to improve performance of Service calls to QuickBooks Online.</li>
+<li>Retry policy constructors to help apps handle transient errors.</li>
+<li>Logging mechanisms for trace and request/response logging.</li>
+<li>Query Filters that enable you to write Intuit queries to retrieve QuickBooks Online entities whose properties meet a specified criteria.</li>
+<li>Queries for accessing QuickBooks Reports.</li>
+<li>Sparse Update to update writable properties specified in a request and leave the others unchanged.</li>
+<li>Change data that enables you to retrieve a list of entities modified during specified time points.</li>
+<li>Supports OAuth2</li>
+</ul>
+<p>Note:
+-&gt;Oauth1 support has been removed from this SDK. Intuit.Ipp.Retry logic now have been moved to Intuit.Ipp.Core. So, if you see Retry not found issues while updating your code, just remove that Using Intuit.Ipp.Retry statement and add Using Intuit.Ipp.Core if not already present.</p>
+<p><strong>Understanding the .Net SDK code structure:</strong></p>
+<p><strong>Schema</strong></p>
+<ul>
+<li><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.XsdExtension/Schema">Schema</a> - Schema files for QBO V3 APIs are available under this folder.</li>
+</ul>
+<p>The code has been divided into following main categories-</p>
+<p><strong>Data projects</strong></p>
+<ul>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.XsdExtension">Intuit.Ipp.XsdExtension</a> - This is an external tool whose executable is used to generate the different classes based on the input QBO V3 service schema.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Tools/XsdExtension/Intuit.Ipp.Data/">Intuit.Ipp.Data</a> - This project has the updated classes in CDMEntities folder generated by the XsdExtension tool based on new releases of schema.</p>
+</li>
+</ul>
+<p><strong>Core and Common functionality projects</strong></p>
+<ul>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Core">Intuit.Ipp.Core</a> - This project does the job of handling the core functionalities like handling configuration, handling sync, async requests, callbacks and retry logic.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.QueryFilter">Intuit.Ipp.QueryFilter</a> - Handles all query operations related logic.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Utility">Intuit.Ipp.Utility</a> - Handles serialization, deserialization logic, compression, and other config based logic for the API calls.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Diagnostics">Intuit.Ipp.Diagnostics</a> - Handles the old Trace Logger code.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Exception">Intuit.Ipp.Exception</a> - Handles the exception logic for the different services calls.</p>
+</li>
+</ul>
+<p><strong>Service projects</strong></p>
+<ul>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.DataService">Intuit.Ipp.DataService</a> - Handles all the Namelist and Transaction entities related operations for sync, async modes and batch mode.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.EntitlementService">Intuit.Ipp.EntitlementService</a>- Handles Entitlement API related operations. It supports XML request -response format only.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.GlobalTaxService">Intuit.Ipp.GlobalTaxService</a> - Handles the custom tax creation related operations. It supports JSON API request- response format only.</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.ReportService">Intuit.Ipp.ReportService</a> - Handles all the Reports endpoints related operations</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.WebHooksService">Intuit.Ipp.WebHooksService</a> - Handles the Webhooks related logic.</p>
+</li>
+</ul>
+<p><strong>Security/Auth related projects</strong></p>
+<ul>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.OAuth2PlatformClient">Intuit.Ipp.OAuth2PlatformClient</a> - Handles OAuth2 related API calls</p>
+</li>
+<li><p><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Security">Intuit.Ipp.Security</a> - Generates the Authorization header for the API calls</p>
+</li>
+</ul>
+<p><strong>Test Projects</strong></p>
+<ul>
+<li>Unit Tests - All unit test projects are available under the <a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code">Code</a> folder. You can identify them if they have a .Test suffix in their name.</li>
+<li>Integration Tests -  All integration tests are available under <a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Test/Intuit.Ipp.Test">Intuit.Ipp.Test</a></li>
+</ul>
+<p><strong>Nuget Package Creation Project</strong></p>
+<ul>
+<li><a href="https://github.com/intuit/QuickBooks-V3-DotNET-SDK/tree/master/IPPDotNetDevKitCSV3/Code/Intuit.Ipp.Nupkg">Intuit.Ipp.Nupkg</a>- This project has the configuration for version of package and all dependencies.After you do a build in Release mode, this project will generate the Nuget packages under the folder Code-&gt;artifacts-&gt;nupkg for the different .Net supported versions listed above. You can then upload the package to a Nuget org.</li>
+</ul>
+<p><strong>Understanding some important exceptions thrown by the SDK</strong></p>
+<ul>
+<li><strong>IdsException</strong> - This is the base execption thrown when other sub exceptions cannot catch it. Make sure to enable logs to get details for the internal error when you see this exception. These may be related to service downtime.</li>
+<li><strong>ValidationException</strong> - These are valid business validation rules based error and should be corrected in the code. These are all API related exceptions,</li>
+<li><strong>InvalidTokenException</strong> - This exception is thrown when your OAuth2 token has expired or is invalid. You will need to regenerate a new token by doing OAuth2 again or renew you tokens if they are still valid.</li>
+</ul>
+<h2 id="enabling-logs-for-the-sdk">Enabling logs for the SDK</h2>
+<p>Logs help you in easliy identifying detailed issues with your payload, get more info in the exception details for fixing them.</p>
+<ul>
+<li><p>New logging support was added to the SDK which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
+Serilogger logs can be enabled for <strong>OAuth2PlatformClient</strong> using the following lines -</p>
+<pre><code>      static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
+      //Use this line to enable only intuit-tid based logs, no tokens/response will be logged. 
+      //If set to false, all detailed logs will be available for response
+      //If set to true, only intuit-tid response headers will be available
+      oauthClient.EnableAdvancedLoggerInfoMode = true;
+      oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
+      oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
+      oauthClient.EnableSerilogRequestResponseLoggingForRollingFile = true;
+      oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
+      oauthClient.ServiceRequestLoggingLocationForFile = @&quot;C:\Documents\Serilog_log&quot;;//Any drive logging location
+</code></pre>
+</li>
+</ul>
+<p>Serilogger logs can be enabled for <strong>QBO API calls</strong> using the following lines -</p>
+<pre><code>        ServiceContext context = new ServiceContext(dictionary[&quot;realmId&quot;], IntuitServicesType.QBO, oauthValidator);
+
+        context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
+        context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
+        context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
+        context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
+        context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @&quot;C:\Documents\Serilog_log&quot;; //Any drive logging location
+        
+</code></pre>
+<p>Old file based logs can be enabled by using the following lines-</p>
+<pre><code>        context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
+        context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @&quot;C:\Documents\Serilog_log&quot;; //Any drive logging location
+        
+</code></pre>
+<ul>
+<li><strong>Fiddler logs are really useful too. You can enable them by following the steps below</strong></li>
+</ul>
+<p>Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
+When you download Fiddler, open it, go to Tools &gt; Fiddler Option &gt; Enable (Tick Mark) Capture HTTPS connects &gt; Enable Decrypt Https traffic. That’s it. No other setting is required. The .NET localhost is by default captured in Fiddler, so after you have enabled https traffic in Fiddler just run your code. (Fiddler should be open.) You will see requests and responses logged in Fiddler.
+You should set 'decode the raw request body' by clicking on the yellow bar in Fiddler. Then go to the File menu on top, select Save all session &gt; Save the fiddler session. A .saz file is created, which can be viewed later.</p>
+<h2 id="running-tests">Running Tests</h2>
+<p>Refer to the following steps to generate all the keys required to run tests using OAuth Playground-</p>
+<ul>
+<li><p>Go to <a href="https://developer.intuit.com/">Developer Docs</a>.</p>
+</li>
+<li><p>Create an app on our IDG platform for the QuickBooks Online v3 APIs.</p>
+</li>
+<li><p>For OAuth2 apps, you will get a set of Development keys, including client key and client secret. This can be used to get OAuth access token and refresh token for sandbox companies.</p>
+</li>
+<li><p>To get Prod app keys to get OAuth tokens for live companies: Go to your app-&gt;Settings tab-&gt; enter all URLs and save. Then get the prod keys from Keys tab under Prod section.</p>
+</li>
+<li><p>To get OAuth access tokens, go to your app's dashboard, Click <code>Oauth Playground</code></p>
+<ul>
+<li>For OAuth2 apps, select the desired app and make sure the OAuth playground redirect_uri is present under Keys tab and go through the OAuth authorization flow to get access and refresh tokens along with the realmid to make API calls for QuickBooks company.
+<ul>
+<li>Access tokens are valid for 1 hour which can be refreshed using refesh token. When you request a fresh access token, always use the refresh token returned in the most recent refreshing access token API response. A refresh token expires 24 hours after you receive it. More info can be found at: <a href="https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0#/Refreshing_the_access_token">Refreshing the access token</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>NOTE: For sandbox testing, you need to use dev app keys and sandbox base URL.
+For live/prod QuickBooks company testing, use prod app keys and prod base URL after doing a private publish as mentioned below.
+Go to your app-&gt;Prod tab-&gt; enter all URLs and save. Then get the prod keys from Keys tab under Prod tab of the app.</p>
+</li>
+</ul>
+<h2 id="contribute">Contribute:</h2>
+<p>We greatly encourage contributions! You can add new features, report and fix existing bugs, write docs and
+tutorials, or any of the above. Feel free to open issues and/or send pull requests.</p>
+<p>The <code>master</code> branch of this repository contains the latest release of the SDK, while snapshots are published to the <code>develop</code> branch. In general, pull requests should be submitted against <code>develop</code> by forking this repo into your account, developing and testing your changes, and creating pull requests to request merges. See the <a href="https://guides.github.com/activities/contributing-to-open-source/">Contributing to a Project</a>
+article for more details about how to contribute.</p>
+<p>Steps to contribute:</p>
+<ol>
+<li>Fork this repository into your account on Github</li>
+<li>Clone <em>your forked repository</em> (not our original one) to your hard drive with <code>git clone https://github.com/YOURUSERNAME/QuickBooks-V3-DotNET-SDK.git</code></li>
+<li>Design and develop your changes</li>
+<li>Add/update unit tests</li>
+<li>Create a pull request for review to request merge</li>
+<li>Obtain approval before your changes can be merged</li>
+</ol>
+<p>Note: Before you submit the pull request, make sure to remove the keys and tokens from appsettings.json</p>
+<p>Thank you for your contribution!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

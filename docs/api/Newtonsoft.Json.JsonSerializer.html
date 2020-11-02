@@ -1,0 +1,1097 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JsonSerializer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JsonSerializer
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.JsonSerializer">
+  
+  
+  <h1 id="Newtonsoft_Json_JsonSerializer" data-uid="Newtonsoft.Json.JsonSerializer" class="text-break">Class JsonSerializer
+  </h1>
+  <div class="markdown level0 summary"><p>Serializes and deserializes objects into and from the JSON format.
+The <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> enables you to control how objects are encoded into JSON.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JsonSerializer</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.html">Newtonsoft.Json</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_JsonSerializer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JsonSerializer</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer__ctor.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L287">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer__ctor_" data-uid="Newtonsoft.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer__ctor" data-uid="Newtonsoft.Json.JsonSerializer.#ctor">JsonSerializer()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Binder.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Binder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L89">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Binder_" data-uid="Newtonsoft.Json.JsonSerializer.Binder*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Binder" data-uid="Newtonsoft.Json.JsonSerializer.Binder">Binder</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <span class="xref">System.Runtime.Serialization.SerializationBinder</span> used by the serializer when resolving type names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual SerializationBinder Binder { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.SerializationBinder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_ConstructorHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.ConstructorHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L230">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_ConstructorHandling_" data-uid="Newtonsoft.Json.JsonSerializer.ConstructorHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_ConstructorHandling" data-uid="Newtonsoft.Json.JsonSerializer.ConstructorHandling">ConstructorHandling</h4>
+  <div class="markdown level1 summary"><p>Gets or sets how constructors are used during deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ConstructorHandling ConstructorHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.ConstructorHandling.html">ConstructorHandling</a></td>
+        <td><p>The constructor handling.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Context.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Context%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L277">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Context_" data-uid="Newtonsoft.Json.JsonSerializer.Context*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Context" data-uid="Newtonsoft.Json.JsonSerializer.Context">Context</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <span class="xref">System.Runtime.Serialization.StreamingContext</span> used by the serializer when invoking serialization callback methods.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual StreamingContext Context { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.StreamingContext</span></td>
+        <td><p>The context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_ContractResolver.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.ContractResolver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L261">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_ContractResolver_" data-uid="Newtonsoft.Json.JsonSerializer.ContractResolver*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_ContractResolver" data-uid="Newtonsoft.Json.JsonSerializer.ContractResolver">ContractResolver</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the contract resolver used by the serializer when
+serializing .NET objects to JSON and vice versa.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IContractResolver ContractResolver { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Serialization.IContractResolver.html">IContractResolver</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Converters.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Converters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L246">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Converters_" data-uid="Newtonsoft.Json.JsonSerializer.Converters*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Converters" data-uid="Newtonsoft.Json.JsonSerializer.Converters">Converters</h4>
+  <div class="markdown level1 summary"><p>Gets a collection <a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a> that will be used during serialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JsonConverterCollection Converters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonConverterCollection.html">JsonConverterCollection</a></td>
+        <td><p>Collection <a class="xref" href="Newtonsoft.Json.JsonConverter.html">JsonConverter</a> that will be used during serialization.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_DefaultValueHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.DefaultValueHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L198">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_DefaultValueHandling_" data-uid="Newtonsoft.Json.JsonSerializer.DefaultValueHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_DefaultValueHandling" data-uid="Newtonsoft.Json.JsonSerializer.DefaultValueHandling">DefaultValueHandling</h4>
+  <div class="markdown level1 summary"><p>Get or set how null default are handled during serialization and deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DefaultValueHandling DefaultValueHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.DefaultValueHandling.html">DefaultValueHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_MissingMemberHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.MissingMemberHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L168">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_MissingMemberHandling_" data-uid="Newtonsoft.Json.JsonSerializer.MissingMemberHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_MissingMemberHandling" data-uid="Newtonsoft.Json.JsonSerializer.MissingMemberHandling">MissingMemberHandling</h4>
+  <div class="markdown level1 summary"><p>Get or set how missing members (e.g. JSON contains a property that isn't a member on the object) are handled during deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual MissingMemberHandling MissingMemberHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.MissingMemberHandling.html">MissingMemberHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_NullValueHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.NullValueHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L183">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_NullValueHandling_" data-uid="Newtonsoft.Json.JsonSerializer.NullValueHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_NullValueHandling" data-uid="Newtonsoft.Json.JsonSerializer.NullValueHandling">NullValueHandling</h4>
+  <div class="markdown level1 summary"><p>Get or set how null values are handled during serialization and deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual NullValueHandling NullValueHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.NullValueHandling.html">NullValueHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_ObjectCreationHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.ObjectCreationHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L214">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_ObjectCreationHandling_" data-uid="Newtonsoft.Json.JsonSerializer.ObjectCreationHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_ObjectCreationHandling" data-uid="Newtonsoft.Json.JsonSerializer.ObjectCreationHandling">ObjectCreationHandling</h4>
+  <div class="markdown level1 summary"><p>Gets or sets how objects are created during deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ObjectCreationHandling ObjectCreationHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.ObjectCreationHandling.html">ObjectCreationHandling</a></td>
+        <td><p>The object creation handling.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_PreserveReferencesHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.PreserveReferencesHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L138">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_PreserveReferencesHandling_" data-uid="Newtonsoft.Json.JsonSerializer.PreserveReferencesHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_PreserveReferencesHandling" data-uid="Newtonsoft.Json.JsonSerializer.PreserveReferencesHandling">PreserveReferencesHandling</h4>
+  <div class="markdown level1 summary"><p>Gets or sets how object references are preserved by the serializer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual PreserveReferencesHandling PreserveReferencesHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.PreserveReferencesHandling.html">PreserveReferencesHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_ReferenceLoopHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.ReferenceLoopHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L153">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_ReferenceLoopHandling_" data-uid="Newtonsoft.Json.JsonSerializer.ReferenceLoopHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_ReferenceLoopHandling" data-uid="Newtonsoft.Json.JsonSerializer.ReferenceLoopHandling">ReferenceLoopHandling</h4>
+  <div class="markdown level1 summary"><p>Get or set how reference loops (e.g. a class referencing itself) is handled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ReferenceLoopHandling ReferenceLoopHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.ReferenceLoopHandling.html">ReferenceLoopHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_ReferenceResolver.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.ReferenceResolver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L68">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_ReferenceResolver_" data-uid="Newtonsoft.Json.JsonSerializer.ReferenceResolver*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_ReferenceResolver" data-uid="Newtonsoft.Json.JsonSerializer.ReferenceResolver">ReferenceResolver</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Newtonsoft.Json.Serialization.IReferenceResolver.html">IReferenceResolver</a> used by the serializer when resolving references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IReferenceResolver ReferenceResolver { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Serialization.IReferenceResolver.html">IReferenceResolver</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_TypeNameAssemblyFormat.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.TypeNameAssemblyFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L123">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_TypeNameAssemblyFormat_" data-uid="Newtonsoft.Json.JsonSerializer.TypeNameAssemblyFormat*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_TypeNameAssemblyFormat" data-uid="Newtonsoft.Json.JsonSerializer.TypeNameAssemblyFormat">TypeNameAssemblyFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets how a type name assembly is written and resolved by the serializer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual FormatterAssemblyStyle TypeNameAssemblyFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.Formatters.FormatterAssemblyStyle</span></td>
+        <td><p>The type name assembly format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_TypeNameHandling.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.TypeNameHandling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L107">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_TypeNameHandling_" data-uid="Newtonsoft.Json.JsonSerializer.TypeNameHandling*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_TypeNameHandling" data-uid="Newtonsoft.Json.JsonSerializer.TypeNameHandling">TypeNameHandling</h4>
+  <div class="markdown level1 summary"><p>Gets or sets how type name writing and reading is handled by the serializer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TypeNameHandling TypeNameHandling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.TypeNameHandling.html">TypeNameHandling</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Create_Newtonsoft_Json_JsonSerializerSettings_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Create(Newtonsoft.Json.JsonSerializerSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L307">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Create_" data-uid="Newtonsoft.Json.JsonSerializer.Create*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Create_Newtonsoft_Json_JsonSerializerSettings_" data-uid="Newtonsoft.Json.JsonSerializer.Create(Newtonsoft.Json.JsonSerializerSettings)">Create(JsonSerializerSettings)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> instance using the specified <a class="xref" href="Newtonsoft.Json.JsonSerializerSettings.html">JsonSerializerSettings</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JsonSerializer Create(JsonSerializerSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonSerializerSettings.html">JsonSerializerSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The settings to be applied to the <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a></td>
+        <td><p>A new <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> instance using the specified <a class="xref" href="Newtonsoft.Json.JsonSerializerSettings.html">JsonSerializerSettings</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Deserialize_Newtonsoft_Json_JsonReader_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Deserialize(Newtonsoft.Json.JsonReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L375">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Deserialize_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Deserialize_Newtonsoft_Json_JsonReader_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize(Newtonsoft.Json.JsonReader)">Deserialize(JsonReader)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the Json structure contained by the specified <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Deserialize(JsonReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> that contains the JSON structure to deserialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The <span class="xref">System.Object</span> being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Deserialize_Newtonsoft_Json_JsonReader_System_Type_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Deserialize(Newtonsoft.Json.JsonReader%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L411">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Deserialize_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Deserialize_Newtonsoft_Json_JsonReader_System_Type_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize(Newtonsoft.Json.JsonReader,System.Type)">Deserialize(JsonReader, Type)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the Json structure contained by the specified <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a>
+into an instance of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Deserialize(JsonReader reader, Type objectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> containing the object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">objectType</span></td>
+        <td><p>The <span class="xref">System.Type</span> of object being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The instance of <code data-dev-comment-type="paramref" class="paramref">objectType</code> being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Deserialize_System_IO_TextReader_System_Type_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Deserialize(System.IO.TextReader%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L387">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Deserialize_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Deserialize_System_IO_TextReader_System_Type_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize(System.IO.TextReader,System.Type)">Deserialize(TextReader, Type)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the Json structure contained by the specified <span class="xref">System.IO.StringReader</span>
+into an instance of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Deserialize(TextReader reader, Type objectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <span class="xref">System.IO.TextReader</span> containing the object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">objectType</span></td>
+        <td><p>The <span class="xref">System.Type</span> of object being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The instance of <code data-dev-comment-type="paramref" class="paramref">objectType</code> being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Deserialize__1_Newtonsoft_Json_JsonReader_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Deserialize%60%601(Newtonsoft.Json.JsonReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L399">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Deserialize_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Deserialize__1_Newtonsoft_Json_JsonReader_" data-uid="Newtonsoft.Json.JsonSerializer.Deserialize``1(Newtonsoft.Json.JsonReader)">Deserialize&lt;T&gt;(JsonReader)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the Json structure contained by the specified <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a>
+into an instance of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Deserialize&lt;T&gt;(JsonReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> containing the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The instance of <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> being deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the object to deserialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Populate_Newtonsoft_Json_JsonReader_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Populate(Newtonsoft.Json.JsonReader%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L356">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Populate_" data-uid="Newtonsoft.Json.JsonSerializer.Populate*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Populate_Newtonsoft_Json_JsonReader_System_Object_" data-uid="Newtonsoft.Json.JsonSerializer.Populate(Newtonsoft.Json.JsonReader,System.Object)">Populate(JsonReader, Object)</h4>
+  <div class="markdown level1 summary"><p>Populates the JSON values onto the target object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Populate(JsonReader reader, object target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> that contains the JSON structure to reader values from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target object to populate values onto.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Populate_System_IO_TextReader_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Populate(System.IO.TextReader%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L346">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Populate_" data-uid="Newtonsoft.Json.JsonSerializer.Populate*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Populate_System_IO_TextReader_System_Object_" data-uid="Newtonsoft.Json.JsonSerializer.Populate(System.IO.TextReader,System.Object)">Populate(TextReader, Object)</h4>
+  <div class="markdown level1 summary"><p>Populates the JSON values onto the target object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Populate(TextReader reader, object target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <span class="xref">System.IO.TextReader</span> that contains the JSON structure to reader values from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target object to populate values onto.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Serialize_Newtonsoft_Json_JsonWriter_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Serialize(Newtonsoft.Json.JsonWriter%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L441">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Serialize_" data-uid="Newtonsoft.Json.JsonSerializer.Serialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Serialize_Newtonsoft_Json_JsonWriter_System_Object_" data-uid="Newtonsoft.Json.JsonSerializer.Serialize(Newtonsoft.Json.JsonWriter,System.Object)">Serialize(JsonWriter, Object)</h4>
+  <div class="markdown level1 summary"><p>Serializes the specified <span class="xref">System.Object</span> and writes the Json structure
+to a <code>Stream</code> using the specified <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Serialize(JsonWriter jsonWriter, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a></td>
+        <td><span class="parametername">jsonWriter</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonWriter.html">JsonWriter</a> used to write the Json structure.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Object</span> to serialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Serialize_System_IO_TextWriter_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Serialize(System.IO.TextWriter%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L430">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonSerializer_Serialize_" data-uid="Newtonsoft.Json.JsonSerializer.Serialize*"></a>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Serialize_System_IO_TextWriter_System_Object_" data-uid="Newtonsoft.Json.JsonSerializer.Serialize(System.IO.TextWriter,System.Object)">Serialize(TextWriter, Object)</h4>
+  <div class="markdown level1 summary"><p>Serializes the specified <span class="xref">System.Object</span> and writes the Json structure
+to a <code>Stream</code> using the specified <span class="xref">System.IO.TextWriter</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Serialize(TextWriter textWriter, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">textWriter</span></td>
+        <td><p>The <span class="xref">System.IO.TextWriter</span> used to write the Json structure.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Object</span> to serialize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer_Error.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer.Error%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L63">View Source</a>
+  </span>
+  <h4 id="Newtonsoft_Json_JsonSerializer_Error" data-uid="Newtonsoft.Json.JsonSerializer.Error">Error</h4>
+  <div class="markdown level1 summary"><p>Occurs when the <a class="xref" href="Newtonsoft.Json.JsonSerializer.html">JsonSerializer</a> errors during serialization and deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual event EventHandler&lt;ErrorEventArgs&gt; Error</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Newtonsoft.Json.Serialization.ErrorEventArgs.html">ErrorEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonSerializer.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonSerializer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonSerializer.cs/#L42" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

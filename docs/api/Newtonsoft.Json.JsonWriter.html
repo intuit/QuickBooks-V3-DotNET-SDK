@@ -1,0 +1,2118 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JsonWriter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JsonWriter
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.JsonWriter">
+  
+  
+  <h1 id="Newtonsoft_Json_JsonWriter" data-uid="Newtonsoft.Json.JsonWriter" class="text-break">Class JsonWriter
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a writer that provides a fast, non-cached, forward-only way of generating Json data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JsonWriter</span></div>
+      <div class="level2"><a class="xref" href="Newtonsoft.Json.Bson.BsonWriter.html">BsonWriter</a></div>
+      <div class="level2"><a class="xref" href="Newtonsoft.Json.JsonTextWriter.html">JsonTextWriter</a></div>
+      <div class="level2"><a class="xref" href="Newtonsoft.Json.Linq.JTokenWriter.html">JTokenWriter</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.html">Newtonsoft.Json</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_JsonWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class JsonWriter : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter__ctor.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L232">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter__ctor_" data-uid="Newtonsoft.Json.JsonWriter.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter__ctor" data-uid="Newtonsoft.Json.JsonWriter.#ctor">JsonWriter()</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of the <code>JsonWriter</code> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JsonWriter()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_CloseOutput.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.CloseOutput%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L177">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_CloseOutput_" data-uid="Newtonsoft.Json.JsonWriter.CloseOutput*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_CloseOutput" data-uid="Newtonsoft.Json.JsonWriter.CloseOutput">CloseOutput</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the underlying stream or
+<span class="xref">System.IO.TextReader</span> should be closed when the writer is closed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CloseOutput { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true to close the underlying stream or <span class="xref">System.IO.TextReader</span> when
+the writer is closed; otherwise false. The default is true.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_Formatting.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.Formatting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L223">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_Formatting_" data-uid="Newtonsoft.Json.JsonWriter.Formatting*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_Formatting" data-uid="Newtonsoft.Json.JsonWriter.Formatting">Formatting</h4>
+  <div class="markdown level1 summary"><p>Indicates how the output is formatted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Formatting Formatting { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Formatting.html">Formatting</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_Top.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.Top%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L183">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_Top_" data-uid="Newtonsoft.Json.JsonWriter.Top*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_Top" data-uid="Newtonsoft.Json.JsonWriter.Top">Top</h4>
+  <div class="markdown level1 summary"><p>Gets the top.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int Top { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The top.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteState.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L191">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteState_" data-uid="Newtonsoft.Json.JsonWriter.WriteState*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteState" data-uid="Newtonsoft.Json.JsonWriter.WriteState">WriteState</h4>
+  <div class="markdown level1 summary"><p>Gets the state of the writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WriteState WriteState { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.WriteState.html">WriteState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_Close.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L272">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_Close_" data-uid="Newtonsoft.Json.JsonWriter.Close*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_Close" data-uid="Newtonsoft.Json.JsonWriter.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Closes this stream and the underlying stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Close()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_Flush.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L267">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_Flush_" data-uid="Newtonsoft.Json.JsonWriter.Flush*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_Flush" data-uid="Newtonsoft.Json.JsonWriter.Flush">Flush()</h4>
+  <div class="markdown level1 summary"><p>Flushes whatever is in the buffer to the underlying streams and also flushes the underlying stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Flush()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteComment_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteComment(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1199">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteComment_" data-uid="Newtonsoft.Json.JsonWriter.WriteComment*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteComment_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteComment(System.String)">WriteComment(String)</h4>
+  <div class="markdown level1 summary"><p>Writes out a comment <pre><code>/<em>...</em>/</code></pre> containing the specified text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteComment(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text to place inside the comment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteEnd.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L341">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteEnd_" data-uid="Newtonsoft.Json.JsonWriter.WriteEnd*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteEnd" data-uid="Newtonsoft.Json.JsonWriter.WriteEnd">WriteEnd()</h4>
+  <div class="markdown level1 summary"><p>Writes the end of the current Json object or array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteEnd()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteEnd_Newtonsoft_Json_JsonToken_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteEnd(Newtonsoft.Json.JsonToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L599">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteEnd_" data-uid="Newtonsoft.Json.JsonWriter.WriteEnd*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteEnd_Newtonsoft_Json_JsonToken_" data-uid="Newtonsoft.Json.JsonWriter.WriteEnd(Newtonsoft.Json.JsonToken)">WriteEnd(JsonToken)</h4>
+  <div class="markdown level1 summary"><p>Writes the specified end token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteEnd(JsonToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonToken.html">JsonToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The end token to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteEndArray.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteEndArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L306">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteEndArray_" data-uid="Newtonsoft.Json.JsonWriter.WriteEndArray*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteEndArray" data-uid="Newtonsoft.Json.JsonWriter.WriteEndArray">WriteEndArray()</h4>
+  <div class="markdown level1 summary"><p>Writes the end of an array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteEndArray()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteEndConstructor.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteEndConstructor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L324">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteEndConstructor_" data-uid="Newtonsoft.Json.JsonWriter.WriteEndConstructor*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteEndConstructor" data-uid="Newtonsoft.Json.JsonWriter.WriteEndConstructor">WriteEndConstructor()</h4>
+  <div class="markdown level1 summary"><p>Writes the end constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteEndConstructor()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteEndObject.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteEndObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L289">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteEndObject_" data-uid="Newtonsoft.Json.JsonWriter.WriteEndObject*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteEndObject" data-uid="Newtonsoft.Json.JsonWriter.WriteEndObject">WriteEndObject()</h4>
+  <div class="markdown level1 summary"><p>Writes the end of a Json object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteEndObject()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteIndent.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteIndent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L606">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteIndent_" data-uid="Newtonsoft.Json.JsonWriter.WriteIndent*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteIndent" data-uid="Newtonsoft.Json.JsonWriter.WriteIndent">WriteIndent()</h4>
+  <div class="markdown level1 summary"><p>Writes indent characters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteIndent()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteIndentSpace.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteIndentSpace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L620">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteIndentSpace_" data-uid="Newtonsoft.Json.JsonWriter.WriteIndentSpace*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteIndentSpace" data-uid="Newtonsoft.Json.JsonWriter.WriteIndentSpace">WriteIndentSpace()</h4>
+  <div class="markdown level1 summary"><p>Writes an indent space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteIndentSpace()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteNull.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteNull%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L661">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteNull_" data-uid="Newtonsoft.Json.JsonWriter.WriteNull*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteNull" data-uid="Newtonsoft.Json.JsonWriter.WriteNull">WriteNull()</h4>
+  <div class="markdown level1 summary"><p>Writes a null value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteNull()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WritePropertyName_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WritePropertyName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L333">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WritePropertyName_" data-uid="Newtonsoft.Json.JsonWriter.WritePropertyName*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WritePropertyName_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WritePropertyName(System.String)">WritePropertyName(String)</h4>
+  <div class="markdown level1 summary"><p>Writes the property name of a name/value pair on a Json object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WritePropertyName(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteRaw_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteRaw(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L678">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteRaw_" data-uid="Newtonsoft.Json.JsonWriter.WriteRaw*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteRaw_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteRaw(System.String)">WriteRaw(String)</h4>
+  <div class="markdown level1 summary"><p>Writes raw JSON without changing the writer's state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteRaw(string json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>The raw JSON to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteRawValue_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteRawValue(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L686">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteRawValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteRawValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteRawValue_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteRawValue(System.String)">WriteRawValue(String)</h4>
+  <div class="markdown level1 summary"><p>Writes raw JSON where a value is expected and updates the writer's state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteRawValue(string json)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">json</span></td>
+        <td><p>The raw JSON to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteStartArray.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteStartArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L297">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteStartArray_" data-uid="Newtonsoft.Json.JsonWriter.WriteStartArray*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteStartArray" data-uid="Newtonsoft.Json.JsonWriter.WriteStartArray">WriteStartArray()</h4>
+  <div class="markdown level1 summary"><p>Writes the beginning of a Json array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteStartArray()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteStartConstructor_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteStartConstructor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L315">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteStartConstructor_" data-uid="Newtonsoft.Json.JsonWriter.WriteStartConstructor*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteStartConstructor_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteStartConstructor(System.String)">WriteStartConstructor(String)</h4>
+  <div class="markdown level1 summary"><p>Writes the start of a constructor with the given name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteStartConstructor(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteStartObject.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteStartObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L280">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteStartObject_" data-uid="Newtonsoft.Json.JsonWriter.WriteStartObject*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteStartObject" data-uid="Newtonsoft.Json.JsonWriter.WriteStartObject">WriteStartObject()</h4>
+  <div class="markdown level1 summary"><p>Writes the beginning of a Json object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteStartObject()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteToken_Newtonsoft_Json_JsonReader_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteToken(Newtonsoft.Json.JsonReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L350">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteToken_" data-uid="Newtonsoft.Json.JsonWriter.WriteToken*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteToken_Newtonsoft_Json_JsonReader_" data-uid="Newtonsoft.Json.JsonWriter.WriteToken(Newtonsoft.Json.JsonReader)">WriteToken(JsonReader)</h4>
+  <div class="markdown level1 summary"><p>Writes the current <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteToken(JsonReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The <a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a> to read the token from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteUndefined.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteUndefined%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L669">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteUndefined_" data-uid="Newtonsoft.Json.JsonWriter.WriteUndefined*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteUndefined" data-uid="Newtonsoft.Json.JsonWriter.WriteUndefined">WriteUndefined()</h4>
+  <div class="markdown level1 summary"><p>Writes an undefined value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteUndefined()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Boolean_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L762">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Boolean_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Boolean)">WriteValue(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Boolean</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Boolean</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Byte_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L799">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Byte_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Byte)">WriteValue(Byte)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Byte</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Byte</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Byte___.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1075">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Byte___" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Byte[])">WriteValue(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">Byte[]</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(byte[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">Byte[]</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Char_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L790">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Char_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Char)">WriteValue(Char)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Char</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(char value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Char</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_DateTime_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L827">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_DateTime_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.DateTime)">WriteValue(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.DateTime</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(DateTime value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.DateTime</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_DateTimeOffset_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.DateTimeOffset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L837">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_DateTimeOffset_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.DateTimeOffset)">WriteValue(DateTimeOffset)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.DateTimeOffset</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(DateTimeOffset value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTimeOffset</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.DateTimeOffset</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Decimal_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L818">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Decimal_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Decimal)">WriteValue(Decimal)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Decimal</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(decimal value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Decimal</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Double_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L753">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Double_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Double)">WriteValue(Double)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Double</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Double</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Guid_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L847">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Guid_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Guid)">WriteValue(Guid)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Guid</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(Guid value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Guid</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Int16_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L771">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Int16_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Int16)">WriteValue(Int16)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Int16</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(short value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Int16</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Int32_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L706">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Int32_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Int32)">WriteValue(Int32)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Int32</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Int32</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Int64_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L725">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Int64_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Int64)">WriteValue(Int64)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Int64</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Int64</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L939">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Boolean__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Boolean})">WriteValue(Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(bool? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Byte__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L988">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Byte__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Byte})">WriteValue(Nullable&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(byte? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Byte</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Char__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L976">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Char__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Char})">WriteValue(Nullable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(char? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1025">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_DateTime__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.DateTime})">WriteValue(Nullable&lt;DateTime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(DateTime? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_DateTimeOffset__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.DateTimeOffset%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1038">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_DateTimeOffset__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.DateTimeOffset})">WriteValue(Nullable&lt;DateTimeOffset&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(DateTimeOffset? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTimeOffset</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Decimal__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Decimal%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1013">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Decimal__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Decimal})">WriteValue(Nullable&lt;Decimal&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(decimal? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Double__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L927">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Double__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Double})">WriteValue(Nullable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(double? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Guid__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Guid%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1051">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Guid__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Guid})">WriteValue(Nullable&lt;Guid&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(Guid? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int16__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Int16%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L951">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int16__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Int16})">WriteValue(Nullable&lt;Int16&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(short? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int16</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L865">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int32__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Int32})">WriteValue(Nullable&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(int? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L890">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Int64__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Int64})">WriteValue(Nullable&lt;Int64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(long? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_SByte__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.SByte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1000">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_SByte__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.SByte})">WriteValue(Nullable&lt;SByte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(sbyte? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.SByte</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Single__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L915">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_Single__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.Single})">WriteValue(Nullable&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(float? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1063">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_TimeSpan__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.TimeSpan})">WriteValue(Nullable&lt;TimeSpan&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(TimeSpan? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.TimeSpan</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt16__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.UInt16%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L963">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt16__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.UInt16})">WriteValue(Nullable&lt;UInt16&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(ushort? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt16</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt32__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.UInt32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L877">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt32__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.UInt32})">WriteValue(Nullable&lt;UInt32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(uint? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt64__.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable%7BSystem.UInt64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L902">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Nullable_System_UInt64__" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Nullable{System.UInt64})">WriteValue(Nullable&lt;UInt64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Nullable&lt;&gt;</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(ulong? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Nullable&lt;&gt;</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Object_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1100">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Object_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Object)">WriteValue(Object)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Object</span> value.
+An error will raised if the value cannot be written as a single JSON token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Object</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_SByte_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.SByte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L808">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_SByte_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.SByte)">WriteValue(SByte)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.SByte</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(sbyte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.SByte</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.SByte</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Single_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L744">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Single_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Single)">WriteValue(Single)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Single</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(float value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Single</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L697">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.String)">WriteValue(String)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.String</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.String</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_TimeSpan_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L856">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_TimeSpan_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.TimeSpan)">WriteValue(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.TimeSpan</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(TimeSpan value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.TimeSpan</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_UInt16_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L780">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_UInt16_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.UInt16)">WriteValue(UInt16)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.UInt16</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(ushort value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.UInt16</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_UInt32_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L715">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_UInt32_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.UInt32)">WriteValue(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.UInt32</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.UInt32</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_UInt64_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L734">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_UInt64_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.UInt64)">WriteValue(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.UInt64</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public virtual void WriteValue(ulong value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.UInt64</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValue_System_Uri_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValue(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1087">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValue_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValue_System_Uri_" data-uid="Newtonsoft.Json.JsonWriter.WriteValue(System.Uri)">WriteValue(Uri)</h4>
+  <div class="markdown level1 summary"><p>Writes a <span class="xref">System.Uri</span> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteValue(Uri value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <span class="xref">System.Uri</span> value to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteValueDelimiter.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteValueDelimiter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L613">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteValueDelimiter_" data-uid="Newtonsoft.Json.JsonWriter.WriteValueDelimiter*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteValueDelimiter" data-uid="Newtonsoft.Json.JsonWriter.WriteValueDelimiter">WriteValueDelimiter()</h4>
+  <div class="markdown level1 summary"><p>Writes the JSON value delimiter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteValueDelimiter()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_WriteWhitespace_System_String_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.WriteWhitespace(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1208">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_WriteWhitespace_" data-uid="Newtonsoft.Json.JsonWriter.WriteWhitespace*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_WriteWhitespace_System_String_" data-uid="Newtonsoft.Json.JsonWriter.WriteWhitespace(System.String)">WriteWhitespace(String)</h4>
+  <div class="markdown level1 summary"><p>Writes out the given white space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteWhitespace(string ws)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">ws</span></td>
+        <td><p>The string of white space characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter_System_IDisposable_Dispose.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter.System%23IDisposable%23Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L1218">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_JsonWriter_System_IDisposable_Dispose_" data-uid="Newtonsoft.Json.JsonWriter.System#IDisposable#Dispose*"></a>
+  <h4 id="Newtonsoft_Json_JsonWriter_System_IDisposable_Dispose" data-uid="Newtonsoft.Json.JsonWriter.System#IDisposable#Dispose">IDisposable.Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDisposable.Dispose()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_JsonWriter.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.JsonWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/JsonWriter.cs/#L93" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

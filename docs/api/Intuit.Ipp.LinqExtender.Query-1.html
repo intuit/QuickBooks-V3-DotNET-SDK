@@ -1,0 +1,1322 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Query&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Query&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Intuit.Ipp.LinqExtender.Query`1">
+  
+  
+  <h1 id="Intuit_Ipp_LinqExtender_Query_1" data-uid="Intuit.Ipp.LinqExtender.Query`1" class="text-break">Class Query&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Entry class for LINQ provider. Containter of the virtual methods that will be invoked on select, intsert, update, remove or get calls.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html">ExpressionVisitor</a></div>
+    <div class="level2"><span class="xref">Query&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IModifiableCollection-1.html">IModifiableCollection</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IMethodCall-1.html">IMethodCall</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IMethodCall.html">IMethodCall</a></div>
+    <div><a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IModifiableCollection.html">IModifiableCollection</a></div>
+    <div><span class="xref">IOrderedQueryable</span>&lt;T&gt;</div>
+    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">IQueryProvider</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_Visit_Expression_">ExpressionVisitor.Visit(Expression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitLamda_LambdaExpression_">ExpressionVisitor.VisitLamda(LambdaExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitNew_NewExpression_">ExpressionVisitor.VisitNew(NewExpression)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Intuit.Ipp.LinqExtender.html">Intuit.Ipp.LinqExtender</a></h6>
+  <h6><strong>Assembly</strong>: Intuit.Ipp.LinqExtender.dll</h6>
+  <h5 id="Intuit_Ipp_LinqExtender_Query_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Query&lt;T&gt; : ExpressionVisitor, IModifiableCollection&lt;T&gt;, IMethodCall&lt;T&gt;, IMethodCall, IModifiableCollection, IOrderedQueryable&lt;T&gt;, IDisposable, IQueryProvider</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1__ctor_Intuit_Ipp_LinqExtender_IQueryContext__0__.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.%23ctor(Intuit.Ipp.LinqExtender.IQueryContext%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L44">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1__ctor_" data-uid="Intuit.Ipp.LinqExtender.Query`1.#ctor*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1__ctor_Intuit_Ipp_LinqExtender_IQueryContext__0__" data-uid="Intuit.Ipp.LinqExtender.Query`1.#ctor(Intuit.Ipp.LinqExtender.IQueryContext{`0})">Query(IQueryContext&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="Intuit.Ipp.LinqExtender.Query-1.html">Query&lt;T&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Query(IQueryContext&lt;T&gt; context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Intuit.Ipp.LinqExtender.IQueryContext-1.html">IQueryContext</a>&lt;T&gt;</td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_ElementType.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.ElementType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L86">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_ElementType_" data-uid="Intuit.Ipp.LinqExtender.Query`1.ElementType*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_ElementType" data-uid="Intuit.Ipp.LinqExtender.Query`1.ElementType">ElementType</h4>
+  <div class="markdown level1 summary"><p>Gets element type for the expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ElementType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Expression.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Expression%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L93">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Expression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Expression*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Expression" data-uid="Intuit.Ipp.LinqExtender.Query`1.Expression">Expression</h4>
+  <div class="markdown level1 summary"><p>Gets the expression tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Expression Expression { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L65">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Item_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Item*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Item_System_Int32_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets the collection item for an index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p><code data-dev-comment-type="typeparamref" class="typeparamref">T</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Provider.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Provider%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L103">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Provider_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Provider*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Provider" data-uid="Intuit.Ipp.LinqExtender.Query`1.Provider">Provider</h4>
+  <div class="markdown level1 summary"><p>Gets a query provider the LINQ query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IQueryProvider Provider { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IQueryProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Add__0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L558">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Add_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Add*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Add__0_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Add(`0)">Add(T)</h4>
+  <div class="markdown level1 summary"><p>Adds a new item to the collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(T item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_AddRange_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.AddRange(IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L534">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_AddRange_" data-uid="Intuit.Ipp.LinqExtender.Query`1.AddRange*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_AddRange_IEnumerable__0__" data-uid="Intuit.Ipp.LinqExtender.Query`1.AddRange(IEnumerable{`0})">AddRange(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Addes a range of items to the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddRange(IEnumerable&lt;T&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_AddRange_IEnumerable__0__System_Boolean_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.AddRange(IEnumerable%7B%600%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L544">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_AddRange_" data-uid="Intuit.Ipp.LinqExtender.Query`1.AddRange*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_AddRange_IEnumerable__0__System_Boolean_" data-uid="Intuit.Ipp.LinqExtender.Query`1.AddRange(IEnumerable{`0},System.Boolean)">AddRange(IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds list of items to the collection , optionally calls in memory sort. Used in Query<code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.SelectItem</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddRange(IEnumerable&lt;T&gt; items, bool inMemorySort)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">inMemorySort</span></td>
+        <td><p>true/false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Any.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Any%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L466">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Any_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Any*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Any" data-uid="Intuit.Ipp.LinqExtender.Query`1.Any">Any()</h4>
+  <div class="markdown level1 summary"><p>Return true if there is any item in collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Any()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Clear.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L501">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Clear_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Clear*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Clear" data-uid="Intuit.Ipp.LinqExtender.Query`1.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears out items from collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Count.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L475">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Count_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Count*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Count" data-uid="Intuit.Ipp.LinqExtender.Query`1.Count">Count()</h4>
+  <div class="markdown level1 summary"><p>Returns the count of items in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Count()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_CreateQuery_Expression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.CreateQuery(Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L312">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_CreateQuery_" data-uid="Intuit.Ipp.LinqExtender.Query`1.CreateQuery*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_CreateQuery_Expression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.CreateQuery(Expression)">CreateQuery(Expression)</h4>
+  <div class="markdown level1 summary"><p>Creates the query for current expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IQueryable CreateQuery(Expression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IQueryable</span></td>
+        <td><p>ref to IQueryable instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_CreateQuery__1_Expression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.CreateQuery%60%601(Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L134">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_CreateQuery_" data-uid="Intuit.Ipp.LinqExtender.Query`1.CreateQuery*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_CreateQuery__1_Expression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.CreateQuery``1(Expression)">CreateQuery&lt;TS&gt;(Expression)</h4>
+  <div class="markdown level1 summary"><p>Creates the query for type and current expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IQueryable&lt;TS&gt; CreateQuery&lt;TS&gt;(Expression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IQueryable</span>&lt;TS&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TS</span></td>
+        <td><p>currenty type passed by frameowrk</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Execute_Expression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Execute(Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L333">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Execute_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Execute*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Execute_Expression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Execute(Expression)">Execute(Expression)</h4>
+  <div class="markdown level1 summary"><p>Executes the query for current expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Execute(Expression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>object/collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Execute__1_Expression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Execute%60%601(Expression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L323">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Execute_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Execute*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Execute__1_Expression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Execute``1(Expression)">Execute&lt;TResult&gt;(Expression)</h4>
+  <div class="markdown level1 summary"><p>Executes the query for current type and expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TResult Execute&lt;TResult&gt;(Expression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>typed result</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Current type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_First.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.First%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L426">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_First_" data-uid="Intuit.Ipp.LinqExtender.Query`1.First*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_First" data-uid="Intuit.Ipp.LinqExtender.Query`1.First">First()</h4>
+  <div class="markdown level1 summary"><p>Returns the first item from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T First()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_FirstOrDefault.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.FirstOrDefault%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L435">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_FirstOrDefault_" data-uid="Intuit.Ipp.LinqExtender.Query`1.FirstOrDefault*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_FirstOrDefault" data-uid="Intuit.Ipp.LinqExtender.Query`1.FirstOrDefault">FirstOrDefault()</h4>
+  <div class="markdown level1 summary"><p>Returns first item or default value if empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T FirstOrDefault()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L119">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_GetEnumerator_" data-uid="Intuit.Ipp.LinqExtender.Query`1.GetEnumerator*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_GetEnumerator" data-uid="Intuit.Ipp.LinqExtender.Query`1.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Executes the query and gets a iterator for it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Last.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Last%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L444">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Last_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Last*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Last" data-uid="Intuit.Ipp.LinqExtender.Query`1.Last">Last()</h4>
+  <div class="markdown level1 summary"><p>Returns the last item from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Last()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_LastOrDefault.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.LastOrDefault%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L453">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_LastOrDefault_" data-uid="Intuit.Ipp.LinqExtender.Query`1.LastOrDefault*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_LastOrDefault" data-uid="Intuit.Ipp.LinqExtender.Query`1.LastOrDefault">LastOrDefault()</h4>
+  <div class="markdown level1 summary"><p>Returns last item or default value if empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T LastOrDefault()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Remove__0_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L525">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Remove_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Remove*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Remove__0_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Remove(`0)">Remove(T)</h4>
+  <div class="markdown level1 summary"><p>Marks an item to be removed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>query object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Single.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Single%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L408">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Single_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Single*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Single" data-uid="Intuit.Ipp.LinqExtender.Query`1.Single">Single()</h4>
+  <div class="markdown level1 summary"><p>Returns a single item from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Single()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_SingleOrDefault.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.SingleOrDefault%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L417">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_SingleOrDefault_" data-uid="Intuit.Ipp.LinqExtender.Query`1.SingleOrDefault*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_SingleOrDefault" data-uid="Intuit.Ipp.LinqExtender.Query`1.SingleOrDefault">SingleOrDefault()</h4>
+  <div class="markdown level1 summary"><p>Returns a single item or default value if empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SingleOrDefault()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_Sort.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.Sort%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L509">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_Sort_" data-uid="Intuit.Ipp.LinqExtender.Query`1.Sort*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_Sort" data-uid="Intuit.Ipp.LinqExtender.Query`1.Sort">Sort()</h4>
+  <div class="markdown level1 summary"><p>internally tries to sort , if the query contains orderby statement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Sort()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_SubmitChanges.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.SubmitChanges%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L605">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_SubmitChanges_" data-uid="Intuit.Ipp.LinqExtender.Query`1.SubmitChanges*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_SubmitChanges" data-uid="Intuit.Ipp.LinqExtender.Query`1.SubmitChanges">SubmitChanges()</h4>
+  <div class="markdown level1 summary"><p>When called, it invokes the appropiate Query<code data-dev-comment-type="typeparamref" class="typeparamref">T</code> method to finalize the collection changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubmitChanges()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_VisitBinary_BinaryExpression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.VisitBinary(BinaryExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L673">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_VisitBinary_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitBinary*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_VisitBinary_BinaryExpression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitBinary(BinaryExpression)">VisitBinary(BinaryExpression)</h4>
+  <div class="markdown level1 summary"><p>Visits the binary expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Expression VisitBinary(BinaryExpression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BinaryExpression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>Target expression</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><p>Result expression</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitBinary_BinaryExpression_">ExpressionVisitor.VisitBinary(BinaryExpression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_VisitConstant_ConstantExpression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.VisitConstant(ConstantExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L737">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_VisitConstant_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitConstant*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_VisitConstant_ConstantExpression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitConstant(ConstantExpression)">VisitConstant(ConstantExpression)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Expression VisitConstant(ConstantExpression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConstantExpression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitConstant_ConstantExpression_">ExpressionVisitor.VisitConstant(ConstantExpression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_VisitMemberAccess_MemberExpression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.VisitMemberAccess(MemberExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L819">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_VisitMemberAccess_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitMemberAccess*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_VisitMemberAccess_MemberExpression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitMemberAccess(MemberExpression)">VisitMemberAccess(MemberExpression)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Expression VisitMemberAccess(MemberExpression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MemberExpression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitMemberAccess_MemberExpression_">ExpressionVisitor.VisitMemberAccess(MemberExpression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_VisitMethodCall_MethodCallExpression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.VisitMethodCall(MethodCallExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L855">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_VisitMethodCall_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitMethodCall*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_VisitMethodCall_MethodCallExpression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitMethodCall(MethodCallExpression)">VisitMethodCall(MethodCallExpression)</h4>
+  <div class="markdown level1 summary"><p>Visits the method call expression</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Expression VisitMethodCall(MethodCallExpression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MethodCallExpression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>Target expression</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td><p>Result expression</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitMethodCall_MethodCallExpression_">ExpressionVisitor.VisitMethodCall(MethodCallExpression)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1_VisitUnary_UnaryExpression_.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601.VisitUnary(UnaryExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L743">View Source</a>
+  </span>
+  <a id="Intuit_Ipp_LinqExtender_Query_1_VisitUnary_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitUnary*"></a>
+  <h4 id="Intuit_Ipp_LinqExtender_Query_1_VisitUnary_UnaryExpression_" data-uid="Intuit.Ipp.LinqExtender.Query`1.VisitUnary(UnaryExpression)">VisitUnary(UnaryExpression)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Expression VisitUnary(UnaryExpression expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnaryExpression</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Intuit.Ipp.LinqExtender.ExpressionVisitor.html#Intuit_Ipp_LinqExtender_ExpressionVisitor_VisitUnary_UnaryExpression_">ExpressionVisitor.VisitUnary(UnaryExpression)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IModifiableCollection-1.html">IModifiableCollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IMethodCall-1.html">IMethodCall&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IMethodCall.html">IMethodCall</a>
+  </div>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Abstraction.IModifiableCollection.html">IModifiableCollection</a>
+  </div>
+  <div>
+      <span class="xref">IOrderedQueryable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">IQueryProvider</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Intuit_Ipp_LinqExtender_Query_1.md&amp;value=---%0Auid%3A%20Intuit.Ipp.LinqExtender.Query%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Linq Extender/Query.cs/#L38" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

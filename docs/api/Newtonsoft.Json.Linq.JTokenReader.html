@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JTokenReader
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JTokenReader
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Newtonsoft.Json.Linq.JTokenReader">
+  
+  
+  <h1 id="Newtonsoft_Json_Linq_JTokenReader" data-uid="Newtonsoft.Json.Linq.JTokenReader" class="text-break">Class JTokenReader
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a reader that provides fast, non-cached, forward-only access to serialized Json data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Newtonsoft.Json.JsonReader.html">JsonReader</a></div>
+    <div class="level2"><span class="xref">JTokenReader</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_CurrentState">JsonReader.CurrentState</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_CloseInput">JsonReader.CloseInput</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_QuoteChar">JsonReader.QuoteChar</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_TokenType">JsonReader.TokenType</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Value">JsonReader.Value</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_ValueType">JsonReader.ValueType</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Depth">JsonReader.Depth</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Culture">JsonReader.Culture</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Skip">JsonReader.Skip()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_SetToken_Newtonsoft_Json_JsonToken_">JsonReader.SetToken(JsonToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_SetToken_Newtonsoft_Json_JsonToken_System_Object_">JsonReader.SetToken(JsonToken, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_SetStateBasedOnCurrent">JsonReader.SetStateBasedOnCurrent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_System_IDisposable_Dispose">JsonReader.IDisposable.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Dispose_System_Boolean_">JsonReader.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Close">JsonReader.Close()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Newtonsoft.Json.Linq.html">Newtonsoft.Json.Linq</a></h6>
+  <h6><strong>Assembly</strong>: Newtonsoft.Json.dll</h6>
+  <h5 id="Newtonsoft_Json_Linq_JTokenReader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JTokenReader : JsonReader, IDisposable, IJsonLineInfo</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader__ctor_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.%23ctor(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L23">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader__ctor_" data-uid="Newtonsoft.Json.Linq.JTokenReader.#ctor*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader__ctor_Newtonsoft_Json_Linq_JToken_" data-uid="Newtonsoft.Json.Linq.JTokenReader.#ctor(Newtonsoft.Json.Linq.JToken)">JTokenReader(JToken)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Newtonsoft.Json.Linq.JTokenReader.html">JTokenReader</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JTokenReader(JToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Newtonsoft.Json.Linq.JToken.html">JToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The token to read from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_Read.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.Read%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L211">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_Read_" data-uid="Newtonsoft.Json.Linq.JTokenReader.Read*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_Read" data-uid="Newtonsoft.Json.Linq.JTokenReader.Read">Read()</h4>
+  <div class="markdown level1 summary"><p>Reads the next JSON token from the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Read()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the next token was read successfully; false if there are no more tokens to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_Read">JsonReader.Read()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_ReadAsBytes.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.ReadAsBytes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L37">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_ReadAsBytes_" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsBytes*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_ReadAsBytes" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsBytes">ReadAsBytes()</h4>
+  <div class="markdown level1 summary"><p>Reads the next JSON token from the stream as a <span class="xref">Byte[]</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override byte[] ReadAsBytes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><p>A <span class="xref">Byte[]</span> or a null reference if the next JSON token is null. This method will return <code>null</code> at the end of an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_ReadAsBytes">JsonReader.ReadAsBytes()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_ReadAsDateTimeOffset.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.ReadAsDateTimeOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L171">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_ReadAsDateTimeOffset_" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsDateTimeOffset*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_ReadAsDateTimeOffset" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsDateTimeOffset">ReadAsDateTimeOffset()</h4>
+  <div class="markdown level1 summary"><p>Reads the next JSON token from the stream as a <span class="xref">System.Nullable&lt;&gt;</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTimeOffset? ReadAsDateTimeOffset()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTimeOffset</span>&gt;</td>
+        <td><p>A <span class="xref">System.Nullable&lt;&gt;</span>. This method will return <code>null</code> at the end of an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_ReadAsDateTimeOffset">JsonReader.ReadAsDateTimeOffset()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_ReadAsDecimal.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.ReadAsDecimal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L96">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_ReadAsDecimal_" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsDecimal*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_ReadAsDecimal" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsDecimal">ReadAsDecimal()</h4>
+  <div class="markdown level1 summary"><p>Reads the next JSON token from the stream as a <span class="xref">System.Nullable&lt;&gt;</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override decimal? ReadAsDecimal()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><p>A <span class="xref">System.Nullable&lt;&gt;</span>. This method will return <code>null</code> at the end of an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_ReadAsDecimal">JsonReader.ReadAsDecimal()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_ReadAsInt32.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.ReadAsInt32%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L133">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_ReadAsInt32_" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsInt32*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_ReadAsInt32" data-uid="Newtonsoft.Json.Linq.JTokenReader.ReadAsInt32">ReadAsInt32()</h4>
+  <div class="markdown level1 summary"><p>Reads the next JSON token from the stream as a <span class="xref">System.Nullable&lt;&gt;</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int? ReadAsInt32()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>A <span class="xref">System.Nullable&lt;&gt;</span>. This method will return <code>null</code> at the end of an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Newtonsoft.Json.JsonReader.html#Newtonsoft_Json_JsonReader_ReadAsInt32">JsonReader.ReadAsInt32()</a></div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_HasLineInfo.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.Newtonsoft%23Json%23IJsonLineInfo%23HasLineInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L372">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_HasLineInfo_" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#HasLineInfo*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_HasLineInfo" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#HasLineInfo">IJsonLineInfo.HasLineInfo()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IJsonLineInfo.HasLineInfo()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LineNumber.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.Newtonsoft%23Json%23IJsonLineInfo%23LineNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L381">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LineNumber_" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#LineNumber*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LineNumber" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#LineNumber">IJsonLineInfo.LineNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IJsonLineInfo.LineNumber { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LinePosition.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader.Newtonsoft%23Json%23IJsonLineInfo%23LinePosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L396">View Source</a>
+  </span>
+  <a id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LinePosition_" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#LinePosition*"></a>
+  <h4 id="Newtonsoft_Json_Linq_JTokenReader_Newtonsoft_Json_IJsonLineInfo_LinePosition" data-uid="Newtonsoft.Json.Linq.JTokenReader.Newtonsoft#Json#IJsonLineInfo#LinePosition">IJsonLineInfo.LinePosition</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IJsonLineInfo.LinePosition { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="Newtonsoft.Json.IJsonLineInfo.html">IJsonLineInfo</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Intuit.Ipp.LinqExtender.Utility.html#Intuit_Ipp_LinqExtender_Utility_CopyRecursive_System_Object_System_Object_">Utility.CopyRecursive(Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/new/master/apiSpec/new?filename=Newtonsoft_Json_Linq_JTokenReader.md&amp;value=---%0Auid%3A%20Newtonsoft.Json.Linq.JTokenReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/venkatramanareddy/QuickBooks-V3-DotNET-SDK/blob/master/IPPDotNetDevKitCSV3/ThirdParty/Newtonsoft.Json/Converters/Linq/JTokenReader.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
