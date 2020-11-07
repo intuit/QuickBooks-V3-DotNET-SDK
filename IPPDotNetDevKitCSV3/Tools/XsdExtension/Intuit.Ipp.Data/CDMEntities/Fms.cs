@@ -1991,6 +1991,9 @@ namespace Intuit.Ipp.Data {
         PromotionalMeals,
         
         /// <remarks/>
+        PropertyTaxHomeOffice,
+        
+        /// <remarks/>
         RentAndLeaseHomeOffice,
         
         /// <remarks/>
@@ -15025,6 +15028,12 @@ namespace Intuit.Ipp.Data {
         
         private ConvenienceFeeDetail convenienceFeeDetailField;
         
+        private string invoiceLinkSecurityCodeField;
+        
+        private System.DateTime invoiceLinkExpiryDateField;
+        
+        private bool invoiceLinkExpiryDateFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -15375,6 +15384,51 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.convenienceFeeDetailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: All
+        /// Description: QBO:  Security code associated with Sharable link of the invoice for external users
+        /// 
+        /// </summary>
+        public string InvoiceLinkSecurityCode {
+            get {
+                return this.invoiceLinkSecurityCodeField;
+            }
+            set {
+                this.invoiceLinkSecurityCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: All
+        /// Description: QBO:  Expiry date for Sharable link of the invoice for external users
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="dateTime")]
+        public System.DateTime InvoiceLinkExpiryDate {
+            get {
+                return this.invoiceLinkExpiryDateField;
+            }
+            set {
+                this.invoiceLinkExpiryDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool InvoiceLinkExpiryDateSpecified {
+            get {
+                return this.invoiceLinkExpiryDateFieldSpecified;
+            }
+            set {
+                this.invoiceLinkExpiryDateFieldSpecified = value;
             }
         }
     }
@@ -34072,6 +34126,8 @@ namespace Intuit.Ipp.Data {
         
         private bool activeFieldSpecified;
         
+        private string v4IDPseudonymField;
+        
         private TelephoneNumber primaryPhoneField;
         
         private TelephoneNumber alternatePhoneField;
@@ -34340,6 +34396,20 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.activeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Auto generated Public ID when a new customer/vendor/employee is added to QBO. (ReadOnly)
+        /// 
+        /// </summary>
+        public string V4IDPseudonym {
+            get {
+                return this.v4IDPseudonymField;
+            }
+            set {
+                this.v4IDPseudonymField = value;
             }
         }
         
@@ -36976,8 +37046,6 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType employeeExField;
         
-        private string v4IDPseudonymField;
-        
         /// <remarks/>
         /// <summary>
         /// Specifies the Employee type. For QuickBooks Desktop the valid values are defined in the EmployeeTypeEnum.
@@ -37246,20 +37314,6 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.employeeExField = value;
-            }
-        }
-        
-        /// <remarks/>
-        /// <summary>
-        /// Auto generated Public ID when new employee added to QBO. (ReadOnly)
-        /// 
-        /// </summary>
-        public string V4IDPseudonym {
-            get {
-                return this.v4IDPseudonymField;
-            }
-            set {
-                this.v4IDPseudonymField = value;
             }
         }
     }

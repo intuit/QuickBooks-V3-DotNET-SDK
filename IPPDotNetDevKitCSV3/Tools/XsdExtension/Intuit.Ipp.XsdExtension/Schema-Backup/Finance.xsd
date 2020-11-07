@@ -203,7 +203,7 @@
 			<xs:enumeration value="TaxLineDetail" />
 			<xs:enumeration value="SalesItemLineDetail" />
 			<xs:enumeration value="ItemBasedExpenseLineDetail" />
-			<xs:enumeration value="AccountBasedExpenseLineDetail" />
+			<xs:enumeration value="AccountBasedExpenseLineDetail" />	
 			<xs:enumeration value="DepositLineDetail" />
 			<xs:enumeration value="PurchaseOrderItemLineDetail" />
 			<xs:enumeration value="ItemReceiptLineDetail" />
@@ -213,6 +213,7 @@
 			<xs:enumeration value="SubTotalLineDetail" />
 			<xs:enumeration value="SalesOrderItemLineDetail" />
 			<xs:enumeration value="TDSLineDetail" />
+			<xs:enumeration value="ReimburseLineDetail" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AccountTypeEnum">
@@ -3206,6 +3207,7 @@
 			<xs:enumeration value="PriorPayment" />
 			<xs:enumeration value="ReceivePayment" />
 			<xs:enumeration value="RefundCheck" />
+			<xs:enumeration value="ReimburseCharge" />
 			<xs:enumeration value="SalesOrder" />
 			<xs:enumeration value="SalesReceipt" />
 			<xs:enumeration value="SalesTaxPaymentCheck" />
@@ -6189,6 +6191,15 @@
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="ReimburseLineDetail" type="ReimburseLineDetail">
+					<xs:annotation>
+						<xs:documentation>
+							Product: ALL
+							Description: ReimburseType for
+							the transaction.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="DepositLineDetail" type="DepositLineDetail">
 					<xs:annotation>
 						<xs:documentation>
@@ -7584,6 +7595,21 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReimburseLineDetail">
+		<xs:annotation>
+			<xs:documentation>
+				Product: ALL
+				Description: Reimburse Charge Line Detail
+				for a transaction line.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ItemLineDetail">
+				<xs:sequence>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="AccountBasedExpenseLineDetail">
 		<xs:annotation>
@@ -13964,10 +13990,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
-	<!-- =========================================================================================================
-		Please don't expose this object externally, this object should ONLY be used
-		for publishing JMS events ========================================================================================================= -->
 	<xs:complexType name="ReimburseCharge">
 		<xs:annotation>
 			<xs:documentation> Product: QBO Description: Reimburse charge object
@@ -13984,9 +14006,32 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="HasBeenInvoiced" type="xs:boolean"
+								minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation> Product: QBO Description: Indicates whether the Charge
+							has been invoiced
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
 					<xs:element name="Amount" type="xs:decimal" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Total amount of the reimburse charge.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="HomeTotalAmt" type="xs:decimal"
+								minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: ALL
+								Description: QBW: Total amount of
+								the transaction in the home currency for multi-currency enabled
+								companies. Single currency companies will not have this field.
+								Includes the total of all the charges, allowances and taxes.
+								Calculated by QuickBooks business logic. Cannot be written to
+								QuickBooks.
+								InputType: QBW: ReadOnly
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>

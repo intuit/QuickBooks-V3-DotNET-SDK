@@ -411,7 +411,7 @@ namespace OAuth2_Dotnet_UsingSDK
             lineSalesItemLineDetail.ItemRef = new ReferenceType()
             {
                 name = item.Name,
-                
+
                 Value = item.Id
             };
             //Line Sales Item Line Detail - UnitPrice
@@ -433,45 +433,6 @@ namespace OAuth2_Dotnet_UsingSDK
             invoiceLine.AnyIntuitObject = lineSalesItemLineDetail;
             //Assign Line Item to Invoice
             invoice.Line = new Line[] { invoiceLine };
-
-            //Line
-            Line invoiceReimburseLine = new Line();
-            //Line Description
-            invoiceReimburseLine.Description = "Invoice line description.";
-            //Line Amount
-            invoiceReimburseLine.Amount = 330m;
-            invoiceReimburseLine.AmountSpecified = true;
-            //Line Detail Type
-            invoiceReimburseLine.DetailType = LineDetailTypeEnum.ReimburseLineDetail;
-            invoiceReimburseLine.DetailTypeSpecified = true;
-            //Line Sales Item Line Detail
-            ReimburseLineDetail lineReimburseLineDetail = new ReimburseLineDetail();
-            //Line Sales Item Line Detail - ItemRef
-            lineReimburseLineDetail.ItemRef = new ReferenceType()
-            {
-                name = item.Name,
-
-                Value = item.Id
-            };
-            //Line Sales Item Line Detail - UnitPrice
-            lineReimburseLineDetail.AnyIntuitObject = 33m;
-            lineReimburseLineDetail.ItemElementName = ItemChoiceType.UnitPrice;
-            //Line Sales Item Line Detail - Qty
-            lineReimburseLineDetail.Qty = 10;
-            lineReimburseLineDetail.QtySpecified = true;
-            //Line Sales Item Line Detail - TaxCodeRef
-            //For US companies, this can be 'TAX' or 'NON'
-            lineReimburseLineDetail.TaxCodeRef = new ReferenceType()
-            {
-                Value = "NON"
-            };
-            //Line Sales Item Line Detail - ServiceDate 
-            //lineSalesItemLineDetail.ServiceDate = DateTime.Now.Date;
-            //lineSalesItemLineDetail.ServiceDateSpecified = true;
-            //Assign Sales Item Line Detail to Line Item
-            invoiceReimburseLine.AnyIntuitObject = lineReimburseLineDetail;
-            //Assign Line Item to Invoice
-            invoice.Line.Append(invoiceReimburseLine);
 
             //TxnTaxDetail
             TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
@@ -555,10 +516,11 @@ namespace OAuth2_Dotnet_UsingSDK
 
             };
 
+            // List<IEntity> n = new List<IEntity>();
+            // n.Add(invoice) ;
+
             recur.AnyIntuitObject = invoice;
-            
-            
-            
+
 
             RecurringTransaction recurAdded = dataService.Add<RecurringTransaction>(recur);
           
