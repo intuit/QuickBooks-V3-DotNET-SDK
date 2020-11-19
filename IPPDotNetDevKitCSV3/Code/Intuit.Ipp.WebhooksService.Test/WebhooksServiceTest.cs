@@ -41,7 +41,7 @@ namespace Intuit.Ipp.WebhooksService.Test
 
         }
 
-        [TestMethod][Ignore]//Cannot be tested as test companies change everytime and getting new verifier token will be an issue
+        [TestMethod]
         public void ExecuteverifyToken()
         {
             try

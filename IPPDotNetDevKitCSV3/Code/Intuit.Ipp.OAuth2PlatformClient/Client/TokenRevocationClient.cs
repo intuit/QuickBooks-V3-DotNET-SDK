@@ -81,6 +81,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+            Client.DefaultRequestHeaders.Add("Connection", "close");
             if (!string.IsNullOrWhiteSpace(clientId) && !string.IsNullOrWhiteSpace(clientSecret))
             {
                 Client.SetBasicAuthentication(clientId, clientSecret);

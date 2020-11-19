@@ -208,7 +208,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-                loggerConfig = loggerConfig.WriteTo.LiterateConsole();
+                //loggerConfig = loggerConfig.WriteTo.LiterateConsole(); //deprecated
             }
 
             //Enabling Trace log
@@ -224,11 +224,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             }
 
-            //Enabling Rolling file log
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
-            {
-                loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
-            }
+            ////Enabling Rolling file log -deprecated
+            //if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
+            //{
+            //    loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
+            //}
 
 
             ////Enabling AzureDocumentDB

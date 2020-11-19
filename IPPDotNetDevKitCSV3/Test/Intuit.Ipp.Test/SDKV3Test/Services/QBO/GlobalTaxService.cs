@@ -39,7 +39,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
   
 
-        [TestMethod]
+        [TestMethod][Ignore]//change to request and response format as json and then run this test
         public void TaxCodeAddTestUsingoAuth()
         {
             String guid = Helper.GetGuid();

@@ -52,6 +52,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+            _client.DefaultRequestHeaders.Add("Connection", "close");
 
             if (OAuth2Client.AdvancedLoggerEnabled != false)
             {

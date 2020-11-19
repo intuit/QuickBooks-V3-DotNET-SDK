@@ -95,7 +95,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         }
 
 
-        [TestMethod]
+        [TestMethod]//chnage code to add atleast one line
         public void InvoiceSparseUpdateTestUsingoAuth()
         {
             //Creating the Invoice for Adding
@@ -103,7 +103,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             //Adding the Invoice
             Invoice added = Helper.Add<Invoice>(qboContextoAuth, invoice);
             //Change the data of added entity
-            Invoice changed = QBOHelper.SparseUpdateInvoice(qboContextoAuth, added.Id, added.SyncToken);
+            Invoice changed = QBOHelper.SparseUpdateInvoice(qboContextoAuth, added);
             //Update the returned entity data
             Invoice updated = Helper.Update<Invoice>(qboContextoAuth, changed);//Verify the updated Invoice
             QBOHelper.VerifyInvoiceSparseUpdate(changed, updated);

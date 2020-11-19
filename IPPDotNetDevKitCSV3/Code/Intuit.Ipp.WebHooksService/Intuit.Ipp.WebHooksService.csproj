@@ -16,4 +16,12 @@
     <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="AppSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
 </Project>

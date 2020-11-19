@@ -159,6 +159,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
            
             Url = discoveryUrl;
             _client = new HttpClient(handler);
+            _client.DefaultRequestHeaders.Add("Connection", "close");
         }
 
         /// <summary>

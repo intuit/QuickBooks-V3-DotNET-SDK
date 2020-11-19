@@ -15,7 +15,7 @@ using Intuit.Ipp.DataService;
 
 namespace Intuit.Ipp.Test.Services.QBO
 {
-    [TestClass] [Ignore]
+    [TestClass] 
     public class RecurringTransactionTest
     {
         ServiceContext qboContextoAuth = null;
@@ -72,6 +72,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             RecurringTransaction recurringTransaction = QBOHelper.CreateRecurringTransaction(qboContextoAuth);
             //Adding the RecurringTransaction
             RecurringTransaction added = Helper.Add<RecurringTransaction>(qboContextoAuth, recurringTransaction);
+            added.Id = added.AnyIntuitObject.Id;
             RecurringTransaction found = Helper.FindById<RecurringTransaction>(qboContextoAuth, added);
             QBOHelper.VerifyRecurringTransaction(found, added);
         }
@@ -148,7 +149,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
         #region Test cases for Batch
 
-        [TestMethod]
+        [TestMethod][Ignore]//not supported
         public void RecurringTransactionBatchUsingoAuth()
         {
              Dictionary<OperationEnum, object> batchEntries = new Dictionary<OperationEnum, object>();
@@ -200,7 +201,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             QueryService<RecurringTransaction> entityQuery = new QueryService<RecurringTransaction>(qboContextoAuth);
             RecurringTransaction existing = Helper.FindOrAdd<RecurringTransaction>(qboContextoAuth, new RecurringTransaction());
             //List<RecurringTransaction> entities = entityQuery.Where(c => c.Id == existing.Id).ToList();
-            int count=entityQuery.ExecuteIdsQuery("Select * from RecurringTransaction where Id='"+existing.Id+"'").Count;
+            int count=entityQuery.ExecuteIdsQuery("Select * from RecurringTransaction where Id='"+existing.AnyIntuitObject.Id+"'").Count;
             Assert.IsTrue(count > 0);
         }
 
@@ -247,7 +248,7 @@ namespace Intuit.Ipp.Test.Services.QBO
             RecurringTransaction entity = QBOHelper.CreateRecurringTransaction(qboContextoAuth);
             //Adding the RecurringTransaction
             RecurringTransaction added = Helper.Add<RecurringTransaction>(qboContextoAuth, entity);
-
+            added.Id = added.AnyIntuitObject.Id;//mapping search entity id to recurring txn id
             //FindById and verify
             Helper.FindByIdAsync<RecurringTransaction>(qboContextoAuth, added);
         }

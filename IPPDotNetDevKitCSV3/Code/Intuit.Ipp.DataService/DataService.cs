@@ -815,24 +815,29 @@ namespace Intuit.Ipp.DataService
             {
                 resourceString = "creditcardpayment";
             }
-            // Convert to role base to get the Id property which is required to Find the entity.
-            IntuitEntity intuitEntity = entity as IntuitEntity;
-            if (intuitEntity == null)
-            {
-                IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-                IdsExceptionManager.HandleException(exception);
-            }
+          
 
-            // Check whether the Id is null and throw an exception if it is null.
-            if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
-            {
-                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-                IdsExceptionManager.HandleException(exception);
-            }
+                // Convert to role base to get the Id property which is required to Find the entity.
+                IntuitEntity intuitEntity = entity as IntuitEntity;
+                if (intuitEntity == null)
+                {
+                    IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    IdsExceptionManager.HandleException(exception);
+                }
 
-            id = intuitEntity.Id;
+                // Check whether the Id is null and throw an exception if it is null.
+                if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
+                {
+                    IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    IdsExceptionManager.HandleException(exception);
+                }
+          
+                id = intuitEntity.Id;
+            
+                
+            
 
             string uri = string.Empty;
 

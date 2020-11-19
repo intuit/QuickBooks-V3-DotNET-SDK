@@ -226,7 +226,7 @@ namespace Intuit.Ipp.Test.Services.QBO
 
         #region Test cases for Batch
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void ItemBatchUsingoAuth()
         {
             Dictionary<OperationEnum, object> batchEntries = new Dictionary<OperationEnum, object>();
@@ -386,7 +386,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         //newly added
         #region Test Cases for Do Not Update Account Operation
 
-        [TestMethod]
+        [TestMethod][Ignore]
         public void ItemDonotUpdatedaccAsyncTestsUsingoAuthFrance()
         {
             //Creating the Item for Adding

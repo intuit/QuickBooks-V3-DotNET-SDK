@@ -59,7 +59,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-
+            Client.DefaultRequestHeaders.Add("Connection", "close");
             AuthenticationStyle = AuthenticationStyle.OAuth2;
             Address = endpoint;
         }

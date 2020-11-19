@@ -80,9 +80,16 @@ namespace Intuit.Ipp.Test
                 if (added.GetType().IsSubclassOf(typeof(IntuitEntity)))
                 {
                     IntuitEntity addedEntity = (IntuitEntity)(object)added;
-
-                    //Checking id of added Bill is not Null. If it is Null, Bill is not added properly
-                    Assert.IsNotNull(addedEntity.Id);
+                    if (added.GetType().Equals(typeof(Intuit.Ipp.Data.RecurringTransaction)))
+                    {
+                        Assert.IsNotNull(((Intuit.Ipp.Data.RecurringTransaction)addedEntity).AnyIntuitObject.Id);
+                    }
+                    else
+                    {
+                        //Checking id of added entity is not Null. If it is Null, entity is not added properly
+                        Assert.IsNotNull(addedEntity.Id);
+                    }
+                    
                 }
 
                 return added;
@@ -206,6 +213,7 @@ namespace Intuit.Ipp.Test
             try
             {
                 DataService.DataService service = new DataService.DataService(context);
+                //T foundEntity = service.FindById((Intuit.Ipp.Data.IEntity)((Intuit.Ipp.Data.SalesTransaction)entity).AnyIntuitObject);
                 T foundEntity = service.FindById(entity);
 
                 return foundEntity;
@@ -342,8 +350,16 @@ namespace Intuit.Ipp.Test
                 //Initializing the Dataservice object with ServiceContext
                 DataService.DataService service = new DataService.DataService(context);
 
-                //Deleting the Bill using the service
-                T deleted = service.Delete<T>(entity);
+                //if (entity.GetType().Equals(typeof(Intuit.Ipp.Data.RecurringTransaction)))
+                //{
+                //    T deleted = service.Delete<T>((Intuit.Ipp.Data.IEntity)entity.AnyIntuitObject));
+                    
+                //}
+                //else
+                //{
+                    //Deleting the entity using the service
+                    T deleted = service.Delete<T>(entity);
+                //}
 
                 return deleted;
             }

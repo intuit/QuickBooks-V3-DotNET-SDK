@@ -47,7 +47,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         }
 
         [DeploymentItem("Services\\Resource\\image.jpg", "Services\\Resource")]
-        [TestMethod]
+        [TestMethod][Ignore] //fix image url for running this test
         public void AttachableUploadDownloadAddTestUsingoAuth()
         {
             //Creating the Bill for Add
