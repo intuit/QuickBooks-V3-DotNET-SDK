@@ -237,7 +237,7 @@ namespace Intuit.Ipp.Core.Rest
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-                loggerConfig = loggerConfig.WriteTo.LiterateConsole();
+               // loggerConfig = loggerConfig.WriteTo.LiterateConsole(); deprecated
             }
 
             //Enabling Trace log
@@ -253,12 +253,12 @@ namespace Intuit.Ipp.Core.Rest
 
             }
 
-            //Enabling Rolling file log
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
+            ////Enabling Rolling file log -deprecated
+           /* if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
             {
                 loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
             }
-
+            */
 
             ////Enabling AzureDocumentDB
             //if (!string.IsNullOrEmpty(this.ServiceRequestAzureDocumentDBSecureKey) && this.ServiceRequestAzureDocumentDBUrl != null)
