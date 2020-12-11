@@ -214,8 +214,8 @@ namespace Intuit.Ipp.Core.Rest
 
             string filePath = string.Empty;
 
-            if (this.EnableSerilogRequestResponseLoggingForRollingFile)
-            {
+           // if (this.EnableSerilogRequestResponseLoggingForRollingFile) -- deprecated for serilog rolling file
+           //{
                 //Assign tempath if no location found
                 if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
                 {
@@ -226,7 +226,7 @@ namespace Intuit.Ipp.Core.Rest
                 //Log file path for widows n ios
                 filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
            
-            }
+           // }
 
             //Setting logger config for Serilog
             var loggerConfig = new LoggerConfiguration()

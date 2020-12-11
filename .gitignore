@@ -331,3 +331,4 @@ ASALocalRun/
 # Custom
 SDK Assemblies/
 IPPDotNetDevKitCSV3/Code/.vs/config/applicationhost.config
+applicationhost.config $ git rm --cached applicationhost.config rm applicationhost.config
