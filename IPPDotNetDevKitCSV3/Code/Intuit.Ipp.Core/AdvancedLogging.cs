@@ -214,19 +214,19 @@ namespace Intuit.Ipp.Core.Rest
 
             string filePath = string.Empty;
 
-            if (this.EnableSerilogRequestResponseLoggingForRollingFile)
+            //  if (this.EnableSerilogRequestResponseLoggingForRollingFile) --Obselete
+            // {
+            //Assign tempath if no location found
+            if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
             {
-                //Assign tempath if no location found
-                if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
-                {
-                    this.ServiceRequestLoggingLocationForFile = Path.GetTempPath();
-                }
-
-
-                //Log file path for widows n ios
-                filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
-           
+                this.ServiceRequestLoggingLocationForFile = Path.GetTempPath();
             }
+
+
+            //Log file path for widows n ios
+            filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+
+            //}
 
             //Setting logger config for Serilog
             var loggerConfig = new LoggerConfiguration()
@@ -237,7 +237,7 @@ namespace Intuit.Ipp.Core.Rest
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-                loggerConfig = loggerConfig.WriteTo.LiterateConsole();
+               // loggerConfig = loggerConfig.WriteTo.LiterateConsole(); --Obselete
             }
 
             //Enabling Trace log
@@ -253,11 +253,11 @@ namespace Intuit.Ipp.Core.Rest
 
             }
 
-            //Enabling Rolling file log
+            /*//Enabling Rolling file log --Obselete
             if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
             {
                 loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
-            }
+            }*/
 
 
             ////Enabling AzureDocumentDB
