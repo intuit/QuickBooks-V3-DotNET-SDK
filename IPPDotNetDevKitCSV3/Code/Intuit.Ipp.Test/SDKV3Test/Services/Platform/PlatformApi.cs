@@ -19,13 +19,13 @@ namespace Intuit.Ipp.Test.Services.Platform
 	public class PlatformApi
 	{
 		ServiceContext qboContextOAuth = null;
-        string ValidAccessToken = "qyprdjjV5yb5YlzBGBo3fOesZ8WG3POL83PFg77UFkrVRat6";
-        string ValidAccessTokenSecret = "BhL29aQD7k1HyJyFXWP8HrDzBNnVa8YtuZsxtX4l";
-        string ValidConsumerKey = "qyprd68jMGebyWgiNFT411r4KnhmB9";
-        string ValidConsumerSecret = "j2QGgFRv5yYMXB5lVXUI0NBPlHAmz0drjANG1KeX";
+        string ValidAccessToken = "";
+        string ValidAccessTokenSecret = "";
+        string ValidConsumerKey = "";
+        string ValidConsumerSecret = "";
 
-        string InvalidAccessToken = "lvprdS0vcMp3lHlNirwpsWrsHnmjh0pLbDpK6WCXGtySTx61";
-        string InvalidAccessTokenSecret = "wAhzfEhOCjtWBoza2xAPG2Ey1BV599lLd1y92ytl";
+        string InvalidAccessToken = "";
+        string InvalidAccessTokenSecret = "";
 
         string realmIAQBO = "123145693359857";
 
