@@ -70,7 +70,7 @@ namespace OAuth2_Dotnet_UsingSDK
             oauthClient.EnableAdvancedLoggerInfoMode = true;
             oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForRollingFile = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
             oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
             oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
 

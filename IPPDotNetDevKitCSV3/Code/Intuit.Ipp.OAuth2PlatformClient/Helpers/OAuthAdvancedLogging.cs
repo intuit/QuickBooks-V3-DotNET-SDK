@@ -7,7 +7,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     using System.IO;
     using System;
     using Serilog;
-    using Serilog.Sinks;
+    using Serilog.Sinks.File;
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
@@ -21,21 +21,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// request logging location.
         /// </summary>
         private string serviceRequestLoggingLocationForFile;
-
-        /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
-
-        /// <summary>
-        /// request TTL-time to live for all logs 
-        /// </summary>
-        public double ServiceRequestAzureDocumentDBTTL { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
@@ -56,19 +41,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
         /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        /// Gets or sets a value indicating whether to enable reqeust response logging for File logs.
         /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForRollingFile { get; set; }
+        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        ///// </summary>
-        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
 
         /// <summary>
         /// Gets or sets the service request logging location for File, Rolling File.
@@ -156,7 +132,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Initializes a new instance of AdvanceLogging
         /// </summary>
         public OAuthAdvancedLogging()
-            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: null)
+            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null)
         {
         }
 
@@ -166,26 +142,22 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="enableSerilogRequestResponseLoggingForDebug"></param>
         /// <param name="enableSerilogRequestResponseLoggingForTrace"></param>
         /// <param name="enableSerilogRequestResponseLoggingForConsole"></param>
-        /// <param name="enableSerilogRequestResponseLoggingForRollingFile"></param>
+        /// <param name="enableSerilogRequestResponseLoggingForFile"></param>
         /// <param name="serviceRequestLoggingLocationForFile"></param>
-        public OAuthAdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile, string serviceRequestLoggingLocationForFile)
+        public OAuthAdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForFile, string serviceRequestLoggingLocationForFile)
         {
             this.EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
             this.EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
             this.EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
-            this.EnableSerilogRequestResponseLoggingForRollingFile = enableSerilogRequestResponseLoggingForRollingFile;
-            //this.EnableSerilogRequestResponseLoggingForAzureDocumentDB = enableSerilogRequestResponseLoggingForAzureDocumentDB;
-
+            this.EnableSerilogRequestResponseLoggingForFile = enableSerilogRequestResponseLoggingForFile;
             this.ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
-            //this.ServiceRequestAzureDocumentDBUrl = serviceRequestAzureDocumentDBUrl;
-            //this.ServiceRequestAzureDocumentDBSecureKey = serviceRequestAzureDocumentDBSecureKey;
-            //this.ServiceRequestAzureDocumentDBTTL = serviceRequestAzureDocumentDBTTL;
+     
 
 
 
             string filePath = string.Empty;
 
-            if (this.EnableSerilogRequestResponseLoggingForRollingFile)
+            if (this.EnableSerilogRequestResponseLoggingForFile)
             {
                 //Assign tempath if no location found
                 if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
@@ -208,7 +180,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-                //loggerConfig = loggerConfig.WriteTo.LiterateConsole(); //deprecated
             }
 
             //Enabling Trace log
@@ -224,19 +195,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             }
 
-            ////Enabling Rolling file log -deprecated
-            //if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
-            //{
-            //    loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
-            //}
-
-
-            ////Enabling AzureDocumentDB
-            //if (!string.IsNullOrEmpty(this.ServiceRequestAzureDocumentDBSecureKey) && this.ServiceRequestAzureDocumentDBUrl != null)
-            //{
-            //    loggerConfig = loggerConfig.WriteTo.AzureDocumentDB(this.ServiceRequestAzureDocumentDBUrl, this.ServiceRequestAzureDocumentDBSecureKey, timeToLive: TimeSpan.FromDays(this.ServiceRequestAzureDocumentDBTTL));//add DB
-
-            //}
+            //Enabling file log
+            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile))
+            {
+                loggerConfig = loggerConfig.WriteTo.File(filePath);
+            }
 
             //Creating the Logger for Serilog
             log = loggerConfig.CreateLogger();

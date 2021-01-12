@@ -15,10 +15,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Gets the Request Response Logging mechanism for advanced logging using serilog.
         /// </summary>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        public static OAuthAdvancedLogging GetAdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug,bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile,string serviceRequestLoggingLocationForFile)
+        public static OAuthAdvancedLogging GetAdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug,bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole,bool enableSerilogRequestResponseLoggingForFile, string serviceRequestLoggingLocationForFile)
         {
             OAuthAdvancedLogging advancedLogger;
-            advancedLogger = new OAuthAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: enableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: enableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: enableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForRollingFile: enableSerilogRequestResponseLoggingForRollingFile, serviceRequestLoggingLocationForFile: serviceRequestLoggingLocationForFile);
+            advancedLogger = new OAuthAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: enableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: enableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: enableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: enableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: serviceRequestLoggingLocationForFile);
 
             return advancedLogger;
 

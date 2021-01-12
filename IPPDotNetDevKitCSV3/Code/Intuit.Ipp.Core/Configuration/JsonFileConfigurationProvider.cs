@@ -102,8 +102,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForDebug = false,
                     EnableSerilogRequestResponseLoggingForTrace = false,
                     EnableSerilogRequestResponseLoggingForConsole = false,
-                    EnableSerilogRequestResponseLoggingForRollingFile = false,
-                   // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                    EnableSerilogRequestResponseLoggingForFile =  false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
             };
@@ -362,8 +361,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForDebug = false,
                     EnableSerilogRequestResponseLoggingForTrace = false,
                     EnableSerilogRequestResponseLoggingForConsole = false,
-                    EnableSerilogRequestResponseLoggingForRollingFile = false,
-                   // EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                    EnableSerilogRequestResponseLoggingForFile = false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
             };
@@ -437,29 +435,9 @@ namespace Intuit.Ipp.Core.Configuration
             var serilogLoggerSettings = builder.GetSection("SeriLogger").GetSection("RequestSerilog");
             var serilogLoggerSettingsDebug = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("Debug");
             var serilogLoggerSettingsConsole = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("Console");
-            var serilogLoggerSettingsRollingFile = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("RollingFile");
-            //var serilogLoggerSettingsFile= builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("File");
-            //var serilogLoggerSettingsAzureDocumentDB = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("AzureDocumentDB");
+            var serilogLoggerSettingsFile = builder.GetSection("SeriLogger").GetSection("RequestSerilog").GetSection("File");
 
 
-            if (!string.IsNullOrEmpty(serilogLoggerSettingsRollingFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsRollingFile["EnableLogs"]) == true)
-            {
-             
-
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = Convert.ToBoolean(serilogLoggerSettingsRollingFile["EnableLogs"]);
-
-
-                string location = loggerSettings["LogDirectory"];
-                if (!Directory.Exists(location))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-
-                ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsRollingFile["LogDirectory"];
-
-            }
 
             #region support later
 
@@ -503,6 +481,26 @@ namespace Intuit.Ipp.Core.Configuration
 
             #endregion
 
+            if (!string.IsNullOrEmpty(serilogLoggerSettingsFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]) == true)
+            {
+
+
+
+                ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]);
+
+
+                string location = loggerSettings["LogDirectory"];
+                if (!Directory.Exists(location))
+                {
+                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
+                    IdsExceptionManager.HandleException(exception);
+                }
+
+                ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsFile["LogDirectory"];
+
+            }
+
+            //old logger
             if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)
             {
 

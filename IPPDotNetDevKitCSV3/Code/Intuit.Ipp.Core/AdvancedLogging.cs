@@ -75,17 +75,10 @@ namespace Intuit.Ipp.Core.Rest
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForRollingFile { get; set; }
-
-
-
         ///// <summary>
         ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
         ///// </summary>
-        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
+        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>
@@ -185,7 +178,7 @@ namespace Intuit.Ipp.Core.Rest
         /// </summary>
  
         public AdvancedLogging()
-            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForRollingFile: false,  serviceRequestLoggingLocationForFile: null)
+            : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null)
         {
         }
 
@@ -195,27 +188,18 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="enableSerilogRequestResponseLoggingForDebug"></param>
         /// <param name="enableSerilogRequestResponseLoggingForTrace"></param>
         /// <param name="enableSerilogRequestResponseLoggingForConsole"></param>
-        /// <param name="enableSerilogRequestResponseLoggingForRollingFile"></param>
+        /// <param name="enableSerilogRequestResponseLoggingForFile"></param>
         /// <param name="serviceRequestLoggingLocationForFile"></param>
-        public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForRollingFile, string serviceRequestLoggingLocationForFile)
+        public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole,bool enableSerilogRequestResponseLoggingForFile, string serviceRequestLoggingLocationForFile)
         {
             this.EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
             this.EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
             this.EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
-            this.EnableSerilogRequestResponseLoggingForRollingFile = enableSerilogRequestResponseLoggingForRollingFile;
-            //this.EnableSerilogRequestResponseLoggingForAzureDocumentDB = enableSerilogRequestResponseLoggingForAzureDocumentDB;
-           
+            this.EnableSerilogRequestResponseLoggingForFile = enableSerilogRequestResponseLoggingForFile;
             this.ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
-            //this.ServiceRequestAzureDocumentDBUrl = serviceRequestAzureDocumentDBUrl;
-            //this.ServiceRequestAzureDocumentDBSecureKey = serviceRequestAzureDocumentDBSecureKey;
-            //this.ServiceRequestAzureDocumentDBTTL = serviceRequestAzureDocumentDBTTL;
-
-
 
             string filePath = string.Empty;
 
-            //  if (this.EnableSerilogRequestResponseLoggingForRollingFile) --Obselete
-            // {
             //Assign tempath if no location found
             if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
             {
@@ -237,7 +221,7 @@ namespace Intuit.Ipp.Core.Rest
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-               // loggerConfig = loggerConfig.WriteTo.LiterateConsole(); --Obselete
+        
             }
 
             //Enabling Trace log
@@ -253,19 +237,12 @@ namespace Intuit.Ipp.Core.Rest
 
             }
 
-            /*//Enabling Rolling file log --Obselete
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForRollingFile == true)
+            //Enabling file log
+            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile))
             {
-                loggerConfig = loggerConfig.WriteTo.RollingFile(filePath);
-            }*/
+                loggerConfig = loggerConfig.WriteTo.File(filePath);
+            }
 
-
-            ////Enabling AzureDocumentDB
-            //if (!string.IsNullOrEmpty(this.ServiceRequestAzureDocumentDBSecureKey) && this.ServiceRequestAzureDocumentDBUrl != null)
-            //{
-            //    loggerConfig = loggerConfig.WriteTo.AzureDocumentDB(this.ServiceRequestAzureDocumentDBUrl, this.ServiceRequestAzureDocumentDBSecureKey, timeToLive: TimeSpan.FromDays(this.ServiceRequestAzureDocumentDBTTL));//add DB
-
-            //}
 
             //Creating the Logger for Serilog
             log = loggerConfig.CreateLogger();

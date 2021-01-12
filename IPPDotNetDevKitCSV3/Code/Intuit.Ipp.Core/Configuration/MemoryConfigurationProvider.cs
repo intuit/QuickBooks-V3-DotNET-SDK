@@ -62,8 +62,7 @@ namespace Intuit.Ipp.Core.Configuration
                         EnableSerilogRequestResponseLoggingForDebug = false,
                         EnableSerilogRequestResponseLoggingForTrace = false,
                         EnableSerilogRequestResponseLoggingForConsole = false,
-                        EnableSerilogRequestResponseLoggingForRollingFile = false,
-                        EnableSerilogRequestResponseLoggingForAzureDocumentDB = false,
+                        EnableSerilogRequestResponseLoggingForFile = false,
                         ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                     }
                 };

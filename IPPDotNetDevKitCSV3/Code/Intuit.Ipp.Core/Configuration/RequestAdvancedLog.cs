@@ -36,20 +36,6 @@ namespace Intuit.Ipp.Core.Configuration
         /// </summary>
         private string serviceRequestLoggingLocationForFile;
 
-        ///// <summary>
-        ///// request Azure Document DB url.
-        ///// </summary>
-        //private Uri serviceRequestAzureDocumentDBUrl;
-
-        ///// <summary>
-        ///// request Azure Document DB Secure Key
-        ///// </summary>
-        //private string serviceRequestAzureDocumentDBSecureKey;
-
-        ///// <summary>
-        ///// request TTL-time to live for all logs 
-        ///// </summary>
-        //public int ServiceRequestAzureDocumentDBTTL { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
@@ -69,25 +55,10 @@ namespace Intuit.Ipp.Core.Configuration
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
 
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForRollingFile { get; set; }
-
-
-
         ///// <summary>
-        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
+        ///// Gets or sets a value indicating whether to enable reqeust response logging for logs.
         ///// </summary>
-        //public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
-        /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
-
-
+        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (OAuth2Client.AdvancedLoggerEnabled == false)
             {
                 //Intialize Logger
-                OAuth2Client.AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: false, enableSerilogRequestResponseLoggingForTrace: false, enableSerilogRequestResponseLoggingForConsole: false, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: System.IO.Path.GetTempPath());
+                OAuth2Client.AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: false, enableSerilogRequestResponseLoggingForTrace: false, enableSerilogRequestResponseLoggingForConsole: false, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: System.IO.Path.GetTempPath());
             }
 
             if (endpoint == null) throw new ArgumentNullException(nameof(endpoint));
