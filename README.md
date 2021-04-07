@@ -171,5 +171,6 @@ Thank you for your contribution!
 [ss1]: https://help.developer.intuit.com/s/SDKFeedback?cid=1155
 
 
-
+Samples:
+https://github.com/intuitdeveloper
 
