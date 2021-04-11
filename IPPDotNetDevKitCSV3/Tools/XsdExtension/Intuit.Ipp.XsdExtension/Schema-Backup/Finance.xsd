@@ -1426,6 +1426,14 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="PropertyTaxHomeOffice">
+				<xs:annotation>
+					<xs:documentation>
+						Product: QBO
+						Description: Money your business spends on property tax for a home that has a home office.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="RentAndLeaseHomeOffice">
 				<xs:annotation>
 					<xs:documentation>
@@ -3886,8 +3894,8 @@
 			<xs:element name="ApprovalStatus" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
-                        Product: QBO
-                        Description: Overall Approval Status, collective of all user approvals.
+                        Product: QBO
+                        Description: Overall Approval Status, collective of all user approvals.
 						InputType: QBO: ReadOnly
 					</xs:documentation>
 				</xs:annotation>
@@ -3919,8 +3927,8 @@
 			<xs:element name="LastChangedByUser" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
-                        Product: QBO
-                        Description: User-id of the user last updating the approval status.
+                        Product: QBO
+                        Description: User-id of the user last updating the approval status.
 						InputType: QBO: ReadOnly
 					</xs:documentation>
 				</xs:annotation>
@@ -3928,8 +3936,8 @@
 			<xs:element name="LastChangedDate" type="xs:dateTime" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
-                        Product: QBO
-                        Description: Date when the approval status was last updated.
+                        Product: QBO
+                        Description: Date when the approval status was last updated.
 						InputType: QBO: ReadOnly
 					</xs:documentation>
 				</xs:annotation>
@@ -4857,8 +4865,8 @@
 					<xs:element name="TxnApprovalInfo" type="TxnApprovalInfo" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>
-                                    Product: QBO
-                                    Description: Details of the Approval Status for current transaction in QBO workflows.
+                                    Product: QBO
+                                    Description: Details of the Approval Status for current transaction in QBO workflows.
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
@@ -5735,6 +5743,22 @@
 							<xs:documentation>
 								Product: QBO
 								Description: Internal use only: Convenience Fee detail for the invoice
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InvoiceLinkSecurityCode" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO:  Security code associated with Sharable link of the invoice for external users
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InvoiceLinkExpiryDate" type="xs:date" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Product: All
+								Description: QBO:  Expiry date for Sharable link of the invoice for external users
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>

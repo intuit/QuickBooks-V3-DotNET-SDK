@@ -324,12 +324,16 @@ namespace OAuth2_Dotnet_UsingSDK
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
 
+            QueryService<Invoice> in1 = new QueryService<Invoice>(context);
+            var inn2 = in1.ExecuteIdsQuery("Select * From Invoice").ToList();
+            Invoice inn1 = in1.ExecuteIdsQuery("Select * From Invoice where Id='27' StartPosition 1 MaxResults 1").First();
+
             QueryService<ReimburseCharge> rb1 = new QueryService<ReimburseCharge>(context);
+            var rb2 = rb1.ExecuteIdsQuery("Select * From ReimburseCharge").ToList();
             ReimburseCharge rbb1 = rb1.ExecuteIdsQuery("Select * From ReimburseCharge StartPosition 1 MaxResults 1").First();
 
 
-            QueryService<Invoice> in1 = new QueryService<Invoice>(context);
-            Invoice inn1 = in1.ExecuteIdsQuery("Select * From Invoice where Id='27' StartPosition 1 MaxResults 1").First();
+
 
             QueryService<RecurringTransaction> re1 = new QueryService<RecurringTransaction>(context);
             RecurringTransaction r1 = re1.ExecuteIdsQuery("Select * From RecurringTransaction StartPosition 1 MaxResults 1").First();

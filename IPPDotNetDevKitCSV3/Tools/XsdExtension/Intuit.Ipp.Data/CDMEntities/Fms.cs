@@ -1811,6 +1811,9 @@ namespace Intuit.Ipp.Data {
         Healthcare,
         
         /// <remarks/>
+        HealthSavingsAccountContributions,
+        
+        /// <remarks/>
         HomeOffice,
         
         /// <remarks/>
@@ -1967,6 +1970,12 @@ namespace Intuit.Ipp.Data {
         PayrollExpenses,
         
         /// <remarks/>
+        PayrollTaxExpenses,
+        
+        /// <remarks/>
+        PayrollWageExpenses,
+        
+        /// <remarks/>
         PayrollTaxPayable,
         
         /// <remarks/>
@@ -2082,6 +2091,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         Utilities,
+        
+        /// <remarks/>
+        Communications,
         
         /// <remarks/>
         UtilitiesHomeOffice,
@@ -3395,6 +3407,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         Square,
+        
+        /// <remarks/>
+        QBCommerce,
     }
     
     /// <remarks/>
@@ -15034,6 +15049,14 @@ namespace Intuit.Ipp.Data {
         
         private bool invoiceLinkExpiryDateFieldSpecified;
         
+        private bool autoPayEligibleField;
+        
+        private bool autoPayEligibleFieldSpecified;
+        
+        private bool schedulePayEligibleField;
+        
+        private bool schedulePayEligibleFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -15429,6 +15452,62 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.invoiceLinkExpiryDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicates whether the Recurring Invoice eligible for auto payment.
+        /// 
+        /// </summary>
+        public bool AutoPayEligible {
+            get {
+                return this.autoPayEligibleField;
+            }
+            set {
+                this.autoPayEligibleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AutoPayEligibleSpecified {
+            get {
+                return this.autoPayEligibleFieldSpecified;
+            }
+            set {
+                this.autoPayEligibleFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Indicates whether the Non-Recurring Invoice eligible for scheduled payment.
+        /// 
+        /// </summary>
+        public bool SchedulePayEligible {
+            get {
+                return this.schedulePayEligibleField;
+            }
+            set {
+                this.schedulePayEligibleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SchedulePayEligibleSpecified {
+            get {
+                return this.schedulePayEligibleFieldSpecified;
+            }
+            set {
+                this.schedulePayEligibleFieldSpecified = value;
             }
         }
     }
@@ -20991,6 +21070,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType classRefField;
         
+        private string sourceField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -22204,6 +22285,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.classRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Originating source of
+        /// the Item. Valid values are defined in SourceTypeEnum
+        /// 
+        /// </summary>
+        public string Source {
+            get {
+                return this.sourceField;
+            }
+            set {
+                this.sourceField = value;
             }
         }
     }
@@ -34079,6 +34177,23 @@ namespace Intuit.Ipp.Data {
     /// <remarks/>
     /// <summary>
     /// 
+    /// Product: QBO
+    /// Description: Enumeration of external sources that create the entites in QBO
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum SourceTypeEnum {
+        
+        /// <remarks/>
+        QBCommerce,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
     /// Product: ALL
     /// Description: Describes the base class of name entities (Customer, Employee, Vendor, OtherName)
     /// 
@@ -34677,6 +34792,8 @@ namespace Intuit.Ipp.Data {
         private string clientCompanyIdField;
         
         private string clientEntityIdField;
+        
+        private string sourceField;
         
         /// <remarks/>
         /// <summary>
@@ -35564,6 +35681,23 @@ namespace Intuit.Ipp.Data {
                 this.clientEntityIdField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Originating source of
+        /// the Customer. Valid values are defined in SourceTypeEnum
+        /// 
+        /// </summary>
+        public string Source {
+            get {
+                return this.sourceField;
+            }
+            set {
+                this.sourceField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -36070,6 +36204,8 @@ namespace Intuit.Ipp.Data {
         private bool hasTPARFieldSpecified;
         
         private VendorBankAccountDetail vendorPaymentBankDetailField;
+        
+        private string sourceField;
         
         /// <remarks/>
         /// <summary>
@@ -36797,6 +36933,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.vendorPaymentBankDetailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Originating source of
+        /// the Vendor. Valid values are defined in SourceTypeEnum
+        /// 
+        /// </summary>
+        public string Source {
+            get {
+                return this.sourceField;
+            }
+            set {
+                this.sourceField = value;
             }
         }
     }

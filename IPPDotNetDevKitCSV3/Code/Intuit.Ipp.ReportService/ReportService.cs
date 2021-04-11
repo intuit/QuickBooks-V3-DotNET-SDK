@@ -6,7 +6,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ *C:\Users\nshrivastava\Documents\Git\QuickBooks-V3-DotNET-SDK\IPPDotNetDevKitCSV3\Code\Intuit.Ipp.ReportService\ReportService.cs
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -229,6 +229,7 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(shipvia)) { uriParametersList.Add(new string[] { "shipvia", shipvia }); }
             if (!string.IsNullOrEmpty(sort_by)) { uriParametersList.Add(new string[] { "sort_by", sort_by }); }
             if (!string.IsNullOrEmpty(sort_order)) { uriParametersList.Add(new string[] { "sort_order", sort_order }); }
+            if (!string.IsNullOrEmpty(showrows)) { uriParametersList.Add(new string[] { "showrows", showrows }); }
 
             if (!string.IsNullOrEmpty(low_pp_date)) { uriParametersList.Add(new string[] { "low_pp_date", low_pp_date }); }
             if (!string.IsNullOrEmpty(high_pp_date)) { uriParametersList.Add(new string[] { "high_pp_date", high_pp_date }); }
@@ -667,6 +668,10 @@ namespace Intuit.Ipp.ReportService
         /// </summary>
         public string custom_pp { get; set; }
 
+        /// <summary>
+        /// Gets or sets the showrows
+        /// </summary>
+        public string showrows { get; set; }
 
         #endregion
 

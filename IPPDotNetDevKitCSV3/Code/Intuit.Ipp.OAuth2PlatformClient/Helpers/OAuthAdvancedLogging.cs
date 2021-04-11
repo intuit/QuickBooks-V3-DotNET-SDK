@@ -196,7 +196,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
 
             //Enabling file log
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile))
+            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForFile == true)
             {
                 loggerConfig = loggerConfig.WriteTo.File(filePath);
             }

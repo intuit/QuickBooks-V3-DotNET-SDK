@@ -52,5 +52,11 @@ namespace Intuit.Ipp.WebhooksService
         /// </summary>
         [JsonProperty("lastUpdated")]
         public string LastUpdated { get; set; }
+
+        /// <summary>
+        /// Deleted entityId for merge operations
+        /// </summary>
+        [JsonProperty("deletedId")]
+        public string DeletedId { get; set; }
     }
 }
