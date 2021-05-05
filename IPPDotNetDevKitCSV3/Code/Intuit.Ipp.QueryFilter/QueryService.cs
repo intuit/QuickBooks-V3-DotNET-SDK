@@ -37,7 +37,7 @@ namespace Intuit.Ipp.QueryFilter
     using Intuit.Ipp.Exception;
     using Intuit.Ipp.QueryFilter.Properties;
     using Intuit.Ipp.Utility;
-    
+
     /// <summary>
     /// Contains methods used to parse the expression tree and execute the query generated and return the result.
     /// </summary>
@@ -135,6 +135,63 @@ namespace Intuit.Ipp.QueryFilter
         /// <summary>
         /// Executes the Ids Query and returns the response.
         /// </summary>
+        /// <param name="idsQuery">The string representation of ids query for getting just the count of records.</param>
+        /// <param name="queryOperationType">Query Operation Type. Default value is query.</param>
+        /// <returns>Count of records.</returns>
+        public long ExecuteIdsQueryForCount(string idsQuery, QueryOperationType queryOperationType = QueryOperationType.query)
+        {
+            // Validate Parameter
+            if (string.IsNullOrWhiteSpace(idsQuery))
+            {
+                throw new InvalidParameterException(string.Format(CultureInfo.InvariantCulture, "The parameter idsQuery cannot be null or empty."));
+            }
+
+
+
+            // Buid the service uri
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, queryOperationType);
+
+            // Creates request parameters
+            RequestParameters parameters = null;
+
+            parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
+
+
+            // Prepares request
+            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, idsQuery);
+            string response = string.Empty;
+            try
+            {
+                // Gets response
+                response = this.restHandler.GetResponse(request);
+            }
+            catch (IdsException ex)
+            {
+                IdsExceptionManager.HandleException(ex);
+            }
+
+            // Check whether the response is null or empty and throw communication exception.
+            CoreHelper.CheckNullResponseAndThrowException(response);
+
+            // Deserialize object
+            IntuitResponse restResponse = (IntuitResponse)this.responseSerializer.Deserialize<IntuitResponse>(response);
+            QueryResponse queryResponse = restResponse.AnyIntuitObject as QueryResponse;
+
+
+            int totalCount = queryResponse.totalCount;
+
+
+
+
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method ExecuteIdsQuery.");
+
+            return totalCount;
+
+        }
+
+        /// <summary>
+        /// Executes the Ids Query and returns the response.
+        /// </summary>
         /// <param name="idsQuery">The string representation of ids query.</param>
         /// <param name="queryOperationType">Query Operation Type. Default value is query.</param>
         /// <returns>ReadOnly Collection fo items of type T.</returns>
@@ -151,9 +208,9 @@ namespace Intuit.Ipp.QueryFilter
 
             // Creates request parameters
             RequestParameters parameters = null;
-           
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
-        
+
+            parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
+
 
             // Prepares request
             HttpWebRequest request = this.restHandler.PrepareRequest(parameters, idsQuery);
@@ -190,8 +247,8 @@ namespace Intuit.Ipp.QueryFilter
 
             List<T> entities = new List<T>();
 
-            if(queryResponse.maxResults > 0 )
-            
+            if (queryResponse.maxResults > 0)
+
             {
                 object tempEntities = queryResponse.AnyIntuitObjects;
                 if (tempEntities != null)
@@ -235,7 +292,7 @@ namespace Intuit.Ipp.QueryFilter
                  }
              }*/
 
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method FindAll.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method ExecuteIdsQuery.");
             System.Collections.ObjectModel.ReadOnlyCollection<T> readOnlyCollection = new System.Collections.ObjectModel.ReadOnlyCollection<T>(entities);
             return readOnlyCollection;
         }
@@ -301,9 +358,9 @@ namespace Intuit.Ipp.QueryFilter
 
             // Creates request parameters
             RequestParameters parameters = null;
-         
-                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
-    
+
+            parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONTEXT);
+
 
             // Prepares request
             HttpWebRequest request = this.restHandler.PrepareRequest(parameters, idsQuery);
@@ -543,7 +600,7 @@ namespace Intuit.Ipp.QueryFilter
         //    Type t = new ReferenceType().GetType();
         //    if (expression.DeclaringType == t && name.Contains(".Value"))
         //        name = name.Replace(".Value", "");
-            
+
         //    this.whereBuilder.Append(name);
         //    return expression;
         //}
@@ -624,7 +681,7 @@ namespace Intuit.Ipp.QueryFilter
         //        {
         //            this.whereBuilder.Append(" NOT ");
         //        }
-            
+
         //        this.whereBuilder.Append(string.Format(CultureInfo.InvariantCulture, " {0} {1} ({2}) ", methodCallExpression.Target, "IN", inValues));
         //    }
 

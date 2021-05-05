@@ -316,13 +316,18 @@ namespace OAuth2_Dotnet_UsingSDK
             context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             //        //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";//prod
             context.IppConfiguration.MinorVersion.Qbo = "54";
-            //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
+            //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
             //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
+            QueryService<Invoice> in2 = new QueryService<Invoice>(context);
+            var inn22 = in2.ExecuteIdsQueryForCount("Select * From Invoice");
+            var inn23 = in2.ExecuteIdsQueryForCount("Select count(*) From Invoice");
+            var inn24 = in2.ExecuteIdsQueryForCount("Select * From Invoice where Id='27' StartPosition 1 MaxResults 1");
+
 
             QueryService<Invoice> in1 = new QueryService<Invoice>(context);
             var inn2 = in1.ExecuteIdsQuery("Select * From Invoice").ToList();
