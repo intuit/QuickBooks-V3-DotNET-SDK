@@ -1,4 +1,4 @@
-[![SDK Banner](views/RateSDK.png)][ss1][![SDK Banner](views/Thumbup.png)][ss2][![SDK Banner](views/Thumbdown.png)][ss3]
+[![SDK Banner](views/Ratesample.png)][ss1][![SDK Banner](views/Thumbup.png)][ss2][![SDK Banner](views/Thumbdown.png)][ss3]
 
 # HelloWorldApp-MVC5-Dotnet
 MVC5 Sample app for Dotnet
