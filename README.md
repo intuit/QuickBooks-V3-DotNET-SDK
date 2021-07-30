@@ -1,4 +1,4 @@
-[![SDK Banner](views/SDK.png)][ss1]
+[![SDK Banner](views/RateSDK.png)][ss1][![SDK Banner](views/Thumbup.png)][ss2][![SDK Banner](views/Thumbdown.png)][ss3]
 
 V3-DotNet-SDK
 =============
@@ -168,7 +168,9 @@ Note: Before you submit the pull request, make sure to remove the keys and token
 
 Thank you for your contribution!
 
-[ss1]: https://help.developer.intuit.com/s/SDKFeedback?cid=1155
+[ss1]: #
+[ss2]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=Yes&checkpoint=.NETSDK&pageUrl=github
+[ss3]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=No&checkpoint=.NETSDK&pageUrl=github
 
 
 Samples:
