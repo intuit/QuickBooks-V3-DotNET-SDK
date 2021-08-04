@@ -213,12 +213,12 @@ namespace Intuit.Ipp.Core.Rest
                                //enabling header logging in Serilogger
                                WebHeaderCollection allHeaders = request.Headers;
 
-                               CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri);
-                               CoreHelper.AdvancedLogging.Log("Logging all headers in the request:");
+                               this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, " RequestUrl: " + request.RequestUri);
+                               this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Logging all headers in the request:");
 
                                for (int i = 0; i < allHeaders.Count; i++)
                                {
-                                   CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
+                                   this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, allHeaders.GetKey(i) + "-" + allHeaders[i]);
                                }
 
                                // Log Request Body to a file
@@ -344,7 +344,7 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    CoreHelper.AdvancedLogging.Log(idsException.ToString());
+                    this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
             }
@@ -354,13 +354,13 @@ namespace Intuit.Ipp.Core.Rest
                 if (idsException != null)
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    CoreHelper.AdvancedLogging.Log(idsException.ToString());
+                    this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                 }
                 else
                 {
                     this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                    CoreHelper.AdvancedLogging.Log(idsException.ToString());
+                    this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                     resultArguments = new AsyncCallCompletedEventArgs(null, new IdsException("Exception has been generated.", exception));
                 }
             }
@@ -448,17 +448,19 @@ namespace Intuit.Ipp.Core.Rest
                     response_intuit_tid_header = response.Headers[i];
                 }
             }
-            // Log the response to Disk.
-            this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
-            // Log response to Serilog
-            CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString);
 
-            //log response to logs
-            TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
+            string responseMsg = " Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString;
+            // Log the response to Disk.
+            this.RequestLogging.LogPlatformRequests(responseMsg, false);
+            // Log response to Serilog
+            CoreHelper.AdvancedLogging.Log(responseMsg);
+            this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info, responseMsg);
+             //log response to logs
+             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
 
 
-            CoreHelper.AdvancedLogging.Log("Got the response from service.\n Start Dump: \n" + resultString);
+            this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info,"Got the response from service.\n Start Dump: \n" + resultString);
             //if response is of not type pdf do as usual
             if (!isResponsePdf)
             {
@@ -482,7 +484,7 @@ namespace Intuit.Ipp.Core.Rest
                         if (idsException != null)
                         {
                             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
-                            CoreHelper.AdvancedLogging.Log(idsException.ToString());
+                            this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Error, idsException.ToString());
                             resultArguments = new AsyncCallCompletedEventArgs(null, idsException);
                         }
                         else
@@ -576,18 +578,18 @@ namespace Intuit.Ipp.Core.Rest
         private void GetRequestStreamCallback(IAsyncResult asynchronousResult)
         {
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
-
+            string requestMsg = " RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody;
             // Log Request Body to a file
-            this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+            this.RequestLogging.LogPlatformRequests(requestMsg, true);
             // Log Request Body to Serilog
-            CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody);
+            CoreHelper.AdvancedLogging.Log(requestMsg + this.requestBody);
             UTF8Encoding encoding = new UTF8Encoding();
             byte[] content = encoding.GetBytes(this.requestBody);
 
 
             TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Adding the payload to request.\n Start dump of request: \n" + this.requestBody : "Adding the payload to request.");
-            CoreHelper.AdvancedLogging.Log("Adding the payload to request.\n Start dump of request: \n" + this.requestBody);
+            this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info, "Adding the payload to request.\n Start dump of request: \n" + this.requestBody);
             // Check whether compression is enabled and compress the stream accordingly.
             if (this.RequestCompressor != null)
             {

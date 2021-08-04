@@ -56,7 +56,7 @@ namespace Intuit.Ipp.Core.Configuration
             {
                 cfg.AdvancedLogger = new AdvancedLogger
                 {
-          
+                    CustomLogger = new TraceLogger(),
                     RequestAdvancedLog = new RequestAdvancedLog()
                     {
                         EnableSerilogRequestResponseLoggingForDebug = false,

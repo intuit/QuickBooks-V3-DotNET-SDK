@@ -33,6 +33,11 @@ namespace Intuit.Ipp.Core.Configuration
         /// </summary>
         public RequestAdvancedLog RequestAdvancedLog { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Custom logger implementation class.
+        /// </summary>
+        public ILogger CustomLogger { get; set; }
+
 
 
     }

@@ -97,6 +97,7 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.AdvancedLogger = new AdvancedLogger
             {
              
+                CustomLogger = new TraceLogger(),
                 RequestAdvancedLog = new RequestAdvancedLog()
                 {
                     EnableSerilogRequestResponseLoggingForDebug = false,
@@ -355,7 +356,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             ippConfig.AdvancedLogger = new AdvancedLogger
             {
-             
+                CustomLogger = new TraceLogger(),
                 RequestAdvancedLog = new RequestAdvancedLog()
                 {
                     EnableSerilogRequestResponseLoggingForDebug = false,
@@ -484,10 +485,7 @@ namespace Intuit.Ipp.Core.Configuration
             if (!string.IsNullOrEmpty(serilogLoggerSettingsFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]) == true)
             {
 
-
-
                 ippConfig.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]);
-
 
                 string location = loggerSettings["LogDirectory"];
                 if (!Directory.Exists(location))
@@ -498,6 +496,10 @@ namespace Intuit.Ipp.Core.Configuration
 
                 ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsFile["LogDirectory"];
 
+            }
+            else
+            {
+                ippConfig.AdvancedLogger.CustomLogger = new TraceLogger();
             }
 
             //old logger
@@ -515,7 +517,10 @@ namespace Intuit.Ipp.Core.Configuration
                 }
 
                 ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
-
+            }
+            else
+            {
+                ippConfig.Logger.CustomLogger = new TraceLogger();
             }
 
             if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]) == true)

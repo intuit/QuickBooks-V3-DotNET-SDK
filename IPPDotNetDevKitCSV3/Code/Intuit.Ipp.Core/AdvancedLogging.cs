@@ -85,10 +85,7 @@ namespace Intuit.Ipp.Core.Rest
         /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
         /// </summary>
         public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
-
-
-
-
+        
         /// <summary>
         /// Gets or sets the service request logging location for File, Rolling File.
         /// </summary>
