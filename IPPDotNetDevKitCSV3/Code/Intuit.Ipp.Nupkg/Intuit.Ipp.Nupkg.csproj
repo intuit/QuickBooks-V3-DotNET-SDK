@@ -37,6 +37,7 @@
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2Logger\Intuit.Ipp.OAuth2Logger.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" PrivateAssets="all" />
@@ -54,6 +55,7 @@
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2Logger\Intuit.Ipp.OAuth2Logger.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
@@ -70,6 +72,7 @@
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2Logger\Intuit.Ipp.OAuth2Logger.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />

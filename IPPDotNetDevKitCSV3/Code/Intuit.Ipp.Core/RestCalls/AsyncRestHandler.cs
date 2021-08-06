@@ -214,11 +214,11 @@ namespace Intuit.Ipp.Core.Rest
                                WebHeaderCollection allHeaders = request.Headers;
 
                                this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, " RequestUrl: " + request.RequestUri);
-                               this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, "Logging all headers in the request:");
+                               this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info, "Logging all headers in the request:");
 
                                for (int i = 0; i < allHeaders.Count; i++)
                                {
-                                   this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, allHeaders.GetKey(i) + "-" + allHeaders[i]);
+                                   this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info, allHeaders.GetKey(i) + "-" + allHeaders[i]);
                                }
 
                                // Log Request Body to a file
@@ -458,7 +458,6 @@ namespace Intuit.Ipp.Core.Rest
              //log response to logs
              TraceSwitch traceSwitch = new TraceSwitch("IPPTraceSwitch", "IPP Trace Switch");
             this.context.IppConfiguration.Logger.CustomLogger.Log(TraceLevel.Info, (int)traceSwitch.Level > (int)TraceLevel.Info ? "Got the response from service.\n Start Dump: \n" + resultString : "Got the response from service.");
-
 
             this.context.IppConfiguration.AdvancedLogger.CustomLogger.Log(TraceLevel.Info,"Got the response from service.\n Start Dump: \n" + resultString);
             //if response is of not type pdf do as usual

@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 // Modified for Intuit's Oauth2 implementation
 
+using Intuit.Ipp.OAuth2Logger.Helper;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeAccessTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Revoke Access token request initiated");
+            OAuth2Client.OAuth2TraceLogger.Log(OAuth2TraceLevel.Info, "Revoke Access token request initiated");
             return client.RevokeAsync(new TokenRevocationRequest
             {
                 Token = token,
@@ -37,7 +38,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeRefreshTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Revoke Refresh token request initiated");
+            OAuth2Client.OAuth2TraceLogger.Log(OAuth2TraceLevel.Info, "Revoke Refresh token request initiated");
             return client.RevokeAsync(new TokenRevocationRequest
             {
                 Token = token,

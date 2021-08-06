@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 // Modified for Intuit's Oauth2 implementation
 
+using Intuit.Ipp.OAuth2Logger.Helper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -30,7 +31,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (OAuth2Client.AdvancedLoggerEnabled != false)
             {
-                OAuth2Client.AdvancedLogger.Log("Access/Bearer token request initiated");
+                OAuth2Client.OAuth2TraceLogger.Log(OAuth2TraceLevel.Info, "Access/Bearer token request initiated");
             }
             var fields = new Dictionary<string, string>
             {
@@ -57,7 +58,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (OAuth2Client.AdvancedLoggerEnabled != false)
             {
-                OAuth2Client.AdvancedLogger.Log("Refresh token request initiated");
+                OAuth2Client.OAuth2TraceLogger.Log(OAuth2TraceLevel.Info, "Refresh token request initiated");
             }
             var fields = new Dictionary<string, string>
             {
