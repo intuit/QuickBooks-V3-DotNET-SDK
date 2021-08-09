@@ -4560,6 +4560,34 @@ namespace Intuit.Ipp.Data {
     
     /// <remarks/>
     /// <summary>
+    /// Enumeration of financing Product Type applicable to Invoice
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum FinancingProductTypeEnum {
+        
+        /// <remarks/>
+        GET_PAID_UPFRONT,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// Enumeration of subscription payment setting applicable to Invoice
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum SubscriptionPaymentsSettingEnum {
+        
+        /// <remarks/>
+        SALE_TERM,
+    }
+    
+    /// <remarks/>
+    /// <summary>
     /// That minimal subset of transaction information
     /// which is included on another transaction, so that a client viewing
     /// the second transaction entity need not make an additional request to
@@ -12593,6 +12621,10 @@ namespace Intuit.Ipp.Data {
         
         private bool applyTaxAfterDiscountFieldSpecified;
         
+        private bool shippingTaxIncludedInTotalTaxField;
+        
+        private bool shippingTaxIncludedInTotalTaxFieldSpecified;
+        
         private ReferenceType templateRefField;
         
         private PrintStatusEnum printStatusField;
@@ -13169,6 +13201,37 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.applyTaxAfterDiscountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: During total tax override (when user specifies TxnTaxDetail.TotalTax),
+        /// if this is set to true, system overrides all taxes including the shipping tax,
+        /// otherwise (if false or null) only non shipping taxes are overridden and original shipping
+        /// tax is added to the total tax.
+        /// 
+        /// </summary>
+        public bool ShippingTaxIncludedInTotalTax {
+            get {
+                return this.shippingTaxIncludedInTotalTaxField;
+            }
+            set {
+                this.shippingTaxIncludedInTotalTaxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ShippingTaxIncludedInTotalTaxSpecified {
+            get {
+                return this.shippingTaxIncludedInTotalTaxFieldSpecified;
+            }
+            set {
+                this.shippingTaxIncludedInTotalTaxFieldSpecified = value;
             }
         }
         
@@ -15057,6 +15120,20 @@ namespace Intuit.Ipp.Data {
         
         private bool schedulePayEligibleFieldSpecified;
         
+        private string scheduledPaymentIdField;
+        
+        private bool gratuityEnabledField;
+        
+        private bool gratuityEnabledFieldSpecified;
+        
+        private FinancingProductTypeEnum financingProductTypeField;
+        
+        private bool financingProductTypeFieldSpecified;
+        
+        private SubscriptionPaymentsSettingEnum subscriptionPaymentsSettingField;
+        
+        private bool subscriptionPaymentsSettingFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -15508,6 +15585,106 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.schedulePayEligibleFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Unique identifier for scheduled payment for invoice. Used to indicate if invoice has scheduled payment or not.
+        /// 
+        /// </summary>
+        public string ScheduledPaymentId {
+            get {
+                return this.scheduledPaymentIdField;
+            }
+            set {
+                this.scheduledPaymentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Internal use only: Indicates whether gratuity is enabled for this invoice.
+        /// 
+        /// </summary>
+        public bool GratuityEnabled {
+            get {
+                return this.gratuityEnabledField;
+            }
+            set {
+                this.gratuityEnabledField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool GratuityEnabledSpecified {
+            get {
+                return this.gratuityEnabledFieldSpecified;
+            }
+            set {
+                this.gratuityEnabledFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Internal use only: Indicates invoice financing type.
+        /// 
+        /// </summary>
+        public FinancingProductTypeEnum FinancingProductType {
+            get {
+                return this.financingProductTypeField;
+            }
+            set {
+                this.financingProductTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool FinancingProductTypeSpecified {
+            get {
+                return this.financingProductTypeFieldSpecified;
+            }
+            set {
+                this.financingProductTypeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Internal use only: Subscription payment setting for a Recurring Invoice
+        /// 
+        /// </summary>
+        public SubscriptionPaymentsSettingEnum SubscriptionPaymentsSetting {
+            get {
+                return this.subscriptionPaymentsSettingField;
+            }
+            set {
+                this.subscriptionPaymentsSettingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SubscriptionPaymentsSettingSpecified {
+            get {
+                return this.subscriptionPaymentsSettingFieldSpecified;
+            }
+            set {
+                this.subscriptionPaymentsSettingFieldSpecified = value;
             }
         }
     }
@@ -17331,6 +17508,8 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType taxRateExField;
         
+        private ReferenceType originalTaxRateField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -17560,6 +17739,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.taxRateExField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: OriginalTaxRate represents the tax rate from which the current tax rate originated
+        /// 
+        /// </summary>
+        public ReferenceType OriginalTaxRate {
+            get {
+                return this.originalTaxRateField;
+            }
+            set {
+                this.originalTaxRateField = value;
             }
         }
     }
@@ -25939,6 +26134,10 @@ namespace Intuit.Ipp.Data {
         
         private bool minutesFieldSpecified;
         
+        private int secondsField;
+        
+        private bool secondsFieldSpecified;
+        
         private int breakHoursField;
         
         private bool breakHoursFieldSpecified;
@@ -25946,6 +26145,10 @@ namespace Intuit.Ipp.Data {
         private int breakMinutesField;
         
         private bool breakMinutesFieldSpecified;
+        
+        private int breakSecondsField;
+        
+        private bool breakSecondsFieldSpecified;
         
         private System.DateTime startTimeField;
         
@@ -26260,6 +26463,32 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         /// <summary>
+        /// Seconds worked; valid values are 0 - 59.
+        /// 
+        /// </summary>
+        public int Seconds {
+            get {
+                return this.secondsField;
+            }
+            set {
+                this.secondsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SecondsSpecified {
+            get {
+                return this.secondsFieldSpecified;
+            }
+            set {
+                this.secondsFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
         /// Hours of break taken between start time and end
         /// time.
         /// [b]QuickBooks Notes[/b][br /]
@@ -26313,6 +26542,33 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.breakMinutesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Seconds of break taken between start time and
+        /// end time. Valid values are 0 - 59.
+        /// 
+        /// </summary>
+        public int BreakSeconds {
+            get {
+                return this.breakSecondsField;
+            }
+            set {
+                this.breakSecondsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool BreakSecondsSpecified {
+            get {
+                return this.breakSecondsFieldSpecified;
+            }
+            set {
+                this.breakSecondsFieldSpecified = value;
             }
         }
         
