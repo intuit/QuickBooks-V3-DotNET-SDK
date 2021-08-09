@@ -265,6 +265,8 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(bothamount)) { uriParametersList.Add(new string[] { "bothamount", bothamount }); }
             if (!string.IsNullOrEmpty(memo)) { uriParametersList.Add(new string[] { "memo", memo }); }
             if (!string.IsNullOrEmpty(docnum)) { uriParametersList.Add(new string[] { "docnum", docnum }); }
+            if (!string.IsNullOrEmpty(add_due_date)) { uriParametersList.Add(new string[] { "add_due_date", add_due_date }); }
+            if (!string.IsNullOrEmpty(attachmentType)) { uriParametersList.Add(new string[] { "attachmentType", attachmentType }); }
 
             if (!string.IsNullOrEmpty(subcol_py)) { uriParametersList.Add(new string[] { "subcol_py", subcol_py }); }
             if (!string.IsNullOrEmpty(subcol_py_chg)) { uriParametersList.Add(new string[] { "subcol_py_chg", subcol_py_chg }); }
@@ -672,6 +674,16 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the showrows
         /// </summary>
         public string showrows { get; set; }
+
+        /// <summary>
+        /// Gets or sets the add_due_date
+        /// </summary>
+        public string add_due_date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the attachmentType
+        /// </summary>
+        public string attachmentType { get; set; }
 
         #endregion
 
