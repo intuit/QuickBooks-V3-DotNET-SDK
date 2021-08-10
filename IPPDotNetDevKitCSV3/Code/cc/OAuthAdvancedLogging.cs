@@ -1,5 +1,5 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="RequestLog.cs" company="Microsoft">
+﻿////*********************************************************
+// <copyright file="ILogger.cs" company="Intuit">
 /*******************************************************************************
  * Copyright 2016 Intuit
  *
@@ -15,19 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>This file contains SdkException.</summary>
-// <summary>This file contains Request Log configuration.</summary>
-// -----------------------------------------------------------------------
+// <summary>This file contains advanced logger for IPP .Net OAuth2 SDK.</summary>
+////*********************************************************
 
-using System;
-
-namespace Intuit.Ipp.Core.Rest
+namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
 {
     using System.IO;
-    using Intuit.Ipp.Exception;
     using System;
     using Serilog;
-    using Serilog.Sinks;
+    using Serilog.Sinks.File;
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
@@ -35,27 +31,12 @@ namespace Intuit.Ipp.Core.Rest
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
-    public class AdvancedLogging
+    public class OAuthAdvancedLogging : IOAuthAdvancedLogger
     {
         /// <summary>
         /// request logging location.
         /// </summary>
         private string serviceRequestLoggingLocationForFile;
-
-        /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
-
-        /// <summary>
-        /// request TTL-time to live for all logs 
-        /// </summary>
-        public double ServiceRequestAzureDocumentDBTTL { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
@@ -75,18 +56,10 @@ namespace Intuit.Ipp.Core.Rest
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
 
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether to enable reqeust response logging for Rolling logs.
-        ///// </summary>
-        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
-
         /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Azure Doc DB logs.
+        /// Gets or sets a value indicating whether to enable reqeust response logging for File logs.
         /// </summary>
-        public bool EnableSerilogRequestResponseLoggingForAzureDocumentDB { get; set; }
-
-
+        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
         /// <summary>
@@ -109,6 +82,12 @@ namespace Intuit.Ipp.Core.Rest
                 this.serviceRequestLoggingLocationForFile = value;
             }
         }
+
+
+        /// <summary>
+        /// Serilog Logger
+        /// </summary>
+        private Serilog.ILogger logger;
 
         #region support later
         ///// <summary>
@@ -164,23 +143,26 @@ namespace Intuit.Ipp.Core.Rest
 
         #endregion
 
-        /// <summary>
-        /// Serilog Logger
-        /// </summary>
-        public Logger log;
-
-
-
-
 
         /// <summary>
         /// Initializes a new instance of AdvanceLogging
         /// </summary>
- 
-        public AdvancedLogging()
+        public OAuthAdvancedLogging()
             : this(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null)
         {
         }
+
+        /// <summary>
+        /// Initializes a new instance of Advanced logging class        
+        /// </summary>
+        /// <param name="customLogger"></param>
+        public OAuthAdvancedLogging(Serilog.ILogger customLogger)
+        {
+            this.logger = customLogger;
+            //Logging first info
+            logger.Information("Custom Logger is initialized");
+        }
+
 
         /// <summary>
         /// Initializes a new instance of Advanced logger
@@ -190,38 +172,42 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="enableSerilogRequestResponseLoggingForConsole"></param>
         /// <param name="enableSerilogRequestResponseLoggingForFile"></param>
         /// <param name="serviceRequestLoggingLocationForFile"></param>
-        public AdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole,bool enableSerilogRequestResponseLoggingForFile, string serviceRequestLoggingLocationForFile)
+        public OAuthAdvancedLogging(bool enableSerilogRequestResponseLoggingForDebug, bool enableSerilogRequestResponseLoggingForTrace, bool enableSerilogRequestResponseLoggingForConsole, bool enableSerilogRequestResponseLoggingForFile, string serviceRequestLoggingLocationForFile)
         {
             this.EnableSerilogRequestResponseLoggingForDebug = enableSerilogRequestResponseLoggingForDebug;
             this.EnableSerilogRequestResponseLoggingForTrace = enableSerilogRequestResponseLoggingForTrace;
             this.EnableSerilogRequestResponseLoggingForConsole = enableSerilogRequestResponseLoggingForConsole;
             this.EnableSerilogRequestResponseLoggingForFile = enableSerilogRequestResponseLoggingForFile;
             this.ServiceRequestLoggingLocationForFile = serviceRequestLoggingLocationForFile;
+     
+
+
 
             string filePath = string.Empty;
 
-            //Assign tempath if no location found
-            if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
+            if (this.EnableSerilogRequestResponseLoggingForFile)
             {
-                this.ServiceRequestLoggingLocationForFile = Path.GetTempPath();
+                //Assign tempath if no location found
+                if (string.IsNullOrWhiteSpace(this.ServiceRequestLoggingLocationForFile))
+                {
+                    this.ServiceRequestLoggingLocationForFile = Path.GetTempPath();
+                }
+
+
+                //Log file path for widows n ios
+                filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
+
             }
-
-
-            //Log file path for widows n ios
-            filePath = Path.Combine(this.ServiceRequestLoggingLocationForFile, "QBOApiLogs-" + DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture) + ".txt");
-
-            //}
 
             //Setting logger config for Serilog
             var loggerConfig = new LoggerConfiguration()
                  .MinimumLevel.Verbose();
-                 
+
 
             //Enabling console log
             if (this.EnableSerilogRequestResponseLoggingForConsole == true)
             {
                 loggerConfig = loggerConfig.WriteTo.Console();
-        
             }
 
             //Enabling Trace log
@@ -238,19 +224,16 @@ namespace Intuit.Ipp.Core.Rest
             }
 
             //Enabling file log
-            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForFile==true)
+            if (!string.IsNullOrEmpty(this.ServiceRequestLoggingLocationForFile) && this.EnableSerilogRequestResponseLoggingForFile == true)
             {
                 loggerConfig = loggerConfig.WriteTo.File(filePath);
             }
 
-
             //Creating the Logger for Serilog
-            log = loggerConfig.CreateLogger();
-
-
+            logger = loggerConfig.CreateLogger();
 
             //Logging first info
-            log.Information("Logger is initialized");
+            logger.Information("Logger is initialized");
 
         }
 
@@ -260,8 +243,7 @@ namespace Intuit.Ipp.Core.Rest
         /// <param name="messageToWrite"></param>
         public void Log(string messageToWrite)
         {
-
-            log.Write(LogEventLevel.Verbose, messageToWrite);
+            logger.Write(LogEventLevel.Verbose, messageToWrite);
         }
     }
 }

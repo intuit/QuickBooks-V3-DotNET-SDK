@@ -25,6 +25,7 @@ namespace Intuit.Ipp.Core.Configuration
 {
     using System.IO;
     using Intuit.Ipp.Exception;
+    using Serilog;
 
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
@@ -55,9 +56,9 @@ namespace Intuit.Ipp.Core.Configuration
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
 
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether to enable reqeust response logging for logs.
-        ///// </summary>
+        /// <summary>
+        /// Gets or sets a value indicating whether to enable reqeust response logging for logs.
+        /// </summary>
         public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
@@ -82,6 +83,13 @@ namespace Intuit.Ipp.Core.Configuration
                 this.serviceRequestLoggingLocationForFile= value;
             }
         }
+
+        /// <summary>
+        /// Serilog CustomLogger
+        /// </summary>
+        public Serilog.ILogger CustomLogger { get; set; }
+
+
 
         #region support later
         ///// <summary>

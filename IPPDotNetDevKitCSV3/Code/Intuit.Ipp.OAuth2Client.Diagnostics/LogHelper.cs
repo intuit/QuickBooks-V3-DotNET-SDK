@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace Intuit.Ipp.OAuth2PlatformClient
+namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
 { 
     /// <summary>
     /// Helper class for advanced logger/serilogger

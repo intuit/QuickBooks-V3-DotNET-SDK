@@ -14,7 +14,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class AuthorizeRequest
     {
-        private readonly Uri _authorizeEndpoint;
+        private readonly Uri _authorizeEndpoint;   
 
         /// <summary>
         /// Maps authorize endpoint
@@ -22,12 +22,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="authorizeEndpoint"></param>
         public AuthorizeRequest(Uri authorizeEndpoint)
         {
-            //if (OAuth2Client.AdvancedLoggerEnabled == false)
-            //{
-            //    //Intialize Logger
-            //    OAuth2Client.AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: false, enableSerilogRequestResponseLoggingForTrace: false, enableSerilogRequestResponseLoggingForConsole: false, enableSerilogRequestResponseLoggingForRollingFile: false, serviceRequestLoggingLocationForFile: System.IO.Path.GetTempPath());
-            //}
-
             _authorizeEndpoint = authorizeEndpoint;
         }
 
@@ -57,8 +51,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 return string.Format("{0}?{1}", _authorizeEndpoint.OriginalString, qs);
             }
-
-           
+          
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="OAuth2_Dotnet_UsingSDK.Default" %>
+﻿<%@ Page Async="true" Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="TestSDK.Default2" %>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
