@@ -12,11 +12,12 @@
     <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-   
+
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cc\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" />
+        <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" PrivateAssets="all" />
   </ItemGroup>
+
 
 
 </Project>
