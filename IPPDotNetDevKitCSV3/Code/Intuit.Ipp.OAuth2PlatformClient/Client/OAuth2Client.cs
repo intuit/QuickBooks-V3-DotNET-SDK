@@ -17,6 +17,9 @@ using System.Reflection;
 using System.Linq;
 using System.IO;
 using System.Globalization;
+using Serilog;
+using Intuit.Ipp.OAuth2PlatformClient.Diagnostics;
+using Serilog;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -148,7 +151,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// DiscoveryUrl
         /// </summary>
         public string DiscoveryUrl { get; set; }
-
+  
+        /// <summary>
+        /// CustomLogger
+        /// </summary>
+        public Serilog.ILogger CustomLogger { get; set; }
 
 
         /// <summary>
@@ -185,6 +192,42 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             
 
         }
+
+
+        ///// <summary>
+        ///// OAuth2Client constructor
+        ///// </summary>
+        ///// <param name="clientID"></param>
+        ///// <param name="clientSecret"></param>
+        ///// <param name="redirectURI"></param>
+        ///// <param name="environment">This can either be sandbox, production or an actual discovery url</param>
+        //public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment, ILogger customLogger)
+        //{
+        //    this.CustomLogger = customLogger ?? throw new ArgumentNullException(nameof(customLogger));
+        //    ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
+        //    ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
+        //    RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
+        //    if (environment != null && environment != "")
+        //    {
+        //        try
+        //        {
+        //            ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
+        //        }
+        //        catch (System.Exception ex)
+        //        {
+        //            ApplicationEnvironment = AppEnvironment.Custom;
+        //            DiscoveryUrl = environment;
+        //        }
+
+
+        //    }
+
+
+
+        //    DiscoveryDoc = GetDiscoveryDoc();
+
+
+        //}
 
 
 
@@ -232,10 +275,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
 
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            }
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -277,9 +330,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
@@ -322,9 +385,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 ShowInfoLogs = true;
             }
 
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
 
 
@@ -490,10 +562,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
 
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            }
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -521,10 +602,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
 
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            }
 
             var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -551,9 +642,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
@@ -581,9 +682,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
             var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
@@ -609,9 +720,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
 
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
@@ -642,10 +763,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
 
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            }
 
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(revokeTokenEndpoint, ClientID, ClientSecret);
             return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
@@ -674,10 +805,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
 
 
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+
+            }
 
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
             return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);
@@ -704,9 +845,19 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 ShowInfoLogs = true;
             }
-            //Intialize Logger
-            AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile,  serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+
+
+            }
+            else
+            {
+                //Intialize Logger
+                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
 
 
             UserInfoClient userInfoClient = new UserInfoClient(userInfoEndpoint);

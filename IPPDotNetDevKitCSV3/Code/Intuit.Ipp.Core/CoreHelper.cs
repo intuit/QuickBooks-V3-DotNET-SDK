@@ -41,7 +41,7 @@ namespace Intuit.Ipp.Core
         /// <summary>
         /// Gets or sets Serilog Request Logging.
         /// </summary>
-        internal static AdvancedLogging AdvancedLogging;
+        internal static Diagnostics.AdvancedLogging AdvancedLogging;
     
         /// <summary>
         /// Gets the serializer mechanism using the service context and the depending on the request and response.
@@ -183,25 +183,32 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        public static Rest.AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
+        public static Diagnostics.AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
         {
-            Rest.AdvancedLogging requestLogger;
+            Diagnostics.AdvancedLogging requestLogger;
             if (serviceContext.IppConfiguration != null &&
                 serviceContext.IppConfiguration.AdvancedLogger != null &&
                 serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog != null)
             {
-                requestLogger = new Rest.AdvancedLogging(
+                if (serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger != null)
+                {
+                    //Use custom logger
+                    requestLogger = new Diagnostics.AdvancedLogging(serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger);
+                }
+                else
+                {
+                    requestLogger = new Diagnostics.AdvancedLogging(
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile,
                     serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile);
-              
 
+                }
             }
             else
             {
-                requestLogger = new Rest.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null);
+                requestLogger = new Diagnostics.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null);
             }
 
             return requestLogger;

@@ -32,9 +32,9 @@ using Intuit.Ipp.Diagnostics;
 using Serilog;
 
 
-namespace OAuth2_Dotnet_UsingSDK
+namespace TestSDK
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default2 : System.Web.UI.Page
     {
         // OAuth2 client configuration
         static string redirectURI = ConfigurationManager.AppSettings["redirectURI"];
@@ -48,7 +48,7 @@ namespace OAuth2_Dotnet_UsingSDK
         static string idToken;
         public static IList<JsonWebKey> keys;
         public static Dictionary<string, string> dictionary = new Dictionary<string, string>();
-        
+
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
@@ -66,13 +66,15 @@ namespace OAuth2_Dotnet_UsingSDK
 
         protected async void Page_Load(object sender, EventArgs e)
         {
-    
-            oauthClient.EnableAdvancedLoggerInfoMode = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
+            CLogger cu = new CLogger();
+
+            oauthClient.CustomLogger = cu.GetCustomLogger();
+            //oauthClient.EnableAdvancedLoggerInfoMode = true;
+            //oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
+            //oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
+            //oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
+            //oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
+            //oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
 
             //SeriLogger seri = new SeriLogger();
             //seri.Log(TraceLevel.Verbose, "Nimisha typing");
@@ -87,24 +89,24 @@ namespace OAuth2_Dotnet_UsingSDK
                     {
                         //if (oauthClient.CSRFToken == response.State)
                         //{
-                            if (response.RealmId != null)
+                        if (response.RealmId != null)
+                        {
+                            // seri.Log(TraceLevel.Verbose, response.RealmId);
+                            if (!dictionary.ContainsKey("realmId"))
                             {
-                              // seri.Log(TraceLevel.Verbose, response.RealmId);
-                                if (!dictionary.ContainsKey("realmId"))
-                                {
-                                    dictionary.Add("realmId", response.RealmId);
-                                }
+                                dictionary.Add("realmId", response.RealmId);
                             }
+                        }
 
-                            if (response.Code != null)
-                            {
-                                authCode = response.Code;
+                        if (response.Code != null)
+                        {
+                            authCode = response.Code;
 
-                                Output("Authorization code obtained.");
-                                PageAsyncTask t = new PageAsyncTask(PerformCodeExchange);
-                                Page.RegisterAsyncTask(t);
-                                Page.ExecuteRegisteredAsyncTasks();
-                            }
+                            Output("Authorization code obtained.");
+                            PageAsyncTask t = new PageAsyncTask(PerformCodeExchange);
+                            Page.RegisterAsyncTask(t);
+                            Page.ExecuteRegisteredAsyncTasks();
+                        }
                         //}
                         //else
                         //{
@@ -123,35 +125,35 @@ namespace OAuth2_Dotnet_UsingSDK
 
         #region button click events
 
-       protected void ImgOpenId_Click(object sender, ImageClickEventArgs e)
-       {
-        //    Output("Intiating OpenId call.");
-        //    try
-        //    {
-        //        if (!dictionary.ContainsKey("accessToken"))
-        //        {
-        //            List<OidcScopes> scopes = new List<OidcScopes>();
-        //            scopes.Add(OidcScopes.OpenId);
-        //            scopes.Add(OidcScopes.Phone);
-        //            scopes.Add(OidcScopes.Profile);
-        //            scopes.Add(OidcScopes.Address);
-        //            scopes.Add(OidcScopes.Email);
+        protected void ImgOpenId_Click(object sender, ImageClickEventArgs e)
+        {
+            //    Output("Intiating OpenId call.");
+            //    try
+            //    {
+            //        if (!dictionary.ContainsKey("accessToken"))
+            //        {
+            //            List<OidcScopes> scopes = new List<OidcScopes>();
+            //            scopes.Add(OidcScopes.OpenId);
+            //            scopes.Add(OidcScopes.Phone);
+            //            scopes.Add(OidcScopes.Profile);
+            //            scopes.Add(OidcScopes.Address);
+            //            scopes.Add(OidcScopes.Email);
 
-        //            //string authorizationRequest = oauthClient.GetAuthorizationURL(scopes);
-        //            string authorizationRequest = oauthClient.GetAuthorizationURL(scopes);
-        //            TraceLogger target = new TraceLogger();
+            //            //string authorizationRequest = oauthClient.GetAuthorizationURL(scopes);
+            //            string authorizationRequest = oauthClient.GetAuthorizationURL(scopes);
+            //            TraceLogger target = new TraceLogger();
 
-        //            target.Log(TraceLevel.Info, authorizationRequest);
-        //            string newstr= string.Format(authorizationRequest+ "&claims=" + Uri.EscapeDataString("{\"id_token\":{\"realmId\":null}}"));
-        //            Response.Redirect((newstr), "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
+            //            target.Log(TraceLevel.Info, authorizationRequest);
+            //            string newstr= string.Format(authorizationRequest+ "&claims=" + Uri.EscapeDataString("{\"id_token\":{\"realmId\":null}}"));
+            //            Response.Redirect((newstr), "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
 
-        //            //Response.Redirect((authorizationRequest), "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Output(ex.Message);
-        //    }
+            //            //Response.Redirect((authorizationRequest), "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Output(ex.Message);
+            //    }
         }
 
         protected void ImgC2QB_Click(object sender, ImageClickEventArgs e)
@@ -188,7 +190,7 @@ namespace OAuth2_Dotnet_UsingSDK
                     scopes.Add(OidcScopes.Address);
                     scopes.Add(OidcScopes.Email);
 
-                   //string authorizationRequest = "https://appcenter.intuit.com/connect/oauth2?client_id=Q0joY7aqSROhDAspO4JLoH6ChEtpBvYalZIUwQOg3u5cwbVEaL&response_type=code&scope=com.intuit.quickbooks.accounting%20openid%20phone%20profile%20address%20email&redirect_uri=http%3A%2F%2Flocalhost%3A59785%2FDefault.aspx&state=06b6121265a883cf3b42e9585fc93a318df592bd47b6b1e81725c2bc54523ab9";
+                    //string authorizationRequest = "https://appcenter.intuit.com/connect/oauth2?client_id=Q0joY7aqSROhDAspO4JLoH6ChEtpBvYalZIUwQOg3u5cwbVEaL&response_type=code&scope=com.intuit.quickbooks.accounting%20openid%20phone%20profile%20address%20email&redirect_uri=http%3A%2F%2Flocalhost%3A59785%2FDefault.aspx&state=06b6121265a883cf3b42e9585fc93a318df592bd47b6b1e81725c2bc54523ab9";
 
                     var authorizationRequest = oauthClient.GetAuthorizationURL(scopes);
                     Response.Redirect(authorizationRequest, "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
@@ -270,8 +272,8 @@ namespace OAuth2_Dotnet_UsingSDK
                 TokenClient t = new TokenClient("https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer", clientID, clientSecret);
                 var tokenResp = await t.RequestTokenFromCodeAsync(authCode, redirectURI);
                 //var tokenResp = await oauthClient.GetBearerTokenAsync(authCode);
-         
-            
+
+
                 if (!dictionary.ContainsKey("accessToken"))
                     dictionary.Add("accessToken", tokenResp.AccessToken);
                 else
@@ -284,8 +286,8 @@ namespace OAuth2_Dotnet_UsingSDK
 
                 if (tokenResp.IdentityToken != null)
                     idToken = tokenResp.IdentityToken;
-             
-                
+
+
                 if (Request.Url.Query == "")
                 {
                     Response.Redirect(Request.RawUrl);
@@ -318,6 +320,9 @@ namespace OAuth2_Dotnet_UsingSDK
             context.IppConfiguration.MinorVersion.Qbo = "54";
             //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
             //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
+
+            CLogger cu = new CLogger();
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = cu.GetCustomLogger();
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
             //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
@@ -532,14 +537,14 @@ namespace OAuth2_Dotnet_UsingSDK
 
 
             RecurringTransaction recurAdded = dataService.Add<RecurringTransaction>(recur);
-          
-       
+
+
 
             //QueryService<Customer> customerQueryService = new QueryService<Customer>(context);
             //Customer customer = customerQueryService.ExecuteIdsQuery("Select * From Customer StartPosition 1 MaxResults 1").FirstOrDefault<Customer>();
 
 
-            
+
             ReportService reportService = new ReportService(context);
 
             //Date should be in the format YYYY - MM - DD

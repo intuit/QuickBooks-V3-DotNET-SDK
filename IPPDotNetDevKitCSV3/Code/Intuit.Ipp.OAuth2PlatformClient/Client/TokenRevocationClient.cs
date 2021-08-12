@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text;
 using System.Linq;
+using Intuit.Ipp.OAuth2PlatformClient.Diagnostics;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {
