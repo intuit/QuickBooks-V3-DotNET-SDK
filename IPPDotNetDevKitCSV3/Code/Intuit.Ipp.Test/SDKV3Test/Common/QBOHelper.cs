@@ -2575,18 +2575,40 @@ namespace Intuit.Ipp.Test
         internal static Budget CreateBudget(ServiceContext context)
         {
             Budget budget = new Budget();
+            budget.Name = "MyBudget";
+            budget.StartDate = new DateTime(2014,01,01);
+            budget.EndDate = new DateTime(2014, 12, 31);
+            budget.BudgetType = BudgetTypeEnum.ProfitAndLoss;
+            budget.BudgetEntryType = BudgetEntryTypeEnum.Quarterly;
+            List<BudgetDetail> budgetDetails = new List<BudgetDetail>();
+            BudgetDetail budgetDetail = new BudgetDetail();
+            budgetDetail.BudgetDate = new DateTime(2014, 01, 01);
+            budgetDetail.Amount =new Decimal(12.00);
+            budgetDetail.AccountRef = new ReferenceType() {
+                Value = "5"
+            };
+            budgetDetail.CustomerRef = new ReferenceType()
+            {
+                Value = "2"
+            };
+            budgetDetails.Add(budgetDetail);
+            budget.BudgetDetail = budgetDetails.ToArray();
             return budget;
         }
 
         internal static Budget UpdateBudget(ServiceContext context, Budget entity)
         {
-            Budget budget = new Budget();
+            Budget budget = CreateBudget(context);
+            budget.Name = "New Name";
             return budget;
         }
 
         internal static Budget UpdateBudgetSparse(ServiceContext context, string Id, string SyncToken)
         {
             Budget budget = new Budget();
+            budget.SyncToken = SyncToken;
+            budget.Id = Id;
+            budget.Name = "New Name";
             return budget;
         }
 
