@@ -53,9 +53,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEC31404-E957-447F-9E31-D80F64D708F5}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		IppDotNetDevKitCSV3.vsmdi = IppDotNetDevKitCSV3.vsmdi
 		Local.testsettings = Local.testsettings
-		..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.sln = ..\..\..\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK\OAuth2-Dotnet_UsingSDK.sln
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
@@ -122,7 +120,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestSDK", "TestSDK\", "{2C2
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.OAuth2PlatformClient.Diagnostics", "Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj", "{8C03D078-F345-484D-B7E6-482DD02A634C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient.Diagnostics", "Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj", "{8C03D078-F345-484D-B7E6-482DD02A634C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

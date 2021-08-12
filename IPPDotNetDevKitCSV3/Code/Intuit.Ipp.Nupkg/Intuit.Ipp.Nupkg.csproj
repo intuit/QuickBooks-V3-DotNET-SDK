@@ -10,8 +10,8 @@
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
     <MainVersion>14.6.2.0</MainVersion>
-    <!--<PackageVersionSuffix>stable</PackageVersionSuffix>-->
-    <!--<Version>$(MainVersion)-$(PackageVersionSuffix)</Version>-->
+    <PackageVersionSuffix>pre</PackageVersionSuffix>
+    <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <Version>$(MainVersion)</Version>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>

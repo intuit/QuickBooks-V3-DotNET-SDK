@@ -259,7 +259,7 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Entity to Delete.</param>
         public T Delete<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Delete.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
@@ -400,7 +400,7 @@ namespace Intuit.Ipp.DataService
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
         public T Update<T>(T entity) where T : IEntity
         {
-            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Update.");
 
             // Validate parameter
             if (!ServicesHelper.IsTypeNull(entity))
