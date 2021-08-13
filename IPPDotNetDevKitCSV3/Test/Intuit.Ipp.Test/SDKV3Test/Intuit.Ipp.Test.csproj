@@ -36,6 +36,11 @@
        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
        <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+       <PackageReference Include="Serilog" Version="2.10.0" />
+       <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+       <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+       <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+       <PackageReference Include="Serilog.Sinks.Trace" Version="2.0.0" />
        <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
     </ItemGroup>
     <ItemGroup>
@@ -43,49 +48,52 @@
     </ItemGroup>
     <ItemGroup>
       <Reference Include="Intuit.Ipp.Core">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Core.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Core.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Data">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Data.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Data.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.DataService">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.DataService.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.DataService.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Diagnostics">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Diagnostics.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Diagnostics.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.EntitlementService">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.EntitlementService.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.EntitlementService.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Exception">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Exception.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Exception.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.GlobalTaxService">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.GlobalTaxService.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.GlobalTaxService.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.OAuth2PlatformClient">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.OAuth2PlatformClient.dll</HintPath>
+      </Reference>
+      <Reference Include="Intuit.Ipp.OAuth2PlatformClient.Diagnostics">
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.QueryFilter">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.QueryFilter.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.QueryFilter.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.ReportService">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.ReportService.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.ReportService.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Retry">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Retry.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Retry.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Security">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Security.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Security.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.Utility">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.Utility.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.Utility.dll</HintPath>
       </Reference>
       <Reference Include="Intuit.Ipp.WebHooksService">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\Intuit.Ipp.WebHooksService.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\Intuit.Ipp.WebHooksService.dll</HintPath>
       </Reference>
       <Reference Include="IppDotNetSdkForQuickBooksApiV3">
-        <HintPath>..\..\..\Code\artifacts\bin\net472\IppDotNetSdkForQuickBooksApiV3.dll</HintPath>
+        <HintPath>..\..\..\Code\artifacts\bin\netstandard2.0\IppDotNetSdkForQuickBooksApiV3.dll</HintPath>
       </Reference>
     </ItemGroup>
     <ItemGroup>

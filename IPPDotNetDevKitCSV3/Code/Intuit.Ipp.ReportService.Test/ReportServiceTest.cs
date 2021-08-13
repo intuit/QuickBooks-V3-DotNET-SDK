@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 using Intuit.Ipp.DataService;
 using Intuit.Ipp.Security;
 
-namespace Intuit.Ipp.ReportService.Test.Common 
+namespace Intuit.Ipp.ReportService.Test.Common
 {
     /// <summary>
     ///This is a test class for ReportService and is intended
@@ -32,6 +32,9 @@ namespace Intuit.Ipp.ReportService.Test.Common
 
         }
 
+        /// <summary>
+        /// BL report test
+        /// </summary>
         [TestMethod()]
         public void ExecuteGetBalanceSheetReportTest()
         {
@@ -53,6 +56,9 @@ namespace Intuit.Ipp.ReportService.Test.Common
 
         }
 
+        /// <summary>
+        /// Fec report test
+        /// </summary>
         [TestMethod()]
         public void ExecuteGetFecReportTest()
         {

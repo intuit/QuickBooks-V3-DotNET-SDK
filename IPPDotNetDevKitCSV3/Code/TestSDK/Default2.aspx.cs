@@ -69,12 +69,12 @@ namespace TestSDK
             CLogger cu = new CLogger();
 
             oauthClient.CustomLogger = cu.GetCustomLogger();
-            //oauthClient.EnableAdvancedLoggerInfoMode = true;
-            //oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-            //oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            //oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-            //oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            //oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
+            oauthClient.EnableAdvancedLoggerInfoMode = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
+            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
+            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
 
             //SeriLogger seri = new SeriLogger();
             //seri.Log(TraceLevel.Verbose, "Nimisha typing");
@@ -317,7 +317,7 @@ namespace TestSDK
             ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
             context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             //        //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";//prod
-            context.IppConfiguration.MinorVersion.Qbo = "54";
+            context.IppConfiguration.MinorVersion.Qbo = "62";
             //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
             //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
 

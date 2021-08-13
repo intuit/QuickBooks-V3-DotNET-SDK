@@ -35,7 +35,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         #region Test cases for Add Operations
 
         [TestMethod]
-        [Ignore]
+        [Ignore] //Waiting on the bug fix for operation name
         public void BudgetAddTestUsingoAuth()
         {
             //Creating the Budget for Add
@@ -51,7 +51,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         #region Test cases for FindAll Operations
 
         [TestMethod]
-        [Ignore]
+        [Ignore] //Waiting on the bug fix for operation name
         public void BudgetFindAllTestUsingoAuth()
         {
             //Making sure that at least one entity is already present
@@ -68,7 +68,6 @@ namespace Intuit.Ipp.Test.Services.QBO
         #region Test cases for FindbyId Operations
 
         [TestMethod]
-        [Ignore]
         public void BudgetFindbyIdTestUsingoAuth()
         {
             //Creating the Budget for Adding
@@ -84,7 +83,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         #region Test cases for Update Operations
 
         [TestMethod]
-        [Ignore]
+        [Ignore] //Waiting on the bug fix for operation name
         public void BudgetUpdateTestUsingoAuth()
         {
             //Creating the Budget for Adding
@@ -118,7 +117,7 @@ namespace Intuit.Ipp.Test.Services.QBO
         #region Test cases for Delete Operations
 
         [TestMethod]
-        [Ignore]
+        [Ignore] //Waiting on the bug fix for operation name
         public void BudgetDeleteTestUsingoAuth()
         {
             //Creating the Budget for Adding
@@ -242,7 +241,8 @@ namespace Intuit.Ipp.Test.Services.QBO
 
         #region Test Cases for Add Operation
 
-        [TestMethod][Ignore]
+        [TestMethod]
+        [Ignore]
         public void BudgetAddAsyncTestsUsingoAuth()
         {
             //Creating the Budget for Add
