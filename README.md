@@ -11,8 +11,8 @@ IDG .NET SDK for QuickBooks V3
 **Support:** [![Help](https://img.shields.io/badge/Support-Intuit%20Developer-blue.svg)](https://help.developer.intuit.com/s/) <br/>
 **Documentation:** [![User Guide](https://img.shields.io/badge/User%20Guide-SDK%20docs-blue.svg)](https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net) [![Refer SDK class lib docs](https://img.shields.io/badge/Class%20Lib%20Docs-.Net%20SDK-blue.svg)](https://developer-static.intuit.com/SDKDocs/QBV3Doc/IPPDotNetDevKitV3/html/5ca993d2-af77-d050-e246-681e5983b440.htm)<br/>
 **License:** [![Apache 2](http://img.shields.io/badge/license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0) <br/>
-**Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-14.6.1.0-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
-**Binaries for OAuth2 only:** [![Nuget](https://img.shields.io/badge/Nuget-14.6.1.0-blue.svg)](https://www.nuget.org/packages/IppOAuth2PlatformSdk)<br/>
+**Binaries:** [![Nuget](https://img.shields.io/badge/Nuget-14.6.2.0-Pre-blue.svg)](https://www.nuget.org/packages/IppDotNetSdkForQuickBooksApiV3)<br/>
+**Binaries for OAuth2 only:** [![Nuget](https://img.shields.io/badge/Nuget-14.6.2.0-Pre-blue.svg)](https://www.nuget.org/packages/IppOAuth2PlatformSdk)<br/>
 
 
 The QuickBooks Online .NET SDK provides a set of .NET class libraries that make it easier to call QuickBooks Online APIs, and access to QuickBooks Online data. It supports .Net Core 2.1, .Net Core 2.2, .Net Full Framework 4.6.1 and 4.7.2. Some of the features included in this SDK are:
@@ -98,7 +98,15 @@ Serilogger logs can be enabled for **OAuth2PlatformClient** using the following 
             //Use this line to enable only intuit-tid based logs, no tokens/response will be logged. 
             //If set to false, all detailed logs will be available for response
             //If set to true, only intuit-tid response headers will be available
+            
+            // This will work with both custom logger or already supported serilog logger sinks in the SDK
             oauthClient.EnableAdvancedLoggerInfoMode = true;
+            
+            // Option for devs to use this for setting their own custom logger
+            //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
+            oauthClient.CustomLogger =  <ILogger custom logger>;
+   
+            //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.     
             oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
             oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
             oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
@@ -110,6 +118,10 @@ Serilogger logs can be enabled for **QBO API calls** using the following lines -
 
             ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
 
+            //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
+            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = <ILogger custom logger>;
+            
+            //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.     
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = true;
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
             context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
