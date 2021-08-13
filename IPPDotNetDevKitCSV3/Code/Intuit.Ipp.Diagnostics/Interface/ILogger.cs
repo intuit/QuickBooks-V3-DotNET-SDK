@@ -16,7 +16,7 @@
  * limitations under the License.
  *******************************************************************************/
 // <summary>This file contains SdkException.</summary>
-// <summary>This file contains an interface for Logging.</summary>
+// <summary>This file contains an interface for old Logging.</summary>
 ////*********************************************************
 
 namespace Intuit.Ipp.Diagnostics

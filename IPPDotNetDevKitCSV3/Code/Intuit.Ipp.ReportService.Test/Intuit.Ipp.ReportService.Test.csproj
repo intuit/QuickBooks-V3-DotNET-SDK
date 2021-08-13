@@ -26,7 +26,6 @@
     <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" />
   </ItemGroup>
 
   <ItemGroup>

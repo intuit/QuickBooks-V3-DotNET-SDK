@@ -33,7 +33,7 @@ namespace Intuit.Ipp.Test
             AuthorizationKeysQBO.tokenFilePath = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))), "TokenStore.json");
             builder = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile(path, optional: true, reloadOnChange: true)
+                 .AddJsonFile(path, optional: true, reloadOnChange: false)
                  .Build();
 
 
@@ -100,7 +100,7 @@ namespace Intuit.Ipp.Test
                 context.IppConfiguration.Message.Request.SerializationFormat = SerializationFormat.Xml;
                 context.IppConfiguration.Message.Response.SerializationFormat = SerializationFormat.Xml;
 
-                context.IppConfiguration.MinorVersion.Qbo = "57";
+                context.IppConfiguration.MinorVersion.Qbo = "62";
                 context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
                 DataService.DataService service = new DataService.DataService(context);
                 var compinfo= service.FindAll<CompanyInfo>(new CompanyInfo());

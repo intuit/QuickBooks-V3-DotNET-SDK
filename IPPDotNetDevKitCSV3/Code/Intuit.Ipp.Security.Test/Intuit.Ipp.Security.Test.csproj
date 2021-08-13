@@ -22,7 +22,6 @@
     <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" />
   </ItemGroup>
 
   <ItemGroup>
