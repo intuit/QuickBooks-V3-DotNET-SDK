@@ -1,23 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="MigratedTokenResponse.cs" />
-    <Compile Remove="OAuth1ToOAuth2TokenMigrationHelper.cs" />
-    <Compile Remove="OAuthRequestValidator.cs" />
-    <Compile Remove="SecurityConstants.cs" />
-    <None Remove="SecurityConstants.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
+		<Deterministic>false</Deterministic>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="MigratedTokenResponse.cs" />
+		<Compile Remove="OAuth1ToOAuth2TokenMigrationHelper.cs" />
+		<Compile Remove="OAuthRequestValidator.cs" />
+		<Compile Remove="SecurityConstants.cs" />
+		<None Remove="SecurityConstants.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+	</ItemGroup>
 </Project>
 
 

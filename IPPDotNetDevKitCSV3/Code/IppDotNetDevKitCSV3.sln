@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{D65F7456-F8DB-4EC0-8C03-C22961C80649}"
 EndProject
@@ -54,6 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		Local.testsettings = Local.testsettings
+		logo.png = logo.png
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
@@ -99,6 +100,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestSDK", "TestSDK\", "{2C20B529-1482-4BE7-B948-4AEE33A9889C}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{f9c4b669-e10b-44c4-8ed4-85ceaafc4126}|Intuit.Ipp.OAuth2PlatformClient.dll;{2147fc87-d172-40a6-9d54-181515daf7ac}|Intuit.Ipp.Core.dll;{e54bbdff-f3fb-4497-acec-7bc6f4404f71}|Intuit.Ipp.Data.dll;{2a5a9d95-9ce2-4726-a9e2-606838abdcd1}|Intuit.Ipp.DataService.dll;{d479ab56-8f3e-4c3e-b641-048b3552dda9}|Intuit.Ipp.QueryFilter.dll;{160733cb-f539-4545-bef4-f57176fd12de}|Intuit.Ipp.Security.dll;{0c815166-b7ac-45df-aa48-0b026687228e}|Intuit.Ipp.Exception.dll;{43c587bd-f5ee-46b8-a52a-bbd3ca6c1c74}|Intuit.Ipp.ReportService.dll;{34f2d8e7-2239-4ee0-ae53-3b8f6b0513bb}|Intuit.Ipp.Diagnostics.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_65076"
 		Debug.AspNetCompiler.PhysicalPath = "TestSDK\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65076\"
@@ -118,7 +120,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestSDK", "TestSDK\", "{2C2
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intuit.Ipp.OAuth2PlatformClient.Diagnostics", "Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj", "{494E9C14-07CA-4CF3-AFD8-6C8D68F250C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intuit.Ipp.OAuth2PlatformClient.Diagnostics", "Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj", "{494E9C14-07CA-4CF3-AFD8-6C8D68F250C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

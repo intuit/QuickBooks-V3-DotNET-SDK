@@ -1,49 +1,50 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <AssemblyTitle>Intuit.Sb.CDM</AssemblyTitle>
-    <Product>Intuit.Sb.CDM</Product>
-    <DebugType>full</DebugType>
-    <DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="App.config" />
-  </ItemGroup>
+	<PropertyGroup>
+		<ProductVersion>8.0.30703</ProductVersion>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<AssemblyTitle>Intuit.Sb.CDM</AssemblyTitle>
+		<Product>Intuit.Sb.CDM</Product>
+		<DebugType>full</DebugType>
+		<DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
+		<AssemblyOriginatorKeyFile>..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk</AssemblyOriginatorKeyFile>
+		<Deterministic>false</Deterministic>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="App.config" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DevDefined.OAuth" Version="0.2" />
-  
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Data.DataSetExtensions" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">
-      <Link>DotNetSdkForQuickBooksApiV3.snk</Link>
-    </None>
-    <None Include="Schema\Finance.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Schema\IntuitBaseTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Schema\IntuitNamesTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Schema\IntuitRestServiceDef.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Schema\Report.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DevDefined.OAuth" Version="0.2" />
+
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.Data.DataSetExtensions" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\Code\SigningKeys\DotNetSdkForQuickBooksApiV3.snk">
+			<Link>DotNetSdkForQuickBooksApiV3.snk</Link>
+		</None>
+		<None Include="Schema\Finance.xsd">
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="Schema\IntuitBaseTypes.xsd">
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="Schema\IntuitNamesTypes.xsd">
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="Schema\IntuitRestServiceDef.xsd">
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="Schema\Report.xsd">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Code\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" />
+	</ItemGroup>
 </Project>

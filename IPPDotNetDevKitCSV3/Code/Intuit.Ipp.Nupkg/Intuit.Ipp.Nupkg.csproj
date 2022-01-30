@@ -1,196 +1,197 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
-    <GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
-    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
-    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-    <LibTargetFrameworks>netstandard2.0;net472;net461</LibTargetFrameworks>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
-    <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
-    <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <MainVersion>14.6.2.0</MainVersion>
-    <PackageVersionSuffix>pre</PackageVersionSuffix>
-    <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
-    <Version>$(MainVersion)</Version>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <NoBuild>true</NoBuild>
-    <IncludeBuildOutput>true</IncludeBuildOutput>
-    <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
-    <Description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs. This is the .Net Standard 2.0 version of the .Net SDK</Description>
-    <Authors>Intuit</Authors>
-    <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
-    <PackageProjectUrl>https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/blob/master/License.md</PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/releases</PackageReleaseNotes>
-  </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" PrivateAssets="all" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
+		<GeneratePackageOnBuild Condition="$(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
+		<!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+		<LibTargetFrameworks>netstandard2.0;net472;net461</LibTargetFrameworks>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
+		<AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
+		<DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
+		<MainVersion>14.6.2.0</MainVersion>
+		<PackageVersionSuffix>pre</PackageVersionSuffix>
+		<Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
+		<Version>$(MainVersion)</Version>
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<NoBuild>false</NoBuild>
+		<IncludeBuildOutput>true</IncludeBuildOutput>
+		<AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
+		<Description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs. This is the .Net Standard 2.0 version of the .Net SDK</Description>
+		<Authors>Intuit</Authors>
+		<RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
+		<PackageProjectUrl>https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/blob/master/License.md</PackageLicenseUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageReleaseNotes>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/releases</PackageReleaseNotes>
+		<Deterministic>false</Deterministic>
+	</PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+		<ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" PrivateAssets="all" />
+	</ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all"/>
-    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
-    <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
-  </ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
+		<ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+		<ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.DataService\Intuit.Ipp.DataService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Diagnostics\Intuit.Ipp.Diagnostics.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.EntitlementService\Intuit.Ipp.EntitlementService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Security\Intuit.Ipp.Security.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.Utility\Intuit.Ipp.Utility.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+		<ProjectReference Include="..\Intuit.Ipp.WebHooksService\Intuit.Ipp.WebHooksService.csproj" AdditionalProperties="TargetFramework=net461" PrivateAssets="all" />
+	</ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
-    <PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
- 
-
-    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
-    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
-    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
-    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
-    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
-    <PackageReference Include="SerilogTraceListener" Version="3.2.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" /> 
-
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
-
-    <PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net472'">
+		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
 
 
-    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
-    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
-    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
-    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
-    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
-    <PackageReference Include="SerilogTraceListener" Version="3.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+		<PackageReference Include="SerilogTraceListener" Version="3.2.0" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
 
-  </ItemGroup>
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Serilog" Version="2.10.0" />
-    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
-    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
-    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
-    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
-    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
-    <PackageReference Include="SerilogTraceListener" Version="3.2.0" />
-    <PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
-  </ItemGroup>
+		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
-  </ItemGroup>
 
-  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
-    <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
-    </ItemGroup>
-  </Target>
-  <Target Name="CopyPdbToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
-    <PropertyGroup>
-      <CurrentReference>%(ProjectReference.Identity)</CurrentReference>
-      <CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
-    </PropertyGroup>
+		<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+		<PackageReference Include="SerilogTraceListener" Version="3.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
 
-    <ItemGroup>
-      <AllPdbItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
-      <PdbFiles Include="@(AllPdbItems -> '%(RelativeDir)%(Filename).pdb')" Condition="%(extension) == '.dll'" />
-    </ItemGroup>
+	</ItemGroup>
 
-    <Message Text="Copying @(PdbFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="Serilog" Version="2.10.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="SerilogTraceListener" Version="3.2.0" />
+		<PackageReference Update="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
+	</ItemGroup>
 
-    <ItemGroup>
-      <TfmSpecificPackageFile Include="@(PdbFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
-        <PackagePath>lib/$(TargetFramework)</PackagePath>
-      </TfmSpecificPackageFile>
-    </ItemGroup>
-  </Target>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+	</ItemGroup>
 
-  <Target Name="CopyXmlToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
-    <PropertyGroup>
-      <CurrentReference>%(ProjectReference.Identity)</CurrentReference>
-      <CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
-    </PropertyGroup>
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+	<Target Name="CopyPdbToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
+		<PropertyGroup>
+			<CurrentReference>%(ProjectReference.Identity)</CurrentReference>
+			<CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
+		</PropertyGroup>
 
-    <ItemGroup>
-      <AllXmlItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
-      <XmlFiles Include="@(AllXmlItems -> '%(RelativeDir)%(Filename).xml')" Condition="%(extension) == '.dll'" />
-    </ItemGroup>
+		<ItemGroup>
+			<AllPdbItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
+			<PdbFiles Include="@(AllPdbItems -> '%(RelativeDir)%(Filename).pdb')" Condition="%(extension) == '.dll'" />
+		</ItemGroup>
 
-    <Message Text="Copying @(XmlFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
+		<Message Text="Copying @(PdbFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
 
-    <ItemGroup>
-      <TfmSpecificPackageFile Include="@(XmlFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
-        <PackagePath>lib/$(TargetFramework)</PackagePath>
-      </TfmSpecificPackageFile>
-    </ItemGroup>
-  </Target>
+		<ItemGroup>
+			<TfmSpecificPackageFile Include="@(PdbFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
+				<PackagePath>lib/$(TargetFramework)</PackagePath>
+			</TfmSpecificPackageFile>
+		</ItemGroup>
+	</Target>
 
-  <!--code for signing-->
-  <!--<PropertyGroup>
+	<Target Name="CopyXmlToPackage" Inputs="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" Outputs="%(ProjectReference.Identity)" AfterTargets="CopyProjectReferencesToPackage">
+		<PropertyGroup>
+			<CurrentReference>%(ProjectReference.Identity)</CurrentReference>
+			<CurrentReferenceName>$([System.IO.Path]::GetFileNameWithoutExtension($(CurrentReference)))</CurrentReferenceName>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<AllXmlItems Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('OriginalProjectReferenceItemSpec', '$(CurrentReference)'))" />
+			<XmlFiles Include="@(AllXmlItems -> '%(RelativeDir)%(Filename).xml')" Condition="%(extension) == '.dll'" />
+		</ItemGroup>
+
+		<Message Text="Copying @(XmlFiles ->'%(Identity)') to nupkg" Importance="high" Condition="'%(ProjectReference.NugetIgnore)'!='true'" />
+
+		<ItemGroup>
+			<TfmSpecificPackageFile Include="@(XmlFiles)" Condition="'%(ProjectReference.NugetIgnore)'!='true'">
+				<PackagePath>lib/$(TargetFramework)</PackagePath>
+			</TfmSpecificPackageFile>
+		</ItemGroup>
+	</Target>
+
+	<!--code for signing-->
+	<!--<PropertyGroup>
    <SignToolPath>C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</SignToolPath>
    <SigningCertificateSubjectName>your-subject</SigningCertificateSubjectName>
  </PropertyGroup>
