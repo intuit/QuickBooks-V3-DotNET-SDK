@@ -1518,6 +1518,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         ReimburseLineDetail,
+        
+        /// <remarks/>
+        ItemAdjustmentLineDetail,
     }
     
     /// <remarks/>
@@ -4945,6 +4948,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryAdjustment))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Payment))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementCharge))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseByVendor))]
@@ -8073,6 +8077,7 @@ namespace Intuit.Ipp.Data {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Transfer))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Deposit))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillPayment))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryAdjustment))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Payment))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementCharge))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PurchaseByVendor))]
@@ -8778,6 +8783,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("DescriptionLineDetail", typeof(DescriptionLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("DiscountLineDetail", typeof(DiscountLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("GroupLineDetail", typeof(GroupLineDetail))]
+        [System.Xml.Serialization.XmlElementAttribute("ItemAdjustmentLineDetail", typeof(ItemAdjustmentLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("ItemBasedExpenseLineDetail", typeof(ItemBasedExpenseLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("ItemReceiptLineDetail", typeof(ItemReceiptLineDetail))]
         [System.Xml.Serialization.XmlElementAttribute("JournalEntryLineDetail", typeof(JournalEntryLineDetail))]
@@ -9971,6 +9977,132 @@ namespace Intuit.Ipp.Data {
     /// <remarks/>
     /// <summary>
     /// 
+    /// Product: QBO
+    /// Description: Contains the line details of an inventory adjustment transaction.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class ItemAdjustmentLineDetail {
+        
+        private ReferenceType itemRefField;
+        
+        private decimal salesPriceField;
+        
+        private bool salesPriceFieldSpecified;
+        
+        private decimal itemField;
+        
+        private ItemChoiceType1 itemElementNameField;
+        
+        private ReferenceType classRefField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Reference to an inventory item.
+        /// 
+        /// </summary>
+        public ReferenceType ItemRef {
+            get {
+                return this.itemRefField;
+            }
+            set {
+                this.itemRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Specifies the Sales Price (per item) for which the items being disbursed were sold.
+        /// 
+        /// </summary>
+        public decimal SalesPrice {
+            get {
+                return this.salesPriceField;
+            }
+            set {
+                this.salesPriceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool SalesPriceSpecified {
+            get {
+                return this.salesPriceFieldSpecified;
+            }
+            set {
+                this.salesPriceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NewQty", typeof(decimal))]
+        [System.Xml.Serialization.XmlElementAttribute("QtyDiff", typeof(decimal))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public decimal AnyIntuitObject {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public ItemChoiceType1 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Class Reference
+        /// 
+        /// </summary>
+        public ReferenceType ClassRef {
+            get {
+                return this.classRefField;
+            }
+            set {
+                this.classRefField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
+    public enum ItemChoiceType1 {
+        
+        /// <remarks/>
+        NewQty,
+        
+        /// <remarks/>
+        QtyDiff,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
     /// Product: ALL
     /// Description: Item based expense detail
     /// for a transaction line.
@@ -11139,6 +11271,10 @@ namespace Intuit.Ipp.Data {
         
         private bool discountAmtFieldSpecified;
         
+        private bool deferredRevenueField;
+        
+        private bool deferredRevenueFieldSpecified;
+        
         private IntuitAnyType salesItemLineDetailExField;
         
         /// <remarks/>
@@ -11253,6 +11389,40 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.discountAmtFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Use the DeferredRevenue property to indicate that the goods/services sold
+        /// have not yet been delivered to the customer, and therefore not appropriate for the
+        /// accounting engine to book as Revenue for accounting. The most typical example would be
+        /// inventory items that have not yet been shipped. The accounting engine will credit a
+        /// liability account instead of revenue account. Later a follow on transaction must be
+        /// entered when the sale is fulfilled, and then the accounting engine will debit the
+        /// liability account and credit the revenue account.
+        /// 
+        /// </summary>
+        public bool DeferredRevenue {
+            get {
+                return this.deferredRevenueField;
+            }
+            set {
+                this.deferredRevenueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool DeferredRevenueSpecified {
+            get {
+                return this.deferredRevenueFieldSpecified;
+            }
+            set {
+                this.deferredRevenueFieldSpecified = value;
             }
         }
         
@@ -21053,6 +21223,98 @@ namespace Intuit.Ipp.Data {
     /// <summary>
     /// 
     /// Product: QBO
+    /// Description: The Inventory Adjustment request element
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class InventoryAdjustment : Transaction {
+        
+        private bool shippingAdjustmentField;
+        
+        private bool shippingAdjustmentFieldSpecified;
+        
+        private ReferenceType adjustAccountRefField;
+        
+        private ReferenceType customerRefField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: When this property is set to true, the "Inventory Adjustment" is treated
+        /// as a notice-of-shipment or packing slip. This will cause the accounting engine to book
+        /// the revenue from the sale of the items. When this property is set, the SalesPrice property
+        /// must be provided. In order for correct accounting to occur SalesPrice (per item) amount
+        /// must match the sales amount on the sales transaction - but no validation of this occurs
+        /// within the accounting engine.
+        /// 
+        /// </summary>
+        public bool ShippingAdjustment {
+            get {
+                return this.shippingAdjustmentField;
+            }
+            set {
+                this.shippingAdjustmentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool ShippingAdjustmentSpecified {
+            get {
+                return this.shippingAdjustmentFieldSpecified;
+            }
+            set {
+                this.shippingAdjustmentFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Reference to the
+        /// Inventory Adjustment account used to adjust inventory.
+        /// This is an expense or opening balance equity account.
+        /// The inventory asset account is used from item's definition.
+        /// 
+        /// </summary>
+        public ReferenceType AdjustAccountRef {
+            get {
+                return this.adjustAccountRefField;
+            }
+            set {
+                this.adjustAccountRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Customer Reference
+        /// 
+        /// </summary>
+        public ReferenceType CustomerRef {
+            get {
+                return this.customerRefField;
+            }
+            set {
+                this.customerRefField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBO
     /// Description: The Item resource
     /// represents any product or service that is sold or purchased.
     /// Inventory items are not currently supported.
@@ -23417,7 +23679,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType2 itemElementNameField;
+        private ItemChoiceType3 itemElementNameField;
         
         private PhysicalAddress shipAddrField;
         
@@ -23600,7 +23862,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType2 ItemElementName {
+        public ItemChoiceType3 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -23792,7 +24054,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType2 {
+    public enum ItemChoiceType3 {
         
         /// <remarks/>
         DropShipToEntity,
@@ -25392,7 +25654,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType3 itemElementNameField;
+        private ItemChoiceType4 itemElementNameField;
         
         private string initialsField;
         
@@ -25478,7 +25740,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType3 ItemElementName {
+        public ItemChoiceType4 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -25527,7 +25789,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType3 {
+    public enum ItemChoiceType4 {
         
         /// <remarks/>
         EmployeeRef,
@@ -25679,7 +25941,7 @@ namespace Intuit.Ipp.Data {
         
         private decimal itemField;
         
-        private ItemChoiceType4 itemElementNameField;
+        private ItemChoiceType5 itemElementNameField;
         
         private IntuitAnyType priceLevelPerItemExField;
         
@@ -25709,7 +25971,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType4 ItemElementName {
+        public ItemChoiceType5 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -25737,7 +25999,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType4 {
+    public enum ItemChoiceType5 {
         
         /// <remarks/>
         CustomPrice,
@@ -26102,7 +26364,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType5 itemElementNameField;
+        private ItemChoiceType6 itemElementNameField;
         
         private ReferenceType customerRefField;
         
@@ -26125,6 +26387,10 @@ namespace Intuit.Ipp.Data {
         private decimal hourlyRateField;
         
         private bool hourlyRateFieldSpecified;
+        
+        private decimal costRateField;
+        
+        private bool costRateFieldSpecified;
         
         private int hoursField;
         
@@ -26246,7 +26512,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType5 ItemElementName {
+        public ItemChoiceType6 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -26407,6 +26673,33 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.hourlyRateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Hourly cost rate of the employee or vendor for this
+        /// time activity.
+        /// 
+        /// </summary>
+        public decimal CostRate {
+            get {
+                return this.costRateField;
+            }
+            set {
+                this.costRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CostRateSpecified {
+            get {
+                return this.costRateFieldSpecified;
+            }
+            set {
+                this.costRateFieldSpecified = value;
             }
         }
         
@@ -26689,7 +26982,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType5 {
+    public enum ItemChoiceType6 {
         
         /// <remarks/>
         EmployeeRef,
@@ -27516,7 +27809,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType1 itemElementNameField;
+        private ItemChoiceType2 itemElementNameField;
         
         private PaySalesTaxEnum paySalesTaxField;
         
@@ -27608,7 +27901,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType1 ItemElementName {
+        public ItemChoiceType2 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -27686,7 +27979,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType1 {
+    public enum ItemChoiceType2 {
         
         /// <remarks/>
         TaxGroupCodeRef,
@@ -34971,7 +35264,7 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType itemField;
         
-        private ItemChoiceType6 itemElementNameField;
+        private ItemChoiceType7 itemElementNameField;
         
         private ReferenceType paymentMethodRefField;
         
@@ -35356,7 +35649,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType6 ItemElementName {
+        public ItemChoiceType7 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -35960,7 +36253,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType6 {
+    public enum ItemChoiceType7 {
         
         /// <remarks/>
         TaxGroupCodeRef,
@@ -36462,6 +36755,10 @@ namespace Intuit.Ipp.Data {
         private VendorBankAccountDetail vendorPaymentBankDetailField;
         
         private string sourceField;
+        
+        private decimal costRateField;
+        
+        private bool costRateFieldSpecified;
         
         /// <remarks/>
         /// <summary>
@@ -37208,6 +37505,32 @@ namespace Intuit.Ipp.Data {
                 this.sourceField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Hourly cost rate of the Employee. QBO only. QBD Unsupporetd field.
+        /// 
+        /// </summary>
+        public decimal CostRate {
+            get {
+                return this.costRateField;
+            }
+            set {
+                this.costRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CostRateSpecified {
+            get {
+                return this.costRateFieldSpecified;
+            }
+            set {
+                this.costRateFieldSpecified = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -37454,6 +37777,10 @@ namespace Intuit.Ipp.Data {
         private bool useTimeEntryFieldSpecified;
         
         private IntuitAnyType employeeExField;
+        
+        private decimal costRateField;
+        
+        private bool costRateFieldSpecified;
         
         /// <remarks/>
         /// <summary>
@@ -37723,6 +38050,32 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.employeeExField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// Hourly cost rate of the Employee. QBO only. QBD Unsupporetd field.
+        /// 
+        /// </summary>
+        public decimal CostRate {
+            get {
+                return this.costRateField;
+            }
+            set {
+                this.costRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CostRateSpecified {
+            get {
+                return this.costRateFieldSpecified;
+            }
+            set {
+                this.costRateFieldSpecified = value;
             }
         }
     }
@@ -38597,6 +38950,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Department", typeof(Department))]
         [System.Xml.Serialization.XmlElementAttribute("Bill", typeof(Bill))]
         [System.Xml.Serialization.XmlElementAttribute("Attachable", typeof(Attachable))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("BooleanTypeCustomFieldDefinition", typeof(BooleanTypeCustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("CustomFieldDefinition", typeof(CustomFieldDefinition))]
         [System.Xml.Serialization.XmlElementAttribute("DateTypeCustomFieldDefinition", typeof(DateTypeCustomFieldDefinition))]
@@ -38717,6 +39071,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
         [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
         [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
@@ -38923,6 +39278,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
         [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
         [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
         [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
@@ -39102,6 +39458,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Estimate", typeof(Estimate))]
         [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
         [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
         [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
@@ -40417,6 +40774,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("Fault", typeof(Fault))]
         [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
         [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
         [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
@@ -40483,7 +40841,7 @@ namespace Intuit.Ipp.Data {
         
         private object itemField;
         
-        private ItemChoiceType7 itemElementNameField;
+        private ItemChoiceType8 itemElementNameField;
         
         private string bIdField;
         
@@ -40520,6 +40878,7 @@ namespace Intuit.Ipp.Data {
         [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", typeof(ExchangeRate))]
         [System.Xml.Serialization.XmlElementAttribute("FixedAsset", typeof(FixedAsset))]
         [System.Xml.Serialization.XmlElementAttribute("IntuitObject", typeof(IntuitEntity))]
+        [System.Xml.Serialization.XmlElementAttribute("InventoryAdjustment", typeof(InventoryAdjustment))]
         [System.Xml.Serialization.XmlElementAttribute("InventorySite", typeof(InventorySite))]
         [System.Xml.Serialization.XmlElementAttribute("Invoice", typeof(Invoice))]
         [System.Xml.Serialization.XmlElementAttribute("Item", typeof(Item))]
@@ -40577,7 +40936,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [JsonIgnore()]
-        public ItemChoiceType7 ItemElementName {
+        public ItemChoiceType8 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -40702,7 +41061,7 @@ namespace Intuit.Ipp.Data {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3", IncludeInSchema=false)]
-    public enum ItemChoiceType7 {
+    public enum ItemChoiceType8 {
         
         /// <remarks/>
         Account,
@@ -40781,6 +41140,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         IntuitObject,
+        
+        /// <remarks/>
+        InventoryAdjustment,
         
         /// <remarks/>
         InventorySite,
