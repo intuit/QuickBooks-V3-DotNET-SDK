@@ -171,7 +171,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
             ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
-            if (environment != null && environment != "")
+            environment = environment ?? throw new ArgumentNullException(nameof(environment));
+            if (environment != "")
             {
                 try
                 {
@@ -250,7 +251,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 DiscoveryResponse discoveryResponse =  discoveryClient.Get();
              if(discoveryResponse.IsError==true)
             {
-                throw new System.Exception(discoveryResponse.Error);
+                throw new System.Exception("Invalid URI or environment");
             }
 
             return discoveryResponse;
