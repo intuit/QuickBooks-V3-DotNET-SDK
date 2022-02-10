@@ -97,6 +97,7 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.AdvancedLogger = new AdvancedLogger
             {
              
+#pragma warning disable CS0618 // Type or member is obsolete
                 RequestAdvancedLog = new RequestAdvancedLog()
                 {
                     EnableSerilogRequestResponseLoggingForDebug = false,
@@ -105,6 +106,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForFile =  false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
+#pragma warning restore CS0618 // Type or member is obsolete
             };
 
             if (ippConfigurationSection == null)
@@ -355,7 +357,8 @@ namespace Intuit.Ipp.Core.Configuration
 
             ippConfig.AdvancedLogger = new AdvancedLogger
             {
-             
+
+#pragma warning disable CS0618 // Type or member is obsolete
                 RequestAdvancedLog = new RequestAdvancedLog()
                 {
                     EnableSerilogRequestResponseLoggingForDebug = false,
@@ -364,6 +367,7 @@ namespace Intuit.Ipp.Core.Configuration
                     EnableSerilogRequestResponseLoggingForFile = false,
                     ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                 }
+#pragma warning restore CS0618 // Type or member is obsolete
             };
 
 
@@ -481,6 +485,7 @@ namespace Intuit.Ipp.Core.Configuration
 
             #endregion
 
+#pragma warning disable CS0618 // Type or member is obsolete
             if (!string.IsNullOrEmpty(serilogLoggerSettingsFile["LogDirectory"]) && Convert.ToBoolean(serilogLoggerSettingsFile["EnableLogs"]) == true)
             {
 
@@ -499,6 +504,7 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsFile["LogDirectory"];
 
             }
+#pragma warning restore CS0618 // Type or member is obsolete
 
             //old logger
             if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)

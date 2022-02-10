@@ -191,6 +191,7 @@ namespace Intuit.Ipp.Core
                 return requestLogger;
             }
 
+#pragma warning disable CS0618 // Type or member is obsolete
             if (serviceContext.IppConfiguration != null &&
                 serviceContext.IppConfiguration.AdvancedLogger != null &&
                 serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog != null)
@@ -215,6 +216,9 @@ namespace Intuit.Ipp.Core
             {
                 requestLogger = new Diagnostics.AdvancedLogging(enableSerilogRequestResponseLoggingForDebug: true, enableSerilogRequestResponseLoggingForTrace: true, enableSerilogRequestResponseLoggingForConsole: true, enableSerilogRequestResponseLoggingForFile: false, serviceRequestLoggingLocationForFile: null);
             }
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            requestLogger.Log("Advanced Logging with Serilog is deprecated.");
 
             return requestLogger;
         }
