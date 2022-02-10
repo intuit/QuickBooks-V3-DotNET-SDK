@@ -33,8 +33,10 @@ namespace Intuit.Ipp.Core.Configuration
         /// </summary>
         public RequestAdvancedLog RequestAdvancedLog { get; set; }
 
-
-
+        /// <summary>
+        /// Gets or sets the <see cref="IAdvancedLogger"/>.
+        /// </summary>
+        public IAdvancedLogger Logger { get; set; }
     }
 }
 

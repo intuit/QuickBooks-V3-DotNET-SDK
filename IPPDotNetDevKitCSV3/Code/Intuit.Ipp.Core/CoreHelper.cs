@@ -39,9 +39,9 @@ namespace Intuit.Ipp.Core
 
 
         /// <summary>
-        /// Gets or sets Serilog Request Logging.
+        /// Gets or sets Advanced Request Logger.
         /// </summary>
-        internal static Diagnostics.AdvancedLogging AdvancedLogging;
+        internal static Diagnostics.IAdvancedLogger AdvancedLogging;
     
         /// <summary>
         /// Gets the serializer mechanism using the service context and the depending on the request and response.
@@ -179,13 +179,18 @@ namespace Intuit.Ipp.Core
 
 
         /// <summary>
-        /// Gets the Request Response Logging mechanism for advanced logging using serilog.
+        /// Gets the Request Response Logging mechanism for advanced logging.
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        public static Diagnostics.AdvancedLogging GetAdvancedLogging(ServiceContext serviceContext)
+        public static Diagnostics.IAdvancedLogger GetAdvancedLogging(ServiceContext serviceContext)
         {
-            Diagnostics.AdvancedLogging requestLogger;
+            var requestLogger = serviceContext.IppConfiguration?.AdvancedLogger?.Logger;
+            if (requestLogger != null)
+            {
+                return requestLogger;
+            }
+
             if (serviceContext.IppConfiguration != null &&
                 serviceContext.IppConfiguration.AdvancedLogger != null &&
                 serviceContext.IppConfiguration.AdvancedLogger.RequestAdvancedLog != null)
