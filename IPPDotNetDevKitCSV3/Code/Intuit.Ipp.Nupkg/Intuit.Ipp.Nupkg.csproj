@@ -9,18 +9,19 @@
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <MainVersion>14.6.3.0</MainVersion>
+    <MainVersion>14.6.3.1</MainVersion>
     <PackageVersionSuffix>pre</PackageVersionSuffix>
     <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <Version>$(MainVersion)</Version>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <NoBuild>true</NoBuild>
+    <!--<NoBuild>true</NoBuild>-->
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
     <Description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs. This is the .Net Standard 2.0 version of the .Net SDK</Description>
     <Authors>Intuit</Authors>
     <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
+	<PackageIcon>logo.png</PackageIcon>  
     <PackageProjectUrl>https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/blob/master/License.md</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
@@ -54,7 +55,7 @@
     <ProjectReference Include="..\Intuit.Ipp.Exception\Intuit.Ipp.Exception.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.GlobalTaxService\Intuit.Ipp.GlobalTaxService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient\Intuit.Ipp.OAuth2PlatformClient.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all"/>
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.QueryFilter\Intuit.Ipp.QueryFilter.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.ReportService\Intuit.Ipp.ReportService.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Retry\Intuit.Ipp.Retry.csproj" AdditionalProperties="TargetFramework=net472" PrivateAssets="all" />
@@ -139,9 +140,14 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <None Include="images\logo.png" Pack="true" PackagePath="\" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\" />
   </ItemGroup>
 
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
