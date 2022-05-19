@@ -1811,6 +1811,9 @@ namespace Intuit.Ipp.Data {
         Gratuity,
         
         /// <remarks/>
+        DeferredRevenue,
+        
+        /// <remarks/>
         Healthcare,
         
         /// <remarks/>
@@ -15250,6 +15253,10 @@ namespace Intuit.Ipp.Data {
         
         private bool allowOnlineACHPaymentFieldSpecified;
         
+        private bool allowOnlinePayPalPaymentField;
+        
+        private bool allowOnlinePayPalPaymentFieldSpecified;
+        
         private ETransactionStatusEnum eInvoiceStatusField;
         
         private bool eInvoiceStatusFieldSpecified;
@@ -15449,6 +15456,36 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.allowOnlineACHPaymentFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Specifies whether
+        /// customer is allowed to use eInvoicing(online payment -paypal or
+        /// venmo) to pay the Invoice
+        /// 
+        /// </summary>
+        public bool AllowOnlinePayPalPayment {
+            get {
+                return this.allowOnlinePayPalPaymentField;
+            }
+            set {
+                this.allowOnlinePayPalPaymentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool AllowOnlinePayPalPaymentSpecified {
+            get {
+                return this.allowOnlinePayPalPaymentFieldSpecified;
+            }
+            set {
+                this.allowOnlinePayPalPaymentFieldSpecified = value;
             }
         }
         
@@ -21529,6 +21566,10 @@ namespace Intuit.Ipp.Data {
         
         private string sourceField;
         
+        private bool deferredRevenueField;
+        
+        private bool deferredRevenueFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -22759,6 +22800,36 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.sourceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Use the DeferredRevenue property to indicate that the goods/services sold
+        /// have not yet been delivered to the customer, and therefore not appropriate for the
+        /// accounting engine to book as Revenue for accounting.
+        /// 
+        /// </summary>
+        public bool DeferredRevenue {
+            get {
+                return this.deferredRevenueField;
+            }
+            set {
+                this.deferredRevenueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool DeferredRevenueSpecified {
+            get {
+                return this.deferredRevenueFieldSpecified;
+            }
+            set {
+                this.deferredRevenueFieldSpecified = value;
             }
         }
     }
@@ -28977,6 +29048,12 @@ namespace Intuit.Ipp.Data {
         
         private bool uOMFieldSpecified;
         
+        private bool revenueRecognitionField;
+        
+        private bool revenueRecognitionFieldSpecified;
+        
+        private string revenueRecognitionFrequencyField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -29142,6 +29219,51 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.uOMFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product:QBO
+        /// Description: Indicates if revenue recognition is enabled for the company. True if enabled, false otherwise.
+        /// 
+        /// </summary>
+        public bool RevenueRecognition {
+            get {
+                return this.revenueRecognitionField;
+            }
+            set {
+                this.revenueRecognitionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool RevenueRecognitionSpecified {
+            get {
+                return this.revenueRecognitionFieldSpecified;
+            }
+            set {
+                this.revenueRecognitionFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product:QBO
+        /// Description: RevenueRecognitionFrequency describes how frequently revenue is recognised.
+        /// Possible values are Daily, Weekly, Monthly.
+        /// 
+        /// </summary>
+        public string RevenueRecognitionFrequency {
+            get {
+                return this.revenueRecognitionFrequencyField;
+            }
+            set {
+                this.revenueRecognitionFrequencyField = value;
             }
         }
     }
