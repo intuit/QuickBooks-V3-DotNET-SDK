@@ -6,20 +6,13 @@ using Intuit.Ipp.OAuth2PlatformClient.Helpers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
-using System.Reflection;
-using System.Linq;
 using System.IO;
-using System.Globalization;
-using Serilog;
 using Intuit.Ipp.OAuth2PlatformClient.Diagnostics;
-using Serilog;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -30,24 +23,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Advanced Logger for OAuth2 calls
         /// </summary>
+        [Obsolete("Use Logger.")]
         public static OAuthAdvancedLogging AdvancedLogger;
 
         /// <summary>
         /// Enable extra field to check if new OAuth2Client is used for OAuth calls and Advanced logging
         /// </summary>
+        [Obsolete("Use Logger.")]
         internal static bool AdvancedLoggerEnabled = false;
-
-        /// <summary>
-        /// Internal field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
-        /// </summary>
-        internal static bool ShowInfoLogs = false;
 
         /// <summary>
         /// Enable extra field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
         /// </summary>
+        [Obsolete("Use Logger.")]
         public bool EnableAdvancedLoggerInfoMode { get; set; } = false;
-
-
 
         /// <summary>
         /// request logging location.
@@ -55,47 +44,33 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         private string serviceRequestLoggingLocationForFile;
 
         /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
-
-        ///// <summary>
-        ///// request TTL-time to live for all logs 
-        ///// </summary>
-        //public double ServiceRequestAzureDocumentDBTTL { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForDebug { get; set; }
-
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Trace logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForTrace { get; set; }
-
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Console logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
-
 
         ///// <summary>
         ///// Gets or sets a value indicating whether to enable reqeust response logging for file logs.
         ///// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
 
         /// <summary>
         /// Gets or sets the service request logging location for File.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public string ServiceRequestLoggingLocationForFile
         {
             get
@@ -155,7 +130,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// CustomLogger
         /// </summary>
+        [Obsolete("Use Logger with a custom implementation.")]
         public Serilog.ILogger CustomLogger { get; set; }
+
+#pragma warning disable CS0618 // Type or member is obsolete
 
         private OAuthAdvancedLogging InitializeAdvancedLogger()
         {
@@ -181,13 +159,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             //Set internal property to track only informational -intuit_tid based logs
             if (EnableAdvancedLoggerInfoMode == true)
             {
-                ShowInfoLogs = true;
                 logger.ShowInfoLogs = true;
             }
 
             AdvancedLogger = logger;
             return logger;
         }
+
+#pragma warning restore CS0618 // Type or member is obsolete
 
         private IOAuthLogger logger;
 
@@ -314,8 +293,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
             }
 
-            InitializeAdvancedLogger();
-
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -352,8 +329,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
             }
 
-            InitializeAdvancedLogger();
-
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -387,8 +362,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
             }
-
-            InitializeAdvancedLogger();
 
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
@@ -540,8 +513,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
                 Logger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
@@ -562,8 +533,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> GetBearerTokenAsync(string tokenEndpoint, string code, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
                 Logger.Log("BearerToken Endpoint is empty.");
@@ -583,8 +552,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
                 Logger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
@@ -605,8 +572,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenResponse> RefreshTokenAsync(string tokenEndpoint, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
                 Logger.Log("RefreshToken Endpoint is empty.");
@@ -625,8 +590,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
             {
                 Logger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
@@ -649,8 +612,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<TokenRevocationResponse> RevokeTokenAsync(string revokeTokenEndpoint,string accessOrRefreshToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(revokeTokenEndpoint))
             {
                 Logger.Log("Revoke Token Endpoint is empty.");
@@ -672,8 +633,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
             {
                 Logger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
@@ -693,8 +652,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns></returns>
         public async Task<UserInfoResponse> GetUserInfoAsync(string userInfoEndpoint, string accessToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            InitializeAdvancedLogger();
-
             if (string.IsNullOrEmpty(userInfoEndpoint))
             {
                 Logger.Log("UserInfo Endpoint is empty.");

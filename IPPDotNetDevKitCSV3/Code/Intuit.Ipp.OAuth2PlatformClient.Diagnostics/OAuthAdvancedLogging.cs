@@ -32,6 +32,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
+    [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
     public class OAuthAdvancedLogging : IOAuthAdvancedLogger, IOAuthLogger
     {
         /// <summary>
