@@ -239,6 +239,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         }
 
         /// <summary>
+        /// Should response body be logged?
+        /// </summary>
+        public bool ShowInfoLogs { get; set; }
+
+        /// <summary>
         /// Logging message from SDK
         /// </summary>
         /// <param name="messageToWrite"></param>
@@ -266,6 +271,24 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         void IOAuthLogger.LogRequestBody(string body)
         {
             logger.Write(LogEventLevel.Verbose, "Request Body: " + body);
+        }
+
+        void IOAuthLogger.LogResponse(HttpResponseMessage response, string intuit_tid, string message, string body)
+        {
+            logger.Write(LogEventLevel.Information,
+                "Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode +
+                message == null ? "" : ", " + message);
+
+            if (body != null && !ShowInfoLogs && logger.IsEnabled(LogEventLevel.Debug))
+            {
+                logger.Write(LogEventLevel.Debug, "Response Body- " + body);
+            }
+        }
+
+        void IOAuthLogger.LogResponseError(HttpResponseMessage response, string errorDetail)
+        {
+            logger.Write(LogEventLevel.Warning, "Response: Status Code- " + response.StatusCode);
+            logger.Write(LogEventLevel.Information, "Response: Error Details- " + response.ReasonPhrase + ": " + errorDetail);
         }
     }
 }

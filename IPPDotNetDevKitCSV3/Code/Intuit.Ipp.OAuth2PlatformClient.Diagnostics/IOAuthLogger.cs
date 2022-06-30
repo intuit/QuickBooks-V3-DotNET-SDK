@@ -52,6 +52,22 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         /// </summary>
         /// <param name="body">The request body.</param>
         void LogRequestBody(string body);
+
+        /// <summary>
+        /// Log HTTP response.
+        /// </summary>
+        /// <param name="response">The HTTP response.</param>
+        /// <param name="intuit_tid">The <c>intuit_tid</c> header value.</param>
+        /// <param name="message">A log message.</param>
+        /// <param name="body">The response body.</param>
+        void LogResponse(HttpResponseMessage response, string intuit_tid = null, string message = null, string body = null);
+
+        /// <summary>
+        /// Log HTTP response error.
+        /// </summary>
+        /// <param name="response">The HTTP response.</param>
+        /// <param name="errorDetail">Details about the error.</param>
+        void LogResponseError(HttpResponseMessage response, string errorDetail = null);
     }
 
     /// <summary>
@@ -82,6 +98,14 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         }
 
         void IOAuthLogger.LogRequestBody(string body)
+        {
+        }
+
+        void IOAuthLogger.LogResponse(HttpResponseMessage response, string intuit_tid, string message, string body)
+        {
+        }
+
+        void IOAuthLogger.LogResponseError(HttpResponseMessage response, string errorDetail)
         {
         }
     }

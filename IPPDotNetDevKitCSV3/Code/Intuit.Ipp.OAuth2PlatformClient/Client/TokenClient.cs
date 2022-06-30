@@ -185,13 +185,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     }
 
                     var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);//errorDetail can be added here if required for BadRequest.
-                    if (OAuth2Client.AdvancedLoggerEnabled != false)
-                    {
-                        if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
-                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode);
-                        else
-                            OAuth2Client.AdvancedLogger.Log("Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode + ", Response Body- " + content);
-                    }
+                    Logger.LogResponse(response, intuit_tid, body: content);
                     return new TokenResponse(content);
                 }
                 else
@@ -205,26 +199,12 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                     if (errorDetail != null && errorDetail != "")
                     {
-                        if (OAuth2Client.AdvancedLoggerEnabled != false)
-                        {
-                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
-                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode);
-                            else
-                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase + ": " + errorDetail);
-
-                        }
+                        Logger.LogResponseError(response, errorDetail);
                         return new TokenResponse(response.StatusCode, response.ReasonPhrase + ": " + errorDetail);
                     }
                     else
                     {
-                        if (OAuth2Client.AdvancedLoggerEnabled != false)
-                        {
-                            if (OAuth2Client.ShowInfoLogs == true)//log just intuit_tid for info logging mode
-                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode);
-                            else
-                                OAuth2Client.AdvancedLogger.Log("Response: Status Code- " + response.StatusCode + ", Error Details- " + response.ReasonPhrase);
-
-                        }
+                        Logger.LogResponseError(response);
                         return new TokenResponse(response.StatusCode, response.ReasonPhrase);
                     }
                 }

@@ -182,6 +182,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (EnableAdvancedLoggerInfoMode == true)
             {
                 ShowInfoLogs = true;
+                logger.ShowInfoLogs = true;
             }
 
             AdvancedLogger = logger;
