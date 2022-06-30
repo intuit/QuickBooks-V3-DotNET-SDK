@@ -243,7 +243,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         /// <param name="messageToWrite"></param>
         public void Log(string messageToWrite)
         {
-            logger.Write(LogEventLevel.Verbose, messageToWrite);
+            logger.Write(LogEventLevel.Information, messageToWrite);
         }
     }
 }

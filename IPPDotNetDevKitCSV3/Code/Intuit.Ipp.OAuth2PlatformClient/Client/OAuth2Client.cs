@@ -332,7 +332,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -370,7 +370,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -408,7 +408,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -543,7 +543,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. BearerToken Endpoint is empty.");
             }
 
@@ -565,7 +565,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
-                AdvancedLogger.Log("BearerToken Endpoint is empty.");
+                Logger.Log("BearerToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "BearerToken Endpoint is empty.");
             }
 
@@ -586,7 +586,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RefreshToken Endpoint is empty.");
             }
 
@@ -608,7 +608,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
-                AdvancedLogger.Log("RefreshToken Endpoint is empty.");
+                Logger.Log("RefreshToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "RefreshToken Endpoint is empty.");
             }
 
@@ -628,7 +628,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
                 return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RevokeToken Endpoint is empty.");
             }
 
@@ -652,7 +652,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(revokeTokenEndpoint))
             {
-                AdvancedLogger.Log("Revoke Token Endpoint is empty.");
+                Logger.Log("Revoke Token Endpoint is empty.");
                 return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Revoke Token Endpoint is empty.");
             }
 
@@ -675,7 +675,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
+                Logger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
                 return new UserInfoResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. UserInfo Endpoint is empty.");
             }
 
@@ -696,7 +696,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             if (string.IsNullOrEmpty(userInfoEndpoint))
             {
-                AdvancedLogger.Log("UserInfo Endpoint is empty.");
+                Logger.Log("UserInfo Endpoint is empty.");
                 return new UserInfoResponse(HttpStatusCode.InternalServerError, "UserInfo Endpoint is empty.");
             }
 
