@@ -188,6 +188,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             return logger;
         }
 
+        private IOAuthLogger logger;
+
+        /// <summary>
+        /// Logger for OAuth requests and responses.
+        /// Defaults to <see cref="OAuthAdvancedLogging"/> configured from properties on this client.
+        /// </summary>
+        public IOAuthLogger Logger
+        {
+            get => logger ?? InitializeAdvancedLogger();
+            set => logger = value;
+        }
+
         /// <summary>
         /// OAuth2Client constructor
         /// </summary>

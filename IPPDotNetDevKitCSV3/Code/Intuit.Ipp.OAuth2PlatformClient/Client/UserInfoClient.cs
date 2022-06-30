@@ -62,6 +62,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
+        private IOAuthLogger logger;
+
+        /// <summary>
+        /// Logger for OAuth requests and responses.
+        /// Defaults to <see cref="NullOAuthLogger.Instance"/>.
+        /// </summary>
+        public IOAuthLogger Logger
+        {
+            get => logger ?? NullOAuthLogger.Instance;
+            set => logger = value;
+        }
+
         /// <summary>
         /// Timeout
         /// </summary>
