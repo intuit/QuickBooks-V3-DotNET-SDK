@@ -27,6 +27,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
+    using System.Net.Http;
 
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
@@ -244,6 +245,27 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         public void Log(string messageToWrite)
         {
             logger.Write(LogEventLevel.Information, messageToWrite);
+        }
+
+        void IOAuthLogger.LogRequest(HttpClient httpClient, HttpRequestMessage request)
+        {
+            logger.Write(LogEventLevel.Information, "Request url- " + request.RequestUri);
+            logger.Write(LogEventLevel.Debug, "Request headers- ");
+            var authorization = request.Headers.Authorization ?? httpClient.DefaultRequestHeaders.Authorization;
+            logger.Write(LogEventLevel.Debug, "Authorization Header: " + authorization);
+            logger.Write(LogEventLevel.Debug, "ContentType header: " + request.Content.Headers.ContentType);
+            var accept = request.Headers.Accept ?? httpClient.DefaultRequestHeaders.Accept;
+            logger.Write(LogEventLevel.Debug, "Accept header: " + accept);
+        }
+
+        bool IOAuthLogger.ShouldLogRequestBody()
+        {
+            return logger.IsEnabled(LogEventLevel.Verbose);
+        }
+
+        void IOAuthLogger.LogRequestBody(string body)
+        {
+            logger.Write(LogEventLevel.Verbose, "Request Body: " + body);
         }
     }
 }

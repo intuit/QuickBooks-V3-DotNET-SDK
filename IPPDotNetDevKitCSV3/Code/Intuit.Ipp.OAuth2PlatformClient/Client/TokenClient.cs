@@ -157,15 +157,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             }
-            if (OAuth2Client.AdvancedLoggerEnabled != false)
+
+            Logger.LogRequest(Client, request);
+            if (Logger.ShouldLogRequestBody())
             {
-                OAuth2Client.AdvancedLogger.Log("Request url- " + Address);
-                OAuth2Client.AdvancedLogger.Log("Request headers- ");
-                OAuth2Client.AdvancedLogger.Log("Authorization Header: " + request.Headers.Authorization.ToString());
-                OAuth2Client.AdvancedLogger.Log("ContentType header: " + request.Content.Headers.ContentType.ToString());
-                OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
-                OAuth2Client.AdvancedLogger.Log("Request Body: " + await request.Content.ReadAsStringAsync().ConfigureAwait(false));
+                Logger.LogRequestBody(await request.Content.ReadAsStringAsync().ConfigureAwait(false));
             }
+
             try
             {
                 response = await Client.SendAsync(request, cancellationToken).ConfigureAwait(false);

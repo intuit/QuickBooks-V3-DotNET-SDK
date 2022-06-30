@@ -136,19 +136,15 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             msgRequest.Content = stringContent;
 
-            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            Logger.LogRequest(Client, msgRequest);
+            if (Logger.ShouldLogRequestBody())
             {
-                OAuth2Client.AdvancedLogger.Log("Request url- " + Address);
-                OAuth2Client.AdvancedLogger.Log("Request headers- ");
-                OAuth2Client.AdvancedLogger.Log("Authorization Header: " + Client.DefaultRequestHeaders.Authorization.ToString());//check
-                OAuth2Client.AdvancedLogger.Log("ContentType header: " + "application/json");
-                OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
-                OAuth2Client.AdvancedLogger.Log("Request Body: " + await msgRequest.Content.ReadAsStringAsync().ConfigureAwait(false));
+                Logger.LogRequestBody(await msgRequest.Content.ReadAsStringAsync().ConfigureAwait(false));
             }
 
             try
             {
-                var response = await Client.PostAsync("", msgRequest.Content).ConfigureAwait(false);
+                var response = await Client.SendAsync(msgRequest).ConfigureAwait(false);
                 HttpResponseHeaders headers = response.Headers;
 
               

@@ -54,12 +54,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             _client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             _client.DefaultRequestHeaders.Add("Connection", "close");
-
-            if (OAuth2Client.AdvancedLoggerEnabled != false)
-            {
-                OAuth2Client.AdvancedLogger.Log("UserInfo request initiated");
-                OAuth2Client.AdvancedLogger.Log("Request url- " + endpoint);
-            }
         }
 
         private IOAuthLogger logger;
@@ -102,14 +96,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            if (OAuth2Client.AdvancedLoggerEnabled != false)
+            Logger.LogRequest(_client, request);
+            if (Logger.ShouldLogRequestBody())
             {
-                OAuth2Client.AdvancedLogger.Log("Request headers- ");
-                OAuth2Client.AdvancedLogger.Log("Authorization Header: " + request.Headers.Authorization.ToString());
-
-                OAuth2Client.AdvancedLogger.Log("Accept header: " + "application/json");
+                Logger.LogRequestBody(await request.Content.ReadAsStringAsync().ConfigureAwait(false));
             }
-
 
             HttpResponseMessage response;
             try
