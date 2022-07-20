@@ -74,6 +74,8 @@ namespace Intuit.Ipp.Utility
             settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
             settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
             settings.DateFormatString = "yyyy-MM-ddTHH:mm:ssK";
+            settings.MaxDepth = 256;
+            
             try
             {
                 data = JsonConvert.SerializeObject(entity, settings);
