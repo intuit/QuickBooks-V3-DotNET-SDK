@@ -83,18 +83,29 @@ namespace Intuit.Ipp.Retry.Test
         [TestMethod]
         public void ExecuteActionTestWithExtendedRetryException()
         {
+            int callbackCount = 0;
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1));
             target.ExtendedRetryException = new ExtendedRetryUnauthorizedAccessException();
-            Action action = this.ThrowUnauthorizedAccessException;
+            Action action = () =>
+            {
+                if (callbackCount != 0)
+                {
+                    return;
+                }
+                callbackCount++;
+                this.ThrowUnauthorizedAccessException();
+            };
             try
             {
                 target.ExecuteAction(action);
-                Assert.Fail();
             }
             catch (System.Exception ex)
             {
                 Console.WriteLine(@"Message: {0}", ex.Message);
+                Assert.Fail();
             }
+
+            Assert.AreNotEqual(0, callbackCount, "callback never called");
         }
 
         /// <summary>
@@ -553,9 +564,10 @@ namespace Intuit.Ipp.Retry.Test
         /// <summary>
         /// A test for  ExtendedRetryException
         /// </summary>
-        [TestMethod][Ignore]
+        [TestMethod]
         public void ExecuteActionAsyncTestWithExtendedRetryException()
         {
+            int callbackCount = 0;
             IntuitRetryPolicy target = new IntuitRetryPolicy(2, TimeSpan.FromSeconds(1));
             target.ExtendedRetryException = new ExtendedRetryUnauthorizedAccessException();
             Exception exception = null;
@@ -565,6 +577,11 @@ namespace Intuit.Ipp.Retry.Test
                         ac =>
                         {
                             // Invoke the begin method of the asynchronous call.
+                            if (callbackCount != 0)
+                            {
+                                return;
+                            }
+                            callbackCount++;
                             this.BeginRequestForUnauthorizedException(ac);
                         },
                         ar =>
@@ -583,13 +600,18 @@ namespace Intuit.Ipp.Retry.Test
                             exception = e;
                         });
 
-                throw exception;
+                if (exception != null)
+                {
+                    throw exception;
+                }
             }
             catch (System.Exception ex)
             {
                 Console.WriteLine(@"Message: {0}", ex.Message);
                 Assert.Fail();
             }
+            
+            Assert.AreNotEqual(0, callbackCount, "callback never called");
         }
 
         /// <summary>
