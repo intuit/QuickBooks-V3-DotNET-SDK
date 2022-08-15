@@ -332,7 +332,7 @@ namespace Intuit.Ipp.Core
                             var delay = TimeSpan.Zero;
 
                             // Check if we should continue retrying on this exception. If not, invoke the fault handler so that user code can take control.
-                            if (!IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex)))
+                            if (!(IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex))))
                             {
                                 faultHandler(lastError);
                                 return false;
@@ -557,7 +557,7 @@ namespace Intuit.Ipp.Core
                 {
                     lastError = ex;
 
-                    if (!IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex)))
+                    if (!(IsTransient(lastError) || ((this.ExtendedRetryException != null) && this.ExtendedRetryException.IsRetryException(ex))))
                     {
                         throw;
                     }
