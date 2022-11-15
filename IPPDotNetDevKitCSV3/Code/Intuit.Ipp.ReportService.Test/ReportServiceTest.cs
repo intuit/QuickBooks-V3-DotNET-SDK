@@ -82,6 +82,74 @@ namespace Intuit.Ipp.ReportService.Test.Common
 
         }
 
+        /// <summary>
+        /// Profit And Loss report test
+        /// </summary>
+        [TestMethod()]
+        public void ExecuteProfitLossReportTest()
+        {
+            try
+            {
+                reportServiceTestCases.accounting_method = "Accrual";
+                reportServiceTestCases.date_macro = "Last Fiscal Year";
+                Report report = reportServiceTestCases.ExecuteReport("ProfitAndLoss");
+                Assert.IsNotNull(report);
+                Assert.AreEqual("ProfitAndLoss", report.Header.ReportName);
+                Assert.AreEqual(report.Header.ReportBasis.ToString(), reportServiceTestCases.accounting_method);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+
+        }
+
+        /// <summary>
+        /// Journal report test
+        /// </summary>
+        [TestMethod()]
+        public void ExecuteJournalReportTest()
+        {
+            try
+            {
+                reportServiceTestCases.date_macro = "Last Fiscal Year";
+                Report report = reportServiceTestCases.ExecuteReport("JournalReport");
+                Assert.IsNotNull(report);
+                Assert.AreEqual("JournalReport", report.Header.ReportName);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+
+        }
+
+        /// <summary>
+        /// Transaction Detail By Account test
+        /// </summary>
+        [TestMethod()]
+        public void ExecuteTransactionDetailByAccountReportTest()
+        {
+            try
+            {
+                reportServiceTestCases.columns = "post";
+                reportServiceTestCases.transaction_type = "post";
+                reportServiceTestCases.accounting_method = "Cash";
+                reportServiceTestCases.sort_by = "create_date";
+                reportServiceTestCases.sort_order = "descend";
+                reportServiceTestCases.start_date = DateTime.Today.AddMonths(-1).ToString("yyyy-MM-dd");
+                reportServiceTestCases.end_date = DateTime.Today.ToString("yyyy-MM-dd");
+                Report report = reportServiceTestCases.ExecuteReport("TransactionDetailByAccount");
+                Assert.IsNotNull(report);
+                Assert.AreEqual("TransactionDetailByAccount", report.Header.ReportName);
+                Assert.AreEqual(report.Header.ReportBasis.ToString(), reportServiceTestCases.accounting_method);
+            }
+            catch (System.Exception ex)
+            {
+                Assert.Fail(ex.ToString());
+            }
+
+        }
     }
 
 }
