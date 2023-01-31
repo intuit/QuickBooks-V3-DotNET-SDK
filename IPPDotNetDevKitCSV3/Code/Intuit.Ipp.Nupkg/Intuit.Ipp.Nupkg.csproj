@@ -9,7 +9,7 @@
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <MainVersion>14.6.3.2</MainVersion>
+    <MainVersion>14.6.3.3</MainVersion>
     <PackageVersionSuffix>pre</PackageVersionSuffix>
     <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <Version>$(MainVersion)</Version>
@@ -21,13 +21,16 @@
     <Description>The IPP .NET SDK for QuickBooks V3 is a set of .NET classes that make it easier to call QuickBooks APIs. This is the .Net Standard 2.0 version of the .Net SDK</Description>
     <Authors>Intuit</Authors>
     <RepositoryUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK</RepositoryUrl>
-	<PackageIcon>logo.png</PackageIcon>  
+	<PackageIcon>logo.png</PackageIcon>
     <PackageProjectUrl>https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/blob/master/License.md</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>https://github.com/intuit/QuickBooks-V3-DotNET-SDK/releases</PackageReleaseNotes>
   </PropertyGroup>
+	<ItemGroup>
+		<None Include="images\logo.png" Pack="true" PackagePath=""/>
+	</ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="..\..\Tools\XsdExtension\Intuit.Ipp.Data\Intuit.Ipp.Data.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\Intuit.Ipp.Core\Intuit.Ipp.Core.csproj" PrivateAssets="all" />
