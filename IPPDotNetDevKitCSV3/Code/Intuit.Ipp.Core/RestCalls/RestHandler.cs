@@ -104,11 +104,6 @@ namespace Intuit.Ipp.Core.Rest
         [Obsolete("Use CoreHelper.AdvangedLogging")]
         internal LogRequestsToDisk RequestLogging { get; set; }
 
-        ///// <summary>
-        ///// Gets or sets Serilog Request Logging.
-        ///// </summary>
-        //internal static AdvancedLogging AdvancedLogging { get; set; }
-
         /// <summary>
         /// Gets or sets the minorVersion.
         /// </summary>

@@ -103,22 +103,8 @@ Most logging uses `IppConfiguration.Logger`, which has two properties:
  
 ### Advanced Logging
 
-Request/response logging uses `IppConfiguration.AdvancedLogger`, which has two properties:
+Request/response logging uses `IppConfiguration.AdvancedLogger`, which has one property:
 - `Logger` allows providing an implementation of `Intuit.IppDiagnostics.IAdvancedLogger` (default: `Intuit.Ipp.Diagnostics.TraceLogger`).
-- `RequestAdvancedLog` allows configuring logging with Serilog (default: disabled). **This will be removed in a future release.**
-    ```csharp
-    ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
-
-    //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = <ILogger custom logger>;
-
-    //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = true;
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
-    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log"; //Any drive logging location
-    ```
 
 ### OAuth Logging
 

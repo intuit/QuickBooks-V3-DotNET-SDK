@@ -321,13 +321,6 @@ namespace TestSDK
             //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
             //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
 
-            CLogger cu = new CLogger();
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = cu.GetCustomLogger();
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
             QueryService<Invoice> in2 = new QueryService<Invoice>(context);
             var inn22 = in2.ExecuteIdsQueryForCount("Select * From Invoice");
             var inn23 = in2.ExecuteIdsQueryForCount("Select count(*) From Invoice");
