@@ -43,16 +43,6 @@ namespace Intuit.Ipp.Diagnostics
         private string serviceRequestLoggingLocationForFile;
 
         /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
-
-        /// <summary>
         /// request TTL-time to live for all logs 
         /// </summary>
         public double ServiceRequestAzureDocumentDBTTL { get; set; }
