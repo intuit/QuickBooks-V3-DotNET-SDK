@@ -90,49 +90,55 @@ The code has been divided into following main categories-
 
 
 ## Enabling logs for the SDK
-Logs help you in easliy identifying detailed issues with your payload, get more info in the exception details for fixing them.
-* New logging support was added to the SDK which includes support for reporting headers and multiple logging sinks available from Serilog. You can chooise to have either one or more of these logging sinks enabled. -
-Serilogger logs can be enabled for **OAuth2PlatformClient** using the following lines -
 
-            static OAuth2Client oauthClient = new OAuth2Client(clientID, clientSecret, redirectURI, appEnvironment);
-            //Use this line to enable only intuit-tid based logs, no tokens/response will be logged. 
-            //If set to false, all detailed logs will be available for response
-            //If set to true, only intuit-tid response headers will be available
-            
-            // This will work with both custom logger or already supported serilog logger sinks in the SDK
-            oauthClient.EnableAdvancedLoggerInfoMode = true;
-            
-            // Option for devs to use this for setting their own custom logger
-            //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
-            oauthClient.CustomLogger =  <ILogger custom logger>;
-   
-            //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.     
-            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//Any drive logging location
-            
-            
-Serilogger logs can be enabled for **QBO API calls** using the following lines -
+### Basic Logging
 
-            ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
-
-            //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = <ILogger custom logger>;
-            
-            //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.     
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = true;
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log"; //Any drive logging location
-            
-Old file based logs can be enabled by using the following lines-
+Most logging uses `IppConfiguration.Logger`, which has two properties:
+- `CustomLogger` allows providing an implementation of `Intuit.IppDiagnostics.ILogger` (default: `Intuit.Ipp.Diagnostics.TraceLogger`).
+- `RequestLog` allows configuring basic file logging (default: disabled). **This will be removed in a future release.**
+    ```csharp
+    context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
+    context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\QuickBooksOnline_Log"; //Any drive logging location
+    ```
  
-            context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log"; //Any drive logging location
-            
+### Advanced Logging
+
+Request/response logging uses `IppConfiguration.AdvancedLogger`, which has two properties:
+- `Logger` allows providing an implementation of `Intuit.IppDiagnostics.IAdvancedLogger` (default: `Intuit.Ipp.Diagnostics.TraceLogger`).
+- `RequestAdvancedLog` allows configuring logging with Serilog (default: disabled). **This will be removed in a future release.**
+    ```csharp
+    ServiceContext context = new ServiceContext(dictionary["realmId"], IntuitServicesType.QBO, oauthValidator);
+
+    //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = <ILogger custom logger>;
+
+    //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForFile = true;
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
+    context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log"; //Any drive logging location
+    ```
+
+### OAuth Logging
+
+The clients in `Intuit.Ipp.OAuth2PlatformClient` have a `Logger` property that can be assigned with an implementation of `Intuit.Ipp.OAuth2PlatformClient.Diagnostics.IOAuthLogger`.
+- `TokenClient`, `TokenRevocationClient` and `UserInfoClient` default to `NullOAuthLogger`.
+- `OAuth2Client` defaults to `Intuit.Ipp.OAuth2PlatformClient.Diagnostics.OAuthAdvancedLogging` with similar Serilog configuration. **This will be removed in a future release.**
+    ```csharp
+    //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
+    oauthClient.CustomLogger =  <ILogger custom logger>;
+
+    //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.
+    oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
+    oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
+    oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
+    oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
+    oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//Any drive logging location
+    ```
+
+## Fiddler
+
 * **Fiddler logs are really useful too. You can enable them by following the steps below**
 
 Download Fiddler from Google and run it alongside your code to log raw requests and responses along with URL and headers.
