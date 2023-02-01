@@ -5631,7 +5631,7 @@ namespace Intuit.Ipp.Test
             //Value = 
             //};
             ItemChoiceType3 itemChoiceType3 = new ItemChoiceType3();
-            salesRep.ItemElementName = itemChoiceType3;
+            salesRep.ItemElementName = (ItemChoiceType4)itemChoiceType3;
 
             salesRep.Initials = "Initials";
             //salesRep.SalesRepEx = 
@@ -5982,7 +5982,7 @@ namespace Intuit.Ipp.Test
             Vendor vendor = Helper.FindOrAdd(context, new Vendor());
 
             timeActivity.AnyIntuitObject = new ReferenceType() { name = vendor.DisplayName, Value = vendor.Id };
-            timeActivity.ItemElementName = ItemChoiceType5.VendorRef;
+            //timeActivity.ItemElementName = ItemChoiceType5.VendorRef;
 
             Customer cust = Helper.FindOrAdd(context, new Customer());
             timeActivity.CustomerRef = new ReferenceType()

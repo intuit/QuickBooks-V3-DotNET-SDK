@@ -83,7 +83,7 @@ namespace Intuit.Ipp.Utility
             catch (Exception ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                this.IDSLogger.Log(Diagnostics.TraceLevel.Error, serializationException.ToString());
                 IdsExceptionManager.HandleException(serializationException);
             }
             data = data.Replace("T00:00:00Z", "");
@@ -122,7 +122,7 @@ namespace Intuit.Ipp.Utility
             catch (SystemException ex)
             {
                 SerializationException serializationException = new SerializationException(ex.Message, ex);
-                this.IDSLogger.Log(TraceLevel.Error, serializationException.ToString());
+                this.IDSLogger.Log(Diagnostics.TraceLevel.Error, serializationException.ToString());
                 IdsExceptionManager.HandleException(serializationException);
             }
 
