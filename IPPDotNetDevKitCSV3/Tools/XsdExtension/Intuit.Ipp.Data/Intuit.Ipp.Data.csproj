@@ -8,11 +8,17 @@
   <ItemGroup>
     <Compile Remove="CDMEntities\Fmsold.cs" />
     <Compile Remove="CDMEntities\Fms_backup.cs" />
+	<Compile Remove="bin\**" />
+	<Compile Remove="obj\**" />
+	<EmbeddedResource Remove="bin\**" />
+	<EmbeddedResource Remove="obj\**" />
+	<None Remove="bin\**" />
+	  <None Remove="obj\**" />
   </ItemGroup>
   
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
   </ItemGroup>
 

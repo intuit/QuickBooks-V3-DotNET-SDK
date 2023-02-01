@@ -14,8 +14,8 @@
     <PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
     <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
     <Copyright>Copyright © 2020 Intuit, Inc.</Copyright>
-    <AssemblyVersion>14.6.3.2</AssemblyVersion>
-    <FileVersion>14.6.3.2</FileVersion>
+    <AssemblyVersion>14.6.3.3</AssemblyVersion>
+    <FileVersion>14.6.3.3</FileVersion>
     <Company>Intuit</Company>
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -34,11 +34,6 @@
     <DefineConstants>NET461;NETFULL</DefineConstants>
 
   </PropertyGroup>
-
-  <ItemGroup>
-	  
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
 
 
 

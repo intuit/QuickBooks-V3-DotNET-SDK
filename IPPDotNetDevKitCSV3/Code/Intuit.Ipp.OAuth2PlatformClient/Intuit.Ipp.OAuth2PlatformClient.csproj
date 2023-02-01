@@ -16,7 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" PrivateAssets="all"/>
+    <ProjectReference Include="..\Intuit.Ipp.OAuth2PlatformClient.Diagnostics\Intuit.Ipp.OAuth2PlatformClient.Diagnostics.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
   
 
