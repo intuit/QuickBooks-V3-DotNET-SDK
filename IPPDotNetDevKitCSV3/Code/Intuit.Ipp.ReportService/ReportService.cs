@@ -255,6 +255,7 @@ namespace Intuit.Ipp.ReportService
             if (!string.IsNullOrEmpty(start_moddate)) { uriParametersList.Add(new string[] { "start_moddate", start_moddate }); }
             if (!string.IsNullOrEmpty(account_status)) { uriParametersList.Add(new string[] { "account_status", account_status }); }
 
+            if (!string.IsNullOrEmpty(groupby)) { uriParametersList.Add(new string[] { "groupby", groupby }); }
             if (!string.IsNullOrEmpty(group_by)) { uriParametersList.Add(new string[] { "group_by", group_by }); }
             if (!string.IsNullOrEmpty(payment_method)) { uriParametersList.Add(new string[] { "payment_method", payment_method }); }
             if (!string.IsNullOrEmpty(name)) { uriParametersList.Add(new string[] { "name", name }); }
@@ -684,6 +685,11 @@ namespace Intuit.Ipp.ReportService
         /// Gets or sets the attachmentType
         /// </summary>
         public string attachmentType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the groupby
+        /// </summary>
+        public string groupby { get; set; }
 
         #endregion
 
