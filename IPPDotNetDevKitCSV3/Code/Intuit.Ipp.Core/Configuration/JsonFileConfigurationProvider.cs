@@ -106,13 +106,6 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.Logger = new Logger
                 {
                     CustomLogger = new TraceLogger(),
-#pragma warning disable CS0618 // Type or member is obsolete
-                    RequestLog = new RequestLog
-                    {
-                        EnableRequestResponseLogging = false,
-                        ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
-                    }
-#pragma warning restore CS0618 // Type or member is obsolete
                 };
 
                 ippConfig.Message = new Message
@@ -153,25 +146,6 @@ namespace Intuit.Ipp.Core.Configuration
             }
 
             ippConfig.Logger = new Logger();
-#pragma warning disable CS0618 // Type or member is obsolete
-            ippConfig.Logger.RequestLog = new RequestLog();
-            ippConfig.Logger.RequestLog.EnableRequestResponseLogging = ippConfigurationSection.Logger.RequestLog.EnableRequestResponseLogging;
-            if (string.IsNullOrEmpty(ippConfigurationSection.Logger.RequestLog.RequestResponseLoggingDirectory))
-            {
-                ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = Path.GetTempPath();
-            }
-            else
-            {
-                string location = ippConfigurationSection.Logger.RequestLog.RequestResponseLoggingDirectory;
-                if (!Directory.Exists(location))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-
-                ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = ippConfigurationSection.Logger.RequestLog.RequestResponseLoggingDirectory;
-            }
-#pragma warning restore CS0618 // Type or member is obsolete
 
             if (!string.IsNullOrEmpty(ippConfigurationSection.Logger.CustomLogger.Name) && !string.IsNullOrEmpty(ippConfigurationSection.Logger.CustomLogger.Type) && ippConfigurationSection.Logger.CustomLogger.Enable)
             {
@@ -357,13 +331,6 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.Logger = new Logger
             {
                 CustomLogger = new TraceLogger(),
-#pragma warning disable CS0618 // Type or member is obsolete
-                RequestLog = new RequestLog
-                {
-                    EnableRequestResponseLogging = false,
-                    ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
-                }
-#pragma warning restore CS0618 // Type or member is obsolete
             };
 
             ippConfig.Message = new Message
@@ -406,7 +373,6 @@ namespace Intuit.Ipp.Core.Configuration
          
 
             //Read all appsettings.json sections
-            var loggerSettings = builder.GetSection("Logger").GetSection("RequestLog");
             var customLoggerSettings = builder.GetSection("CustomLogger").GetSection("RequestLog");
             var securitySettings = builder.GetSection("Security").GetSection("Mode");
             var securityOauthSettings = builder.GetSection("Security").GetSection("Mode").GetSection("OAuth");
@@ -421,26 +387,6 @@ namespace Intuit.Ipp.Core.Configuration
             var serviceBaseUrlSettings = builder.GetSection("Service").GetSection("BaseUrl");
             var serviceMinorversionSettings = builder.GetSection("Service").GetSection("Minorversion");
             var webhooksVerifierTokenSettings = builder.GetSection("WebhooksService").GetSection("VerifierToken");
-
-#pragma warning disable CS0618 // Type or member is obsolete
-            //old logger
-            if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)
-            {
-
-                ippConfig.Logger.RequestLog.EnableRequestResponseLogging = Convert.ToBoolean(loggerSettings["EnableLogs"]);
-
-
-                string location = loggerSettings["LogDirectory"];
-                if (!Directory.Exists(location))
-                {
-                    IdsException exception = new IdsException(Properties.Resources.ValidDirectoryPathMessage, new DirectoryNotFoundException());
-                    IdsExceptionManager.HandleException(exception);
-                }
-
-                ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
-
-            }
-#pragma warning disable CS0618 // Type or member is obsolete
 
             if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]) == true)
             {

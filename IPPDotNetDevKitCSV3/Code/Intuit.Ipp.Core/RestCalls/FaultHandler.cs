@@ -130,11 +130,6 @@ namespace Intuit.Ipp.Core.Rest
                         }
                     }
 
-#pragma warning disable CS0618 // Type or member is obsolete
-                    //Log errorstring to disk
-                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
-#pragma warning restore CS0618 // Type or member is obsolete
-
                     //Log errorstring to Serilog
                     CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 

@@ -318,8 +318,6 @@ namespace TestSDK
             context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             //        //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";//prod
             context.IppConfiguration.MinorVersion.Qbo = "62";
-            //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
-            //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
 
             QueryService<Invoice> in2 = new QueryService<Invoice>(context);
             var inn22 = in2.ExecuteIdsQueryForCount("Select * From Invoice");

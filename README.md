@@ -93,13 +93,8 @@ The code has been divided into following main categories-
 
 ### Basic Logging
 
-Most logging uses `IppConfiguration.Logger`, which has two properties:
+Most logging uses `IppConfiguration.Logger`, which has one property:
 - `CustomLogger` allows providing an implementation of `Intuit.IppDiagnostics.ILogger` (default: `Intuit.Ipp.Diagnostics.TraceLogger`).
-- `RequestLog` allows configuring basic file logging (default: disabled). **This will be removed in a future release.**
-    ```csharp
-    context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-    context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\QuickBooksOnline_Log"; //Any drive logging location
-    ```
  
 ### Advanced Logging
 

@@ -154,32 +154,6 @@ namespace Intuit.Ipp.Core
         }
 
         /// <summary>
-        /// Gets the Request Response Logging mechanism.
-        /// </summary>
-        /// <param name="serviceContext">The serivce context object.</param>
-        /// <returns>Returns value which specifies the request response logging mechanism.</returns>
-        [Obsolete("Use IppConfiguration.AdvangedLogger")]
-        public static Rest.LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)
-        {
-            Rest.LogRequestsToDisk requestLogger;
-            if (serviceContext.IppConfiguration != null &&
-                serviceContext.IppConfiguration.Logger != null &&
-                serviceContext.IppConfiguration.Logger.RequestLog != null)
-            {
-                requestLogger = new Rest.LogRequestsToDisk(
-                    serviceContext.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging,
-                    serviceContext.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation);
-            }
-            else
-            {
-                requestLogger = new Rest.LogRequestsToDisk(false, null);
-            }
-
-            return requestLogger;
-        }
-
-
-        /// <summary>
         /// Gets the Request Response Logging mechanism for advanced logging.
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
