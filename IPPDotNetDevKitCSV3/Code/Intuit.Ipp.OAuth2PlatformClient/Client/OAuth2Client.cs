@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
-using System.IO;
 using Intuit.Ipp.OAuth2PlatformClient.Diagnostics;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
@@ -20,78 +19,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public class OAuth2Client
     {
-        /// <summary>
-        /// Advanced Logger for OAuth2 calls
-        /// </summary>
-        [Obsolete("Use Logger.")]
-        public static OAuthAdvancedLogging AdvancedLogger;
-
-        /// <summary>
-        /// Enable extra field to check if new OAuth2Client is used for OAuth calls and Advanced logging
-        /// </summary>
-        [Obsolete("Use Logger.")]
-        internal static bool AdvancedLoggerEnabled = false;
-
-        /// <summary>
-        /// Enable extra field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
-        /// </summary>
-        [Obsolete("Use Logger.")]
-        public bool EnableAdvancedLoggerInfoMode { get; set; } = false;
-
-        /// <summary>
-        /// request logging location.
-        /// </summary>
-        private string serviceRequestLoggingLocationForFile;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
-        /// </summary>
-        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
-        public bool EnableSerilogRequestResponseLoggingForDebug { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Trace logs.
-        /// </summary>
-        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
-        public bool EnableSerilogRequestResponseLoggingForTrace { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable reqeust response logging for Console logs.
-        /// </summary>
-        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
-        public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
-
-        ///// <summary>
-        ///// Gets or sets a value indicating whether to enable reqeust response logging for file logs.
-        ///// </summary>
-        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
-        public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
-        /// <summary>
-        /// Gets or sets the service request logging location for File.
-        /// </summary>
-        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
-        public string ServiceRequestLoggingLocationForFile
-        {
-            get
-            {
-                return this.serviceRequestLoggingLocationForFile;
-            }
-
-            set
-            {
-                if (!Directory.Exists(value))
-                {
-                    this.serviceRequestLoggingLocationForFile = System.IO.Path.GetTempPath();
-                }
-
-
-                this.serviceRequestLoggingLocationForFile = value;
-
-            }
-        }
-
-
         /// <summary>
         /// ClientId
         /// </summary>
@@ -126,57 +53,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// DiscoveryUrl
         /// </summary>
         public string DiscoveryUrl { get; set; }
-  
-        /// <summary>
-        /// CustomLogger
-        /// </summary>
-        [Obsolete("Use Logger with a custom implementation.")]
-        public Serilog.ILogger CustomLogger { get; set; }
-
-#pragma warning disable CS0618 // Type or member is obsolete
-
-        private OAuthAdvancedLogging InitializeAdvancedLogger()
-        {
-            AdvancedLoggerEnabled = true;
-
-            OAuthAdvancedLogging logger;
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                logger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-            }
-            else
-            {
-                //Intialize Logger
-                logger = LogHelper.GetAdvancedLogging(
-                    enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug,
-                    enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace,
-                    enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole,
-                    enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile,
-                    serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-            }
-
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                logger.ShowInfoLogs = true;
-            }
-
-            AdvancedLogger = logger;
-            return logger;
-        }
-
-#pragma warning restore CS0618 // Type or member is obsolete
 
         private IOAuthLogger logger;
 
         /// <summary>
         /// Logger for OAuth requests and responses.
-        /// Defaults to <see cref="OAuthAdvancedLogging"/> configured from properties on this client.
+        /// Defaults to <see cref="NullOAuthLogger.Instance"/>.
         /// </summary>
         public IOAuthLogger Logger
         {
-            get => logger ?? InitializeAdvancedLogger();
+            get => logger ?? NullOAuthLogger.Instance;
             set => logger = value;
         }
 
@@ -215,44 +101,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             
 
         }
-
-
-        ///// <summary>
-        ///// OAuth2Client constructor
-        ///// </summary>
-        ///// <param name="clientID"></param>
-        ///// <param name="clientSecret"></param>
-        ///// <param name="redirectURI"></param>
-        ///// <param name="environment">This can either be sandbox, production or an actual discovery url</param>
-        //public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment, ILogger customLogger)
-        //{
-        //    this.CustomLogger = customLogger ?? throw new ArgumentNullException(nameof(customLogger));
-        //    ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
-        //    ClientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
-        //    RedirectURI = redirectURI ?? throw new ArgumentNullException(nameof(redirectURI));
-        //    if (environment != null && environment != "")
-        //    {
-        //        try
-        //        {
-        //            ApplicationEnvironment = (AppEnvironment)Enum.Parse(typeof(AppEnvironment), environment, true);
-        //        }
-        //        catch (System.Exception ex)
-        //        {
-        //            ApplicationEnvironment = AppEnvironment.Custom;
-        //            DiscoveryUrl = environment;
-        //        }
-
-
-        //    }
-
-
-
-        //    DiscoveryDoc = GetDiscoveryDoc();
-
-
-        //}
-
-
 
         /// <summary>
         /// Gets Discovery Doc

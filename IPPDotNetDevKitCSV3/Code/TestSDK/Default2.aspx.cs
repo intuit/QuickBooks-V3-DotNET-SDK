@@ -68,14 +68,6 @@ namespace TestSDK
         {
             CLogger cu = new CLogger();
 
-            oauthClient.CustomLogger = cu.GetCustomLogger();
-            oauthClient.EnableAdvancedLoggerInfoMode = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
-
             //SeriLogger seri = new SeriLogger();
             //seri.Log(TraceLevel.Verbose, "Nimisha typing");
             AsyncMode = true;

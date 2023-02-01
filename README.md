@@ -104,19 +104,7 @@ Request/response logging uses `IppConfiguration.AdvancedLogger`, which has one p
 ### OAuth Logging
 
 The clients in `Intuit.Ipp.OAuth2PlatformClient` have a `Logger` property that can be assigned with an implementation of `Intuit.Ipp.OAuth2PlatformClient.Diagnostics.IOAuthLogger`.
-- `TokenClient`, `TokenRevocationClient` and `UserInfoClient` default to `NullOAuthLogger`.
-- `OAuth2Client` defaults to `Intuit.Ipp.OAuth2PlatformClient.Diagnostics.OAuthAdvancedLogging` with similar Serilog configuration. **This will be removed in a future release.**
-    ```csharp
-    //Adding support for custom logger where value can be an instance of Serilog.Core.ILogger
-    oauthClient.CustomLogger =  <ILogger custom logger>;
-
-    //Already supported logger in the SDK. Either use custom logger or the below statements for serilog logs to work.
-    oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-    oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-    oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-    oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-    oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//Any drive logging location
-    ```
+- `OAuth2Client`, `TokenClient`, `TokenRevocationClient`, and `UserInfoClient` default to `NullOAuthLogger`.
 
 ## Fiddler
 
