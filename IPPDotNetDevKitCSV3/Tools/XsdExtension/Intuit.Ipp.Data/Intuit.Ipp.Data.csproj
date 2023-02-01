@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="CDMEntities\Fmsold.cs" />
     <Compile Remove="CDMEntities\Fms_backup.cs" />
+	<Compile Remove="bin\**" />
+	<Compile Remove="obj\**" />
+	<EmbeddedResource Remove="bin\**" />
+	<EmbeddedResource Remove="obj\**" />
+	<None Remove="bin\**" />
+	  <None Remove="obj\**" />
   </ItemGroup>
   
 
