@@ -2518,6 +2518,33 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         TaxRoundoffGainOrLoss,
+        
+        /// <remarks/>
+        OtherDebtors,
+        
+        /// <remarks/>
+        RentARoomReliefRentsReceived,
+        
+        /// <remarks/>
+        UkTaxesWithheld,
+        
+        /// <remarks/>
+        ForeignTaxesIncurred,
+        
+        /// <remarks/>
+        PremiumsReceived,
+        
+        /// <remarks/>
+        PremiumsPaid,
+        
+        /// <remarks/>
+        FinanceCostsRestricted,
+        
+        /// <remarks/>
+        CarriedForwardRelief,
+        
+        /// <remarks/>
+        RentARoomReliefReliefClaimed,
     }
     
     /// <remarks/>
@@ -15265,6 +15292,14 @@ namespace Intuit.Ipp.Data {
         
         private bool eCloudStatusTimeStampFieldSpecified;
         
+        private int cfdiUseField;
+        
+        private bool cfdiUseFieldSpecified;
+        
+        private string exportationField;
+        
+        private MXGlobalInfo globalInfoField;
+        
         private string invoiceStatusField;
         
         private string callToActionField;
@@ -15544,6 +15579,68 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.eCloudStatusTimeStampFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Use of Invoice of a transaction which is required by CFDI4.0 in Mexico.
+        /// Visit http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm and find the catalogues that contain the accepted values of cfdiUse.
+        /// 
+        /// </summary>
+        public int CfdiUse {
+            get {
+                return this.cfdiUseField;
+            }
+            set {
+                this.cfdiUseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CfdiUseSpecified {
+            get {
+                return this.cfdiUseFieldSpecified;
+            }
+            set {
+                this.cfdiUseFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Exportation type of a transaction which is required by CFDI4.0 in Mexico.
+        /// Visit http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm and find the catalogues that contain the accepted values of Exportation.
+        /// 
+        /// </summary>
+        public string Exportation {
+            get {
+                return this.exportationField;
+            }
+            set {
+                this.exportationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Global invoice data of a transaction which is required by CFDI4.0 in Mexico.
+        /// 
+        /// </summary>
+        public MXGlobalInfo GlobalInfo {
+            get {
+                return this.globalInfoField;
+            }
+            set {
+                this.globalInfoField = value;
             }
         }
         
@@ -15892,6 +15989,77 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.subscriptionPaymentsSettingFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: QBO
+    /// Description: Global invoice data of a transaction which is required by CFDI4.0 in Mexico.
+    /// Visit http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm and find the catalogues that contain the accepted values of Exportation, Periodicity, and Year.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=true)]
+    public partial class MXGlobalInfo {
+        
+        private string periodicityField;
+        
+        private string monthField;
+        
+        private string yearField;
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Periodicity of global invoice data which is required by CFDI4.0 in Mexico.
+        /// 
+        /// </summary>
+        public string Periodicity {
+            get {
+                return this.periodicityField;
+            }
+            set {
+                this.periodicityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Month of global invoice data which is required by CFDI4.0 in Mexico.
+        /// 
+        /// </summary>
+        public string Month {
+            get {
+                return this.monthField;
+            }
+            set {
+                this.monthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Year of global invoice data which is required by CFDI4.0 in Mexico.
+        /// 
+        /// </summary>
+        public string Year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
             }
         }
     }
@@ -35466,6 +35634,8 @@ namespace Intuit.Ipp.Data {
         
         private string sourceField;
         
+        private string taxRegimeField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -36367,6 +36537,23 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.sourceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: QBO
+        /// Description: Tax regime of a customer which is required by CFDI4.0 in Mexico.
+        /// Visit http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm and find the catalogues that contain the accepted values of TaxRegime.
+        /// 
+        /// </summary>
+        public string TaxRegime {
+            get {
+                return this.taxRegimeField;
+            }
+            set {
+                this.taxRegimeField = value;
             }
         }
     }
