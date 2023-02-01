@@ -1992,9 +1992,23 @@ namespace Intuit.Ipp.DataService
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Add.");
             foreach (AttachableResponse returnEntity in restResponse.AnyIntuitObjects)
             {
-                return returnEntity.AnyIntuitObject as Attachable;
+                var attachable = returnEntity.AnyIntuitObject as Attachable;
+                if (attachable != null)
+                {
+                    return attachable;
+                }
+
+                var fault = returnEntity.AnyIntuitObject as Fault;
+                if (fault != null)
+                {
+                    IdsException idsException = fault.IterateFaultAndPrepareException();
+                    if (idsException != null)
+                    {
+                        throw idsException;
+                    }
+                }
             }
-            return null;
+            throw new InvalidServiceRequestException("An unknown response was returned:\n" + response);
         }
 
         /// <summary>
