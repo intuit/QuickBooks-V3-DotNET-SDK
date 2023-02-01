@@ -158,6 +158,7 @@ namespace Intuit.Ipp.Core
         /// </summary>
         /// <param name="serviceContext">The serivce context object.</param>
         /// <returns>Returns value which specifies the request response logging mechanism.</returns>
+        [Obsolete("Use IppConfiguration.AdvangedLogger")]
         public static Rest.LogRequestsToDisk GetRequestLogging(ServiceContext serviceContext)
         {
             Rest.LogRequestsToDisk requestLogger;

@@ -117,11 +117,13 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.Logger = new Logger
                 {
                     CustomLogger = new TraceLogger(),
+#pragma warning disable CS0618 // Type or member is obsolete
                     RequestLog = new RequestLog
                     {
                         EnableRequestResponseLogging = false,
                         ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
                     }
+#pragma warning restore CS0618 // Type or member is obsolete
                 };
 
                 ippConfig.Message = new Message
@@ -162,6 +164,7 @@ namespace Intuit.Ipp.Core.Configuration
             }
 
             ippConfig.Logger = new Logger();
+#pragma warning disable CS0618 // Type or member is obsolete
             ippConfig.Logger.RequestLog = new RequestLog();
             ippConfig.Logger.RequestLog.EnableRequestResponseLogging = ippConfigurationSection.Logger.RequestLog.EnableRequestResponseLogging;
             if (string.IsNullOrEmpty(ippConfigurationSection.Logger.RequestLog.RequestResponseLoggingDirectory))
@@ -179,6 +182,7 @@ namespace Intuit.Ipp.Core.Configuration
 
                 ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = ippConfigurationSection.Logger.RequestLog.RequestResponseLoggingDirectory;
             }
+#pragma warning restore CS0618 // Type or member is obsolete
 
             if (!string.IsNullOrEmpty(ippConfigurationSection.Logger.CustomLogger.Name) && !string.IsNullOrEmpty(ippConfigurationSection.Logger.CustomLogger.Type) && ippConfigurationSection.Logger.CustomLogger.Enable)
             {
@@ -374,11 +378,13 @@ namespace Intuit.Ipp.Core.Configuration
             ippConfig.Logger = new Logger
             {
                 CustomLogger = new TraceLogger(),
+#pragma warning disable CS0618 // Type or member is obsolete
                 RequestLog = new RequestLog
                 {
                     EnableRequestResponseLogging = false,
                     ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
                 }
+#pragma warning restore CS0618 // Type or member is obsolete
             };
 
             ippConfig.Message = new Message
@@ -504,7 +510,6 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = serilogLoggerSettingsFile["LogDirectory"];
 
             }
-#pragma warning restore CS0618 // Type or member is obsolete
 
             //old logger
             if (!string.IsNullOrEmpty(loggerSettings["LogDirectory"]) && Convert.ToBoolean(loggerSettings["EnableLogs"]) == true)
@@ -523,6 +528,7 @@ namespace Intuit.Ipp.Core.Configuration
                 ippConfig.Logger.RequestLog.ServiceRequestLoggingLocation = loggerSettings["LogDirectory"];
 
             }
+#pragma warning disable CS0618 // Type or member is obsolete
 
             if (!string.IsNullOrEmpty(customLoggerSettings["Name"]) && !string.IsNullOrEmpty(customLoggerSettings["Type"]) && Convert.ToBoolean(customLoggerSettings["Enable"]) == true)
             {

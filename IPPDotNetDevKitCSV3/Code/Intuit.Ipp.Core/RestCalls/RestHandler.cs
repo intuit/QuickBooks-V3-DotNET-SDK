@@ -62,7 +62,11 @@ namespace Intuit.Ipp.Core.Rest
             this.ResponseCompressor = CoreHelper.GetCompressor(this.serviceContext, false);
             this.RequestSerializer = CoreHelper.GetSerializer(this.serviceContext, true);
             this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
+
+#pragma warning disable CS0618 // Type or member is obsolete
             this.RequestLogging = CoreHelper.GetRequestLogging(this.serviceContext);
+#pragma warning restore CS0618 // Type or member is obsolete
+
            // this.AdvancedLogging =  CoreHelper.GetAdvancedLogging(this.serviceContext);
         }
 
@@ -97,6 +101,7 @@ namespace Intuit.Ipp.Core.Rest
         /// <summary>
         /// Gets or sets Request Logging.
         /// </summary>
+        [Obsolete("Use CoreHelper.AdvangedLogging")]
         internal LogRequestsToDisk RequestLogging { get; set; }
 
         ///// <summary>
@@ -264,9 +269,11 @@ namespace Intuit.Ipp.Core.Rest
                                 CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                             }
 
-
+#pragma warning disable CS0618 // Type or member is obsolete
                             // Log Request Body to a file
                             this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestXML.ToString(), true);
+#pragma warning restore CS0618 // Type or member is obsolete
+
                             //Log to Serilog
                             CoreHelper.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
 
