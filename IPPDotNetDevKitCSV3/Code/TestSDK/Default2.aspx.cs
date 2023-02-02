@@ -29,7 +29,6 @@ using Intuit.Ipp.Exception;
 using System.Linq;
 using Intuit.Ipp.ReportService;
 using Intuit.Ipp.Diagnostics;
-using Serilog;
 
 
 namespace TestSDK
@@ -66,10 +65,6 @@ namespace TestSDK
 
         protected async void Page_Load(object sender, EventArgs e)
         {
-            CLogger cu = new CLogger();
-
-            //SeriLogger seri = new SeriLogger();
-            //seri.Log(TraceLevel.Verbose, "Nimisha typing");
             AsyncMode = true;
             if (!dictionary.ContainsKey("accessToken"))
             {
@@ -83,7 +78,6 @@ namespace TestSDK
                         //{
                         if (response.RealmId != null)
                         {
-                            // seri.Log(TraceLevel.Verbose, response.RealmId);
                             if (!dictionary.ContainsKey("realmId"))
                             {
                                 dictionary.Add("realmId", response.RealmId);
