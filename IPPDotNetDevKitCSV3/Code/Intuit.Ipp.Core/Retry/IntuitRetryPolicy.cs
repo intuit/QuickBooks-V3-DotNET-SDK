@@ -409,7 +409,6 @@ namespace Intuit.Ipp.Core
                                                 }
                                             }
 
-                                            //Log to Serilog
                                             CoreHelper.AdvancedLogging.Log("Response Intuit_Tid header: " + response_intuit_tid_header + ",Response Payload: " + errorString);
                                         }
 
@@ -624,7 +623,6 @@ namespace Intuit.Ipp.Core
                                     }
                                 }
 
-                                //Log to Serilog
                                 CoreHelper.AdvancedLogging.Log("Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 
 

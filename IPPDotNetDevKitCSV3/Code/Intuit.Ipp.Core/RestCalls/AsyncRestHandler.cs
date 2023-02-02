@@ -210,7 +210,6 @@ namespace Intuit.Ipp.Core.Rest
                                // Invoke the end method of the asynchronous call.
                                HttpWebRequest request = (HttpWebRequest)ar.AsyncState;
 
-                               //enabling header logging in Serilogger
                                WebHeaderCollection allHeaders = request.Headers;
 
                                CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri);
@@ -221,7 +220,6 @@ namespace Intuit.Ipp.Core.Rest
                                    CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                                }
 
-                               // Log Request Body to Serilog
                                CoreHelper.AdvancedLogging.Log(" Request Payload: " + this.requestBody);
 
 
@@ -447,7 +445,6 @@ namespace Intuit.Ipp.Core.Rest
                 }
             }
 
-            // Log response to Serilog
             CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString);
 
             //log response to logs
@@ -574,7 +571,6 @@ namespace Intuit.Ipp.Core.Rest
         {
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
 
-            // Log Request Body to Serilog
             CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody);
             UTF8Encoding encoding = new UTF8Encoding();
             byte[] content = encoding.GetBytes(this.requestBody);

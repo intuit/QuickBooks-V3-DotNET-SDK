@@ -130,7 +130,6 @@ namespace Intuit.Ipp.Core.Rest
                         }
                     }
 
-                    //Log errorstring to Serilog
                     CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 
                     if (isIps)

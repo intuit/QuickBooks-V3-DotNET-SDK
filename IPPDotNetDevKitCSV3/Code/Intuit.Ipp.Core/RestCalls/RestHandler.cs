@@ -243,7 +243,6 @@ namespace Intuit.Ipp.Core.Rest
                             }
 
 
-                            //enabling header logging in Serilogger
                             WebHeaderCollection allHeaders = httpWebRequest.Headers;
 
                             CoreHelper.AdvancedLogging.Log(" RequestUrl: " + httpWebRequest.RequestUri);
@@ -254,7 +253,6 @@ namespace Intuit.Ipp.Core.Rest
                                 CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                             }
 
-                            //Log to Serilog
                             CoreHelper.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
 
                             // Use of encoding to get bytes used to write to request stream.

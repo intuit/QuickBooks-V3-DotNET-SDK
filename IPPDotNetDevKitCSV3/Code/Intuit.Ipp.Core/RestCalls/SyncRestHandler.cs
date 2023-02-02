@@ -380,7 +380,6 @@ namespace Intuit.Ipp.Core.Rest
                     }
                 }
 
-                //Log to Serilog
                 CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response);
 
 
