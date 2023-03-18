@@ -479,108 +479,6 @@ namespace Intuit.Ipp.DataService
         }
 
         /// <summary>
-        /// Prepare IdsException out of Fault object.
-        /// </summary>
-        /// <param name="fault">Fault object.</param>
-        /// <returns> returns IdsException object.</returns>
-        private static IdsException IterateFaultAndPrepareException(Fault fault)
-        {
-            if (fault == null)
-            {
-                return null;
-            }
-
-            IdsException idsException = null;
-
-            // Create a list of exceptions.
-            List<IdsError> aggregateExceptions = new List<IdsError>();
-
-            // Check whether the fault is null or not.
-            if (fault != null)
-            {
-                // Fault types can be of Validation, Service, Authentication and Authorization. Run them through the switch case.
-                switch (fault.type)
-                {
-                    // If Validation errors iterate the Errors and add them to the list of exceptions.
-                    case "Validation":
-                    case "ValidationFault":
-                        if (fault.Error != null && fault.Error.Count() > 0)
-                        {
-                            foreach (var item in fault.Error)
-                            {
-                                // Add commonException to aggregateExceptions
-                                // CommonException defines four properties: Message, Code, Element, Detail.
-                                aggregateExceptions.Add(new IdsError(item.Message, item.code, item.element, item.Detail));
-                            }
-
-                            // Throw specific exception like ValidationException.
-                            idsException = new ValidationException(aggregateExceptions);
-                        }
-
-                        break;
-
-                    // If Validation errors iterate the Errors and add them to the list of exceptions.
-                    case "Service":
-                    case "ServiceFault":
-                        if (fault.Error != null && fault.Error.Count() > 0)
-                        {
-                            foreach (var item in fault.Error)
-                            {
-                                // Add commonException to aggregateExceptions
-                                // CommonException defines four properties: Message, Code, Element, Detail.
-                                aggregateExceptions.Add(new IdsError(item.Message, item.code, item.element, item.Detail));
-                            }
-
-                            // Throw specific exception like ServiceException.
-                            idsException = new ServiceException(aggregateExceptions);
-                        }
-
-                        break;
-
-                    // If Validation errors iterate the Errors and add them to the list of exceptions.
-                    case "Authentication":
-                    case "AuthenticationFault":
-                    case "Authorization":
-                    case "AuthorizationFault":
-                        if (fault.Error != null && fault.Error.Count() > 0)
-                        {
-                            foreach (var item in fault.Error)
-                            {
-                                // Add commonException to aggregateExceptions
-                                // CommonException defines four properties: Message, Code, Element, Detail.
-                                aggregateExceptions.Add(new IdsError(item.Message, item.code, item.element, item.Detail));
-                            }
-
-                            // Throw specific exception like AuthenticationException which is wrapped in SecurityException.
-                            idsException = new SecurityException(aggregateExceptions);
-                        }
-
-                        break;
-
-                    // Use this as default if there was some other type of Fault
-                    default:
-                        if (fault.Error != null && fault.Error.Count() > 0)
-                        {
-                            foreach (var item in fault.Error)
-                            {
-                                // Add commonException to aggregateExceptions
-                                // CommonException defines four properties: Message, Code, Element, Detail.
-                                aggregateExceptions.Add(new IdsError(item.Message, item.code, item.element, item.Detail));
-                            }
-
-                            // Throw generic exception like IdsException.
-                            idsException = new IdsException(string.Format(CultureInfo.InvariantCulture, "Fault Exception of type: {0} has been generated.", fault.type), aggregateExceptions);
-                        }
-
-                        break;
-                }
-            }
-
-            // Return idsException which will be of type Validation, Service or Security.
-            return idsException;
-        }
-
-        /// <summary>
         /// process batch item response
         /// </summary>
         /// <param name="batchitemResponse">The batchitem response.</param>
@@ -676,7 +574,7 @@ namespace Intuit.Ipp.DataService
             else
             {
                 result.ResponseType = ResponseType.Exception;
-                IdsException idsException = IterateFaultAndPrepareException(fault);
+                IdsException idsException = fault.IterateFaultAndPrepareException();
                 result.Exception = idsException;
             }
 
