@@ -1,41 +1,43 @@
 <Project>
-  <PropertyGroup>
-    <SolutionDir Condition="$(SolutionDir) == ''">$(MSBuildThisFileDirectory)\</SolutionDir>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-    <BaseOutputPath Condition=" '$(BaseOutputPath)' == '' ">$(MSBuildThisFileDirectory)artifacts\bin\</BaseOutputPath>
-    <DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
-    <LangVersion>latest</LangVersion>
-    <DebugType Condition=" '$(Configuration)' == 'Debug' ">Full</DebugType>
-    <DebugType Condition=" '$(Configuration)' == 'Release' ">pdbonly</DebugType>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <NoLogo>true</NoLogo>
-    <PackageOutputPath>$(SolutionDir)artifacts\nupkg</PackageOutputPath>
-    <PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
-    <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
-    <Copyright>Copyright © 2020 Intuit, Inc.</Copyright>
-    <AssemblyVersion>14.6.3.4</AssemblyVersion>
-    <FileVersion>14.6.3.4</FileVersion>
-    <Company>Intuit</Company>
-    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'netstandard2.0'">
-    <DefineConstants>NETCORE2_1;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+	<PropertyGroup>
+		<SolutionDir Condition="$(SolutionDir) == ''">$(MSBuildThisFileDirectory)\</SolutionDir>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+		<BaseOutputPath Condition=" '$(BaseOutputPath)' == '' ">$(MSBuildThisFileDirectory)artifacts\bin\</BaseOutputPath>
+		<DocumentationFile>$(BaseOutputPath)$(MSBuildProjectName).xml</DocumentationFile>
+		<LangVersion>latest</LangVersion>
+		<DebugType Condition=" '$(Configuration)' == 'Debug' ">Full</DebugType>
+		<DebugType Condition=" '$(Configuration)' == 'Release' ">pdbonly</DebugType>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<NoLogo>true</NoLogo>
+		<PackageOutputPath>$(SolutionDir)artifacts\nupkg</PackageOutputPath>
+		<PackageIcon>$(MSBuildThisFileDirectory)logo.png</PackageIcon>
+		<OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
+		<Copyright>Copyright © 2020 Intuit, Inc.</Copyright>
+		<AssemblyVersion>14.6.3.5</AssemblyVersion>
+		<FileVersion>14.6.3.4</FileVersion>
+		<Company>Intuit</Company>
+		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'netstandard2.0'">
+		<DefineConstants>NETCORE2_1;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
 
-  </PropertyGroup>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net472'">
-    <DefineConstants>NET472;NETFULL</DefineConstants>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net472'">
+		<DefineConstants>NET472;NETFULL</DefineConstants>
 
-  </PropertyGroup>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net461'">
-    <DefineConstants>NET461;NETFULL</DefineConstants>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)' == 'net461'">
+		<DefineConstants>NET461;NETFULL</DefineConstants>
 
-  </PropertyGroup>
+	</PropertyGroup>
 
-
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
 
 
 

@@ -8170,6 +8170,8 @@ namespace Intuit.Ipp.Data {
         
         private RecurringInfo recurringInfoField;
         
+        private ReferenceType projectRefField;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -8575,6 +8577,24 @@ namespace Intuit.Ipp.Data {
                 this.recurringInfoField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project identifier
+        /// References to the project this transaction
+        /// is associated with
+        /// 
+        /// </summary>
+        public ReferenceType ProjectRef {
+            get {
+                return this.projectRefField;
+            }
+            set {
+                this.projectRefField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -8618,6 +8638,8 @@ namespace Intuit.Ipp.Data {
         private CustomField[] customFieldField;
         
         private IntuitAnyType lineExField;
+        
+        private ReferenceType projectRefField;
         
         /// <remarks/>
         /// <summary>
@@ -8866,6 +8888,24 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.lineExField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project identifier
+        /// References to the project this line
+        /// is associated with
+        /// 
+        /// </summary>
+        public ReferenceType ProjectRef {
+            get {
+                return this.projectRefField;
+            }
+            set {
+                this.projectRefField = value;
             }
         }
     }
@@ -26615,6 +26655,8 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType payrollItemRefField;
         
+        private ReferenceType projectRefField;
+        
         private BillableStatusEnum billableStatusField;
         
         private bool billableStatusFieldSpecified;
@@ -26830,6 +26872,24 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.payrollItemRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project identifier
+        /// References to the project this line
+        /// is associated with
+        /// 
+        /// </summary>
+        public ReferenceType ProjectRef {
+            get {
+                return this.projectRefField;
+            }
+            set {
+                this.projectRefField = value;
             }
         }
         
