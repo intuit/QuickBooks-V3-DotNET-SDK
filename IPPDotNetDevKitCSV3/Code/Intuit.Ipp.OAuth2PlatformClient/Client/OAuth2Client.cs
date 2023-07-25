@@ -875,7 +875,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             IList<JsonWebKey> keys = DiscoveryDoc.KeySet.Keys;
             string mod = "";
             string exponent = "";
-            string kid = null;
+            string keyIdFromHeader = null;
             if (keys != null)
             {
                 if (idToken != null)
@@ -885,9 +885,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     {
                         var headerJson = Encoding.UTF8.GetString(Base64Url.Decode(splitValues[0].ToString()));
                         IdTokenHeader headerData = JsonConvert.DeserializeObject<IdTokenHeader>(headerJson);
-                        kid = headerData.Kid;
+                        keyIdFromHeader = headerData.Kid;
 
-                        if (kid == null)
+                        if (keyIdFromHeader == null)
                         {
                             return Task.FromResult(false);
                         }
@@ -957,7 +957,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
                     foreach (var key in keys)
                     {
-                        if(kid == key.Kid)
+                        if(keyIdFromHeader == key.Kid)
                         {
                             if (key.N != null)
                             {
