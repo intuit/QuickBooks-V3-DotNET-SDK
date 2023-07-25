@@ -33,6 +33,21 @@ namespace Intuit.Ipp.Utility
     /// </summary>
     public class JsonObjectSerializer : IEntitySerializer
     {
+        private static readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings()
+        {
+            Converters =
+            {
+                new ObjectToEnumConverter(),
+                new IntuitConverter()
+            },
+            NullValueHandling = NullValueHandling.Ignore,
+            MissingMemberHandling = MissingMemberHandling.Error,
+            DateFormatHandling = DateFormatHandling.IsoDateFormat,
+            DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+            DateFormatString = "yyyy-MM-ddTHH:mm:ssK",
+            MaxDepth = 256,
+        };
+
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonObjectSerializer"/> class.
         /// </summary>
@@ -65,20 +80,10 @@ namespace Intuit.Ipp.Utility
         public string Serialize(object entity)
         {
             string data = string.Empty;
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ObjectToEnumConverter());
-            settings.Converters.Add(new IntuitConverter());
-        
-            settings.NullValueHandling = NullValueHandling.Ignore;
-            settings.MissingMemberHandling = MissingMemberHandling.Error;
-            settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
-            settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-            settings.DateFormatString = "yyyy-MM-ddTHH:mm:ssK";
-            settings.MaxDepth = 256;
             
             try
             {
-                data = JsonConvert.SerializeObject(entity, settings);
+                data = JsonConvert.SerializeObject(entity, _jsonSettings);
             }
             catch (Exception ex)
             {
@@ -103,21 +108,13 @@ namespace Intuit.Ipp.Utility
         {
             object deserializedObject = null;
 
-            // Initialize serialize for object
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new ObjectToEnumConverter());
-            settings.Converters.Add(new IntuitConverter());
-           
-            settings.NullValueHandling = NullValueHandling.Ignore;
-            settings.MissingMemberHandling = MissingMemberHandling.Ignore;
-
             try
             {
                 // de serialization of message.
               /*  JObject o = JObject.Parse(message);
                 string key = o.Properties().Select(p => p.Name).Single();
                 string entityString = o[key].ToString();*/
-                deserializedObject = JsonConvert.DeserializeObject<T>(message, settings);
+                deserializedObject = JsonConvert.DeserializeObject<T>(message, _jsonSettings);
             }
             catch (SystemException ex)
             {

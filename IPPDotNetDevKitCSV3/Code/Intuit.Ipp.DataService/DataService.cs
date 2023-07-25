@@ -208,7 +208,7 @@ namespace Intuit.Ipp.DataService
             }
 
             string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
-            if(resourceString == "creditcardpaymenttxn")
+            if (resourceString == "creditcardpaymenttxn")
             {
                 resourceString = "creditcardpayment";
             }
@@ -815,29 +815,29 @@ namespace Intuit.Ipp.DataService
             {
                 resourceString = "creditcardpayment";
             }
-          
 
-                // Convert to role base to get the Id property which is required to Find the entity.
-                IntuitEntity intuitEntity = entity as IntuitEntity;
-                if (intuitEntity == null)
-                {
-                    IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-                    IdsExceptionManager.HandleException(exception);
-                }
 
-                // Check whether the Id is null and throw an exception if it is null.
-                if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
-                {
-                    IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
-                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
-                    IdsExceptionManager.HandleException(exception);
-                }
-          
-                id = intuitEntity.Id;
-            
-                
-            
+            // Convert to role base to get the Id property which is required to Find the entity.
+            IntuitEntity intuitEntity = entity as IntuitEntity;
+            if (intuitEntity == null)
+            {
+                IdsException exception = new IdsException(Resources.EntityConversionFailedMessage);
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                IdsExceptionManager.HandleException(exception);
+            }
+
+            // Check whether the Id is null and throw an exception if it is null.
+            if (string.IsNullOrWhiteSpace(intuitEntity.Id) && (entity.GetType().Name != "Preferences"))
+            {
+                IdsException exception = new IdsException(Resources.EntityIdNotNullMessage, new ArgumentNullException(Resources.IdString));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                IdsExceptionManager.HandleException(exception);
+            }
+
+            id = intuitEntity.Id;
+
+
+
 
             string uri = string.Empty;
 
@@ -903,7 +903,7 @@ namespace Intuit.Ipp.DataService
         public ReadOnlyCollection<T> FindByParentId<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindByParentId.");
-            
+
             ServicesHelper.ValidateEntity(entity, serviceContext);
             ServicesHelper.ValidateEntityType(entity, "TaxClassification", serviceContext);
 
@@ -957,7 +957,7 @@ namespace Intuit.Ipp.DataService
 
             // Check whether the Level is null and throw an exception if it is null.
             ServicesHelper.ValidateId(level, serviceContext);
-            
+
             string uri = string.Empty;
             uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?level={3}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString, level);
 
@@ -984,7 +984,7 @@ namespace Intuit.Ipp.DataService
             ServicesHelper.ValidateEntity(entity, serviceContext);
             string resourceString = entity.GetType().Name;
 
-           if (resourceString.ToLower(CultureInfo.InvariantCulture) == "creditcardpaymenttxn")
+            if (resourceString.ToLower(CultureInfo.InvariantCulture) == "creditcardpaymenttxn")
             {
                 resourceString = "creditcardpayment";
             }
@@ -995,7 +995,7 @@ namespace Intuit.Ipp.DataService
                 string uri = string.Empty;
                 uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString.ToLower(CultureInfo.InvariantCulture));
 
-                entities = PrepareAndExecuteHttpRequest<T>(uri); 
+                entities = PrepareAndExecuteHttpRequest<T>(uri);
             }
             else
             {
@@ -2091,36 +2091,15 @@ namespace Intuit.Ipp.DataService
 
             if (uriResponse != null)
             {
-                const int unEscapeDotsAndSlashes = 0x2000000;
-                FieldInfo fieldInfo = uriResponse.GetType().GetField("m_Syntax", BindingFlags.Instance | BindingFlags.NonPublic);
-                if (fieldInfo == null)
-                {
-                    throw new MissingFieldException("'m_Syntax' field not found");
-                }
-                object uriParser = fieldInfo.GetValue(uriResponse);
-
-                fieldInfo = typeof(UriParser).GetField("m_Flags", BindingFlags.Instance | BindingFlags.NonPublic);
-                if (fieldInfo == null)
-                {
-                    throw new MissingFieldException("'m_Flags' field not found");
-                }
-                object uriSyntaxFlags = fieldInfo.GetValue(uriParser);
-                object backupSyntaxFlags = uriSyntaxFlags;
-
-                // Clear the flag that we don't want
-                uriSyntaxFlags = (int)uriSyntaxFlags & ~unEscapeDotsAndSlashes;
-
-                fieldInfo.SetValue(uriParser, uriSyntaxFlags);
-
                 HttpWebRequest downloadRequest = WebRequest.Create(uriResponse) as HttpWebRequest;
                 downloadRequest.Method = HttpVerbType.GET.ToString();
 
-                WebResponse downloadResponse = downloadRequest.GetResponse();
-                BinaryReader streamReader = new BinaryReader(downloadResponse.GetResponseStream());
+                using (WebResponse downloadResponse = downloadRequest.GetResponse())
+                using (BinaryReader streamReader = new BinaryReader(downloadResponse.GetResponseStream()))
+                {
 
-                fieldInfo.SetValue(uriParser, backupSyntaxFlags);
-
-                return streamReader.ReadBytes(int.Parse(downloadResponse.Headers["Content-Length"]));
+                    return streamReader.ReadBytes(int.Parse(downloadResponse.Headers["Content-Length"]));
+                }
 
                 //  return response;
             }
@@ -2129,7 +2108,7 @@ namespace Intuit.Ipp.DataService
         }
 
         #endregion
-        
+
         /// <summary>
         /// Prepare Http request for Reading Tax Cassification methods
         /// </summary>
