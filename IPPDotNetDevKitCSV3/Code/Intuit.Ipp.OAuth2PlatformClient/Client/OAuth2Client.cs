@@ -875,20 +875,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             IList<JsonWebKey> keys = DiscoveryDoc.KeySet.Keys;
             string mod = "";
             string exponent = "";
+            string kid = null;
             if (keys != null)
             {
-                foreach (var key in keys)
-                {
-                    if (key.N != null)
-                    {
-                        mod = key.N;
-                    }
-                    if (key.N != null)
-                    {
-                        exponent = key.E;
-                    }
-                }
-
                 if (idToken != null)
                 {
                     string[] splitValues = idToken.Split('.');
@@ -896,8 +885,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                     {
                         var headerJson = Encoding.UTF8.GetString(Base64Url.Decode(splitValues[0].ToString()));
                         IdTokenHeader headerData = JsonConvert.DeserializeObject<IdTokenHeader>(headerJson);
+                        kid = headerData.Kid;
 
-                        if (headerData.Kid == null)
+                        if (kid == null)
                         {
                             return Task.FromResult(false);
                         }
@@ -962,6 +952,21 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                         if (payloadData.Sub == null)
                         {
                             return Task.FromResult(false);
+                        }
+                    }
+
+                    foreach (var key in keys)
+                    {
+                        if(kid == key.Kid)
+                        {
+                            if (key.N != null)
+                            {
+                                mod = key.N;
+                            }
+                            if (key.N != null)
+                            {
+                                exponent = key.E;
+                            }
                         }
                     }
 
