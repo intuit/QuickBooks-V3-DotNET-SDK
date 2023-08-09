@@ -33,4 +33,23 @@ namespace Intuit.Ipp.Diagnostics
         /// <param name="messageToWrite">The message to write.</param>
         void Log(TraceLevel idsTraceLevel, string messageToWrite);
     }
+
+    /// <summary>
+    /// Null logger.
+    /// </summary>
+    public class NullLogger : ILogger
+    {
+        /// <summary>
+        /// Singleton instance of <see cref="NullLogger"/>.
+        /// </summary>
+        public static readonly ILogger Instance = new NullLogger();
+
+        private NullLogger()
+        {
+        }
+
+        void ILogger.Log(TraceLevel idsTraceLevel, string messageToWrite)
+        {
+        }
+    }
 }

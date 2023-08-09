@@ -379,7 +379,11 @@ namespace Intuit.Ipp.Core.Rest
                         response_intuit_tid_header = httpWebResponse.Headers[i];
                     }
                 }
+
+#pragma warning disable CS0618 // Type or member is obsolete
                 this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response, false);
+#pragma warning restore CS0618 // Type or member is obsolete
+
                 //Log to Serilog
                 CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + response);
 

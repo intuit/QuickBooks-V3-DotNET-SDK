@@ -31,10 +31,13 @@ namespace Intuit.Ipp.Core.Configuration
         /// <summary>
         /// Gets or sets the Request logging mechanism.
         /// </summary>
+        [System.Obsolete("Use Logger with TraceLogger or a custom implementation.")]
         public RequestAdvancedLog RequestAdvancedLog { get; set; }
 
-
-
+        /// <summary>
+        /// Gets or sets the <see cref="IAdvancedLogger"/>.
+        /// </summary>
+        public IAdvancedLogger Logger { get; set; }
     }
 }
 

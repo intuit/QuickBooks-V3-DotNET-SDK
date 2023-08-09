@@ -20,6 +20,7 @@
 
 namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
 {
+    [System.Obsolete("Use IOAuthLogger.")]
     public interface IOAuthAdvancedLogger
     {
         /// <summary>

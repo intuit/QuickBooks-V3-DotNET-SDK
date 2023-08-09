@@ -44,11 +44,13 @@ namespace Intuit.Ipp.Core.Configuration
                 cfg.Logger = new Logger
                 {
                     CustomLogger = new TraceLogger(),
+#pragma warning disable CS0618 // Type or member is obsolete
                     RequestLog = new RequestLog
                     {
                         EnableRequestResponseLogging = false,
                         ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
                     }
+#pragma warning restore CS0618 // Type or member is obsolete
                 };
             }
 
@@ -57,6 +59,7 @@ namespace Intuit.Ipp.Core.Configuration
                 cfg.AdvancedLogger = new AdvancedLogger
                 {
           
+#pragma warning disable CS0618 // Type or member is obsolete
                     RequestAdvancedLog = new RequestAdvancedLog()
                     {
                         EnableSerilogRequestResponseLoggingForDebug = false,
@@ -65,6 +68,7 @@ namespace Intuit.Ipp.Core.Configuration
                         EnableSerilogRequestResponseLoggingForFile = false,
                         ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
                     }
+#pragma warning restore CS0618 // Type or member is obsolete
                 };
             }
 

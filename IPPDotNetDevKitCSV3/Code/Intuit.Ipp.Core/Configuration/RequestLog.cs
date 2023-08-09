@@ -29,6 +29,7 @@ namespace Intuit.Ipp.Core.Configuration
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
+    [Obsolete("Direct file logging is deprecated. Use a logging framework.")]
     public class RequestLog
     {
         /// <summary>
