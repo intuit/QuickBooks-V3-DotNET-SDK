@@ -53,6 +53,13 @@ namespace Intuit.Ipp.DataService
         T Void<T>(T entity) where T : IEntity;
 
         /// <summary>
+        /// Voids a bill payment under the specified realm. The realm must be set in the context.
+        /// </summary>        
+        /// <param name="entity">Bill Payment to Void</param>
+        /// <returns name="T">Returns the voided entity</returns>
+        public BillPayment VoidBillPayment(BillPayment entity);
+
+        /// <summary>
         /// Updates an entity under the specified realm. The realm must be set in the context.
         /// </summary>
         /// <typeparam name="T">Generic Type T.</typeparam>
