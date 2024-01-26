@@ -26,7 +26,7 @@ namespace Intuit.Ipp.Exception
     /// TODO: Update summary.
     /// </summary>
     [System.Serializable]
-    public class IdsError : System.Exception
+    public class IdsError : System.Exception, ISafeSerializationData
     {
         /// <summary>
         /// Error Code.
@@ -148,6 +148,7 @@ namespace Intuit.Ipp.Exception
             }
         }
 
+#if NETCORE
         /// <summary>
         /// Contains the System.Runtime.Serialization.SerializationInfo with information about the exception.
         /// </summary>
@@ -164,6 +165,20 @@ namespace Intuit.Ipp.Exception
                 info.AddValue("element", this.element);
                 info.AddValue("detail", this.detail);
             }
+        }
+#endif
+
+        /// <summary>
+        /// This method is called when the instance is deserialized.
+        /// </summary>
+        /// <param name="deserialized">An object that contains the state of the instance.</param>
+        public void CompleteDeserialization(object deserialized)
+        {
+            IdsError exception = (IdsError)deserialized;
+            exception.errorCode = this.errorCode;
+            exception.errorMessage = this.errorMessage;
+            exception.element = this.element;
+            exception.detail = this.detail;
         }
     }
 }
