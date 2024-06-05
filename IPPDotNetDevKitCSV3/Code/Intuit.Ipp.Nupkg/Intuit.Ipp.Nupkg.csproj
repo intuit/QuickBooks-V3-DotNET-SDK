@@ -9,7 +9,7 @@
     <PackageId>IppDotNetSdkForQuickBooksApiV3</PackageId>
     <AssemblyName>IppDotNetSdkForQuickBooksApiV3</AssemblyName>
     <DocumentationFile>$(BaseOutputPath)$(AssemblyName).xml</DocumentationFile>
-    <MainVersion>14.6.3.6</MainVersion>
+    <MainVersion>14.6.3.7</MainVersion>
     <PackageVersionSuffix>pre</PackageVersionSuffix>
     <Version>$(MainVersion)-$(PackageVersionSuffix)</Version>
     <Version>$(MainVersion)</Version>

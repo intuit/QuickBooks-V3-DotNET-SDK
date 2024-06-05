@@ -26657,6 +26657,10 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType projectRefField;
         
+        private int timeChargeIdField;
+        
+        private bool timeChargeIdFieldSpecified;
+        
         private BillableStatusEnum billableStatusField;
         
         private bool billableStatusFieldSpecified;
@@ -26890,6 +26894,33 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.projectRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// The ID of the related TimeCharge transaction.
+        /// 
+        /// </summary>
+        public int TimeChargeId {
+            get {
+                return this.timeChargeIdField;
+            }
+            set {
+                this.timeChargeIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TimeChargeIdSpecified {
+            get {
+                return this.timeChargeIdFieldSpecified;
+            }
+            set {
+                this.timeChargeIdFieldSpecified = value;
             }
         }
         
@@ -38151,6 +38182,8 @@ namespace Intuit.Ipp.Data {
         
         private bool costRateFieldSpecified;
         
+        private string notesField;
+        
         /// <remarks/>
         /// <summary>
         /// Specifies the Employee type. For QuickBooks Desktop the valid values are defined in the EmployeeTypeEnum.
@@ -38445,6 +38478,22 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.costRateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Free form text describing the Employee.[br /]Max. length: 4000 characters.
+        /// 
+        /// </summary>
+        public string Notes {
+            get {
+                return this.notesField;
+            }
+            set {
+                this.notesField = value;
             }
         }
     }
