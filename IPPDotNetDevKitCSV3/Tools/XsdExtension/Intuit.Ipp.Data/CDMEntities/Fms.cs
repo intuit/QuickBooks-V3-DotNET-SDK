@@ -8172,6 +8172,14 @@ namespace Intuit.Ipp.Data {
         
         private ReferenceType projectRefField;
         
+        private decimal totalCostAmountField;
+        
+        private bool totalCostAmountFieldSpecified;
+        
+        private decimal homeTotalCostAmountField;
+        
+        private bool homeTotalCostAmountFieldSpecified;
+        
         /// <remarks/>
         /// <summary>
         /// 
@@ -8595,6 +8603,64 @@ namespace Intuit.Ipp.Data {
                 this.projectRefField = value;
             }
         }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project Estimate identifier
+        /// The amount or equivalent paid or charged for a product/service
+        /// 
+        /// </summary>
+        public decimal TotalCostAmount {
+            get {
+                return this.totalCostAmountField;
+            }
+            set {
+                this.totalCostAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool TotalCostAmountSpecified {
+            get {
+                return this.totalCostAmountFieldSpecified;
+            }
+            set {
+                this.totalCostAmountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project Estimate identifier
+        /// The amount or equivalent paid or charged for a product/service when using multi-currency
+        /// 
+        /// </summary>
+        public decimal HomeTotalCostAmount {
+            get {
+                return this.homeTotalCostAmountField;
+            }
+            set {
+                this.homeTotalCostAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HomeTotalCostAmountSpecified {
+            get {
+                return this.homeTotalCostAmountFieldSpecified;
+            }
+            set {
+                this.homeTotalCostAmountFieldSpecified = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -8640,6 +8706,14 @@ namespace Intuit.Ipp.Data {
         private IntuitAnyType lineExField;
         
         private ReferenceType projectRefField;
+        
+        private decimal costAmountField;
+        
+        private bool costAmountFieldSpecified;
+        
+        private decimal homeCostAmountField;
+        
+        private bool homeCostAmountFieldSpecified;
         
         /// <remarks/>
         /// <summary>
@@ -8906,6 +8980,64 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.projectRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project Estimate identifier
+        /// The amount or equivalent paid or charged for a product/service
+        /// 
+        /// </summary>
+        public decimal CostAmount {
+            get {
+                return this.costAmountField;
+            }
+            set {
+                this.costAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool CostAmountSpecified {
+            get {
+                return this.costAmountFieldSpecified;
+            }
+            set {
+                this.costAmountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Project Estimate identifier
+        /// The amount or equivalent paid or charged for a product/service when using multi-currency
+        /// 
+        /// </summary>
+        public decimal HomeCostAmount {
+            get {
+                return this.homeCostAmountField;
+            }
+            set {
+                this.homeCostAmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool HomeCostAmountSpecified {
+            get {
+                return this.homeCostAmountFieldSpecified;
+            }
+            set {
+                this.homeCostAmountFieldSpecified = value;
             }
         }
     }
@@ -10374,6 +10506,7 @@ namespace Intuit.Ipp.Data {
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PriceLevelRef", typeof(ReferenceType))]
         [System.Xml.Serialization.XmlElementAttribute("RatePercent", typeof(decimal))]
+        [System.Xml.Serialization.XmlElementAttribute("UnitCostPrice", typeof(decimal))]
         [System.Xml.Serialization.XmlElementAttribute("UnitPrice", typeof(decimal))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public object AnyIntuitObject {
@@ -10541,6 +10674,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         RatePercent,
+        
+        /// <remarks/>
+        UnitCostPrice,
         
         /// <remarks/>
         UnitPrice,
@@ -34949,6 +35085,9 @@ namespace Intuit.Ipp.Data {
         
         /// <remarks/>
         CustomFieldDefinition,
+        
+        /// <remarks/>
+        ChangeOrder,
     }
     
     /// <remarks/>
