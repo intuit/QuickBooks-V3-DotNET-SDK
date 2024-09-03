@@ -44,11 +44,6 @@ namespace Intuit.Ipp.Core.Configuration
                 cfg.Logger = new Logger
                 {
                     CustomLogger = new TraceLogger(),
-                    RequestLog = new RequestLog
-                    {
-                        EnableRequestResponseLogging = false,
-                        ServiceRequestLoggingLocation = System.IO.Path.GetTempPath()
-                    }
                 };
             }
 
@@ -56,15 +51,7 @@ namespace Intuit.Ipp.Core.Configuration
             {
                 cfg.AdvancedLogger = new AdvancedLogger
                 {
-          
-                    RequestAdvancedLog = new RequestAdvancedLog()
-                    {
-                        EnableSerilogRequestResponseLoggingForDebug = false,
-                        EnableSerilogRequestResponseLoggingForTrace = false,
-                        EnableSerilogRequestResponseLoggingForConsole = false,
-                        EnableSerilogRequestResponseLoggingForFile = false,
-                        ServiceRequestLoggingLocationForFile = System.IO.Path.GetTempPath()
-                    }
+                    Logger = new TraceLogger(),
                 };
             }
 
