@@ -30,6 +30,7 @@ namespace Intuit.Ipp.Core.Configuration
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
+    [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
     public class RequestAdvancedLog
     {
         /// <summary>

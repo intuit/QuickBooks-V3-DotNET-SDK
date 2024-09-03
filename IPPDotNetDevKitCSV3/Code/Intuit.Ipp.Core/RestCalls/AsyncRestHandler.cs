@@ -221,8 +221,11 @@ namespace Intuit.Ipp.Core.Rest
                                    CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                                }
 
+#pragma warning disable CS0618 // Type or member is obsolete
                                // Log Request Body to a file
                                this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+#pragma warning restore CS0618 // Type or member is obsolete
+
                                // Log Request Body to Serilog
                                CoreHelper.AdvancedLogging.Log(" Request Payload: " + this.requestBody);
 
@@ -448,8 +451,12 @@ namespace Intuit.Ipp.Core.Rest
                     response_intuit_tid_header = response.Headers[i];
                 }
             }
+
+#pragma warning disable CS0618 // Type or member is obsolete
             // Log the response to Disk.
             this.RequestLogging.LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString, false);
+#pragma warning restore CS0618 // Type or member is obsolete
+
             // Log response to Serilog
             CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + resultString);
 
@@ -577,8 +584,11 @@ namespace Intuit.Ipp.Core.Rest
         {
             HttpWebRequest request = (HttpWebRequest)asynchronousResult.AsyncState;
 
+#pragma warning disable CS0618 // Type or member is obsolete
             // Log Request Body to a file
             this.RequestLogging.LogPlatformRequests(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody, true);
+#pragma warning restore CS0618 // Type or member is obsolete
+
             // Log Request Body to Serilog
             CoreHelper.AdvancedLogging.Log(" RequestUrl: " + request.RequestUri + ", Request Payload: " + this.requestBody);
             UTF8Encoding encoding = new UTF8Encoding();

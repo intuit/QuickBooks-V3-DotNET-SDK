@@ -23,6 +23,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
     /// <summary>
     /// Helper class for advanced logger/serilogger
     /// </summary>
+    [System.Obsolete("Use Logger with TraceLogger or a custom implementation.")]
     public static class LogHelper
     {  
        /// <summary>

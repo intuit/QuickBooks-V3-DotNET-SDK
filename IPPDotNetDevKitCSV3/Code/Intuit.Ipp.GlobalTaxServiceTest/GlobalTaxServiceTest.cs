@@ -48,9 +48,10 @@ namespace Intuit.Ipp.GlobalTaxService.Test
         public static void MyClassInitialize(TestContext testContext)
         {
             context = Initializer.InitializeServiceContextQbo();
+#pragma warning disable CS0618 // Type or member is obsolete
             context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
             context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\\Logs";
-
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
 
