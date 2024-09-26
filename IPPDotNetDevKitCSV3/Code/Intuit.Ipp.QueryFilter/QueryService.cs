@@ -138,7 +138,7 @@ namespace Intuit.Ipp.QueryFilter
         /// <param name="idsQuery">The string representation of ids query for getting just the count of records.</param>
         /// <param name="queryOperationType">Query Operation Type. Default value is query.</param>
         /// <returns>Count of records.</returns>
-        public long ExecuteIdsQueryForCount(string idsQuery, QueryOperationType queryOperationType = QueryOperationType.query)
+        public virtual long ExecuteIdsQueryForCount(string idsQuery, QueryOperationType queryOperationType = QueryOperationType.query)
         {
             // Validate Parameter
             if (string.IsNullOrWhiteSpace(idsQuery))
@@ -195,7 +195,7 @@ namespace Intuit.Ipp.QueryFilter
         /// <param name="idsQuery">The string representation of ids query.</param>
         /// <param name="queryOperationType">Query Operation Type. Default value is query.</param>
         /// <returns>ReadOnly Collection fo items of type T.</returns>
-        public System.Collections.ObjectModel.ReadOnlyCollection<T> ExecuteIdsQuery(string idsQuery, QueryOperationType queryOperationType = QueryOperationType.query)
+        public virtual System.Collections.ObjectModel.ReadOnlyCollection<T> ExecuteIdsQuery(string idsQuery, QueryOperationType queryOperationType = QueryOperationType.query)
         {
             // Validate Parameter
             if (string.IsNullOrWhiteSpace(idsQuery))
@@ -332,7 +332,7 @@ namespace Intuit.Ipp.QueryFilter
         /// }
         /// </code>
         /// </example>
-        public System.Collections.ObjectModel.ReadOnlyCollection<System.Collections.ObjectModel.ReadOnlyCollection<TSource>> ExecuteMultipleEntityQueries<TSource>(System.Collections.ObjectModel.ReadOnlyCollection<string> queryOperationValues) where TSource : IEntity
+        public virtual System.Collections.ObjectModel.ReadOnlyCollection<System.Collections.ObjectModel.ReadOnlyCollection<TSource>> ExecuteMultipleEntityQueries<TSource>(System.Collections.ObjectModel.ReadOnlyCollection<string> queryOperationValues) where TSource : IEntity
         {
             if (queryOperationValues == null || queryOperationValues.Count == 0)
             {
