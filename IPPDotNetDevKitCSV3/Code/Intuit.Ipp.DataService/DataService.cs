@@ -388,6 +388,75 @@ namespace Intuit.Ipp.DataService
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Void.");
             return (T)(restResponse.AnyIntuitObject as IEntity);
         }
+
+        /// <summary>
+        /// Voids a bill payment under the specified realm. The realm must be set in the context.
+        /// </summary>        
+        /// <param name="entity">Bill Payment to Void</param>
+        /// <returns name="T">Returns the voided entity</returns>
+        public BillPayment VoidBillPayment(BillPayment entity)
+        {
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void.");
+
+            // Validate parameter
+            if (!ServicesHelper.IsTypeNull(entity))
+            {
+                IdsException exception = new IdsException(Resources.ParameterNotNullMessage, new ArgumentNullException(Resources.EntityString));
+                this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                IdsExceptionManager.HandleException(exception);
+            }
+
+            
+            string resourceString = entity.GetType().Name.ToLower(CultureInfo.InvariantCulture);
+
+            // Builds resource Uri
+            string uri = string.Format(CultureInfo.InvariantCulture, "{0}/company/{1}/{2}?operation=update&include=void", CoreConstants.VERSION, this.serviceContext.RealmId, resourceString);
+
+            // Creates request parameters
+            RequestParameters parameters;
+            if (this.serviceContext.IppConfiguration.Message.Request.SerializationFormat == Intuit.Ipp.Core.Configuration.SerializationFormat.Json)
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONJSON);
+            }
+            else
+            {
+                parameters = new RequestParameters(uri, HttpVerbType.POST, CoreConstants.CONTENTTYPE_APPLICATIONXML);
+            }
+
+            // Prepares request
+            HttpWebRequest request = this.restHandler.PrepareRequest(parameters, entity);
+
+            string response = string.Empty;
+            try
+            {
+                // gets response
+                response = this.restHandler.GetResponse(request);
+            }
+            catch (IdsException ex)
+            {
+                IdsExceptionManager.HandleException(ex);
+            }
+
+            CoreHelper.CheckNullResponseAndThrowException(response);
+
+            // de serialize object
+            IntuitResponse restResponse = (IntuitResponse)CoreHelper.GetSerializer(this.serviceContext, false).Deserialize<IntuitResponse>(response);
+
+            if (restResponse.AnyIntuitObjects != null)
+            {
+                IntuitEntity intuitEntity = restResponse.AnyIntuitObject as IntuitEntity;
+
+                if (restResponse != null && restResponse.status != IntuitResponseStatus.Deleted.ToString())
+                {
+                    IdsException exception = new IdsException(Resources.CommunicationErrorMessage, new CommunicationException(Resources.StatusNotVoided));
+                    this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
+                    IdsExceptionManager.HandleException(exception);
+                }
+            }
+
+            this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Finished Executing Method Void.");
+            return (BillPayment)(restResponse.AnyIntuitObject as IEntity);
+        }
         #endregion
 
         #region Update
