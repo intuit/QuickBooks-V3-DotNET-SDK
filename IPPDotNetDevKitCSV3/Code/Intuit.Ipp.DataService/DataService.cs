@@ -195,7 +195,7 @@ namespace Intuit.Ipp.DataService
         /// <typeparam name="T">Generic Type T.</typeparam>
         /// <param name="entity">Entity to Add.</param>
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
-        public virtual T Add<T>(T entity) where T : IEntity
+        public T Add<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Add.");
 
@@ -394,7 +394,7 @@ namespace Intuit.Ipp.DataService
         /// </summary>        
         /// <param name="entity">Bill Payment to Void</param>
         /// <returns name="T">Returns the voided entity</returns>
-        public virtual BillPayment VoidBillPayment(BillPayment entity)
+        public BillPayment VoidBillPayment(BillPayment entity)
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Void.");
 
@@ -467,7 +467,7 @@ namespace Intuit.Ipp.DataService
         /// <typeparam name="T">Generic Type T.</typeparam>
         /// <param name="entity">Entity to Update.</param>
         /// <returns>Returns an updated version of the entity with updated identifier and sync token.</returns>
-        public virtual T Update<T>(T entity) where T : IEntity
+        public T Update<T>(T entity) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Update.");
 
@@ -1046,7 +1046,7 @@ namespace Intuit.Ipp.DataService
         /// <param name="startPosition">The start position to retrieve.</param>
         /// <param name="maxResults">Maximum no. of results to retrieve</param>
         /// <returns> Returns the list of entities.</returns>
-        public virtual ReadOnlyCollection<T> FindAll<T>(T entity, int startPosition = 1, int maxResults = 500) where T : IEntity
+        public ReadOnlyCollection<T> FindAll<T>(T entity, int startPosition = 1, int maxResults = 500) where T : IEntity
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method FindAll.");
 
@@ -1997,7 +1997,7 @@ namespace Intuit.Ipp.DataService
         /// <param name="entity">Attachment Metadata of Stream to be Uploaded.</param>
         /// <param name="stream">Stream to be uploaded</param>
         /// <returns>Returns an uploaded attachment with updated identifier and sync token.</returns>
-        public virtual Attachable Upload(Attachable entity, System.IO.Stream stream)
+        public Attachable Upload(Attachable entity, System.IO.Stream stream)
         {
             this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Info, "Called Method Upload.");
 
