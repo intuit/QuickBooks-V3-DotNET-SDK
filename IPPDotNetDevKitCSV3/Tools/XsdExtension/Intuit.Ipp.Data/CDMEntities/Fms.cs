@@ -3252,6 +3252,24 @@ namespace Intuit.Ipp.Data {
     /// <summary>
     /// 
     /// Product: ALL
+    /// Description: Enumeration of extended
+    /// payment types.
+    /// 
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Intuit.Ipp.XsdExtension", "1.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schema.intuit.com/finance/v3")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schema.intuit.com/finance/v3", IsNullable=false)]
+    public enum PaymentExtendedTypeEnum {
+        
+        /// <remarks/>
+        Prepayment,
+    }
+    
+    /// <remarks/>
+    /// <summary>
+    /// 
+    /// Product: ALL
     /// Description: Enumeration of bill
     /// payment types.
     /// 
@@ -10197,7 +10215,7 @@ namespace Intuit.Ipp.Data {
         
         private bool salesPriceFieldSpecified;
         
-        private decimal itemField;
+        private double itemField;
         
         private ItemChoiceType1 itemElementNameField;
         
@@ -10248,10 +10266,10 @@ namespace Intuit.Ipp.Data {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NewQty", typeof(decimal))]
-        [System.Xml.Serialization.XmlElementAttribute("QtyDiff", typeof(decimal))]
+        [System.Xml.Serialization.XmlElementAttribute("NewQty", typeof(double))]
+        [System.Xml.Serialization.XmlElementAttribute("QtyDiff", typeof(double))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
-        public decimal AnyIntuitObject {
+        public double AnyIntuitObject {
             get {
                 return this.itemField;
             }
@@ -20908,6 +20926,10 @@ namespace Intuit.Ipp.Data {
         
         private bool processPaymentFieldSpecified;
         
+        private PaymentExtendedTypeEnum paymentExtendedTypeField;
+        
+        private bool paymentExtendedTypeFieldSpecified;
+        
         private IntuitAnyType paymentExField;
         
         /// <remarks/>
@@ -21154,6 +21176,34 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.processPaymentFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// 
+        /// Product: ALL
+        /// Description: Current only valid value is Prepayment.
+        /// 
+        /// </summary>
+        public PaymentExtendedTypeEnum PaymentExtendedType {
+            get {
+                return this.paymentExtendedTypeField;
+            }
+            set {
+                this.paymentExtendedTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [JsonIgnore()]
+        public bool PaymentExtendedTypeSpecified {
+            get {
+                return this.paymentExtendedTypeFieldSpecified;
+            }
+            set {
+                this.paymentExtendedTypeFieldSpecified = value;
             }
         }
         
@@ -32154,6 +32204,8 @@ namespace Intuit.Ipp.Data {
         
         private IntuitAnyType attachableExField;
         
+        private string documentIdField;
+        
         /// <remarks/>
         /// <summary>
         /// FileName of the attachment
@@ -32369,6 +32421,20 @@ namespace Intuit.Ipp.Data {
             }
             set {
                 this.attachableExField = value;
+            }
+        }
+        
+        /// <remarks/>
+        /// <summary>
+        /// DocumentId of the uploaded attachment from Document Service
+        /// 
+        /// </summary>
+        public string documentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
             }
         }
     }
