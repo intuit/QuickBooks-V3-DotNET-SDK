@@ -13,8 +13,8 @@
     <PackageOutputPath>$(SolutionDir)artifacts\nupkg</PackageOutputPath>
     <OutputPath>$(SolutionDir)artifacts\bin</OutputPath>
     <Copyright>Copyright © 2020 Intuit, Inc.</Copyright>
-    <AssemblyVersion>14.6.4.0</AssemblyVersion>
-    <FileVersion>14.6.4.0</FileVersion>
+    <AssemblyVersion>14.7.0.0</AssemblyVersion>
+    <FileVersion>14.7.0.0</FileVersion>
     <Company>Intuit</Company>
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
