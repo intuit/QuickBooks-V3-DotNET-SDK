@@ -6,20 +6,13 @@ using Intuit.Ipp.OAuth2PlatformClient.Helpers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
-using System.Reflection;
-using System.Linq;
 using System.IO;
-using System.Globalization;
-using Serilog;
 using Intuit.Ipp.OAuth2PlatformClient.Diagnostics;
-using Serilog;
 
 namespace Intuit.Ipp.OAuth2PlatformClient
 {   /// <summary>
@@ -30,24 +23,20 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Advanced Logger for OAuth2 calls
         /// </summary>
+        [Obsolete("Use Logger.")]
         public static OAuthAdvancedLogging AdvancedLogger;
 
         /// <summary>
         /// Enable extra field to check if new OAuth2Client is used for OAuth calls and Advanced logging
         /// </summary>
+        [Obsolete("Use Logger.")]
         internal static bool AdvancedLoggerEnabled = false;
-
-        /// <summary>
-        /// Internal field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
-        /// </summary>
-        internal static bool ShowInfoLogs = false;
 
         /// <summary>
         /// Enable extra field to check if OAuth2Client is used for OAuth calls to enable on intuit-tid based logs, no verbose logs will be enabled if this is true
         /// </summary>
+        [Obsolete("Use Logger.")]
         public bool EnableAdvancedLoggerInfoMode { get; set; } = false;
-
-
 
         /// <summary>
         /// request logging location.
@@ -55,47 +44,33 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         private string serviceRequestLoggingLocationForFile;
 
         /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
-
-        ///// <summary>
-        ///// request TTL-time to live for all logs 
-        ///// </summary>
-        //public double ServiceRequestAzureDocumentDBTTL { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Debug logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForDebug { get; set; }
-
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Trace logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForTrace { get; set; }
-
 
         /// <summary>
         /// Gets or sets a value indicating whether to enable reqeust response logging for Console logs.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForConsole { get; set; }
-
 
         ///// <summary>
         ///// Gets or sets a value indicating whether to enable reqeust response logging for file logs.
         ///// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
-
 
         /// <summary>
         /// Gets or sets the service request logging location for File.
         /// </summary>
+        [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
         public string ServiceRequestLoggingLocationForFile
         {
             get
@@ -155,8 +130,55 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// CustomLogger
         /// </summary>
+        [Obsolete("Use Logger with a custom implementation.")]
         public Serilog.ILogger CustomLogger { get; set; }
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
+        private OAuthAdvancedLogging InitializeAdvancedLogger()
+        {
+            AdvancedLoggerEnabled = true;
+
+            OAuthAdvancedLogging logger;
+            if (this.CustomLogger != null)
+            {
+                //Use custom logger
+                logger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
+            }
+            else
+            {
+                //Intialize Logger
+                logger = LogHelper.GetAdvancedLogging(
+                    enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug,
+                    enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace,
+                    enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole,
+                    enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile,
+                    serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
+            }
+
+            //Set internal property to track only informational -intuit_tid based logs
+            if (EnableAdvancedLoggerInfoMode == true)
+            {
+                logger.ShowInfoLogs = true;
+            }
+
+            AdvancedLogger = logger;
+            return logger;
+        }
+
+#pragma warning restore CS0618 // Type or member is obsolete
+
+        private IOAuthLogger logger;
+
+        /// <summary>
+        /// Logger for OAuth requests and responses.
+        /// Defaults to <see cref="OAuthAdvancedLogging"/> configured from properties on this client.
+        /// </summary>
+        public IOAuthLogger Logger
+        {
+            get => logger ?? InitializeAdvancedLogger();
+            set => logger = value;
+        }
 
         /// <summary>
         /// OAuth2Client constructor
@@ -270,26 +292,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
             }
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
 
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-
-            }
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
             {
@@ -307,7 +310,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -324,25 +327,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             if (string.IsNullOrEmpty(DiscoveryDoc.AuthorizeEndpoint))
             {
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
-            }
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
             string scopeValue = "";
@@ -362,7 +346,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -378,28 +362,6 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             {
                 throw new System.Exception("Discovery Call failed. Authorize Endpoint is empty.");
             }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-            }
-
-
 
             string scopeValue = "";
             for (var index = 0; index < scopes.Count; index++)
@@ -420,7 +382,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 CSRFToken);
 
             //Logging authorization request
-            AdvancedLogger.Log("Logging AuthorizationRequest:" + authorizationRequest);
+            Logger.Log("Logging AuthorizationRequest:" + authorizationRequest);
 
             return authorizationRequest;
         }
@@ -553,28 +515,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed.BearerToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. BearerToken Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-
             }
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
@@ -593,29 +535,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
-                AdvancedLogger.Log("BearerToken Endpoint is empty.");
+                Logger.Log("BearerToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "BearerToken Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-
             }
 
             var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
@@ -633,28 +554,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed. RefreshToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RefreshToken Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
             var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
@@ -673,28 +574,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
-                AdvancedLogger.Log("RefreshToken Endpoint is empty.");
+                Logger.Log("RefreshToken Endpoint is empty.");
                 return new TokenResponse(HttpStatusCode.InternalServerError, "RefreshToken Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
             var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
@@ -711,30 +592,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.RevocationEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
+                Logger.Log("Discovery Call failed. RevokeToken Endpoint is empty.");
                 return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. RevokeToken Endpoint is empty.");
             }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-            }
-
 
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(DiscoveryDoc.RevocationEndpoint, ClientID, ClientSecret);
             return await revokeTokenClient.RevokeAsync(new TokenRevocationRequest
@@ -754,29 +614,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(revokeTokenEndpoint))
             {
-                AdvancedLogger.Log("Revoke Token Endpoint is empty.");
+                Logger.Log("Revoke Token Endpoint is empty.");
                 return new TokenRevocationResponse(HttpStatusCode.InternalServerError, "Revoke Token Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-
             }
 
             TokenRevocationClient revokeTokenClient = new TokenRevocationClient(revokeTokenEndpoint, ClientID, ClientSecret);
@@ -796,29 +635,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.UserInfoEndpoint))
             {
-                AdvancedLogger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
+                Logger.Log("Discovery Call failed. UserInfo Endpoint is empty.");
                 return new UserInfoResponse(HttpStatusCode.InternalServerError, "Discovery Call failed. UserInfo Endpoint is empty.");
-            }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-
             }
 
             UserInfoClient userInfoClient = new UserInfoClient(DiscoveryDoc.UserInfoEndpoint);
@@ -836,30 +654,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         {
             if (string.IsNullOrEmpty(userInfoEndpoint))
             {
-                AdvancedLogger.Log("UserInfo Endpoint is empty.");
+                Logger.Log("UserInfo Endpoint is empty.");
                 return new UserInfoResponse(HttpStatusCode.InternalServerError, "UserInfo Endpoint is empty.");
             }
-
-            AdvancedLoggerEnabled = true;
-            //Set internal property to track only informational -intuit_tid based logs
-            if (EnableAdvancedLoggerInfoMode == true)
-            {
-                ShowInfoLogs = true;
-            }
-
-            if (this.CustomLogger != null)
-            {
-                //Use custom logger
-                AdvancedLogger = LogHelper.GetAdvancedLoggingCustom(this.CustomLogger);
-
-
-            }
-            else
-            {
-                //Intialize Logger
-                AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
-            }
-
 
             UserInfoClient userInfoClient = new UserInfoClient(userInfoEndpoint);
             return await userInfoClient.GetAsync(accessToken, cancellationToken).ConfigureAwait(false);

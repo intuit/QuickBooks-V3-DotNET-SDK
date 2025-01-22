@@ -34,22 +34,13 @@ namespace Intuit.Ipp.Diagnostics
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
+    [Obsolete("Use TraceLogger or a custom implementation.")]
     public class AdvancedLogging : IAdvancedLogger
     {
         /// <summary>
         /// request logging location.
         /// </summary>
         private string serviceRequestLoggingLocationForFile;
-
-        /// <summary>
-        /// request Azure Document DB url.
-        /// </summary>
-        private Uri serviceRequestAzureDocumentDBUrl;
-
-        /// <summary>
-        /// request Azure Document DB Secure Key
-        /// </summary>
-        private string serviceRequestAzureDocumentDBSecureKey;
 
         /// <summary>
         /// request TTL-time to live for all logs 
