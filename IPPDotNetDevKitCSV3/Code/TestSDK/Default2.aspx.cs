@@ -29,7 +29,6 @@ using Intuit.Ipp.Exception;
 using System.Linq;
 using Intuit.Ipp.ReportService;
 using Intuit.Ipp.Diagnostics;
-using Serilog;
 
 
 namespace TestSDK
@@ -66,18 +65,6 @@ namespace TestSDK
 
         protected async void Page_Load(object sender, EventArgs e)
         {
-            CLogger cu = new CLogger();
-
-            oauthClient.CustomLogger = cu.GetCustomLogger();
-            oauthClient.EnableAdvancedLoggerInfoMode = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForConsole = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForDebug = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForFile = true;
-            oauthClient.EnableSerilogRequestResponseLoggingForTrace = true;
-            oauthClient.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";//check correct path on machine
-
-            //SeriLogger seri = new SeriLogger();
-            //seri.Log(TraceLevel.Verbose, "Nimisha typing");
             AsyncMode = true;
             if (!dictionary.ContainsKey("accessToken"))
             {
@@ -91,7 +78,6 @@ namespace TestSDK
                         //{
                         if (response.RealmId != null)
                         {
-                            // seri.Log(TraceLevel.Verbose, response.RealmId);
                             if (!dictionary.ContainsKey("realmId"))
                             {
                                 dictionary.Add("realmId", response.RealmId);
@@ -318,16 +304,7 @@ namespace TestSDK
             context.IppConfiguration.BaseUrl.Qbo = "https://sandbox-quickbooks.api.intuit.com/";
             //        //serviceContext.IppConfiguration.BaseUrl.Qbo = "https://quickbooks.api.intuit.com/";//prod
             context.IppConfiguration.MinorVersion.Qbo = "62";
-            //context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = 
-            //context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"C:\Documents\Serilog_log";
 
-            CLogger cu = new CLogger();
-            context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.CustomLogger = cu.GetCustomLogger();
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForRollingFile = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForConsole = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForTrace = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.EnableSerilogRequestResponseLoggingForDebug = true;
-            //context.IppConfiguration.AdvancedLogger.RequestAdvancedLog.ServiceRequestLoggingLocationForFile = @"C:\Documents\Serilog_log";
             QueryService<Invoice> in2 = new QueryService<Invoice>(context);
             var inn22 = in2.ExecuteIdsQueryForCount("Select * From Invoice");
             var inn23 = in2.ExecuteIdsQueryForCount("Select count(*) From Invoice");

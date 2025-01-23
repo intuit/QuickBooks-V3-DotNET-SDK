@@ -141,7 +141,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.ServiceContext.#IppConfiguration", MessageId = "Ipp")]
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.ServiceContext.#Create(System.String,System.String,Intuit.Ipp.Core.IntuitServicesType,System.String)", MessageId = "Dbid")]
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "namespace", Target = "Intuit.Ipp.Core.Configuration", MessageId = "Ipp")]
-[module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.Configuration.RequestLog.#EnableRequestResponsLogging", MessageId = "Respons")]
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.Configuration.BaseUrl.#Ips", MessageId = "Ips")]
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.Configuration.BaseUrl.#Qbo", MessageId = "Qbo")]
 [module: SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Scope = "member", Target = "Intuit.Ipp.Core.Configuration.BaseUrl.#Qbd", MessageId = "Qbd")]

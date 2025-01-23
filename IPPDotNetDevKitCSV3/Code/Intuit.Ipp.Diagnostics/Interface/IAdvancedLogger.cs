@@ -31,4 +31,23 @@ namespace Intuit.Ipp.Diagnostics
         /// <param name="messageToWrite">The message to write.</param>
         void Log(string messageToWrite);
     }
+
+    /// <summary>
+    /// Null logger.
+    /// </summary>
+    public class NullAdvancedLogger : IAdvancedLogger
+    {
+        /// <summary>
+        /// Singleton instance of <see cref="NullAdvancedLogger"/>.
+        /// </summary>
+        public static readonly IAdvancedLogger Instance = new NullAdvancedLogger();
+
+        private NullAdvancedLogger()
+        {
+        }
+
+        void IAdvancedLogger.Log(string messageToWrite)
+        {
+        }
+    }
 }

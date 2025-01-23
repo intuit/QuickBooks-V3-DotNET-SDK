@@ -48,9 +48,6 @@ namespace Intuit.Ipp.GlobalTaxService.Test
         public static void MyClassInitialize(TestContext testContext)
         {
             context = Initializer.InitializeServiceContextQbo();
-            context.IppConfiguration.Logger.RequestLog.EnableRequestResponseLogging = true;
-            context.IppConfiguration.Logger.RequestLog.ServiceRequestLoggingLocation = @"c:\\Logs";
-
         }
 
 

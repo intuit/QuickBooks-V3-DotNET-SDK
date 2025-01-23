@@ -21,7 +21,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeAccessTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Revoke Access token request initiated");
+            client.Logger.Log("Revoke Access token request initiated");
             return client.RevokeAsync(new TokenRevocationRequest
             {
                 Token = token,
@@ -37,7 +37,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <returns>Task of TokenRevocationResponse</returns>
         public static Task<TokenRevocationResponse> RevokeRefreshTokenAsync(this TokenRevocationClient client, string token, CancellationToken cancellationToken = default(CancellationToken))
         {
-            OAuth2Client.AdvancedLogger.Log("Revoke Refresh token request initiated");
+            client.Logger.Log("Revoke Refresh token request initiated");
             return client.RevokeAsync(new TokenRevocationRequest
             {
                 Token = token,

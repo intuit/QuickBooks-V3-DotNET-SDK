@@ -28,18 +28,6 @@ namespace Intuit.Ipp.Utility
     public class LoggerElement : ConfigurationElement
     {
         /// <summary>
-        /// Gets the RequestLog element.
-        /// </summary>
-        [ConfigurationProperty("requestLog")]
-        public RequestLogElement RequestLog
-        {
-            get
-            {
-                return (RequestLogElement)this["requestLog"];
-            }
-        }
-
-        /// <summary>
         /// Gets the CustomLogger element.
         /// </summary>
         [ConfigurationProperty("customLogger")]

@@ -62,7 +62,7 @@ namespace Intuit.Ipp.Core.Rest
             this.ResponseCompressor = CoreHelper.GetCompressor(this.serviceContext, false);
             this.RequestSerializer = CoreHelper.GetSerializer(this.serviceContext, true);
             this.responseSerializer = CoreHelper.GetSerializer(this.serviceContext, false);
-            this.RequestLogging = CoreHelper.GetRequestLogging(this.serviceContext);
+
            // this.AdvancedLogging =  CoreHelper.GetAdvancedLogging(this.serviceContext);
         }
 
@@ -93,16 +93,6 @@ namespace Intuit.Ipp.Core.Rest
         /// Gets or sets Request serializer.
         /// </summary>
         internal IEntitySerializer RequestSerializer { get; set; }
-
-        /// <summary>
-        /// Gets or sets Request Logging.
-        /// </summary>
-        internal LogRequestsToDisk RequestLogging { get; set; }
-
-        ///// <summary>
-        ///// Gets or sets Serilog Request Logging.
-        ///// </summary>
-        //internal static AdvancedLogging AdvancedLogging { get; set; }
 
         /// <summary>
         /// Gets or sets the minorVersion.
@@ -253,7 +243,6 @@ namespace Intuit.Ipp.Core.Rest
                             }
 
 
-                            //enabling header logging in Serilogger
                             WebHeaderCollection allHeaders = httpWebRequest.Headers;
 
                             CoreHelper.AdvancedLogging.Log(" RequestUrl: " + httpWebRequest.RequestUri);
@@ -264,10 +253,6 @@ namespace Intuit.Ipp.Core.Rest
                                 CoreHelper.AdvancedLogging.Log(allHeaders.GetKey(i) + "-" + allHeaders[i]);
                             }
 
-
-                            // Log Request Body to a file
-                            this.RequestLogging.LogPlatformRequests(" RequestUrl: " + requestEndpoint + ", Request Payload:" + requestXML.ToString(), true);
-                            //Log to Serilog
                             CoreHelper.AdvancedLogging.Log( "Request Payload:" + requestXML.ToString());
 
                             // Use of encoding to get bytes used to write to request stream.
