@@ -110,10 +110,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// DiscoveryClient constructor which takes in app environment
         /// </summary>
         /// <param name="appEnvironment">app Environment</param>
-        public DiscoveryClient(AppEnvironment appEnvironment)
+        /// <param name="innerHandler">innerHandler</param>
+        public DiscoveryClient(AppEnvironment appEnvironment, HttpMessageHandler innerHandler = null)
         {
             Policy.SetAuthority(appEnvironment);//Issuer url set, used in DiscoverResponse too for validation
-            var handler = new HttpClientHandler();
+            var handler = innerHandler ?? new HttpClientHandler();
             string url = "";
          
 
