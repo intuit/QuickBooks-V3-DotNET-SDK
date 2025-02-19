@@ -18,7 +18,7 @@ public static class WebHeaderCollectionExtensions
         var headersStringBuilder = new StringBuilder();
         foreach (string header in headers)
         {
-            headersStringBuilder.Append($"{header}: {headers[header]}");
+            headersStringBuilder.Append($"{header}: {headers[header]};");
         }
 
         return headersStringBuilder.ToString();
