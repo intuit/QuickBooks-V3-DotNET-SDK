@@ -178,7 +178,7 @@
     <value>Please specify a valid directory path.</value>
   </data>
   <data name="DefaultMinorVersionValue" xml:space="preserve">
-    <value>73</value>
+    <value>75</value>
   </data>
   <data name="ArgumentCannotBeGreaterThanBaseline" xml:space="preserve">
     <value>The specified argument {0} cannot be greater than its ceiling value of {1}.</value>
