@@ -42,5 +42,10 @@ namespace Intuit.Ipp.WebhooksService
         /// </summary>
         WebhooksEvent GetWebooksEvents(string payload);
 
+        /// <summary>
+        /// GetWebhooksEvents fucn to deserialize new json response from Webhooks.
+        /// </summary>
+        List<WebhooksEventNew> GetWebooksEventsNew(string payload);
+
     }
 }

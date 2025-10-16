@@ -74,6 +74,11 @@
             GetWebhooksEvents fucn to deserialize json response from Webhooks.
             </summary>
         </member>
+		<member name="M:Intuit.Ipp.WebhooksService.IWebhooksService.GetWebooksEventsNew(System.String)">
+			<summary>
+				GetWebhooksEvents fucn to deserialize new format json response from Webhooks.
+			</summary>
+		</member>
         <member name="T:Intuit.Ipp.WebhooksService.WebhooksEvent">
             <summary>
             WebhooksEvent class for WebhooksService

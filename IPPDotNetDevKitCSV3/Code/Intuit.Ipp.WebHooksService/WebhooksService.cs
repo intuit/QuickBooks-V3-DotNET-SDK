@@ -38,6 +38,7 @@ namespace Intuit.Ipp.WebhooksService
     using System.Collections.Specialized;
     using System.Runtime.Serialization;
     using System.IO;
+    using System.Collections.Generic;
 
 
     /// <summary>
@@ -161,6 +162,16 @@ namespace Intuit.Ipp.WebhooksService
         public WebhooksEvent GetWebooksEvents(string payload)
         {
             WebhooksEvent webhooksEvent = JsonConvert.DeserializeObject<WebhooksEvent>(payload);
+            return webhooksEvent;
+        }
+
+        /// <summary>
+        /// Executes a Deserialization operation for Webhooks Events payload
+        /// </summary>
+        /// <returns>Returns a WebhooksEvent object.</returns>
+        public List<WebhooksEventNew> GetWebooksEventsNew(string payload)
+        {
+            List<WebhooksEventNew> webhooksEvent = JsonConvert.DeserializeObject<List<WebhooksEventNew>>(payload);
             return webhooksEvent;
         }
 
