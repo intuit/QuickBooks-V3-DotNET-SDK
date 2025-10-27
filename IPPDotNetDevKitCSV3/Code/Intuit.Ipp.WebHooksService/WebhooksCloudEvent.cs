@@ -26,7 +26,7 @@ namespace Intuit.Ipp.WebhooksService
     /// <summary>
     /// WebhooksEvent class for WebhooksService
     /// </summary>
-    public class WebhooksEventNew
+    public class WebhooksCloudEvent
     {
         /// <summary>
         /// Gets list of EventNotifications
@@ -34,27 +34,51 @@ namespace Intuit.Ipp.WebhooksService
         [JsonProperty("specversion")]
         public string SpecVersion { get; set; }
 
+        /// <summary>
+        /// Event Id
+        /// </summary>
         [JsonProperty("id")]
         public string Id { get; set; }
 
+        /// <summary>
+        /// Event source
+        /// </summary>
         [JsonProperty("source")]
         public string Source { get; set; }
 
+        /// <summary>
+        /// Event type
+        /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
 
+        /// <summary>
+        /// Data content type
+        /// </summary>
         [JsonProperty("datacontenttype")]
         public string DataContentType { get; set; }
 
+        /// <summary>
+        /// Time
+        /// </summary>
         [JsonProperty("time")]
         public DateTime Time { get; set; }
 
+        /// <summary>
+        /// Intuit Entity Id
+        /// </summary>
         [JsonProperty("intuitentityid")]
         public string IntuitEntityId { get; set; }
 
+        /// <summary>
+        /// Intuit Account id
+        /// </summary>
         [JsonProperty("intuitaccountid")]
         public string IntuitAccountId { get; set; }
 
+        /// <summary>
+        /// Event data
+        /// </summary>
         [JsonProperty("data")]
         public Dictionary<string, object> Data { get; set; }
     }

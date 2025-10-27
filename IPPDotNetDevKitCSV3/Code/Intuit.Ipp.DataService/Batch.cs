@@ -211,7 +211,7 @@ namespace Intuit.Ipp.DataService
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (this.batchRequests.Count > 30)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
@@ -287,7 +287,7 @@ namespace Intuit.Ipp.DataService
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (this.batchRequests.Count > 30)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));
@@ -344,7 +344,7 @@ namespace Intuit.Ipp.DataService
                 IdsExceptionManager.HandleException(exception);
             }
 
-            if (this.batchRequests.Count > 25)
+            if (this.batchRequests.Count > 30)
             {
                 IdsException exception = new IdsException(Resources.batchItemsExceededMessage, new BatchItemsExceededException(Resources.batchItemsExceededMessage));
                 this.serviceContext.IppConfiguration.Logger.CustomLogger.Log(Diagnostics.TraceLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ExceptionGeneratedMessage, exception.ToString()));

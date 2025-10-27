@@ -229,7 +229,7 @@ namespace Intuit.Ipp.DataService.Test
             ServiceContext context = Initializer.InitializeServiceContextQbo();
             DataService service = new DataService(context);
             Batch batch = service.CreateNewBatch();
-            for (int i = 0; i <= 26; i++)
+            for (int i = 0; i <= 31; i++)
             {
                 Customer customer = new Customer();
                 string guid = Guid.NewGuid().ToString("N");
@@ -270,7 +270,7 @@ namespace Intuit.Ipp.DataService.Test
         {
             Batch batch = GetBatch();
             string queryId = string.Empty;
-            for (int i = 0; i <= 26; i++)
+            for (int i = 0; i <= 31; i++)
             {
                 batch.Add("query * from Customer", "customerQuery");
             }
@@ -327,7 +327,7 @@ namespace Intuit.Ipp.DataService.Test
             Batch batch = GetBatch();
             string queryId = string.Empty;
 
-            for (int i = 0; i <= 26; i++)
+            for (int i = 0; i <= 31; i++)
             {
                 Customer customer = GetCustomer();
                 batch.Add(customer, "Customer", OperationEnum.create);
