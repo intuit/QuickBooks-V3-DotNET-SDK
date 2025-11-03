@@ -169,7 +169,7 @@ namespace Intuit.Ipp.WebhooksService
         /// Executes a Deserialization operation for Webhooks Cloud Events payload
         /// </summary>
         /// <returns>Returns a WebhooksCloudEvent object.</returns>
-        public List<WebhooksCloudEvent> GetWebooksCloudEvents(string payload)
+        public List<WebhooksCloudEvent> GetWebhooksCloudEvents(string payload)
         {
             List<WebhooksCloudEvent> webhooksEvent = JsonConvert.DeserializeObject<List<WebhooksCloudEvent>>(payload);
             return webhooksEvent;

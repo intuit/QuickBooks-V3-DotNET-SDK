@@ -91,19 +91,17 @@ namespace Intuit.Ipp.WebhooksService.Test
         }
 
         [TestMethod]
-        public void GetWebooksCloudEvents()
+        public void GetWebhooksCloudEvents()
         {
             try
             {
 
                 string wehooksResponsePayloadNew = "[{\"specversion\":\"1.0\",\"id\":\"d1a3aedd-9670-41bf-a4f9-c148a1cc4e03\",\"source\":\"intuit.dsnBgbseACLLRZNxo2dfc4evmEJdxde58xeeYcZliOU=\",\"type\":\"qbo.class.created.v1\",\"time\":\"2025-10-07T19:59:07.034359333Z\",\"intuitentityid\":\"1234\",\"intuitaccountid\":\"310687\"}]";
 
-                List<WebhooksCloudEvent> webhooksEvent = webhooksServiceTestCases.GetWebooksCloudEvents(wehooksResponsePayloadNew);
+                List<WebhooksCloudEvent> webhooksEvent = webhooksServiceTestCases.GetWebhooksCloudEvents(wehooksResponsePayloadNew);
 
                 Assert.AreEqual(webhooksEvent[0].SpecVersion, "1.0");
                 Assert.AreEqual(webhooksEvent[0].Id, "d1a3aedd-9670-41bf-a4f9-c148a1cc4e03");
-
-
 
             }
             catch (System.Exception ex)
