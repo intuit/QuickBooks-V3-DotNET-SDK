@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-// <summary>This file contains WebhooksEvent Class which deserliaizes Webhooks Events</summary>
+// <summary>This file contains WebhooksCloudEvent Class which deserliaizes Webhooks Events</summary>
 ////*********************************************************
 namespace Intuit.Ipp.WebhooksService
 {

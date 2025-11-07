@@ -176,6 +176,12 @@
             </summary>        
             <returns>Returns a WebhooksEvent object.</returns>
         </member>
+		<member name="M:Intuit.Ipp.WebhooksService.WebhooksService.GetWebhooksCloudEvents(System.String)">
+			<summary>
+				Executes a Deserialization operation for Webhooks Cloud Events payload
+			</summary>
+			<returns>Returns a WebhooksCloudEvent object.</returns>
+		</member>
         <member name="M:Intuit.Ipp.WebhooksService.WebhooksService.GetVerfierToken">
             <summary>
             Get Verifier Token value from config
