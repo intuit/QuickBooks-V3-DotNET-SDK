@@ -89,6 +89,56 @@
             Gets list of EventNotifications
             </summary>
         </member>
+		<member name="T:Intuit.Ipp.WebhooksService.WebhooksCloudEvent">
+			<summary>
+				WebhooksCloudEvent class for WebhooksService
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.SpecVersion">
+			<summary>
+				Gets Webhook cloud event SpecVersion
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.Id">
+			<summary>
+				Gets Webhook cloud event Id
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.Source">
+			<summary>
+				Gets Webhook cloud event Source
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.Type">
+			<summary>
+				Gets Webhook cloud event Type
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.DataContentType">
+			<summary>
+				Gets Webhook cloud event DataContentType
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.Time">
+			<summary>
+				Gets Webhook cloud event Time
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.IntuitEntityId">
+			<summary>
+				Gets Webhook cloud event IntuitEntityId
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.IntuitAccountId">
+			<summary>
+				Gets Webhook cloud event IntuitAccountId
+			</summary>
+		</member>
+		<member name="P:Intuit.Ipp.WebhooksService.WebhooksCloudEvent.Data">
+			<summary>
+				Gets Webhook cloud event Data
+			</summary>
+		</member>
         <member name="T:Intuit.Ipp.WebhooksService.WebhooksService">
             <summary>
             WebhooksService class
