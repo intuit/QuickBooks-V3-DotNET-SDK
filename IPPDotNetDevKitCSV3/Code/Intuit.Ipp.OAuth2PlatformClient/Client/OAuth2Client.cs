@@ -165,7 +165,8 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <param name="clientSecret"></param>
         /// <param name="redirectURI"></param>
         /// <param name="environment">This can either be sandbox, production or an actual discovery url</param>
-        public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment)
+        /// <param name="innerHandler"></param>
+        public OAuth2Client(string clientID, string clientSecret, string redirectURI, string environment, HttpMessageHandler innerHandler = null)
         {
 
             ClientID = clientID ?? throw new ArgumentNullException(nameof(clientID));
@@ -189,7 +190,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
 
 
-            DiscoveryDoc = GetDiscoveryDoc();
+            DiscoveryDoc = GetDiscoveryDoc(innerHandler);
             
 
         }
@@ -235,8 +236,9 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// <summary>
         /// Gets Discovery Doc
         /// </summary>
+        /// <param name="innerHandler">innerHandler</param>
         /// <returns></returns>
-        public DiscoveryResponse GetDiscoveryDoc()
+        public DiscoveryResponse GetDiscoveryDoc(HttpMessageHandler innerHandler = null)
         {
 
                 DiscoveryClient discoveryClient;
@@ -246,7 +248,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 }
                 else
                 {
-                    discoveryClient = new DiscoveryClient(ApplicationEnvironment);
+                    discoveryClient = new DiscoveryClient(ApplicationEnvironment, innerHandler);
                 }
                 DiscoveryResponse discoveryResponse =  discoveryClient.Get();
              if(discoveryResponse.IsError==true)
@@ -547,9 +549,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// Gets Bearer token from Authorization code
         /// </summary>
         /// <param name="code"></param>
+        /// <param name="innerHandler"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<TokenResponse> GetBearerTokenAsync(string code, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TokenResponse> GetBearerTokenAsync(string code, HttpMessageHandler innerHandler = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
@@ -577,7 +580,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             }
 
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret, innerHandler);
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -587,9 +590,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="tokenEndpoint"></param>
         /// <param name="code"></param>
+        /// <param name="innerHandler"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<TokenResponse> GetBearerTokenAsync(string tokenEndpoint, string code, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TokenResponse> GetBearerTokenAsync(string tokenEndpoint, string code, HttpMessageHandler innerHandler = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
@@ -618,7 +622,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             }
 
-            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
+            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret, innerHandler);
             return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -627,9 +631,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         /// </summary>
         /// <param name="refreshToken"></param>
         /// <param name="extra"></param>
+        /// <param name="innerHandler"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, object extra = null, HttpMessageHandler innerHandler = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(DiscoveryDoc.TokenEndpoint))
             {
@@ -657,7 +662,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret, innerHandler);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
 
@@ -667,9 +672,10 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         ///  <param name="tokenEndpoint"></param>
         /// <param name="refreshToken"></param>
         /// <param name="extra"></param>
+        /// <param name="innerHandler"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<TokenResponse> RefreshTokenAsync(string tokenEndpoint, string refreshToken, object extra = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TokenResponse> RefreshTokenAsync(string tokenEndpoint, string refreshToken, object extra = null, HttpMessageHandler innerHandler = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(tokenEndpoint))
             {
@@ -697,7 +703,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
-            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
+            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret, innerHandler);
             return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
         }
 
