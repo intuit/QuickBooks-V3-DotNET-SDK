@@ -27,11 +27,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
     using Serilog.Core;
     using Serilog.Events;
     using System.Globalization;
+    using System.Net.Http;
 
     /// <summary>
     /// Contains properties used to indicate whether request and response messages are to be logged.
     /// </summary>
-    public class OAuthAdvancedLogging : IOAuthAdvancedLogger
+    [Obsolete("Serilog configuration for Advanced Logging deprecated.")]
+    public class OAuthAdvancedLogging : IOAuthAdvancedLogger, IOAuthLogger
     {
         /// <summary>
         /// request logging location.
@@ -238,12 +240,56 @@ namespace Intuit.Ipp.OAuth2PlatformClient.Diagnostics
         }
 
         /// <summary>
+        /// Should response body be logged?
+        /// </summary>
+        public bool ShowInfoLogs { get; set; }
+
+        /// <summary>
         /// Logging message from SDK
         /// </summary>
         /// <param name="messageToWrite"></param>
         public void Log(string messageToWrite)
         {
-            logger.Write(LogEventLevel.Verbose, messageToWrite);
+            logger.Write(LogEventLevel.Information, messageToWrite);
+        }
+
+        void IOAuthLogger.LogRequest(HttpClient httpClient, HttpRequestMessage request)
+        {
+            logger.Write(LogEventLevel.Information, "Request url- " + request.RequestUri);
+            logger.Write(LogEventLevel.Debug, "Request headers- ");
+            var authorization = request.Headers.Authorization ?? httpClient.DefaultRequestHeaders.Authorization;
+            logger.Write(LogEventLevel.Debug, "Authorization Header: " + authorization);
+            logger.Write(LogEventLevel.Debug, "ContentType header: " + request.Content.Headers.ContentType);
+            var accept = request.Headers.Accept ?? httpClient.DefaultRequestHeaders.Accept;
+            logger.Write(LogEventLevel.Debug, "Accept header: " + accept);
+        }
+
+        bool IOAuthLogger.ShouldLogRequestBody()
+        {
+            return logger.IsEnabled(LogEventLevel.Verbose);
+        }
+
+        void IOAuthLogger.LogRequestBody(string body)
+        {
+            logger.Write(LogEventLevel.Verbose, "Request Body: " + body);
+        }
+
+        void IOAuthLogger.LogResponse(HttpResponseMessage response, string intuit_tid, string message, string body)
+        {
+            logger.Write(LogEventLevel.Information,
+                "Response Intuit_Tid header - " + intuit_tid + ", Response Status Code- " + response.StatusCode +
+                message == null ? "" : ", " + message);
+
+            if (body != null && !ShowInfoLogs && logger.IsEnabled(LogEventLevel.Debug))
+            {
+                logger.Write(LogEventLevel.Debug, "Response Body- " + body);
+            }
+        }
+
+        void IOAuthLogger.LogResponseError(HttpResponseMessage response, string errorDetail)
+        {
+            logger.Write(LogEventLevel.Warning, "Response: Status Code- " + response.StatusCode);
+            logger.Write(LogEventLevel.Information, "Response: Error Details- " + response.ReasonPhrase + ": " + errorDetail);
         }
     }
 }

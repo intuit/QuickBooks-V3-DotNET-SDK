@@ -31,6 +31,7 @@ namespace Intuit.Ipp.Core.Configuration
         /// <summary>
         /// Gets or sets the Request logging mechanism.
         /// </summary>
+        [System.Obsolete("Use a logging framework with CustomLogger.")]
         public RequestLog RequestLog { get; set; }
 
         /// <summary>

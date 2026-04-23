@@ -29,7 +29,7 @@ namespace Intuit.Ipp.Diagnostics
     /// <summary>
     /// Logs trace messages using System.Diagnostics.
     /// </summary>
-    public class TraceLogger : ILogger
+    public class TraceLogger : ILogger, IAdvancedLogger
     {
         /// <summary>
         /// Provides a multilevel switch to control tracing.
@@ -84,6 +84,11 @@ namespace Intuit.Ipp.Diagnostics
                 case TraceLevel.Off:
                     break;
             }
+        }
+
+        void IAdvancedLogger.Log(string messageToWrite)
+        {
+            Log(TraceLevel.Verbose, messageToWrite);
         }
     }
 }
