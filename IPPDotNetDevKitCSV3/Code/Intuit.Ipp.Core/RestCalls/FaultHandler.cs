@@ -129,10 +129,7 @@ namespace Intuit.Ipp.Core.Rest
                             response_intuit_tid_header = errorResponse.Headers[i];
                         }
                     }
-                    //Log errorstring to disk
-                    CoreHelper.GetRequestLogging(this.context).LogPlatformRequests(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString, false);
 
-                    //Log errorstring to Serilog
                     CoreHelper.AdvancedLogging.Log(" Response Intuit_Tid header: " + response_intuit_tid_header + ", Response Payload: " + errorString);
 
                     if (isIps)

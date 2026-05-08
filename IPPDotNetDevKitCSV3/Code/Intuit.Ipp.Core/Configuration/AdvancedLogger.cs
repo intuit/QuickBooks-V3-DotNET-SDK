@@ -29,12 +29,9 @@ namespace Intuit.Ipp.Core.Configuration
     public class AdvancedLogger
     {
         /// <summary>
-        /// Gets or sets the Request logging mechanism.
+        /// Gets or sets the <see cref="IAdvancedLogger"/>.
         /// </summary>
-        public RequestAdvancedLog RequestAdvancedLog { get; set; }
-
-
-
+        public IAdvancedLogger Logger { get; set; }
     }
 }
 

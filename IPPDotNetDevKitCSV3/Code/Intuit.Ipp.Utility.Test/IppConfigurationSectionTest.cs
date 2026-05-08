@@ -81,9 +81,6 @@ namespace Intuit.Ipp.Utility.Test
             Assert.IsNotNull(actual.WebhooksService.WebhooksVerifier.Value);
             Assert.IsNotNull(actual);
             Assert.IsNotNull(actual.Logger);
-            Assert.IsNotNull(actual.Logger.RequestLog);
-            Assert.IsTrue(actual.Logger.RequestLog.EnableRequestResponseLogging);
-            Assert.IsNotNull(actual.Logger.RequestLog.RequestResponseLoggingDirectory);
             Assert.IsNotNull(actual.Logger.CustomLogger);
             Assert.IsNotNull(actual.Logger.CustomLogger.Name);
             Assert.IsNotNull(actual.Logger.CustomLogger.Type);
