@@ -109,6 +109,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             public const string IdentityToken           = "id_token";
             public const string Error                   = "error";
             public const string ErrorDescription        = "error_description";
+            public const string RefreshTokenHardExpiresIn = "x_refresh_token_hard_expires_in";
             //public const string BearerTokenType         = "Bearer";
         }
 

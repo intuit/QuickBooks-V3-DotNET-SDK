@@ -11,6 +11,7 @@ namespace Intuit.Ipp.OAuth2PlatformClient
     /// </summary>
     public enum AuthenticationStyle
     {
-        OAuth2
+        OAuth2,
+        OAuth2Refresh
     };
 }

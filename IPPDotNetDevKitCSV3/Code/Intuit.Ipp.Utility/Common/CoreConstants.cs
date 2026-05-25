@@ -250,7 +250,7 @@ namespace Intuit.Ipp.Utility
         /// <summary>
         /// The Request source header value.
         /// </summary>
-        public const string REQUESTSOURCEHEADER = "V3DotNetSDK14.7.1.1";
+        public const string REQUESTSOURCEHEADER = "V3DotNetSDK14.7.1.2";
 
         /// <summary>
         /// multipart/form-data format
