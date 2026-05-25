@@ -145,6 +145,13 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             }
+            if (AuthenticationStyle == AuthenticationStyle.OAuth2Refresh)
+            {
+                request.Headers.Authorization = new BasicAuthenticationHeaderValue(ClientId, ClientSecret);
+                request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
+                request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                request.Headers.Add("x-include-refresh-token-hard-expires-in", "true");
+            }
             if (OAuth2Client.AdvancedLoggerEnabled != false)
             {
                 OAuth2Client.AdvancedLogger.Log("Request url- " + Address);

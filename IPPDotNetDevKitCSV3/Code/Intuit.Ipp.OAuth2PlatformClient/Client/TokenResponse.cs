@@ -179,6 +179,28 @@ namespace Intuit.Ipp.OAuth2PlatformClient
             }
         }
 
+        /// <summary>
+        /// Returns RefreshToken hard Expiry Value
+        /// </summary>   
+        public long RefreshTokenHardExpiresIn
+        {
+            get
+            {
+                var value = TryGet(OidcConstants.TokenResponse.RefreshTokenHardExpiresIn);
+
+                if (value != null)
+                {
+                    long longValue;
+                    if (long.TryParse(value.ToString(), out longValue))
+                    {
+                        return longValue;
+                    }
+                }
+
+                return 0;
+            }
+        }
+
 
         /// <summary>
         /// Handles error
