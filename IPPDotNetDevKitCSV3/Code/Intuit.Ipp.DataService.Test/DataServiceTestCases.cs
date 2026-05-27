@@ -106,6 +106,11 @@ namespace Intuit.Ipp.DataService.Test
             this.dataService.Void(entity);
         }
 
+        internal void VoidBillPayment(BillPayment entity)
+        {
+            this.dataService.VoidBillPayment(entity);
+        }
+
         internal void DeleteEntity(IEntity entity)
         {
             this.dataService.Delete(entity);
