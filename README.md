@@ -151,7 +151,7 @@ Refer to the following steps to generate all the keys required to run tests usin
 * To get Prod app keys to get OAuth tokens for live companies: Go to your app->Settings tab-> enter all URLs and save. Then get the prod keys from Keys tab under Prod section. 
 * To get OAuth access tokens, go to your app's dashboard, Click `Oauth Playground`
     * For OAuth2 apps, select the desired app and make sure the OAuth playground redirect_uri is present under Keys tab and go through the OAuth authorization flow to get access and refresh tokens along with the realmid to make API calls for QuickBooks company. 
-      * Access tokens are valid for 1 hour which can be refreshed using refesh token. When you request a fresh access token, always use the refresh token returned in the most recent refreshing access token API response. A refresh token expires 24 hours after you receive it. More info can be found at: [Refreshing the access token](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0#/Refreshing_the_access_token)
+      * Access tokens are valid for 1 hour which can be refreshed using refesh token. When you request a fresh access token, always use the refresh token returned in the most recent refreshing access token API response. A refresh token expires 24 hours after you receive it. More info can be found at: [Refreshing the access token](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0)
  
 
  * NOTE: For sandbox testing, you need to use dev app keys and sandbox base URL. 
