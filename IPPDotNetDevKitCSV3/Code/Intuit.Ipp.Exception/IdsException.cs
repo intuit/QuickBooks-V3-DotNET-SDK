@@ -29,7 +29,7 @@ namespace Intuit.Ipp.Exception
     /// Represents an IdsException.
     /// </summary>
     [System.Serializable]
-    public class IdsException : System.Exception
+    public class IdsException : System.Exception, ISafeSerializationData
     {
         /// <summary>
         /// Error Code.
@@ -283,6 +283,7 @@ namespace Intuit.Ipp.Exception
             }
         }
 
+#if NETCORE
         /// <summary>
         /// Contains the System.Runtime.Serialization.SerializationInfo with information about the exception.
         /// </summary>
@@ -300,6 +301,21 @@ namespace Intuit.Ipp.Exception
                 info.AddValue("innerException", this.innerException);
                 info.AddValue("innerExceptions", this.innerExceptions);
             }
+        }
+#endif
+
+        /// <summary>
+        /// This method is called when the instance is deserialized.
+        /// </summary>
+        /// <param name="deserialized">An object that contains the state of the instance.</param>
+        public void CompleteDeserialization(object deserialized)
+        {
+            IdsException exception = (IdsException)deserialized;
+            exception.errorCode = this.errorCode;
+            exception.errorMessage = this.errorMessage;
+            exception.source = this.source;
+            exception.innerException = this.innerException;
+            exception.innerExceptions = this.innerExceptions;
         }
     }
 }
