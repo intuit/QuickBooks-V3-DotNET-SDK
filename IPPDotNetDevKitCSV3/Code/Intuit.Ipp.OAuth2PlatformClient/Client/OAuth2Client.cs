@@ -93,6 +93,11 @@ namespace Intuit.Ipp.OAuth2PlatformClient
         public bool EnableSerilogRequestResponseLoggingForFile { get; set; }
 
 
+        ///// <summary>
+        ///// Gets or sets a value indicating whether to return refresh token hard expires in value in response.
+        ///// </summary>
+        public bool IncludeRefreshTokenHardExpiresIn { get; set; }
+
         /// <summary>
         /// Gets or sets the service request logging location for File.
         /// </summary>
@@ -657,8 +662,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret,AuthenticationStyle.OAuth2Refresh);
-            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            if (IncludeRefreshTokenHardExpiresIn)
+            {
+                var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret, AuthenticationStyle.OAuth2Refresh);
+                return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+                return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -697,8 +710,18 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
             }
 
-            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret, AuthenticationStyle.OAuth2Refresh);
-            return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            if (IncludeRefreshTokenHardExpiresIn)
+            {
+                var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret, AuthenticationStyle.OAuth2Refresh);
+                return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
+                return await tokenClient.RequestRefreshTokenAsync(refreshToken, cancellationToken).ConfigureAwait(false);
+            }
+               
+            
         }
 
         /// <summary>
