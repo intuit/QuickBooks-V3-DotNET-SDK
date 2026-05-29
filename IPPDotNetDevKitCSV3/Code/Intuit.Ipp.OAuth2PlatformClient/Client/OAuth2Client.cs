@@ -581,9 +581,16 @@ namespace Intuit.Ipp.OAuth2PlatformClient
                 AdvancedLogger = LogHelper.GetAdvancedLogging(enableSerilogRequestResponseLoggingForDebug: this.EnableSerilogRequestResponseLoggingForDebug, enableSerilogRequestResponseLoggingForTrace: this.EnableSerilogRequestResponseLoggingForTrace, enableSerilogRequestResponseLoggingForConsole: this.EnableSerilogRequestResponseLoggingForConsole, enableSerilogRequestResponseLoggingForFile: this.EnableSerilogRequestResponseLoggingForFile, serviceRequestLoggingLocationForFile: this.ServiceRequestLoggingLocationForFile);
 
             }
-
-            var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
-            return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            if (IncludeRefreshTokenHardExpiresIn)
+            {
+                var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret, AuthenticationStyle.OAuth2Refresh);
+                return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                var tokenClient = new TokenClient(DiscoveryDoc.TokenEndpoint, ClientID, ClientSecret);
+                return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
         }
 
 
@@ -623,8 +630,17 @@ namespace Intuit.Ipp.OAuth2PlatformClient
 
             }
 
-            var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
-            return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            if (IncludeRefreshTokenHardExpiresIn)
+            {
+                var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret, AuthenticationStyle.OAuth2Refresh);
+                return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                var tokenClient = new TokenClient(tokenEndpoint, ClientID, ClientSecret);
+                return await tokenClient.RequestTokenFromCodeAsync(code, RedirectURI, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            
         }
 
         /// <summary>
